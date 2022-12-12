@@ -1,0 +1,50 @@
+{
+  "name": "@patternfly/patternfly-hac-components",
+  "version": "1.0.0",
+  "description": "Common HAC UI components",
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "build": "tsc --build --verbose ./tsconfig.json",
+    "clean": "rimraf dist",
+    "docs:develop": "pf-docs-framework start",
+    "docs:build": "pf-docs-framework build all --output public",
+    "docs:serve": "pf-docs-framework serve public --port 5000",
+    "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
+    "test:a11y": "patternfly-a11y --config patternfly-a11y.config",
+    "serve:a11y": "yarn serve coverage"
+  },
+  "repository": "git+https://github.com/patternfly/patternfly-hac-components.git",
+  "author": "Red Hat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-hac-components/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-hac-components#readme",
+  "release": {
+    "branches": "main"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@patternfly/react-core": "^4.250.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8 || ^17 || ^18",
+    "react-dom": "^16.8 || ^17 || ^18"
+  },
+  "devDependencies": {
+    "@patternfly/documentation-framework": "^1.2.55",
+    "@patternfly/patternfly": "^4.217.1",
+    "@patternfly/react-table": "^4.111.4",
+    "@patternfly/react-code-editor": "^4.82.26",
+    "rimraf": "^2.6.2",
+    "typescript": "^4.7.4",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@patternfly/patternfly-a11y": "4.3.1"
+  }
+}
