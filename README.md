@@ -1,1 +1,1 @@
-# patternfly-hac-components
+# extended-components

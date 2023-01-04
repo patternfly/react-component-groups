@@ -1,11 +1,12 @@
 {
-  "name": "@patternfly/patternfly-hac-components",
+  "name": "@patternfly/extended-components",
   "version": "1.0.0",
-  "description": "Common HAC UI components",
+  "description": "Extended components used for redhat projects.",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
     "build": "tsc --build --verbose ./tsconfig.json",
+    "build:fed:packages": "node generate-fed-package-json.js",
     "clean": "rimraf dist",
     "docs:develop": "pf-docs-framework start",
     "docs:build": "pf-docs-framework build all --output public",
@@ -14,13 +15,13 @@
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config",
     "serve:a11y": "yarn serve coverage"
   },
-  "repository": "git+https://github.com/patternfly/patternfly-hac-components.git",
+  "repository": "git+https://github.com/patternfly/extended-components.git",
   "author": "Red Hat",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/patternfly/patternfly-hac-components/issues"
+    "url": "https://github.com/patternfly/extended-components/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-hac-components#readme",
+  "homepage": "https://github.com/patternfly/extended-components#readme",
   "release": {
     "branches": "main"
   },
