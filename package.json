@@ -8,8 +8,9 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspace @patternfly/extended-components build",
+    "build": "yarn build:packages && yarn build:fed:packages",
     "build:docs": "yarn workspace @patternfly/extended-components docs:build",
+    "build:packages": "yarn workspace @patternfly/extended-components build",
     "build:fed:packages": "yarn workspace @patternfly/extended-components build:fed:packages",
     "start": "yarn build && concurrently --kill-others \"yarn workspace @patternfly/extended-components docs:develop\"",
     "serve:docs": "yarn workspace @patternfly/extended-components docs:serve",
