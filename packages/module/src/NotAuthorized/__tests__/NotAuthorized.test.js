@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import NotAuthorized from './NotAuthorized';
+import NotAuthorized from '../NotAuthorized';
 
 describe('NotAuthorized component', () => {
   const initialProps = {
