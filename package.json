@@ -52,7 +52,14 @@
     "@testing-library/user-event": "13.5.0",
     "@testing-library/jest-dom":"5.16.5",
     "jest-environment-jsdom": "^29.2.2",
-    "ts-jest": "^26.5.6",
-    "serve": "^14.1.2"
+    "jest-canvas-mock": "2.4.0",
+    "ts-jest":"29.0.3",
+    "serve": "^14.1.2",
+    "enzyme":"3.11.0",
+    "enzyme-to-json": "3.6.2",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+    "whatwg-fetch": "^3.6.2",
+    "babel-polyfill": "6.26.0",
+    "identity-obj-proxy": "^3.0.0"
   }
 }
