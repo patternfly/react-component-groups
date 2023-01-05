@@ -186,7 +186,7 @@ exports[`NotAuthorized component should use custom icon 1`] = `
     <div
       className="pf-c-empty-state__body"
     >
-      Array [
+      [
         "Contact your organization administrator(s) for more information or visit ",
         <a
           href="./settings/my-user-access"
