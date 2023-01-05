@@ -5,7 +5,9 @@
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
-    "build": "tsc --build --verbose ./tsconfig.json",
+    "build": "tsc --build --verbose ./tsconfig.json && yarn build:css && yarn transform:css",
+    "build:css": "node ../../scripts/build-styles.js",
+    "copy-files": "copyfiles -u 1 src/**/*.scss dist/esm",
     "build:fed:packages": "node generate-fed-package-json.js",
     "clean": "rimraf dist",
     "docs:develop": "pf-docs-framework start",
@@ -13,6 +15,7 @@
     "docs:serve": "pf-docs-framework serve public --port 5000",
     "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config",
+    "transform:css": "node ../../scripts/transform-scss.js",
     "serve:a11y": "yarn serve coverage"
   },
   "repository": "git+https://github.com/patternfly/extended-components.git",
@@ -40,7 +43,9 @@
     "@patternfly/patternfly": "^4.217.1",
     "@patternfly/react-table": "^4.111.4",
     "@patternfly/react-code-editor": "^4.82.26",
+    "@redhat-cloud-services/frontend-components-utilities": "^3.2.25",
     "classnames": "^2.2.5",
+    "copyfiles": "^2.4.1",
     "rimraf": "^2.6.2",
     "typescript": "^4.7.4",
     "react": "^17.0.0",
