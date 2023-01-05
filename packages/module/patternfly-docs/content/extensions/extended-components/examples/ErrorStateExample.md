@@ -14,9 +14,9 @@ propComponents: ['ErrorState']
 
 import { ErrorState } from "@patternfly/extended-components";
 
-## Basic usage
+## Extended Component Usage
 
-### Example
+### Error State Component
 
 ```js file="./ErrorStateExample.tsx"
 
