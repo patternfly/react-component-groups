@@ -15,7 +15,9 @@ import {
 import './error-state.scss';
 
 export interface ErrorStateProps extends Omit<EmptyStateProps, 'children'> {
+  /** Title of the error. */
   errorTitle?: string;
+  /** A description of the error, if no description is provided then it will be set to the default message. */
   errorDescription?: React.ReactNode;
 }
 
