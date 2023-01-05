@@ -20,6 +20,7 @@ const PageHeader: React.FunctionComponent<PageHeaderProps> = ({ className, child
         const themeClasses = classNames({ [`pf-m-${theme}-200`]: theme === 'dark' }, { [`pf-m-light`]: theme === 'light' });
 
         return (
+          // eslint-disable-next-line react/no-unknown-property
           <section {...props} className={`${pageHeaderClasses} ${themeClasses}`} widget-type="InsightsPageHeader">
             {children}
           </section>

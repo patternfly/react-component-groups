@@ -36,6 +36,8 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-config-prettier": "8.5.0",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
     "prettier": "2.7.1",
@@ -50,6 +52,7 @@
     "@testing-library/user-event": "13.5.0",
     "@testing-library/jest-dom":"5.16.5",
     "jest-environment-jsdom": "^29.2.2",
+    "ts-jest": "^26.5.6",
     "serve": "^14.1.2"
   }
 }

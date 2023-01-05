@@ -8,6 +8,7 @@ import './NotAuthorized.scss';
 
 export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | 'title'> {
   serviceName?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon?: React.ComponentType<any>;
   description?: React.ReactNode;
   showReturnButton?: boolean;
