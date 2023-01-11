@@ -31,7 +31,9 @@
     "branches": "main"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "prerelease"
   },
   "dependencies": {
     "@patternfly/react-core": "^4.250.1"
