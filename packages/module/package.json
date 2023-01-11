@@ -27,11 +27,9 @@
     "url": "https://github.com/patternfly/extended-components/issues"
   },
   "homepage": "https://github.com/patternfly/extended-components#readme",
-  "release": {
-    "branches": "main"
-  },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "tag": "prerelease"
   },
   "dependencies": {
     "@patternfly/react-core": "^4.250.1"
