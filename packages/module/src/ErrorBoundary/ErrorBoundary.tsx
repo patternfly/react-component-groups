@@ -6,15 +6,22 @@ import ErrorStack from './ErrorStack';
 import Section from '../Section';
 
 interface ErrorPageProps {
+  /** The title to display on the error page */
   headerTitle: string;
+  /** Indicates if this is a silent error */
   silent?: boolean;
+  /** Title given to the error */
   errorTitle?: string;
+  /** A description of the error */
   errorDescription?: string;
 }
 
 interface ErrorPageState {
+  /** Indicates if there is currently an error */
   hasError: boolean;
+  /** Error */
   error?: Error;
+  /** Used for browser session history */
   historyState: History['state'];
 }
 
