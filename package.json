@@ -12,7 +12,7 @@
     "build:docs": "yarn workspace @patternfly/react-component-groups docs:build",
     "build:packages": "yarn workspace @patternfly/react-component-groups build",
     "build:fed:packages": "yarn workspace @patternfly/react-component-groups build:fed:packages",
-    "start": "yarn build && concurrently --kill-others \"yarn workspace @patternfly/react-component-groups docs:develop\"",
+    "start": "yarn build -- --watch && concurrently --kill-others \"yarn workspace @patternfly/react-component-groups docs:develop\"",
     "serve:docs": "yarn workspace @patternfly/react-component-groups docs:serve",
     "clean": "yarn workspace @patternfly/react-component-groups clean",
     "lint:js": "node --max-old-space-size=4096 node_modules/.bin/eslint packages --ext js,jsx,ts,tsx --cache",
