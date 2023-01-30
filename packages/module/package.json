@@ -1,5 +1,5 @@
 {
-  "name": "@patternfly/extended-components",
+  "name": "@patternfly/react-component-groups",
   "version": "1.0.0",
   "description": "Extended components used for redhat projects.",
   "main": "dist/esm/index.js",
@@ -20,13 +20,13 @@
     "transform:css": "node ../../scripts/transform-scss.js",
     "serve:a11y": "yarn serve coverage"
   },
-  "repository": "git+https://github.com/patternfly/extended-components.git",
+  "repository": "git+https://github.com/patternfly/react-component-groups.git",
   "author": "Red Hat",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/patternfly/extended-components/issues"
+    "url": "https://github.com/patternfly/react-component-groups/issues"
   },
-  "homepage": "https://github.com/patternfly/extended-components#readme",
+  "homepage": "https://github.com/patternfly/react-component-groups#readme",
   "publishConfig": {
     "access": "public",
     "tag": "prerelease"
