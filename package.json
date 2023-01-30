@@ -1,5 +1,5 @@
 {
-  "name": "@patternfly/extended-components-root",
+  "name": "@patternfly/react-component-groups-root",
   "private": true,
   "version": "0.0.0",
   "description": "This library provides patternfly extensions",
@@ -9,18 +9,18 @@
   ],
   "scripts": {
     "build": "yarn build:packages && yarn build:fed:packages",
-    "build:docs": "yarn workspace @patternfly/extended-components docs:build",
-    "build:packages": "yarn workspace @patternfly/extended-components build",
-    "build:fed:packages": "yarn workspace @patternfly/extended-components build:fed:packages",
-    "start": "yarn build && concurrently --kill-others \"yarn workspace @patternfly/extended-components docs:develop\"",
-    "serve:docs": "yarn workspace @patternfly/extended-components docs:serve",
-    "clean": "yarn workspace @patternfly/extended-components clean",
+    "build:docs": "yarn workspace @patternfly/react-component-groups docs:build",
+    "build:packages": "yarn workspace @patternfly/react-component-groups build",
+    "build:fed:packages": "yarn workspace @patternfly/react-component-groups build:fed:packages",
+    "start": "yarn build && concurrently --kill-others \"yarn workspace @patternfly/react-component-groups docs:develop\"",
+    "serve:docs": "yarn workspace @patternfly/react-component-groups docs:serve",
+    "clean": "yarn workspace @patternfly/react-component-groups clean",
     "lint:js": "node --max-old-space-size=4096 node_modules/.bin/eslint packages --ext js,jsx,ts,tsx --cache",
     "lint:md": "yarn eslint packages --ext md --no-eslintrc --config .eslintrc-md.json --cache",
     "lint": "yarn lint:js && yarn lint:md",
     "test": "TZ=EST jest packages",
-    "test:a11y": "yarn workspace @patternfly/extended-components test:a11y",
-    "serve:a11y": "yarn workspace @patternfly/extended-components serve:a11y"
+    "test:a11y": "yarn workspace @patternfly/react-component-groups test:a11y",
+    "serve:a11y": "yarn workspace @patternfly/react-component-groups serve:a11y"
   },
   "devDependencies": {
     "react": "^17",
