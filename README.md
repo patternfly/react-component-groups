@@ -1,6 +1,6 @@
-# PatternFly Extended Components
+# PatternFly React Component Groups
 
-This repo contains a set of opinionated react components used to standardize functionality and look and feel across Red Hat products.  The components are based of PatternFly with some additional functionality specific to Red Hat products.  While they are specific to Red Hat products in their implementation and design they can be used outside of Red Hat.
+This repo contains a set of opinionated react component groups used to standardize functionality and look and feel across products.  The components are based of PatternFly with some additional functionality. 
 
 ## Building for production
 
