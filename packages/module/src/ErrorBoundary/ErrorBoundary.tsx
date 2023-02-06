@@ -1,9 +1,7 @@
 import * as React from 'react';
-import PageHeader, { PageHeaderTitle } from '../PageHeader';
-import ErrorState from '../ErrorState';
-import { ExpandableSection } from '@patternfly/react-core';
+import { ExpandableSection, Title } from '@patternfly/react-core';
+import { ErrorState } from '../ErrorState';
 import ErrorStack from './ErrorStack';
-import Section from '../Section';
 
 interface ErrorPageProps {
   /** The title to display on the error page */
@@ -52,26 +50,22 @@ class ErrorBoundaryPage extends React.Component<ErrorPageProps, ErrorPageState> 
         return null;
       }
       return (
-        <div>
-          <PageHeader>
-            <PageHeaderTitle title={this.props.headerTitle} />
-          </PageHeader>
-          <Section>
-            <ErrorState
-              errorTitle={this.props.errorTitle}
-              errorDescription={
-                <>
-                  <span>{this.props.errorDescription}</span>
-                  {this.state.error && (
-                    <ExpandableSection toggleText="Show details">
-                      <ErrorStack error={this.state.error} />
-                    </ExpandableSection>
-                  )}
-                </>
-              }
-            />
-          </Section>
-        </div>
+        <React.Fragment>
+          <Title headingLevel="h1" size="2xl">{this.props.headerTitle}</Title>
+          <ErrorState
+            errorTitle={this.props.errorTitle}
+            errorDescription={
+              <>
+                <span>{this.props.errorDescription}</span>
+                {this.state.error && ( 
+                  <ExpandableSection toggleText="Show details">
+                    <ErrorStack error={this.state.error} />
+                  </ExpandableSection>
+                )}
+              </>
+            }
+          />
+        </React.Fragment>
       );
     }
 

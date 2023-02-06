@@ -12,7 +12,14 @@ import {
   StackItem,
   Title,
 } from '@patternfly/react-core';
-import './error-state.scss';
+import { createUseStyles } from 'react-jss'
+import { global_danger_color_100 as dangerColor } from '@patternfly/react-tokens/dist/js/global_danger_color_100';
+
+const useStyles = createUseStyles({
+  errorIcon: {
+    fill: dangerColor.value,
+  },
+})
 
 export interface ErrorStateProps extends Omit<EmptyStateProps, 'children'> {
   /** Title of the error. */
@@ -21,9 +28,11 @@ export interface ErrorStateProps extends Omit<EmptyStateProps, 'children'> {
   errorDescription?: React.ReactNode;
 }
 
-const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'Something went wrong', errorDescription, ...props }) => (
-    <EmptyState variant={EmptyStateVariant.large} {...props} className="ins-c-error-state">
-      <EmptyStateIcon icon={ExclamationCircleIcon} />
+const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'Something went wrong', errorDescription, ...props }) => {
+  const classes = useStyles();
+  return (
+    <EmptyState variant={EmptyStateVariant.large} {...props}>
+      <EmptyStateIcon  className={classes.errorIcon} icon={ExclamationCircleIcon} />
       <Title headingLevel="h4" size="lg">
         {errorTitle}
       </Title>
@@ -44,5 +53,6 @@ const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'So
       )}
     </EmptyState>
   );
+}
 
 export default ErrorState;
