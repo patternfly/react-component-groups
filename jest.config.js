@@ -18,11 +18,11 @@ const config = {
     '!<rootDir>/packages/**/*{c|C}ontext*.js',
     '!<rootDir>/packages/components/src/Components/Table/*',
   ],
-  setupFilesAfterEnv: ['<rootDir>/config/setupTests.js', 'jest-canvas-mock'],
+  setupFilesAfterEnv: [ '<rootDir>/config/setupTests.js', 'jest-canvas-mock' ],
   testEnvironment: 'jsdom',
-  roots: ['<rootDir>/packages/'],
+  roots: [ '<rootDir>/packages/' ],
   // modulePathIgnorePatterns: ['<rootDir>/packages/create-crc-app/templates', '<rootDir>/packages/docs/.cache'],
-    modulePathIgnorePatterns: [
+  modulePathIgnorePatterns: [
     '<rootDir>/packages/*.*/dist/*.*',
     '<rootDir>/packages/*.*/public/*.*',
     '<rootDir>/packages/*.*/.cache/*.*'

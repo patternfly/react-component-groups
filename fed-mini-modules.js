@@ -37,7 +37,7 @@ async function createPackage(file) {
     module: esmRelative,
   };
   const typings = glob.sync(`${root}/src/${fileName}/*.d.ts`);
-  let cmds = [];
+  const cmds = [];
   content.typings = 'index.d.ts';
   cmds.push(copyTypings(typings, `${root}/${fileName}`));
   cmds.push(fse.writeJSON(destFile, content));
