@@ -13,11 +13,10 @@ import {
   Title,
 } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss'
-import { global_danger_color_100 as dangerColor } from '@patternfly/react-tokens/dist/js/global_danger_color_100';
 
 const useStyles = createUseStyles({
   errorIcon: {
-    fill: dangerColor.value,
+    fill: 'var(--pf-global--danger-color--100)',
   },
 })
 

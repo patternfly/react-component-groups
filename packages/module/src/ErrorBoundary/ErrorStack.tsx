@@ -1,10 +1,6 @@
 import * as React from 'react';
 import { Text } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
-import { global_BackgroundColor_dark_300 as backgroundDark } from '@patternfly/react-tokens/dist/js/global_BackgroundColor_dark_300';
-import { global_icon_FontSize_md as iconMd } from '@patternfly/react-tokens/dist/js/global_icon_FontSize_md';
-import { global_spacer_sm as spacerSm } from '@patternfly/react-tokens/dist/js/global_spacer_sm';
-
 interface ErrorStackProps {
   error: Error;
 }
@@ -12,13 +8,13 @@ interface ErrorStackProps {
 const useStyles = createUseStyles({
   errorStack: {
     fontFamily: 'monospace',
-    fontSize: iconMd.value,
+    fontSize: 'var(--pf-global--icon--FontSize--md)',
     textAlign: 'left',
     backgroundColor: 'white',
     borderStyle: 'solid',
-    borderColor: backgroundDark.value,
+    borderColor: 'var(--pf-global--BackgroundColor--dark-300)',
     overflowWrap: 'break-word',
-    padding: spacerSm.value
+    padding: 'var(--pf-global--spacer--sm)'
   },
 })
 
