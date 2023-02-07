@@ -1,10 +1,7 @@
 import React from 'react';
-
 import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateProps, EmptyStateVariant, Title } from '@patternfly/react-core';
-
 import { LockIcon } from '@patternfly/react-icons';
-
-import './NotAuthorized.scss';
+import { createUseStyles } from 'react-jss';
 
 export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | 'title'> {
   serviceName?: string;
@@ -26,6 +23,14 @@ const ContactBody = () => (
   </React.Fragment>
 );
 
+const useStyles = createUseStyles({
+  title: {
+    maxWidth: '540px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+})
+
 const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
   prevPageButtonText = 'Return to previous page',
   toLandingPageText = 'Go to landing page',
@@ -38,11 +43,13 @@ const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
   className,
   ...props
 }) => {
+  const classes = useStyles();
+
   const heading = title || `You do not have access to ${serviceName}`;
   return (
-    <EmptyState variant={EmptyStateVariant.full} className={`ins-c-not-authorized ${className || ''}`} {...props}>
+    <EmptyState variant={EmptyStateVariant.full} className={className} {...props}>
       <EmptyStateIcon icon={Icon} />
-      <Title headingLevel="h5" size="lg">
+      <Title className={classes.title} headingLevel="h5" size="lg">
         {heading}
       </Title>
       <EmptyStateBody>{description}</EmptyStateBody>

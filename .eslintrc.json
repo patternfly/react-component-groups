@@ -51,6 +51,7 @@
     "@typescript-eslint/unified-signatures": "error",
     "@typescript-eslint/no-var-requires": "off",
     "arrow-body-style": "error",
+    "array-bracket-spacing": ["error", "always"],
     "camelcase": [
       "error",
       {
@@ -62,6 +63,7 @@
     "dot-notation": "error",
     "eqeqeq": ["error", "smart"],
     "guard-for-in": "error",
+    "indent": ["error", 2],
     "max-classes-per-file": ["error", 1],
     "no-nested-ternary": "error",
     "no-bitwise": "error",
@@ -84,6 +86,7 @@
     "no-unused-labels": "error",
     "no-var": "error",
     "object-shorthand": "error",
+    "object-curly-spacing": ["error", "always"],
     "one-var": ["error", "never"],
     "prefer-const": "error",
     "radix": ["error", "as-needed"],

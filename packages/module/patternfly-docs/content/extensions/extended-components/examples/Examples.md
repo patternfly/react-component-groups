@@ -14,7 +14,7 @@ propComponents: ['ErrorState']
 
 import { ErrorState } from "@patternfly/react-component-groups";
 
-## Extended Component Usage
+## Components Usage
 
 ### Error State Component
 

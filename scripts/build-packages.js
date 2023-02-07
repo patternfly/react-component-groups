@@ -4,7 +4,7 @@ const path = require('path');
 
 const root = process.cwd();
 
-const foldersBlackList = ['__snapshots__', '__mocks__'];
+const foldersBlackList = [ '__snapshots__', '__mocks__' ];
 const sourceFiles = glob
   .sync(`${root}/src/*/`)
   .filter((item) => !foldersBlackList.some((name) => item.includes(name)))
@@ -38,7 +38,7 @@ async function createPackage(file, forceTypes) {
     module: esmRelative,
   };
   const typings = glob.sync(`${root}/src/${fileName}/*.d.ts`);
-  let cmds = [];
+  const cmds = [];
   if (forceTypes) {
     content.typings = 'index.d.ts';
   } else if (typings.length > 0) {

@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = (sourceMD, sourceProps) => {
   // Parse source content for props so that we can display them
-  const propsIgnore = ['**/*.test.tsx', '**/examples/*.tsx'];
+  const propsIgnore = [ '**/*.test.tsx', '**/examples/*.tsx' ];
   const extensionPath = path.join(__dirname, '../src');
   sourceProps(path.join(extensionPath, '/**/*.tsx'), propsIgnore);
 

@@ -2,13 +2,14 @@
 
 exports[`NotAuthorized component should apply custom styles 1`] = `
 <EmptyState
-  className="ins-c-not-authorized something"
+  className="something"
   variant="full"
 >
   <EmptyStateIcon
     icon={[Function]}
   />
   <Title
+    className="title-0-2-1"
     headingLevel="h5"
     size="lg"
   >
@@ -29,13 +30,13 @@ exports[`NotAuthorized component should apply custom styles 1`] = `
 
 exports[`NotAuthorized component should not show buttons 1`] = `
 <EmptyState
-  className="ins-c-not-authorized "
   variant="full"
 >
   <EmptyStateIcon
     icon={[Function]}
   />
   <Title
+    className="title-0-2-1"
     headingLevel="h5"
     size="lg"
   >
@@ -49,13 +50,13 @@ exports[`NotAuthorized component should not show buttons 1`] = `
 
 exports[`NotAuthorized component should render 1`] = `
 <EmptyState
-  className="ins-c-not-authorized "
   variant="full"
 >
   <EmptyStateIcon
     icon={[Function]}
   />
   <Title
+    className="title-0-2-1"
     headingLevel="h5"
     size="lg"
   >
@@ -76,13 +77,13 @@ exports[`NotAuthorized component should render 1`] = `
 
 exports[`NotAuthorized component should show custom actions 1`] = `
 <EmptyState
-  className="ins-c-not-authorized "
   variant="full"
 >
   <EmptyStateIcon
     icon={[Function]}
   />
   <Title
+    className="title-0-2-1"
     headingLevel="h5"
     size="lg"
   >
@@ -115,13 +116,13 @@ exports[`NotAuthorized component should show custom actions 1`] = `
 
 exports[`NotAuthorized component should show custom description 1`] = `
 <EmptyState
-  className="ins-c-not-authorized "
   variant="full"
 >
   <EmptyStateIcon
     icon={[Function]}
   />
   <Title
+    className="title-0-2-1"
     headingLevel="h5"
     size="lg"
   >
@@ -142,13 +143,13 @@ exports[`NotAuthorized component should show custom description 1`] = `
 
 exports[`NotAuthorized component should show custom title 1`] = `
 <EmptyState
-  className="ins-c-not-authorized "
   variant="full"
 >
   <EmptyStateIcon
     icon={[Function]}
   />
   <Title
+    className="title-0-2-1"
     headingLevel="h5"
     size="lg"
   >
@@ -169,14 +170,14 @@ exports[`NotAuthorized component should show custom title 1`] = `
 
 exports[`NotAuthorized component should use custom icon 1`] = `
 <div
-  className="pf-c-empty-state ins-c-not-authorized "
+  className="pf-c-empty-state"
 >
   <div
     className="pf-c-empty-state__content"
   >
     some Icon!
     <h5
-      className="pf-c-title pf-m-lg"
+      className="pf-c-title pf-m-lg title-0-2-1"
       data-ouia-component-id="OUIA-Generated-Title-1"
       data-ouia-component-type="PF4/Title"
       data-ouia-safe={true}
