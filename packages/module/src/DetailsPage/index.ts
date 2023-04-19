@@ -1,1 +1,1 @@
-export { DetailsPage, DetailsPageProps } from './DetailsPage';
+export * from './DetailsPage';

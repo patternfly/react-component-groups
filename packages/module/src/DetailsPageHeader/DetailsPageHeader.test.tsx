@@ -2,41 +2,42 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import type { DetailsPageHeaderProps } from './DetailsPageHeader';
-import { DetailsPageHeader } from './DetailsPageHeader';
+import { DetailsPageHeader, DetailsPageHeaderProps } from './DetailsPageHeader';
 
 const mockCallback = jest.fn();
 
 const mockProps: DetailsPageHeaderProps = {
   breadcrumbs: [
-    { name: 'Workspaces', path: '/workspaces' },
-    { name: 'Workspace details', path: '/workspaces/demo-workspace' },
+    { children: 'Resources', to: '/resources' },
+    { children: 'Resource details', to: '/resources/example-resource' },
   ],
   pageHeading: {
-    title: 'demo-workspace',
+    title: 'example-resource',
   },
   actionButtons: [
     {
-      label: 'Test Button',
-      callback: mockCallback,
+      children: 'Primary action',
+      onClick: mockCallback,
     },
   ],
   actionMenu: {
     actions: [
       {
-        id: '2',
-        label: 'Delete Action',
+        children: 'Edit resource',
+        itemID: 'details-page-header-action-menu-example-1',
         cta: {
-          callback: jest.fn(),
+          // eslint-disable-next-line no-console
+          callback: () => console.log('Edit resource clicked'),
         },
-        isDisabled: true,
       },
       {
-        id: 'Link1',
-        label: 'Link1',
+        children: 'Delete resource',
+        itemID: 'details-page-header-action-menu-example-2',
         cta: {
-          href: '#',
+          // eslint-disable-next-line no-console
+          callback: () => console.log('Delete resource clicked'),
         },
+        isDisabled: true,
       },
     ],
     isDisabled: false,
@@ -44,10 +45,10 @@ const mockProps: DetailsPageHeaderProps = {
 };
 
 const detailsPageHeaderJSX = (args: DetailsPageHeaderProps) => (
-  <MemoryRouter initialEntries={['/workspaces/demo-workspace']}>
+  <MemoryRouter initialEntries={[ '/resources/example-resource' ]}>
     <Routes>
-      <Route element={<DetailsPageHeader {...args} />} path="/workspaces/demo-workspace" />
-      <Route element={<div>Workspaces List Page</div>} path="/workspaces" />
+      <Route element={<DetailsPageHeader {...args} />} path="/resources/example-resource" />
+      <Route element={<div>Resource list page</div>} path="/resources" />
     </Routes>
   </MemoryRouter>
 );
@@ -57,12 +58,12 @@ describe('DetailsPageHeader', () => {
     render(detailsPageHeaderJSX(mockProps));
 
     // Breadcrumbs
-    expect(screen.getByText('Workspaces')).toBeVisible();
-    expect(screen.getByText('Workspace details')).toBeVisible();
+    expect(screen.getByText('Resources')).toBeVisible();
+    expect(screen.getByText('Resource details')).toBeVisible();
     // Page heading
-    expect(screen.getByText('demo-workspace')).toBeVisible();
+    expect(screen.getByText('example-resource')).toBeVisible();
     // Action buttons
-    expect(screen.getByText('Test Button')).toBeVisible();
+    expect(screen.getByText('Primary action')).toBeVisible();
     // Action menu
     expect(screen.getByText('Actions')).toBeVisible();
   });
@@ -71,20 +72,19 @@ describe('DetailsPageHeader', () => {
 
     // Click Workspaces link
     fireEvent.click(screen.getByTestId('breadcrumb-link-0'));
-    expect(screen.getByText('Workspaces List Page')).toBeVisible();
+    expect(screen.getByText('Resource list page')).toBeVisible();
   });
   test('Clicking on actions menu reveals menu options', () => {
     render(detailsPageHeaderJSX(mockProps));
 
     fireEvent.click(screen.getByText('Actions'));
-    expect(screen.getByText('Link1')).toBeVisible();
-    expect(screen.getByText('Delete Action')).toBeVisible();
-    expect(screen.getByText('Delete Action').closest('a')).toHaveAttribute('aria-disabled');
+    expect(screen.getByText('Edit resource')).toBeVisible();
+    expect(screen.getByText('Delete resource')).toBeVisible();
   });
   test('Action button triggers callback', () => {
     render(detailsPageHeaderJSX(mockProps));
 
-    fireEvent.click(screen.getByText('Test Button'));
+    fireEvent.click(screen.getByText('Primary action'));
     expect(mockCallback).toHaveBeenCalled();
   });
 });

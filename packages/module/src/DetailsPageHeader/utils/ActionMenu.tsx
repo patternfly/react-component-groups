@@ -1,54 +1,52 @@
-import type { EitherNotBoth } from '@openshift/dynamic-plugin-sdk';
 import {
   Dropdown,
-  DropdownPosition,
   DropdownGroup,
+  DropdownGroupProps,
+  DropdownItem,
+  DropdownItemProps,
+  DropdownPosition,
   DropdownToggle,
   KebabToggle,
-  DropdownItem,
 } from '@patternfly/react-core';
 import { ExternalLinkAltIcon } from '@patternfly/react-icons';
-import { isEmpty } from 'lodash';
 import React from 'react';
-import './ActionMenu.css';
+import { createUseStyles } from 'react-jss'
+
+// Duplicated from @openshift/dynamic-plugin-sdk
+type Never<T> = {
+  [K in keyof T]?: never;
+};
+
+// Duplicated from @openshift/dynamic-plugin-sdk
+type EitherNotBoth<TypeA, TypeB> = (TypeA & Never<TypeB>) | (TypeB & Never<TypeA>);
 
 export type ActionCTA =
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   | { callback: (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => void }
   | { href: string; external?: boolean };
 
-export type Action = {
-  /** A unique identifier for this action. */
-  id: string;
-  /** The label to display in the UI. */
-  label: React.ReactNode;
-  /** Optional subtext for the menu item */
-  description?: string;
+export interface ActionProps extends Omit<DropdownItemProps, 'onClick'|'innerRef'> {
   /** Executable callback or href. External links should automatically provide an external link icon on action. */
   cta: ActionCTA;
-  /** Optional flag to indicate whether the action is disabled. */
-  isDisabled?: boolean;
   /** Optional tooltip for this action. */
   tooltip?: string;
   /** Optional icon for this action. */
   icon?: React.ReactNode;
 };
 
-export type GroupedActions = {
+export interface GroupedActionsProps extends Omit<DropdownGroupProps, 'children'> {
   /** A unique identifier for this group. */
   groupId: string;
-  /** Optional label to display as group heading */
-  groupLabel?: string;
   /** Actions under this group. */
-  groupActions: Action[];
-};
+  groupActions: ActionProps[];
+}
 
 export enum ActionMenuVariant {
   KEBAB = 'plain',
   DROPDOWN = 'default',
 }
 
-export type ActionMenuOptions = {
+export interface ActionMenuOptions {
   /** Optional flag to indicate whether action menu should be disabled */
   isDisabled?: boolean;
   /** Optional variant for action menu: DROPDOWN vs KEBAB (defaults to dropdown) */
@@ -59,15 +57,32 @@ export type ActionMenuOptions = {
   position?: DropdownPosition;
   /** Optional flag to indicate whether labels should appear to the left of icons for the action menu items (icon appears after the label by default) */
   displayLabelBeforeIcon?: boolean;
+  /** Optional id for action menu (defaults to 'actions') */
+  id?: string;
 };
 
 export type ActionMenuProps = EitherNotBoth<
-  { actions: Action[] },
-  { groupedActions: GroupedActions[] }
+  { actions: ActionProps[] },
+  { groupedActions: GroupedActionsProps[] }
 > &
   ActionMenuOptions;
 
-export const ActionMenu: React.FC<ActionMenuProps> = ({
+const useStyles = createUseStyles({
+  menuItemWithLabelBeforeIcon: {
+    '&.pf-c-dropdown__menu-item': {
+      flexDirection: 'row-reverse',
+      justifyContent: 'left'
+    },
+    '.pf-c-dropdown__menu-item-icon': {
+      marginLeft: 'var(--pf-c-dropdown__menu-item-icon--MarginRight)'
+    },
+    '.pf-c-dropdown__menu-item-main': {
+      flexDirection: 'row-reverse',
+    }
+  }
+});
+
+export const ActionMenu: React.FunctionComponent<ActionMenuProps> = ({
   actions = [],
   groupedActions = [],
   isDisabled,
@@ -75,25 +90,68 @@ export const ActionMenu: React.FC<ActionMenuProps> = ({
   label = 'Actions',
   position = DropdownPosition.right,
   displayLabelBeforeIcon,
-}) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [isGrouped, setIsGrouped] = React.useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [dropdownActionItems, setDropdownActionItems] = React.useState<any[]>([]);
+  id = 'actions',
+}: ActionMenuProps) => {
+  const [ isOpen, setIsOpen ] = React.useState(false);
 
-  React.useEffect(() => {
-    if (!isEmpty(groupedActions)) {
-      setIsGrouped(true);
+  const classes = useStyles();
+
+  const isGrouped = groupedActions.length > 0;
+
+  /** Returns a DropDownItem element corresponding to an action */
+  const dropdownActionItem = React.useCallback(
+    (action: ActionProps) => {
+      const externalIcon =
+        'href' in action.cta &&
+        'external' in action.cta &&
+        action.cta.href &&
+        action.cta.external ? (
+            <ExternalLinkAltIcon />
+          ) : null;
+      const icon = action.icon ?? externalIcon;
+      const href = 'href' in action.cta ? action.cta.href : undefined;
+      const onClick =
+        'callback' in action.cta && action.cta.callback ? action.cta.callback : undefined;
+      return (
+        <DropdownItem
+          className={displayLabelBeforeIcon ? classes.menuItemWithLabelBeforeIcon : ''}
+          description={action.description}
+          isDisabled={action.isDisabled}
+          itemID={action.itemID}
+          onClick={onClick}
+          href={href}
+          tooltip={action.tooltip}
+          icon={icon}
+          key={action.itemID}
+        >
+          {action.children}
+        </DropdownItem>
+      );
+    },
+    [ classes.menuItemWithLabelBeforeIcon, displayLabelBeforeIcon ],
+  );
+
+  const dropdownActionItems = React.useMemo(() => {
+    let ddActionItems: JSX.Element[] = [];
+    if (actions.length > 0) {
+      ddActionItems = actions.map((action: ActionProps) => dropdownActionItem(action as ActionProps));
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (isGrouped) {
+      ddActionItems = groupedActions.map((action: GroupedActionsProps) => (
+        <DropdownGroup label={action?.label} key={action.groupId}>
+          {action.groupActions.map((groupAction: ActionProps) => dropdownActionItem(groupAction))}
+        </DropdownGroup>
+      ))
+    }
+    return ddActionItems;
+  }, [ actions, dropdownActionItem, isGrouped, groupedActions ]);
 
   const onToggle = (open: boolean) => {
     setIsOpen(open);
   };
 
   const onFocus = () => {
-    const element = document.getElementById(`toggle-menu-${label}`);
+    const element = document.getElementById(`toggle-menu-${id}`);
     if (element) {
       element.focus();
     }
@@ -104,59 +162,6 @@ export const ActionMenu: React.FC<ActionMenuProps> = ({
     onFocus();
   };
 
-  /** Returns a DropDownItem element corresponding to an action */
-  const dropdownActionItem = React.useCallback(
-    (action: Action) => {
-      const externalIcon =
-        'href' in action.cta &&
-        'external' in action.cta &&
-        action.cta.href &&
-        action.cta.external ? (
-          <ExternalLinkAltIcon />
-        ) : null;
-      const icon = action.icon ?? externalIcon;
-      const href = 'href' in action.cta ? action.cta.href : undefined;
-      const onClick =
-        'callback' in action.cta && action.cta.callback ? action.cta.callback : undefined;
-      return (
-        <DropdownItem
-          className={displayLabelBeforeIcon ? 'menu-item-with-label-before-icon' : ''}
-          key={action.id}
-          tooltip={action.tooltip}
-          description={action.description}
-          icon={icon}
-          href={href}
-          isDisabled={action.isDisabled}
-          onClick={onClick}
-        >
-          {action.label}
-        </DropdownItem>
-      );
-    },
-    [displayLabelBeforeIcon],
-  );
-
-  React.useEffect(() => {
-    let ddActionItems: JSX.Element[] = [];
-    if (!isEmpty(actions)) {
-      ddActionItems = actions.map((action: Action) => {
-        return dropdownActionItem(action as Action);
-      });
-    }
-    if (!isEmpty(groupedActions)) {
-      ddActionItems = groupedActions.map((action: GroupedActions) => {
-        // Grouped Actions
-        return (
-          <DropdownGroup label={action.groupLabel} key={action.groupId}>
-            {action.groupActions.map((groupAction: Action) => dropdownActionItem(groupAction))}
-          </DropdownGroup>
-        );
-      });
-    }
-    setDropdownActionItems(ddActionItems);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   // Build dropdown
   return (
     <Dropdown
@@ -164,11 +169,11 @@ export const ActionMenu: React.FC<ActionMenuProps> = ({
       position={position}
       toggle={
         variant === ActionMenuVariant.DROPDOWN ? (
-          <DropdownToggle id={`toggle-menu-${label}`} onToggle={onToggle} isDisabled={isDisabled}>
+          <DropdownToggle id={`toggle-menu-${id}`} onToggle={onToggle} isDisabled={isDisabled}>
             {label}
           </DropdownToggle>
         ) : (
-          <KebabToggle id={`toggle-menu-${label}`} onToggle={onToggle} isDisabled={isDisabled} />
+          <KebabToggle id={`toggle-menu-${id}`} onToggle={onToggle} isDisabled={isDisabled} />
         )
       }
       isOpen={isOpen}

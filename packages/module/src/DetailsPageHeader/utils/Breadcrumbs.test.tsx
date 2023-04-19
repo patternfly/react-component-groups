@@ -2,21 +2,20 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import type { BreadcrumbsProps } from './Breadcrumbs';
-import { Breadcrumbs } from './Breadcrumbs';
+import { Breadcrumbs, BreadcrumbsProps } from './Breadcrumbs';
 
 const mockProps: BreadcrumbsProps = {
   breadcrumbs: [
-    { name: 'Workspaces', path: '/workspaces' },
-    { name: 'Workspace details', path: '/workspaces/demo-workspace' },
+    { children: 'Resources', to: '/resources' },
+    { children: 'Resource details', to: '/resources/example-resource' },
   ],
 };
 
 const breadcrumbsJSX = (args: BreadcrumbsProps) => (
-  <MemoryRouter initialEntries={['/workspaces/demo-workspace']}>
+  <MemoryRouter initialEntries={[ '/resources/example-resource' ]}>
     <Routes>
-      <Route element={<Breadcrumbs {...args} />} path="/workspaces/demo-workspace" />
-      <Route element={<div>Workspaces List Page</div>} path="/workspaces" />
+      <Route element={<Breadcrumbs {...args} />} path="/resources/example-resource" />
+      <Route element={<div>Resource list page</div>} path="/resources" />
     </Routes>
   </MemoryRouter>
 );
@@ -25,14 +24,14 @@ describe('Breadcrumbs', () => {
   test('Breadcrumbs are rendered', () => {
     render(breadcrumbsJSX(mockProps));
 
-    expect(screen.getByText('Workspaces')).toBeVisible();
-    expect(screen.getByText('Workspace details')).toBeVisible();
+    expect(screen.getByText('Resources')).toBeVisible();
+    expect(screen.getByText('Resource details')).toBeVisible();
   });
   test('Clicking on breadcrumb triggers specified path', () => {
     render(breadcrumbsJSX(mockProps));
 
-    // Click Workspaces link
+    // Click Resources link
     fireEvent.click(screen.getByTestId('breadcrumb-link-0'));
-    expect(screen.getByText('Workspaces List Page')).toBeVisible();
+    expect(screen.getByText('Resource list page')).toBeVisible();
   });
 });

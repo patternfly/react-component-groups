@@ -6,15 +6,15 @@ const mockCallback = jest.fn();
 
 const mockActions = [
   {
-    id: '1',
-    label: 'Edit Action',
+    children: 'Edit resource',
+    itemID: 'action-menu-example-1',
     cta: {
       callback: mockCallback,
     },
   },
   {
-    id: '2',
-    label: 'Delete Action',
+    children: 'Delete resource',
+    itemID: 'action-menu-example-2',
     cta: {
       callback: jest.fn(),
     },
@@ -27,16 +27,16 @@ const mockGroupedActions = [
     groupId: 'group1',
     groupActions: [
       {
-        id: '1',
-        label: 'Edit Action',
+        children: 'Edit resource',
+        itemID: 'action-menu-grouped-group-1-example-1',
         cta: {
           callback: jest.fn(),
         },
         tooltip: 'Sample tooltip',
       },
       {
-        id: '2',
-        label: 'Delete Action',
+        children: 'Delete resource',
+        itemID: 'action-menu-grouped-group-1-example-2',
         cta: {
           callback: jest.fn(),
         },
@@ -46,22 +46,21 @@ const mockGroupedActions = [
   },
   {
     groupId: 'group2',
-    groupLabel: 'Group2',
+    label: 'Group2',
     groupActions: [
       {
-        id: 'Link1',
-        label: 'External Link',
+        children: 'External Link',
+        itemID: 'action-menu-grouped-group-2-example-1',
         cta: {
           href: 'https://github.com/',
           external: true,
         },
       },
       {
-        id: 'Link2',
+        itemID: 'action-menu-grouped-group-2-example-2',
         label: 'Link',
         cta: {
           href: '/#',
-          external: false,
         },
         tooltip: 'Link',
       },
@@ -79,9 +78,9 @@ describe('ActionMenu', () => {
     render(<ActionMenu actions={mockActions} label="Test Actions" />);
 
     fireEvent.click(screen.getByText('Test Actions'));
-    expect(screen.getByText('Edit Action')).toBeVisible();
-    expect(screen.getByText('Delete Action')).toBeVisible();
-    expect(screen.getByText('Delete Action').closest('a')).toHaveAttribute('aria-disabled');
+    expect(screen.getByText('Edit resource')).toBeVisible();
+    expect(screen.getByText('Delete resource')).toBeVisible();
+    expect(screen.getByText('Delete resource').closest('a')).toHaveAttribute('aria-disabled');
   });
   test('ActionMenu is disabled', () => {
     render(<ActionMenu actions={mockActions} isDisabled />);
@@ -92,15 +91,15 @@ describe('ActionMenu', () => {
     render(<ActionMenu actions={mockActions} />);
 
     fireEvent.click(screen.getByText('Actions'));
-    expect(screen.getByText('Edit Action')).toBeVisible();
-    fireEvent.click(screen.getByText('Edit Action'));
+    expect(screen.getByText('Edit resource')).toBeVisible();
+    fireEvent.click(screen.getByText('Edit resource'));
     expect(mockCallback).toHaveBeenCalled();
   });
   test('Menu actions are rendered in groups', () => {
     render(<ActionMenu groupedActions={mockGroupedActions} />);
 
     fireEvent.click(screen.getByText('Actions'));
-    expect(screen.getByText('Edit Action')).toBeVisible();
+    expect(screen.getByText('Edit resource')).toBeVisible();
     expect(screen.getByText('Group2')).toBeVisible();
     expect(screen.getByText('External Link')).toBeVisible();
   });

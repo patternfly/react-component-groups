@@ -6,14 +6,14 @@ const mockCallback = jest.fn();
 
 const mockActionButtons = [
   {
-    label: 'Edit Workspace',
-    callback: mockCallback,
+    children: 'Primary action',
+    onClick: mockCallback,
+    tooltip: 'Click me!',
   },
   {
-    label: 'Delete Workspace',
-    callback: jest.fn(),
+    children: 'Secondary action',
+    onClick: jest.fn(),
     isDisabled: true,
-    tooltip: 'Deletion is currently unavailable',
   },
 ];
 
@@ -21,14 +21,14 @@ describe('ActionButtons', () => {
   test('Buttons are rendered', () => {
     render(<ActionButtons actionButtons={mockActionButtons} />);
 
-    expect(screen.getByText('Edit Workspace')).toBeVisible();
-    expect(screen.getByText('Delete Workspace')).toBeVisible();
-    expect(screen.getByText('Delete Workspace').closest('button')).toHaveAttribute('aria-disabled');
+    expect(screen.getByText('Primary action')).toBeVisible();
+    expect(screen.getByText('Secondary action')).toBeVisible();
+    expect(screen.getByText('Secondary action').closest('button')).toHaveAttribute('aria-disabled');
   });
   test('Button clicks trigger callback', () => {
     render(<ActionButtons actionButtons={mockActionButtons} />);
 
-    fireEvent.click(screen.getByText('Edit Workspace'));
+    fireEvent.click(screen.getByText('Primary action'));
     expect(mockCallback).toHaveBeenCalled();
   });
 });

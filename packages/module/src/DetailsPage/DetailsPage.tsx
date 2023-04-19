@@ -1,24 +1,27 @@
 import React from 'react';
-import type { DetailsPageHeaderProps } from '../details-page-header';
-import { DetailsPageHeader } from '../details-page-header';
-import type { HorizontalNavProps } from '../horizontal-nav';
-import { withRouter, HorizontalNav } from '../horizontal-nav';
+import { DetailsPageHeader, DetailsPageHeaderProps } from '../DetailsPageHeader';
+import { HorizontalNav, HorizontalNavProps } from '../HorizontalNav';
 
-export type DetailsPageProps = HorizontalNavProps & DetailsPageHeaderProps;
+export interface DetailsPageProps extends DetailsPageHeaderProps, HorizontalNavProps {};
 
-export const DetailsPage = withRouter<DetailsPageProps>(
-  ({ ariaLabel, tabs, breadcrumbs, actionButtons, actionMenu, pageHeading, obj }) => {
-    return (
-      <>
-        <DetailsPageHeader
-          breadcrumbs={breadcrumbs}
-          actionButtons={actionButtons}
-          actionMenu={actionMenu}
-          pageHeading={pageHeading}
-          obj={obj}
-        />
-        <HorizontalNav ariaLabel={ariaLabel} tabs={tabs} />
-      </>
-    );
-  },
+export const DetailsPage: React.FunctionComponent<DetailsPageProps> = ({
+  breadcrumbs,
+  actionButtons,
+  actionMenu,
+  pageHeading,
+  ariaLabel,
+  tabs,
+  location,
+  params,
+  navigate
+}: DetailsPageProps ) => (
+  <>
+    <DetailsPageHeader
+      breadcrumbs={breadcrumbs}
+      actionButtons={actionButtons}
+      actionMenu={actionMenu}
+      pageHeading={pageHeading}
+    />
+    <HorizontalNav ariaLabel={ariaLabel} tabs={tabs} location={location} params={params} navigate={navigate} />
+  </>
 );
