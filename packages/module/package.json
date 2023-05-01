@@ -16,7 +16,7 @@
     "docs:serve": "pf-docs-framework serve public --port 5000",
     "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config",
-    "serve:a11y": "yarn serve coverage"
+    "serve:a11y": "npm run serve coverage"
   },
   "repository": "git+https://github.com/patternfly/react-component-groups.git",
   "author": "Red Hat",
