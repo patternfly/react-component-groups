@@ -2,7 +2,7 @@
   "name": "@patternfly/react-component-groups",
   "version": "1.0.0",
   "description": "Extended components used for Red Hat projects.",
-  "main": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
     "build": "npm run build:js && npm run build:esm && npm run build:fed:packages",
@@ -16,7 +16,7 @@
     "docs:serve": "pf-docs-framework serve public --port 5000",
     "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config",
-    "serve:a11y": "yarn serve coverage"
+    "serve:a11y": "serve coverage"
   },
   "repository": "git+https://github.com/patternfly/react-component-groups.git",
   "author": "Red Hat",
@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@patternfly/documentation-framework": "^1.2.55",
+    "@reach/router": "1.3.4",
     "@patternfly/patternfly": "^4.217.1",
     "@patternfly/patternfly-a11y": "4.3.1",
     "@patternfly/react-code-editor": "^4.82.26",

@@ -18,16 +18,16 @@ jobs:
         with:
           node-version: '16'
       - uses: actions/cache@v2
-        id: yarn-cache
+        id: npm-cache
         name: Cache npm deps
         with:
           path: |
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
-      - run: yarn install --frozen-lockfile
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
+          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package-lock.json') }}
+      - run: npm install --frozen-lockfile
+        if: steps.npm-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
         id: dist
         name: Cache dist
@@ -35,9 +35,9 @@ jobs:
           path: |
             packages/*/dist
             packages/react-styles/css
-          key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
+          key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package-lock.json', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
-        run: yarn build
+        run: npm run build
         if: steps.dist.outputs.cache-hit != 'true'
       - name: Release to NPM
         run: cd packages/module && npx semantic-release@19.0.5
