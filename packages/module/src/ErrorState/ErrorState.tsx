@@ -9,9 +9,8 @@ import {
   EmptyStateProps,
   EmptyStateVariant,
   Stack,
-  StackItem,
-  Title,
-} from '@patternfly/react-core';
+  StackItem, EmptyStateHeader, EmptyStateFooter,
+  } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
@@ -30,17 +29,14 @@ export interface ErrorStateProps extends Omit<EmptyStateProps, 'children'> {
 const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'Something went wrong', errorDescription, ...props }) => {
   const classes = useStyles();
   return (
-    <EmptyState variant={EmptyStateVariant.large} {...props}>
-      <EmptyStateIcon  className={classes.errorIcon} icon={ExclamationCircleIcon} />
-      <Title headingLevel="h4" size="lg">
-        {errorTitle}
-      </Title>
+    <EmptyState variant={EmptyStateVariant.lg} {...props}>
+      <EmptyStateHeader titleText={<>{errorTitle}</>} icon={<EmptyStateIcon  className={classes.errorIcon} icon={ExclamationCircleIcon} />} headingLevel="h4" />
       <EmptyStateBody>
         <Stack>
           {!errorDescription && <StackItem>There was a problem processing the request. Please try again.</StackItem>}
           <StackItem>{errorDescription || <DefaultErrorMessage />}</StackItem>
         </Stack>
-      </EmptyStateBody>
+      </EmptyStateBody><EmptyStateFooter>
       {document.referrer ? (
         <Button variant="primary" onClick={() => history.back()}>
           Return to last page
@@ -50,7 +46,7 @@ const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'So
           Go to home page
         </Button>
       )}
-    </EmptyState>
+    </EmptyStateFooter></EmptyState>
   );
 }
 

@@ -20,6 +20,7 @@ const config = {
   ],
   setupFilesAfterEnv: [ '<rootDir>/config/setupTests.js', 'jest-canvas-mock' ],
   testEnvironment: 'jsdom',
+  setupFiles: [ './jest.setup.js' ],
   roots: [ '<rootDir>/packages/' ],
   // modulePathIgnorePatterns: ['<rootDir>/packages/create-crc-app/templates', '<rootDir>/packages/docs/.cache'],
   modulePathIgnorePatterns: [
