@@ -23,6 +23,7 @@ const config = {
   testEnvironmentOptions: {
     url: 'http://localhost:5000/',
   },
+  setupFiles: [ './jest.setup.js' ],
   roots: [ '<rootDir>/packages/' ],
   // modulePathIgnorePatterns: ['<rootDir>/packages/create-crc-app/templates', '<rootDir>/packages/docs/.cache'],
   modulePathIgnorePatterns: [

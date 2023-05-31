@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateProps, EmptyStateVariant, Title } from '@patternfly/react-core';
+import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateProps, EmptyStateVariant, EmptyStateHeader, EmptyStateFooter,  } from '@patternfly/react-core';
 import { LockIcon } from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
 
@@ -51,11 +51,8 @@ export const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
 
   return (
     <EmptyState variant={EmptyStateVariant.full} className={className} {...props}>
-      <EmptyStateIcon icon={Icon} />
-      <Title className={classes.title} headingLevel="h5" size="lg">
-        {title}
-      </Title>
-      <EmptyStateBody>{description}</EmptyStateBody>
+      <EmptyStateHeader titleText={<>{heading}</>} icon={<EmptyStateIcon icon={Icon} />} headingLevel="h5" />
+      <EmptyStateBody>{description}</EmptyStateBody><EmptyStateFooter>
       {actions}
       {showReturnButton &&
         (document.referrer ? (
@@ -67,7 +64,7 @@ export const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
             {toLandingPageText}
           </Button>
         ))}
-    </EmptyState>
+    </EmptyStateFooter></EmptyState>
   );
 };
 
