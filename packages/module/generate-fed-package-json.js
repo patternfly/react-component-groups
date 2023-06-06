@@ -10,6 +10,8 @@ const sourceFiles = glob
   
 const indexTypings = glob.sync(`${root}/src/index.d.ts`);
 
+const ENV_AGNOSTIC_ROOT = `${root}/dist/dynamic`
+
 async function copyTypings(files, dest) {
   const cmds = [];
   files.forEach((file) => {
@@ -22,6 +24,8 @@ async function copyTypings(files, dest) {
 async function createPackage(file) {
   const fileName = file.split('/').pop();
   const esmSource = glob.sync(`${root}/dist/esm/${fileName}/**/index.js`)[0];
+  const cjsSource = glob.sync(`${root}/dist/cjs/${fileName}/**/index.js`)[0];
+  const typingsSource = glob.sync(`${root}/dist/esm/${fileName}/**/index.d.ts`)[0]
   /**
    * Prevent creating package.json for directories with no JS files (like CSS directories)
    */
@@ -29,22 +33,30 @@ async function createPackage(file) {
     return;
   }
 
-  const destFile = `${path.resolve(`${root}/dist/esm`, fileName)}/package.json`;
+  const destDir = path.resolve(`${ENV_AGNOSTIC_ROOT}`, fileName)
+  const destFile = `${destDir}/package.json`;
 
-  const esmRelative = path.relative(file.replace('/dist/esm', ''), esmSource);
+  // ensure the directory exists
+  fse.ensureDirSync(destDir)
+
+  const esmRelative = path.relative(file, esmSource).replace('/dist', '');
+  const cjsRelative = path.relative(file, cjsSource).replace('/dist', '');
+  const tsRelative = path.relative(file, typingsSource).replace('/dist', '')
   const content = {
-    main: 'index.js',
+    main: cjsRelative,
     module: esmRelative,
   };
   const typings = glob.sync(`${root}/src/${fileName}/*.d.ts`);
   const cmds = [];
-  content.typings = 'index.d.ts';
+  content.typings = tsRelative;
   cmds.push(copyTypings(typings, `${root}/dist/${fileName}`));
   cmds.push(fse.writeJSON(destFile, content));
   return Promise.all(cmds);
 }
 
 async function generatePackages(files) {
+  // ensure the dynamic root exists
+  fse.ensureDirSync(path.resolve(ENV_AGNOSTIC_ROOT))
   const cmds = files.map((file) => createPackage(file));
   return Promise.all(cmds);
 }
