@@ -1,4 +1,3 @@
-import React from 'react';
 import { ExclamationCircleIcon } from '@patternfly/react-icons/';
 import {
   Button,
@@ -9,8 +8,9 @@ import {
   EmptyStateVariant,
   Stack,
   StackItem, EmptyStateHeader, EmptyStateFooter,
-  } from '@patternfly/react-core';
+} from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss'
+import React from 'react';
 
 const useStyles = createUseStyles({
   errorIcon: {
@@ -31,22 +31,22 @@ const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'So
   const classes = useStyles();
   return (
     <EmptyState variant={EmptyStateVariant.lg} {...props}>
-      <EmptyStateHeader titleText={<>{errorTitle}</>} icon={<EmptyStateIcon  className={classes.errorIcon} icon={ExclamationCircleIcon} />} headingLevel="h4" />
+      <EmptyStateHeader titleText={<>{errorTitle}</>} icon={<EmptyStateIcon className={classes.errorIcon} icon={ExclamationCircleIcon} />} headingLevel="h4" />
       <EmptyStateBody>
         <Stack>
           {errorDescription ? <StackItem>{errorDescription}</StackItem> : defaultErrorDescription}
         </Stack>
       </EmptyStateBody><EmptyStateFooter>
-      {document.referrer ? (
-        <Button variant="primary" onClick={() => history.back()}>
-          Return to last page
-        </Button>
-      ) : (
-        <Button variant="primary" component="a" href="." target="_blank" rel="noopener noreferrer">
-          Go to home page
-        </Button>
-      )}
-    </EmptyStateFooter></EmptyState>
+        {document.referrer ? (
+          <Button variant="primary" onClick={() => history.back()}>
+            Return to last page
+          </Button>
+        ) : (
+          <Button variant="primary" component="a" href="." target="_blank" rel="noopener noreferrer">
+            Go to home page
+          </Button>
+        )}
+      </EmptyStateFooter></EmptyState>
   );
 }
 

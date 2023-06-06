@@ -45,5 +45,3 @@ const config = {
     '^.+\\.tsx?$': [ 'ts-jest', { tsconfig: './packages/module/tsconfig.json', } ],
   },
 };
-
-module.exports = config;
