@@ -1,6 +1,5 @@
-import React from 'react';
-import { mount, shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import * as React from 'react';
+import { render, screen } from '@testing-library/react';
 import NotAuthorized from '../NotAuthorized';
 
 describe('NotAuthorized component', () => {
@@ -8,33 +7,34 @@ describe('NotAuthorized component', () => {
     serviceName: 'Foo',
   };
   it('should render', () => {
-    const wrapper = shallow(<NotAuthorized {...initialProps} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    render(<NotAuthorized {...initialProps} />);
+    expect(screen.getByText('Foo')).toBeInTheDocument();
   });
 
   it('should apply custom styles', () => {
-    const wrapper = shallow(<NotAuthorized {...initialProps} className="something" />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    render(<NotAuthorized {...initialProps} className="something" />);
+    expect(screen.getByText('Foo')).toHaveClass('something');
   });
 
   it('should use custom icon', () => {
-    const wrapper = mount(<NotAuthorized {...initialProps} icon={() => 'some Icon!'} />);
-    expect(toJson(wrapper, { mode: 'deep' })).toMatchSnapshot();
+    render(<NotAuthorized {...initialProps} icon={() => 'some Icon!'} />);
+    expect(screen.getByText('some Icon!')).toBeInTheDocument();
   });
 
   it('should not show buttons', () => {
-    const wrapper = shallow(<NotAuthorized {...initialProps} showReturnButton={false} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    render(<NotAuthorized {...initialProps} showReturnButton={false} />);
+    expect(screen.queryByText('Return to previous page')).not.toBeInTheDocument();
+    expect(screen.queryByText('Go to landing page')).not.toBeInTheDocument();
   });
 
   it('should show custom description', () => {
-    const wrapper = shallow(<NotAuthorized {...initialProps} description="Some text" />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    render(<NotAuthorized {...initialProps} description="Some text" />);
+    expect(screen.getByText('Some text')).toBeInTheDocument();
   });
 
   it('should show custom title', () => {
-    const wrapper = shallow(<NotAuthorized title="Custom title" />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    render(<NotAuthorized title="Custom title" />);
+    expect(screen.getByText('Custom title')).toBeInTheDocument();
   });
 
   it('should show custom actions', () => {
@@ -42,11 +42,12 @@ describe('NotAuthorized component', () => {
       <button id="action-one" key="1">
         1
       </button>,
-      <button id="action-one" key="2">
+      <button id="action-two" key="2">
         2
       </button>,
     ];
-    const wrapper = shallow(<NotAuthorized {...initialProps} actions={actions} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+    render(<NotAuthorized {...initialProps} actions={actions} />);
+    expect(screen.getByText('1')).toBeInTheDocument();
+    expect(screen.getByText('2')).toBeInTheDocument();
   });
 });

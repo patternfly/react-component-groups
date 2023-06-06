@@ -25,7 +25,7 @@
     "url": "https://github.com/patternfly/react-component-groups/issues"
   },
   "homepage": "https://github.com/patternfly/react-component-groups#readme",
-   "publishConfig": {
+  "publishConfig": {
     "access": "public",
     "tag": "alpha"
   },
