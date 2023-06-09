@@ -13,8 +13,8 @@
     "clean": "rimraf dist",
     "docs:develop": "pf-docs-framework start",
     "docs:build": "pf-docs-framework build all --output public",
-    "docs:serve": "pf-docs-framework serve public --port 5000",
-    "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
+    "docs:serve": "pf-docs-framework serve public --port 5001",
+    "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5001",
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config",
     "serve:a11y": "serve coverage"
   },
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@patternfly/react-core": "^4.250.1",
+    "@patternfly/react-icons": "^4.93.6",
     "react-jss": "^10.9.2"
   },
   "peerDependencies": {
@@ -47,10 +48,13 @@
     "@redhat-cloud-services/frontend-components-utilities": "^3.2.25",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.3.3",
     "classnames": "^2.2.5",
     "copyfiles": "^2.4.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0",
     "rimraf": "^2.6.2",
     "typescript": "^4.9.5"
   }
