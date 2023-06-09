@@ -26,6 +26,7 @@ propComponents: [
   'HorizontalNavProps', # Removing 'Props' breaks linking to TabProps
   # 'Tab', # No output --> is a type and not an interface
 ]
+beta: true
 ---
 
 import { ActionButtons } from '@patternfly/react-component-groups';
