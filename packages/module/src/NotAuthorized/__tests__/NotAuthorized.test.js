@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import NotAuthorized from '../NotAuthorized';
 
 describe('NotAuthorized component', () => {
@@ -7,7 +8,7 @@ describe('NotAuthorized component', () => {
     serviceName: 'Foo',
   };
   it('should render', () => {
-    render(<NotAuthorized {...initialProps} />);
+    render(<div><NotAuthorized {...initialProps} /></div>);
     expect(screen.getByText('Foo')).toBeInTheDocument();
   });
 
