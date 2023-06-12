@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
+
 interface ErrorStackProps {
   error: Error;
 }

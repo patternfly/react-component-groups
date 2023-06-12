@@ -27,7 +27,7 @@ export interface ErrorStateProps extends Omit<EmptyStateProps, 'children'> {
   errorDescription?: React.ReactNode;
 }
 
-const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'Something went wrong', errorDescription, ...props }) => {
+const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'Something went wrong', errorDescription, ...props }: ErrorStateProps) => { 
   const classes = useStyles();
   return (
     <EmptyState variant={EmptyStateVariant.large} {...props}>
