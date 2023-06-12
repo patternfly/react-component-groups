@@ -2,7 +2,7 @@
 # Sidenav top-level section
 # should be the same for all markdown files
 section: extensions
-subsection: react-component-groups
+subsection: Component groups
 # Sidenav secondary level section
 # should be the same for all markdown files
 id: DetailsPage
