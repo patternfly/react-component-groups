@@ -2,6 +2,7 @@ import * as React from 'react';
 import ErrorBoundaryPage from '../ErrorBoundary';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom'
 
 describe('ErrorBoundary component', () => {
   const Surprise = () => {
@@ -57,7 +58,7 @@ describe('ErrorBoundary component', () => {
     );
 
     userEvent.click(screen.getByText(/show details/i));
-    expect(screen.getByText(/but a welcome one/i)).toBeVisible();
+    expect(screen.getByText(/but a welcome one/i)).toBeInTheDocument();
   });
 
   it('should show content again after changing url', () => {

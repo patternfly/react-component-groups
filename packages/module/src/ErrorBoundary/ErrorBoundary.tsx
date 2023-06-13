@@ -12,6 +12,8 @@ interface ErrorPageProps {
   errorTitle?: string;
   /** A description of the error */
   errorDescription?: string;
+  /** Children components for the error page */
+  children?: React.ReactNode;
 }
 
 interface ErrorPageState {
