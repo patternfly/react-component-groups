@@ -5,8 +5,7 @@ import { createUseStyles } from 'react-jss';
 
 export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | 'title'> {
   serviceName?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  icon?: React.ComponentType<any>;
+  icon?: React.ComponentType;
   description?: React.ReactNode;
   showReturnButton?: boolean;
   className?: string;
@@ -16,12 +15,6 @@ export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | '
   toLandingPageText?: React.ReactNode;
 }
 
-const ContactBody = () => (
-  <React.Fragment>
-    Contact your organization administrator(s) for more information or visit&nbsp;
-    <a href={`./settings/my-user-access`}>My User Access</a>&nbsp; to learn more about your permissions.
-  </React.Fragment>
-);
 
 const useStyles = createUseStyles({
   title: {
@@ -31,26 +24,25 @@ const useStyles = createUseStyles({
   },
 })
 
-const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
+export const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
   prevPageButtonText = 'Return to previous page',
   toLandingPageText = 'Go to landing page',
-  title,
   actions = null,
   serviceName,
+  title = `You do not have access to ${serviceName}`,
   icon: Icon = LockIcon,
-  description = <ContactBody />,
+  description = 'Contact your system administrator(s) for more information.',
   showReturnButton = true,
   className,
   ...props
-}) => {
+}: NotAuthorizedProps) => {
   const classes = useStyles();
 
-  const heading = title || `You do not have access to ${serviceName}`;
   return (
     <EmptyState variant={EmptyStateVariant.full} className={className} {...props}>
       <EmptyStateIcon icon={Icon} />
       <Title className={classes.title} headingLevel="h5" size="lg">
-        {heading}
+        {title}
       </Title>
       <EmptyStateBody>{description}</EmptyStateBody>
       {actions}
