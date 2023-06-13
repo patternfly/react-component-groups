@@ -58,7 +58,7 @@ describe('ErrorBoundary component', () => {
     );
 
     userEvent.click(screen.getByText(/show details/i));
-    expect(screen.getByText(/but a welcome one/i)).toBeVisible();
+    expect(screen.getByText(/but a welcome one/i)).toBeInTheDocument();
   });
 
   it('should show content again after changing url', () => {

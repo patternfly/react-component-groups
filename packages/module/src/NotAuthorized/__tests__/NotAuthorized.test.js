@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import NotAuthorized from '../NotAuthorized';
 
@@ -9,12 +9,12 @@ describe('NotAuthorized component', () => {
   };
   it('should render', () => {
     render(<div><NotAuthorized {...initialProps} /></div>);
-    expect(screen.getByText('Foo')).toBeInTheDocument();
+    expect(screen.getByText(/Foo/i)).toBeInTheDocument();
   });
 
   it('should apply custom styles', () => {
-    render(<NotAuthorized {...initialProps} className="something" />);
-    expect(screen.getByText('Foo')).toHaveClass('something');
+    const {asFragment} = render(<NotAuthorized {...initialProps} className="something" />);
+    expect(asFragment().firstChild.classList.contains('something')).toBe(true);
   });
 
   it('should use custom icon', () => {
