@@ -1,6 +1,5 @@
 import React from 'react';
 import { ExclamationCircleIcon } from '@patternfly/react-icons/';
-import DefaultErrorMessage from './DefaultErrorMessage';
 import {
   Button,
   EmptyState,
@@ -37,8 +36,8 @@ const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'So
       </Title>
       <EmptyStateBody>
         <Stack>
-          {!errorDescription && <StackItem>There was a problem processing the request. Please try again.</StackItem>}
-          <StackItem>{errorDescription || <DefaultErrorMessage />}</StackItem>
+          {errorDescription ? <StackItem>{errorDescription}</StackItem> : <><StackItem>There was a problem processing the request. Please try again.</StackItem>
+            <StackItem>If the problem persists, contact system support.</StackItem></>}
         </Stack>
       </EmptyStateBody>
       {document.referrer ? (
