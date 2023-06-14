@@ -1,7 +1,6 @@
 import { Tabs, Tab, TabProps as PfTabProps, TabTitleText } from '@patternfly/react-core';
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import '@patternfly/react-styles/css/utilities/Spacing/spacing.css';
 
 export type TabProps = Omit<
   PfTabProps,
