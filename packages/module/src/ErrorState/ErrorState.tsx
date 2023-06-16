@@ -24,7 +24,7 @@ export interface ErrorStateProps extends Omit<EmptyStateProps, 'children'> {
   errorTitle?: string;
   /** A description of the error, if no description is provided then it will be set to the defaulErrorDescription. */
   errorDescription?: React.ReactNode;
-  /** A default description of the error used if no description is provided. */
+  /** A default description of the error used if no errorDescription is provided. */
   defaulErrorDescription?: React.ReactNode;
 }
 
