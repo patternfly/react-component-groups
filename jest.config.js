@@ -20,6 +20,9 @@ const config = {
   ],
   setupFilesAfterEnv: [ '<rootDir>/config/setupTests.js', 'jest-canvas-mock' ],
   testEnvironment: 'jsdom',
+  testEnvironmentOptions: {
+    url: 'http://localhost:5000/',
+  },
   roots: [ '<rootDir>/packages/' ],
   // modulePathIgnorePatterns: ['<rootDir>/packages/create-crc-app/templates', '<rootDir>/packages/docs/.cache'],
   modulePathIgnorePatterns: [
@@ -35,16 +38,10 @@ const config = {
     PFReactCore: '@patternfly/react-core',
     PFReactTable: '@patternfly/react-table',
   },
-  testURL: 'http://localhost:5000/',
   globalSetup: '<rootDir>/config/globalSetup.js',
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
-    '^.+\\.tsx?$': 'ts-jest',
-  },
-  globals: {
-    'ts-jest': {
-      tsconfig: './packages/module/tsconfig.json',
-    },
+    '^.+\\.tsx?$': [ 'ts-jest', { tsconfig: './packages/module/tsconfig.json', } ],
   },
 };
 
