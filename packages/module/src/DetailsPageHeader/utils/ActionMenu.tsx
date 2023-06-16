@@ -1,13 +1,15 @@
 import {
-  Dropdown,
-  DropdownGroup,
   DropdownGroupProps,
-  DropdownItem,
-  DropdownItemProps,
-  DropdownPosition,
-  DropdownToggle,
-  KebabToggle,
+  DropdownItemProps
 } from '@patternfly/react-core';
+import {
+  Dropdown as DropdownDeprecated,
+  DropdownGroup as DropdownGroupDeprecated,
+  DropdownItem as DropdownItemDeprecated,
+  DropdownPosition as DropdownPositionDeprecated,
+  DropdownToggle as DropdownToggleDeprecated,
+  KebabToggle as KebabToggleDeprecated
+} from '@patternfly/react-core/deprecated';
 import { ExternalLinkAltIcon } from '@patternfly/react-icons';
 import React from 'react';
 import { createUseStyles } from 'react-jss'
@@ -25,7 +27,7 @@ export type ActionCTA =
   | { callback: (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => void }
   | { href: string; external?: boolean };
 
-export interface ActionProps extends Omit<DropdownItemProps, 'onClick'|'innerRef'> {
+export interface ActionProps extends Omit<DropdownItemProps, 'onClick' | 'innerRef'> {
   /** Executable callback or href. External links should automatically provide an external link icon on action. */
   cta: ActionCTA;
   /** Optional tooltip for this action. */
@@ -54,7 +56,7 @@ export interface ActionMenuOptions {
   /** Optional label for action menu (defaults to 'Actions') */
   label?: string;
   /** Optional position (left/right) at which the action menu appears (defaults to right) */
-  position?: DropdownPosition;
+  position?: DropdownPositionDeprecated;
   /** Optional flag to indicate whether labels should appear to the left of icons for the action menu items (icon appears after the label by default) */
   displayLabelBeforeIcon?: boolean;
   /** Optional id for action menu (defaults to 'actions') */
@@ -88,7 +90,7 @@ export const ActionMenu: React.FunctionComponent<ActionMenuProps> = ({
   isDisabled,
   variant = ActionMenuVariant.DROPDOWN,
   label = 'Actions',
-  position = DropdownPosition.right,
+  position = DropdownPositionDeprecated.right,
   displayLabelBeforeIcon,
   id = 'actions',
 }: ActionMenuProps) => {
@@ -103,9 +105,9 @@ export const ActionMenu: React.FunctionComponent<ActionMenuProps> = ({
     (action: ActionProps) => {
       const externalIcon =
         'href' in action.cta &&
-        'external' in action.cta &&
-        action.cta.href &&
-        action.cta.external ? (
+          'external' in action.cta &&
+          action.cta.href &&
+          action.cta.external ? (
             <ExternalLinkAltIcon />
           ) : null;
       const icon = action.icon ?? externalIcon;
@@ -113,7 +115,7 @@ export const ActionMenu: React.FunctionComponent<ActionMenuProps> = ({
       const onClick =
         'callback' in action.cta && action.cta.callback ? action.cta.callback : undefined;
       return (
-        <DropdownItem
+        <DropdownItemDeprecated
           className={displayLabelBeforeIcon ? classes.menuItemWithLabelBeforeIcon : ''}
           description={action.description}
           isDisabled={action.isDisabled}
@@ -125,7 +127,7 @@ export const ActionMenu: React.FunctionComponent<ActionMenuProps> = ({
           key={action.itemID}
         >
           {action.children}
-        </DropdownItem>
+        </DropdownItemDeprecated>
       );
     },
     [ classes.menuItemWithLabelBeforeIcon, displayLabelBeforeIcon ],
@@ -138,15 +140,15 @@ export const ActionMenu: React.FunctionComponent<ActionMenuProps> = ({
     }
     if (isGrouped) {
       ddActionItems = groupedActions.map((action: GroupedActionsProps) => (
-        <DropdownGroup label={action?.label} key={action.groupId}>
+        <DropdownGroupDeprecated label={action?.label} key={action.groupId}>
           {action.groupActions.map((groupAction: ActionProps) => dropdownActionItem(groupAction))}
-        </DropdownGroup>
+        </DropdownGroupDeprecated>
       ))
     }
     return ddActionItems;
   }, [ actions, dropdownActionItem, isGrouped, groupedActions ]);
 
-  const onToggle = (open: boolean) => {
+  const onToggle = (_event: unknown, open: boolean) => {
     setIsOpen(open);
   };
 
@@ -164,16 +166,16 @@ export const ActionMenu: React.FunctionComponent<ActionMenuProps> = ({
 
   // Build dropdown
   return (
-    <Dropdown
+    <DropdownDeprecated
       onSelect={onSelect}
       position={position}
       toggle={
         variant === ActionMenuVariant.DROPDOWN ? (
-          <DropdownToggle id={`toggle-menu-${id}`} onToggle={onToggle} isDisabled={isDisabled}>
+          <DropdownToggleDeprecated id={`toggle-menu-${id}`} onToggle={onToggle} isDisabled={isDisabled}>
             {label}
-          </DropdownToggle>
+          </DropdownToggleDeprecated>
         ) : (
-          <KebabToggle id={`toggle-menu-${id}`} onToggle={onToggle} isDisabled={isDisabled} />
+          <KebabToggleDeprecated id={`toggle-menu-${id}`} onToggle={onToggle} isDisabled={isDisabled} />
         )
       }
       isOpen={isOpen}

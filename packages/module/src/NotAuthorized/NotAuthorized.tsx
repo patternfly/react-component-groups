@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateProps, EmptyStateVariant, EmptyStateHeader, EmptyStateFooter, } from '@patternfly/react-core';
 import { LockIcon } from '@patternfly/react-icons';
+import { createUseStyles } from 'react-jss';
 
 export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | 'title'> {
   /** Service name displayed in the title */
@@ -50,7 +51,7 @@ export const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
 
   return (
     <EmptyState variant={EmptyStateVariant.full} className={className} {...props}>
-      <EmptyStateHeader titleText={<>{heading}</>} icon={<EmptyStateIcon icon={Icon} />} headingLevel="h5" />
+      <EmptyStateHeader titleText={<>{title}</>} icon={<EmptyStateIcon icon={Icon} />} headingLevel="h5" />
       <EmptyStateBody>{description}</EmptyStateBody><EmptyStateFooter>
       {actions}
       {showReturnButton &&

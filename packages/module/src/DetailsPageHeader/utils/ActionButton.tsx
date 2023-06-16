@@ -28,7 +28,7 @@ export const ActionButton: React.FunctionComponent<ActionButtonProps> = ({
       >
         {buttonProps.children}
       </Button>
-      {tooltip ? <Tooltip content={tooltip} reference={tooltipRef} id={tooltipId} position={tooltipPosition} /> : null}
+      {tooltip ? <Tooltip content={tooltip} triggerRef={tooltipRef} id={tooltipId} position={tooltipPosition} /> : null}
     </>
   );
 };
