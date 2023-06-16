@@ -15,11 +15,11 @@ propComponents: ['ErrorState']
 
 import { ErrorState } from "@patternfly/react-component-groups";
 
-## Components Usage
+## Component usage
 
 This component reuses the EmptyState component. Also most of its props is accepted.
 
-### ErrorState Component
+### ErrorState component
 
 ```js file="./ErrorStateExample.tsx"
 

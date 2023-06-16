@@ -8,9 +8,9 @@ propComponents: ['NotAuthorized']
 
 import { NotAuthorized } from "@patternfly/react-component-groups";
 
-## Components Usage
+## Component usage
 
-### NotAuthorized Component
+### NotAuthorized component
 
 ```js file="./NotAuthorizedExample.tsx"
 

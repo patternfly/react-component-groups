@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ErrorBoundaryPage from './ErrorBoundaryPage';
+import ErrorBoundary from './ErrorBoundary';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -21,9 +21,9 @@ describe('ErrorBoundary component', () => {
 
   it('should render content when there is no error', () => {
     render(
-      <ErrorBoundaryPage headerTitle={'My app'}>
+      <ErrorBoundary headerTitle={'My app'}>
         <div>hello world</div>
-      </ErrorBoundaryPage>
+      </ErrorBoundary>
     );
 
     expect(screen.getByText('hello world')).toBeVisible();
@@ -31,9 +31,9 @@ describe('ErrorBoundary component', () => {
 
   it('should render error if there is any error', () => {
     render(
-      <ErrorBoundaryPage headerTitle="My app" errorTitle="Something wrong happened">
+      <ErrorBoundary headerTitle="My app" errorTitle="Something wrong happened">
         <Surprise />
-      </ErrorBoundaryPage>
+      </ErrorBoundary>
     );
 
     expect(screen.getByText(/Something wrong happened/i)).toBeVisible();
@@ -41,9 +41,9 @@ describe('ErrorBoundary component', () => {
 
   it('should have details hidden', () => {
     render(
-      <ErrorBoundaryPage headerTitle="My app" errorTitle="Something wrong happened">
+      <ErrorBoundary headerTitle="My app" errorTitle="Something wrong happened">
         <Surprise />
-      </ErrorBoundaryPage>
+      </ErrorBoundary>
     );
 
     expect(screen.getByText(/but a welcome one/i)).not.toBeVisible();
@@ -51,9 +51,9 @@ describe('ErrorBoundary component', () => {
 
   it('should show details when clicking the show details button', () => {
     render(
-      <ErrorBoundaryPage headerTitle="My app" errorTitle="Something wrong happened">
+      <ErrorBoundary headerTitle="My app" errorTitle="Something wrong happened">
         <Surprise />
-      </ErrorBoundaryPage>
+      </ErrorBoundary>
     );
 
     userEvent.click(screen.getByText(/show details/i));
@@ -71,18 +71,18 @@ describe('ErrorBoundary component', () => {
     };
 
     const { rerender } = render(
-      <ErrorBoundaryPage headerTitle="My app" errorTitle="Something wrong happened">
+      <ErrorBoundary headerTitle="My app" errorTitle="Something wrong happened">
         <FailConditionally />
-      </ErrorBoundaryPage>
+      </ErrorBoundary>
     );
 
     expect(screen.getByText(/Something wrong happened/i)).toBeVisible();
 
     // a re-render does not get out of the error state
     rerender(
-      <ErrorBoundaryPage headerTitle="My app" errorTitle="Something wrong happened">
+      <ErrorBoundary headerTitle="My app" errorTitle="Something wrong happened">
         <FailConditionally />
-      </ErrorBoundaryPage>
+      </ErrorBoundary>
     );
 
     expect(screen.getByText(/Something wrong happened/i)).toBeVisible();
@@ -91,9 +91,9 @@ describe('ErrorBoundary component', () => {
     // Simulates a state change in the history
     history.pushState({ data: 2 }, 'unused');
     rerender(
-      <ErrorBoundaryPage headerTitle="My app" errorTitle="Something wrong happened">
+      <ErrorBoundary headerTitle="My app" errorTitle="Something wrong happened">
         <FailConditionally />
-      </ErrorBoundaryPage>
+      </ErrorBoundary>
     );
     expect(screen.getByText('hello world')).toBeVisible();
   });

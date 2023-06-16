@@ -11,7 +11,9 @@ interface ErrorPageProps {
   /** Title given to the error */
   errorTitle?: string;
   /** A description of the error */
-  errorDescription?: string;
+  errorDescription?: React.ReactNode;
+  /** A default description of the error used if no errorDescription is provided. */
+  defaultErrorDescription?: React.ReactNode;
 }
 
 interface ErrorPageState {
@@ -24,7 +26,7 @@ interface ErrorPageState {
 }
 
 // As of time of writing, React only supports error boundaries in class components
-class ErrorBoundaryPage extends React.Component<ErrorPageProps, ErrorPageState> {
+class ErrorBoundary extends React.Component<ErrorPageProps, ErrorPageState> {
   constructor(props: Readonly<ErrorPageProps>) {
     super(props);
     this.state = {
@@ -64,6 +66,7 @@ class ErrorBoundaryPage extends React.Component<ErrorPageProps, ErrorPageState> 
                 )}
               </>
             }
+            defaulErrorDescription={this.props.defaultErrorDescription}
           />
         </React.Fragment>
       );
@@ -73,4 +76,4 @@ class ErrorBoundaryPage extends React.Component<ErrorPageProps, ErrorPageState> 
   }
 }
 
-export default ErrorBoundaryPage;
+export default ErrorBoundary;
