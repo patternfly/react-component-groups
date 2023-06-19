@@ -66,7 +66,7 @@ class ErrorBoundary extends React.Component<ErrorPageProps, ErrorPageState> {
                 )}
               </>
             }
-            defaulErrorDescription={this.props.defaultErrorDescription}
+            defaultErrorDescription={this.props.defaultErrorDescription}
           />
         </React.Fragment>
       );
