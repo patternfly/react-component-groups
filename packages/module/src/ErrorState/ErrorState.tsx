@@ -22,13 +22,13 @@ const useStyles = createUseStyles({
 export interface ErrorStateProps extends Omit<EmptyStateProps, 'children'> {
   /** Title of the error. */
   errorTitle?: string;
-  /** A description of the error, if no description is provided then it will be set to the defaulErrorDescription. */
+  /** A description of the error, if no description is provided then it will be set to the defaultErrorDescription. */
   errorDescription?: React.ReactNode;
   /** A default description of the error used if no errorDescription is provided. */
-  defaulErrorDescription?: React.ReactNode;
+  defaultErrorDescription?: React.ReactNode;
 }
 
-const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'Something went wrong', errorDescription, defaulErrorDescription, ...props }: ErrorStateProps) => { 
+const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'Something went wrong', errorDescription, defaultErrorDescription, ...props }: ErrorStateProps) => { 
   const classes = useStyles();
   return (
     <EmptyState variant={EmptyStateVariant.large} {...props}>
@@ -38,7 +38,7 @@ const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'So
       </Title>
       <EmptyStateBody>
         <Stack>
-          {errorDescription ? <StackItem>{errorDescription}</StackItem> : defaulErrorDescription}
+          {errorDescription ? <StackItem>{errorDescription}</StackItem> : defaultErrorDescription}
         </Stack>
       </EmptyStateBody>
       {document.referrer ? (
