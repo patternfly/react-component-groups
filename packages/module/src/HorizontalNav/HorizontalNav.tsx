@@ -69,7 +69,7 @@ export const HorizontalNav: React.FunctionComponent<HorizontalNavProps> = ({
           ouiaId={tab?.ouiaId}
           key={tab.eventKey}
         >
-          <div className="pf-u-m-md">{tab.children}</div>
+          {tab.children}
         </Tab>
       ))}
     </Tabs>
