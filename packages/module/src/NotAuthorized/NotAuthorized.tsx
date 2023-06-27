@@ -4,17 +4,25 @@ import { LockIcon } from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
 
 export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | 'title'> {
+  /** Service name displayed in the title */
   serviceName?: string;
+  /** Icon displayed above the title */
   icon?: React.ComponentType;
+  /** Custom description */
   description?: React.ReactNode;
+  /** Shows link to the previous page */
   showReturnButton?: boolean;
-  className?: string;
-  title?: React.ReactNode;
-  actions?: React.ReactNode;
+  /** Custom previous page button text */
   prevPageButtonText?: React.ReactNode;
+  /** Custom className */
+  className?: string;
+  /** Custom title */
+  title?: React.ReactNode;
+  /** Custom state actions */
+  actions?: React.ReactNode;
+  /** Custom landing page button text */
   toLandingPageText?: React.ReactNode;
 }
-
 
 const useStyles = createUseStyles({
   title: {
