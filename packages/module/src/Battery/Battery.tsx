@@ -119,7 +119,6 @@ const Battery: React.FunctionComponent<BatteryProps> = ({ severity, label, label
       <i className={batteryClasses} {...ariaLabels} {...props} widget-type="InsightsBattery" widget-id={label}>
         <svg
           version="1.1"
-          id="battery_svg"
           x="0px"
           y="0px"
           viewBox="0 0 448 512"
