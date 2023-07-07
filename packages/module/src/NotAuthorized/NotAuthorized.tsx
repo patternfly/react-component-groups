@@ -22,6 +22,8 @@ export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | '
   actions?: React.ReactNode;
   /** Custom landing page button text */
   toLandingPageText?: React.ReactNode;
+  /** Custom landing page button URL */
+  toLandingPageUrl?: string;
 }
 
 const useStyles = createUseStyles({
@@ -35,6 +37,7 @@ const useStyles = createUseStyles({
 export const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
   prevPageButtonText = 'Return to previous page',
   toLandingPageText = 'Go to landing page',
+  toLandingPageUrl = ".",
   actions = null,
   serviceName,
   title = `You do not have access to ${serviceName}`,
@@ -60,7 +63,7 @@ export const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
             {prevPageButtonText}
           </Button>
         ) : (
-          <Button variant="primary" component="a" href=".">
+          <Button variant="primary" component="a" href={toLandingPageUrl}>
             {toLandingPageText}
           </Button>
         ))}
