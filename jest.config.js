@@ -1,7 +1,7 @@
 // Sync object
 /** @type {import('@jest/types').Config.InitialOptions} */
 
-const config = {
+module.exports = {
   verbose: true,
   coverageDirectory: './coverage/',
   collectCoverage: true,
