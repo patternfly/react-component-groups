@@ -9,13 +9,13 @@ interface ErrorStackProps {
 const useStyles = createUseStyles({
   errorStack: {
     fontFamily: 'monospace',
-    fontSize: 'var(--pf-global--icon--FontSize--md)',
+    fontSize: 'var(--pf-v5-global--icon--FontSize--md)',
     textAlign: 'left',
     backgroundColor: 'white',
     borderStyle: 'solid',
-    borderColor: 'var(--pf-global--BackgroundColor--dark-300)',
+    borderColor: 'var(--pf-v5-global--BackgroundColor--dark-300)',
     overflowWrap: 'break-word',
-    padding: 'var(--pf-global--spacer--sm)'
+    padding: 'var(--pf-v5-global--spacer--sm)'
   },
 })
 

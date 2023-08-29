@@ -9,31 +9,31 @@ import { createUseStyles } from 'react-jss'
 
 const batteryDefault = {
   '& svg': {
-    '& path': { fill: 'var(--pf-global--disabled-color--200)' }
+    '& path': { fill: 'var(--pf-v5-global--disabled-color--200)' }
   }
 };
 
 const batteryLow = {
   '& svg': {
-    '& path': { fill: 'var(--pf-global--success-color--100)' }
+    '& path': { fill: 'var(--pf-v5-global--success-color--100)' }
   }
 };
 
 const batteryMedium = {
   '& svg': {
-    '& path': { fill: 'var(--pf-global--warning-color--100)' }
+    '& path': { fill: 'var(--pf-v5-global--warning-color--100)' }
   }
 };
 
 const batteryHigh = {
   '& svg': {
-    '& path': { fill: 'var(--pf-global--palette--orange-300)' }
+    '& path': { fill: 'var(--pf-v5-global--palette--orange-300)' }
   }
 };
 
 const batteryCritical = {
   '& svg': {
-    '& path': { fill: 'var(--pf-global--danger-color--100)' }
+    '& path': { fill: 'var(--pf-v5-global--danger-color--100)' }
   }
 };
 
@@ -43,7 +43,7 @@ const useStyles = createUseStyles({
     'line-height': 0,
     '& svg': {
       position: 'relative',
-      top: 'var(--pf-global--spacer--sm)',
+      top: 'var(--pf-v5-global--spacer--sm)',
       height: '1.75rem'
     }
   },
