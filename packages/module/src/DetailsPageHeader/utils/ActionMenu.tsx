@@ -76,7 +76,7 @@ const useStyles = createUseStyles({
       justifyContent: 'left'
     },
     '.pf-c-dropdown__menu-item-icon': {
-      marginLeft: 'var(--pf-c-dropdown__menu-item-icon--MarginRight)'
+      marginLeft: 'var(--pf-v5-c-dropdown__menu-item-icon--MarginRight)'
     },
     '.pf-c-dropdown__menu-item-main': {
       flexDirection: 'row-reverse',

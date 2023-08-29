@@ -3,18 +3,20 @@ import {
   Button,
   EmptyState,
   EmptyStateBody,
+  EmptyStateFooter,
+  EmptyStateHeader,
   EmptyStateIcon,
   EmptyStateProps,
   EmptyStateVariant,
   Stack,
-  StackItem, EmptyStateHeader, EmptyStateFooter,
+  StackItem, 
 } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss'
 import React from 'react';
 
 const useStyles = createUseStyles({
   errorIcon: {
-    fill: 'var(--pf-global--danger-color--100)',
+    fill: 'var(--pf-v5-global--danger-color--100)',
   },
 })
 
@@ -36,7 +38,8 @@ const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'So
         <Stack>
           {errorDescription ? <StackItem>{errorDescription}</StackItem> : defaultErrorDescription}
         </Stack>
-      </EmptyStateBody><EmptyStateFooter>
+      </EmptyStateBody>
+      <EmptyStateFooter>
         {document.referrer ? (
           <Button variant="primary" onClick={() => history.back()}>
             Return to last page
@@ -46,7 +49,8 @@ const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'So
             Go to home page
           </Button>
         )}
-      </EmptyStateFooter></EmptyState>
+      </EmptyStateFooter>
+    </EmptyState>
   );
 }
 

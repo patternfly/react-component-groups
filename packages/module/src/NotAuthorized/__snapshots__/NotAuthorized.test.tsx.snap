@@ -45,16 +45,20 @@ exports[`NotAuthorized component should apply custom styles 1`] = `
     <div
       class="pf-v5-c-empty-state__footer"
     >
-      <a
-        aria-disabled="false"
-        class="pf-v5-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-2"
-        data-ouia-component-type="PF5/Button"
-        data-ouia-safe="true"
-        href="."
+      <div
+        class="pf-v5-c-empty-state__actions"
       >
-        Go to landing page
-      </a>
+        <a
+          aria-disabled="false"
+          class="pf-v5-c-button pf-m-primary"
+          data-ouia-component-id="OUIA-Generated-Button-primary-2"
+          data-ouia-component-type="PF5/Button"
+          data-ouia-safe="true"
+          href="."
+        >
+          Go to landing page
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -104,7 +108,11 @@ exports[`NotAuthorized component should not show buttons 1`] = `
     </div>
     <div
       class="pf-v5-c-empty-state__footer"
-    />
+    >
+      <div
+        class="pf-v5-c-empty-state__actions"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -154,16 +162,20 @@ exports[`NotAuthorized component should render 1`] = `
     <div
       class="pf-v5-c-empty-state__footer"
     >
-      <a
-        aria-disabled="false"
-        class="pf-v5-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-1"
-        data-ouia-component-type="PF5/Button"
-        data-ouia-safe="true"
-        href="."
+      <div
+        class="pf-v5-c-empty-state__actions"
       >
-        Go to landing page
-      </a>
+        <a
+          aria-disabled="false"
+          class="pf-v5-c-button pf-m-primary"
+          data-ouia-component-id="OUIA-Generated-Button-primary-1"
+          data-ouia-component-type="PF5/Button"
+          data-ouia-safe="true"
+          href="."
+        >
+          Go to landing page
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -214,26 +226,34 @@ exports[`NotAuthorized component should show custom actions 1`] = `
     <div
       class="pf-v5-c-empty-state__footer"
     >
-      <button
-        id="action-one"
+      <div
+        class="pf-v5-c-empty-state__actions"
       >
-        1
-      </button>
-      <button
-        id="action-one"
+        <button
+          id="action-one"
+        >
+          1
+        </button>
+        <button
+          id="action-one"
+        >
+          2
+        </button>
+      </div>
+      <div
+        class="pf-v5-c-empty-state__actions"
       >
-        2
-      </button>
-      <a
-        aria-disabled="false"
-        class="pf-v5-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-6"
-        data-ouia-component-type="PF5/Button"
-        data-ouia-safe="true"
-        href="."
-      >
-        Go to landing page
-      </a>
+        <a
+          aria-disabled="false"
+          class="pf-v5-c-button pf-m-primary"
+          data-ouia-component-id="OUIA-Generated-Button-primary-6"
+          data-ouia-component-type="PF5/Button"
+          data-ouia-safe="true"
+          href="."
+        >
+          Go to landing page
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -284,16 +304,20 @@ exports[`NotAuthorized component should show custom description 1`] = `
     <div
       class="pf-v5-c-empty-state__footer"
     >
-      <a
-        aria-disabled="false"
-        class="pf-v5-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-4"
-        data-ouia-component-type="PF5/Button"
-        data-ouia-safe="true"
-        href="."
+      <div
+        class="pf-v5-c-empty-state__actions"
       >
-        Go to landing page
-      </a>
+        <a
+          aria-disabled="false"
+          class="pf-v5-c-button pf-m-primary"
+          data-ouia-component-id="OUIA-Generated-Button-primary-4"
+          data-ouia-component-type="PF5/Button"
+          data-ouia-safe="true"
+          href="."
+        >
+          Go to landing page
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -344,16 +368,20 @@ exports[`NotAuthorized component should show custom title 1`] = `
     <div
       class="pf-v5-c-empty-state__footer"
     >
-      <a
-        aria-disabled="false"
-        class="pf-v5-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-5"
-        data-ouia-component-type="PF5/Button"
-        data-ouia-safe="true"
-        href="."
+      <div
+        class="pf-v5-c-empty-state__actions"
       >
-        Go to landing page
-      </a>
+        <a
+          aria-disabled="false"
+          class="pf-v5-c-button pf-m-primary"
+          data-ouia-component-id="OUIA-Generated-Button-primary-5"
+          data-ouia-component-type="PF5/Button"
+          data-ouia-safe="true"
+          href="."
+        >
+          Go to landing page
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -404,16 +432,20 @@ exports[`NotAuthorized component should use custom icon 1`] = `
     <div
       class="pf-v5-c-empty-state__footer"
     >
-      <a
-        aria-disabled="false"
-        class="pf-v5-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-3"
-        data-ouia-component-type="PF5/Button"
-        data-ouia-safe="true"
-        href="."
+      <div
+        class="pf-v5-c-empty-state__actions"
       >
-        Go to landing page
-      </a>
+        <a
+          aria-disabled="false"
+          class="pf-v5-c-button pf-m-primary"
+          data-ouia-component-id="OUIA-Generated-Button-primary-3"
+          data-ouia-component-type="PF5/Button"
+          data-ouia-safe="true"
+          href="."
+        >
+          Go to landing page
+        </a>
+      </div>
     </div>
   </div>
 </div>
