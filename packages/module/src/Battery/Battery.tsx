@@ -82,7 +82,7 @@ export interface BatteryProps extends React.DetailedHTMLProps<React.HTMLAttribut
 
 const Battery: React.FunctionComponent<BatteryProps> = ({ severity, label, labelHidden, className, ...props }: BatteryProps) => {
   const classes = useStyles();
-  const batteryClasses = classNames(classes.battery, classes[`battery-${severity}`] as string, className);
+  const batteryClasses = classNames(classes.battery, classes[`battery-${severity}`], className);
 
   let ariaLabels = {};
   if (labelHidden) {

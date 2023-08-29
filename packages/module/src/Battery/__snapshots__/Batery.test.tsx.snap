@@ -470,7 +470,6 @@ exports[`Battery component should render correctly NullBatery, default 1`] = `
     class="label"
   >
      
-    
      
   </span>
 </div>
