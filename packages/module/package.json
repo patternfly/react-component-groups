@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-component-groups",
-  "version": "5.0.0-alpha.0",
+  "version": "5.0.0-prerelease.0",
   "description": "Extended components used for Red Hat projects.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -27,11 +27,11 @@
   "homepage": "https://github.com/patternfly/react-component-groups#readme",
   "publishConfig": {
     "access": "public",
-    "tag": "alpha"
+    "tag": "prerelease"
   },
   "dependencies": {
-    "@patternfly/react-core": "^5.0.0-prerelease.13",
-    "@patternfly/react-icons": "^5.0.0-prerelease.7",
+    "@patternfly/react-core": "^5.0.0",
+    "@patternfly/react-icons": "^5.0.0",
     "react-jss": "^10.9.2"
   },
   "peerDependencies": {
@@ -41,9 +41,9 @@
   "devDependencies": {
     "@patternfly/patternfly-a11y": "^4.3.1",
     "@patternfly/documentation-framework": "^2.0.0-alpha.57",
-    "@patternfly/patternfly": "^5.0.0-prerelease.10",
-    "@patternfly/react-table": "^5.0.0-prerelease.13",
-    "@patternfly/react-code-editor": "^5.0.0-prerelease.13",
+    "@patternfly/patternfly": "^5.0.0",
+    "@patternfly/react-table": "^5.0.0",
+    "@patternfly/react-code-editor": "^5.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/react-router-dom": "^5.3.3",
