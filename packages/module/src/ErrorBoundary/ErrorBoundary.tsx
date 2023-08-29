@@ -14,6 +14,8 @@ interface ErrorPageProps {
   errorDescription?: React.ReactNode;
   /** A default description of the error used if no errorDescription is provided. */
   defaultErrorDescription?: React.ReactNode;
+  /** Children components */
+  children?: React.ReactNode;
 }
 
 interface ErrorPageState {
@@ -40,6 +42,7 @@ class ErrorBoundary extends React.Component<ErrorPageProps, ErrorPageState> {
   }
 
   render() {
+
     if (this.state.historyState !== history.state) {
       this.setState({
         hasError: false,

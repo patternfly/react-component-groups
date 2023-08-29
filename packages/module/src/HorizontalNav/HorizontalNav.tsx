@@ -34,7 +34,7 @@ export const HorizontalNav: React.FunctionComponent<HorizontalNavProps> = ({
     activeTabFromUrlParam && tabs?.some((tab) => tab.eventKey === activeTabFromUrlParam);
   const activeTab = isValidTabFromUrl ? activeTabFromUrlParam : defaultActiveTab;
 
-  const [ activeTabKey, setActiveTabKey ] = React.useState<string | number>(activeTab);
+  const [ activeTabKey, setActiveTabKey ] = React.useState<string | number>(activeTab ? activeTab : defaultActiveTab);
 
   return (
     <Tabs

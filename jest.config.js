@@ -1,7 +1,7 @@
 // Sync object
 /** @type {import('@jest/types').Config.InitialOptions} */
 
-const config = {
+module.exports = {
   verbose: true,
   coverageDirectory: './coverage/',
   collectCoverage: true,
@@ -23,6 +23,7 @@ const config = {
   testEnvironmentOptions: {
     url: 'http://localhost:5000/',
   },
+  setupFiles: [ './jest.setup.js' ],
   roots: [ '<rootDir>/packages/' ],
   // modulePathIgnorePatterns: ['<rootDir>/packages/create-crc-app/templates', '<rootDir>/packages/docs/.cache'],
   modulePathIgnorePatterns: [
@@ -44,5 +45,3 @@ const config = {
     '^.+\\.tsx?$': [ 'ts-jest', { tsconfig: './packages/module/tsconfig.json', } ],
   },
 };
-
-module.exports = config;

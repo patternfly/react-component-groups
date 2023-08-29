@@ -1,4 +1,3 @@
-import React from 'react';
 import { ExclamationCircleIcon } from '@patternfly/react-icons/';
 import {
   Button,
@@ -8,10 +7,10 @@ import {
   EmptyStateProps,
   EmptyStateVariant,
   Stack,
-  StackItem,
-  Title,
+  StackItem, EmptyStateHeader, EmptyStateFooter,
 } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss'
+import React from 'react';
 
 const useStyles = createUseStyles({
   errorIcon: {
@@ -31,26 +30,23 @@ export interface ErrorStateProps extends Omit<EmptyStateProps, 'children'> {
 const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'Something went wrong', errorDescription, defaultErrorDescription, ...props }: ErrorStateProps) => { 
   const classes = useStyles();
   return (
-    <EmptyState variant={EmptyStateVariant.large} {...props}>
-      <EmptyStateIcon  className={classes.errorIcon} icon={ExclamationCircleIcon} />
-      <Title headingLevel="h4" size="lg">
-        {errorTitle}
-      </Title>
+    <EmptyState variant={EmptyStateVariant.lg} {...props}>
+      <EmptyStateHeader titleText={<>{errorTitle}</>} icon={<EmptyStateIcon className={classes.errorIcon} icon={ExclamationCircleIcon} />} headingLevel="h4" />
       <EmptyStateBody>
         <Stack>
           {errorDescription ? <StackItem>{errorDescription}</StackItem> : defaultErrorDescription}
         </Stack>
-      </EmptyStateBody>
-      {document.referrer ? (
-        <Button variant="primary" onClick={() => history.back()}>
-          Return to last page
-        </Button>
-      ) : (
-        <Button variant="primary" component="a" href="." target="_blank" rel="noopener noreferrer">
-          Go to home page
-        </Button>
-      )}
-    </EmptyState>
+      </EmptyStateBody><EmptyStateFooter>
+        {document.referrer ? (
+          <Button variant="primary" onClick={() => history.back()}>
+            Return to last page
+          </Button>
+        ) : (
+          <Button variant="primary" component="a" href="." target="_blank" rel="noopener noreferrer">
+            Go to home page
+          </Button>
+        )}
+      </EmptyStateFooter></EmptyState>
   );
 }
 

@@ -95,7 +95,7 @@ export const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> 
                   color={pageHeading.label?.color}
                   variant={pageHeading.label?.variant}
                   isCompact={pageHeading.label?.isCompact}
-                  isTruncated={pageHeading.label?.isTruncated}
+                  
                   tooltipPosition={pageHeading.label?.tooltipPosition}
                   icon={pageHeading.label?.icon}
                   href={pageHeading.label?.href}

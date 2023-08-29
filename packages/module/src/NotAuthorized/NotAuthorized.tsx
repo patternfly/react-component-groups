@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateProps, EmptyStateVariant, Title } from '@patternfly/react-core';
+import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateProps, EmptyStateVariant, EmptyStateHeader, EmptyStateFooter, } from '@patternfly/react-core';
 import { LockIcon } from '@patternfly/react-icons';
-import { createUseStyles } from 'react-jss';
 
 export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | 'title'> {
   /** Service name displayed in the title */
@@ -26,14 +25,6 @@ export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | '
   toLandingPageUrl?: string;
 }
 
-const useStyles = createUseStyles({
-  title: {
-    maxWidth: '540px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-})
-
 export const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
   prevPageButtonText = 'Return to previous page',
   toLandingPageText = 'Go to landing page',
@@ -46,16 +37,10 @@ export const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
   showReturnButton = true,
   className,
   ...props
-}: NotAuthorizedProps) => {
-  const classes = useStyles();
-
-  return (
-    <EmptyState variant={EmptyStateVariant.full} className={className} {...props}>
-      <EmptyStateIcon icon={Icon} />
-      <Title className={classes.title} headingLevel="h5" size="lg">
-        {title}
-      </Title>
-      <EmptyStateBody>{description}</EmptyStateBody>
+}: NotAuthorizedProps) => (
+  <EmptyState variant={EmptyStateVariant.full} className={className} {...props}>
+    <EmptyStateHeader titleText={<>{title}</>} icon={<EmptyStateIcon icon={Icon} />} headingLevel="h5" />
+    <EmptyStateBody>{description}</EmptyStateBody><EmptyStateFooter>
       {actions}
       {showReturnButton &&
         (document.referrer ? (
@@ -67,8 +52,8 @@ export const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
             {toLandingPageText}
           </Button>
         ))}
-    </EmptyState>
-  );
-};
+    </EmptyStateFooter></EmptyState>
+);
+
 
 export default NotAuthorized;
