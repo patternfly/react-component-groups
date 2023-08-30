@@ -41,15 +41,24 @@ class ErrorBoundary extends React.Component<React.PropsWithChildren<ErrorPagePro
     return { hasError: true, error, historyState: history.state };
   }
 
-  render() {
-
+  updateState = () => {
     if (this.state.historyState !== history.state) {
       this.setState({
         hasError: false,
         historyState: history.state,
       });
     }
+  };
 
+  componentDidUpdate(): void {
+    this.updateState();
+  }
+
+  componentDidMount(): void {
+    this.updateState();
+  }
+
+  render() {
     if (this.state.hasError) {
       if (this.props.silent) {
         return null;
