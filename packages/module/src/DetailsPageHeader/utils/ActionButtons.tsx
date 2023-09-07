@@ -18,7 +18,7 @@ export const ActionButtons: React.FunctionComponent<ActionButtonsProps> = ({
           variant={actionButton?.variant}
           isDisabled={actionButton?.isDisabled}
           tooltip={actionButton?.tooltip}
-          className="pf-u-mb-sm"
+          className="pf-v5-u-mb-sm"
         >
           {actionButton.children}
         </ActionButton>

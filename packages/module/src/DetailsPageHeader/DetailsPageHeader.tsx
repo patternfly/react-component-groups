@@ -62,13 +62,13 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
     <>
       {/* Optional breadcrumbs */}
       {breadcrumbs && (
-        <div className="pf-u-mb-sm">
+        <div className="pf-v5-u-mb-sm">
           <Breadcrumbs breadcrumbs={breadcrumbs} />
         </div>
       )}
       <Split hasGutter isWrappable className={classes.detailsPageHeaderSplit}>
         <SplitItem>
-          <Split hasGutter isWrappable className={`pf-u-mb-sm ${classes.detailsPageHeaderSplit}`}>
+          <Split hasGutter isWrappable className={`pf-v5-u-mb-sm ${classes.detailsPageHeaderSplit}`}>
             {/* Optional icon for details page heading (before title) */}
             {pageHeading?.iconBeforeTitle && (
               <SplitItem>
@@ -118,7 +118,7 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
             )}
             {/* Optional action menu - ungrouped actions */}
             {actionMenu?.actions && (
-              <SplitItem className="pf-u-mb-sm">
+              <SplitItem className="pf-v5-u-mb-sm">
                 <ActionMenu
                   actions={actionMenu.actions}
                   isDisabled={actionMenu?.isDisabled}
@@ -131,7 +131,7 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
             )}
             {/* Optional action menu - Grouped actions */}
             {actionMenu?.groupedActions && (
-              <SplitItem className="pf-u-mb-sm">
+              <SplitItem className="pf-v5-u-mb-sm">
                 <ActionMenu
                   groupedActions={actionMenu.groupedActions}
                   isDisabled={actionMenu?.isDisabled}
