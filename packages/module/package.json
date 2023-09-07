@@ -32,14 +32,14 @@
   "dependencies": {
     "@patternfly/react-core": "^5.0.0",
     "@patternfly/react-icons": "^5.0.0",
-    "react-jss": "^10.9.2"
-  },
-  "peerDependencies": {
-    "react": "^17 || ^18",
-    "react-dom": "^17 || ^18",
+    "react-jss": "^10.9.2",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "classnames": "^2.2.5"
+  },
+  "peerDependencies": {
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18"
   },
   "devDependencies": {
     "@patternfly/patternfly-a11y": "^4.3.1",
@@ -50,12 +50,8 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/react-router-dom": "^5.3.3",
-    "classnames": "^2.2.5",
     "copyfiles": "^2.4.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0",
     "rimraf": "^2.6.2",
     "typescript": "^4.9.5"
   }
