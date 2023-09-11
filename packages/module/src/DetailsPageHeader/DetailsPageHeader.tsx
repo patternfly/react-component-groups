@@ -18,7 +18,7 @@ import {
   BreadcrumbProps
 } from './utils';
 
-type PageHeadingLabelProps = Omit<
+export type PageHeadingLabelProps = Omit<
   LabelProps,
   'isEditable'|'editableProps'|'onEditComplete'|'onEditCancel'|'onClose'|'closeBtn'|'closeBtnAriaLabel'|'closeBtnProps'|'isOverflowLabel'
 >;

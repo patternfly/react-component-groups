@@ -25,3 +25,5 @@ export const DetailsPage: React.FunctionComponent<DetailsPageProps> = ({
     <HorizontalNav ariaLabel={ariaLabel} tabs={tabs} location={location} params={params} navigate={navigate} />
   </>
 );
+
+export default DetailsPage;
