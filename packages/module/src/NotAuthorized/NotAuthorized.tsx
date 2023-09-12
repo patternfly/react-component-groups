@@ -25,7 +25,7 @@ export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | '
   toLandingPageUrl?: string;
 }
 
-export const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
+const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
   prevPageButtonText = 'Return to previous page',
   toLandingPageText = 'Go to landing page',
   toLandingPageUrl = ".",
