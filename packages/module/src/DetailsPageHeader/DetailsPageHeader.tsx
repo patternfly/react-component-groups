@@ -51,7 +51,7 @@ const useStyles = createUseStyles({
   }
 });
 
-export const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
+const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
   breadcrumbs,
   actionButtons,
   actionMenu,

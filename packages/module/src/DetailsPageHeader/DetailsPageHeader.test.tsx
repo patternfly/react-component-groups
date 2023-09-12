@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import { DetailsPageHeader, DetailsPageHeaderProps } from './DetailsPageHeader';
+import DetailsPageHeader, { DetailsPageHeaderProps } from './DetailsPageHeader';
 
 const mockCallback = jest.fn();
 

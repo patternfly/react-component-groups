@@ -1,5 +1,5 @@
 import React from 'react';
-import { DetailsPageHeader, DetailsPageHeaderProps } from '../DetailsPageHeader';
+import DetailsPageHeader, { DetailsPageHeaderProps } from '../DetailsPageHeader';
 import HorizontalNav, { HorizontalNavProps } from '../HorizontalNav';
 
 export interface DetailsPageProps extends DetailsPageHeaderProps, HorizontalNavProps {};
