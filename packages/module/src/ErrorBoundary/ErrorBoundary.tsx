@@ -28,7 +28,7 @@ export interface ErrorPageState {
 }
 
 // As of time of writing, React only supports error boundaries in class components
-export class ErrorBoundary extends React.Component<React.PropsWithChildren<ErrorPageProps>, ErrorPageState> {
+class ErrorBoundary extends React.Component<React.PropsWithChildren<ErrorPageProps>, ErrorPageState> {
   constructor(props: Readonly<ErrorPageProps>) {
     super(props);
     this.state = {

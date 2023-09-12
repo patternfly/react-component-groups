@@ -1,2 +1,2 @@
-export * from '../ErrorStack/ErrorStack';
+export { default } from './ErrorBoundary';
 export * from './ErrorBoundary';

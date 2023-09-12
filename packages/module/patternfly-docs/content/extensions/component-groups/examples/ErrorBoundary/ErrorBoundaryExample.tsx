@@ -1,5 +1,5 @@
 import React from 'react';
-import { ErrorBoundary } from '@patternfly/react-component-groups';
+import ErrorBoundary from '@patternfly/react-component-groups/dist/dynamic/ErrorBoundary';
 
 export const BasicExample: React.FunctionComponent = () => {
   const Surprise = () => {
