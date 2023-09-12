@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ExpandableSection, Title } from '@patternfly/react-core';
 import { ErrorState } from '../ErrorState';
-import ErrorStack from './ErrorStack';
+import ErrorStack from '../ErrorStack';
 
 export interface ErrorPageProps {
   /** The title to display on the error page */
