@@ -1,11 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import Battery, { BatterySeverity } from './Battery';
-import CriticalBattery from './CriticalBattery';
-import HighBattery from './HighBattery';
-import MediumBattery from './MediumBattery';
-import LowBattery from './LowBattery';
-import NullBattery from './NullBattery';
 
 describe('Battery component', () => {
   jest.spyOn(global.console, 'error');
@@ -51,30 +46,5 @@ describe('Battery component', () => {
       const { container } = render(<Battery severity={'high'} label={'high'} labelHidden />);
       expect(container).toMatchSnapshot();
     });
-  });
-
-  test(`CriticalBattery`, () => {
-    const { container } = render(<CriticalBattery />);
-    expect(container).toMatchSnapshot();
-  });
-
-  test(`HighBattery`, () => {
-    const { container } = render(<HighBattery />);
-    expect(container).toMatchSnapshot();
-  });
-
-  test(`MediumBattery`, () => {
-    const { container } = render(<MediumBattery />);
-    expect(container).toMatchSnapshot();
-  });
-
-  test(`LowBattery`, () => {
-    const { container } = render(<LowBattery />);
-    expect(container).toMatchSnapshot();
-  });
-
-  test(`NullBattery`, () => {
-    const { container } = render(<NullBattery />);
-    expect(container).toMatchSnapshot();
   });
 });

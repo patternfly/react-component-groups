@@ -1,5 +1,5 @@
 import React from 'react';
-import { Battery } from '@patternfly/react-component-groups';
+import Battery from '@patternfly/react-component-groups/dist/dynamic/Battery';
 
 const BatteryHighExample: React.FunctionComponent = () => (
   <>
