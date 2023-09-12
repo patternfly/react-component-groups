@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ExpandableSection, Title } from '@patternfly/react-core';
-import { ErrorState } from '../ErrorState';
+import ErrorState from '../ErrorState';
 import ErrorStack from '../ErrorStack';
 
 export interface ErrorPageProps {
