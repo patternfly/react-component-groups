@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { HorizontalNav, TabProps } from './HorizontalNav';
+import HorizontalNav, { TabProps } from './HorizontalNav';
 
 // Sample content components for tabs
 const UsersTabContent: React.FunctionComponent = () => <div>Users Tab Content</div>;

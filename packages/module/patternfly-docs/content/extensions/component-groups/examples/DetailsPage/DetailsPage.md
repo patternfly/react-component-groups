@@ -36,7 +36,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { CheckCircleIcon } from '@patternfly/react-icons';
 import { DetailsPage } from'@patternfly/react-component-groups';
 import { DetailsPageHeader } from'@patternfly/react-component-groups';
-import { HorizontalNav } from '@patternfly/react-component-groups';
+import HorizontalNav from '@patternfly/react-component-groups/dist/dynamic/HorizontalNav';
 
 ## Components Usage
 

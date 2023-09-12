@@ -20,7 +20,7 @@ export interface HorizontalNavProps {
   location?: ReturnType<typeof useLocation>;
 };
 
-export const HorizontalNav: React.FunctionComponent<HorizontalNavProps> = ({
+const HorizontalNav: React.FunctionComponent<HorizontalNavProps> = ({
   ariaLabel,
   tabs,
   params,
@@ -75,3 +75,5 @@ export const HorizontalNav: React.FunctionComponent<HorizontalNavProps> = ({
     </Tabs>
   );
 };
+
+export default HorizontalNav;
