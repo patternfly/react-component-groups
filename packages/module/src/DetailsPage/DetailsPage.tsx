@@ -4,7 +4,7 @@ import HorizontalNav, { HorizontalNavProps } from '../HorizontalNav';
 
 export interface DetailsPageProps extends DetailsPageHeaderProps, HorizontalNavProps {};
 
-export const DetailsPage: React.FunctionComponent<DetailsPageProps> = ({
+const DetailsPage: React.FunctionComponent<DetailsPageProps> = ({
   breadcrumbs,
   actionButtons,
   actionMenu,
