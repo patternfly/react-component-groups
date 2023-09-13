@@ -9,10 +9,10 @@ This repo contains a set of opinionated react component groups used to standardi
 - the component should bring a value value above and beyond existing PatternFly components
 
 ### To add a new component:
-1. create a folder in `src/` matching its name (for example `src/MyNewComponent`)
-2. to the new folder add a new `.tsx` file named after the component (for example `src/MyNewComponent/MyNewComponent.tsx`)
+1. create a folder in `src/` matching its name (for example `src/MyComponent`)
+2. to the new folder add a new `.tsx` file named after the component (for example `src/MyComponent/MyComponent.tsx`)
 3. to the same folder include also a `index.ts` which will export the component as a default and then all necessary interfaces
-4. don't forget to export your component using `export * from './ComponentName'` from the root `index` file located in `src/index.ts`
+4. if this file structure is not met, your component won't be exposed correctly
 
 #### Example component:
 ```
@@ -22,7 +22,7 @@ import { createUseStyles } from 'react-jss';
 
 // do not forget to export your component's interface
 // always place component's interface above the component itself in the code
-export interface MyNewComponentProps {
+export interface MyComponentProps {
   text: String;
 }
 
@@ -34,7 +34,7 @@ const useStyles = createUseStyles({
 })
 
 // do not use named export of your component, just a default one
-const MyNewComponent: React.FunctionComponent<MyNewComponentProps> = () => {
+const MyComponent: React.FunctionComponent<MyComponentProps> = () => {
   const classes = useStyles();
 
   return (
@@ -44,42 +44,38 @@ const MyNewComponent: React.FunctionComponent<MyNewComponentProps> = () => {
   );
 };
 
-export default MyNewComponent;
+export default MyComponent;
 ``` 
 
 #### Index file example:
 ```
-export { default } from './MyNewComponent';
-export * from './MyNewComponent';
+export { default } from './MyComponent';
+export * from './MyComponent';
 ``` 
 
 #### Component directory structure example:
 ```
 src
-|- MyNewComponent
-|  |- index.ts
-|  |- MyNewComponent.tsx
-|- ...
-|- ...
-|- ...
-|- index.ts       <<-- export * from './MyNewComponent';
+|- MyComponent
+   |- index.ts
+   |- MyComponent.tsx
 ``` 
 
 ### Component's API rules:
 - prop names comply with PatternFly components naming standards (`variant`, `onClick`, `position`, etc.)
 - the API is maximally simplified and all props are provided with a description
 - it is build on the top of existing PatternFly types without prop omitting
-- it is well documented using the PatternFly documentation (`/packages/module/patternfly-docs/content/extensions/component-groups/examples/MyNewComponent/MyNewComponent.md`) with examples of all possible use cases (`packages/module/patternfly-docs/content/extensions/component-groups/examples/MyNewComponent/MyNewComponent[...]Example.tsx`)
+- it is well documented using the PatternFly documentation (`/packages/module/patternfly-docs/content/extensions/component-groups/examples/MyComponent/MyComponent.md`) with examples of all possible use cases (`packages/module/patternfly-docs/content/extensions/component-groups/examples/MyComponent/MyComponent[...]Example.tsx`)
 - do not unnecessarily use external libraries in your component - rather, delegate the necessary logic to the component's user using the component's API
 
 #### Component API definition example:
 ```
 // when possible, extend available PatternFly types
-export interface MyNewComponentProps extends ButtonProps {
+export interface MyComponentProps extends ButtonProps {
     customLabel: Boolean
 };
 
-export const MyNewComponent: React.FunctionComponent<MyNewComponentProps> = ({ customLabel, ...props }) => ( ... );
+export const MyComponent: React.FunctionComponent<MyComponentProps> = ({ customLabel, ...props }) => ( ... );
 ```
 
 
@@ -88,28 +84,28 @@ export const MyNewComponent: React.FunctionComponent<MyNewComponentProps> = ({ c
 ---
 section: extensions
 subsection: Component groups
-id: MyNewComponent
-propComponents: ['MyNewComponent']
+id: MyComponent
+propComponents: ['MyComponent']
 ---
 
-import MyNewComponent from "@patternfly/react-component-groups/dist/dynamic/MyNewComponent";
+import MyComponent from "@patternfly/react-component-groups/dist/dynamic/MyComponent";
 
 ## Component usage
 
-MyNewComponent has been created to demo contributing to this repository.
+MyComponent has been created to demo contributing to this repository.
 
-### MyNewComponent component example label
+### MyComponent component example label
 
-```js file="./MyNewComponentExample.tsx"```
+```js file="./MyComponentExample.tsx"```
 
 ```
 
-#### Component usage file example: (`MyNewComponentExample.tsx`)
+#### Component usage file example: (`MyComponentExample.tsx`)
 ```
 import React from 'react';
 
-const MyNewComponentExample: React.FunctionComponent = () => (
-  <MyNewComponent customLabel="My label">
+const MyComponentExample: React.FunctionComponent = () => (
+  <MyComponent customLabel="My label">
 );
 
 export default BatteryLowExample;
