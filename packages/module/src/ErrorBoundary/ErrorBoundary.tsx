@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { ExpandableSection, Title } from '@patternfly/react-core';
-import { ErrorState } from '../ErrorState';
-import ErrorStack from './ErrorStack';
+import ErrorState from '../ErrorState';
+import ErrorStack from '../ErrorStack';
 
-interface ErrorPageProps {
+export interface ErrorPageProps {
   /** The title to display on the error page */
   headerTitle: string;
   /** Indicates if this is a silent error */
@@ -18,7 +18,7 @@ interface ErrorPageProps {
   children?: React.ReactNode;
 }
 
-interface ErrorPageState {
+export interface ErrorPageState {
   /** Indicates if there is currently an error */
   hasError: boolean;
   /** Error */

@@ -13,7 +13,7 @@ source: react
 propComponents: ['ErrorBoundary']
 ---
 
-import { ErrorBoundary } from "@patternfly/react-component-groups";
+import ErrorBoundary from "@patternfly/react-component-groups/dist/dynamic/ErrorBoundary";
 
 ## Component usage
 

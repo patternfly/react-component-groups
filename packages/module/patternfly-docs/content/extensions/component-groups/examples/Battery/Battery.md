@@ -13,7 +13,7 @@ source: react
 propComponents: ['Battery']
 ---
 
-import { Battery } from "@patternfly/react-component-groups";
+import Battery from '@patternfly/react-component-groups/dist/dynamic/Battery';
 
 
 This is the battery component that generates a 'battery' which corresponds to a level 1-4.

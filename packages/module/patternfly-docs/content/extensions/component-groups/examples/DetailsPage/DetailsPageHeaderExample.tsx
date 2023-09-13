@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { DetailsPageHeader } from '@patternfly/react-component-groups';
 import { CheckCircleIcon } from '@patternfly/react-icons';
+import DetailsPageHeader from '@patternfly/react-component-groups/dist/dynamic/DetailsPageHeader';
 
 export const BasicExample: React.FunctionComponent = () => (
   <Router>

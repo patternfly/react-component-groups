@@ -13,7 +13,7 @@ source: react
 propComponents: ['ErrorState']
 ---
 
-import { ErrorState } from "@patternfly/react-component-groups";
+import ErrorState from "@patternfly/react-component-groups/dist/dynamic/ErrorState";
 
 ## Component usage
 

@@ -6,7 +6,7 @@ source: react
 propComponents: ['NotAuthorized']
 ---
 
-import { NotAuthorized } from "@patternfly/react-component-groups";
+import NotAuthorized from "@patternfly/react-component-groups/dist/dynamic/NotAuthorized";
 
 ## Component usage
 

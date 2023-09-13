@@ -1,5 +1,5 @@
 import React from 'react';
-import { HorizontalNav } from '@patternfly/react-component-groups';
+import HorizontalNav from '@patternfly/react-component-groups/dist/dynamic/HorizontalNav';
 
 export const BasicExample: React.FunctionComponent = () => (
   <HorizontalNav

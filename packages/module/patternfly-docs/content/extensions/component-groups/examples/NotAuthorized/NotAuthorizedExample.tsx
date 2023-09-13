@@ -1,6 +1,6 @@
 import React from 'react';
-import { NotAuthorized } from '@patternfly/react-component-groups';
 import { Button } from '@patternfly/react-core';
+import NotAuthorized from "@patternfly/react-component-groups/dist/dynamic/NotAuthorized";
 
 export const BasicExample: React.FunctionComponent = () => {
   const actions = [

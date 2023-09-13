@@ -18,7 +18,7 @@ import {
   BreadcrumbProps
 } from './utils';
 
-type PageHeadingLabelProps = Omit<
+export type PageHeadingLabelProps = Omit<
   LabelProps,
   'isEditable'|'editableProps'|'onEditComplete'|'onEditCancel'|'onClose'|'closeBtn'|'closeBtnAriaLabel'|'closeBtnProps'|'isOverflowLabel'
 >;
@@ -51,7 +51,7 @@ const useStyles = createUseStyles({
   }
 });
 
-export const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
+const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
   breadcrumbs,
   actionButtons,
   actionMenu,

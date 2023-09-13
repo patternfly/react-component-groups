@@ -1,10 +1,10 @@
 import React from 'react';
-import { DetailsPageHeader, DetailsPageHeaderProps } from '../DetailsPageHeader';
-import { HorizontalNav, HorizontalNavProps } from '../HorizontalNav';
+import DetailsPageHeader, { DetailsPageHeaderProps } from '../DetailsPageHeader';
+import HorizontalNav, { HorizontalNavProps } from '../HorizontalNav';
 
 export interface DetailsPageProps extends DetailsPageHeaderProps, HorizontalNavProps {};
 
-export const DetailsPage: React.FunctionComponent<DetailsPageProps> = ({
+const DetailsPage: React.FunctionComponent<DetailsPageProps> = ({
   breadcrumbs,
   actionButtons,
   actionMenu,
@@ -25,3 +25,5 @@ export const DetailsPage: React.FunctionComponent<DetailsPageProps> = ({
     <HorizontalNav ariaLabel={ariaLabel} tabs={tabs} location={location} params={params} navigate={navigate} />
   </>
 );
+
+export default DetailsPage;
