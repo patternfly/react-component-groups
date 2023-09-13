@@ -12,6 +12,7 @@ This repo contains a set of opinionated react component groups used to standardi
 1. create a folder in `src/` matching its name (for example `src/MyNewComponent`)
 2. to the new folder add a new `.tsx` file named after the component (for example `src/MyNewComponent/MyNewComponent.tsx`)
 3. to the same folder include also a `index.ts` which will export the component as a default and then all necessary interfaces
+4. don't forget to export your component using `export * from './ComponentName'` from the root `index` file located in `src/index.ts`
 
 #### Example component:
 ```
@@ -50,6 +51,18 @@ export default MyNewComponent;
 ```
 export { default } from './MyNewComponent';
 export * from './MyNewComponent';
+``` 
+
+#### Component directory structure example:
+```
+src
+|- MyNewComponent
+|  |- index.ts
+|  |- MyNewComponent.tsx
+|- ...
+|- ...
+|- ...
+|- index.ts       <<-- export * from './MyNewComponent';
 ``` 
 
 ### Component's API rules:
