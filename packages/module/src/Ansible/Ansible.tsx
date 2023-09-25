@@ -70,16 +70,10 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ unsupported, className
     </React.Fragment>
   );
 
-  const ariaLabels = unsupported ? {
-    disabled: 'disabled',
-    ['aria-label']: 'Does not have Ansible support',
-  } : { ['aria-label']: 'Has Ansible support' };
- 
   return (
-    <i className={ansibleLogoClass} {...ariaLabels} {...props}>
+    <i className={ansibleLogoClass} {...props}>
       <svg
         version="1.1"
-        id="Layer_1"
         x="0px"
         y="0px"
         viewBox="0 0 2032 2027.2"
