@@ -2,7 +2,7 @@ import { Tooltip, TooltipPosition, TooltipProps } from '@patternfly/react-core';
 import React from 'react';
 
 export interface LongTextTooltipProps extends Omit<TooltipProps, 'content'> {
-  /** Content to display in the tool tip */
+  /** Content to display */
   content?: string;
   /** Maximum length of the content being displayed in pixels */
   maxLength?: number;
@@ -18,7 +18,7 @@ const LongTextTooltip: React.FC<LongTextTooltipProps> = ({
   tooltipMaxWidth = '50vw',
   tooltipPosition = TooltipPosition.top,
   ...rest
-}) => {
+}: LongTextTooltipProps) => {
   const truncate = (str: string, max: number) => (str.length > max ? str.substr(0, max - 1) + '…' : str);
 
   return content.length > maxLength ? (
