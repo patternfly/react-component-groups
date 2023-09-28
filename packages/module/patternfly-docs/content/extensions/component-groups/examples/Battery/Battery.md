@@ -15,19 +15,32 @@ propComponents: ['Battery']
 
 import Battery from '@patternfly/react-component-groups/dist/dynamic/Battery';
 
+The **battery** component generates a 'battery' which corresponds to a level 1-4. Each level corresponds with a severity level and respective color:
 
-This is the battery component that generates a 'battery' which corresponds to a level 1-4.
-- 1 - low, green (best case scenario)
-- 2 - medium, yellow
-- 3 - high, orange
-- 4 - critical, red (worst case scenario)
+| Severity level | Meaning | Style | 
+| --- | --- | --- | 
+| Level 1 | Low severity (best case scenario) | 1 green bar | "1", "low" |
+| Level 2 | Medium severity |  2 yellow bars | 
+| Level 3 | High severity | 3 orange bars | 
+| Level 4 | Critical severity (worst case scenario) | 4 red bars | 
 
-Also accepts a label which can be made invisible.
+To specify the severity of the battery's risk level, you can pass a predefined number or text value into the `severity` property that corresponds to the appropriate severity level.
 
+To add an optional label to a battery, add the `label` property to the `<Battery>` component.
 
-## Component usage
+## Examples
+
+### Default variant
+
+The default style of a battery (4 black lines) appears when any value besides "1", "2", "3", or "4" is passed to `severity`. 
+
+```js file="./BatteryDefaultExample.tsx"
+
+```
 
 ### Low severity
+
+To style a battery as low severity, pass "1", "info", or "low" to `severity`.
 
 ```js file="./BatteryLowExample.tsx"
 
@@ -35,11 +48,15 @@ Also accepts a label which can be made invisible.
 
 ### Medium severity
 
+To style a battery as medium severity, pass "2", "medium", or "warn" to `severity`.
+
 ```js file="./BatteryMediumExample.tsx"
 
 ```
 
 ### High severity
+
+To style a battery as high severity, pass "3", "high", or "error" to `severity`.
 
 ```js file="./BatteryHighExample.tsx"
 
@@ -47,12 +64,8 @@ Also accepts a label which can be made invisible.
 
 ### Critical severity
 
+To style a battery as critical severity, pass "4" or "critical" to `severity`.
+
 ```js file="./BatteryCriticalExample.tsx"
-
-```
-
-### Default variant
-
-```js file="./BatteryDefaultExample.tsx"
 
 ```
