@@ -15,11 +15,13 @@ propComponents: ['ErrorState']
 
 import ErrorState from "@patternfly/react-component-groups/dist/dynamic/ErrorState";
 
-## Component usage
+The **error state** component repurposes the `EmptyState` component to display an error to users.
 
-This component reuses the EmptyState component. Also most of its props is accepted.
+## Examples
 
-### ErrorState component
+### Basic error state
+
+To provide users with error details, a basic error state should contain an appropriate and informative `errorTitle` and `errorDescription`. 
 
 ```js file="./ErrorStateExample.tsx"
 
