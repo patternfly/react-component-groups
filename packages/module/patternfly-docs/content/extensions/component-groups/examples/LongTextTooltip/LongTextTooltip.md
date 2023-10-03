@@ -1,7 +1,7 @@
 ---
 section: extensions
 subsection: Component groups
-id: LongTextTooltip
+id: Long text tooltip
 source: react
 propComponents: ['LongTextTooltip']
 ---
