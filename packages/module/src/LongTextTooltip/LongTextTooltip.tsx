@@ -19,7 +19,7 @@ const LongTextTooltip: React.FC<LongTextTooltipProps> = ({
   tooltipPosition = TooltipPosition.top,
   ...rest
 }: LongTextTooltipProps) => {
-  const truncate = (str: string, max: number) => (str.length > max ? str.substr(0, max - 1) + '…' : str);
+  const truncate = (str: string, max: number) => (str.length > max ? str.substring(0, max - 1) + '…' : str);
 
   return content.length > maxLength ? (
     <Tooltip maxWidth={tooltipMaxWidth} position={tooltipPosition} content={<div>{content}</div>} {...rest}>
