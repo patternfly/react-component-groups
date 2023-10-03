@@ -8,7 +8,7 @@ propComponents: ['LongTextTooltip']
 
 import LongTextTooltip from "@patternfly/react-component-groups/dist/dynamic/LongTextTooltip";
 
-The **long-text tooltip** component enables you to display long text to users via a tooltip. It builds off of the [tooltip component](/components/tooltip) to truncate UI text in an element and display the truncated text in a tooltip. 
+The **long-text tooltip** component enables you to display long text to users via a tooltip. It builds off of the [tooltip component](https://www.patternfly.org/components/tooltip) to truncate UI text in an element and display the truncated text in a tooltip. 
 
 ## Examples
 
