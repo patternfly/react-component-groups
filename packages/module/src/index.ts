@@ -24,5 +24,8 @@ export * from './ErrorState';
 export { default as HorizontalNav } from './HorizontalNav';
 export * from './HorizontalNav';
 
+export { default as LongTextTooltip } from './LongTextTooltip';
+export * from './LongTextTooltip';
+
 export { default as NotAuthorized } from './NotAuthorized';
 export * from './NotAuthorized';
