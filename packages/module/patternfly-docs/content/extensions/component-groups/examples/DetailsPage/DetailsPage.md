@@ -5,7 +5,7 @@ section: extensions
 subsection: Component groups
 # Sidenav secondary level section
 # should be the same for all markdown files
-id: DetailsPage
+id: Details page
 # Tab (react | react-demos | html | html-demos | design-guidelines | accessibility)
 source: react
 # If you use typescript, the name of the interface to display props for
@@ -38,45 +38,65 @@ import HorizontalNav from '@patternfly/react-component-groups/dist/dynamic/Horiz
 import DetailsPage from '@patternfly/react-component-groups/dist/dynamic/DetailsPage';
 import DetailsPageHeader from'@patternfly/react-component-groups/dist/dynamic/DetailsPageHeader';
 
-## Components Usage
+A **details page** component is used to provide users with details on a resource that they access.
 
-### DetailsPage Component
+## Examples
+
+### Basic details page
+
+A basic details page typically contains elements like `breadcrumbs`, a `pageHeading`, actions, and `tabs`.
+
+Details page content should be customized within the appropriate tab to fit your use case.
 
 ```js file="./DetailsPageExample.tsx"
 
 ```
 
-### DetailsPageHeader Component
+### Details page header
+
+The `pageHeader` for a details page contains the `breadcrumbs`, `pageHeading`, and any actions.
 
 ```js file="./DetailsPageHeaderExample.tsx"
 
 ```
 
-### Breadcrumbs Component
+### Details page breadcrumbs 
+
+You can specify the `children` of the details page `breadcrumbs` and the pages that they point to.
 
 ```js file="./BreadcrumbsExample.tsx"
 
 ```
 
-### ActionButtons Component
+### Details page action buttons 
+
+The action buttons in a details page header can be customized to be any [button](/components/button) variant.
+
+Include a [`tooltip`](/components/tooltip/) as appropriate.
 
 ```js file="./ActionButtonsExample.tsx"
 
 ```
 
-### ActionMenu Component
+### Details page action menu 
+
+The details page action menu contains multiple actions that users can take.
 
 ```js file="./ActionMenuExample.tsx"
 
 ```
 
-### ActionMenu with groupedActions Component
+### Details page action menu with grouped actions 
+
+To group related actions in a details page action menu, use the `groupedActions` property.
 
 ```js file="./ActionMenuGroupedExample.tsx"
 
 ```
 
-### HorizonalNav Component
+### Details page horizontal navigation
+
+A details page places `tabs` in a `<HorizontalNav>` component.
 
 ```js file="./HorizontalNavExample.tsx"
 
