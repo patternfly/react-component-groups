@@ -14,7 +14,7 @@ The **long-text tooltip** component enables you to display long text to users vi
 
 ### Basic long-text tooltip
 
-To show users the full value of truncated content , a basic long-text tooltip should contain appropriate and informative `content` and specify the `maxLength` of the UI text (after which, truncation will occur).  
+To show users the full value of truncated content, a basic long-text tooltip should contain appropriate and informative `content` and specify the `maxLength` of the UI text (after which, truncation will occur).  
 
 Additionally you can pass in a `tooltipPosition` to control the position of the tooltip, and `tooltipMaxWidth` to control the tool tip width.
 
