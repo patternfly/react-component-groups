@@ -66,11 +66,5 @@
     "serve": "^14.1.2",
     "ts-jest": "29.0.3",
     "whatwg-fetch": "^3.6.2"
-  },
-  "dependencies": {
-    "@cfaester/enzyme-adapter-react-18": "^0.7.1",
-    "@types/enzyme": "^3.10.14",
-    "enzyme": "^3.11.0",
-    "enzyme-to-json": "^3.6.2"
   }
 }
