@@ -3,12 +3,7 @@ import 'whatwg-fetch';
 import 'babel-polyfill';
 import '@testing-library/jest-dom';
 
-import Adapter from '@cfaester/enzyme-adapter-react-18';
-import { configure } from 'enzyme';
-
 global.SVGPathElement = function () {};
-
-configure({ adapter: new Adapter() });
 
 global.MutationObserver = class {
   constructor(callback) {}

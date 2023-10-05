@@ -1,11 +1,11 @@
 import InvalidObject from './InvalidObject';
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import toJson from 'enzyme-to-json';
 
 describe('InvalidObject component', () => {
-  it('should render', () => {
-    const wrapper = mount(<InvalidObject />);
+  test('should render', () => {
+    const wrapper = render(<InvalidObject />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });
