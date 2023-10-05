@@ -20,7 +20,8 @@ const useStyles = createUseStyles({
 })
 
 export interface InvalidObjectProps {
-  isBeta?: string
+  /** Indicates if an additional "/beta" string should be added to when navigating back to the home screen. */
+  isBeta?: boolean
 }
 
 
