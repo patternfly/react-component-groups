@@ -7,7 +7,7 @@ export const BasicExample: React.FunctionComponent = () => {
     <Button key="1">
       First action
     </Button>,
-    <Button key="2" className='pf-u-mx-md'>
+    <Button key="2" className='pf-v5-u-mx-md'>
       Second action
     </Button>,
   ];

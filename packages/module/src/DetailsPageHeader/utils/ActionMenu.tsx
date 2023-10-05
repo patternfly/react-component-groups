@@ -71,14 +71,14 @@ export type ActionMenuProps = EitherNotBoth<
 
 const useStyles = createUseStyles({
   menuItemWithLabelBeforeIcon: {
-    '&.pf-c-dropdown__menu-item': {
+    '&.pf-v5-c-dropdown__menu-item': {
       flexDirection: 'row-reverse',
       justifyContent: 'left'
     },
-    '.pf-c-dropdown__menu-item-icon': {
+    '.pf-v5-c-dropdown__menu-item-icon': {
       marginLeft: 'var(--pf-v5-c-dropdown__menu-item-icon--MarginRight)'
     },
-    '.pf-c-dropdown__menu-item-main': {
+    '.pf-v5-c-dropdown__menu-item-main': {
       flexDirection: 'row-reverse',
     }
   }
