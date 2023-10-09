@@ -280,9 +280,9 @@ exports[`LongTextTooltip component should render content with maxLength shorter 
       <div
         style="display: contents;"
       >
-        <div>
+        <span>
           …
-        </div>
+        </span>
       </div>
     </div>
   </body>,
@@ -290,9 +290,9 @@ exports[`LongTextTooltip component should render content with maxLength shorter 
     <div
       style="display: contents;"
     >
-      <div>
+      <span>
         …
-      </div>
+      </span>
     </div>
   </div>,
   "debug": [Function],
