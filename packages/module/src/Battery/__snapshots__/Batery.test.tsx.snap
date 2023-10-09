@@ -4,7 +4,7 @@ exports[`Battery component API should hide label 1`] = `
 <div>
   <i
     aria-label="high high"
-    class="battery-0-2-1 battery-high-0-2-11"
+    class="battery-0-2-1 batteryHigh-0-2-5"
     widget-id="high"
     widget-type="InsightsBattery"
   >
@@ -31,7 +31,7 @@ exports[`Battery component API should hide label 1`] = `
 exports[`Battery component should render correctly CriticalBattery - 4 1`] = `
 <div>
   <i
-    class="battery-0-2-1 battery-4-0-2-13"
+    class="battery-0-2-1 batteryCritical-0-2-6"
     widget-id="4"
     widget-type="InsightsBattery"
   >
@@ -52,9 +52,7 @@ exports[`Battery component should render correctly CriticalBattery - 4 1`] = `
       />
     </svg>
   </i>
-  <span
-    class="label"
-  >
+  <span>
      
     4
      
@@ -65,7 +63,7 @@ exports[`Battery component should render correctly CriticalBattery - 4 1`] = `
 exports[`Battery component should render correctly CriticalBattery - critical 1`] = `
 <div>
   <i
-    class="battery-0-2-1 battery-critical-0-2-14"
+    class="battery-0-2-1 batteryCritical-0-2-6"
     widget-id="critical"
     widget-type="InsightsBattery"
   >
@@ -86,9 +84,7 @@ exports[`Battery component should render correctly CriticalBattery - critical 1`
       />
     </svg>
   </i>
-  <span
-    class="label"
-  >
+  <span>
      
     critical
      
@@ -99,7 +95,7 @@ exports[`Battery component should render correctly CriticalBattery - critical 1`
 exports[`Battery component should render correctly HighBattery - 3 1`] = `
 <div>
   <i
-    class="battery-0-2-1 battery-3-0-2-10"
+    class="battery-0-2-1 batteryHigh-0-2-5"
     widget-id="3"
     widget-type="InsightsBattery"
   >
@@ -120,9 +116,7 @@ exports[`Battery component should render correctly HighBattery - 3 1`] = `
       />
     </svg>
   </i>
-  <span
-    class="label"
-  >
+  <span>
      
     3
      
@@ -133,7 +127,7 @@ exports[`Battery component should render correctly HighBattery - 3 1`] = `
 exports[`Battery component should render correctly HighBattery - error 1`] = `
 <div>
   <i
-    class="battery-0-2-1 battery-error-0-2-12"
+    class="battery-0-2-1 batteryHigh-0-2-5"
     widget-id="error"
     widget-type="InsightsBattery"
   >
@@ -154,9 +148,7 @@ exports[`Battery component should render correctly HighBattery - error 1`] = `
       />
     </svg>
   </i>
-  <span
-    class="label"
-  >
+  <span>
      
     error
      
@@ -167,7 +159,7 @@ exports[`Battery component should render correctly HighBattery - error 1`] = `
 exports[`Battery component should render correctly HighBattery - high 1`] = `
 <div>
   <i
-    class="battery-0-2-1 battery-high-0-2-11"
+    class="battery-0-2-1 batteryHigh-0-2-5"
     widget-id="high"
     widget-type="InsightsBattery"
   >
@@ -188,9 +180,7 @@ exports[`Battery component should render correctly HighBattery - high 1`] = `
       />
     </svg>
   </i>
-  <span
-    class="label"
-  >
+  <span>
      
     high
      
@@ -201,7 +191,7 @@ exports[`Battery component should render correctly HighBattery - high 1`] = `
 exports[`Battery component should render correctly LowBattery - 1 1`] = `
 <div>
   <i
-    class="battery-0-2-1 battery-1-0-2-4"
+    class="battery-0-2-1 batteryLow-0-2-3"
     widget-id="1"
     widget-type="InsightsBattery"
   >
@@ -222,9 +212,7 @@ exports[`Battery component should render correctly LowBattery - 1 1`] = `
       />
     </svg>
   </i>
-  <span
-    class="label"
-  >
+  <span>
      
     1
      
@@ -235,7 +223,7 @@ exports[`Battery component should render correctly LowBattery - 1 1`] = `
 exports[`Battery component should render correctly LowBattery - info 1`] = `
 <div>
   <i
-    class="battery-0-2-1 battery-info-0-2-6"
+    class="battery-0-2-1 batteryLow-0-2-3"
     widget-id="info"
     widget-type="InsightsBattery"
   >
@@ -256,9 +244,7 @@ exports[`Battery component should render correctly LowBattery - info 1`] = `
       />
     </svg>
   </i>
-  <span
-    class="label"
-  >
+  <span>
      
     info
      
@@ -269,7 +255,7 @@ exports[`Battery component should render correctly LowBattery - info 1`] = `
 exports[`Battery component should render correctly LowBattery - low 1`] = `
 <div>
   <i
-    class="battery-0-2-1 battery-low-0-2-5"
+    class="battery-0-2-1 batteryLow-0-2-3"
     widget-id="low"
     widget-type="InsightsBattery"
   >
@@ -290,9 +276,7 @@ exports[`Battery component should render correctly LowBattery - low 1`] = `
       />
     </svg>
   </i>
-  <span
-    class="label"
-  >
+  <span>
      
     low
      
@@ -303,7 +287,7 @@ exports[`Battery component should render correctly LowBattery - low 1`] = `
 exports[`Battery component should render correctly MediumBattery - 2 1`] = `
 <div>
   <i
-    class="battery-0-2-1 battery-2-0-2-7"
+    class="battery-0-2-1 batteryMedium-0-2-4"
     widget-id="2"
     widget-type="InsightsBattery"
   >
@@ -324,9 +308,7 @@ exports[`Battery component should render correctly MediumBattery - 2 1`] = `
       />
     </svg>
   </i>
-  <span
-    class="label"
-  >
+  <span>
      
     2
      
@@ -337,7 +319,7 @@ exports[`Battery component should render correctly MediumBattery - 2 1`] = `
 exports[`Battery component should render correctly MediumBattery - medium 1`] = `
 <div>
   <i
-    class="battery-0-2-1 battery-medium-0-2-8"
+    class="battery-0-2-1 batteryMedium-0-2-4"
     widget-id="medium"
     widget-type="InsightsBattery"
   >
@@ -358,9 +340,7 @@ exports[`Battery component should render correctly MediumBattery - medium 1`] = 
       />
     </svg>
   </i>
-  <span
-    class="label"
-  >
+  <span>
      
     medium
      
@@ -371,7 +351,7 @@ exports[`Battery component should render correctly MediumBattery - medium 1`] = 
 exports[`Battery component should render correctly MediumBattery - warn 1`] = `
 <div>
   <i
-    class="battery-0-2-1 battery-warn-0-2-9"
+    class="battery-0-2-1 batteryMedium-0-2-4"
     widget-id="warn"
     widget-type="InsightsBattery"
   >
@@ -392,9 +372,7 @@ exports[`Battery component should render correctly MediumBattery - warn 1`] = `
       />
     </svg>
   </i>
-  <span
-    class="label"
-  >
+  <span>
      
     warn
      
@@ -405,7 +383,7 @@ exports[`Battery component should render correctly MediumBattery - warn 1`] = `
 exports[`Battery component should render correctly NullBatery, default 1`] = `
 <div>
   <i
-    class="battery-0-2-1"
+    class="battery-0-2-1 batteryDefault-0-2-2"
     widget-id=""
     widget-type="InsightsBattery"
   >
@@ -426,9 +404,7 @@ exports[`Battery component should render correctly NullBatery, default 1`] = `
       />
     </svg>
   </i>
-  <span
-    class="label"
-  >
+  <span>
      
      
   </span>
