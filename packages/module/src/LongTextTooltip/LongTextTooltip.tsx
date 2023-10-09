@@ -12,7 +12,7 @@ export interface LongTextTooltipProps extends Omit<TooltipProps, 'content'> {
   tooltipMaxWidth?: string;
 }
 
-const LongTextTooltip: React.FC<LongTextTooltipProps> = ({
+const LongTextTooltip: React.FunctionComponent<LongTextTooltipProps> = ({
   content = '',
   maxLength = Infinity,
   tooltipMaxWidth = '50vw',
@@ -23,7 +23,7 @@ const LongTextTooltip: React.FC<LongTextTooltipProps> = ({
 
   return content.length > maxLength ? (
     <Tooltip maxWidth={tooltipMaxWidth} position={tooltipPosition} content={<div>{content}</div>} {...rest}>
-      <div>{truncate(content, maxLength)}</div>
+      <span>{truncate(content, maxLength)}</span>
     </Tooltip>
   ) : (
     <span>{content}</span>
