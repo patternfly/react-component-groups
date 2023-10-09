@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { createUseStyles } from 'react-jss'
 
 const batteryDefault = {
@@ -77,7 +77,7 @@ export interface BatteryProps extends React.DetailedHTMLProps<React.HTMLAttribut
 
 const Battery: React.FunctionComponent<BatteryProps> = ({ severity, label, labelHidden, className, ...props }: BatteryProps) => {
   const classes = useStyles();
-  const batteryClasses = classNames(classes.battery, classes[`battery-${severity}`], className);
+  const batteryClasses = clsx(classes.battery, classes[String(batteryLevels(severity, true))], className);
 
   let ariaLabels = {};
   if (labelHidden) {

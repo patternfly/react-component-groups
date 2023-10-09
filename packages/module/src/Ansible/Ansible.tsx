@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
 
 export interface AnsibleProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
@@ -32,7 +32,7 @@ const useStyles = createUseStyles({
 
 const Ansible: React.FunctionComponent<AnsibleProps> = ({ unsupported, className, ...props }: AnsibleProps) => {
   const classes = useStyles();
-  const ansibleLogoClass = classNames(
+  const ansibleLogoClass = clsx(
     classes.ansible,
     { [classes.supported]: !unsupported || unsupported === 0 },
     { [classes.unsupported]: unsupported || unsupported === 1 },
