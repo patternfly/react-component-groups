@@ -17,12 +17,12 @@ const useStyles = createUseStyles({
       top: '0.25rem'
     }
   },
-  supported: {
+  ansibleSupported: {
     '& .st0': {
       fill: 'var(--pf-v5-global--info-color--100)',
     }
   },
-  unsupported: {
+  ansibleUnsupported: {
     '& .st0, .st1, .st2': {
       fill: 'var(--pf-v5-global--disabled-color--200)',
       cursor: 'not-allowed',
@@ -34,8 +34,8 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ unsupported, className
   const classes = useStyles();
   const ansibleLogoClass = clsx(
     classes.ansible,
-    { [classes.supported]: !unsupported || unsupported === 0 },
-    { [classes.unsupported]: unsupported || unsupported === 1 },
+    { [classes.ansibleSupported]: !unsupported || unsupported === 0 },
+    { [classes.ansibleUnsupported]: unsupported || unsupported === 1 },
     className
   );
 
