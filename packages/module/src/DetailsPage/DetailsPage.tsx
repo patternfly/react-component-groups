@@ -2,18 +2,21 @@ import React from 'react';
 import DetailsPageHeader, { DetailsPageHeaderProps } from '../DetailsPageHeader';
 import HorizontalNav, { HorizontalNavProps } from '../HorizontalNav';
 
-export interface DetailsPageProps extends DetailsPageHeaderProps, HorizontalNavProps {};
+export interface DetailsPageProps extends DetailsPageHeaderProps, HorizontalNavProps {
+  /** DetailsPage custom children component */
+  children?: React.ReactNode
+};
 
 const DetailsPage: React.FunctionComponent<DetailsPageProps> = ({
   breadcrumbs,
   actionButtons,
   actionMenu,
   pageHeading,
-  ariaLabel,
-  tabs,
-  location,
-  params,
-  navigate
+  onTabSelect,
+  tabs = [],
+  defaultActiveKey,
+  children,
+  ...props
 }: DetailsPageProps ) => (
   <>
     <DetailsPageHeader
@@ -21,8 +24,10 @@ const DetailsPage: React.FunctionComponent<DetailsPageProps> = ({
       actionButtons={actionButtons}
       actionMenu={actionMenu}
       pageHeading={pageHeading}
+      {...props}
     />
-    <HorizontalNav ariaLabel={ariaLabel} tabs={tabs} location={location} params={params} navigate={navigate} />
+    {tabs?.length > 0 ? <HorizontalNav tabs={tabs} onTabSelect={onTabSelect} defaultActiveKey={defaultActiveKey} {...props} /> : null}
+    {children}
   </>
 );
 
