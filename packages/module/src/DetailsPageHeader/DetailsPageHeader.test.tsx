@@ -6,10 +6,7 @@ import DetailsPageHeader, { DetailsPageHeaderProps } from './DetailsPageHeader';
 const mockCallback = jest.fn();
 
 const mockProps: DetailsPageHeaderProps = {
-  breadcrumbs: [
-    { children: 'Resources', to: '/resources' },
-    { children: 'Resource details', to: '/resources/example-resource' },
-  ],
+  breadcrumbs: <div>Some breadcrumbs</div>,
   pageHeading: {
     title: 'example-resource',
   },
@@ -24,7 +21,7 @@ const mockProps: DetailsPageHeaderProps = {
       {
         children: 'Edit resource',
         itemID: 'details-page-header-action-menu-example-1',
-        cta: {
+        action: {
           // eslint-disable-next-line no-console
           callback: () => console.log('Edit resource clicked'),
         },
@@ -32,7 +29,7 @@ const mockProps: DetailsPageHeaderProps = {
       {
         children: 'Delete resource',
         itemID: 'details-page-header-action-menu-example-2',
-        cta: {
+        action: {
           // eslint-disable-next-line no-console
           callback: () => console.log('Delete resource clicked'),
         },

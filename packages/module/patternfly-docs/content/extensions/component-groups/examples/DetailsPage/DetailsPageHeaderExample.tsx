@@ -2,15 +2,27 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CheckCircleIcon } from '@patternfly/react-icons';
 import DetailsPageHeader from '@patternfly/react-component-groups/dist/dynamic/DetailsPageHeader';
+import { Breadcrumb, BreadcrumbItem } from '@patternfly/react-core';
 
 export const BasicExample: React.FunctionComponent = () => (
   <Router>
     <DetailsPageHeader
-      breadcrumbs={
-        [
-          { children: 'Resources', to: '/resources' },
-          { children: 'Resource details', to: '/resources/example-resource' },
-        ]
+      breadcrumbs={ 
+        <Breadcrumb>
+          <BreadcrumbItem
+            to="/resources"
+            key="resources"
+          >
+            Resources
+          </BreadcrumbItem>
+          <BreadcrumbItem
+            isActive
+            to="/resources/example-resource"
+            key="resources-example"
+          >
+            Resource details
+          </BreadcrumbItem>
+        </Breadcrumb>
       }
       pageHeading={{
         title: 'example-resource',

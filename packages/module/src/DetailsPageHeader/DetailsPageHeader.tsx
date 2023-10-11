@@ -37,8 +37,8 @@ export interface PageHeading {
 export interface DetailsPageHeaderProps {
   /** Top content area of details page */
   pageHeading: PageHeading;
-   /** Navigational item that provides page context to help users navigate more efficiently and understand where they are in the application hierarchy */
-  breadcrumbs?: BreadcrumbProps[];
+  /** Breadcrumbs component */
+  breadcrumbs?: React.ReactNode;
    /** One or more action buttons that appear to the right of the title */
   actionButtons?: ActionButtonProps[];
    /** Menu that appears to the right of the title */
@@ -52,7 +52,7 @@ const useStyles = createUseStyles({
 });
 
 const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
-  breadcrumbs,
+  breadcrumbs = null,
   actionButtons,
   actionMenu,
   pageHeading,
@@ -60,12 +60,7 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
   const classes = useStyles();
   return (
     <>
-      {/* Optional breadcrumbs */}
-      {breadcrumbs && (
-        <div className="pf-v5-u-mb-sm">
-          <Breadcrumbs breadcrumbs={breadcrumbs} />
-        </div>
-      )}
+      {breadcrumbs}
       <Split hasGutter isWrappable className={classes.detailsPageHeaderSplit}>
         <SplitItem>
           <Split hasGutter isWrappable className={`pf-v5-u-mb-sm ${classes.detailsPageHeaderSplit}`}>
