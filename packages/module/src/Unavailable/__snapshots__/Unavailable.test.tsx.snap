@@ -39,6 +39,11 @@ exports[`Unavailable component should render with a link 1`] = `
             Try refreshing the page. If the problem persists, contact your organization administrator or visit our
              
             <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link emptyStateLinkButton-0-2-2"
+              data-ouia-component-id="OUIA-Generated-Button-link-2"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
               href="https://www.patternfly.org"
               rel="noopener noreferrer"
               target="_blank"
@@ -87,6 +92,11 @@ exports[`Unavailable component should render with a link 1`] = `
           Try refreshing the page. If the problem persists, contact your organization administrator or visit our
            
           <a
+            aria-disabled="false"
+            class="pf-v5-c-button pf-m-link emptyStateLinkButton-0-2-2"
+            data-ouia-component-id="OUIA-Generated-Button-link-2"
+            data-ouia-component-type="PF5/Button"
+            data-ouia-safe="true"
             href="https://www.patternfly.org"
             rel="noopener noreferrer"
             target="_blank"
@@ -192,6 +202,11 @@ exports[`Unavailable component should render with no link 1`] = `
             Try refreshing the page. If the problem persists, contact your organization administrator or visit our
              
             <a
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link emptyStateLinkButton-0-2-2"
+              data-ouia-component-id="OUIA-Generated-Button-link-1"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
               href=""
               rel="noopener noreferrer"
               target="_blank"
@@ -240,6 +255,11 @@ exports[`Unavailable component should render with no link 1`] = `
           Try refreshing the page. If the problem persists, contact your organization administrator or visit our
            
           <a
+            aria-disabled="false"
+            class="pf-v5-c-button pf-m-link emptyStateLinkButton-0-2-2"
+            data-ouia-component-id="OUIA-Generated-Button-link-1"
+            data-ouia-component-type="PF5/Button"
+            data-ouia-safe="true"
             href=""
             rel="noopener noreferrer"
             target="_blank"

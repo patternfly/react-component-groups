@@ -1,5 +1,5 @@
 import React from 'react';
-import { EmptyState, EmptyStateBody, EmptyStateHeader, EmptyStateIcon, EmptyStateVariant } from '@patternfly/react-core';
+import { Button, EmptyState, EmptyStateBody, EmptyStateHeader, EmptyStateIcon, EmptyStateVariant } from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
@@ -8,6 +8,9 @@ const useStyles = createUseStyles({
   emptyStateUnavailable: {
     color: 'var(--pf-global--danger-color--100)',
     '& svg': { color: 'var(--pf-global--danger-color--100)' }
+  },
+  emptyStateLinkButton: {
+    padding: '0',
   }
 });
 
@@ -23,9 +26,9 @@ const Unavailable: React.FunctionComponent<UnavailableProps> = ({ statusPageUrl 
       <EmptyStateHeader title="This page is temporarily unavailable" icon={<EmptyStateIcon icon={ExclamationCircleIcon} />} />
       <EmptyStateBody>
         Try refreshing the page. If the problem persists, contact your organization administrator or visit our{' '}
-        <a href={statusPageUrl} target="_blank" rel="noopener noreferrer">
+        <Button component='a' className={clsx(classes.emptyStateLinkButton)} variant='link' href={statusPageUrl} target="_blank" rel="noopener noreferrer">
           status page
-        </a>{' '}
+        </Button>{' '}
         for known outages.
       </EmptyStateBody>
     </EmptyState>
