@@ -30,5 +30,5 @@ export * from './LongTextTooltip';
 export { default as NotAuthorized } from './NotAuthorized';
 export * from './NotAuthorized';
 
-export { default as Unavailable } from './Unavailable';
-export * from './Unavailable';
+export { default as UnavailableContent } from './UnavailableContent';
+export * from './UnavailableContent';

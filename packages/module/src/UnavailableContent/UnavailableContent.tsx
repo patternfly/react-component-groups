@@ -14,12 +14,12 @@ const useStyles = createUseStyles({
   }
 });
 
-export interface UnavailableProps {
+export interface UnavailableContentProps {
   /** Page to open when user clicks on status page link */
   statusPageUrl?: string;
 }
 
-const Unavailable: React.FunctionComponent<UnavailableProps> = ({ statusPageUrl = '' }: UnavailableProps) => {
+const UnavailableContent: React.FunctionComponent<UnavailableContentProps> = ({ statusPageUrl = '' }: UnavailableContentProps) => {
   const classes = useStyles();
   return (
     <EmptyState variant={EmptyStateVariant.lg} className={clsx(classes.emptyStateUnavailable)}>
@@ -35,4 +35,4 @@ const Unavailable: React.FunctionComponent<UnavailableProps> = ({ statusPageUrl 
   );
 };
 
-export default Unavailable;
+export default UnavailableContent;

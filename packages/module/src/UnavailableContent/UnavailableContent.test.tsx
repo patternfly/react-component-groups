@@ -1,14 +1,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';  
-import Unavailable from './Unavailable';
+import UnavailableContent from './UnavailableContent';
 
 describe('Unavailable component', () => {
   it('should render with no link', () => {
-    expect(render(<Unavailable />)).toMatchSnapshot();
+    expect(render(<UnavailableContent />)).toMatchSnapshot();
   });
 
   it('should render with a link', () => {
-    expect(render(<Unavailable statusPageUrl="https://www.patternfly.org" />)).toMatchSnapshot();
+    expect(render(<UnavailableContent statusPageUrl="https://www.patternfly.org" />)).toMatchSnapshot();
   });
   
 });
