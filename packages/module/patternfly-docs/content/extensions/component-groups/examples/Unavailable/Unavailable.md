@@ -19,7 +19,9 @@ An **unavialable** component displays a screen to users when they attempt to vie
 It should be used when content the user is attempting to view is not available to them at the current time.  
 You can add a `statusPageUrl` to provide a link to a status page for the service that is unavailable.
 
-### Unavailable
+## Examples
+
+### Unavailable example
 
 ```js file="./UnavailableExample.tsx"
 
