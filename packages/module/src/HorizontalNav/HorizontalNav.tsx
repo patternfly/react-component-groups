@@ -33,7 +33,7 @@ const HorizontalNav: React.FunctionComponent<HorizontalNavProps> = ({
       {tabs.map((tab) => (
         <Tab
           {...tab}
-          title={[ 'string', 'number', 'boolean' ].includes(typeof tab.title) ? <TabTitleText>{tab.title}</TabTitleText> : tab.title}  // string? element?
+          title={[ 'string', 'number', 'boolean' ].includes(typeof tab.title) ? <TabTitleText>{tab.title}</TabTitleText> : tab.title}
           key={tab.eventKey}
         >
           {tab.children}

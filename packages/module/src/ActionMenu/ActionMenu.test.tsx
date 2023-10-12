@@ -8,14 +8,14 @@ const mockActions = [
   {
     children: 'Edit resource',
     itemID: 'action-menu-example-1',
-    cta: {
+    action: {
       callback: mockCallback,
     },
   },
   {
     children: 'Delete resource',
     itemID: 'action-menu-example-2',
-    cta: {
+    action: {
       callback: jest.fn(),
     },
     isDisabled: true,
@@ -29,7 +29,7 @@ const mockGroupedActions = [
       {
         children: 'Edit resource',
         itemID: 'action-menu-grouped-group-1-example-1',
-        cta: {
+        action: {
           callback: jest.fn(),
         },
         tooltip: 'Sample tooltip',
@@ -37,7 +37,7 @@ const mockGroupedActions = [
       {
         children: 'Delete resource',
         itemID: 'action-menu-grouped-group-1-example-2',
-        cta: {
+        action: {
           callback: jest.fn(),
         },
         isDisabled: true,
@@ -51,7 +51,7 @@ const mockGroupedActions = [
       {
         children: 'External Link',
         itemID: 'action-menu-grouped-group-2-example-1',
-        cta: {
+        action: {
           href: 'https://github.com/',
           external: true,
         },
@@ -59,7 +59,7 @@ const mockGroupedActions = [
       {
         itemID: 'action-menu-grouped-group-2-example-2',
         label: 'Link',
-        cta: {
+        action: {
           href: '/#',
         },
         tooltip: 'Link',

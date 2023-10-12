@@ -1,4 +1,6 @@
 import {
+  Flex,
+  FlexItem,
   Label,
   LabelProps,
   Split,
@@ -9,14 +11,8 @@ import {
 } from '@patternfly/react-core';
 import React from 'react';
 import { createUseStyles } from 'react-jss'
-import {
-  ActionButtonProps,
-  ActionButtons,
-  ActionMenu,
-  ActionMenuProps,
-  Breadcrumbs,
-  BreadcrumbProps
-} from './utils';
+import ActionMenu, { ActionMenuProps } from '../ActionMenu/ActionMenu';
+import ActionButton, { ActionButtonProps } from '../ActionButton/ActionButton';
 
 export type PageHeadingLabelProps = Omit<
   LabelProps,
@@ -39,9 +35,9 @@ export interface DetailsPageHeaderProps {
   pageHeading: PageHeading;
   /** Breadcrumbs component */
   breadcrumbs?: React.ReactNode;
-   /** One or more action buttons that appear to the right of the title */
+  /** One or more action buttons that appear to the right of the title */
   actionButtons?: ActionButtonProps[];
-   /** Menu that appears to the right of the title */
+  /** Menu that appears to the right of the title */
   actionMenu?: ActionMenuProps;
 };
 
@@ -63,7 +59,7 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
       {breadcrumbs}
       <Split hasGutter isWrappable className={classes.detailsPageHeaderSplit}>
         <SplitItem>
-          <Split hasGutter isWrappable className={`pf-v5-u-mb-sm ${classes.detailsPageHeaderSplit}`}>
+          <Split hasGutter isWrappable className={`pf-v5-u-mb-sm ${classes.detailsPageHeaderSplit}`}>       
             {/* Optional icon for details page heading (before title) */}
             {pageHeading?.iconBeforeTitle && (
               <SplitItem>
@@ -108,7 +104,21 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
             {/* Optional action buttons */}
             {Array.isArray(actionButtons) && actionButtons.length > 0 && (
               <SplitItem>
-                <ActionButtons actionButtons={actionButtons} />
+                <Flex>
+                  {actionButtons.map((actionButton, i) => (
+                    <FlexItem key={actionButton?.id ?? i}>
+                      <ActionButton
+                        onClick={actionButton.onClick}
+                        variant={actionButton?.variant}
+                        isDisabled={actionButton?.isDisabled}
+                        tooltip={actionButton?.tooltip}
+                        className="pf-v5-u-mb-sm"
+                      >
+                        {actionButton.children}
+                      </ActionButton>
+                    </FlexItem>
+                  ))}
+                </Flex>
               </SplitItem>
             )}
             {/* Optional action menu - ungrouped actions */}

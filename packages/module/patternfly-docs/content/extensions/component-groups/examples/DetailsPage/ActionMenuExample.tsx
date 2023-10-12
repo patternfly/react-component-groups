@@ -7,7 +7,7 @@ export const BasicExample: React.FC = () => (
       {
         children: 'Edit resource',
         itemID: 'action-menu-example-1',
-        cta: {
+        action: {
           // eslint-disable-next-line no-console
           callback: () => console.log('Edit resource clicked'),
         },
@@ -15,7 +15,7 @@ export const BasicExample: React.FC = () => (
       {
         children: 'Delete resource',
         itemID: 'action-menu-example-2',
-        cta: {
+        action: {
           // eslint-disable-next-line no-console
           callback: () => console.log('Delete resource clicked'),
         },

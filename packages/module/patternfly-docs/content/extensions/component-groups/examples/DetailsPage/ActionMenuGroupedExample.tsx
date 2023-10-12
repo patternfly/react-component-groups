@@ -10,7 +10,7 @@ export const BasicExample: React.FunctionComponent = () => (
           {
             children: 'Edit resource',
             itemID: 'action-menu-grouped-group-1-example-1',
-            cta: {
+            action: {
               // eslint-disable-next-line no-console
               callback: () => console.log('Edit resource clicked'),
             },
@@ -18,7 +18,7 @@ export const BasicExample: React.FunctionComponent = () => (
           {
             children: 'Delete resource',
             itemID: 'action-menu-grouped-group-1-example-2',
-            cta: {
+            action: {
               // eslint-disable-next-line no-console
               callback: () => console.log('Delete resource clicked'),
             },
@@ -33,7 +33,7 @@ export const BasicExample: React.FunctionComponent = () => (
           {
             children: 'GitHub',
             itemID: 'action-menu-grouped-group-2-example-1',
-            cta: {
+            action: {
               href: 'https://github.com/',
               external: true,
             },
@@ -41,7 +41,7 @@ export const BasicExample: React.FunctionComponent = () => (
           {
             children: 'Link',
             itemID: 'action-menu-grouped-group-2-example-2',
-            cta: {
+            action: {
               href: '/#',
             },
             description: 'Description of link',

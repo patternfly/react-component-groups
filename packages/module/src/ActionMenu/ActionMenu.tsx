@@ -14,22 +14,20 @@ import { ExternalLinkAltIcon } from '@patternfly/react-icons';
 import React from 'react';
 import { createUseStyles } from 'react-jss'
 
-// Duplicated from @openshift/dynamic-plugin-sdk
 type Never<T> = {
   [K in keyof T]?: never;
 };
 
-// Duplicated from @openshift/dynamic-plugin-sdk
 type EitherNotBoth<TypeA, TypeB> = (TypeA & Never<TypeB>) | (TypeB & Never<TypeA>);
 
-export type ActionCTA =
+export type ActionDefinition =
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   | { callback: (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => void }
   | { href: string; external?: boolean };
 
-export interface ActionProps extends Omit<DropdownItemProps, 'onClick' | 'innerRef'> {
+export interface ActionProps extends Omit<DropdownItemProps, 'onClick' | 'innerRef' | 'action'> {
   /** Executable callback or href. External links should automatically provide an external link icon on action. */
-  cta: ActionCTA;
+  action: ActionDefinition;
   /** Optional tooltip for this action. */
   tooltip?: string;
   /** Optional icon for this action. */
@@ -84,7 +82,8 @@ const useStyles = createUseStyles({
   }
 });
 
-export const ActionMenu: React.FunctionComponent<ActionMenuProps> = ({
+export const ActionMenu: React.FunctionComponent<ActionMenuProps> = ({  // replace deprecated
+  // pass custom action item
   actions = [],
   groupedActions = [],
   isDisabled,
@@ -102,31 +101,31 @@ export const ActionMenu: React.FunctionComponent<ActionMenuProps> = ({
 
   /** Returns a DropDownItem element corresponding to an action */
   const dropdownActionItem = React.useCallback(
-    (action: ActionProps) => {
+    (item: ActionProps) => {
       const externalIcon =
-        'href' in action.cta &&
-          'external' in action.cta &&
-          action.cta.href &&
-          action.cta.external ? (
+        'href' in item.action &&
+          'external' in item.action &&
+          item.action.href &&
+          item.action.external ? (
             <ExternalLinkAltIcon />
           ) : null;
-      const icon = action.icon ?? externalIcon;
-      const href = 'href' in action.cta ? action.cta.href : undefined;
+      const icon = item.icon ?? externalIcon;
+      const href = 'href' in item.action ? item.action.href : undefined;
       const onClick =
-        'callback' in action.cta && action.cta.callback ? action.cta.callback : undefined;
+        'callback' in item.action && item.action.callback ? item.action.callback : undefined;
       return (
-        <DropdownItemDeprecated
+        <DropdownItemDeprecated   // use new dropdown
           className={displayLabelBeforeIcon ? classes.menuItemWithLabelBeforeIcon : ''}
-          description={action.description}
-          isDisabled={action.isDisabled}
-          itemID={action.itemID}
+          description={item.description}
+          isDisabled={item.isDisabled}
+          itemID={item.itemID}
           onClick={onClick}
           href={href}
-          tooltip={action.tooltip}
+          tooltip={item.tooltip}
           icon={icon}
-          key={action.itemID}
+          key={item.itemID}
         >
-          {action.children}
+          {item.children}
         </DropdownItemDeprecated>
       );
     },
