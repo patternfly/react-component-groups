@@ -22,7 +22,7 @@ An **unavailable content** component displays a screen to users when they attemp
 ### Basic unavailable content
 
 A basic unavailable content component provides users with instructions, including a link to check a status page for known issues.
-The status page link can be specified using the `statusPageUrl`.
+The status page link can be specified using `statusPageUrl`.
 
 ```js file="./UnavailableContentExample.tsx"
 
