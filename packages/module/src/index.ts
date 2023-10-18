@@ -21,6 +21,9 @@ export * from './ErrorStack';
 export { default as ErrorState } from './ErrorState';
 export * from './ErrorState';
 
+export { default as ExpandableText } from './ExpandableText';
+export * from './ExpandableText';
+
 export { default as HorizontalNav } from './HorizontalNav';
 export * from './HorizontalNav';
 

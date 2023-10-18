@@ -16,8 +16,8 @@
     "docs:build": "pf-docs-framework build all --output public",
     "docs:serve": "pf-docs-framework serve public --port 5001",
     "docs:screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5001",
-    "test:a11y": "patternfly-a11y --config patternfly-a11y.config",
-    "serve:a11y": "serve coverage"
+    "serve:a11y": "serve coverage",
+    "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
   "repository": "git+https://github.com/patternfly/react-component-groups.git",
   "author": "Red Hat",
@@ -33,7 +33,8 @@
   "dependencies": {
     "@patternfly/react-core": "^5.0.0",
     "@patternfly/react-icons": "^5.0.0",
-    "react-jss": "^10.9.2"
+    "react-jss": "^10.9.2",
+    "sanitize-html": "^2.3.3"
   },
   "peerDependencies": {
     "react": "^17 || ^18",
