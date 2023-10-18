@@ -20,9 +20,11 @@ The **invalid object** component can be used to display an error message and "re
 
 
 
-## Component usage
+## Examples
 
-### Example
+### Basic invalid object 
+
+A basic invalid object throws an error and informs users that an error has occurred. It also includes a button link, which users can select to return to the homepage.  
 
 ```js file="./InvalidObjectExample.tsx"
 
