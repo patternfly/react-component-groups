@@ -3,7 +3,7 @@
 exports[`Ansible component should render supported - boolean 1`] = `
 <div>
   <i
-    class="ansible-0-2-1 supported-0-2-2"
+    class="ansible-0-2-1 ansibleSupported-0-2-2"
   >
     <svg
       style="enable-background: new 0 0 2032 2027.2;"
@@ -27,7 +27,7 @@ exports[`Ansible component should render supported - boolean 1`] = `
 exports[`Ansible component should render supported - number 1`] = `
 <div>
   <i
-    class="ansible-0-2-1 supported-0-2-2"
+    class="ansible-0-2-1 ansibleSupported-0-2-2"
   >
     <svg
       style="enable-background: new 0 0 2032 2027.2;"
@@ -51,7 +51,7 @@ exports[`Ansible component should render supported - number 1`] = `
 exports[`Ansible component should render unsupported - boolean 1`] = `
 <div>
   <i
-    class="ansible-0-2-1 unsupported-0-2-3"
+    class="ansible-0-2-1 ansibleUnsupported-0-2-3"
   >
     <svg
       style="enable-background: new 0 0 2032 2027.2;"
@@ -99,7 +99,7 @@ exports[`Ansible component should render unsupported - boolean 1`] = `
 exports[`Ansible component should render unsupported - number 1`] = `
 <div>
   <i
-    class="ansible-0-2-1 unsupported-0-2-3"
+    class="ansible-0-2-1 ansibleUnsupported-0-2-3"
   >
     <svg
       style="enable-background: new 0 0 2032 2027.2;"

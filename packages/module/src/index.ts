@@ -32,3 +32,9 @@ export * from './LongTextTooltip';
 
 export { default as NotAuthorized } from './NotAuthorized';
 export * from './NotAuthorized';
+
+export { default as TagCount } from './TagCount';
+export * from './TagCount';
+
+export { default as UnavailableContent } from './UnavailableContent';
+export * from './UnavailableContent';

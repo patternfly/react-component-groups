@@ -15,17 +15,19 @@ propComponents: ['Ansible']
 
 import Ansible from '@patternfly/react-component-groups/dist/dynamic/Ansible';
 
-The **Ansible** component shows Ansible project logo.
-
-To specify whether Ansible is supported or not, add the `unsupported` property to the `<Ansible>` component.
+The **Ansible** component displays the Ansible project logo, with a support status style.
 
 ### Ansible supported
+
+By default, the Ansible logo displays as normal and in full color, meaning that it is supported. 
 
 ```js file="./AnsibleSupportedExample.tsx"
 
 ```
 
 ### Ansible unsupported
+
+To specify that Ansible is not supported, add the `unsupported` property to the `<Ansible>` component.
 
 ```js file="./AnsibleUnsupportedExample.tsx"
 
