@@ -15,7 +15,6 @@ propComponents: ['TagCount']
 import TagCount from '@patternfly/react-component-groups/dist/dynamic/TagCount';
 
 The **tag count** component generates a tag icon that displays a number, which represents a count value. 
-display as disable with no value.
 
 ## Examples
 
