@@ -30,7 +30,7 @@ export interface InvalidObjectProps extends React.DetailedHTMLProps<React.HTMLAt
 const InvalidObject: React.FunctionComponent<InvalidObjectProps> = ({
   toLandingPageUrl = `${window.location.origin}`,
   toLandingPageText = 'Return to homepage'
- }: InvalidObjectProps) => {
+}: InvalidObjectProps) => {
   const classes = useStyles();
   const invalidObjectClasses = clsx("pf-v5-l-page__main-section", "pf-v5-c-page__main-section", classes.invalidObject)
   return (
