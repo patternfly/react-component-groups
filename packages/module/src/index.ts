@@ -27,9 +27,6 @@ export * from './HorizontalNav';
 export { default as InvalidObject } from './InvalidObject';
 export * from './InvalidObject';
 
-export { default as LongTextTooltip } from './LongTextTooltip';
-export * from './LongTextTooltip';
-
 export { default as NotAuthorized } from './NotAuthorized';
 export * from './NotAuthorized';
 
