@@ -127,8 +127,7 @@ When adding/making changes to a component, always make sure your code is tested:
 
 ### Styling:
 - for styling always use JSS
-- new classNames should match PatternFly conventions (`pf-cg-[component]-[more-details]`)
-- new CSS variables should be named like `--pf-cg-[my-variable]-[more-details]`
+- new classNames should be named in camelCase starting with the name of a given component and following with more details clarifying its purpose/component's subsection to which the class is applied (`actionMenu`, `actionMenuDropdown`, `actionMenuDropdownToggle`, etc.)
 
 ## Building for production
 
