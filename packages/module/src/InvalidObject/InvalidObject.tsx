@@ -1,8 +1,8 @@
-import { Button, Title } from '@patternfly/react-core';
+import { Button, EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateHeader, EmptyStateVariant } from '@patternfly/react-core';
 
-import Icon404 from './icon-404';
+import NotFoundIcon from '../NotFoundIcon/NotFoundIcon';
 import React from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
@@ -17,30 +17,32 @@ const useStyles = createUseStyles({
     button: { fontSize: "20px" }
   },
   "invalidObjectSorryText": { maxWidth: "70%" },
-})
+});
 
-export interface InvalidObjectProps {
-  /** Indicates if an additional "/beta" string should be added to when navigating back to the home screen. */
-  isBeta?: boolean
+export interface InvalidObjectProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
+  /** Custom landing page button URL */
+  toLandingPageUrl?: string;
+  /** Custom return to landing page text */
+  toLandingPageText?: React.ReactNode;
 }
 
 
-const InvalidObject: React.FunctionComponent<InvalidObjectProps> = ({ isBeta }) => {
+const InvalidObject: React.FunctionComponent<InvalidObjectProps> = ({
+  toLandingPageUrl = `${window.location.origin}`,
+  toLandingPageText = 'Return to homepage'
+ }: InvalidObjectProps) => {
   const classes = useStyles();
-  const invalidObjectClasses = classNames("pf-v5-l-page__main-section", "pf-v5-c-page__main-section", classes.invalidObject)
+  const invalidObjectClasses = clsx("pf-v5-l-page__main-section", "pf-v5-c-page__main-section", classes.invalidObject)
   return (
-    <section className={invalidObjectClasses}>
-      <Title headingLevel="h1" size="3xl">
-        We lost that page
-      </Title>
-      <Icon404 />
-      <Title headingLevel="h1" size="xl" className={classes.invalidObjectSorryText}>
-        Let&apos;s find you a new one. Try a new search or return home.
-      </Title>
-      <Button variant="link" component="a" href={`${window.location.origin}${isBeta ? '/beta' : ''}`}>
-        Return to homepage
-      </Button>
-    </section>
+    <EmptyState variant={EmptyStateVariant.full} className={invalidObjectClasses}>
+      <EmptyStateHeader titleText='We lost that page' icon={<NotFoundIcon />} headingLevel='h1' />
+      <EmptyStateBody>Let&apos;s find you a new one. Try a new search or return home.</EmptyStateBody>
+      <EmptyStateFooter>
+        <Button variant="link" component="a" href={toLandingPageUrl}>
+          {toLandingPageText}
+        </Button>
+      </EmptyStateFooter>
+    </EmptyState>
   );
 };
 
