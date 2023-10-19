@@ -26,10 +26,12 @@ To indicate that a table's cells are still loading, a basic skeleton table uses 
 
 ```
 
-### Skelton Table loading and replaced with table component
+### Full loading simulation
 
-This example shows how to use the skeleton table to indicate the data is loading, and then replace it with the table component once the data is available.
-To simulate the loading of the table use the `Load Table` button below the table.
+The following example demonstrates the typical behavior of a skeleton table transitioning to a normal table as the data becomes available.
+
+To simulate this loading process, select the `Load Table` button and wait for the data to populate.
+
 
 ```js file="./SkeletonTableLoadingExample.tsx"
 
