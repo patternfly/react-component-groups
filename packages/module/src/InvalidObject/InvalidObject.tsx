@@ -14,18 +14,16 @@ export interface InvalidObjectProps extends React.DetailedHTMLProps<React.HTMLAt
 const InvalidObject: React.FunctionComponent<InvalidObjectProps> = ({
   toLandingPageUrl = `${window.location.origin}`,
   toLandingPageText = 'Return to homepage'
-}: InvalidObjectProps) => {
-  return (
-    <EmptyState variant={EmptyStateVariant.full}>
-      <EmptyStateHeader titleText='We lost that page' icon={<NotFoundIcon />} headingLevel='h1' />
-      <EmptyStateBody>Let&apos;s find you a new one. Try a new search or return home.</EmptyStateBody>
-      <EmptyStateFooter>
-        <Button variant="link" component="a" href={toLandingPageUrl}>
-          {toLandingPageText}
-        </Button>
-      </EmptyStateFooter>
-    </EmptyState>
-  );
-};
+}: InvalidObjectProps) => (
+  <EmptyState variant={EmptyStateVariant.full}>
+    <EmptyStateHeader titleText='We lost that page' icon={<NotFoundIcon />} headingLevel='h1' />
+    <EmptyStateBody>Let&apos;s find you a new one. Try a new search or return home.</EmptyStateBody>
+    <EmptyStateFooter>
+      <Button variant="link" component="a" href={toLandingPageUrl}>
+        {toLandingPageText}
+      </Button>
+    </EmptyStateFooter>
+  </EmptyState>
+);
 
 export default InvalidObject;
