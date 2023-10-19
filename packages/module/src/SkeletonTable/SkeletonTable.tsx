@@ -3,8 +3,11 @@ import { Caption, Table, TableProps, TableVariant, Tbody, Td, Th, Thead, Tr } fr
 import { Skeleton } from '../Skeleton';
 
 export type SkeletonTableProps = TableProps & {
+  /** Indicates the table variant */
   variant?: TableVariant;
+  /** The number of rows the skeleton table should contain */
   rows?: number;
+  /** Any captions that should be added to the table */
   caption?: ReactNode;
 } & (
     | {
@@ -21,7 +24,7 @@ function hasCustomColumns(props: Record<string, any>): props is SkeletonTablePro
   return Array.isArray(props.columns);
 }
 
-const SkeletonTable: React.FunctionComponent<SkeletonTableProps> = (props) => {
+const SkeletonTable: React.FunctionComponent<SkeletonTableProps> = (props: SkeletonTableProps) => {
   const { variant, rows = 5, caption } = props;
   const rowCells = hasCustomColumns(props) ? props.columns.length : props.numberOfColumns;
   const rowArray = [ ...new Array(rowCells) ];
