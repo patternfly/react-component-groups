@@ -14,9 +14,7 @@ propComponents: ['SkeletonTable']
 ---
 import SkeletonTable from '@patternfly/react-component-groups/dist/dynamic/SkeletonTable';
 
-The skeleton table is used to handle the loading of a table.  It indicates data for each of the rows are loading by
-using the [skelton](https://www.patternfly.org/components/skeleton) component in each cell. Once the data is loaded, the
-skeleton table should be replaced with the table component containing the real data.
+The **skeleton table** component is used to display placeholder "skeletons" within a table as its contents load.
 
 ## Examples
 
