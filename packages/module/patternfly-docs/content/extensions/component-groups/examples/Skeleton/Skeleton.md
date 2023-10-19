@@ -31,6 +31,7 @@ The following is a basic example of a skeleton table.
 ### Skelton Table loading and replaced with table component
 
 This example shows how to use the skeleton table to indicate the data is loading, and then replace it with the table component once the data is available.
+To simulate the loading of the table use the `Load Table` button below the table.
 
 ```js file="./SkeletonTableLoadingExample.tsx"
 

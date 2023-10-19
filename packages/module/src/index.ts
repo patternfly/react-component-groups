@@ -27,9 +27,6 @@ export * from './HorizontalNav';
 export { default as NotAuthorized } from './NotAuthorized';
 export * from './NotAuthorized';
 
-export { default as Skeleton } from './Skeleton';
-export * from './Skeleton';
-
 export { default as SkeletonTable } from './SkeletonTable';
 export * from './SkeletonTable';
 

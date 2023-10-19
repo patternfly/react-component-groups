@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SkeletonTable from '@patternfly/react-core/dist/js/components/Skeleton/SkeletonTable';
 import { Table, Tbody, Td, Th, Tr, Thead } from '@patternfly/react-table';
 import { Button, Stack, StackItem } from '@patternfly/react-core';
@@ -12,7 +12,7 @@ interface Repository {
 }
 
 export const SkeletonTableExample: React.FC = () => {
-  const [ isLoaded, setIsLoaded ] = useState(false);
+  const [ isLoaded, setIsLoaded ] = React.useState(false);
 
   const simulatedAsyncCall = new Promise<boolean>((resolve) => {
     setTimeout(() => {
