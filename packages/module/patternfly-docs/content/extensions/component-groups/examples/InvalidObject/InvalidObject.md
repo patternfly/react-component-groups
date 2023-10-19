@@ -17,8 +17,6 @@ import InvalidObject from '@patternfly/react-component-groups/dist/dynamic/Inval
 
 The **invalid object** component can be used to display an error message and "return to homepage" button when an error occurs.
 
-
-
 ## Examples
 
 ### Basic invalid object 
