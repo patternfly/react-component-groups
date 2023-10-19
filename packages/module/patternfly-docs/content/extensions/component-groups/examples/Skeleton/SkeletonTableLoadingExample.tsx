@@ -12,11 +12,10 @@ interface Repository {
 }
 
 export const SkeletonTableExample: React.FC = () => {
-  const [ isLoaded, setIsLoaded ] = React.useState(false);
+  const [ isLoaded, setIsLoaded ] = useState(false);
 
   const simulatedAsyncCall = new Promise<boolean>((resolve) => {
     setTimeout(() => {
-      console.log('Network call complete successfully so return true');
       resolve(true);
     }, 5000);
   });
