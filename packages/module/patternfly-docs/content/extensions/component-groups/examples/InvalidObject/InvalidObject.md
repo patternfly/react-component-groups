@@ -15,7 +15,6 @@ propComponents: ['InvalidObject']
 
 import InvalidObject from '@patternfly/react-component-groups/dist/dynamic/InvalidObject';
 
-
 The **invalid object** component can be used to display an error message and "return to homepage" button when an error occurs.
 
 
