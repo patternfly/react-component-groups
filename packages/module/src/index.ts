@@ -24,6 +24,9 @@ export * from './ErrorState';
 export { default as HorizontalNav } from './HorizontalNav';
 export * from './HorizontalNav';
 
+export { default as InvalidObject } from './InvalidObject';
+export * from './InvalidObject';
+
 export { default as NotAuthorized } from './NotAuthorized';
 export * from './NotAuthorized';
 
