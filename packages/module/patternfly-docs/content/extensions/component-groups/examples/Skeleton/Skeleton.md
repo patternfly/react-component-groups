@@ -20,7 +20,7 @@ The **skeleton table** component is used to display placeholder "skeletons" with
 
 ### Basic skeleton table
 
-To indicate that a table's cells are still loading, a basic skeleton table uses the [skeleton](https://www.patternfly.org/components/skeleton) component to place a placeholder skeleton in each cell. Once the data is loaded, the skeleton table is replaced with a table containing the real data.```
+To indicate that a table's cells are still loading, a basic skeleton table uses the [skeleton](https://www.patternfly.org/components/skeleton) component to place a placeholder skeleton in each cell. Once the data is loaded, the skeleton table is replaced with a table containing the real data.
 
 ```js file="./SkeletonTableExample.tsx"
 
