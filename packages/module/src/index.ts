@@ -32,3 +32,6 @@ export * from './TagCount';
 
 export { default as UnavailableContent } from './UnavailableContent';
 export * from './UnavailableContent';
+
+export { default as WarningModal } from './WarningModal';
+export * from './WarningModal';
