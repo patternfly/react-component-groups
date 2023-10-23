@@ -4,12 +4,13 @@ import WarningModal from './WarningModal';
 
 describe('WarningModal component', () => {
   const initialProps = {
-    onConfirm: jest.fn(),
-    children: <>By confirming this action, unsaved data may be lost. Do you want to continue?</>
+    title: 'Unsaved changes',
+    onClose: () => null,
+    onConfirm: () => null,
   };
   
   it('should render', () => {
-    const { container } = render(<WarningModal {...initialProps}/>);
-    expect(container.firstChild).toMatchSnapshot();
+    const container = render(<WarningModal isOpen={true} {...initialProps}>Warning modal content</WarningModal>);
+    expect(container).toMatchSnapshot();
   });
 });

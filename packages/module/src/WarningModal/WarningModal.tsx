@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ModalProps, Modal, ModalVariant, ButtonVariant, variantIcons, } from '@patternfly/react-core';
+import { Button, ModalProps, Modal, ModalVariant, ButtonVariant } from '@patternfly/react-core';
 
 export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   /** Callback for the confirm action button. */
