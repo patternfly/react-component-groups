@@ -92,7 +92,7 @@ export const SkeletonTableExample: React.FC = () => {
               loadData();
             }}
           >
-            Load Table
+            Reload table
           </Button>
         </StackItem>
       </Stack>
