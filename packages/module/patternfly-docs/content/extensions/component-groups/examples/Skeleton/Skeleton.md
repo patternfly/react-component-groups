@@ -30,7 +30,7 @@ To indicate that a table's cells are still loading, a basic skeleton table uses 
 
 The following example demonstrates the typical behavior of a skeleton table transitioning to a normal table as the data becomes available.
 
-To simulate this loading process, select the `Load Table` button and wait for the data to populate.
+To simulate this loading process, select the `Reload table` button and wait for the data to populate.
 
 
 ```js file="./SkeletonTableLoadingExample.tsx"
