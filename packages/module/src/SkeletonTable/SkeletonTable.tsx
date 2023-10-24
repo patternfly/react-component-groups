@@ -33,7 +33,7 @@ const SkeletonTable: React.FunctionComponent<SkeletonTableProps> = (props: Skele
     <Tr key={index}>
       {rowArray.map((_, index) => (
         <Td key={index}>
-          <Skeleton className={clsx(classes.skeleton)}/>
+          <Skeleton />
         </Td>
       ))}
     </Tr>
