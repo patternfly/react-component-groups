@@ -1,8 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Caption, Table, TableProps, TableVariant, Tbody, Td, Th, Thead, Tr } from '@patternfly/react-table';
 import { Skeleton } from '@patternfly/react-core';
-import { createUseStyles } from 'react-jss';
-import { clsx } from 'clsx';
 
 export type SkeletonTableProps = TableProps & {
   /** Indicates the table variant */
@@ -20,16 +18,6 @@ export type SkeletonTableProps = TableProps & {
       }
   );
 
-const useStyles = createUseStyles({
-  skeleton: {
-    '&.ins-m-dark': {
-      '--pf-c-skeleton--BackgroundColor': 'var(--pf-v5-global--palette--black-600)',
-      '--pf-c-skeleton--after--LinearGradientColorStop1': 'var(--pf-v5-global--palette--black-600)',
-      '--pf-c-skeleton--after--LinearGradientColorStop2': 'var(--pf-v5--global--palette--black-500)',
-      '--pf-c-skeleton--after--LinearGradientColorStop3': 'var(--pf-v5-global--palette--black-600)',
-    },
-  },
-});
 
 function hasCustomColumns(props: Record<string, any>): props is SkeletonTableProps & {
   columns: ReactNode[];
@@ -39,7 +27,6 @@ function hasCustomColumns(props: Record<string, any>): props is SkeletonTablePro
 
 const SkeletonTable: React.FunctionComponent<SkeletonTableProps> = (props: SkeletonTableProps) => {
   const { variant, rows = 5, caption } = props;
-  const classes = useStyles();
   const rowCells = hasCustomColumns(props) ? props.columns.length : props.numberOfColumns;
   const rowArray = [ ...new Array(rowCells) ];
   const bodyRows = [ ...new Array(rows) ].map((_, index) => (
@@ -61,7 +48,7 @@ const SkeletonTable: React.FunctionComponent<SkeletonTableProps> = (props: Skele
             ? props.columns.map((c, index) => <Th key={index}>{c}</Th>)
             : rowArray.map((_, index) => (
               <Th key={index}>
-                <Skeleton className={clsx(classes.skeleton)}/>
+                <Skeleton />
               </Th>
             ))}
         </Tr>
