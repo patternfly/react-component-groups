@@ -15,14 +15,15 @@ propComponents: ['WarningModal']
 
 import WarningModal from '@patternfly/react-component-groups/dist/dynamic/WarningModal';
 
-A **warning modal** component displays a modal asking user to confirm his intention to perform a risky action.
+A **warning modal** component displays a modal when a user tries to perform a risky action, which asks them to confirm or cancel the action.
 
 ## Examples
 
 ### Basic warning modal
 
-A basic warning modal component provides users with a basic layout to which only specific texts need to be passed.
-Action buttons callbacks can be customized using `onConfirm` and `onClose`.
+A basic warning modal is triggered when a user tries to perform an action that is deemed risky. 
+
+You can customize the contents of the modal to fit your use cases. To adjust the text in the modal, pass your desired title to `title` and your message to the `<WarningModal>` component. To customize the action buttons in the modal, use `onConfirm` and `onClose`.
 
 ```js file="./WarningModalExample.tsx"
 
