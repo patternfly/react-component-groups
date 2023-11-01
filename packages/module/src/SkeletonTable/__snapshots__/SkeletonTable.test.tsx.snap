@@ -56,7 +56,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -68,7 +68,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -87,7 +87,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -99,7 +99,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -118,7 +118,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -130,7 +130,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -149,7 +149,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -161,7 +161,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -180,7 +180,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -192,7 +192,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -253,7 +253,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -265,7 +265,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -284,7 +284,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -296,7 +296,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -315,7 +315,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -327,7 +327,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -346,7 +346,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -358,7 +358,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -377,7 +377,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -389,7 +389,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -507,7 +507,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -519,7 +519,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -538,7 +538,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -550,7 +550,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -569,7 +569,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -581,7 +581,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -600,7 +600,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -612,7 +612,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -631,7 +631,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -643,7 +643,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
                 class="pf-v5-c-skeleton"
               >
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 />
               </div>
             </td>
@@ -704,7 +704,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -716,7 +716,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -735,7 +735,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -747,7 +747,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -766,7 +766,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -778,7 +778,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -797,7 +797,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -809,7 +809,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -828,7 +828,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>
@@ -840,7 +840,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
               class="pf-v5-c-skeleton"
             >
               <span
-                class="pf-v5-u-screen-reader"
+                class="pf-v5-screen-reader"
               />
             </div>
           </td>

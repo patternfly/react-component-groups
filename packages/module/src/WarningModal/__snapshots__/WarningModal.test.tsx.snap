@@ -79,7 +79,7 @@ exports[`WarningModal component should render 1`] = `
                   </svg>
                 </span>
                 <span
-                  class="pf-v5-u-screen-reader"
+                  class="pf-v5-screen-reader"
                 >
                   Warning alert:
                 </span>
