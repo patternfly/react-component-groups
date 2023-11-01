@@ -23,7 +23,7 @@ const UnavailableContent: React.FunctionComponent<UnavailableContentProps> = ({ 
   const classes = useStyles();
   return (
     <EmptyState variant={EmptyStateVariant.lg} className={clsx(classes.emptyStateUnavailable)}>
-      <EmptyStateHeader title="This page is temporarily unavailable" icon={<EmptyStateIcon icon={ExclamationCircleIcon} />} />
+      <EmptyStateHeader titleText="This page is temporarily unavailable" icon={<EmptyStateIcon icon={ExclamationCircleIcon} />} headingLevel="h5" />
       <EmptyStateBody>
         Try refreshing the page. If the problem persists, contact your organization administrator or visit our{' '}
         <Button component='a' className={clsx(classes.emptyStateLinkButton)} variant='link' href={statusPageUrl} target="_blank" rel="noopener noreferrer">
