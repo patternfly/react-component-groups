@@ -6,7 +6,7 @@ exports[`Battery component API should hide label 1`] = `
     aria-label="high high"
     class="battery-0-2-1 batteryHigh-0-2-5"
     widget-id="high"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -31,9 +31,10 @@ exports[`Battery component API should hide label 1`] = `
 exports[`Battery component should render correctly CriticalBattery - 4 1`] = `
 <div>
   <i
+    aria-label="4 4"
     class="battery-0-2-1 batteryCritical-0-2-6"
     widget-id="4"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -63,9 +64,10 @@ exports[`Battery component should render correctly CriticalBattery - 4 1`] = `
 exports[`Battery component should render correctly CriticalBattery - critical 1`] = `
 <div>
   <i
+    aria-label="critical critical"
     class="battery-0-2-1 batteryCritical-0-2-6"
     widget-id="critical"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -95,9 +97,10 @@ exports[`Battery component should render correctly CriticalBattery - critical 1`
 exports[`Battery component should render correctly HighBattery - 3 1`] = `
 <div>
   <i
+    aria-label="3 3"
     class="battery-0-2-1 batteryHigh-0-2-5"
     widget-id="3"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -127,9 +130,10 @@ exports[`Battery component should render correctly HighBattery - 3 1`] = `
 exports[`Battery component should render correctly HighBattery - error 1`] = `
 <div>
   <i
+    aria-label="error error"
     class="battery-0-2-1 batteryHigh-0-2-5"
     widget-id="error"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -159,9 +163,10 @@ exports[`Battery component should render correctly HighBattery - error 1`] = `
 exports[`Battery component should render correctly HighBattery - high 1`] = `
 <div>
   <i
+    aria-label="high high"
     class="battery-0-2-1 batteryHigh-0-2-5"
     widget-id="high"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -191,9 +196,10 @@ exports[`Battery component should render correctly HighBattery - high 1`] = `
 exports[`Battery component should render correctly LowBattery - 1 1`] = `
 <div>
   <i
+    aria-label="1 1"
     class="battery-0-2-1 batteryLow-0-2-3"
     widget-id="1"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -223,9 +229,10 @@ exports[`Battery component should render correctly LowBattery - 1 1`] = `
 exports[`Battery component should render correctly LowBattery - info 1`] = `
 <div>
   <i
+    aria-label="info info"
     class="battery-0-2-1 batteryLow-0-2-3"
     widget-id="info"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -255,9 +262,10 @@ exports[`Battery component should render correctly LowBattery - info 1`] = `
 exports[`Battery component should render correctly LowBattery - low 1`] = `
 <div>
   <i
+    aria-label="low low"
     class="battery-0-2-1 batteryLow-0-2-3"
     widget-id="low"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -287,9 +295,10 @@ exports[`Battery component should render correctly LowBattery - low 1`] = `
 exports[`Battery component should render correctly MediumBattery - 2 1`] = `
 <div>
   <i
+    aria-label="2 2"
     class="battery-0-2-1 batteryMedium-0-2-4"
     widget-id="2"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -305,6 +314,7 @@ exports[`Battery component should render correctly MediumBattery - 2 1`] = `
       />
       <path
         d="M 99.168857,327.14542 H 351.33914 c 5.33437,0 9.69886,-5.04 9.69886,-11.19999 v -28 c 0,-6.16001 -4.36449,-11.2 -9.69886,-11.2 H 99.168857 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.19999 9.698857,11.19999 z M 99.168993,419.0375 H 351.33927 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168993 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698857,11.2 z"
+        role="img"
       />
     </svg>
   </i>
@@ -319,9 +329,10 @@ exports[`Battery component should render correctly MediumBattery - 2 1`] = `
 exports[`Battery component should render correctly MediumBattery - medium 1`] = `
 <div>
   <i
+    aria-label="medium medium"
     class="battery-0-2-1 batteryMedium-0-2-4"
     widget-id="medium"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -337,6 +348,7 @@ exports[`Battery component should render correctly MediumBattery - medium 1`] = 
       />
       <path
         d="M 99.168857,327.14542 H 351.33914 c 5.33437,0 9.69886,-5.04 9.69886,-11.19999 v -28 c 0,-6.16001 -4.36449,-11.2 -9.69886,-11.2 H 99.168857 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.19999 9.698857,11.19999 z M 99.168993,419.0375 H 351.33927 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168993 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698857,11.2 z"
+        role="img"
       />
     </svg>
   </i>
@@ -351,9 +363,10 @@ exports[`Battery component should render correctly MediumBattery - medium 1`] = 
 exports[`Battery component should render correctly MediumBattery - warn 1`] = `
 <div>
   <i
+    aria-label="warn warn"
     class="battery-0-2-1 batteryMedium-0-2-4"
     widget-id="warn"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -369,6 +382,7 @@ exports[`Battery component should render correctly MediumBattery - warn 1`] = `
       />
       <path
         d="M 99.168857,327.14542 H 351.33914 c 5.33437,0 9.69886,-5.04 9.69886,-11.19999 v -28 c 0,-6.16001 -4.36449,-11.2 -9.69886,-11.2 H 99.168857 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.19999 9.698857,11.19999 z M 99.168993,419.0375 H 351.33927 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168993 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698857,11.2 z"
+        role="img"
       />
     </svg>
   </i>
@@ -383,9 +397,10 @@ exports[`Battery component should render correctly MediumBattery - warn 1`] = `
 exports[`Battery component should render correctly NullBatery, default 1`] = `
 <div>
   <i
+    aria-label=" "
     class="battery-0-2-1 batteryDefault-0-2-2"
     widget-id=""
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"

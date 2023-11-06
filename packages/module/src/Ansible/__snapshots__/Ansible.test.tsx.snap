@@ -3,6 +3,7 @@
 exports[`Ansible component should render supported - boolean 1`] = `
 <div>
   <i
+    aria-label="Ansible supported"
     class="ansible-0-2-1 ansibleSupported-0-2-2"
   >
     <svg
@@ -27,6 +28,7 @@ exports[`Ansible component should render supported - boolean 1`] = `
 exports[`Ansible component should render supported - number 1`] = `
 <div>
   <i
+    aria-label="Ansible supported"
     class="ansible-0-2-1 ansibleSupported-0-2-2"
   >
     <svg
@@ -51,6 +53,7 @@ exports[`Ansible component should render supported - number 1`] = `
 exports[`Ansible component should render unsupported - boolean 1`] = `
 <div>
   <i
+    aria-label="Ansible is not supported"
     class="ansible-0-2-1 ansibleUnsupported-0-2-3"
   >
     <svg
@@ -99,6 +102,7 @@ exports[`Ansible component should render unsupported - boolean 1`] = `
 exports[`Ansible component should render unsupported - number 1`] = `
 <div>
   <i
+    aria-label="Ansible is not supported"
     class="ansible-0-2-1 ansibleUnsupported-0-2-3"
   >
     <svg
