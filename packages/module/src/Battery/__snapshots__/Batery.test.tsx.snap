@@ -3,10 +3,10 @@
 exports[`Battery component API should hide label 1`] = `
 <div>
   <i
-    aria-label="high high"
     class="battery-0-2-1 batteryHigh-0-2-5"
+    title="high high"
     widget-id="high"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -32,8 +32,9 @@ exports[`Battery component should render correctly CriticalBattery - 4 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryCritical-0-2-6"
+    title="4 4"
     widget-id="4"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -64,8 +65,9 @@ exports[`Battery component should render correctly CriticalBattery - critical 1`
 <div>
   <i
     class="battery-0-2-1 batteryCritical-0-2-6"
+    title="critical critical"
     widget-id="critical"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -96,8 +98,9 @@ exports[`Battery component should render correctly HighBattery - 3 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryHigh-0-2-5"
+    title="3 3"
     widget-id="3"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -128,8 +131,9 @@ exports[`Battery component should render correctly HighBattery - error 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryHigh-0-2-5"
+    title="error error"
     widget-id="error"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -160,8 +164,9 @@ exports[`Battery component should render correctly HighBattery - high 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryHigh-0-2-5"
+    title="high high"
     widget-id="high"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -192,8 +197,9 @@ exports[`Battery component should render correctly LowBattery - 1 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryLow-0-2-3"
+    title="1 1"
     widget-id="1"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -224,8 +230,9 @@ exports[`Battery component should render correctly LowBattery - info 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryLow-0-2-3"
+    title="info info"
     widget-id="info"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -256,8 +263,9 @@ exports[`Battery component should render correctly LowBattery - low 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryLow-0-2-3"
+    title="low low"
     widget-id="low"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -288,8 +296,9 @@ exports[`Battery component should render correctly MediumBattery - 2 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryMedium-0-2-4"
+    title="2 2"
     widget-id="2"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -320,8 +329,9 @@ exports[`Battery component should render correctly MediumBattery - medium 1`] = 
 <div>
   <i
     class="battery-0-2-1 batteryMedium-0-2-4"
+    title="medium medium"
     widget-id="medium"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -352,8 +362,9 @@ exports[`Battery component should render correctly MediumBattery - warn 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryMedium-0-2-4"
+    title="warn warn"
     widget-id="warn"
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"
@@ -384,8 +395,9 @@ exports[`Battery component should render correctly NullBatery, default 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryDefault-0-2-2"
+    title=" "
     widget-id=""
-    widget-type="InsightsBattery"
+    widget-type="Battery"
   >
     <svg
       shape-rendering="geometricpresision"

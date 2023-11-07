@@ -71,7 +71,7 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ unsupported, className
   );
 
   return (
-    <i className={ansibleLogoClass} {...props}>
+    <i className={ansibleLogoClass} title={unsupported ? "Ansible is not supported" : "Ansible supported" }{...props}>
       <svg
         version="1.1"
         x="0px"

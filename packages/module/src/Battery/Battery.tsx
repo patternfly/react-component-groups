@@ -91,17 +91,15 @@ const Battery: React.FunctionComponent<BatteryProps> = ({ severity, label, label
   const classes = useStyles();
   const batteryClasses = clsx(classes.battery, classes[String(batteryLevels(severity, true))], className);
 
-  let ariaLabels = {};
-  if (labelHidden) {
-    ariaLabels = { ['aria-label']: `${severity} ${label}` };
-  }
+  const title = { ['title']: `${severity} ${label}` };
+
 
   const batteryVariant = useMemo(() => batteryLevels(severity) , [ severity ])
 
   return (
     <React.Fragment>
       {/* eslint-disable-next-line react/no-unknown-property */}
-      <i className={batteryClasses} {...ariaLabels} {...props} widget-type="InsightsBattery" widget-id={label}>
+      <i className={batteryClasses} {...title} {...props} widget-type="Battery" widget-id={label}>
         <svg
           version="1.1"
           x="0px"
