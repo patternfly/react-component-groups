@@ -24,7 +24,7 @@ const useStyles = createUseStyles({
   },
   ansibleUnsupported: {
     '& .st0, .st1, .st2': {
-      fill: 'var(--pf-v5-global--disabled-color--200)',
+      fill: 'var(--pf-v5-global--disabled-color--100)',
       cursor: 'not-allowed',
     }
   } 
