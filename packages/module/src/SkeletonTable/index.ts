@@ -1,2 +1,2 @@
 export { default } from './SkeletonTable';
-export { default as SkeletonTable } from './SkeletonTable';
+export * from './SkeletonTable';
