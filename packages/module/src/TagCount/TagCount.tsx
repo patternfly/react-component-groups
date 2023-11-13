@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { BaseSizes, Button, ButtonProps, Icon, IconComponentProps, IconProps } from '@patternfly/react-core';
+import { Button, ButtonProps, Icon } from '@patternfly/react-core';
 import { TagIcon } from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss'
 
