@@ -50,8 +50,8 @@ exports[`NotAuthorized component should apply custom styles 1`] = `
       >
         <a
           aria-disabled="false"
-          class="pf-v5-c-button pf-m-primary"
-          data-ouia-component-id="OUIA-Generated-Button-primary-2"
+          class="pf-v5-c-button pf-m-link"
+          data-ouia-component-id="OUIA-Generated-Button-link-2"
           data-ouia-component-type="PF5/Button"
           data-ouia-safe="true"
           href="."
@@ -167,8 +167,8 @@ exports[`NotAuthorized component should render 1`] = `
       >
         <a
           aria-disabled="false"
-          class="pf-v5-c-button pf-m-primary"
-          data-ouia-component-id="OUIA-Generated-Button-primary-1"
+          class="pf-v5-c-button pf-m-link"
+          data-ouia-component-id="OUIA-Generated-Button-link-1"
           data-ouia-component-type="PF5/Button"
           data-ouia-safe="true"
           href="."
@@ -234,19 +234,28 @@ exports[`NotAuthorized component should show custom actions 1`] = `
         >
           1
         </button>
-        <button
-          id="action-one"
-        >
-          2
-        </button>
       </div>
       <div
         class="pf-v5-c-empty-state__actions"
       >
+        <div
+          class="pf-v5-c-empty-state__actions"
+        >
+          <button
+            id="action-one"
+          >
+            2
+          </button>
+          <button
+            id="action-one"
+          >
+            3
+          </button>
+        </div>
         <a
           aria-disabled="false"
-          class="pf-v5-c-button pf-m-primary"
-          data-ouia-component-id="OUIA-Generated-Button-primary-6"
+          class="pf-v5-c-button pf-m-link"
+          data-ouia-component-id="OUIA-Generated-Button-link-6"
           data-ouia-component-type="PF5/Button"
           data-ouia-safe="true"
           href="."
@@ -309,8 +318,8 @@ exports[`NotAuthorized component should show custom description 1`] = `
       >
         <a
           aria-disabled="false"
-          class="pf-v5-c-button pf-m-primary"
-          data-ouia-component-id="OUIA-Generated-Button-primary-4"
+          class="pf-v5-c-button pf-m-link"
+          data-ouia-component-id="OUIA-Generated-Button-link-4"
           data-ouia-component-type="PF5/Button"
           data-ouia-safe="true"
           href="."
@@ -373,8 +382,8 @@ exports[`NotAuthorized component should show custom title 1`] = `
       >
         <a
           aria-disabled="false"
-          class="pf-v5-c-button pf-m-primary"
-          data-ouia-component-id="OUIA-Generated-Button-primary-5"
+          class="pf-v5-c-button pf-m-link"
+          data-ouia-component-id="OUIA-Generated-Button-link-5"
           data-ouia-component-type="PF5/Button"
           data-ouia-safe="true"
           href="."
@@ -437,8 +446,8 @@ exports[`NotAuthorized component should use custom icon 1`] = `
       >
         <a
           aria-disabled="false"
-          class="pf-v5-c-button pf-m-primary"
-          data-ouia-component-id="OUIA-Generated-Button-primary-3"
+          class="pf-v5-c-button pf-m-link"
+          data-ouia-component-id="OUIA-Generated-Button-link-3"
           data-ouia-component-type="PF5/Button"
           data-ouia-safe="true"
           href="."

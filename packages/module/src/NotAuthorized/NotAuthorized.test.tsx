@@ -38,15 +38,19 @@ describe('NotAuthorized component', () => {
   });
 
   it('should show custom actions', () => {
-    const actions = [
+    const primaryAction = 
       <button id="action-one" key="1">
         1
-      </button>,
+      </button>;
+    const secondaryActions = [
       <button id="action-one" key="2">
         2
       </button>,
+      <button id="action-one" key="3">
+        3
+      </button>
     ];
-    const { container } = render(<NotAuthorized {...initialProps} actions={actions} />);
+    const { container } = render(<NotAuthorized {...initialProps} primaryAction={primaryAction} secondaryActions={secondaryActions} />);
     expect(container.firstChild).toMatchSnapshot();
   });
 });
