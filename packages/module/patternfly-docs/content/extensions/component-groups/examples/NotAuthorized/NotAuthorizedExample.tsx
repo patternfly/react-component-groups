@@ -3,17 +3,22 @@ import { Button } from '@patternfly/react-core';
 import NotAuthorized from "@patternfly/react-component-groups/dist/dynamic/NotAuthorized";
 
 export const BasicExample: React.FunctionComponent = () => {
-  const actions = [
+  const primaryAction = 
     <Button key="1">
       First action
-    </Button>,
-    <Button key="2" className='pf-v5-u-mx-md'>
+    </Button>;
+  const secondaryActions = [
+    <Button key="2" variant="link">
       Second action
     </Button>,
+    <Button key="3" variant="link">
+      Third action
+    </Button>
   ];
   return (
     <NotAuthorized 
-      actions={actions} 
+      primaryAction={primaryAction} 
+      secondaryActions={secondaryActions}
       className="something" 
       description="Description text" 
       serviceName="Demo bundle"

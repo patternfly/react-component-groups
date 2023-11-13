@@ -17,8 +17,10 @@ export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | '
   className?: string;
   /** Custom title */
   title?: React.ReactNode;
-  /** Custom state actions */
-  actions?: React.ReactNode;
+  /** Custom primary action there should only be one primary action*/
+  primaryAction?: React.ReactNode;
+  /** Custom secondary actions */
+  secondaryActions?: React.ReactNode;
   /** Custom landing page button text */
   toLandingPageText?: React.ReactNode;
   /** Custom landing page button URL */
@@ -29,7 +31,8 @@ const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
   prevPageButtonText = 'Return to previous page',
   toLandingPageText = 'Go to landing page',
   toLandingPageUrl = ".",
-  actions = null,
+  primaryAction = null,
+  secondaryActions = null,
   serviceName,
   title = `You do not have access to ${serviceName}`,
   icon: Icon = LockIcon,
@@ -42,15 +45,16 @@ const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
     <EmptyStateHeader titleText={<>{title}</>} icon={<EmptyStateIcon icon={Icon} />} headingLevel="h5" />
     <EmptyStateBody>{description}</EmptyStateBody>
     <EmptyStateFooter>
-      {actions && <EmptyStateActions>{actions}</EmptyStateActions>}
+      {primaryAction ? <EmptyStateActions>{primaryAction}</EmptyStateActions> : null}
       <EmptyStateActions>
+        {secondaryActions ? <EmptyStateActions>{secondaryActions}</EmptyStateActions> : null}
         {showReturnButton &&
             (document.referrer ? (
-              <Button variant="primary" onClick={() => history.back()}>
+              <Button variant="link" onClick={() => history.back()}>
                 {prevPageButtonText}
               </Button>
             ) : (
-              <Button variant="primary" component="a" href={toLandingPageUrl}>
+              <Button variant="link" component="a" href={toLandingPageUrl}>
                 {toLandingPageText}
               </Button>
             ))}
