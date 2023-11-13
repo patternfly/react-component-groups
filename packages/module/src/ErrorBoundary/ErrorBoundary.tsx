@@ -4,7 +4,7 @@ import ErrorState from '../ErrorState';
 import ErrorStack from '../ErrorStack';
 
 export interface ErrorPageProps {
-  /** The title to display on the error page */
+  /** Title to display on the error page */
   headerTitle: string;
   /** Indicates if this is a silent error */
   silent?: boolean;

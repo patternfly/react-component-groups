@@ -1,9 +1,13 @@
 import * as React from 'react';
+import clsx from 'clsx';
 import { Text } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
 
 export interface ErrorStackProps {
+  /** Error object to be displayed in the stack */
   error: Error;
+  /** Custom className */
+  className?: string;
 }
 
 const useStyles = createUseStyles({
@@ -19,11 +23,12 @@ const useStyles = createUseStyles({
   },
 })
 
-export const ErrorStack: React.FunctionComponent<ErrorStackProps> = ({ error }) => {
+export const ErrorStack: React.FunctionComponent<ErrorStackProps> = ({ error, className, ...props }) => {
   const classes = useStyles();
+
   if (error.stack) {
     return (
-      <Text className={classes.errorStack}>
+      <Text className={clsx(classes.errorStack, className)} {...props} >
         {error.stack.split('\n').map((line) => (
           <div key={line}>{line}</div>
         ))}
@@ -35,7 +40,7 @@ export const ErrorStack: React.FunctionComponent<ErrorStackProps> = ({ error }) 
     return (
       <>
         <Text component="h6">{error.name}</Text>
-        <Text className={classes.errorStack} component="blockquote">
+        <Text className={clsx(classes.errorStack, className)} component="blockquote" {...props}>
           {error.message}
         </Text>
       </>
