@@ -16,10 +16,10 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
         type="button"
       >
         <span
-          class="pf-v5-c-icon pf-m-md"
+          class="pf-v5-c-icon"
         >
           <span
-            class="pf-v5-c-icon__content"
+            class="pf-v5-c-icon__content pf-m-md"
           >
             <svg
               aria-hidden="true"
@@ -54,10 +54,10 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
       type="button"
     >
       <span
-        class="pf-v5-c-icon pf-m-md"
+        class="pf-v5-c-icon"
       >
         <span
-          class="pf-v5-c-icon__content"
+          class="pf-v5-c-icon__content pf-m-md"
         >
           <svg
             aria-hidden="true"
@@ -148,10 +148,10 @@ exports[`TagCount component should render a tag count of 11 1`] = `
         type="button"
       >
         <span
-          class="pf-v5-c-icon pf-m-md"
+          class="pf-v5-c-icon"
         >
           <span
-            class="pf-v5-c-icon__content"
+            class="pf-v5-c-icon__content pf-m-md"
           >
             <svg
               aria-hidden="true"
@@ -187,10 +187,10 @@ exports[`TagCount component should render a tag count of 11 1`] = `
       type="button"
     >
       <span
-        class="pf-v5-c-icon pf-m-md"
+        class="pf-v5-c-icon"
       >
         <span
-          class="pf-v5-c-icon__content"
+          class="pf-v5-c-icon__content pf-m-md"
         >
           <svg
             aria-hidden="true"

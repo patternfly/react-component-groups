@@ -21,17 +21,20 @@ export interface TagCountProps extends ButtonProps {
   count?: number;
   /** Additional classes added to the tag count component */
   className?: string;
+  /** Icon size */
+  iconSize?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
 const TagCount: React.FunctionComponent<TagCountProps> = (
   { count, 
     className,
+    iconSize= 'md',
     ...props }: TagCountProps) => {
   const classes = useStyles();
   const tagClasses = clsx(classes.buttonTagCount, className);
   return (
     <Button aria-label="Tag count" {...props} variant="plain" isDisabled={!count} className={tagClasses}>
-      <Icon size="md">
+      <Icon iconSize={iconSize} >
         <TagIcon/>
       </Icon>
       <span className={classes.tagText}>{count}</span>

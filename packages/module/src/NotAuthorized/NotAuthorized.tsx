@@ -17,7 +17,7 @@ export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | '
   className?: string;
   /** Custom title */
   title?: React.ReactNode;
-  /** Custom primary action there should only be one primary action*/
+  /** Custom primary action - there should only be one defined */
   primaryAction?: React.ReactNode;
   /** Custom secondary actions */
   secondaryActions?: React.ReactNode;
