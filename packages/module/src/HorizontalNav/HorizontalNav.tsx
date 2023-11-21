@@ -4,6 +4,8 @@ import { Tabs, Tab, TabProps, TabTitleText, TabsProps as TabsPropsPF } from '@pa
 type TabsProps = Omit<TabsPropsPF, 'children' | 'ref' | 'onSelect'>;
 
 export interface HorizontalNavProps extends TabsProps {
+  /** aria-label for all tabs */
+  ariaLabel?: string;
   /** Navigation tabs */
   tabs: Omit<TabProps, 'ref'>[];
   /** Callback to handle tab selection */
@@ -11,6 +13,7 @@ export interface HorizontalNavProps extends TabsProps {
 };
 
 const HorizontalNav: React.FunctionComponent<HorizontalNavProps> = ({
+  ariaLabel,
   tabs,
   defaultActiveKey,
   onTabSelect,
@@ -27,7 +30,8 @@ const HorizontalNav: React.FunctionComponent<HorizontalNavProps> = ({
         setActiveTabKey(eventKey);
         onTabSelect?.(e, eventKey);
       }}
-      role="nav"
+      role="navigation"
+      aria-label={ariaLabel}
       {...props}
     >
       {tabs.map((tab) => (
