@@ -2,7 +2,7 @@
 section: extensions
 subsection: Component groups
 id: About component groups
-sortorder: 1
+sortValue: 1
 --- 
 
 Component groups lives in its own package [`@patternfly/react-component-groups`](https://www.npmjs.com/package/@patternfly/react-component-groups) 
