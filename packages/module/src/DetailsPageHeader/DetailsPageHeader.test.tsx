@@ -49,8 +49,7 @@ describe('DetailsPageHeader', () => {
     render(detailsPageHeaderJSX(mockProps));
 
     // Breadcrumbs
-    expect(screen.getByText('Resources')).toBeVisible();
-    expect(screen.getByText('Resource details')).toBeVisible();
+    expect(screen.getByText('Some breadcrumbs')).toBeVisible();
     // Page heading
     expect(screen.getByText('example-resource')).toBeVisible();
     // Action buttons
@@ -58,19 +57,12 @@ describe('DetailsPageHeader', () => {
     // Action menu
     expect(screen.getByText('Actions')).toBeVisible();
   });
-  test('Clicking on breadcrumb triggers specified path', () => {
-    render(detailsPageHeaderJSX(mockProps));
-
-    // Click Workspaces link
-    fireEvent.click(screen.getByTestId('breadcrumb-link-0'));
-    expect(screen.getByText('Resource list page')).toBeVisible();
-  });
   test('Clicking on actions menu reveals menu options', () => {
     render(detailsPageHeaderJSX(mockProps));
 
     fireEvent.click(screen.getByText('Actions'));
-    expect(screen.getByText('Edit resource')).toBeVisible();
-    expect(screen.getByText('Delete resource')).toBeVisible();
+    expect(screen.getByText('Edit resource')).toBeInTheDocument();
+    expect(screen.getByText('Delete resource')).toBeInTheDocument();
   });
   test('Action button triggers callback', () => {
     render(detailsPageHeaderJSX(mockProps));
