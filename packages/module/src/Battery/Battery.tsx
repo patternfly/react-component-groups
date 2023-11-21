@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss'
 
 const batteryDefault = {
   '& svg': {
-    '& path': { fill: 'var(--pf-v5-global--disabled-color--200)' }
+    '& path': { fill: 'var(--pf-v5-global--icon--Color--light)' }
   }
 };
 
@@ -34,7 +34,7 @@ const batteryCritical = {
 
 const batteryLineColor = {
   '& svg': {
-    '& path': { stroke: 'var(--pf-v5-global--palette--black-500)' }
+    '& path': { stroke: 'var(--pf-v5-global--BorderColor--100)' }
   }
 };
 
