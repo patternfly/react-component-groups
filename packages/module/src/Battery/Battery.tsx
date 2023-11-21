@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss'
 
 const batteryDefault = {
   '& svg': {
-    '& path': { fill: 'var(--pf-v5-global--disabled-color--200)' }
+    '& path': { fill: 'var(--pf-v5-global--icon--Color--light)' }
   }
 };
 
@@ -32,6 +32,12 @@ const batteryCritical = {
   }
 };
 
+const batteryLineColor = {
+  '& svg': {
+    '& path': { stroke: 'var(--pf-v5-global--BorderColor--100)' }
+  }
+};
+
 const useStyles = createUseStyles({
   battery: {
     display: 'inline-block',
@@ -48,6 +54,7 @@ const useStyles = createUseStyles({
   batteryMedium,
   batteryHigh,
   batteryCritical,
+  batteryLineColor
 });
 
 const batteryLevels = (severity: BatterySeverity, classMode?: boolean) => {
@@ -112,7 +119,7 @@ const Battery: React.FunctionComponent<BatteryProps> = ({ severity, label, label
             style={{
               fill: 'none',
               fillOpacity: 1,
-              stroke: '#969696',
+              stroke: batteryLineColor['& svg']['& path'].stroke,
               strokeWidth: 41.96378708,
               strokeLinejoin: 'round',
               strokeMiterlimit: 4,
