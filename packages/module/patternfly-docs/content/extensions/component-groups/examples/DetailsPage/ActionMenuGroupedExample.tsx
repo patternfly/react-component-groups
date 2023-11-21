@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { ActionMenu } from '@patternfly/react-component-groups';
 
@@ -6,22 +7,16 @@ export const BasicExample: React.FunctionComponent = () => (
     groupedActions={[
       {
         groupId: 'group1',
-        groupActions: [
+        actions: [
           {
             children: 'Edit resource',
-            itemID: 'action-menu-grouped-group-1-example-1',
-            action: {
-              // eslint-disable-next-line no-console
-              callback: () => console.log('Edit resource clicked'),
-            },
+            itemId: 'action-menu-grouped-group-1-example-1',
+            onClick: () => console.log('Edit resource clicked')
           },
           {
             children: 'Delete resource',
-            itemID: 'action-menu-grouped-group-1-example-2',
-            action: {
-              // eslint-disable-next-line no-console
-              callback: () => console.log('Delete resource clicked'),
-            },
+            itemId: 'action-menu-grouped-group-1-example-2',
+            onClick: () => console.log('Delete resource clicked'),
             isDisabled: true,
           },
         ],
@@ -29,27 +24,21 @@ export const BasicExample: React.FunctionComponent = () => (
       {
         groupId: 'group2',
         label: 'Links',
-        groupActions: [
+        actions: [
           {
             children: 'GitHub',
-            itemID: 'action-menu-grouped-group-2-example-1',
-            action: {
-              href: 'https://github.com/',
-              external: true,
-            },
+            itemId: 'action-menu-grouped-group-2-example-1',
+            onClick: () => console.log('GitHub clicked'),
           },
           {
             children: 'Link',
-            itemID: 'action-menu-grouped-group-2-example-2',
-            action: {
-              href: '/#',
-            },
+            itemId: 'action-menu-grouped-group-2-example-2',
+            onClick: () => console.log('Link clicked'),
             description: 'Description of link',
           },
         ],
       },
     ]}
-    displayLabelBeforeIcon
     id='action-menu-grouped-example'
   />
 );

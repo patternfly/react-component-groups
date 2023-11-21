@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CheckCircleIcon } from '@patternfly/react-icons';
@@ -44,19 +45,13 @@ export const BasicExample: React.FunctionComponent = () => (
         actions: [
           {
             children: 'Edit resource',
-            itemID: 'details-page-action-menu-example-1',
-            action: {
-              // eslint-disable-next-line no-console
-              callback: () => console.log('Edit resource clicked'),
-            },
+            itemId: 'details-page-action-menu-example-1',
+            onClick: () => console.log('Edit resource clicked')
           },
           {
             children: 'Delete resource',
-            itemID: 'details-page-action-menu-example-2',
-            action: {
-              // eslint-disable-next-line no-console
-              callback: () => console.log('Delete resource clicked'),
-            },
+            itemId: 'details-page-action-menu-example-2',
+            onClick: () => console.log('Delete resource clicked'),
             isDisabled: true,
           },
         ],

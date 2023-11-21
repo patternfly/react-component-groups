@@ -20,19 +20,14 @@ const mockProps: DetailsPageHeaderProps = {
     actions: [
       {
         children: 'Edit resource',
-        itemID: 'details-page-header-action-menu-example-1',
-        action: {
-          // eslint-disable-next-line no-console
-          callback: () => console.log('Edit resource clicked'),
-        },
+        itemId: 'action-menu-grouped-group-1-example-1',
+        onClick: mockCallback,
+        tooltipProps: { content: 'Sample tooltip' },
       },
       {
         children: 'Delete resource',
-        itemID: 'details-page-header-action-menu-example-2',
-        action: {
-          // eslint-disable-next-line no-console
-          callback: () => console.log('Delete resource clicked'),
-        },
+        itemId: 'action-menu-grouped-group-1-example-2',
+        onClick: mockCallback,
         isDisabled: true,
       },
     ],

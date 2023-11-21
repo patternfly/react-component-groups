@@ -7,17 +7,13 @@ const mockCallback = jest.fn();
 const mockActions = [
   {
     children: 'Edit resource',
-    itemID: 'action-menu-example-1',
-    action: {
-      callback: mockCallback,
-    },
+    itemId: 'action-menu-example-1',
+    onClick: mockCallback,
   },
   {
     children: 'Delete resource',
-    itemID: 'action-menu-example-2',
-    action: {
-      callback: jest.fn(),
-    },
+    itemId: 'action-menu-example-2',
+    onClick: mockCallback,
     isDisabled: true,
   },
 ];
@@ -25,21 +21,17 @@ const mockActions = [
 const mockGroupedActions = [
   {
     groupId: 'group1',
-    groupActions: [
+    actions: [
       {
         children: 'Edit resource',
-        itemID: 'action-menu-grouped-group-1-example-1',
-        action: {
-          callback: jest.fn(),
-        },
-        tooltip: 'Sample tooltip',
+        itemId: 'action-menu-grouped-group-1-example-1',
+        onClick: mockCallback,
+        tooltipProps: { content: 'Sample tooltip' },
       },
       {
         children: 'Delete resource',
-        itemID: 'action-menu-grouped-group-1-example-2',
-        action: {
-          callback: jest.fn(),
-        },
+        itemId: 'action-menu-grouped-group-1-example-2',
+        onClick: mockCallback,
         isDisabled: true,
       },
     ],
@@ -47,22 +39,17 @@ const mockGroupedActions = [
   {
     groupId: 'group2',
     label: 'Group2',
-    groupActions: [
+    actions: [
       {
         children: 'External Link',
-        itemID: 'action-menu-grouped-group-2-example-1',
-        action: {
-          href: 'https://github.com/',
-          external: true,
-        },
+        itemId: 'action-menu-grouped-group-2-example-1',
+        onClick: mockCallback,
       },
       {
-        itemID: 'action-menu-grouped-group-2-example-2',
+        itemId: 'action-menu-grouped-group-2-example-2',
         label: 'Link',
-        action: {
-          href: '/#',
-        },
-        tooltip: 'Link',
+        onClick: mockCallback,
+        tooltipProps: { content: 'Link' },
       },
     ],
   },

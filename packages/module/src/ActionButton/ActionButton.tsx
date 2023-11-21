@@ -17,8 +17,8 @@ export const ActionButton: React.FunctionComponent<ActionButtonProps> = ({
     <>
       <Button
         aria-describedby={tooltipProps?.id}
-        {...buttonProps}
         innerRef={tooltipRef}
+        {...buttonProps}
       />
       {tooltipProps ? <Tooltip {...tooltipProps} triggerRef={tooltipRef} /> : null}
     </>

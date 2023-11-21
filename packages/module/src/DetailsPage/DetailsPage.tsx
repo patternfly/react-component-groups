@@ -17,7 +17,7 @@ const DetailsPage: React.FunctionComponent<DetailsPageProps> = ({
   defaultActiveKey,
   children,
   ...props
-}: DetailsPageProps ) => (
+}: DetailsPageProps) => (
   <>
     <DetailsPageHeader
       breadcrumbs={breadcrumbs}

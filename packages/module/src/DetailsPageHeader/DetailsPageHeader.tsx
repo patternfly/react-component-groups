@@ -86,7 +86,6 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
                   color={pageHeading.label?.color}
                   variant={pageHeading.label?.variant}
                   isCompact={pageHeading.label?.isCompact}
-                  
                   tooltipPosition={pageHeading.label?.tooltipPosition}
                   icon={pageHeading.label?.icon}
                   href={pageHeading.label?.href}
@@ -129,7 +128,7 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
                   isDisabled={actionMenu?.isDisabled}
                   variant={actionMenu?.variant}
                   label={actionMenu?.label}
-                  position={actionMenu?.position}
+                  popperProps={actionMenu?.popperProps}
                   id={actionMenu?.id}
                 />
               </SplitItem>
@@ -142,7 +141,7 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
                   isDisabled={actionMenu?.isDisabled}
                   variant={actionMenu?.variant}
                   label={actionMenu?.label}
-                  position={actionMenu?.position}
+                  popperProps={actionMenu?.popperProps}
                 />
               </SplitItem>
             )}
