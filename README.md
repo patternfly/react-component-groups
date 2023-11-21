@@ -1,7 +1,11 @@
 # PatternFly React Component Groups
 
-This repo contains a set of opinionated react component groups used to standardize functionality and look and feel across products.  The components are based of PatternFly with some additional functionality. 
+This repo contains a set of opinionated react component groups used to standardize functionality and look and feel across products.  The components are based on PatternFly with some additional functionality. 
 
+### Migration from [RedHatInsights/frontend-components](https://github.com/RedHatInsights/frontend-components) to [patternfly/react-component-groups](https://github.com/patternfly/react-component-groups)
+Please see the [migration guide](./migration.md)
+
+---
 ## Contribution guide
 
 ### Before adding a new component:
@@ -11,7 +15,7 @@ This repo contains a set of opinionated react component groups used to standardi
 ### To add a new component:
 1. create a folder in `src/` matching its name (for example `src/MyComponent`)
 2. to the new folder add a new `.tsx` file named after the component (for example `src/MyComponent/MyComponent.tsx`)
-3. to the same folder include also a `index.ts` which will export the component as a default and then all necessary interfaces
+3. to the same folder include an `index.ts` which will export the component as a default and then all necessary interfaces
 4. if this file structure is not met, your component won't be exposed correctly
 
 #### Example component:
@@ -21,7 +25,7 @@ import { Text } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
 
 // do not forget to export your component's interface
-// always place component's interface above the component itself in the code
+// always place the component's interface above the component itself in the code
 export interface MyComponentProps {
   text: String;
 }
@@ -33,7 +37,7 @@ const useStyles = createUseStyles({
   },
 })
 
-// do not use named export of your component, just a default one
+// do not use the named export of your component, just a default one
 const MyComponent: React.FunctionComponent<MyComponentProps> = () => {
   const classes = useStyles();
 
