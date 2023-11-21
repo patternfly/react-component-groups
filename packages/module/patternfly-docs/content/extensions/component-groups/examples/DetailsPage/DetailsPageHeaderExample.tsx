@@ -1,16 +1,29 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CheckCircleIcon } from '@patternfly/react-icons';
 import DetailsPageHeader from '@patternfly/react-component-groups/dist/dynamic/DetailsPageHeader';
+import { Breadcrumb, BreadcrumbItem } from '@patternfly/react-core';
 
 export const BasicExample: React.FunctionComponent = () => (
   <Router>
     <DetailsPageHeader
-      breadcrumbs={
-        [
-          { children: 'Resources', to: '/resources' },
-          { children: 'Resource details', to: '/resources/example-resource' },
-        ]
+      breadcrumbs={ 
+        <Breadcrumb>
+          <BreadcrumbItem
+            to="/resources"
+            key="resources"
+          >
+            Resources
+          </BreadcrumbItem>
+          <BreadcrumbItem
+            isActive
+            to="/resources/example-resource"
+            key="resources-example"
+          >
+            Resource details
+          </BreadcrumbItem>
+        </Breadcrumb>
       }
       pageHeading={{
         title: 'example-resource',
@@ -32,19 +45,13 @@ export const BasicExample: React.FunctionComponent = () => (
         actions: [
           {
             children: 'Edit resource',
-            itemID: 'details-page-header-action-menu-example-1',
-            cta: {
-              // eslint-disable-next-line no-console
-              callback: () => console.log('Edit resource clicked'),
-            },
+            itemId: 'details-page-header-action-menu-example-1',
+            onClick: () => console.log('Edit resource clicked'),
           },
           {
             children: 'Delete resource',
-            itemID: 'details-page-header-action-menu-example-2',
-            cta: {
-              // eslint-disable-next-line no-console
-              callback: () => console.log('Delete resource clicked'),
-            },
+            itemId: 'details-page-header-action-menu-example-2',
+            onClick: () => console.log('Delete resource clicked'),
             isDisabled: true,
           },
         ],

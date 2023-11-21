@@ -6,10 +6,7 @@ import DetailsPageHeader, { DetailsPageHeaderProps } from './DetailsPageHeader';
 const mockCallback = jest.fn();
 
 const mockProps: DetailsPageHeaderProps = {
-  breadcrumbs: [
-    { children: 'Resources', to: '/resources' },
-    { children: 'Resource details', to: '/resources/example-resource' },
-  ],
+  breadcrumbs: <div>Some breadcrumbs</div>,
   pageHeading: {
     title: 'example-resource',
   },
@@ -23,19 +20,14 @@ const mockProps: DetailsPageHeaderProps = {
     actions: [
       {
         children: 'Edit resource',
-        itemID: 'details-page-header-action-menu-example-1',
-        cta: {
-          // eslint-disable-next-line no-console
-          callback: () => console.log('Edit resource clicked'),
-        },
+        itemId: 'action-menu-grouped-group-1-example-1',
+        onClick: mockCallback,
+        tooltipProps: { content: 'Sample tooltip' },
       },
       {
         children: 'Delete resource',
-        itemID: 'details-page-header-action-menu-example-2',
-        cta: {
-          // eslint-disable-next-line no-console
-          callback: () => console.log('Delete resource clicked'),
-        },
+        itemId: 'action-menu-grouped-group-1-example-2',
+        onClick: mockCallback,
         isDisabled: true,
       },
     ],
@@ -57,8 +49,7 @@ describe('DetailsPageHeader', () => {
     render(detailsPageHeaderJSX(mockProps));
 
     // Breadcrumbs
-    expect(screen.getByText('Resources')).toBeVisible();
-    expect(screen.getByText('Resource details')).toBeVisible();
+    expect(screen.getByText('Some breadcrumbs')).toBeVisible();
     // Page heading
     expect(screen.getByText('example-resource')).toBeVisible();
     // Action buttons
@@ -66,19 +57,12 @@ describe('DetailsPageHeader', () => {
     // Action menu
     expect(screen.getByText('Actions')).toBeVisible();
   });
-  test('Clicking on breadcrumb triggers specified path', () => {
-    render(detailsPageHeaderJSX(mockProps));
-
-    // Click Workspaces link
-    fireEvent.click(screen.getByTestId('breadcrumb-link-0'));
-    expect(screen.getByText('Resource list page')).toBeVisible();
-  });
   test('Clicking on actions menu reveals menu options', () => {
     render(detailsPageHeaderJSX(mockProps));
 
     fireEvent.click(screen.getByText('Actions'));
-    expect(screen.getByText('Edit resource')).toBeVisible();
-    expect(screen.getByText('Delete resource')).toBeVisible();
+    expect(screen.getByText('Edit resource')).toBeInTheDocument();
+    expect(screen.getByText('Delete resource')).toBeInTheDocument();
   });
   test('Action button triggers callback', () => {
     render(detailsPageHeaderJSX(mockProps));

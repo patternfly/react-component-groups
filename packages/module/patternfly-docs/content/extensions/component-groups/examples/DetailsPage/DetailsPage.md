@@ -15,9 +15,6 @@ propComponents: [
   'DetailsPageHeader',
   'PageHeading',
   # 'PageHeadingLabel', # No output --> is a type and not an interface
-  'Breadcrumbs',
-  # 'Breadcrumb', # No output --> is a type and not an interface
-  'ActionButtons',
   'ActionButton',  # Incomplete output --> see https://github.com/patternfly/patternfly-org/issues/3423
   # 'ActionCTA', # No output --> is a type and not an interface
   'ActionMenu',
@@ -29,9 +26,7 @@ propComponents: [
 beta: true
 ---
 
-import { ActionButtons } from '@patternfly/react-component-groups';
 import { ActionMenu } from '@patternfly/react-component-groups';
-import { Breadcrumbs } from '@patternfly/react-component-groups';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CheckCircleIcon } from '@patternfly/react-icons';
 import HorizontalNav from '@patternfly/react-component-groups/dist/dynamic/HorizontalNav';
@@ -57,24 +52,6 @@ Details page content should be customized within the appropriate tab to fit your
 The `pageHeader` for a details page contains the `breadcrumbs`, `pageHeading`, and any actions.
 
 ```js file="./DetailsPageHeaderExample.tsx"
-
-```
-
-### Details page breadcrumbs 
-
-You can specify the `children` of the details page `breadcrumbs` and the pages that they point to.
-
-```js file="./BreadcrumbsExample.tsx"
-
-```
-
-### Details page action buttons 
-
-The action buttons in a details page header can be customized to be any [button](/components/button) variant.
-
-Include a [`tooltip`](/components/tooltip/) as appropriate.
-
-```js file="./ActionButtonsExample.tsx"
 
 ```
 

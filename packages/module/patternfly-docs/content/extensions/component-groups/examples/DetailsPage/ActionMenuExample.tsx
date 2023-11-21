@@ -1,24 +1,19 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { ActionMenu } from '@patternfly/react-component-groups';
 
-export const BasicExample: React.FC = () => (
+export const BasicExample: React.FunctionComponent = () => (
   <ActionMenu
     actions={[
       {
         children: 'Edit resource',
-        itemID: 'action-menu-example-1',
-        cta: {
-          // eslint-disable-next-line no-console
-          callback: () => console.log('Edit resource clicked'),
-        },
+        itemId: 'action-menu-example-1',
+        onClick: () => console.log('Edit resource clicked'),
       },
       {
         children: 'Delete resource',
-        itemID: 'action-menu-example-2',
-        cta: {
-          // eslint-disable-next-line no-console
-          callback: () => console.log('Delete resource clicked'),
-        },
+        itemId: 'action-menu-example-2',
+        onClick: () => console.log('Delete resource clicked'),
         isDisabled: true,
       },
     ]}
