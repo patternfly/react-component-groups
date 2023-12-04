@@ -4,19 +4,19 @@ import ErrorState from '../ErrorState';
 import ErrorStack from '../ErrorStack';
 
 export interface ErrorPageProps {
-  /** Title to display on the error page */
+  /** The title text to display on the error page */
   headerTitle: string;
-  /** Indicates if this is a silent error */
+  /** Indicates if the error is silent */
   silent?: boolean;
-  /** Title given to the error */
+  /** The title text to display with the error */
   errorTitle?: string;
-  /** A description of the error */
+  /** The description text to display with the error */
   errorDescription?: React.ReactNode;
-  /** Text to display when error is closed. */
+  /** The text for the toggle link that users can select to view error details */
   errorToggleText?: string;
-  /** A default description of the error used if no errorDescription is provided. */
+  /** The default description text to display with the error if no errorDescription is provided */
   defaultErrorDescription?: React.ReactNode;
-  /** Children components */
+  /** The component that the error boundary component is wrapped around, which should be returned if there is no error  */
   children?: React.ReactNode;
 }
 

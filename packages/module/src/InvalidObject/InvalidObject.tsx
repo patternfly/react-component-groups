@@ -4,13 +4,13 @@ import NotFoundIcon from '../NotFoundIcon/NotFoundIcon';
 import React from 'react';
 
 export interface InvalidObjectProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
-  /** Custom landing page button URL */
+  /** The URL that the landing page link points to */
   toLandingPageUrl?: string;
-  /** Custom return to landing page text */
+  /** The text label for the link that points back to the landing page */
   toLandingPageText?: React.ReactNode;
-  /** Custom invalid page title text */
+  /** The title for the invalid object message */
   invalidObjectTitleText?: string;
-  /** Custom invalid page body text */
+  /** The body text for the invalid object message */
   invalidObjectBodyText?: string;
 }
 

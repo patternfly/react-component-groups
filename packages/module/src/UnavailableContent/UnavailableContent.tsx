@@ -15,15 +15,15 @@ const useStyles = createUseStyles({
 });
 
 export interface UnavailableContentProps {
-  /** Page to open when user clicks on status page link */
+  /** The URL that the status page link points to */
   statusPageUrl?: string;
-  /** Status page link text */
+  /** The text label for the link that points to the status page */
   statusPageLinkText?: string;
-  /** Unavailable page title text */
+  /** The title for the unavailable content message */
   unavailableTitleText?: string;
-  /** Unavailable page body text before status page link */
+  /** The body text for the unavailable content message that appears before the status page link */
   unavailableBodyPreStatusLinkText?: string;
-  /** Unavailable page body text after status page link */
+  /** The body text for the unavailable content message that appears after the status page link */
   unavailableBodyPostStatusLinkText?: string;
 }
 
