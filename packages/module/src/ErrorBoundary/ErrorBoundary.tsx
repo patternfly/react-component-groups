@@ -12,6 +12,8 @@ export interface ErrorPageProps {
   errorTitle?: string;
   /** A description of the error */
   errorDescription?: React.ReactNode;
+  /** Text to display when error is closed. */
+  errorToggleText?: string;
   /** A default description of the error used if no errorDescription is provided. */
   defaultErrorDescription?: React.ReactNode;
   /** Children components */
@@ -29,7 +31,7 @@ export interface ErrorPageState {
 
 // As of time of writing, React only supports error boundaries in class components
 class ErrorBoundary extends React.Component<React.PropsWithChildren<ErrorPageProps>, ErrorPageState> {
-  constructor(props: Readonly<ErrorPageProps>) {
+  constructor(props: ErrorPageProps) {
     super(props);
     this.state = {
       hasError: false,
@@ -72,7 +74,7 @@ class ErrorBoundary extends React.Component<React.PropsWithChildren<ErrorPagePro
               <>
                 <span>{this.props.errorDescription}</span>
                 {this.state.error && ( 
-                  <ExpandableSection toggleText="Show details">
+                  <ExpandableSection toggleText={this.props.errorToggleText ? this.props.errorToggleText : "Show details"}>
                     <ErrorStack error={this.state.error} />
                   </ExpandableSection>
                 )}

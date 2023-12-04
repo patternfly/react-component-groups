@@ -17,19 +17,32 @@ const useStyles = createUseStyles({
 export interface UnavailableContentProps {
   /** Page to open when user clicks on status page link */
   statusPageUrl?: string;
+  /** Status page link text */
+  statusPageLinkText?: string;
+  /** Unavailable page title text */
+  unavailableTitleText?: string;
+  /** Unavailable page body text before status page link */
+  unavailableBodyPreStatusLinkText?: string;
+  /** Unavailable page body text after status page link */
+  unavailableBodyPostStatusLinkText?: string;
 }
 
-const UnavailableContent: React.FunctionComponent<UnavailableContentProps> = ({ statusPageUrl = '' }: UnavailableContentProps) => {
+const UnavailableContent: React.FunctionComponent<UnavailableContentProps> = (
+  { statusPageUrl = '',
+    statusPageLinkText = 'status page',
+    unavailableTitleText = 'This page is temporarily unavailable',
+    unavailableBodyPreStatusLinkText = 'Try refreshing the page. If the problem persists, contact your organization administrator or visit our',
+    unavailableBodyPostStatusLinkText = 'for known outages.' }: UnavailableContentProps) => {
   const classes = useStyles();
   return (
     <EmptyState variant={EmptyStateVariant.lg} className={clsx(classes.emptyStateUnavailable)}>
-      <EmptyStateHeader titleText="This page is temporarily unavailable" icon={<EmptyStateIcon icon={ExclamationCircleIcon} />} headingLevel="h5" />
+      <EmptyStateHeader titleText={unavailableTitleText} icon={<EmptyStateIcon icon={ExclamationCircleIcon} />} headingLevel="h5" />
       <EmptyStateBody>
-        Try refreshing the page. If the problem persists, contact your organization administrator or visit our{' '}
+        {unavailableBodyPreStatusLinkText}{' '}
         <Button component='a' className={clsx(classes.emptyStateLinkButton)} variant='link' href={statusPageUrl} target="_blank" rel="noopener noreferrer">
-          status page
+          {statusPageLinkText}
         </Button>{' '}
-        for known outages.
+        {unavailableBodyPostStatusLinkText}
       </EmptyStateBody>
     </EmptyState>
   );
