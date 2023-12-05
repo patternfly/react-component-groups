@@ -15,21 +15,34 @@ const useStyles = createUseStyles({
 });
 
 export interface UnavailableContentProps {
-  /** Page to open when user clicks on status page link */
+  /** The URL that the status page link points to */
   statusPageUrl?: string;
+  /** The text label for the link that points to the status page */
+  statusPageLinkText?: string;
+  /** The title for the unavailable content message */
+  unavailableTitleText?: string;
+  /** The body text for the unavailable content message that appears before the status page link */
+  unavailableBodyPreStatusLinkText?: string;
+  /** The body text for the unavailable content message that appears after the status page link */
+  unavailableBodyPostStatusLinkText?: string;
 }
 
-const UnavailableContent: React.FunctionComponent<UnavailableContentProps> = ({ statusPageUrl = '' }: UnavailableContentProps) => {
+const UnavailableContent: React.FunctionComponent<UnavailableContentProps> = (
+  { statusPageUrl = '',
+    statusPageLinkText = 'status page',
+    unavailableTitleText = 'This page is temporarily unavailable',
+    unavailableBodyPreStatusLinkText = 'Try refreshing the page. If the problem persists, contact your organization administrator or visit our',
+    unavailableBodyPostStatusLinkText = 'for known outages.' }: UnavailableContentProps) => {
   const classes = useStyles();
   return (
     <EmptyState variant={EmptyStateVariant.lg} className={clsx(classes.emptyStateUnavailable)}>
-      <EmptyStateHeader titleText="This page is temporarily unavailable" icon={<EmptyStateIcon icon={ExclamationCircleIcon} />} headingLevel="h5" />
+      <EmptyStateHeader titleText={unavailableTitleText} icon={<EmptyStateIcon icon={ExclamationCircleIcon} />} headingLevel="h5" />
       <EmptyStateBody>
-        Try refreshing the page. If the problem persists, contact your organization administrator or visit our{' '}
+        {unavailableBodyPreStatusLinkText}{' '}
         <Button component='a' className={clsx(classes.emptyStateLinkButton)} variant='link' href={statusPageUrl} target="_blank" rel="noopener noreferrer">
-          status page
+          {statusPageLinkText}
         </Button>{' '}
-        for known outages.
+        {unavailableBodyPostStatusLinkText}
       </EmptyStateBody>
     </EmptyState>
   );

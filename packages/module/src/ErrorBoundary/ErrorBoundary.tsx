@@ -4,17 +4,19 @@ import ErrorState from '../ErrorState';
 import ErrorStack from '../ErrorStack';
 
 export interface ErrorPageProps {
-  /** Title to display on the error page */
+  /** The title text to display on the error page */
   headerTitle: string;
-  /** Indicates if this is a silent error */
+  /** Indicates if the error is silent */
   silent?: boolean;
-  /** Title given to the error */
+  /** The title text to display with the error */
   errorTitle?: string;
-  /** A description of the error */
+  /** The description text to display with the error */
   errorDescription?: React.ReactNode;
-  /** A default description of the error used if no errorDescription is provided. */
+  /** The text for the toggle link that users can select to view error details */
+  errorToggleText?: string;
+  /** The default description text to display with the error if no errorDescription is provided */
   defaultErrorDescription?: React.ReactNode;
-  /** Children components */
+  /** The component that the error boundary component is wrapped around, which should be returned if there is no error  */
   children?: React.ReactNode;
 }
 
@@ -28,7 +30,7 @@ export interface ErrorPageState {
 }
 
 // As of time of writing, React only supports error boundaries in class components
-class ErrorBoundary extends React.Component<React.PropsWithChildren<ErrorPageProps>, ErrorPageState> {
+class ErrorBoundary extends React.Component<ErrorPageProps, ErrorPageState> {
   constructor(props: Readonly<ErrorPageProps>) {
     super(props);
     this.state = {
@@ -72,7 +74,7 @@ class ErrorBoundary extends React.Component<React.PropsWithChildren<ErrorPagePro
               <>
                 <span>{this.props.errorDescription}</span>
                 {this.state.error && ( 
-                  <ExpandableSection toggleText="Show details">
+                  <ExpandableSection toggleText={this.props.errorToggleText ? this.props.errorToggleText : "Show details"}>
                     <ErrorStack error={this.state.error} />
                   </ExpandableSection>
                 )}
