@@ -12,6 +12,9 @@ export * from './Ansible';
 export { default as Battery } from './Battery';
 export * from './Battery';
 
+export { default as CloseButton } from './CloseButton';
+export * from './CloseButton';
+
 export { default as DetailsPage } from './DetailsPage';
 export * from './DetailsPage';
 
