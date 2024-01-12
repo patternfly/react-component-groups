@@ -16,11 +16,14 @@ propComponents: ['CloseButton']
 import { CloseIcon } from '@patternfly/react-icons';
 import CloseButton from '@patternfly/react-component-groups/dist/dynamic/CloseButton';
 
-The **CloseButton** component is a standardize close button that is recommended to be used thorough out projects.
+**Close button**
 
-### Example
+The close button component provides a way for users to exit a modal, dialogue, or similar action.
 
-The following example shows a close button with an onClick call back.  Other then variant, all props that a PatternFly button uses are supported.
+### Example ###
+You can use  onClick  to execute a callback when a user selects the close button.
+
+To further customize a close button, you can also utilize all properties of the [button component](/components/button), with the exception of variant.
 
 ```js file="./CloseButtonExample.tsx"
 
