@@ -24,6 +24,7 @@ propComponents: [
   # 'Tab', # No output --> is a type and not an interface
 ]
 beta: true
+sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/DetailsPage/DetailsPage.md
 ---
 
 import { ActionMenu } from '@patternfly/react-component-groups';
