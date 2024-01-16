@@ -27,9 +27,11 @@ export interface ErrorStateProps extends Omit<EmptyStateProps, 'children'> {
   errorDescription?: React.ReactNode;
   /** A default description of the error used if no errorDescription is provided. */
   defaultErrorDescription?: React.ReactNode;
+  /** Custom footer content */
+  customFooter?: React.ReactNode;
 }
 
-const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'Something went wrong', errorDescription, defaultErrorDescription, ...props }: ErrorStateProps) => { 
+const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'Something went wrong', errorDescription, defaultErrorDescription, customFooter, ...props }: ErrorStateProps) => { 
   const classes = useStyles();
   return (
     <EmptyState variant={EmptyStateVariant.lg} {...props}>
@@ -40,15 +42,16 @@ const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'So
         </Stack>
       </EmptyStateBody>
       <EmptyStateFooter>
-        {document.referrer ? (
-          <Button variant="primary" onClick={() => history.back()}>
+        { customFooter ||
+          (document.referrer ? (
+            <Button variant="primary" onClick={() => history.back()}>
             Return to last page
-          </Button>
-        ) : (
-          <Button variant="primary" component="a" href="." target="_blank" rel="noopener noreferrer">
+            </Button>
+          ) : (
+            <Button variant="primary" component="a" href="." target="_blank" rel="noopener noreferrer">
             Go to home page
-          </Button>
-        )}
+            </Button>
+          ))}
       </EmptyStateFooter>
     </EmptyState>
   );
