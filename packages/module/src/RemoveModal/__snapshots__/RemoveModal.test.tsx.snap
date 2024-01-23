@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RemoveModal component should render 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body
+    class="pf-v5-c-backdrop__open"
+  >
+    <div
+      aria-hidden="true"
+    />
+    <div>
+      <div
+        class="pf-v5-c-backdrop"
+      >
+        <div
+          class="pf-v5-l-bullseye"
+        >
+          <div
+            aria-describedby="pf-modal-part-2"
+            aria-labelledby="pf-modal-part-1"
+            aria-modal="true"
+            class="pf-v5-c-modal-box rbacDeleteIcon-0-2-1 pf-m-warning pf-m-sm"
+            data-ouia-component-id="OUIA-Generated-Modal-small-1"
+            data-ouia-component-type="PF5/ModalContent"
+            data-ouia-safe="true"
+            id="pf-modal-part-0"
+            role="dialog"
+          >
+            <div
+              class="pf-v5-c-modal-box__close"
+            >
+              <button
+                aria-disabled="false"
+                aria-label="Close"
+                class="pf-v5-c-button pf-m-plain"
+                data-ouia-component-id="OUIA-Generated-Modal-small-1-ModalBoxCloseButton"
+                data-ouia-component-type="PF5/Button"
+                data-ouia-safe="true"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="pf-v5-svg"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 352 512"
+                  width="1em"
+                >
+                  <path
+                    d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <header
+              class="pf-v5-c-modal-box__header"
+            >
+              <h1
+                class="pf-v5-c-modal-box__title pf-m-icon"
+                id="pf-modal-part-1"
+              >
+                <span
+                  class="pf-v5-c-modal-box__title-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v5-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 576 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="pf-v5-screen-reader"
+                >
+                  Warning alert:
+                </span>
+                <span
+                  class="pf-v5-c-modal-box__title-text"
+                >
+                  Delete Item
+                </span>
+              </h1>
+            </header>
+            <div
+              class="pf-v5-c-modal-box__body"
+              id="pf-modal-part-2"
+            >
+              <div
+                class="pf-v5-l-split pf-m-gutter"
+              >
+                <div
+                  class="pf-v5-l-split__item pf-m-fill"
+                >
+                  <div
+                    class="pf-v5-l-stack pf-m-gutter"
+                  >
+                    <div
+                      class="pf-v5-c-content"
+                    >
+                      do you want to delete?
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer
+              class="pf-v5-c-modal-box__footer"
+            >
+              <button
+                aria-disabled="false"
+                class="pf-v5-c-button pf-m-danger"
+                data-ouia-component-id="primary-confirm-button"
+                data-ouia-component-type="PF5/Button"
+                data-ouia-safe="true"
+                type="button"
+              />
+              <button
+                aria-disabled="false"
+                class="pf-v5-c-button pf-m-link"
+                data-ouia-component-id="secondary-cancel-button"
+                data-ouia-component-type="PF5/Button"
+                data-ouia-safe="true"
+                type="button"
+              >
+                Cancel
+              </button>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div
+    aria-hidden="true"
+  />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
