@@ -39,6 +39,9 @@ export * from './NotAuthorized';
 export { default as NotFoundIcon } from './NotFoundIcon';
 export * from './NotFoundIcon';
 
+export { default as RemoveModal } from './RemoveModal';
+export * from './RemoveModal';
+
 export { default as SkeletonTable } from './SkeletonTable';
 export * from './SkeletonTable';
 
