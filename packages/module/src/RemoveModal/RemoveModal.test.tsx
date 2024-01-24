@@ -15,7 +15,7 @@ describe('RemoveModal component', () => {
   };
   
   it('should render', () => {
-    const container = render(<RemoveModal isOpen={true} {...initialProps}></RemoveModal>);
+    const container = render(<RemoveModal isOpen={true} {...initialProps}>delete?</RemoveModal>);
     expect(container).toMatchSnapshot();
   });
 });

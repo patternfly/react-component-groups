@@ -9,11 +9,9 @@ const useStyles = createUseStyles({
   },
 })
 
-export interface RemoveModalProps extends Omit<ModalProps, 'ref'|'children'> {
+export interface RemoveModalProps extends Omit<ModalProps, 'ref'> {
   /** Title for the Remove Modal. */
   title: string;
-  /** Text inside the Remove Modal */
-  text: string;
   /** Custom label for the cancel action button */
   confirmButtonLabel: string;
   /** Callback for the submit action button */
@@ -28,13 +26,13 @@ export interface RemoveModalProps extends Omit<ModalProps, 'ref'|'children'> {
 
 const RemoveModal: React.FunctionComponent<RemoveModalProps> = ({
   title,
-  text,
   onClose,
   onSubmit,
   isOpen,
   confirmButtonLabel,
   withCheckbox=false,
   confirmCheckMessage,
+  children,
   ...props
 }: RemoveModalProps) => {
   const classes = useStyles();
@@ -61,7 +59,7 @@ const RemoveModal: React.FunctionComponent<RemoveModalProps> = ({
       <Split hasGutter>
         <SplitItem isFilled>
           <Stack hasGutter>
-            <TextContent>{text}</TextContent>
+            <TextContent>{children}</TextContent>
           </Stack>
         </SplitItem>
       </Split>

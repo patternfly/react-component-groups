@@ -9,12 +9,12 @@ export const BasicExample: React.FunctionComponent = () => {
     <RemoveModal
       isOpen={isOpen}
       title='Remove Item?'
-      text='Do you want to remove this item?'
       confirmButtonLabel='Yup'
       onClose={() => setIsOpen(false)}
       onSubmit={() => setIsOpen(false)}
       confirmCheckMessage='checked'
     >
+      Do you want to remove this item?
     </RemoveModal>
   </>
   
