@@ -13,7 +13,6 @@ export const BasicExample: React.FunctionComponent = () => {
       confirmButtonLabel='Yup'
       onClose={() => setIsOpen(false)}
       onSubmit={() => setIsOpen(false)}
-      withCheckbox={false}
       confirmCheckMessage='checked'
     >
     </RemoveModal>

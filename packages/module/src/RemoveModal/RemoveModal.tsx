@@ -5,7 +5,6 @@ import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
   rbacDeleteIcon: {
-    color: 'var(--pf-v5-global--warning-color--100)',
     marginRight: 'var(--pf-v5-global--spacer--xs)'
   },
 })
@@ -22,7 +21,7 @@ export interface RemoveModalProps extends Omit<ModalProps, 'ref'|'children'> {
   /** Callback for the close action button */
   onClose: () => void;
   /** Whether Modal requires a checkbox before confirming */
-  withCheckbox: boolean,
+  withCheckbox?: boolean,
   /** Custom message after confirmation */
   confirmCheckMessage: string,
 }
