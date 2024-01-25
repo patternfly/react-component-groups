@@ -28,3 +28,21 @@ You can customize the contents of the modal to fit your use cases. To adjust the
 ```js file="./WarningModalExample.tsx"
 
 ```
+
+### Warning Modal with danger button variant
+
+You can customize the modal to have a confirm button with a danger color
+
+```js file="./WarningModalDangerExample.tsx"
+
+```
+
+
+### Warning Modal with checkbox
+
+You can customize the Warning Modal to include a checkbox to double check the user wants to use the selected action.
+
+```js file="./WarningModalCheckboxExample.tsx"
+
+```
+

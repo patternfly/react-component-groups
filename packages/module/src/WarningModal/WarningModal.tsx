@@ -1,13 +1,19 @@
-import React from 'react';
-import { Button, ModalProps, Modal, ModalVariant, ButtonVariant } from '@patternfly/react-core';
+import React, { useState } from 'react';
+import { Button, ModalProps, Modal, ModalVariant, ButtonVariant, Checkbox } from '@patternfly/react-core';
 
 export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   /** Callback for the confirm action button. */
   onConfirm?: () => void;
   /** Custom label for the confirm action button */
-  confirmButtonLabel? : string;
+  confirmButtonLabel?: string;
   /** Custom label for the cancel action button */
-  cancelButtonLabel? : string;
+  cancelButtonLabel?: string;
+  /** Whether Modal requires a checkbox before confirming */
+  withCheckbox?: boolean;
+  /** Custom message after confirmation */
+  confirmCheckMessage?: string;
+  /** Whether confirm button will show up as red or not */
+  dangerButtonVariant?: boolean;
 }
 
 const WarningModal: React.FunctionComponent<WarningModalProps> = ({
@@ -19,37 +25,55 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
   cancelButtonLabel = 'Cancel',
   variant = ModalVariant.small,
   titleIconVariant = 'warning',
+  withCheckbox = false,
+  confirmCheckMessage='',
+  dangerButtonVariant = false,
   ...props
-}: WarningModalProps) => (
-  <Modal
-    variant={variant}
-    isOpen={isOpen}
-    onClose={onClose}
-    onEscapePress={onClose}
-    titleIconVariant={titleIconVariant}
-    actions={[
-      <Button
-        ouiaId="primary-confirm-button"
-        key="confirm"
-        variant={ButtonVariant.primary}
-        onClick={onConfirm}
-      >
-        {confirmButtonLabel}
-      </Button>,
-      <Button
-        ouiaId="secondary-cancel-button"
-        key="cancel"
-        variant={ButtonVariant.link}
-        onClick={onClose}
-      >
-        {cancelButtonLabel}
-      </Button>,
-    ]}
-    {...props}
-  >
-    {children}
-  </Modal>
-);
+}: WarningModalProps) => {
+  const [ checked, setChecked ] = useState(false);
+
+  return (
+    <Modal
+      variant={variant}
+      isOpen={isOpen}
+      onClose={onClose}
+      onEscapePress={onClose}
+      titleIconVariant={titleIconVariant}
+      actions={[
+        <Button
+          ouiaId="primary-confirm-button"
+          key="confirm"
+          variant={dangerButtonVariant ? ButtonVariant.danger : ButtonVariant.primary}
+          onClick={onConfirm}
+          isDisabled={withCheckbox && !checked}
+        >
+          {confirmButtonLabel}
+        </Button>,
+        <Button
+          ouiaId="secondary-cancel-button"
+          key="cancel"
+          variant={ButtonVariant.link}
+          onClick={onClose}
+        >
+          {cancelButtonLabel}
+        </Button>,
+      ]}
+      {...props}
+    >
+      {children}
+      {withCheckbox ? (
+        <Checkbox
+          isChecked={checked}
+          onChange={() => setChecked(!checked)}
+          label={confirmCheckMessage}
+          id="remove-modal-check"
+          className="pf-v5-u-mt-lg"
+        />
+      ) : null}
+    </Modal>
+  )
+  
+};
 
 
 export default WarningModal;

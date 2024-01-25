@@ -1,22 +1,21 @@
 import React from 'react';
-import RemoveModal from '@patternfly/react-component-groups/dist/dynamic/RemoveModal';
+import WarningModal from '@patternfly/react-component-groups/dist/dynamic/WarningModal';
 import { Button } from '@patternfly/react-core';
 
 export const BasicExample: React.FunctionComponent = () => {
   const [ isOpen, setIsOpen ] = React.useState(false);
   return <>
     <Button onClick={() => setIsOpen(true)}>Open modal</Button>
-    <RemoveModal
+    <WarningModal
       isOpen={isOpen}
-      title='Remove Item?'
-      confirmButtonLabel='Yup'
+      title='Unsaved changes'
       onClose={() => setIsOpen(false)}
-      onSubmit={() => setIsOpen(false)}
+      onConfirm={() => setIsOpen(false)}
       withCheckbox={true}
-      confirmCheckMessage='checked'
+      confirmCheckMessage='Are you sure?'
+      dangerButtonVariant={true}
     >
-      Do you want to remove this item?
-    </RemoveModal>
+      Your page contains unsaved changes. Do you want to leave?
+    </WarningModal>
   </>
-  
-}
+};
