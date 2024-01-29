@@ -11,7 +11,7 @@ export const BasicExample: React.FunctionComponent = () => {
       title='Unsaved changes'
       onClose={() => setIsOpen(false)}
       onConfirm={() => setIsOpen(false)}
-      withCheckbox={true}
+      withCheckbox
       checkboxLabel='Are you sure?'
       confirmButtonVariant
     >
