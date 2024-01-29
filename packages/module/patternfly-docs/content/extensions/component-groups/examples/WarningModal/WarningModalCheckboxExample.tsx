@@ -12,8 +12,8 @@ export const BasicExample: React.FunctionComponent = () => {
       onClose={() => setIsOpen(false)}
       onConfirm={() => setIsOpen(false)}
       withCheckbox={true}
-      confirmCheckMessage='Are you sure?'
-      dangerButtonVariant={true}
+      checkboxLabel='Are you sure?'
+      confirmButtonVariant
     >
       Your page contains unsaved changes. Do you want to leave?
     </WarningModal>

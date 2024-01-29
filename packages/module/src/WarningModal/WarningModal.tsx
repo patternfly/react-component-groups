@@ -8,12 +8,12 @@ export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   confirmButtonLabel?: string;
   /** Custom label for the cancel action button */
   cancelButtonLabel?: string;
-  /** Whether Modal requires a checkbox before confirming */
+  /** Whether modal requires a checkbox before confirming */
   withCheckbox?: boolean;
-  /** Custom message after confirmation */
-  confirmCheckMessage?: string;
+  /** Custom checkbox label */
+  checkboxLabel?: string;
   /** Whether confirm button will show up as red or not */
-  dangerButtonVariant?: boolean;
+  confirmButtonVariant?: boolean;
 }
 
 const WarningModal: React.FunctionComponent<WarningModalProps> = ({
@@ -26,8 +26,8 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
   variant = ModalVariant.small,
   titleIconVariant = 'warning',
   withCheckbox = false,
-  confirmCheckMessage='',
-  dangerButtonVariant = false,
+  checkboxLabel='I understand that this action cannot be undone',
+  confirmButtonVariant = false,
   ...props
 }: WarningModalProps) => {
   const [ checked, setChecked ] = useState(false);
@@ -43,7 +43,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
         <Button
           ouiaId="primary-confirm-button"
           key="confirm"
-          variant={dangerButtonVariant ? ButtonVariant.danger : ButtonVariant.primary}
+          variant={confirmButtonVariant ? ButtonVariant.danger : ButtonVariant.primary}
           onClick={onConfirm}
           isDisabled={withCheckbox && !checked}
         >
@@ -65,8 +65,8 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
         <Checkbox
           isChecked={checked}
           onChange={() => setChecked(!checked)}
-          label={confirmCheckMessage}
-          id="remove-modal-check"
+          label={checkboxLabel}
+          id="warning-modal-check"
           className="pf-v5-u-mt-lg"
         />
       ) : null}
