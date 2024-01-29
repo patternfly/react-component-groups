@@ -9,8 +9,7 @@ export const BasicExample: React.FunctionComponent = () => {
     <WarningModal
       isOpen={isOpen}
       title='Unsaved changes'
-      confirmButtonLabel='Yes'
-      cancelButtonLabel='No'
+      confirmButtonVariant
       onClose={() => setIsOpen(false)}
       onConfirm={() => setIsOpen(false)}>
       Your page contains unsaved changes. Do you want to leave?

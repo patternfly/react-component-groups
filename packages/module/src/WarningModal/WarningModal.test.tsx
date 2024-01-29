@@ -7,6 +7,7 @@ describe('WarningModal component', () => {
     title: 'Unsaved changes',
     onClose: () => null,
     onConfirm: () => null,
+    confirmCheckMessage: 'hi there',
   };
   
   it('should render', () => {
