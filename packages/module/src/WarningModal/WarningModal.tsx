@@ -12,7 +12,7 @@ export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   withCheckbox?: boolean;
   /** Custom checkbox label */
   checkboxLabel?: string;
-  /** Whether confirm button will show up as red or not */
+  /** Visual variant of the confirm button */
   confirmButtonVariant?: boolean;
 }
 
