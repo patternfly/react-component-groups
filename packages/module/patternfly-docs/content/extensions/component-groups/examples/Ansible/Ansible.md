@@ -11,6 +11,7 @@ source: react
 # If you use typescript, the name of the interface to display props for
 # These are found through the sourceProps function provided in patternfly-docs.source.js
 propComponents: ['Ansible']
+sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/Ansible/Ansible.md
 ---
 
 import Ansible from '@patternfly/react-component-groups/dist/dynamic/Ansible';

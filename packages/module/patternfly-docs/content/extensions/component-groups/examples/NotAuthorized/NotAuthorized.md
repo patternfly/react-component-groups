@@ -4,6 +4,7 @@ subsection: Component groups
 id: Not authorized
 source: react
 propComponents: ['NotAuthorized']
+sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/NotAuthorized/NotAuthorized.md
 ---
 
 import NotAuthorized from "@patternfly/react-component-groups/dist/dynamic/NotAuthorized";
