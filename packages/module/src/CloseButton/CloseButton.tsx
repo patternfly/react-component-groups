@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@patternfly/react-core';
+import { Button, ButtonProps } from '@patternfly/react-core';
 import { CloseIcon } from '@patternfly/react-icons';
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
