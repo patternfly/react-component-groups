@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonProps } from '@patternfly/react-core';
+import { Button, ButtonProps, ButtonVariant } from '@patternfly/react-core';
 import { CloseIcon } from '@patternfly/react-icons';
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
@@ -15,7 +15,7 @@ const useStyles = createUseStyles({
 
 export interface CloseButtonProps extends ButtonProps {
   /** Additional styling to apply to the close button. */
-  className?: string;
+  additionalClassName?: string;
   /** Aria label for accessibility */
   ariaLabel?: string;
   /** Data test id used for testing. */
