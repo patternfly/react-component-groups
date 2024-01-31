@@ -38,7 +38,7 @@ const CloseButton: React.FunctionComponent<CloseButtonProps> = ({
       className={clsx(classes, additionalClassName)}
       data-test-id={dataTestID}
       onClick={onClick}
-      variant="plain"
+      variant={ButtonVariant.plain}
       {...props}
     >
       <CloseIcon />
