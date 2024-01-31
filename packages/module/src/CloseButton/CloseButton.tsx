@@ -13,7 +13,7 @@ const useStyles = createUseStyles({
   }
 });
 
-export interface CloseButtonProps {
+export interface CloseButtonProps extends ButtonProps {
   /** Additional styling to apply to the close button. */
   className?: string;
   /** Aria label for accessibility */
