@@ -24,7 +24,7 @@ A **warning modal** component displays a modal when a user tries to perform a ri
 
 A basic warning modal is triggered when a user tries to perform an action that is deemed risky. 
 
-You can customize the contents of the modal to fit your use cases. To adjust the text in the modal, pass your desired title to `title` and your message to the `<WarningModal>` component. To customize the action buttons in the modal, use `onConfirm` and `onClose`.
+You can customize the contents of the modal to fit your use cases. To adjust the text in the modal, pass your desired title to `title` and your message to the `<WarningModal>` component. To customize the action buttons in the modal, use `onConfirm` and `onClose`. For further customization, you can utilize all properties of the [modal component](/components/modal), with the exception `ref`.
 
 ```js file="./WarningModalExample.tsx"
 
