@@ -46,6 +46,7 @@
     "@patternfly/documentation-framework": "^2.0.0-alpha.57",
     "@patternfly/patternfly": "^5.1.0",
     "@patternfly/react-code-editor": "^5.1.1",
+    "@openshift-console/dynamic-plugin-sdk": "^0.0.21",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
     "@types/react-router-dom": "^5.3.3",

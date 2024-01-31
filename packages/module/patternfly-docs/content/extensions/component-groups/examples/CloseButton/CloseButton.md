@@ -23,8 +23,6 @@ The close button component provides a way for users to exit a modal, dialogue, o
 ### Example ###
 You can use  onClick  to execute a callback when a user selects the close button.
 
-To further customize a close button, you can also utilize all properties of the [button component](/components/button), with the exception of variant.
-
 ```js file="./CloseButtonExample.tsx"
 
 ```
