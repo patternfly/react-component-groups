@@ -13,9 +13,9 @@ const useStyles = createUseStyles({
   }
 });
 
-export interface CloseButtonProps {
+export interface CloseButtonProps extends ButtonProps {
   /** Additional styling to apply to the close button. */
-  additionalClassName?: string;
+  className?: string;
   /** Aria label for accessibility */
   ariaLabel?: string;
   /** Data test id used for testing. */
@@ -38,7 +38,7 @@ const CloseButton: React.FunctionComponent<CloseButtonProps> = ({
       className={clsx(classes, additionalClassName)}
       data-test-id={dataTestID}
       onClick={onClick}
-      variant="plain"
+      variant={ButtonVariant.plain}
       {...props}
     >
       <CloseIcon />
