@@ -5,7 +5,7 @@ import NotAuthorized from "@patternfly/react-component-groups/dist/dynamic/NotAu
 export const BasicExample: React.FunctionComponent = () => {
   const primaryAction = 
     <Button key="1">
-      First action
+      Custom primary action
     </Button>;
   const secondaryActions = [
     <Button key="2" variant="link">
@@ -19,7 +19,6 @@ export const BasicExample: React.FunctionComponent = () => {
     <NotAuthorized 
       primaryAction={primaryAction} 
       secondaryActions={secondaryActions}
-      className="something" 
       description="Description text" 
       serviceName="Demo bundle"
       prevPageButtonText="Go to previous page"
