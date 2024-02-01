@@ -9,7 +9,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 
 import NotAuthorized from "@patternfly/react-component-groups/dist/dynamic/NotAuthorized";
 
-A **not authorized** component displays an error screen to users when they attempt to view a page that they don't have permission to access. To further customize this component, you can also utilize all properties of the [empty state component](/components/empty-state), with the exception of `children` and `title`.
+A **not authorized** component displays an error screen to users when they attempt to view a page that they don't have permission to access.
 
 ## Examples
 
