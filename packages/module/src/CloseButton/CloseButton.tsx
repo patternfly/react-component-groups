@@ -6,7 +6,7 @@ import clsx from 'clsx';
 
 const useStyles = createUseStyles({
   '& float-right': {
-    float: 'right'
+    float: 'inline-end'
   },
   '&  no-padding': {
     padding: 0
