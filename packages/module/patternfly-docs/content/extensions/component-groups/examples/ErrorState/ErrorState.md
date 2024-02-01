@@ -30,7 +30,7 @@ To provide users with error details, a basic error state should contain an appro
 
 ### Custom footer
 
-To override default action button, specify your own using `customFooter`. 
+To override the default action button, specify your own using `customFooter`. 
 
 ```js file="./ErrorStateFooterExample.tsx"
 
