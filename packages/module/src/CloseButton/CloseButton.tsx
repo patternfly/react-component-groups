@@ -5,12 +5,10 @@ import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
 const useStyles = createUseStyles({
-  '& float-right': {
-    float: 'inline-end'
+  closeButton: {
+    float: 'inline-end',
+    padding: '10px 14px'
   },
-  '&  no-padding': {
-    padding: 0
-  }
 });
 
 export interface CloseButtonProps extends ButtonProps {
@@ -28,7 +26,7 @@ const CloseButton: React.FunctionComponent<CloseButtonProps> = ({
   return (
     <Button
       aria-label={props['aria-label'] || 'Close'}
-      className={clsx(classes, className)}
+      className={clsx(classes.closeButton, className)}
       data-test-id={dataTestID}
       onClick={onClick}
       variant={ButtonVariant.plain}
