@@ -16,7 +16,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 
 import ErrorState from "@patternfly/react-component-groups/dist/dynamic/ErrorState";
 
-The **error state** component repurposes the `EmptyState` component to display an error to users.
+The **error state** component repurposes the `EmptyState` component to display an error to users. To further customize this component, you can also utilize all properties of the [empty state component](/components/empty-state), with the `exception` of `children`.
 
 ## Examples
 
@@ -30,7 +30,7 @@ To provide users with error details, a basic error state should contain an appro
 
 ### Custom footer
 
-To override default action button, specify your own using `customFooter`. 
+To override the default action button, specify your own using `customFooter`. 
 
 ```js file="./ErrorStateFooterExample.tsx"
 

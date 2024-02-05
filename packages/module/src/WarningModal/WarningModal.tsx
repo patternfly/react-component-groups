@@ -13,7 +13,7 @@ export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   /** Custom checkbox label */
   checkboxLabel?: string;
   /** Visual variant of the confirm button */
-  confirmButtonVariant?: boolean;
+  confirmButtonVariant?: ButtonVariant;
 }
 
 const WarningModal: React.FunctionComponent<WarningModalProps> = ({
@@ -27,7 +27,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
   titleIconVariant = 'warning',
   withCheckbox = false,
   checkboxLabel='I understand that this action cannot be undone',
-  confirmButtonVariant = false,
+  confirmButtonVariant = ButtonVariant.primary,
   ...props
 }: WarningModalProps) => {
   const [ checked, setChecked ] = useState(false);
@@ -43,7 +43,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
         <Button
           ouiaId="primary-confirm-button"
           key="confirm"
-          variant={confirmButtonVariant ? ButtonVariant.danger : ButtonVariant.primary}
+          variant={confirmButtonVariant}
           onClick={onConfirm}
           isDisabled={withCheckbox && !checked}
         >
