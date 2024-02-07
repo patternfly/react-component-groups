@@ -13,7 +13,7 @@ The component groups extension contains a range of React components that are mor
 
 The creation and maintenance of this extension is a collaborative effort between the PatternFly and Red Hat Hybrid Cloud Console teams. All component groups receive accessibility and design reviews, and we are working to improve internationalization, add unit test coverage, and ensure that CSS overrides all correctly reference the PatternFly CSS API.
 
-**Note:** This extension replaces [`RedHatInsights/frontend-components`](https://github.com/RedHatInsights/frontend-components). If you previoulsy used `frontend-components`, you can refer to [this migration guide](https://github.com/patternfly/react-component-groups/migration.md) to help you transition to `react-component-groups`.
+**Note:** This extension replaces [`RedHatInsights/frontend-components`](https://github.com/RedHatInsights/frontend-components). If you previoulsy used `frontend-components`, you can refer to [this migration guide](https://github.com/patternfly/react-component-groups/blob/main/migration.md) to help you transition to `react-component-groups`.
 
 ## Contribution guidelines
 
