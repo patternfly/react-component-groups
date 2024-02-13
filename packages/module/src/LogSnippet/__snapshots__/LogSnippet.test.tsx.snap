@@ -11,9 +11,12 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
         <div
           class=""
         >
-           
           <p
             class="statusMessage-0-2-2"
+            data-ouia-component-id="OUIA-Generated-Text-1"
+            data-ouia-component-type="PF5/Text"
+            data-ouia-safe="true"
+            data-pf-content="true"
           >
             A log snippet
           </p>
@@ -50,9 +53,12 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
       <div
         class=""
       >
-         
         <p
           class="statusMessage-0-2-2"
+          data-ouia-component-id="OUIA-Generated-Text-1"
+          data-ouia-component-type="PF5/Text"
+          data-ouia-safe="true"
+          data-pf-content="true"
         >
           A log snippet
         </p>
