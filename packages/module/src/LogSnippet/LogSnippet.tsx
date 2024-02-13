@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CodeBlock, CodeBlockCode, Flex, FlexItem, } from '@patternfly/react-core';
+import { CodeBlock, CodeBlockCode, Flex, FlexItem, Text, TextVariants } from '@patternfly/react-core';
 
 import { createUseStyles } from 'react-jss'
 
@@ -8,17 +8,17 @@ const useStyles = createUseStyles({
     borderLeft: '2px solid var(--pf-v5-global--danger-color--100)',
     marginLeft: 'var(--pf-v5-global--spacer--sm)',
     padding: 'var(--pf-v5-global--spacer--sm) 0 var(--pf-v5-global--spacer--sm) var(--pf-v5-global--spacer--sm)',
-    backgroundColor: 'white'
+    backgroundColor: 'var(--pf-v5-global--palette--black-100)'
   },
   statusMessage: {
-    marginBottom: '10px',
+    marginBottom:'var(--pf-v5-global--spacer--sm)',
   },
 });
 
 export interface LogSnippetProps {
-  /** log snippet or code you would like to display */
+  /** Log snippet or code to be displayed */
   logSnippet?: string;
-  /** message to appear above the log snippet */
+  /** Message to appear above the log snippet */
   message: string;
 }
 
@@ -27,7 +27,11 @@ export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippe
 
   return (
     <Flex direction={{ default: 'column' }} className={classes.logSnippet}>
-      <FlexItem> <p className={classes.statusMessage}>{message}</p></FlexItem>
+      <FlexItem>
+        <Text component={TextVariants.p} className={classes.statusMessage}>
+          {message}
+        </Text>
+      </FlexItem>
       { logSnippet && <FlexItem>
         <CodeBlock>
           <CodeBlockCode id="code-content">{logSnippet}</CodeBlockCode>
