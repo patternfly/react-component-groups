@@ -11,6 +11,6 @@ export const BasicExample: React.FunctionComponent = () => {
   url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
 
   return <>
-    <LogSnippet message='A log snippet' logSnippet={code} />
+    <LogSnippet message='Failure - check logs for details' logSnippet={code} />
   </>
 }
