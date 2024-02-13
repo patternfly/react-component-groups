@@ -42,6 +42,12 @@ export * from './NotAuthorized';
 export { default as NotFoundIcon } from './NotFoundIcon';
 export * from './NotFoundIcon';
 
+export { default as Shortcut } from './Shortcut';
+export * from './Shortcut';
+
+export { default as ShortcutGrid } from './ShortcutGrid';
+export * from './ShortcutGrid';
+
 export { default as SkeletonTable } from './SkeletonTable';
 export * from './SkeletonTable';
 
