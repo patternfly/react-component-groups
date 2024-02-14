@@ -6,14 +6,14 @@ exports[`Shortcut component should render correctly 1`] = `
   "baseElement": <body>
     <div>
       <span
-        class="pf-v5-u-mr-lg"
+        class="shortcut-0-2-1"
       >
         <div
           class="pf-v5-c-chip"
           data-ouia-component-id="OUIA-Generated-Chip-1"
           data-ouia-component-type="PF5/Chip"
           data-ouia-safe="true"
-          data-test-id="cmd-button"
+          data-test-id="cmd-key"
         >
           <span
             class="pf-v5-c-chip__content"
@@ -33,7 +33,7 @@ exports[`Shortcut component should render correctly 1`] = `
           data-ouia-component-id="OUIA-Generated-Chip-2"
           data-ouia-component-type="PF5/Chip"
           data-ouia-safe="true"
-          data-test-id="shift-button"
+          data-test-id="shift-key"
         >
           <span
             class="pf-v5-c-chip__content"
@@ -85,14 +85,14 @@ exports[`Shortcut component should render correctly 1`] = `
   </body>,
   "container": <div>
     <span
-      class="pf-v5-u-mr-lg"
+      class="shortcut-0-2-1"
     >
       <div
         class="pf-v5-c-chip"
         data-ouia-component-id="OUIA-Generated-Chip-1"
         data-ouia-component-type="PF5/Chip"
         data-ouia-safe="true"
-        data-test-id="cmd-button"
+        data-test-id="cmd-key"
       >
         <span
           class="pf-v5-c-chip__content"
@@ -112,7 +112,7 @@ exports[`Shortcut component should render correctly 1`] = `
         data-ouia-component-id="OUIA-Generated-Chip-2"
         data-ouia-component-type="PF5/Chip"
         data-ouia-safe="true"
-        data-test-id="shift-button"
+        data-test-id="shift-key"
       >
         <span
           class="pf-v5-c-chip__content"
