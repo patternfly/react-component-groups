@@ -11,7 +11,7 @@ export interface ShortcutGridProps extends GridProps {
 }
 
 const useStyles = createUseStyles({
-  shortcutItem: {
+  shortcutGridItem: {
     textAlign: 'right',
     marginRight: 'var(--pf-v5-global--spacer--sm)'
   }
@@ -25,7 +25,7 @@ const ShortcutGrid: React.FunctionComponent<ShortcutGridProps> = ({ shortcuts, g
         const { description, ...props } = shortcut;
         return(
           <React.Fragment key={index}>
-            <GridItem className={classes.shortcutItem} {...gridItemProps}>
+            <GridItem className={classes.shortcutGridItem} {...gridItemProps}>
               <Shortcut {...props}/>
             </GridItem>
             <GridItem>{description}</GridItem>

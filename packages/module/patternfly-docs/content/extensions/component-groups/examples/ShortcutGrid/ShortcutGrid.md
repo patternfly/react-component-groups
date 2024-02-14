@@ -34,7 +34,7 @@ You can customize displayed shortcuts using `shortcuts` props. For mouse actions
 
 ```
 
-### Shortcut
+### Single shortcut
 
 Shortcut component can be also used outside of the grid. 
 

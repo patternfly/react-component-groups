@@ -7,7 +7,7 @@ describe('ShortcutGrid component', () => {
     expect(render(
       <ShortcutGrid 
         shortcuts={[ 
-          { description: 'Open in a new tab', keys: [ 'cmd', 'shift', 'n' ] }, 
+          { description: 'Open in a new tab', keys: [ 'cmd', 'shift', 't' ] }, 
           { description: 'Open new page', keys: [ 'opt', 'n' ] },
           { description: 'Move object', keys: [ 'ctrl' ], drag: true },  
         ]}

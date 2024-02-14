@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { MouseIcon } from '@patternfly/react-icons';
 import { Chip } from '@patternfly/react-core';
+import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
 export interface ShortcutProps {
@@ -36,6 +37,12 @@ const symbols = {
   'backspace': '⌫'
 }
 
+const useStyles = createUseStyles({
+  shortcut: {
+    marginRight: 'var(--pf-v5-global--spacer--lg)'
+  }
+})
+
 const Shortcut: React.FunctionComponent<ShortcutProps> = ({
   keys = [],
   description = null,
@@ -47,6 +54,7 @@ const Shortcut: React.FunctionComponent<ShortcutProps> = ({
   dragAndDrop,
   className
 }: ShortcutProps) => {
+  const classes = useStyles();
   const badges = [
     ...(hover ? [ 
       <Chip key="hover" isReadOnly data-test-id="hover">
@@ -56,7 +64,7 @@ const Shortcut: React.FunctionComponent<ShortcutProps> = ({
     ...keys.map((key) => {
       const trimmedKey = key.trim().toLowerCase();
       return(
-        <Chip key={key} isReadOnly data-test-id={`${key}-button`}>
+        <Chip key={key} isReadOnly data-test-id={`${key}-key`}>
           {showSymbols && symbols[trimmedKey] ? `${symbols[trimmedKey]} ` : '' }
           {key.length === 1 ? key.toUpperCase() : key[0].toUpperCase() + key.slice(1).toLowerCase()}
         </Chip>
@@ -85,7 +93,7 @@ const Shortcut: React.FunctionComponent<ShortcutProps> = ({
 
   return (
     <>
-      <span className={clsx({ 'pf-v5-u-mr-lg': description, className })}>
+      <span className={clsx({ [classes.shortcut]: description, className })}>
         {badges.length > 0 && badges.reduce((prev, curr) => (
           <>{[ prev, ' + ', curr ]}</>
         ))}
