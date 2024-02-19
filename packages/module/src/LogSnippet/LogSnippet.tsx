@@ -3,7 +3,7 @@ import { CodeBlock, CodeBlockCode, Flex, FlexItem, FlexProps, Text, TextVariants
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss'
 
-export type BorderVariant = 'red' | 'green' | 'blue' | 'cyan' | 'gold' | 'orange' | 'purple'
+export type BorderVariant = 'danger' | 'success' | 'info' | 'warning';
 
 export interface LogSnippetProps extends FlexProps {
   /** Log snippet or code to be displayed */
@@ -23,9 +23,9 @@ const useStyles = createUseStyles({
   redBorder: {
     borderLeft: 'var(--pf-v5-global--BorderWidth--md) solid var(--pf-v5-global--danger-color--100)',
   },
-  variantBorderColor: {
-    borderLeft: (props) => `var(--pf-v5-global--BorderWidth--md) solid var(--pf-v5-global--palette--${props.leftBorderVariant}-100)`,
-  },
+  variantBorderColor: (props: LogSnippetProps) => ({
+    borderLeft: `var(--pf-v5-global--BorderWidth--md) solid var(--pf-v5-global--${props.leftBorderVariant as any}-color--100)`,
+  }),
   statusMessage: {
     marginBottom:'var(--pf-v5-global--spacer--sm)',
   },
@@ -33,8 +33,8 @@ const useStyles = createUseStyles({
 
 
 
-export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippet, message, leftBorderVariant, ...props }) => {
-  const classes = useStyles(props);
+export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippet, message, leftBorderVariant='danger', ...props }) => {
+  const classes = useStyles({ leftBorderVariant } as any);
 
   const displayMessage = () => {
     if(typeof message === 'string') {
@@ -49,7 +49,7 @@ export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippe
   }
 
   return (
-    <Flex direction={{ default: 'column' }} className={clsx(classes.logSnippet, { [classes.redBorder]: leftBorderVariant }, { [classes.redBorder]: !props.leftBorderVariant })} {...props}>
+    <Flex direction={{ default: 'column' }} className={clsx(classes.logSnippet, classes.variantBorderColor)} {...props}>
       <FlexItem>
         { displayMessage() }
       </FlexItem>
