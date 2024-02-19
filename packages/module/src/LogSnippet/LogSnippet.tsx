@@ -11,7 +11,7 @@ export interface LogSnippetProps extends FlexProps {
   /** Message to appear above the log snippet */
   message: string | React.ReactNode;
   /** Custom color for left border */
-  leftBorderVariant?: BorderVariant
+  leftBorderVariant?: BorderVariant;
 }
 
 const useStyles = createUseStyles({
@@ -19,9 +19,6 @@ const useStyles = createUseStyles({
     marginLeft: 'var(--pf-v5-global--spacer--sm)',
     padding: 'var(--pf-v5-global--spacer--sm) 0 var(--pf-v5-global--spacer--sm) var(--pf-v5-global--spacer--sm)',
     backgroundColor: 'var(--pf-v5-global--palette--black-100)'
-  },
-  redBorder: {
-    borderLeft: 'var(--pf-v5-global--BorderWidth--md) solid var(--pf-v5-global--danger-color--100)',
   },
   variantBorderColor: (props: LogSnippetProps) => ({
     borderLeft: `var(--pf-v5-global--BorderWidth--md) solid var(--pf-v5-global--${props.leftBorderVariant as any}-color--100)`,
