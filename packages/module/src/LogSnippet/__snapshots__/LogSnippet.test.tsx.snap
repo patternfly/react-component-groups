@@ -6,13 +6,13 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pf-v5-l-flex pf-m-column logSnippet-0-2-1 variantBorderColor-0-2-3 variantBorderColor-d0-0-2-5"
+        class="pf-v5-l-flex pf-m-column logSnippet-0-2-1 variantBorderColor-0-2-2 variantBorderColor-d0-0-2-4"
       >
         <div
           class=""
         >
           <p
-            class="statusMessage-0-2-4"
+            class="statusMessage-0-2-3"
             data-ouia-component-id="OUIA-Generated-Text-1"
             data-ouia-component-type="PF5/Text"
             data-ouia-safe="true"
@@ -48,13 +48,13 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pf-v5-l-flex pf-m-column logSnippet-0-2-1 variantBorderColor-0-2-3 variantBorderColor-d0-0-2-5"
+      class="pf-v5-l-flex pf-m-column logSnippet-0-2-1 variantBorderColor-0-2-2 variantBorderColor-d0-0-2-4"
     >
       <div
         class=""
       >
         <p
-          class="statusMessage-0-2-4"
+          class="statusMessage-0-2-3"
           data-ouia-component-id="OUIA-Generated-Text-1"
           data-ouia-component-type="PF5/Text"
           data-ouia-safe="true"
