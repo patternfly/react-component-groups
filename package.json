@@ -39,6 +39,8 @@
     "@testing-library/user-event": "14.4.3",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.19.6",
+    "@octokit/rest": "^18.0.0",
     "babel-jest": "^29.2.2",
     "babel-polyfill": "6.26.0",
     "chokidar": "^3.5.3",
@@ -64,6 +66,7 @@
     "react-dom": "^18",
     "rimraf": "^2.6.2",
     "serve": "^14.1.2",
+    "surge": "^0.23.1",
     "ts-jest": "29.0.3",
     "whatwg-fetch": "^3.6.2"
   }
