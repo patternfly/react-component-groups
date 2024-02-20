@@ -30,7 +30,7 @@ const useStyles = createUseStyles({
 
 
 
-export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippet, message, leftBorderVariant='info', ...props }) => {
+export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippet, message, leftBorderVariant='danger', ...props }) => {
   const classes = useStyles(leftBorderVariant );
 
   const displayMessage = () => {
