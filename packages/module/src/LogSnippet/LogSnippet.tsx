@@ -18,7 +18,7 @@ const useStyles = createUseStyles({
   logSnippet: {
     marginLeft: 'var(--pf-v5-global--spacer--sm)',
     padding: 'var(--pf-v5-global--spacer--sm) 0 var(--pf-v5-global--spacer--sm) var(--pf-v5-global--spacer--sm)',
-    backgroundColor: 'var(--pf-v5-global--palette--black-100)'
+    backgroundColor: 'var(--pf-v5-global--BackgroundColor--100)',
   },
   variantBorderColor: (leftBorderVariant: string) => ({
     borderLeft: `var(--pf-v5-global--BorderWidth--md) solid var(--pf-v5-global--${leftBorderVariant}-color--100)`,
