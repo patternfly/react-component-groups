@@ -11,18 +11,19 @@ source: react
 # If you use typescript, the name of the interface to display props for
 # These are found through the sourceProps function provided in patternfly-docs.source.js
 propComponents: ['CloseButton']
+sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/CloseButton/CloseButton.md
 ---
 
 import { CloseIcon } from '@patternfly/react-icons';
 import CloseButton from '@patternfly/react-component-groups/dist/dynamic/CloseButton';
 
-**Close button**
+The **close button** component provides a way for users to exit a modal, dialogue, or similar action. To further customize this component, you can also utilize all properties of the [button component](/components/button).
 
-The close button component provides a way for users to exit a modal, dialogue, or similar action.
+## Examples
 
-## Examples ##
+### Basic close button
 
-You can use  onClick  to execute a callback when a user selects the close button.
+You can use `onClick` to execute a callback when a user clicks the close button.
 
 ```js file="./CloseButtonExample.tsx"
 

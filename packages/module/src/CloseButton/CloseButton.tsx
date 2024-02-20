@@ -1,32 +1,23 @@
 import React from 'react';
 import { Button, ButtonProps, ButtonVariant } from '@patternfly/react-core';
 import { CloseIcon } from '@patternfly/react-icons';
-import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
+import clsx from 'clsx';
 
 const useStyles = createUseStyles({
-  '& float-right': {
-    float: 'right'
+  closeButton: {
+    float: 'inline-end',
+    padding: '10px 14px'
   },
-  '&  no-padding': {
-    padding: 0
-  }
 });
 
 export interface CloseButtonProps extends ButtonProps {
-  /** Additional styling to apply to the close button. */
-  additionalClassName?: string;
-  /** Aria label for accessibility */
-  ariaLabel?: string;
-  /** Data test id used for testing. */
+  /** Data test ID used for testing. */
   dataTestID?: string;
-  /** Callback when the button is clicked*/
-  onClick: (event: any) => void;
-}
+};
 
 const CloseButton: React.FunctionComponent<CloseButtonProps> = ({
-  additionalClassName,
-  ariaLabel,
+  className,
   dataTestID,
   onClick,
   ...props
@@ -34,8 +25,8 @@ const CloseButton: React.FunctionComponent<CloseButtonProps> = ({
   const classes = useStyles();
   return (
     <Button
-      aria-label={ariaLabel || 'Close'}
-      className={clsx(classes, additionalClassName)}
+      aria-label={props['aria-label'] || 'Close'}
+      className={clsx(classes.closeButton, className)}
       data-test-id={dataTestID}
       onClick={onClick}
       variant={ButtonVariant.plain}

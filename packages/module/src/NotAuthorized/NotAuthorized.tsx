@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateProps, EmptyStateVariant, EmptyStateHeader, EmptyStateFooter, EmptyStateActions, } from '@patternfly/react-core';
+import { Button, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateProps, EmptyStateVariant, EmptyStateHeader, EmptyStateFooter, EmptyStateActions, ButtonVariant, } from '@patternfly/react-core';
 import { LockIcon } from '@patternfly/react-icons';
 
 export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | 'title'> {
@@ -46,18 +46,18 @@ const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
     <EmptyStateBody>{description}</EmptyStateBody>
     <EmptyStateFooter>
       {primaryAction ? <EmptyStateActions>{primaryAction}</EmptyStateActions> : null}
-      <EmptyStateActions>
-        {secondaryActions ? <EmptyStateActions>{secondaryActions}</EmptyStateActions> : null}
-        {showReturnButton &&
+      {showReturnButton && !primaryAction &&
             (document.referrer ? (
-              <Button variant="link" onClick={() => history.back()}>
+              <Button variant={ButtonVariant.primary} onClick={() => history.back()}>
                 {prevPageButtonText}
               </Button>
             ) : (
-              <Button variant="link" component="a" href={toLandingPageUrl}>
+              <Button variant={ButtonVariant.primary} component="a" href={toLandingPageUrl}>
                 {toLandingPageText}
               </Button>
             ))}
+      <EmptyStateActions>
+        {secondaryActions ? <EmptyStateActions>{secondaryActions}</EmptyStateActions> : null}
       </EmptyStateActions>
     </EmptyStateFooter>
   </EmptyState>
