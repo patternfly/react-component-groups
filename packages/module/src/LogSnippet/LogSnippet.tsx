@@ -20,8 +20,8 @@ const useStyles = createUseStyles({
     padding: 'var(--pf-v5-global--spacer--sm) 0 var(--pf-v5-global--spacer--sm) var(--pf-v5-global--spacer--sm)',
     backgroundColor: 'var(--pf-v5-global--palette--black-100)'
   },
-  variantBorderColor: (props: LogSnippetProps) => ({
-    borderLeft: `var(--pf-v5-global--BorderWidth--md) solid var(--pf-v5-global--${props.leftBorderVariant as any}-color--100)`,
+  variantBorderColor: (leftBorderVariant: string) => ({
+    borderLeft: `var(--pf-v5-global--BorderWidth--md) solid var(--pf-v5-global--${leftBorderVariant}-color--100)`,
   }),
   statusMessage: {
     marginBottom:'var(--pf-v5-global--spacer--sm)',
@@ -30,8 +30,8 @@ const useStyles = createUseStyles({
 
 
 
-export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippet, message, leftBorderVariant='danger', ...props }) => {
-  const classes = useStyles({ leftBorderVariant } as any);
+export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippet, message, leftBorderVariant='info', ...props }) => {
+  const classes = useStyles(leftBorderVariant );
 
   const displayMessage = () => {
     if(typeof message === 'string') {
