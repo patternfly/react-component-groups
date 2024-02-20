@@ -48,7 +48,7 @@ jobs:
       - run: node .github/upload-preview.js packages/module/public
         name: Upload docs
         if: always()
-      - run: npm run serve & npm run test
+      - run: npm run serve:docs & npm run test:a11y
         name: a11y tests
       - run: node .github/upload-preview.js packages/module/coverage
         name: Upload a11y report
