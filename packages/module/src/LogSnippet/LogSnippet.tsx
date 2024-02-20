@@ -30,8 +30,8 @@ const useStyles = createUseStyles({
 
 
 
-export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippet, message, leftBorderVariant='danger', ...props }) => {
-  const classes = useStyles(leftBorderVariant );
+export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippet, message, leftBorderVariant = 'danger', ...props }: LogSnippetProps) => {
+  const classes = useStyles(leftBorderVariant);
 
   return (
     <Flex direction={{ default: 'column' }} className={clsx(classes.logSnippet, classes.variantBorderColor)} {...props}>
