@@ -33,22 +33,10 @@ const useStyles = createUseStyles({
 export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippet, message, leftBorderVariant='danger', ...props }) => {
   const classes = useStyles(leftBorderVariant );
 
-  const displayMessage = () => {
-    if(typeof message === 'string') {
-      return (
-        <Text component={TextVariants.p} className={classes.statusMessage}>
-          {message}
-        </Text>
-      )
-    } else {
-      return message
-    }
-  }
-
   return (
     <Flex direction={{ default: 'column' }} className={clsx(classes.logSnippet, classes.variantBorderColor)} {...props}>
       <FlexItem>
-        { displayMessage() }
+        { typeof message === 'string' ? <Text component={TextVariants.p} className={classes.statusMessage}>{message}</Text> : message }
       </FlexItem>
       { logSnippet && <FlexItem>
         <CodeBlock>

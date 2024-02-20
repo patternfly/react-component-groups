@@ -10,7 +10,5 @@ export const BasicExample: React.FunctionComponent = () => {
   connectionConfig:
   url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
 
-  return <>
-    <LogSnippet message='Failure - check logs for details' logSnippet={code} />
-  </>
+  return <LogSnippet message='Failure - check logs for details' logSnippet={code} />;
 }
