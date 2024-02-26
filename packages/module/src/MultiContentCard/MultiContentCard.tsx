@@ -92,14 +92,12 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
           onExpand={onExpand}
           isToggleRightAligned={isToggleRightAligned}
           toggleButtonProps={{
-            id: 'multi-content-card-toggle-button',
             'aria-label': 'Details',
-            'aria-labelledby': 'multi-content-card-title toggle-button',
             'aria-expanded': isExpanded
           }}
           actions={{ actions }}
         >
-          <CardTitle id="multi-content-card-title">{toggleText ? <Title headingLevel="h2" size="xl">{toggleText}</Title> : toggleContent}</CardTitle>
+          <CardTitle>{toggleText ? <Title headingLevel="h2" size="xl">{toggleText}</Title> : toggleContent}</CardTitle>
         </CardHeader>
       )}
       {isExpandable ? <CardExpandableContent>{renderCards(cards, withDividers)}</CardExpandableContent> : renderCards(cards, withDividers)}

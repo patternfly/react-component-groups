@@ -392,12 +392,10 @@ exports[`MultiContentCard component should render expandable multi content card 
         aria-disabled="false"
         aria-expanded="false"
         aria-label="Details"
-        aria-labelledby="multi-content-card-title toggle-button"
         class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-2"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
-        id="multi-content-card-toggle-button"
         type="button"
       >
         <span
@@ -430,7 +428,6 @@ exports[`MultiContentCard component should render expandable multi content card 
       >
         <div
           class="pf-v5-c-card__title-text"
-          id="multi-content-card-title"
         >
           <h2
             class="pf-v5-c-title pf-m-xl"
@@ -465,12 +462,10 @@ exports[`MultiContentCard component should render expandable multi content card 
         aria-disabled="false"
         aria-expanded="true"
         aria-label="Details"
-        aria-labelledby="multi-content-card-title toggle-button"
         class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
-        id="multi-content-card-toggle-button"
         type="button"
       >
         <span
@@ -503,7 +498,6 @@ exports[`MultiContentCard component should render expandable multi content card 
       >
         <div
           class="pf-v5-c-card__title-text"
-          id="multi-content-card-title"
         >
           <h2
             class="pf-v5-c-title pf-m-xl"
@@ -905,12 +899,10 @@ exports[`MultiContentCard component should render expandable multi content card 
         aria-disabled="false"
         aria-expanded="false"
         aria-label="Details"
-        aria-labelledby="multi-content-card-title toggle-button"
         class="pf-v5-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-3"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
-        id="multi-content-card-toggle-button"
         type="button"
       >
         <span
@@ -1005,7 +997,6 @@ exports[`MultiContentCard component should render expandable multi content card 
       >
         <div
           class="pf-v5-c-card__title-text"
-          id="multi-content-card-title"
         >
           <h2
             class="pf-v5-c-title pf-m-xl"
