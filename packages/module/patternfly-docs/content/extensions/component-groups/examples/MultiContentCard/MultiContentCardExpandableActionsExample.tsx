@@ -32,7 +32,7 @@ const cards = [
     </CardBody>
     <CardFooter>
       <TextContent>
-        <TextList className="pf-u-ml-0 pf-v5-u-font-size-sm">
+        <TextList className="pf-v5-u-font-size-sm pf-v5-u-ml-0" style={{ color: 'var(--pf-v5-global--link--Color)' }}>
           <TextListItem>
             <Button variant="link" isInline>
               First link

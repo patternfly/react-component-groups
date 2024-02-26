@@ -96,7 +96,7 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
             class="pf-v5-c-content"
           >
             <ul
-              class="pf-u-ml-0 pf-v5-u-font-size-sm"
+              class="pf-v5-u-font-size-sm pf-v5-u-ml-0"
             >
               <li
                 class=""
@@ -602,7 +602,7 @@ exports[`MultiContentCard component should render expandable multi content card 
               class="pf-v5-c-content"
             >
               <ul
-                class="pf-u-ml-0 pf-v5-u-font-size-sm"
+                class="pf-v5-u-font-size-sm pf-v5-u-ml-0"
               >
                 <li
                   class=""
@@ -1109,7 +1109,7 @@ exports[`MultiContentCard component should render multi content card with divide
             class="pf-v5-c-content"
           >
             <ul
-              class="pf-u-ml-0 pf-v5-u-font-size-sm"
+              class="pf-v5-u-font-size-sm pf-v5-u-ml-0"
             >
               <li
                 class=""
