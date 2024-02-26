@@ -3,7 +3,7 @@ import { CodeBlock, CodeBlockCode, Flex, FlexItem, FlexProps, Text, TextVariants
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss'
 
-export type BorderVariant = 'danger' | 'success' | 'info' | 'warning';
+export type LogSnippetBorderVariant = 'danger' | 'success' | 'info' | 'warning';
 
 export interface LogSnippetProps extends FlexProps {
   /** Log snippet or code to be displayed */
@@ -11,7 +11,7 @@ export interface LogSnippetProps extends FlexProps {
   /** Message to appear above the log snippet */
   message: string | React.ReactNode;
   /** Custom color for left border */
-  leftBorderVariant?: BorderVariant;
+  leftBorderVariant?: LogSnippetBorderVariant;
 }
 
 const useStyles = createUseStyles({
