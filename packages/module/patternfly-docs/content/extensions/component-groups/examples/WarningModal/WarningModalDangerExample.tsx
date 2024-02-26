@@ -1,6 +1,6 @@
 import React from 'react';
 import WarningModal from '@patternfly/react-component-groups/dist/dynamic/WarningModal';
-import { Button } from '@patternfly/react-core';
+import { Button, ButtonVariant } from '@patternfly/react-core';
 
 export const BasicExample: React.FunctionComponent = () => {
   const [ isOpen, setIsOpen ] = React.useState(false);
@@ -9,7 +9,7 @@ export const BasicExample: React.FunctionComponent = () => {
     <WarningModal
       isOpen={isOpen}
       title='Unsaved changes'
-      confirmButtonVariant
+      confirmButtonVariant={ButtonVariant.danger}
       onClose={() => setIsOpen(false)}
       onConfirm={() => setIsOpen(false)}>
       Your page contains unsaved changes. Do you want to leave?
