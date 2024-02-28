@@ -43,10 +43,10 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
           </div>
         </div>
         <div
-          class="pf-v5-c-card__body pf-v5-u-display-flex"
+          class="pf-v5-c-card__body"
         >
           <div
-            class="pf-v5-c-content pf-v5-u-display-flex pf-v5-u-flex-direction-column pf-v5-u-align-self-stretch"
+            class="pf-v5-c-content"
           >
             <p
               class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
@@ -79,7 +79,7 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
               Configure application
             </p>
             <p
-              class="pf-u-flex-grow-1 pf-v5-u-font-size-sm"
+              class="pf-v5-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-3"
               data-ouia-component-type="PF5/Text"
               data-ouia-safe="true"
@@ -96,7 +96,7 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
             class="pf-v5-c-content"
           >
             <ul
-              class="pf-v5-u-font-size-sm pf-v5-u-ml-0"
+              class="pf-v5-u-font-size-sm pf-v5-u-link-color pf-v5-u-ml-0"
             >
               <li
                 class=""
@@ -156,10 +156,10 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
         id=""
       >
         <div
-          class="pf-v5-c-card__body pf-v5-u-display-flex pf-v5-u-pt-3xl-on-md"
+          class="pf-v5-c-card__body pf-v5-u-pt-3xl-on-md"
         >
           <div
-            class="pf-v5-c-content pf-v5-u-display-flex pf-v5-u-flex-direction-column pf-v5-u-align-self-stretch"
+            class="pf-v5-c-content"
           >
             <p
               class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
@@ -192,7 +192,7 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
               Configure access
             </p>
             <p
-              class="pf-u-flex-grow-1 pf-v5-u-font-size-sm"
+              class="pf-v5-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-5"
               data-ouia-component-type="PF5/Text"
               data-ouia-safe="true"
@@ -251,7 +251,7 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
       class="pf-m-flex-1"
     >
       <div
-        class="pf-v5-c-card pf-m-full-height pf-m-plain noti-c-card-configure"
+        class="pf-v5-c-card pf-m-full-height pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Card-4"
         data-ouia-component-type="PF5/Card"
         data-ouia-safe="true"
@@ -279,10 +279,10 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
           </div>
         </div>
         <div
-          class="pf-v5-c-card__body pf-v5-u-display-flex"
+          class="pf-v5-c-card__body"
         >
           <div
-            class="pf-v5-c-content pf-v5-u-display-flex pf-v5-u-flex-direction-column pf-v5-u-align-self-stretch"
+            class="pf-v5-c-content"
           >
             <p
               class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
@@ -315,7 +315,7 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
               Configure notifications
             </p>
             <p
-              class="pf-u-flex-grow-1 pf-v5-u-font-size-sm"
+              class="pf-v5-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-9"
               data-ouia-component-type="PF5/Text"
               data-ouia-safe="true"
@@ -549,10 +549,10 @@ exports[`MultiContentCard component should render expandable multi content card 
             </div>
           </div>
           <div
-            class="pf-v5-c-card__body pf-v5-u-display-flex"
+            class="pf-v5-c-card__body"
           >
             <div
-              class="pf-v5-c-content pf-v5-u-display-flex pf-v5-u-flex-direction-column pf-v5-u-align-self-stretch"
+              class="pf-v5-c-content"
             >
               <p
                 class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
@@ -585,7 +585,7 @@ exports[`MultiContentCard component should render expandable multi content card 
                 Configure application
               </p>
               <p
-                class="pf-u-flex-grow-1 pf-v5-u-font-size-sm"
+                class="pf-v5-u-font-size-sm"
                 data-ouia-component-id="OUIA-Generated-Text-13"
                 data-ouia-component-type="PF5/Text"
                 data-ouia-safe="true"
@@ -602,7 +602,7 @@ exports[`MultiContentCard component should render expandable multi content card 
               class="pf-v5-c-content"
             >
               <ul
-                class="pf-v5-u-font-size-sm pf-v5-u-ml-0"
+                class="pf-v5-u-font-size-sm pf-v5-u-link-color pf-v5-u-ml-0"
               >
                 <li
                   class=""
@@ -662,10 +662,10 @@ exports[`MultiContentCard component should render expandable multi content card 
           id=""
         >
           <div
-            class="pf-v5-c-card__body pf-v5-u-display-flex pf-v5-u-pt-3xl-on-md"
+            class="pf-v5-c-card__body pf-v5-u-pt-3xl-on-md"
           >
             <div
-              class="pf-v5-c-content pf-v5-u-display-flex pf-v5-u-flex-direction-column pf-v5-u-align-self-stretch"
+              class="pf-v5-c-content"
             >
               <p
                 class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
@@ -698,7 +698,7 @@ exports[`MultiContentCard component should render expandable multi content card 
                 Configure access
               </p>
               <p
-                class="pf-u-flex-grow-1 pf-v5-u-font-size-sm"
+                class="pf-v5-u-font-size-sm"
                 data-ouia-component-id="OUIA-Generated-Text-15"
                 data-ouia-component-type="PF5/Text"
                 data-ouia-safe="true"
@@ -757,7 +757,7 @@ exports[`MultiContentCard component should render expandable multi content card 
         class="pf-m-flex-1"
       >
         <div
-          class="pf-v5-c-card pf-m-full-height pf-m-plain noti-c-card-configure"
+          class="pf-v5-c-card pf-m-full-height pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Card-8"
           data-ouia-component-type="PF5/Card"
           data-ouia-safe="true"
@@ -785,10 +785,10 @@ exports[`MultiContentCard component should render expandable multi content card 
             </div>
           </div>
           <div
-            class="pf-v5-c-card__body pf-v5-u-display-flex"
+            class="pf-v5-c-card__body"
           >
             <div
-              class="pf-v5-c-content pf-v5-u-display-flex pf-v5-u-flex-direction-column pf-v5-u-align-self-stretch"
+              class="pf-v5-c-content"
             >
               <p
                 class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
@@ -821,7 +821,7 @@ exports[`MultiContentCard component should render expandable multi content card 
                 Configure notifications
               </p>
               <p
-                class="pf-u-flex-grow-1 pf-v5-u-font-size-sm"
+                class="pf-v5-u-font-size-sm"
                 data-ouia-component-id="OUIA-Generated-Text-19"
                 data-ouia-component-type="PF5/Text"
                 data-ouia-safe="true"
@@ -1056,10 +1056,10 @@ exports[`MultiContentCard component should render multi content card with divide
           </div>
         </div>
         <div
-          class="pf-v5-c-card__body pf-v5-u-display-flex"
+          class="pf-v5-c-card__body"
         >
           <div
-            class="pf-v5-c-content pf-v5-u-display-flex pf-v5-u-flex-direction-column pf-v5-u-align-self-stretch"
+            class="pf-v5-c-content"
           >
             <p
               class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
@@ -1092,7 +1092,7 @@ exports[`MultiContentCard component should render multi content card with divide
               Configure application
             </p>
             <p
-              class="pf-u-flex-grow-1 pf-v5-u-font-size-sm"
+              class="pf-v5-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-23"
               data-ouia-component-type="PF5/Text"
               data-ouia-safe="true"
@@ -1109,7 +1109,7 @@ exports[`MultiContentCard component should render multi content card with divide
             class="pf-v5-c-content"
           >
             <ul
-              class="pf-v5-u-font-size-sm pf-v5-u-ml-0"
+              class="pf-v5-u-font-size-sm pf-v5-u-link-color pf-v5-u-ml-0"
             >
               <li
                 class=""
@@ -1172,10 +1172,10 @@ exports[`MultiContentCard component should render multi content card with divide
         id=""
       >
         <div
-          class="pf-v5-c-card__body pf-v5-u-display-flex pf-v5-u-pt-3xl-on-md"
+          class="pf-v5-c-card__body pf-v5-u-pt-3xl-on-md"
         >
           <div
-            class="pf-v5-c-content pf-v5-u-display-flex pf-v5-u-flex-direction-column pf-v5-u-align-self-stretch"
+            class="pf-v5-c-content"
           >
             <p
               class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
@@ -1208,7 +1208,7 @@ exports[`MultiContentCard component should render multi content card with divide
               Configure access
             </p>
             <p
-              class="pf-u-flex-grow-1 pf-v5-u-font-size-sm"
+              class="pf-v5-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-25"
               data-ouia-component-type="PF5/Text"
               data-ouia-safe="true"
@@ -1270,7 +1270,7 @@ exports[`MultiContentCard component should render multi content card with divide
       class="pf-m-flex-1"
     >
       <div
-        class="pf-v5-c-card pf-m-full-height pf-m-plain noti-c-card-configure"
+        class="pf-v5-c-card pf-m-full-height pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Card-14"
         data-ouia-component-type="PF5/Card"
         data-ouia-safe="true"
@@ -1298,10 +1298,10 @@ exports[`MultiContentCard component should render multi content card with divide
           </div>
         </div>
         <div
-          class="pf-v5-c-card__body pf-v5-u-display-flex"
+          class="pf-v5-c-card__body"
         >
           <div
-            class="pf-v5-c-content pf-v5-u-display-flex pf-v5-u-flex-direction-column pf-v5-u-align-self-stretch"
+            class="pf-v5-c-content"
           >
             <p
               class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
@@ -1334,7 +1334,7 @@ exports[`MultiContentCard component should render multi content card with divide
               Configure notifications
             </p>
             <p
-              class="pf-u-flex-grow-1 pf-v5-u-font-size-sm"
+              class="pf-v5-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-29"
               data-ouia-component-type="PF5/Text"
               data-ouia-safe="true"

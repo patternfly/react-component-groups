@@ -11,68 +11,51 @@ const cards = [
         <Text component={TextVariants.h4}>Getting Started</Text>
       </TextContent>
     </CardHeader>
-    <CardBody className="pf-v5-u-display-flex">
-      <TextContent className="pf-v5-u-display-flex pf-v5-u-flex-direction-column pf-v5-u-align-self-stretch">
-        <Text
-          component={TextVariants.p}
-          className="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
-        >
+    <CardBody>
+      <TextContent>
+        <Text className="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover">
           <Icon size="md" className="pf-v5-u-pl-sm pf-v5-u-pr-md">
             <CogIcon />
           </Icon>
           Configure application
         </Text>
-        <Text
-          component="p"
-          className="pf-u-flex-grow-1 pf-v5-u-font-size-sm"
-        >
+        <Text className="pf-v5-u-font-size-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Text>
       </TextContent>
     </CardBody>
     <CardFooter>
       <TextContent>
-        <TextList className="pf-v5-u-font-size-sm pf-v5-u-ml-0" style={{ color: 'var(--pf-v5-global--link--Color)' }}>
+        <TextList className="pf-v5-u-font-size-sm pf-v5-u-link-color pf-v5-u-ml-0">
           <TextListItem>
-            <Button variant="link" isInline>
-              First link
-            </Button>
+            <Button variant="link" isInline>First link</Button>
           </TextListItem>
           <TextListItem>
-            <Button variant="link" isInline>
-              Second link
-            </Button>
+            <Button variant="link" isInline>Second link</Button>
           </TextListItem>
           <TextListItem>
-            <Button variant="link" isInline>
-              Another link
-            </Button>
+            <Button variant="link" isInline>Another link</Button>
           </TextListItem>
-        </TextList></TextContent>
+        </TextList>
+      </TextContent>
     </CardFooter>
   </Card>,
   <Card isFullHeight isPlain key="card-2">
-    <CardBody className="pf-v5-u-display-flex pf-v5-u-pt-3xl-on-md">
-      <TextContent className="pf-v5-u-display-flex pf-v5-u-flex-direction-column pf-v5-u-align-self-stretch">
-        <Text
-          component={TextVariants.p}
-          className="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
-        >
+    <CardBody className="pf-v5-u-pt-3xl-on-md">
+      <TextContent>
+        <Text className="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover">
           <Icon size="md" className="pf-v5-u-pl-sm pf-v5-u-pr-md">
             <LockIcon />
           </Icon>
           Configure access
         </Text>
-        <Text
-          component="p"
-          className="pf-u-flex-grow-1 pf-v5-u-font-size-sm"
-        >
+        <Text className="pf-v5-u-font-size-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </Text>
       </TextContent>
     </CardBody>
     <CardFooter>
-      <Text component="p">
+      <Text>
         <Button variant="link" isInline>
             Learn more  
           <Icon className="pf-u-ml-sm" isInline>
@@ -82,33 +65,27 @@ const cards = [
       </Text>
     </CardFooter>
   </Card>,
-  <Card className="noti-c-card-configure" isFullHeight isPlain key="card-3">
+  <Card isFullHeight isPlain key="card-3">
     <CardHeader>
       <TextContent>
         <Text component={TextVariants.h4}>Next Steps</Text>
       </TextContent>
     </CardHeader>
-    <CardBody className="pf-v5-u-display-flex">
-      <TextContent className="pf-v5-u-display-flex pf-v5-u-flex-direction-column pf-v5-u-align-self-stretch">
-        <Text
-          component={TextVariants.p}
-          className="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
-        >
+    <CardBody>
+      <TextContent>
+        <Text className="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover">
           <Icon size="md" className="pf-v5-u-pl-sm pf-v5-u-pr-md">
             <BellIcon />
           </Icon>
           Configure notifications
         </Text>
-        <Text
-          component="p"
-          className="pf-u-flex-grow-1 pf-v5-u-font-size-sm"
-        >
+        <Text className="pf-v5-u-font-size-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Text>
       </TextContent>
     </CardBody>
     <CardFooter>
-      <Text component="p">
+      <Text>
         <Button variant="link" isInline>
             Learn more  
           <Icon className="pf-u-ml-sm" isInline>
