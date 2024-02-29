@@ -1,0 +1,1394 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultiContentCard component should render basic multi content card 1`] = `
+<div
+  class="pf-v5-c-card pf-m-expanded"
+  data-ouia-component-id="OUIA-Generated-Card-1"
+  data-ouia-component-type="PF5/Card"
+  data-ouia-safe="true"
+  id=""
+>
+  <div
+    class="pf-v5-l-flex pf-m-align-items-stretch pf-m-align-self-stretch"
+  >
+    <div
+      class="pf-m-flex-1"
+    >
+      <div
+        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Card-2"
+        data-ouia-component-type="PF5/Card"
+        data-ouia-safe="true"
+        id=""
+      >
+        <div
+          class="pf-v5-c-card__header"
+        >
+          <div
+            class="pf-v5-c-card__header-main"
+          >
+            <div
+              class="pf-v5-c-content"
+            >
+              <h4
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-1"
+                data-ouia-component-type="PF5/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Getting Started
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pf-v5-c-card__body"
+        >
+          <div
+            class="pf-v5-c-content"
+          >
+            <p
+              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              data-ouia-component-id="OUIA-Generated-Text-2"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <span
+                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+              >
+                <span
+                  class="pf-v5-c-icon__content"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v5-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              Configure application
+            </p>
+            <p
+              class="pf-v5-u-font-size-sm"
+              data-ouia-component-id="OUIA-Generated-Text-3"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+        <div
+          class="pf-v5-c-card__footer"
+        >
+          <div
+            class="pf-v5-c-content"
+          >
+            <ul
+              class="pf-v5-u-font-size-sm pf-v5-u-link-color pf-v5-u-ml-0"
+            >
+              <li
+                class=""
+              >
+                <button
+                  aria-disabled="false"
+                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  data-ouia-component-id="OUIA-Generated-Button-link-1"
+                  data-ouia-component-type="PF5/Button"
+                  data-ouia-safe="true"
+                  type="button"
+                >
+                  First link
+                </button>
+              </li>
+              <li
+                class=""
+              >
+                <button
+                  aria-disabled="false"
+                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  data-ouia-component-id="OUIA-Generated-Button-link-2"
+                  data-ouia-component-type="PF5/Button"
+                  data-ouia-safe="true"
+                  type="button"
+                >
+                  Second link
+                </button>
+              </li>
+              <li
+                class=""
+              >
+                <button
+                  aria-disabled="false"
+                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  data-ouia-component-id="OUIA-Generated-Button-link-3"
+                  data-ouia-component-type="PF5/Button"
+                  data-ouia-safe="true"
+                  type="button"
+                >
+                  Another link
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="pf-m-flex-1"
+    >
+      <div
+        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Card-3"
+        data-ouia-component-type="PF5/Card"
+        data-ouia-safe="true"
+        id=""
+      >
+        <div
+          class="pf-v5-c-card__body pf-v5-u-pt-3xl-on-md"
+        >
+          <div
+            class="pf-v5-c-content"
+          >
+            <p
+              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              data-ouia-component-id="OUIA-Generated-Text-4"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <span
+                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+              >
+                <span
+                  class="pf-v5-c-icon__content"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v5-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              Configure access
+            </p>
+            <p
+              class="pf-v5-u-font-size-sm"
+              data-ouia-component-id="OUIA-Generated-Text-5"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </div>
+        <div
+          class="pf-v5-c-card__footer"
+        >
+          <p
+            class=""
+            data-ouia-component-id="OUIA-Generated-Text-6"
+            data-ouia-component-type="PF5/Text"
+            data-ouia-safe="true"
+            data-pf-content="true"
+          >
+            <button
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-4"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              type="button"
+            >
+              Learn more
+              <span
+                class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+              >
+                <span
+                  class="pf-v5-c-icon__content"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v5-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="pf-m-flex-1"
+    >
+      <div
+        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Card-4"
+        data-ouia-component-type="PF5/Card"
+        data-ouia-safe="true"
+        id=""
+      >
+        <div
+          class="pf-v5-c-card__header"
+        >
+          <div
+            class="pf-v5-c-card__header-main"
+          >
+            <div
+              class="pf-v5-c-content"
+            >
+              <h4
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-7"
+                data-ouia-component-type="PF5/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Next Steps
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pf-v5-c-card__body"
+        >
+          <div
+            class="pf-v5-c-content"
+          >
+            <p
+              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              data-ouia-component-id="OUIA-Generated-Text-8"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <span
+                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+              >
+                <span
+                  class="pf-v5-c-icon__content"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v5-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 896 1024"
+                    width="1em"
+                  >
+                    <path
+                      d="M448,0 C465.333333,0 480.333333,6.33333333 493,19 C505.666667,31.6666667 512,46.6666667 512,64 L512,106 L514.23,106.45 C587.89,121.39 648.48,157.24 696,214 C744,271.333333 768,338.666667 768,416 C768,500 780,568.666667 804,622 C818.666667,652.666667 841.333333,684 872,716 C873.773676,718.829136 875.780658,721.505113 878,724 C890,737.333333 896,752.333333 896,769 C896,785.666667 890,800.333333 878,813 C866,825.666667 850.666667,832 832,832 L63.3,832 C44.9533333,831.84 29.8533333,825.506667 18,813 C6,800.333333 0,785.666667 0,769 C0,752.333333 6,737.333333 18,724 L24,716 L25.06,714.9 C55.1933333,683.28 77.5066667,652.313333 92,622 C116,568.666667 128,500 128,416 C128,338.666667 152,271.333333 200,214 C248,156.666667 309.333333,120.666667 384,106 L384,63.31 C384.166667,46.27 390.5,31.5 403,19 C415.666667,6.33333333 430.666667,0 448,0 Z M576,896 L576,897.08 C575.74,932.6 563.073333,962.573333 538,987 C512.666667,1011.66667 482.666667,1024 448,1024 C413.333333,1024 383.333333,1011.66667 358,987 C332.666667,962.333333 320,932 320,896 L576,896 Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              Configure notifications
+            </p>
+            <p
+              class="pf-v5-u-font-size-sm"
+              data-ouia-component-id="OUIA-Generated-Text-9"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+        <div
+          class="pf-v5-c-card__footer"
+        >
+          <p
+            class=""
+            data-ouia-component-id="OUIA-Generated-Text-10"
+            data-ouia-component-type="PF5/Text"
+            data-ouia-safe="true"
+            data-pf-content="true"
+          >
+            <button
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-5"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              type="button"
+            >
+              Learn more
+              <span
+                class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+              >
+                <span
+                  class="pf-v5-c-icon__content"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v5-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MultiContentCard component should render expandable multi content card - collapsed 1`] = `
+<div
+  class="pf-v5-c-card"
+  data-ouia-component-id="OUIA-Generated-Card-9"
+  data-ouia-component-type="PF5/Card"
+  data-ouia-safe="true"
+  id=""
+>
+  <div
+    class="pf-v5-c-card__header"
+  >
+    <div
+      class="pf-v5-c-card__header-toggle"
+    >
+      <button
+        aria-disabled="false"
+        aria-expanded="false"
+        aria-label="Details"
+        class="pf-v5-c-button pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Button-plain-2"
+        data-ouia-component-type="PF5/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-v5-c-card__header-toggle-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
+      class="pf-v5-c-card__actions"
+    />
+    <div
+      class="pf-v5-c-card__header-main"
+    >
+      <div
+        class="pf-v5-c-card__title"
+      >
+        <div
+          class="pf-v5-c-card__title-text"
+        >
+          <h2
+            class="pf-v5-c-title pf-m-xl"
+            data-ouia-component-id="OUIA-Generated-Title-2"
+            data-ouia-component-type="PF5/Title"
+            data-ouia-safe="true"
+          >
+            Expandable card toggle text
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MultiContentCard component should render expandable multi content card - expanded 1`] = `
+<div
+  class="pf-v5-c-card pf-m-expanded"
+  data-ouia-component-id="OUIA-Generated-Card-5"
+  data-ouia-component-type="PF5/Card"
+  data-ouia-safe="true"
+  id=""
+>
+  <div
+    class="pf-v5-c-card__header"
+  >
+    <div
+      class="pf-v5-c-card__header-toggle"
+    >
+      <button
+        aria-disabled="false"
+        aria-expanded="true"
+        aria-label="Details"
+        class="pf-v5-c-button pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Button-plain-1"
+        data-ouia-component-type="PF5/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-v5-c-card__header-toggle-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
+      class="pf-v5-c-card__actions"
+    />
+    <div
+      class="pf-v5-c-card__header-main"
+    >
+      <div
+        class="pf-v5-c-card__title"
+      >
+        <div
+          class="pf-v5-c-card__title-text"
+        >
+          <h2
+            class="pf-v5-c-title pf-m-xl"
+            data-ouia-component-id="OUIA-Generated-Title-1"
+            data-ouia-component-type="PF5/Title"
+            data-ouia-safe="true"
+          >
+            Expandable card toggle text
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="pf-v5-c-card__expandable-content"
+  >
+    <div
+      class="pf-v5-l-flex pf-m-align-items-stretch pf-m-align-self-stretch"
+    >
+      <div
+        class="pf-m-flex-1"
+      >
+        <div
+          class="pf-v5-c-card pf-m-full-height pf-m-plain"
+          data-ouia-component-id="OUIA-Generated-Card-6"
+          data-ouia-component-type="PF5/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-v5-c-card__header"
+          >
+            <div
+              class="pf-v5-c-card__header-main"
+            >
+              <div
+                class="pf-v5-c-content"
+              >
+                <h4
+                  class=""
+                  data-ouia-component-id="OUIA-Generated-Text-11"
+                  data-ouia-component-type="PF5/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                >
+                  Getting Started
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div
+            class="pf-v5-c-card__body"
+          >
+            <div
+              class="pf-v5-c-content"
+            >
+              <p
+                class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+                data-ouia-component-id="OUIA-Generated-Text-12"
+                data-ouia-component-type="PF5/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                <span
+                  class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                >
+                  <span
+                    class="pf-v5-c-icon__content"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="pf-v5-svg"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                Configure application
+              </p>
+              <p
+                class="pf-v5-u-font-size-sm"
+                data-ouia-component-id="OUIA-Generated-Text-13"
+                data-ouia-component-type="PF5/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+          <div
+            class="pf-v5-c-card__footer"
+          >
+            <div
+              class="pf-v5-c-content"
+            >
+              <ul
+                class="pf-v5-u-font-size-sm pf-v5-u-link-color pf-v5-u-ml-0"
+              >
+                <li
+                  class=""
+                >
+                  <button
+                    aria-disabled="false"
+                    class="pf-v5-c-button pf-m-link pf-m-inline"
+                    data-ouia-component-id="OUIA-Generated-Button-link-6"
+                    data-ouia-component-type="PF5/Button"
+                    data-ouia-safe="true"
+                    type="button"
+                  >
+                    First link
+                  </button>
+                </li>
+                <li
+                  class=""
+                >
+                  <button
+                    aria-disabled="false"
+                    class="pf-v5-c-button pf-m-link pf-m-inline"
+                    data-ouia-component-id="OUIA-Generated-Button-link-7"
+                    data-ouia-component-type="PF5/Button"
+                    data-ouia-safe="true"
+                    type="button"
+                  >
+                    Second link
+                  </button>
+                </li>
+                <li
+                  class=""
+                >
+                  <button
+                    aria-disabled="false"
+                    class="pf-v5-c-button pf-m-link pf-m-inline"
+                    data-ouia-component-id="OUIA-Generated-Button-link-8"
+                    data-ouia-component-type="PF5/Button"
+                    data-ouia-safe="true"
+                    type="button"
+                  >
+                    Another link
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pf-m-flex-1"
+      >
+        <div
+          class="pf-v5-c-card pf-m-full-height pf-m-plain"
+          data-ouia-component-id="OUIA-Generated-Card-7"
+          data-ouia-component-type="PF5/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-v5-c-card__body pf-v5-u-pt-3xl-on-md"
+          >
+            <div
+              class="pf-v5-c-content"
+            >
+              <p
+                class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+                data-ouia-component-id="OUIA-Generated-Text-14"
+                data-ouia-component-type="PF5/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                <span
+                  class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                >
+                  <span
+                    class="pf-v5-c-icon__content"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="pf-v5-svg"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 448 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                Configure access
+              </p>
+              <p
+                class="pf-v5-u-font-size-sm"
+                data-ouia-component-id="OUIA-Generated-Text-15"
+                data-ouia-component-type="PF5/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+          </div>
+          <div
+            class="pf-v5-c-card__footer"
+          >
+            <p
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-16"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <button
+                aria-disabled="false"
+                class="pf-v5-c-button pf-m-link pf-m-inline"
+                data-ouia-component-id="OUIA-Generated-Button-link-9"
+                data-ouia-component-type="PF5/Button"
+                data-ouia-safe="true"
+                type="button"
+              >
+                Learn more
+                <span
+                  class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+                >
+                  <span
+                    class="pf-v5-c-icon__content"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="pf-v5-svg"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 448 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pf-m-flex-1"
+      >
+        <div
+          class="pf-v5-c-card pf-m-full-height pf-m-plain"
+          data-ouia-component-id="OUIA-Generated-Card-8"
+          data-ouia-component-type="PF5/Card"
+          data-ouia-safe="true"
+          id=""
+        >
+          <div
+            class="pf-v5-c-card__header"
+          >
+            <div
+              class="pf-v5-c-card__header-main"
+            >
+              <div
+                class="pf-v5-c-content"
+              >
+                <h4
+                  class=""
+                  data-ouia-component-id="OUIA-Generated-Text-17"
+                  data-ouia-component-type="PF5/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                >
+                  Next Steps
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div
+            class="pf-v5-c-card__body"
+          >
+            <div
+              class="pf-v5-c-content"
+            >
+              <p
+                class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+                data-ouia-component-id="OUIA-Generated-Text-18"
+                data-ouia-component-type="PF5/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                <span
+                  class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                >
+                  <span
+                    class="pf-v5-c-icon__content"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="pf-v5-svg"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 896 1024"
+                      width="1em"
+                    >
+                      <path
+                        d="M448,0 C465.333333,0 480.333333,6.33333333 493,19 C505.666667,31.6666667 512,46.6666667 512,64 L512,106 L514.23,106.45 C587.89,121.39 648.48,157.24 696,214 C744,271.333333 768,338.666667 768,416 C768,500 780,568.666667 804,622 C818.666667,652.666667 841.333333,684 872,716 C873.773676,718.829136 875.780658,721.505113 878,724 C890,737.333333 896,752.333333 896,769 C896,785.666667 890,800.333333 878,813 C866,825.666667 850.666667,832 832,832 L63.3,832 C44.9533333,831.84 29.8533333,825.506667 18,813 C6,800.333333 0,785.666667 0,769 C0,752.333333 6,737.333333 18,724 L24,716 L25.06,714.9 C55.1933333,683.28 77.5066667,652.313333 92,622 C116,568.666667 128,500 128,416 C128,338.666667 152,271.333333 200,214 C248,156.666667 309.333333,120.666667 384,106 L384,63.31 C384.166667,46.27 390.5,31.5 403,19 C415.666667,6.33333333 430.666667,0 448,0 Z M576,896 L576,897.08 C575.74,932.6 563.073333,962.573333 538,987 C512.666667,1011.66667 482.666667,1024 448,1024 C413.333333,1024 383.333333,1011.66667 358,987 C332.666667,962.333333 320,932 320,896 L576,896 Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                Configure notifications
+              </p>
+              <p
+                class="pf-v5-u-font-size-sm"
+                data-ouia-component-id="OUIA-Generated-Text-19"
+                data-ouia-component-type="PF5/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+          <div
+            class="pf-v5-c-card__footer"
+          >
+            <p
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-20"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <button
+                aria-disabled="false"
+                class="pf-v5-c-button pf-m-link pf-m-inline"
+                data-ouia-component-id="OUIA-Generated-Button-link-10"
+                data-ouia-component-type="PF5/Button"
+                data-ouia-safe="true"
+                type="button"
+              >
+                Learn more
+                <span
+                  class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+                >
+                  <span
+                    class="pf-v5-c-icon__content"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="pf-v5-svg"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 448 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MultiContentCard component should render expandable multi content card - with actions 1`] = `
+<div
+  class="pf-v5-c-card"
+  data-ouia-component-id="OUIA-Generated-Card-10"
+  data-ouia-component-type="PF5/Card"
+  data-ouia-safe="true"
+  id=""
+>
+  <div
+    class="pf-v5-c-card__header"
+  >
+    <div
+      class="pf-v5-c-card__header-toggle"
+    >
+      <button
+        aria-disabled="false"
+        aria-expanded="false"
+        aria-label="Details"
+        class="pf-v5-c-button pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Button-plain-3"
+        data-ouia-component-type="PF5/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-v5-c-card__header-toggle-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="pf-v5-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
+      class="pf-v5-c-card__actions"
+    >
+      <button
+        aria-expanded="true"
+        aria-label="kebab dropdown toggle"
+        class="pf-v5-c-menu-toggle pf-m-expanded pf-m-plain"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v5-svg"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          viewBox="0 0 192 512"
+          width="1em"
+        >
+          <path
+            d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+          />
+        </svg>
+      </button>
+      <div
+        class="pf-v5-c-menu"
+        data-ouia-component-id="OUIA-Generated-Dropdown-1"
+        data-ouia-component-type="PF5/Dropdown"
+        data-ouia-safe="true"
+        style="position: absolute; left: 0px; top: 0px; z-index: 9999; opacity: 0; transition: opacity 0ms cubic-bezier(.54, 1.5, .38, 1.11);"
+      >
+        <div
+          class="pf-v5-c-menu__content"
+        >
+          <ul
+            class="pf-v5-c-menu__list"
+            role="menu"
+          >
+            <li
+              class="pf-v5-c-menu__list-item"
+              data-ouia-component-id="OUIA-Generated-DropdownItem-1"
+              data-ouia-component-type="PF5/DropdownItem"
+              data-ouia-safe="true"
+              role="none"
+            >
+              <button
+                class="pf-v5-c-menu__item"
+                role="menuitem"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="pf-v5-c-menu__item-main"
+                >
+                  <span
+                    class="pf-v5-c-menu__item-text"
+                  >
+                    Action item
+                  </span>
+                </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div
+      class="pf-v5-c-card__header-main"
+    >
+      <div
+        class="pf-v5-c-card__title"
+      >
+        <div
+          class="pf-v5-c-card__title-text"
+        >
+          <h2
+            class="pf-v5-c-title pf-m-xl"
+            data-ouia-component-id="OUIA-Generated-Title-3"
+            data-ouia-component-type="PF5/Title"
+            data-ouia-safe="true"
+          >
+            Expandable card toggle text
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MultiContentCard component should render multi content card with dividers 1`] = `
+<div
+  class="pf-v5-c-card pf-m-expanded"
+  data-ouia-component-id="OUIA-Generated-Card-11"
+  data-ouia-component-type="PF5/Card"
+  data-ouia-safe="true"
+  id=""
+>
+  <div
+    class="pf-v5-l-flex pf-m-align-items-stretch pf-m-align-self-stretch"
+  >
+    <div
+      class="pf-m-flex-1"
+    >
+      <div
+        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Card-12"
+        data-ouia-component-type="PF5/Card"
+        data-ouia-safe="true"
+        id=""
+      >
+        <div
+          class="pf-v5-c-card__header"
+        >
+          <div
+            class="pf-v5-c-card__header-main"
+          >
+            <div
+              class="pf-v5-c-content"
+            >
+              <h4
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-21"
+                data-ouia-component-type="PF5/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Getting Started
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pf-v5-c-card__body"
+        >
+          <div
+            class="pf-v5-c-content"
+          >
+            <p
+              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              data-ouia-component-id="OUIA-Generated-Text-22"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <span
+                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+              >
+                <span
+                  class="pf-v5-c-icon__content"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v5-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 512 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              Configure application
+            </p>
+            <p
+              class="pf-v5-u-font-size-sm"
+              data-ouia-component-id="OUIA-Generated-Text-23"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+        <div
+          class="pf-v5-c-card__footer"
+        >
+          <div
+            class="pf-v5-c-content"
+          >
+            <ul
+              class="pf-v5-u-font-size-sm pf-v5-u-link-color pf-v5-u-ml-0"
+            >
+              <li
+                class=""
+              >
+                <button
+                  aria-disabled="false"
+                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  data-ouia-component-id="OUIA-Generated-Button-link-11"
+                  data-ouia-component-type="PF5/Button"
+                  data-ouia-safe="true"
+                  type="button"
+                >
+                  First link
+                </button>
+              </li>
+              <li
+                class=""
+              >
+                <button
+                  aria-disabled="false"
+                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  data-ouia-component-id="OUIA-Generated-Button-link-12"
+                  data-ouia-component-type="PF5/Button"
+                  data-ouia-safe="true"
+                  type="button"
+                >
+                  Second link
+                </button>
+              </li>
+              <li
+                class=""
+              >
+                <button
+                  aria-disabled="false"
+                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  data-ouia-component-id="OUIA-Generated-Button-link-13"
+                  data-ouia-component-type="PF5/Button"
+                  data-ouia-safe="true"
+                  type="button"
+                >
+                  Another link
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr
+      class="pf-v5-c-divider pf-m-inset-3xl pf-m-vertical-on-md"
+    />
+    <div
+      class="pf-m-flex-1"
+    >
+      <div
+        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Card-13"
+        data-ouia-component-type="PF5/Card"
+        data-ouia-safe="true"
+        id=""
+      >
+        <div
+          class="pf-v5-c-card__body pf-v5-u-pt-3xl-on-md"
+        >
+          <div
+            class="pf-v5-c-content"
+          >
+            <p
+              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              data-ouia-component-id="OUIA-Generated-Text-24"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <span
+                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+              >
+                <span
+                  class="pf-v5-c-icon__content"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v5-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              Configure access
+            </p>
+            <p
+              class="pf-v5-u-font-size-sm"
+              data-ouia-component-id="OUIA-Generated-Text-25"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </div>
+        <div
+          class="pf-v5-c-card__footer"
+        >
+          <p
+            class=""
+            data-ouia-component-id="OUIA-Generated-Text-26"
+            data-ouia-component-type="PF5/Text"
+            data-ouia-safe="true"
+            data-pf-content="true"
+          >
+            <button
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-14"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              type="button"
+            >
+              Learn more
+              <span
+                class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+              >
+                <span
+                  class="pf-v5-c-icon__content"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v5-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr
+      class="pf-v5-c-divider pf-m-inset-3xl pf-m-vertical-on-md"
+    />
+    <div
+      class="pf-m-flex-1"
+    >
+      <div
+        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Card-14"
+        data-ouia-component-type="PF5/Card"
+        data-ouia-safe="true"
+        id=""
+      >
+        <div
+          class="pf-v5-c-card__header"
+        >
+          <div
+            class="pf-v5-c-card__header-main"
+          >
+            <div
+              class="pf-v5-c-content"
+            >
+              <h4
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-27"
+                data-ouia-component-type="PF5/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Next Steps
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pf-v5-c-card__body"
+        >
+          <div
+            class="pf-v5-c-content"
+          >
+            <p
+              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              data-ouia-component-id="OUIA-Generated-Text-28"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <span
+                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+              >
+                <span
+                  class="pf-v5-c-icon__content"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v5-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 896 1024"
+                    width="1em"
+                  >
+                    <path
+                      d="M448,0 C465.333333,0 480.333333,6.33333333 493,19 C505.666667,31.6666667 512,46.6666667 512,64 L512,106 L514.23,106.45 C587.89,121.39 648.48,157.24 696,214 C744,271.333333 768,338.666667 768,416 C768,500 780,568.666667 804,622 C818.666667,652.666667 841.333333,684 872,716 C873.773676,718.829136 875.780658,721.505113 878,724 C890,737.333333 896,752.333333 896,769 C896,785.666667 890,800.333333 878,813 C866,825.666667 850.666667,832 832,832 L63.3,832 C44.9533333,831.84 29.8533333,825.506667 18,813 C6,800.333333 0,785.666667 0,769 C0,752.333333 6,737.333333 18,724 L24,716 L25.06,714.9 C55.1933333,683.28 77.5066667,652.313333 92,622 C116,568.666667 128,500 128,416 C128,338.666667 152,271.333333 200,214 C248,156.666667 309.333333,120.666667 384,106 L384,63.31 C384.166667,46.27 390.5,31.5 403,19 C415.666667,6.33333333 430.666667,0 448,0 Z M576,896 L576,897.08 C575.74,932.6 563.073333,962.573333 538,987 C512.666667,1011.66667 482.666667,1024 448,1024 C413.333333,1024 383.333333,1011.66667 358,987 C332.666667,962.333333 320,932 320,896 L576,896 Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              Configure notifications
+            </p>
+            <p
+              class="pf-v5-u-font-size-sm"
+              data-ouia-component-id="OUIA-Generated-Text-29"
+              data-ouia-component-type="PF5/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+        <div
+          class="pf-v5-c-card__footer"
+        >
+          <p
+            class=""
+            data-ouia-component-id="OUIA-Generated-Text-30"
+            data-ouia-component-type="PF5/Text"
+            data-ouia-safe="true"
+            data-pf-content="true"
+          >
+            <button
+              aria-disabled="false"
+              class="pf-v5-c-button pf-m-link pf-m-inline"
+              data-ouia-component-id="OUIA-Generated-Button-link-15"
+              data-ouia-component-type="PF5/Button"
+              data-ouia-safe="true"
+              type="button"
+            >
+              Learn more
+              <span
+                class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+              >
+                <span
+                  class="pf-v5-c-icon__content"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v5-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
