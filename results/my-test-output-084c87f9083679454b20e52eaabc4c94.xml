@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="5.960" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-03-05T19:18:11" tests="0" file="cypress/e2e/CloseButton.spec.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Test the close button" timestamp="2024-03-05T19:18:11" tests="1" time="5.948" failures="0">
+    <testcase name="Test the close button passes" time="4.659" classname="passes">
+    </testcase>
+  </testsuite>
+</testsuites>
