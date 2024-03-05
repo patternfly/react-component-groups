@@ -157,5 +157,43 @@ jobs:
         run: npm run build:docs
       - name: A11y tests
         run: npm run serve:docs & npm run test:a11y
+  test_cypress:
+    runs-on: ubuntu-latest
+    env:
+      GH_PR_NUM: ${{ github.event.number }}
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+      # Yes, we really want to checkout the PR
+      - run: |
+          if [[ ! -z "${GH_PR_NUM}" ]]; then 
+            echo "Checking out PR"
+            git fetch origin pull/$GH_PR_NUM/head:tmp
+            git checkout tmp
+          fi
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - uses: actions/cache@v2
+        id: npm-cache
+        name: Cache npm deps
+        with:
+          path: |
+           node_modules
+           **/node_modules
+           ~/.cache/Cypress
+          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package-lock.json') }}
+      - run: npm install --frozen-lockfile
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+      - uses: actions/cache@v2
+        id: dist
+        name: Cache dist
+        with:
+          path: |
+            packages/*/dist
+            packages/react-styles/css
+          key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package-lock.json', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
+      - name: Build dist
+        run: npm run build
       - name: Run integration tests
         run: npm run cypress:run:ci
