@@ -157,3 +157,5 @@ jobs:
         run: npm run build:docs
       - name: A11y tests
         run: npm run serve:docs & npm run test:a11y
+      - name: Run integration tests
+        run: npm run cypress:run:ci
