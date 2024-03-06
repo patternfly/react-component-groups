@@ -48,8 +48,16 @@ Left border can be displayed using `leftBorderVariant`. To display a border unde
 
 ### Expandable multi content card with dividers
 
-Dividers between cards in the content can be shown using `withDividers` flag. 
+Dividers between all cards in the content can be shown using `withDividers` flag. 
 
 ```js file="./MultiContentCardExpandableDividerExample.tsx"
+
+```
+
+### Expandable multi content card with single dividers
+
+To enable a divider just for a single card, use `dividerVariant` property passed to the `cards` array. 
+
+```js file="./MultiContentCardExpandableSingleDividerExample.tsx"
 
 ```

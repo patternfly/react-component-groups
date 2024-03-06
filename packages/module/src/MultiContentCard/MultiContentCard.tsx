@@ -15,9 +15,18 @@ import clsx from 'clsx';
 
 export type MultiContentCardBorderVariant = 'primary' | 'danger' | 'success' | 'info' | 'warning' | 'hidden';
 
+export type MultiContentCardDividerVariant = 'left' | 'right';
+
+export interface MutliContentCardProps {
+  /** Card element to be displayed as a content */
+  content: React.ReactElement;
+  /** Allows adding divider on the left/right from the card */
+  dividerVariant?: MultiContentCardDividerVariant;
+}
+
 export interface MultiContentCardProps extends Omit<CardProps, 'children' | 'title'> {
   /** Cards to be displayed as a content */
-  cards?: React.ReactElement[];
+  cards?: (React.ReactElement | MutliContentCardProps)[];
   /** Actions to be displayed in the expandable section */
   actions?: React.ReactElement;
   /** Toggle text for the expandable section */
@@ -26,7 +35,7 @@ export interface MultiContentCardProps extends Omit<CardProps, 'children' | 'tit
   toggleContent?: React.ReactElement;
   /** Left border variant for the containing card */
   leftBorderVariant?: MultiContentCardBorderVariant;
-  /** Indicates whether the content is separated by dividers */
+  /** When set to true, all content cards will be separated with dividers */
   withDividers?: boolean;
   /** Indicates whether the card is expandable */
   isExpandable?: boolean;
@@ -66,21 +75,29 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
     setIsExpanded(!isExpanded);
   };
   
-  const renderCards = (cards: React.ReactElement[], withDividers?: boolean) =>  (
+  const renderCards = (cards: (React.ReactElement | MutliContentCardProps)[], withDividers?: boolean) =>  (
     <Flex alignSelf={{ default: 'alignSelfStretch' }} alignItems={{ default: 'alignItemsStretch' }}>
-      {cards.map((card, index) => (
-        <>
-          <FlexItem key={`card-${index}`} flex={{ default: 'flex_1' }}>
-            {card}
-          </FlexItem>
-          {(index + 1 < cards.length && withDividers) && (
-            <Divider 
-              orientation={{ md: 'vertical' }} 
-              inset={{ default: 'inset3xl' }}
-            />
-          )}
-        </>
-      ))} 
+      {cards.map((card, index) => {
+        const isElement = React.isValidElement(card);
+        return (
+          <>
+            {(index > 0 && !isElement && ((card as MutliContentCardProps).dividerVariant === 'left')) && (
+              <Divider 
+                orientation={{ md: 'vertical' }} 
+                inset={{ default: 'inset3xl' }}
+              />
+            )}
+            <FlexItem key={`card-${index}`} flex={{ default: 'flex_1' }}>
+              {isElement ? card as React.ReactNode : (card as MutliContentCardProps).content}
+            </FlexItem>
+            {(index + 1 < cards.length && (withDividers || !isElement && (card as MutliContentCardProps).dividerVariant === 'right')) && (
+              <Divider 
+                orientation={{ md: 'vertical' }} 
+                inset={{ default: 'inset3xl' }}
+              />
+            )}
+          </>
+        )})} 
     </Flex>
   );
   
