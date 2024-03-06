@@ -191,4 +191,12 @@ describe('MultiContentCard component', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  it('should render multi content card with a single divider', () => {
+    const { container } = render(<MultiContentCard cards={[ cards[0], cards[1], { content: cards[2], dividerVariant: 'left' } ]} />);
+
+    expect(screen.getAllByRole('separator')).toHaveLength(1);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
 });
