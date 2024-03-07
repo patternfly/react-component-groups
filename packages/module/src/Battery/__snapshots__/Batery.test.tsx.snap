@@ -28,12 +28,12 @@ exports[`Battery component API should hide label 1`] = `
 </div>
 `;
 
-exports[`Battery component should render correctly CriticalBattery - 4 1`] = `
+exports[`Battery component should render correctly CriticalBattery 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryCritical-0-2-6"
-    title="4 4"
-    widget-id="4"
+    title="critical Critical"
+    widget-id="Critical"
     widget-type="Battery"
   >
     <svg
@@ -55,51 +55,18 @@ exports[`Battery component should render correctly CriticalBattery - 4 1`] = `
   </i>
   <span>
      
-    4
+    Critical
      
   </span>
 </div>
 `;
 
-exports[`Battery component should render correctly CriticalBattery - critical 1`] = `
-<div>
-  <i
-    class="battery-0-2-1 batteryCritical-0-2-6"
-    title="critical critical"
-    widget-id="critical"
-    widget-type="Battery"
-  >
-    <svg
-      shape-rendering="geometricpresision"
-      style="enable-background: new 0 0 448 512;"
-      version="1.1"
-      viewBox="0 0 448 512"
-      x="0px"
-      y="0px"
-    >
-      <path
-        d="m 144.16452,21.032222 h 159.67454 q 123.1748,0 123.1748,128.667868 v 212.64759 q 0,128.66788 -123.1748,128.66788 H 144.16452 q -123.174811,0 -123.174811,-128.66788 V 149.70009 q 0,-128.667868 123.174811,-128.667868 z"
-        style="fill: none; fill-opacity: 1; stroke: var(--pf-v5-global--BorderColor--100); stroke-width: 41.96378708; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke-opacity: 1;"
-      />
-      <path
-        d="M 99.168858,143.38516 H 351.33914 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168857 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698858,11.2 z M 99.168857,235.25069 H 351.33914 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168857 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698857,11.2 z M 99.168857,327.14542 H 351.33914 c 5.33437,0 9.69886,-5.04 9.69886,-11.19999 v -28 c 0,-6.16001 -4.36449,-11.2 -9.69886,-11.2 H 99.168857 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.19999 9.698857,11.19999 z M 99.168993,419.0375 H 351.33927 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168993 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698857,11.2 z"
-      />
-    </svg>
-  </i>
-  <span>
-     
-    critical
-     
-  </span>
-</div>
-`;
-
-exports[`Battery component should render correctly HighBattery - 3 1`] = `
+exports[`Battery component should render correctly HighBattery 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryHigh-0-2-5"
-    title="3 3"
-    widget-id="3"
+    title="high High"
+    widget-id="High"
     widget-type="Battery"
   >
     <svg
@@ -121,84 +88,18 @@ exports[`Battery component should render correctly HighBattery - 3 1`] = `
   </i>
   <span>
      
-    3
+    High
      
   </span>
 </div>
 `;
 
-exports[`Battery component should render correctly HighBattery - error 1`] = `
-<div>
-  <i
-    class="battery-0-2-1 batteryHigh-0-2-5"
-    title="error error"
-    widget-id="error"
-    widget-type="Battery"
-  >
-    <svg
-      shape-rendering="geometricpresision"
-      style="enable-background: new 0 0 448 512;"
-      version="1.1"
-      viewBox="0 0 448 512"
-      x="0px"
-      y="0px"
-    >
-      <path
-        d="m 144.16452,21.032222 h 159.67454 q 123.1748,0 123.1748,128.667868 v 212.64759 q 0,128.66788 -123.1748,128.66788 H 144.16452 q -123.174811,0 -123.174811,-128.66788 V 149.70009 q 0,-128.667868 123.174811,-128.667868 z"
-        style="fill: none; fill-opacity: 1; stroke: var(--pf-v5-global--BorderColor--100); stroke-width: 41.96378708; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke-opacity: 1;"
-      />
-      <path
-        d="M 99.168857,235.25069 H 351.33914 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168857 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698857,11.2 z M 99.168857,327.14542 H 351.33914 c 5.33437,0 9.69886,-5.04 9.69886,-11.19999 v -28 c 0,-6.16001 -4.36449,-11.2 -9.69886,-11.2 H 99.168857 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.19999 9.698857,11.19999 z M 99.168993,419.0375 H 351.33927 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168993 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698857,11.2 z"
-      />
-    </svg>
-  </i>
-  <span>
-     
-    error
-     
-  </span>
-</div>
-`;
-
-exports[`Battery component should render correctly HighBattery - high 1`] = `
-<div>
-  <i
-    class="battery-0-2-1 batteryHigh-0-2-5"
-    title="high high"
-    widget-id="high"
-    widget-type="Battery"
-  >
-    <svg
-      shape-rendering="geometricpresision"
-      style="enable-background: new 0 0 448 512;"
-      version="1.1"
-      viewBox="0 0 448 512"
-      x="0px"
-      y="0px"
-    >
-      <path
-        d="m 144.16452,21.032222 h 159.67454 q 123.1748,0 123.1748,128.667868 v 212.64759 q 0,128.66788 -123.1748,128.66788 H 144.16452 q -123.174811,0 -123.174811,-128.66788 V 149.70009 q 0,-128.667868 123.174811,-128.667868 z"
-        style="fill: none; fill-opacity: 1; stroke: var(--pf-v5-global--BorderColor--100); stroke-width: 41.96378708; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke-opacity: 1;"
-      />
-      <path
-        d="M 99.168857,235.25069 H 351.33914 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168857 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698857,11.2 z M 99.168857,327.14542 H 351.33914 c 5.33437,0 9.69886,-5.04 9.69886,-11.19999 v -28 c 0,-6.16001 -4.36449,-11.2 -9.69886,-11.2 H 99.168857 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.19999 9.698857,11.19999 z M 99.168993,419.0375 H 351.33927 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168993 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698857,11.2 z"
-      />
-    </svg>
-  </i>
-  <span>
-     
-    high
-     
-  </span>
-</div>
-`;
-
-exports[`Battery component should render correctly LowBattery - 1 1`] = `
+exports[`Battery component should render correctly LowBattery 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryLow-0-2-3"
-    title="1 1"
-    widget-id="1"
+    title="low Low"
+    widget-id="Low"
     widget-type="Battery"
   >
     <svg
@@ -220,84 +121,18 @@ exports[`Battery component should render correctly LowBattery - 1 1`] = `
   </i>
   <span>
      
-    1
+    Low
      
   </span>
 </div>
 `;
 
-exports[`Battery component should render correctly LowBattery - info 1`] = `
-<div>
-  <i
-    class="battery-0-2-1 batteryLow-0-2-3"
-    title="info info"
-    widget-id="info"
-    widget-type="Battery"
-  >
-    <svg
-      shape-rendering="geometricpresision"
-      style="enable-background: new 0 0 448 512;"
-      version="1.1"
-      viewBox="0 0 448 512"
-      x="0px"
-      y="0px"
-    >
-      <path
-        d="m 144.16452,21.032222 h 159.67454 q 123.1748,0 123.1748,128.667868 v 212.64759 q 0,128.66788 -123.1748,128.66788 H 144.16452 q -123.174811,0 -123.174811,-128.66788 V 149.70009 q 0,-128.667868 123.174811,-128.667868 z"
-        style="fill: none; fill-opacity: 1; stroke: var(--pf-v5-global--BorderColor--100); stroke-width: 41.96378708; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke-opacity: 1;"
-      />
-      <path
-        d="M 99.168993,419.0375 H 351.33927 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168993 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698857,11.2 z"
-      />
-    </svg>
-  </i>
-  <span>
-     
-    info
-     
-  </span>
-</div>
-`;
-
-exports[`Battery component should render correctly LowBattery - low 1`] = `
-<div>
-  <i
-    class="battery-0-2-1 batteryLow-0-2-3"
-    title="low low"
-    widget-id="low"
-    widget-type="Battery"
-  >
-    <svg
-      shape-rendering="geometricpresision"
-      style="enable-background: new 0 0 448 512;"
-      version="1.1"
-      viewBox="0 0 448 512"
-      x="0px"
-      y="0px"
-    >
-      <path
-        d="m 144.16452,21.032222 h 159.67454 q 123.1748,0 123.1748,128.667868 v 212.64759 q 0,128.66788 -123.1748,128.66788 H 144.16452 q -123.174811,0 -123.174811,-128.66788 V 149.70009 q 0,-128.667868 123.174811,-128.667868 z"
-        style="fill: none; fill-opacity: 1; stroke: var(--pf-v5-global--BorderColor--100); stroke-width: 41.96378708; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke-opacity: 1;"
-      />
-      <path
-        d="M 99.168993,419.0375 H 351.33927 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168993 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698857,11.2 z"
-      />
-    </svg>
-  </i>
-  <span>
-     
-    low
-     
-  </span>
-</div>
-`;
-
-exports[`Battery component should render correctly MediumBattery - 2 1`] = `
+exports[`Battery component should render correctly MediumBattery 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryMedium-0-2-4"
-    title="2 2"
-    widget-id="2"
+    title="medium Medium"
+    widget-id="Medium"
     widget-type="Battery"
   >
     <svg
@@ -319,73 +154,7 @@ exports[`Battery component should render correctly MediumBattery - 2 1`] = `
   </i>
   <span>
      
-    2
-     
-  </span>
-</div>
-`;
-
-exports[`Battery component should render correctly MediumBattery - medium 1`] = `
-<div>
-  <i
-    class="battery-0-2-1 batteryMedium-0-2-4"
-    title="medium medium"
-    widget-id="medium"
-    widget-type="Battery"
-  >
-    <svg
-      shape-rendering="geometricpresision"
-      style="enable-background: new 0 0 448 512;"
-      version="1.1"
-      viewBox="0 0 448 512"
-      x="0px"
-      y="0px"
-    >
-      <path
-        d="m 144.16452,21.032222 h 159.67454 q 123.1748,0 123.1748,128.667868 v 212.64759 q 0,128.66788 -123.1748,128.66788 H 144.16452 q -123.174811,0 -123.174811,-128.66788 V 149.70009 q 0,-128.667868 123.174811,-128.667868 z"
-        style="fill: none; fill-opacity: 1; stroke: var(--pf-v5-global--BorderColor--100); stroke-width: 41.96378708; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke-opacity: 1;"
-      />
-      <path
-        d="M 99.168857,327.14542 H 351.33914 c 5.33437,0 9.69886,-5.04 9.69886,-11.19999 v -28 c 0,-6.16001 -4.36449,-11.2 -9.69886,-11.2 H 99.168857 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.19999 9.698857,11.19999 z M 99.168993,419.0375 H 351.33927 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168993 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698857,11.2 z"
-      />
-    </svg>
-  </i>
-  <span>
-     
-    medium
-     
-  </span>
-</div>
-`;
-
-exports[`Battery component should render correctly MediumBattery - warn 1`] = `
-<div>
-  <i
-    class="battery-0-2-1 batteryMedium-0-2-4"
-    title="warn warn"
-    widget-id="warn"
-    widget-type="Battery"
-  >
-    <svg
-      shape-rendering="geometricpresision"
-      style="enable-background: new 0 0 448 512;"
-      version="1.1"
-      viewBox="0 0 448 512"
-      x="0px"
-      y="0px"
-    >
-      <path
-        d="m 144.16452,21.032222 h 159.67454 q 123.1748,0 123.1748,128.667868 v 212.64759 q 0,128.66788 -123.1748,128.66788 H 144.16452 q -123.174811,0 -123.174811,-128.66788 V 149.70009 q 0,-128.667868 123.174811,-128.667868 z"
-        style="fill: none; fill-opacity: 1; stroke: var(--pf-v5-global--BorderColor--100); stroke-width: 41.96378708; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke-opacity: 1;"
-      />
-      <path
-        d="M 99.168857,327.14542 H 351.33914 c 5.33437,0 9.69886,-5.04 9.69886,-11.19999 v -28 c 0,-6.16001 -4.36449,-11.2 -9.69886,-11.2 H 99.168857 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.19999 9.698857,11.19999 z M 99.168993,419.0375 H 351.33927 c 5.33437,0 9.69886,-5.04 9.69886,-11.2 v -28 c 0,-6.16 -4.36449,-11.2 -9.69886,-11.2 H 99.168993 c -5.334371,0 -9.698857,5.04 -9.698857,11.2 v 28 c 0,6.16 4.364486,11.2 9.698857,11.2 z"
-      />
-    </svg>
-  </i>
-  <span>
-     
-    warn
+    Medium
      
   </span>
 </div>

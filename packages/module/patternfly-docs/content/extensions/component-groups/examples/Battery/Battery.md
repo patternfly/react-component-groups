@@ -14,9 +14,9 @@ propComponents: ['Battery']
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/Battery/Battery.md
 ---
 
-import Battery from '@patternfly/react-component-groups/dist/dynamic/Battery';
+import Battery, { BatterySeverity } from '@patternfly/react-component-groups/dist/dynamic/Battery';
 
-The **battery** component generates a 'battery' which corresponds to a level 1-4. Each level corresponds with a severity level and respective color:
+The **battery** component generates a battery, which corresponds to a level `low`, `medium`, `high` or `critical`. Each level corresponds with a severity level and respective color:
 
 | Severity level | Meaning | Style | 
 | --- | --- | --- | 
@@ -25,7 +25,7 @@ The **battery** component generates a 'battery' which corresponds to a level 1-4
 | Level 3 | High severity | 3 orange bars | 
 | Level 4 | Critical severity (worst case scenario) | 4 red bars | 
 
-To specify the severity of the battery's risk level, you can pass a predefined number or text value into the `severity` property that corresponds to the appropriate severity level.
+To specify the severity of the battery's risk level, you can pass a predefined enum or text value into the `severity` property that corresponds to the appropriate severity level.
 
 To add an optional label to a battery, add the `label` property to the `<Battery>` component.
 
@@ -33,7 +33,7 @@ To add an optional label to a battery, add the `label` property to the `<Battery
 
 ### Default variant
 
-The default style of a battery (4 black lines) appears when any value besides "1", "2", "3", or "4" is passed to `severity`. 
+The default style of a battery (4 black lines) appears when any value besides "low", "medium", "high", or "critical" is passed to `severity`. 
 
 ```js file="./BatteryDefaultExample.tsx"
 
@@ -41,7 +41,7 @@ The default style of a battery (4 black lines) appears when any value besides "1
 
 ### Low severity
 
-To style a battery as low severity, pass "1", "info", or "low" to `severity`.
+To style a battery as low severity, pass "low" or `BatterySeverity.low` to `severity`.
 
 ```js file="./BatteryLowExample.tsx"
 
@@ -49,7 +49,7 @@ To style a battery as low severity, pass "1", "info", or "low" to `severity`.
 
 ### Medium severity
 
-To style a battery as medium severity, pass "2", "medium", or "warn" to `severity`.
+To style a battery as medium severity, pass "medium", or `BatterySeverity.medium` to `severity`.
 
 ```js file="./BatteryMediumExample.tsx"
 
@@ -57,7 +57,7 @@ To style a battery as medium severity, pass "2", "medium", or "warn" to `severit
 
 ### High severity
 
-To style a battery as high severity, pass "3", "high", or "error" to `severity`.
+To style a battery as high severity, pass "high", or `BatterySeverity.high` to `severity`.
 
 ```js file="./BatteryHighExample.tsx"
 
@@ -65,7 +65,7 @@ To style a battery as high severity, pass "3", "high", or "error" to `severity`.
 
 ### Critical severity
 
-To style a battery as critical severity, pass "4" or "critical" to `severity`.
+To style a battery as critical severity, pass "critical" or `BatterySeverity.critical` to `severity`.
 
 ```js file="./BatteryCriticalExample.tsx"
 

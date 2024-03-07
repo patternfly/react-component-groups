@@ -3,7 +3,12 @@ import { CodeBlock, CodeBlockCode, Flex, FlexItem, FlexProps, Text, TextVariants
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss'
 
-export type LogSnippetBorderVariant = 'danger' | 'success' | 'info' | 'warning';
+export const LogSnippetBorderVariant = {
+  danger: 'danger',
+  success: 'success',
+  info: 'info',
+  warning: 'warning'
+} as const;
 
 export interface LogSnippetProps extends FlexProps {
   /** Log snippet or code to be displayed */
@@ -13,6 +18,8 @@ export interface LogSnippetProps extends FlexProps {
   /** Custom color for left border */
   leftBorderVariant?: LogSnippetBorderVariant;
 }
+
+export type LogSnippetBorderVariant = typeof LogSnippetBorderVariant[keyof typeof LogSnippetBorderVariant];
 
 const useStyles = createUseStyles({
   logSnippet: {
@@ -28,9 +35,7 @@ const useStyles = createUseStyles({
   },
 });
 
-
-
-export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippet, message, leftBorderVariant = 'danger', ...props }: LogSnippetProps) => {
+export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippet, message, leftBorderVariant = LogSnippetBorderVariant.danger, ...props }: LogSnippetProps) => {
   const classes = useStyles(leftBorderVariant);
 
   return (
