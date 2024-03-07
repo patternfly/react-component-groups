@@ -13,9 +13,23 @@ import {
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
-export type MultiContentCardBorderVariant = 'primary' | 'danger' | 'success' | 'info' | 'warning' | 'hidden';
+export const MultiContentCardBorderVariant = {
+  primary: 'primary',
+  danger: 'danger',
+  success: 'success',
+  info: 'info',
+  warning: 'warning',
+  hidden: 'hidden'
+} as const;
 
-export type MultiContentCardDividerVariant = 'left' | 'right';
+export type MultiContentCardBorderVariant = typeof MultiContentCardBorderVariant[keyof typeof MultiContentCardBorderVariant];
+
+export const MultiContentCardDividerVariant = {
+  left: 'left',
+  right: 'right'
+} as const;
+
+export type MultiContentCardDividerVariant = typeof MultiContentCardDividerVariant[keyof typeof MultiContentCardDividerVariant];
 
 export interface MutliContentCardProps {
   /** Card element to be displayed as a content */
@@ -56,6 +70,10 @@ const useStyles = createUseStyles({
   })
 })
 
+export const isCardWithProps = (
+  card: React.ReactElement | MutliContentCardProps
+): card is MutliContentCardProps => !!card && !React.isValidElement(card);
+
 const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   cards = [],
   isToggleRightAligned = false,
@@ -63,7 +81,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   toggleText,
   toggleContent,
   withDividers = false,
-  leftBorderVariant = 'hidden',
+  leftBorderVariant = MultiContentCardBorderVariant.hidden,
   isExpandable = false,
   defaultExpanded = true,
   withHeaderBorder = false,
@@ -77,32 +95,30 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   
   const renderCards = (cards: (React.ReactElement | MutliContentCardProps)[], withDividers?: boolean) =>  (
     <Flex alignSelf={{ default: 'alignSelfStretch' }} alignItems={{ default: 'alignItemsStretch' }}>
-      {cards.map((card, index) => {
-        const isElement = React.isValidElement(card);
-        return (
-          <>
-            {(index > 0 && !isElement && ((card as MutliContentCardProps).dividerVariant === 'left')) && (
-              <Divider 
-                orientation={{ md: 'vertical' }} 
-                inset={{ default: 'inset3xl' }}
-              />
-            )}
-            <FlexItem key={`card-${index}`} flex={{ default: 'flex_1' }}>
-              {isElement ? card as React.ReactNode : (card as MutliContentCardProps).content}
-            </FlexItem>
-            {(index + 1 < cards.length && (withDividers || !isElement && (card as MutliContentCardProps).dividerVariant === 'right')) && (
-              <Divider 
-                orientation={{ md: 'vertical' }} 
-                inset={{ default: 'inset3xl' }}
-              />
-            )}
-          </>
-        )})} 
+      {cards.map((card, index) => (
+        <>
+          {index > 0 && isCardWithProps(card) && card.dividerVariant === MultiContentCardDividerVariant.left && (
+            <Divider 
+              orientation={{ md: 'vertical' }} 
+              inset={{ default: 'inset3xl' }}
+            />
+          )}
+          <FlexItem key={`card-${index}`} flex={{ default: 'flex_1' }}>
+            {isCardWithProps(card) ? card.content : card}
+          </FlexItem>
+          {(index + 1 < cards.length && (withDividers || isCardWithProps(card) && card.dividerVariant === MultiContentCardDividerVariant.right)) && (
+            <Divider 
+              orientation={{ md: 'vertical' }} 
+              inset={{ default: 'inset3xl' }}
+            />
+          )}
+        </>
+      ))} 
     </Flex>
   );
   
   return(
-    <Card className={clsx([ { [classes.multiContentCardLeftBorder]: leftBorderVariant !== 'hidden' } ])} isExpanded={isExpanded} {...rest}>
+    <Card className={clsx([ { [classes.multiContentCardLeftBorder]: leftBorderVariant !== MultiContentCardBorderVariant.hidden } ])} isExpanded={isExpanded} {...rest}>
       {isExpandable && (
         <CardHeader
           className={clsx({ [classes.multiContentCardHeadingBorder]: withHeaderBorder })}

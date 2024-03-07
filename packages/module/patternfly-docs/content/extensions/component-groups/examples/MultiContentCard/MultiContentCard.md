@@ -7,7 +7,7 @@ propComponents: ['MultiContentCard']
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/MultiContentCard/MultiContentCard.md
 ---
 
-import MultiContentCard from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
+import MultiContentCard, { MultiContentCardDividerVariant, MultiContentCardBorderVariant } from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
 import { ArrowRightIcon, BellIcon, CogIcon, EllipsisVIcon, LockIcon } from '@patternfly/react-icons';
 
 A **multi content card** component allows to display multiple card components in a single layout. To further customize this layout, you can also utilize all properties of the [card component](/components/card), with the exception of `children` and `title`.

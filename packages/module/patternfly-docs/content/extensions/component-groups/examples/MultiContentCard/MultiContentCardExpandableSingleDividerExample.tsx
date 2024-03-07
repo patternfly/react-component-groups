@@ -97,7 +97,7 @@ const cards = [
         </CardFooter>
       </Card>
     ), 
-    dividerVariant: 'left' as MultiContentCardDividerVariant
+    dividerVariant: MultiContentCardDividerVariant.left
   }
 ];
 

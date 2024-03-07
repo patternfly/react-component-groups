@@ -1,5 +1,5 @@
 import React from 'react';
-import MultiContentCard from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
+import MultiContentCard, { MultiContentCardBorderVariant } from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
 import { Button, Card, CardHeader, CardBody, CardFooter, Text, TextContent, TextVariants, Icon, TextList, TextListItem } from '@patternfly/react-core';
 import { ArrowRightIcon, BellIcon, CogIcon, LockIcon } from '@patternfly/react-icons';
 const cards = [
@@ -96,5 +96,5 @@ const cards = [
 ];
 
 export const BasicExample: React.FunctionComponent = () => (
-  <MultiContentCard isExpandable withHeaderBorder toggleText='Card with border toggle text' leftBorderVariant="primary" cards={cards} />
+  <MultiContentCard isExpandable withHeaderBorder toggleText='Card with border toggle text' leftBorderVariant={MultiContentCardBorderVariant.primary} cards={cards} />
 );
