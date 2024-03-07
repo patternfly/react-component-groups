@@ -13,11 +13,34 @@ import {
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
-export type MultiContentCardBorderVariant = 'primary' | 'danger' | 'success' | 'info' | 'warning' | 'hidden';
+export const MultiContentCardBorderVariant = {
+  primary: 'primary',
+  danger: 'danger',
+  success: 'success',
+  info: 'info',
+  warning: 'warning',
+  hidden: 'hidden'
+} as const;
+
+export type MultiContentCardBorderVariant = typeof MultiContentCardBorderVariant[keyof typeof MultiContentCardBorderVariant];
+
+export const MultiContentCardDividerVariant = {
+  left: 'left',
+  right: 'right'
+} as const;
+
+export type MultiContentCardDividerVariant = typeof MultiContentCardDividerVariant[keyof typeof MultiContentCardDividerVariant];
+
+export interface MutliContentCardProps {
+  /** Card element to be displayed as a content */
+  content: React.ReactElement;
+  /** Allows adding divider on the left/right from the card */
+  dividerVariant?: MultiContentCardDividerVariant;
+}
 
 export interface MultiContentCardProps extends Omit<CardProps, 'children' | 'title'> {
   /** Cards to be displayed as a content */
-  cards?: React.ReactElement[];
+  cards?: (React.ReactElement | MutliContentCardProps)[];
   /** Actions to be displayed in the expandable section */
   actions?: React.ReactElement;
   /** Toggle text for the expandable section */
@@ -26,7 +49,7 @@ export interface MultiContentCardProps extends Omit<CardProps, 'children' | 'tit
   toggleContent?: React.ReactElement;
   /** Left border variant for the containing card */
   leftBorderVariant?: MultiContentCardBorderVariant;
-  /** Indicates whether the content is separated by dividers */
+  /** When set to true, all content cards will be separated with dividers */
   withDividers?: boolean;
   /** Indicates whether the card is expandable */
   isExpandable?: boolean;
@@ -47,6 +70,10 @@ const useStyles = createUseStyles({
   })
 })
 
+export const isCardWithProps = (
+  card: React.ReactElement | MutliContentCardProps
+): card is MutliContentCardProps => !!card && !React.isValidElement(card);
+
 const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   cards = [],
   isToggleRightAligned = false,
@@ -54,7 +81,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   toggleText,
   toggleContent,
   withDividers = false,
-  leftBorderVariant = 'hidden',
+  leftBorderVariant = MultiContentCardBorderVariant.hidden,
   isExpandable = false,
   defaultExpanded = true,
   withHeaderBorder = false,
@@ -66,14 +93,20 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
     setIsExpanded(!isExpanded);
   };
   
-  const renderCards = (cards: React.ReactElement[], withDividers?: boolean) =>  (
+  const renderCards = (cards: (React.ReactElement | MutliContentCardProps)[], withDividers?: boolean) =>  (
     <Flex alignSelf={{ default: 'alignSelfStretch' }} alignItems={{ default: 'alignItemsStretch' }}>
       {cards.map((card, index) => (
         <>
+          {index > 0 && isCardWithProps(card) && card.dividerVariant === MultiContentCardDividerVariant.left && (
+            <Divider 
+              orientation={{ md: 'vertical' }} 
+              inset={{ default: 'inset3xl' }}
+            />
+          )}
           <FlexItem key={`card-${index}`} flex={{ default: 'flex_1' }}>
-            {card}
+            {isCardWithProps(card) ? card.content : card}
           </FlexItem>
-          {(index + 1 < cards.length && withDividers) && (
+          {(index + 1 < cards.length && (withDividers || isCardWithProps(card) && card.dividerVariant === MultiContentCardDividerVariant.right)) && (
             <Divider 
               orientation={{ md: 'vertical' }} 
               inset={{ default: 'inset3xl' }}
@@ -85,7 +118,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   );
   
   return(
-    <Card className={clsx([ { [classes.multiContentCardLeftBorder]: leftBorderVariant !== 'hidden' } ])} isExpanded={isExpanded} {...rest}>
+    <Card className={clsx([ { [classes.multiContentCardLeftBorder]: leftBorderVariant !== MultiContentCardBorderVariant.hidden } ])} isExpanded={isExpanded} {...rest}>
       {isExpandable && (
         <CardHeader
           className={clsx({ [classes.multiContentCardHeadingBorder]: withHeaderBorder })}

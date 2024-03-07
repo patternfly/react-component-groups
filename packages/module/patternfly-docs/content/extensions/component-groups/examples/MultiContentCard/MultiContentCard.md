@@ -7,7 +7,7 @@ propComponents: ['MultiContentCard']
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/MultiContentCard/MultiContentCard.md
 ---
 
-import MultiContentCard from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
+import MultiContentCard, { MultiContentCardDividerVariant, MultiContentCardBorderVariant } from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
 import { ArrowRightIcon, BellIcon, CogIcon, EllipsisVIcon, LockIcon } from '@patternfly/react-icons';
 
 A **multi content card** component allows to display multiple card components in a single layout. To further customize this layout, you can also utilize all properties of the [card component](/components/card), with the exception of `children` and `title`.
@@ -48,8 +48,16 @@ Left border can be displayed using `leftBorderVariant`. To display a border unde
 
 ### Expandable multi content card with dividers
 
-Dividers between cards in the content can be shown using `withDividers` flag. 
+Dividers between all cards in the content can be shown using `withDividers` flag. 
 
 ```js file="./MultiContentCardExpandableDividerExample.tsx"
+
+```
+
+### Expandable multi content card with single dividers
+
+To enable a divider just for a single card, use `dividerVariant` property passed to the `cards` array. 
+
+```js file="./MultiContentCardExpandableSingleDividerExample.tsx"
 
 ```

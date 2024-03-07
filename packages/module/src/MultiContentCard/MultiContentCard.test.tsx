@@ -2,7 +2,7 @@ import React from 'react';
 import { screen, render } from '@testing-library/react';
 import { Button, Card, CardHeader, CardBody, Text, TextContent, TextVariants, Icon, TextList, TextListItem, CardFooter, Dropdown, MenuToggle, DropdownList, DropdownItem, MenuToggleElement } from '@patternfly/react-core';
 import { ArrowRightIcon, BellIcon, CogIcon, EllipsisVIcon, LockIcon } from '@patternfly/react-icons';
-import MultiContentCard from './MultiContentCard';
+import MultiContentCard, { MultiContentCardDividerVariant } from './MultiContentCard';
 
 const cards = [
   <Card isFullHeight isPlain key="card-1">
@@ -187,6 +187,14 @@ describe('MultiContentCard component', () => {
     const { container } = render(<MultiContentCard cards={cards} withDividers />);
 
     expect(screen.getAllByRole('separator')).toHaveLength(2);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('should render multi content card with a single divider', () => {
+    const { container } = render(<MultiContentCard cards={[ cards[0], cards[1], { content: cards[2], dividerVariant: MultiContentCardDividerVariant.left } ]} />);
+
+    expect(screen.getAllByRole('separator')).toHaveLength(1);
 
     expect(container.firstChild).toMatchSnapshot();
   });

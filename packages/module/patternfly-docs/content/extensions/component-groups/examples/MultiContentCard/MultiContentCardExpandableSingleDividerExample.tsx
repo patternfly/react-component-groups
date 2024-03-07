@@ -1,7 +1,8 @@
 import React from 'react';
-import MultiContentCard, { MultiContentCardBorderVariant } from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
+import MultiContentCard, { MultiContentCardDividerVariant } from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
 import { Button, Card, CardHeader, CardBody, CardFooter, Text, TextContent, TextVariants, Icon, TextList, TextListItem } from '@patternfly/react-core';
 import { ArrowRightIcon, BellIcon, CogIcon, LockIcon } from '@patternfly/react-icons';
+
 const cards = [
   <Card isFullHeight isPlain key="card-1">
     <CardHeader>
@@ -63,38 +64,41 @@ const cards = [
       </Text>
     </CardFooter>
   </Card>,
-  <Card isFullHeight isPlain key="card-3">
-    <CardHeader>
-      <TextContent>
-        <Text component={TextVariants.h4}>Next Steps</Text>
-      </TextContent>
-    </CardHeader>
-    <CardBody>
-      <TextContent>
-        <Text className="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover">
-          <Icon size="md" className="pf-v5-u-pl-sm pf-v5-u-pr-md">
-            <BellIcon />
-          </Icon>
-          Configure notifications
-        </Text>
-        <Text className="pf-v5-u-font-size-sm">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Text>
-      </TextContent>
-    </CardBody>
-    <CardFooter>
-      <Text>
-        <Button variant="link" isInline>
-            Learn more  
-          <Icon className="pf-u-ml-sm" isInline>
-            <ArrowRightIcon />
-          </Icon>
-        </Button>
-      </Text>
-    </CardFooter>
-  </Card>
+  {
+    content: (
+      <Card isFullHeight isPlain key="card-3">
+        <CardHeader>
+          <TextContent>
+            <Text component={TextVariants.h4}>Next Steps</Text>
+          </TextContent>
+        </CardHeader>
+        <CardBody>
+          <TextContent>
+            <Text className="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover">
+              <Icon size="md" className="pf-v5-u-pl-sm pf-v5-u-pr-md">
+                <BellIcon />
+              </Icon>
+              Configure notifications
+            </Text>
+            <Text className="pf-v5-u-font-size-sm">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Text>
+          </TextContent>
+        </CardBody>
+        <CardFooter>
+          <Text>
+            <Button variant="link" isInline>
+              Learn more  
+              <Icon className="pf-u-ml-sm" isInline>
+                <ArrowRightIcon />
+              </Icon>
+            </Button>
+          </Text>
+        </CardFooter>
+      </Card>
+    ), 
+    dividerVariant: MultiContentCardDividerVariant.left
+  }
 ];
 
-export const BasicExample: React.FunctionComponent = () => (
-  <MultiContentCard isExpandable withHeaderBorder toggleText='Card with border toggle text' leftBorderVariant={MultiContentCardBorderVariant.primary} cards={cards} />
-);
+export const BasicExample: React.FunctionComponent = () => <MultiContentCard isExpandable toggleText='Card with dividers toggle text' cards={cards} />;
