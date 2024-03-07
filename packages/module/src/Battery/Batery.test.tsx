@@ -5,45 +5,36 @@ import Battery, { BatterySeverity } from './Battery';
 describe('Battery component', () => {
   jest.spyOn(global.console, 'error');
   describe('should render correctly', () => {
-    ([ 'critical', 4 ] as BatterySeverity[]).forEach((severity) => {
-      test(`CriticalBattery - ${severity}`, () => {
-        const { container } = render(<Battery severity={severity as BatterySeverity} label={`${severity}`} />);
-        expect(container).toMatchSnapshot();
-      });
+
+    test('CriticalBattery', () => {
+      const { container } = render(<Battery severity={BatterySeverity.critical} label="Critical" />);
+      expect(container).toMatchSnapshot();
+    });
+  
+    test('HighBattery', () => {
+      const { container } = render(<Battery severity={BatterySeverity.high} label="High" />);
+      expect(container).toMatchSnapshot();
     });
 
-    ([ 'high', 'error', 3 ] as BatterySeverity[]).forEach((severity) => {
-      test(`HighBattery - ${severity}`, () => {
-        const { container } = render(<Battery severity={severity as BatterySeverity} label={`${severity}`} />);
-        expect(container).toMatchSnapshot();
-      });
+    test('MediumBattery', () => {
+      const { container } = render(<Battery severity={BatterySeverity.medium} label="Medium" />);
+      expect(container).toMatchSnapshot();
     });
 
-    ([ 'medium', 'warn', 2 ] as BatterySeverity[]).forEach((severity) => {
-      test(`MediumBattery - ${severity}`, () => {
-        const { container } = render(<Battery severity={severity as BatterySeverity} label={`${severity}`} />);
-        expect(container).toMatchSnapshot();
-      });
-    });
-
-    ([ 'low', 'info', 1 ] as BatterySeverity[]).forEach((severity) => {
-      test(`LowBattery - ${severity}`, () => {
-        const { container } = render(<Battery severity={severity} label={`${severity}`} />);
-        expect(container).toMatchSnapshot();
-      });
+    test('LowBattery', () => {
+      const { container } = render(<Battery severity={BatterySeverity.low} label="Low" />);
+      expect(container).toMatchSnapshot();
     });
 
     test('NullBatery, default', () => {
       const { container } = render(<Battery severity={'' as BatterySeverity} label={''} />);
       expect(container).toMatchSnapshot();
-      // eslint-disable-next-line no-console
-      expect(console.error).toBeCalled();
     });
   });
 
   describe('API', () => {
     test('should hide label', () => {
-      const { container } = render(<Battery severity={'high'} label={'high'} labelHidden />);
+      const { container } = render(<Battery severity={BatterySeverity.high} label="high" labelHidden />);
       expect(container).toMatchSnapshot();
     });
   });
