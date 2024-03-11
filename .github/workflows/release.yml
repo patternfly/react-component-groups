@@ -14,11 +14,11 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '16'
-      - uses: actions/cache@v2
+          node-version: '20'
+      - uses: actions/cache@v4
         id: npm-cache
         name: Cache npm deps
         with:
@@ -29,7 +29,7 @@ jobs:
           key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package-lock.json') }}
       - run: npm install --frozen-lockfile
         if: steps.npm-cache.outputs.cache-hit != 'true'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: dist
         name: Cache dist
         with:
