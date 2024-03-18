@@ -3,6 +3,7 @@ section: extensions
 subsection: Component groups
 id: About component groups
 sortValue: 1
+sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/about-component-groups.md
 --- 
 
 Component groups lives in its own package [`@patternfly/react-component-groups`](https://www.npmjs.com/package/@patternfly/react-component-groups) 
