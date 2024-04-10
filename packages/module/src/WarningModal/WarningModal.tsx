@@ -44,7 +44,10 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
           ouiaId="primary-confirm-button"
           key="confirm"
           variant={confirmButtonVariant}
-          onClick={onConfirm}
+          onClick={() => {
+            onConfirm?.();
+            setChecked(false);
+          }}
           isDisabled={withCheckbox && !checked}
         >
           {confirmButtonLabel}
@@ -64,7 +67,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
       {withCheckbox ? (
         <Checkbox
           isChecked={checked}
-          onChange={() => setChecked(!checked)}
+          onChange={(_event, value) => setChecked(value)}
           label={checkboxLabel}
           id="warning-modal-check"
           className="pf-v5-u-mt-lg"
