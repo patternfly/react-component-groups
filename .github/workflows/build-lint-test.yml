@@ -196,4 +196,4 @@ jobs:
       - name: Build dist
         run: npm run build
       - name: Run integration tests
-        run: npm run cypress:run:ci
+        run: npm run cypress:run:ci:e2e
