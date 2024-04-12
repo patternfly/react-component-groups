@@ -15,6 +15,9 @@ export * from './Battery';
 export { default as CloseButton } from './CloseButton';
 export * from './CloseButton';
 
+export { default as ColumnManagementModal } from './ColumnManagementModal';
+export * from './ColumnManagementModal';
+
 export { default as DetailsPage } from './DetailsPage';
 export * from './DetailsPage';
 
