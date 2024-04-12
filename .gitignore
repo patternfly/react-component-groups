@@ -7,6 +7,8 @@ tsc_out
 .DS_Store
 coverage
 .cache
+.cypress-cache
+results
 .tmp
 .eslintcache
 generated

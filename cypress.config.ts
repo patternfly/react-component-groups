@@ -11,4 +11,11 @@ export default defineConfig({
       toConsole: true
     },
   },
+  component: {
+    devServer: {
+      framework: "react",
+      bundler: "webpack",
+      webpackConfig: require('./config/webpack.cy.config.js'),
+    }
+  }
 });
