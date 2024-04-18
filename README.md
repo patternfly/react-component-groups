@@ -125,9 +125,10 @@ The aim is to enable the user of our "complex" component to use either complete 
 
 ### Testing:
 When adding/making changes to a component, always make sure your code is tested:
-- use React Testing Library for testing 
-- add tests to a `[ComponentName].test.tsx` file to your component's directory
-- make sure all the core logic is covered
+- use React Testing Library for unit testing 
+- add unit tests to a `[ComponentName].test.tsx` file to your component's directory
+- make sure all the core functionality is covered using Cypress component or E2E tests
+- add component tests to `cypress/component/[ComponentName].cy.tsx` file and E2E tests to `cypress/e2e/[ComponentName].spec.cy.ts`
 - add `ouiaId` to component props definition with a default value of the component name (for subcomponents, let's use `ComponentName-element-specification` naming convention e.g. `ouiaId="WarningModal-confirm-button"`)
 
 ### Styling:
