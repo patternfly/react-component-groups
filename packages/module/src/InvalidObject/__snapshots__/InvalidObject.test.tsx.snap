@@ -7,16 +7,19 @@ exports[`InvalidObject component should render 1`] = `
     <div>
       <div
         class="pf-v5-c-empty-state"
+        data-ouia-component-id="InvalidObject"
       >
         <div
           class="pf-v5-c-empty-state__content"
         >
           <div
             class="pf-v5-c-empty-state__header"
+            data-ouia-component-id="InvalidObject-header"
           >
             <svg
               class="icon404-0-2-1"
               data-name="Layer 1"
+              data-ouia-component-id="InvalidObject-icon"
               id="Icon404"
               viewBox="0 0 131 131"
               xmlns="http://www.w3.org/2000/svg"
@@ -264,16 +267,18 @@ exports[`InvalidObject component should render 1`] = `
           </div>
           <div
             class="pf-v5-c-empty-state__body"
+            data-ouia-component-id="InvalidObject-body"
           >
             Let's find you a new one. Try a new search or return home.
           </div>
           <div
             class="pf-v5-c-empty-state__footer"
+            data-ouia-component-id="InvalidObject-footer"
           >
             <a
               aria-disabled="false"
               class="pf-v5-c-button pf-m-link"
-              data-ouia-component-id="OUIA-Generated-Button-link-1"
+              data-ouia-component-id="InvalidObject-home-button"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="http://localhost:5000"
@@ -288,16 +293,19 @@ exports[`InvalidObject component should render 1`] = `
   "container": <div>
     <div
       class="pf-v5-c-empty-state"
+      data-ouia-component-id="InvalidObject"
     >
       <div
         class="pf-v5-c-empty-state__content"
       >
         <div
           class="pf-v5-c-empty-state__header"
+          data-ouia-component-id="InvalidObject-header"
         >
           <svg
             class="icon404-0-2-1"
             data-name="Layer 1"
+            data-ouia-component-id="InvalidObject-icon"
             id="Icon404"
             viewBox="0 0 131 131"
             xmlns="http://www.w3.org/2000/svg"
@@ -545,16 +553,18 @@ exports[`InvalidObject component should render 1`] = `
         </div>
         <div
           class="pf-v5-c-empty-state__body"
+          data-ouia-component-id="InvalidObject-body"
         >
           Let's find you a new one. Try a new search or return home.
         </div>
         <div
           class="pf-v5-c-empty-state__footer"
+          data-ouia-component-id="InvalidObject-footer"
         >
           <a
             aria-disabled="false"
             class="pf-v5-c-button pf-m-link"
-            data-ouia-component-id="OUIA-Generated-Button-link-1"
+            data-ouia-component-id="InvalidObject-home-button"
             data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
             href="http://localhost:5000"

@@ -3,12 +3,14 @@
 exports[`NotAuthorized component should apply custom styles 1`] = `
 <div
   class="pf-v5-c-empty-state something"
+  data-ouia-component-id="NotAuthorized"
 >
   <div
     class="pf-v5-c-empty-state__content"
   >
     <div
       class="pf-v5-c-empty-state__header"
+      data-ouia-component-id="NotAuthorized-header"
     >
       <div
         class="pf-v5-c-empty-state__icon"
@@ -16,6 +18,7 @@ exports[`NotAuthorized component should apply custom styles 1`] = `
         <svg
           aria-hidden="true"
           class="pf-v5-svg"
+          data-ouia-component-id="NotAuthorized-icon"
           fill="currentColor"
           height="1em"
           role="img"
@@ -39,16 +42,18 @@ exports[`NotAuthorized component should apply custom styles 1`] = `
     </div>
     <div
       class="pf-v5-c-empty-state__body"
+      data-ouia-component-id="NotAuthorized-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
       class="pf-v5-c-empty-state__footer"
+      data-ouia-component-id="NotAuthorized-footer"
     >
       <a
         aria-disabled="false"
         class="pf-v5-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-2"
+        data-ouia-component-id="NotAuthorized-home-button"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
         href="."
@@ -66,12 +71,14 @@ exports[`NotAuthorized component should apply custom styles 1`] = `
 exports[`NotAuthorized component should not show buttons 1`] = `
 <div
   class="pf-v5-c-empty-state"
+  data-ouia-component-id="NotAuthorized"
 >
   <div
     class="pf-v5-c-empty-state__content"
   >
     <div
       class="pf-v5-c-empty-state__header"
+      data-ouia-component-id="NotAuthorized-header"
     >
       <div
         class="pf-v5-c-empty-state__icon"
@@ -79,6 +86,7 @@ exports[`NotAuthorized component should not show buttons 1`] = `
         <svg
           aria-hidden="true"
           class="pf-v5-svg"
+          data-ouia-component-id="NotAuthorized-icon"
           fill="currentColor"
           height="1em"
           role="img"
@@ -102,11 +110,13 @@ exports[`NotAuthorized component should not show buttons 1`] = `
     </div>
     <div
       class="pf-v5-c-empty-state__body"
+      data-ouia-component-id="NotAuthorized-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
       class="pf-v5-c-empty-state__footer"
+      data-ouia-component-id="NotAuthorized-footer"
     >
       <div
         class="pf-v5-c-empty-state__actions"
@@ -119,12 +129,14 @@ exports[`NotAuthorized component should not show buttons 1`] = `
 exports[`NotAuthorized component should render 1`] = `
 <div
   class="pf-v5-c-empty-state"
+  data-ouia-component-id="NotAuthorized"
 >
   <div
     class="pf-v5-c-empty-state__content"
   >
     <div
       class="pf-v5-c-empty-state__header"
+      data-ouia-component-id="NotAuthorized-header"
     >
       <div
         class="pf-v5-c-empty-state__icon"
@@ -132,6 +144,7 @@ exports[`NotAuthorized component should render 1`] = `
         <svg
           aria-hidden="true"
           class="pf-v5-svg"
+          data-ouia-component-id="NotAuthorized-icon"
           fill="currentColor"
           height="1em"
           role="img"
@@ -155,16 +168,18 @@ exports[`NotAuthorized component should render 1`] = `
     </div>
     <div
       class="pf-v5-c-empty-state__body"
+      data-ouia-component-id="NotAuthorized-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
       class="pf-v5-c-empty-state__footer"
+      data-ouia-component-id="NotAuthorized-footer"
     >
       <a
         aria-disabled="false"
         class="pf-v5-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-1"
+        data-ouia-component-id="NotAuthorized-home-button"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
         href="."
@@ -182,12 +197,14 @@ exports[`NotAuthorized component should render 1`] = `
 exports[`NotAuthorized component should show custom actions 1`] = `
 <div
   class="pf-v5-c-empty-state"
+  data-ouia-component-id="NotAuthorized"
 >
   <div
     class="pf-v5-c-empty-state__content"
   >
     <div
       class="pf-v5-c-empty-state__header"
+      data-ouia-component-id="NotAuthorized-header"
     >
       <div
         class="pf-v5-c-empty-state__icon"
@@ -195,6 +212,7 @@ exports[`NotAuthorized component should show custom actions 1`] = `
         <svg
           aria-hidden="true"
           class="pf-v5-svg"
+          data-ouia-component-id="NotAuthorized-icon"
           fill="currentColor"
           height="1em"
           role="img"
@@ -218,11 +236,13 @@ exports[`NotAuthorized component should show custom actions 1`] = `
     </div>
     <div
       class="pf-v5-c-empty-state__body"
+      data-ouia-component-id="NotAuthorized-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
       class="pf-v5-c-empty-state__footer"
+      data-ouia-component-id="NotAuthorized-footer"
     >
       <div
         class="pf-v5-c-empty-state__actions"
@@ -259,12 +279,14 @@ exports[`NotAuthorized component should show custom actions 1`] = `
 exports[`NotAuthorized component should show custom description 1`] = `
 <div
   class="pf-v5-c-empty-state"
+  data-ouia-component-id="NotAuthorized"
 >
   <div
     class="pf-v5-c-empty-state__content"
   >
     <div
       class="pf-v5-c-empty-state__header"
+      data-ouia-component-id="NotAuthorized-header"
     >
       <div
         class="pf-v5-c-empty-state__icon"
@@ -272,6 +294,7 @@ exports[`NotAuthorized component should show custom description 1`] = `
         <svg
           aria-hidden="true"
           class="pf-v5-svg"
+          data-ouia-component-id="NotAuthorized-icon"
           fill="currentColor"
           height="1em"
           role="img"
@@ -295,16 +318,18 @@ exports[`NotAuthorized component should show custom description 1`] = `
     </div>
     <div
       class="pf-v5-c-empty-state__body"
+      data-ouia-component-id="NotAuthorized-body"
     >
       Some text
     </div>
     <div
       class="pf-v5-c-empty-state__footer"
+      data-ouia-component-id="NotAuthorized-footer"
     >
       <a
         aria-disabled="false"
         class="pf-v5-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-4"
+        data-ouia-component-id="NotAuthorized-home-button"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
         href="."
@@ -322,12 +347,14 @@ exports[`NotAuthorized component should show custom description 1`] = `
 exports[`NotAuthorized component should show custom title 1`] = `
 <div
   class="pf-v5-c-empty-state"
+  data-ouia-component-id="NotAuthorized"
 >
   <div
     class="pf-v5-c-empty-state__content"
   >
     <div
       class="pf-v5-c-empty-state__header"
+      data-ouia-component-id="NotAuthorized-header"
     >
       <div
         class="pf-v5-c-empty-state__icon"
@@ -335,6 +362,7 @@ exports[`NotAuthorized component should show custom title 1`] = `
         <svg
           aria-hidden="true"
           class="pf-v5-svg"
+          data-ouia-component-id="NotAuthorized-icon"
           fill="currentColor"
           height="1em"
           role="img"
@@ -358,16 +386,18 @@ exports[`NotAuthorized component should show custom title 1`] = `
     </div>
     <div
       class="pf-v5-c-empty-state__body"
+      data-ouia-component-id="NotAuthorized-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
       class="pf-v5-c-empty-state__footer"
+      data-ouia-component-id="NotAuthorized-footer"
     >
       <a
         aria-disabled="false"
         class="pf-v5-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-5"
+        data-ouia-component-id="NotAuthorized-home-button"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
         href="."
@@ -385,12 +415,14 @@ exports[`NotAuthorized component should show custom title 1`] = `
 exports[`NotAuthorized component should use custom icon 1`] = `
 <div
   class="pf-v5-c-empty-state"
+  data-ouia-component-id="NotAuthorized"
 >
   <div
     class="pf-v5-c-empty-state__content"
   >
     <div
       class="pf-v5-c-empty-state__header"
+      data-ouia-component-id="NotAuthorized-header"
     >
       <div
         class="pf-v5-c-empty-state__icon"
@@ -398,6 +430,7 @@ exports[`NotAuthorized component should use custom icon 1`] = `
         <svg
           aria-hidden="true"
           class="pf-v5-svg"
+          data-ouia-component-id="NotAuthorized-icon"
           fill="currentColor"
           height="1em"
           role="img"
@@ -421,16 +454,18 @@ exports[`NotAuthorized component should use custom icon 1`] = `
     </div>
     <div
       class="pf-v5-c-empty-state__body"
+      data-ouia-component-id="NotAuthorized-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
       class="pf-v5-c-empty-state__footer"
+      data-ouia-component-id="NotAuthorized-footer"
     >
       <a
         aria-disabled="false"
         class="pf-v5-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-3"
+        data-ouia-component-id="NotAuthorized-home-button"
         data-ouia-component-type="PF5/Button"
         data-ouia-safe="true"
         href="."

@@ -12,7 +12,7 @@ const useStyles = createUseStyles({
 });
 
 
-const NotFoundIcon: React.FunctionComponent = () => {
+const NotFoundIcon: React.FunctionComponent = (props) => {
   const classes = useStyles();
   return (
     <svg
@@ -22,6 +22,7 @@ const NotFoundIcon: React.FunctionComponent = () => {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 131 131"
+      {...props}
     >
       <defs>
         <mask id="mask" x="0" y="0" width="131" height="131" maskUnits="userSpaceOnUse">
