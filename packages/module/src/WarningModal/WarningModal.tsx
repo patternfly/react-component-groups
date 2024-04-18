@@ -14,6 +14,8 @@ export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   checkboxLabel?: string;
   /** Visual variant of the confirm button */
   confirmButtonVariant?: ButtonVariant;
+  /** Custom OUIA ID */
+  ouiaId?: string | number;
 }
 
 const WarningModal: React.FunctionComponent<WarningModalProps> = ({
@@ -28,6 +30,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
   withCheckbox = false,
   checkboxLabel='I understand that this action cannot be undone',
   confirmButtonVariant = ButtonVariant.primary,
+  ouiaId = 'WarningModal',
   ...props
 }: WarningModalProps) => {
   const [ checked, setChecked ] = useState(false);
@@ -41,7 +44,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
       titleIconVariant={titleIconVariant}
       actions={[
         <Button
-          ouiaId="primary-confirm-button"
+          ouiaId={`${ouiaId}-confirm-button`}
           key="confirm"
           variant={confirmButtonVariant}
           onClick={() => {
@@ -53,7 +56,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
           {confirmButtonLabel}
         </Button>,
         <Button
-          ouiaId="secondary-cancel-button"
+          ouiaId={`${ouiaId}-cancel-button`}
           key="cancel"
           variant={ButtonVariant.link}
           onClick={onClose}
@@ -61,6 +64,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
           {cancelButtonLabel}
         </Button>,
       ]}
+      ouiaId={ouiaId}
       {...props}
     >
       {children}
@@ -71,6 +75,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
           label={checkboxLabel}
           id="warning-modal-check"
           className="pf-v5-u-mt-lg"
+          ouiaId={`${ouiaId}-confirm-checkbox`}
         />
       ) : null}
     </Modal>
