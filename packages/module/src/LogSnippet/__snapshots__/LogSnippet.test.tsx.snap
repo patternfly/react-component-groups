@@ -7,13 +7,14 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
     <div>
       <div
         class="pf-v5-l-flex pf-m-column logSnippet-0-2-1 variantBorderColor-0-2-2 variantBorderColor-d0-0-2-4"
+        data-ouia-component-id="LogSnippet"
       >
         <div
           class=""
         >
           <p
             class="statusMessage-0-2-3"
-            data-ouia-component-id="OUIA-Generated-Text-1"
+            data-ouia-component-id="LogSnippet-message"
             data-ouia-component-type="PF5/Text"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -26,13 +27,14 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
         >
           <div
             class="pf-v5-c-code-block"
+            data-ouia-component-id="LogSnippet-code-block"
           >
             <div
               class="pf-v5-c-code-block__content"
             >
               <pre
                 class="pf-v5-c-code-block__pre"
-                id="code-content"
+                data-ouia-component-id="LogSnippet-code-content"
               >
                 <code
                   class="pf-v5-c-code-block__code"
@@ -49,13 +51,14 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
   "container": <div>
     <div
       class="pf-v5-l-flex pf-m-column logSnippet-0-2-1 variantBorderColor-0-2-2 variantBorderColor-d0-0-2-4"
+      data-ouia-component-id="LogSnippet"
     >
       <div
         class=""
       >
         <p
           class="statusMessage-0-2-3"
-          data-ouia-component-id="OUIA-Generated-Text-1"
+          data-ouia-component-id="LogSnippet-message"
           data-ouia-component-type="PF5/Text"
           data-ouia-safe="true"
           data-pf-content="true"
@@ -68,13 +71,14 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
       >
         <div
           class="pf-v5-c-code-block"
+          data-ouia-component-id="LogSnippet-code-block"
         >
           <div
             class="pf-v5-c-code-block__content"
           >
             <pre
               class="pf-v5-c-code-block__pre"
-              id="code-content"
+              data-ouia-component-id="LogSnippet-code-content"
             >
               <code
                 class="pf-v5-c-code-block__code"
