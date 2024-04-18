@@ -13,7 +13,9 @@ import {
   DataListItemCells,
   Split,
   SplitItem,
-  ModalProps
+  ModalProps,
+  ButtonVariant,
+  ModalVariant
 } from '@patternfly/react-core';
 
 export interface ColumnManagementModalColumn {
@@ -87,18 +89,18 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
       title="Manage columns"
       onClose={() => setModalOpen(false)}
       isOpen={isModalOpen}
-      variant="small"
+      variant={ModalVariant.small}
       description={
         <TextContent>
           <Text component={TextVariants.p}>Selected categories will be displayed in the table.</Text>
           <Split hasGutter>
             <SplitItem>
-              <Button isInline onClick={selectAll} variant="link">
+              <Button isInline onClick={selectAll} variant={ButtonVariant.link}>
                 Select all
               </Button>
             </SplitItem>
             <SplitItem>
-              <Button isInline onClick={resetToDefault} variant="link">
+              <Button isInline onClick={resetToDefault} variant={ButtonVariant.link}>
                 Reset to default
               </Button>
             </SplitItem>
@@ -106,10 +108,10 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
         </TextContent>
       }
       actions={[
-        <Button key="save" variant="primary" onClick={handleSave}>
+        <Button key="save" variant={ButtonVariant.primary} onClick={handleSave}>
           Save
         </Button>,
-        <Button key="cancel" variant="secondary" onClick={handleCancel}>
+        <Button key="cancel" variant={ButtonVariant.link} onClick={handleCancel}>
           Cancel
         </Button>
       ]}
@@ -122,14 +124,14 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
               <DataListCheck
                 aria-labelledby={column.key}
                 checked={column.isShown}
-                id={'checkbox-' + index}
+                id={`checkbox-${index}`}
                 onChange={() => handleChange(index)}
                 isDisabled={column.isAlwaysShown}
               />
               <DataListItemCells
                 dataListCells={[
-                  <DataListCell key={'table-column-management-item' + index}>
-                    <label htmlFor={'checkbox-' + index}>
+                  <DataListCell key={`table-column-management-item-${index}`}>
+                    <label htmlFor={`checkbox-${index}`}>
                       {column.title}
                     </label>
                   </DataListCell>

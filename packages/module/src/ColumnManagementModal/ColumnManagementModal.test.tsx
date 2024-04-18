@@ -5,15 +5,15 @@ import ColumnManagementModal, { ColumnManagementModalColumn } from './ColumnMana
 
 const DEFAULT_COLUMNS : ColumnManagementModalColumn[] = [
   {
-    title: 'CVE ID',
-    key: 'synopsis',
+    title: 'ID',
+    key: 'id',
     isShownByDefault: true,
     isShown: true,
     isAlwaysShown: true
   },
   {
     title: 'Publish date',
-    key: 'publish_date',
+    key: 'publishDate',
     isShownByDefault: true,
     isShown: true
   },
@@ -24,8 +24,8 @@ const DEFAULT_COLUMNS : ColumnManagementModalColumn[] = [
     isShown: true
   },
   {
-    title: 'CVSS base score',
-    key: 'cvss_score',
+    title: 'Score',
+    key: 'score',
     isShownByDefault: false,
     isShown: false
   }
@@ -40,7 +40,6 @@ beforeEach(() => {
     applyColumns={newColumns => setColumns(newColumns)}
     isModalOpen
     setModalOpen={setModalOpen}
-    key="column-mgmt-modal"
     data-testid="column-mgmt-modal"
   />);
 });
@@ -56,7 +55,7 @@ describe('ColumnManagementModal component', () => {
   });
 
   it('should have checkbox checked if column is shown by default', () => {
-    const idCheckbox = screen.getByTestId('column-mgmt-modal').querySelector('input[type="checkbox"][aria-labelledby="synopsis"]');
+    const idCheckbox = screen.getByTestId('column-mgmt-modal').querySelector('input[type="checkbox"][aria-labelledby="id"]');
 
     expect(idCheckbox).toHaveAttribute('disabled');
     expect(idCheckbox).toHaveAttribute('checked');
@@ -66,8 +65,8 @@ describe('ColumnManagementModal component', () => {
     // disable Impact column which is enabled by default
     fireEvent.click(screen.getByText('Impact'));
 
-    // enable CVSS base score column which is disabled by default
-    fireEvent.click(screen.getByText('CVSS base score'));
+    // enable Score column which is disabled by default
+    fireEvent.click(screen.getByText('Score'));
 
     fireEvent.click(screen.getByText('Reset to default'));
   

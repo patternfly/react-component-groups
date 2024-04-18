@@ -5,15 +5,15 @@ import ColumnManagementModal, { ColumnManagementModalColumn } from '@patternfly/
 
 const DEFAULT_COLUMNS: ColumnManagementModalColumn[] = [
   {
-    title: 'CVE ID',
-    key: 'synopsis',
+    title: 'ID',
+    key: 'id',
     isShownByDefault: true,
     isShown: true,
     isAlwaysShown: true
   },
   {
     title: 'Publish date',
-    key: 'publish_date',
+    key: 'publishDate',
     isShownByDefault: true,
     isShown: true
   },
@@ -24,41 +24,39 @@ const DEFAULT_COLUMNS: ColumnManagementModalColumn[] = [
     isShown: true
   },
   {
-    title: 'CVSS base score',
-    key: 'cvss_score',
+    title: 'Score',
+    key: 'score',
     isShownByDefault: false,
     isShown: false
   }
 ];
 
-/* eslint-disable camelcase */
 const ROWS = [
   {
-    synopsis: 'CVE-2024-1546',
-    publish_date: '20 Feb 2024',
+    id: 'CVE-2024-1546',
+    publishDate: '20 Feb 2024',
     impact: 'Important',
-    cvss_score: '7.5'
+    score: '7.5'
   },
   {
-    synopsis: 'CVE-2024-1547',
-    publish_date: '20 Feb 2024',
+    id: 'CVE-2024-1547',
+    publishDate: '20 Feb 2024',
     impact: 'Important',
-    cvss_score: '7.5'
+    score: '7.5'
   },
   {
-    synopsis: 'CVE-2024-1548',
-    publish_date: '20 Feb 2024',
+    id: 'CVE-2024-1548',
+    publishDate: '20 Feb 2024',
     impact: 'Moderate',
-    cvss_score: '6.1'
+    score: '6.1'
   },
   {
-    synopsis: 'CVE-2024-1549',
-    publish_date: '20 Feb 2024',
+    id: 'CVE-2024-1549',
+    publishDate: '20 Feb 2024',
     impact: 'Moderate',
-    cvss_score: '6.1'
+    score: '6.1'
   }
 ]
-/* eslint-enable camelcase */
 
 export const ColumnManagementModalExample: React.FunctionComponent = () => {
   const [ columns, setColumns ] = React.useState(DEFAULT_COLUMNS);
@@ -71,7 +69,6 @@ export const ColumnManagementModalExample: React.FunctionComponent = () => {
         applyColumns={newColumns => setColumns(newColumns)}
         isModalOpen={isModalOpen}
         setModalOpen={setModalOpen}
-        key="column-mgmt-modal"
       />
       <Button onClick={() => setModalOpen(true)}>Manage columns</Button>
       <Table
