@@ -20,6 +20,7 @@ const CloseButton: React.FunctionComponent<CloseButtonProps> = ({
   className,
   dataTestID,
   onClick,
+  ouiaId="CloseButton",
   ...props
 }: CloseButtonProps) => {
   const classes = useStyles();
@@ -30,6 +31,7 @@ const CloseButton: React.FunctionComponent<CloseButtonProps> = ({
       data-test-id={dataTestID}
       onClick={onClick}
       variant={ButtonVariant.plain}
+      ouiaId={ouiaId}
       {...props}
     >
       <CloseIcon />
