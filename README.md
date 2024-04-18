@@ -128,6 +128,7 @@ When adding/making changes to a component, always make sure your code is tested:
 - use React Testing Library for testing 
 - add tests to a `[ComponentName].test.tsx` file to your component's directory
 - make sure all the core logic is covered
+- add `ouiaId` to component props definition with a default value of the component name (for subcomponents, let's use `ComponentName-element-specification` naming convention e.g. `ouiaId="WarningModal-confirm-button"`)
 
 ### Styling:
 - for styling always use JSS

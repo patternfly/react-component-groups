@@ -7,12 +7,15 @@ exports[`ShortcutGrid component should render correctly 1`] = `
     <div>
       <div
         class="pf-v5-l-grid pf-m-all-6-col pf-m-gutter"
+        data-ouia-component-id="ShortcutGrid"
       >
         <div
           class="pf-v5-l-grid__item shortcutGridItem-0-2-1"
+          data-ouia-component-id="ShortcutGrid-item-0"
         >
           <span
             class=""
+            data-ouia-component-id="Shortcut"
           >
             <div
               class="pf-v5-c-chip"
@@ -76,14 +79,17 @@ exports[`ShortcutGrid component should render correctly 1`] = `
         </div>
         <div
           class="pf-v5-l-grid__item"
+          data-ouia-component-id="ShortcutGrid-item-description-0"
         >
           Open in a new tab
         </div>
         <div
           class="pf-v5-l-grid__item shortcutGridItem-0-2-1"
+          data-ouia-component-id="ShortcutGrid-item-1"
         >
           <span
             class=""
+            data-ouia-component-id="Shortcut"
           >
             <div
               class="pf-v5-c-chip"
@@ -127,14 +133,17 @@ exports[`ShortcutGrid component should render correctly 1`] = `
         </div>
         <div
           class="pf-v5-l-grid__item"
+          data-ouia-component-id="ShortcutGrid-item-description-1"
         >
           Open new page
         </div>
         <div
           class="pf-v5-l-grid__item shortcutGridItem-0-2-1"
+          data-ouia-component-id="ShortcutGrid-item-2"
         >
           <span
             class=""
+            data-ouia-component-id="Shortcut"
           >
             <div
               class="pf-v5-c-chip"
@@ -191,6 +200,7 @@ exports[`ShortcutGrid component should render correctly 1`] = `
         </div>
         <div
           class="pf-v5-l-grid__item"
+          data-ouia-component-id="ShortcutGrid-item-description-2"
         >
           Move object
         </div>
@@ -200,12 +210,15 @@ exports[`ShortcutGrid component should render correctly 1`] = `
   "container": <div>
     <div
       class="pf-v5-l-grid pf-m-all-6-col pf-m-gutter"
+      data-ouia-component-id="ShortcutGrid"
     >
       <div
         class="pf-v5-l-grid__item shortcutGridItem-0-2-1"
+        data-ouia-component-id="ShortcutGrid-item-0"
       >
         <span
           class=""
+          data-ouia-component-id="Shortcut"
         >
           <div
             class="pf-v5-c-chip"
@@ -269,14 +282,17 @@ exports[`ShortcutGrid component should render correctly 1`] = `
       </div>
       <div
         class="pf-v5-l-grid__item"
+        data-ouia-component-id="ShortcutGrid-item-description-0"
       >
         Open in a new tab
       </div>
       <div
         class="pf-v5-l-grid__item shortcutGridItem-0-2-1"
+        data-ouia-component-id="ShortcutGrid-item-1"
       >
         <span
           class=""
+          data-ouia-component-id="Shortcut"
         >
           <div
             class="pf-v5-c-chip"
@@ -320,14 +336,17 @@ exports[`ShortcutGrid component should render correctly 1`] = `
       </div>
       <div
         class="pf-v5-l-grid__item"
+        data-ouia-component-id="ShortcutGrid-item-description-1"
       >
         Open new page
       </div>
       <div
         class="pf-v5-l-grid__item shortcutGridItem-0-2-1"
+        data-ouia-component-id="ShortcutGrid-item-2"
       >
         <span
           class=""
+          data-ouia-component-id="Shortcut"
         >
           <div
             class="pf-v5-c-chip"
@@ -384,6 +403,7 @@ exports[`ShortcutGrid component should render correctly 1`] = `
       </div>
       <div
         class="pf-v5-l-grid__item"
+        data-ouia-component-id="ShortcutGrid-item-description-2"
       >
         Move object
       </div>

@@ -4,6 +4,7 @@ exports[`Battery component API should hide label 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryHigh-0-2-5"
+    data-ouia-component-id="Battery-icon"
     title="high high"
     widget-id="high"
     widget-type="Battery"
@@ -32,6 +33,7 @@ exports[`Battery component should render correctly CriticalBattery 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryCritical-0-2-6"
+    data-ouia-component-id="Battery-icon"
     title="critical Critical"
     widget-id="Critical"
     widget-type="Battery"
@@ -65,6 +67,7 @@ exports[`Battery component should render correctly HighBattery 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryHigh-0-2-5"
+    data-ouia-component-id="Battery-icon"
     title="high High"
     widget-id="High"
     widget-type="Battery"
@@ -98,6 +101,7 @@ exports[`Battery component should render correctly LowBattery 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryLow-0-2-3"
+    data-ouia-component-id="Battery-icon"
     title="low Low"
     widget-id="Low"
     widget-type="Battery"
@@ -131,6 +135,7 @@ exports[`Battery component should render correctly MediumBattery 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryMedium-0-2-4"
+    data-ouia-component-id="Battery-icon"
     title="medium Medium"
     widget-id="Medium"
     widget-type="Battery"
@@ -164,6 +169,7 @@ exports[`Battery component should render correctly NullBatery, default 1`] = `
 <div>
   <i
     class="battery-0-2-1 batteryDefault-0-2-2"
+    data-ouia-component-id="Battery-icon"
     title=" "
     widget-id=""
     widget-type="Battery"

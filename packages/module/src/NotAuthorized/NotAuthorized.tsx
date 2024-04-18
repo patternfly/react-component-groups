@@ -25,6 +25,8 @@ export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | '
   toLandingPageText?: React.ReactNode;
   /** Custom landing page button URL */
   toLandingPageUrl?: string;
+  /** Custom OUIA ID */
+  ouiaId?: string | number;
 }
 
 const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
@@ -39,20 +41,21 @@ const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
   description = 'Contact your system administrator(s) for more information.',
   showReturnButton = true,
   className,
+  ouiaId = 'NotAuthorized',
   ...props
 }: NotAuthorizedProps) => (
-  <EmptyState variant={EmptyStateVariant.full} className={className} {...props}>
-    <EmptyStateHeader titleText={<>{title}</>} icon={<EmptyStateIcon icon={Icon} />} headingLevel="h5" />
-    <EmptyStateBody>{description}</EmptyStateBody>
-    <EmptyStateFooter>
+  <EmptyState variant={EmptyStateVariant.full} className={className} data-ouia-component-id={ouiaId} {...props}>
+    <EmptyStateHeader titleText={<>{title}</>} icon={<EmptyStateIcon icon={Icon} data-ouia-component-id={`${ouiaId}-icon`} />} headingLevel="h5" data-ouia-component-id={`${ouiaId}-header`} />
+    <EmptyStateBody data-ouia-component-id={`${ouiaId}-body`}>{description}</EmptyStateBody>
+    <EmptyStateFooter data-ouia-component-id={`${ouiaId}-footer`}>
       {primaryAction ? <EmptyStateActions>{primaryAction}</EmptyStateActions> : null}
       {showReturnButton && !primaryAction &&
             (document.referrer ? (
-              <Button variant={ButtonVariant.primary} onClick={() => history.back()}>
+              <Button variant={ButtonVariant.primary} onClick={() => history.back()} ouiaId={`${ouiaId}-back-button`}>
                 {prevPageButtonText}
               </Button>
             ) : (
-              <Button variant={ButtonVariant.primary} component="a" href={toLandingPageUrl}>
+              <Button variant={ButtonVariant.primary} component="a" href={toLandingPageUrl} ouiaId={`${ouiaId}-home-button`}>
                 {toLandingPageText}
               </Button>
             ))}

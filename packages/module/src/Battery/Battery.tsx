@@ -90,9 +90,11 @@ export interface BatteryProps extends React.DetailedHTMLProps<React.HTMLAttribut
   labelHidden?: boolean;
   /** Custom className */
   className?: string;
+  /** Custom OUIA ID */
+  ouiaId?: string | number;
 }
 
-const Battery: React.FunctionComponent<BatteryProps> = ({ severity, label, labelHidden, className, ...props }: BatteryProps) => {
+const Battery: React.FunctionComponent<BatteryProps> = ({ severity, label, labelHidden, className, ouiaId = 'Battery-icon', ...props }: BatteryProps) => {
   const classes = useStyles();
   const batteryClasses = clsx(classes.battery, classes[String(batteryLevels(severity, true))], className);
 
@@ -103,7 +105,7 @@ const Battery: React.FunctionComponent<BatteryProps> = ({ severity, label, label
   return (
     <React.Fragment>
       {/* eslint-disable-next-line react/no-unknown-property */}
-      <i className={batteryClasses} {...title} {...props} widget-type="Battery" widget-id={label}>
+      <i className={batteryClasses} {...title} {...props} widget-type="Battery" widget-id={label} data-ouia-component-id={ouiaId}>
         <svg
           version="1.1"
           x="0px"

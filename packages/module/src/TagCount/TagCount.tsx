@@ -23,21 +23,25 @@ export interface TagCountProps extends ButtonProps {
   className?: string;
   /** Icon size */
   iconSize?: 'sm' | 'md' | 'lg' | 'xl';
+  /** Custom OUIA ID */
+  ouiaId?: string | number;
 }
 
-const TagCount: React.FunctionComponent<TagCountProps> = (
-  { count, 
-    className,
-    iconSize= 'md',
-    ...props }: TagCountProps) => {
+const TagCount: React.FunctionComponent<TagCountProps> = ({
+  count, 
+  className,
+  iconSize= 'md',
+  ouiaId = 'TagCount',
+  ...props 
+}: TagCountProps) => {
   const classes = useStyles();
   const tagClasses = clsx(classes.buttonTagCount, className);
   return (
-    <Button aria-label="Tag count" {...props} variant="plain" isDisabled={!count} className={tagClasses}>
-      <Icon iconSize={iconSize} >
-        <TagIcon/>
+    <Button aria-label="Tag count" {...props} variant="plain" isDisabled={!count} className={tagClasses} ouiaId={ouiaId} {...props}>
+      <Icon iconSize={iconSize} data-ouia-component-id={`${ouiaId}-icon`}>
+        <TagIcon />
       </Icon>
-      <span className={classes.tagText}>{count}</span>
+      <span className={classes.tagText} data-ouia-component-id={`${ouiaId}-text`}>{count}</span>
     </Button>
   );
 };

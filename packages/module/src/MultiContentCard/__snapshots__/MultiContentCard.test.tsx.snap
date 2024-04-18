@@ -3,7 +3,7 @@
 exports[`MultiContentCard component should render basic multi content card 1`] = `
 <div
   class="pf-v5-c-card pf-m-expanded"
-  data-ouia-component-id="OUIA-Generated-Card-1"
+  data-ouia-component-id="MultiContentCard"
   data-ouia-component-type="PF5/Card"
   data-ouia-safe="true"
   id=""
@@ -13,6 +13,7 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
   >
     <div
       class="pf-m-flex-1"
+      data-ouia-component-id="MultiContentCard-content-0"
     >
       <div
         class="pf-v5-c-card pf-m-full-height pf-m-plain"
@@ -147,6 +148,7 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
     </div>
     <div
       class="pf-m-flex-1"
+      data-ouia-component-id="MultiContentCard-content-1"
     >
       <div
         class="pf-v5-c-card pf-m-full-height pf-m-plain"
@@ -249,6 +251,7 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
     </div>
     <div
       class="pf-m-flex-1"
+      data-ouia-component-id="MultiContentCard-content-2"
     >
       <div
         class="pf-v5-c-card pf-m-full-height pf-m-plain"
@@ -377,13 +380,14 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
 exports[`MultiContentCard component should render expandable multi content card - collapsed 1`] = `
 <div
   class="pf-v5-c-card"
-  data-ouia-component-id="OUIA-Generated-Card-9"
+  data-ouia-component-id="MultiContentCard"
   data-ouia-component-type="PF5/Card"
   data-ouia-safe="true"
   id=""
 >
   <div
     class="pf-v5-c-card__header"
+    data-ouia-component-id="MultiContentCard-header"
   >
     <div
       class="pf-v5-c-card__header-toggle"
@@ -428,6 +432,7 @@ exports[`MultiContentCard component should render expandable multi content card 
       >
         <div
           class="pf-v5-c-card__title-text"
+          data-ouia-component-id="MultiContentCard-title"
         >
           <h2
             class="pf-v5-c-title pf-m-xl"
@@ -447,13 +452,14 @@ exports[`MultiContentCard component should render expandable multi content card 
 exports[`MultiContentCard component should render expandable multi content card - expanded 1`] = `
 <div
   class="pf-v5-c-card pf-m-expanded"
-  data-ouia-component-id="OUIA-Generated-Card-5"
+  data-ouia-component-id="MultiContentCard"
   data-ouia-component-type="PF5/Card"
   data-ouia-safe="true"
   id=""
 >
   <div
     class="pf-v5-c-card__header"
+    data-ouia-component-id="MultiContentCard-header"
   >
     <div
       class="pf-v5-c-card__header-toggle"
@@ -498,6 +504,7 @@ exports[`MultiContentCard component should render expandable multi content card 
       >
         <div
           class="pf-v5-c-card__title-text"
+          data-ouia-component-id="MultiContentCard-title"
         >
           <h2
             class="pf-v5-c-title pf-m-xl"
@@ -513,12 +520,14 @@ exports[`MultiContentCard component should render expandable multi content card 
   </div>
   <div
     class="pf-v5-c-card__expandable-content"
+    data-ouia-component-id="MultiContentCard-expandable-content"
   >
     <div
       class="pf-v5-l-flex pf-m-align-items-stretch pf-m-align-self-stretch"
     >
       <div
         class="pf-m-flex-1"
+        data-ouia-component-id="MultiContentCard-content-0"
       >
         <div
           class="pf-v5-c-card pf-m-full-height pf-m-plain"
@@ -653,6 +662,7 @@ exports[`MultiContentCard component should render expandable multi content card 
       </div>
       <div
         class="pf-m-flex-1"
+        data-ouia-component-id="MultiContentCard-content-1"
       >
         <div
           class="pf-v5-c-card pf-m-full-height pf-m-plain"
@@ -755,6 +765,7 @@ exports[`MultiContentCard component should render expandable multi content card 
       </div>
       <div
         class="pf-m-flex-1"
+        data-ouia-component-id="MultiContentCard-content-2"
       >
         <div
           class="pf-v5-c-card pf-m-full-height pf-m-plain"
@@ -884,13 +895,14 @@ exports[`MultiContentCard component should render expandable multi content card 
 exports[`MultiContentCard component should render expandable multi content card - with actions 1`] = `
 <div
   class="pf-v5-c-card"
-  data-ouia-component-id="OUIA-Generated-Card-10"
+  data-ouia-component-id="MultiContentCard"
   data-ouia-component-type="PF5/Card"
   data-ouia-safe="true"
   id=""
 >
   <div
     class="pf-v5-c-card__header"
+    data-ouia-component-id="MultiContentCard-header"
   >
     <div
       class="pf-v5-c-card__header-toggle"
@@ -997,6 +1009,7 @@ exports[`MultiContentCard component should render expandable multi content card 
       >
         <div
           class="pf-v5-c-card__title-text"
+          data-ouia-component-id="MultiContentCard-title"
         >
           <h2
             class="pf-v5-c-title pf-m-xl"
@@ -1016,7 +1029,7 @@ exports[`MultiContentCard component should render expandable multi content card 
 exports[`MultiContentCard component should render multi content card with a single divider 1`] = `
 <div
   class="pf-v5-c-card pf-m-expanded"
-  data-ouia-component-id="OUIA-Generated-Card-15"
+  data-ouia-component-id="MultiContentCard"
   data-ouia-component-type="PF5/Card"
   data-ouia-safe="true"
   id=""
@@ -1026,6 +1039,7 @@ exports[`MultiContentCard component should render multi content card with a sing
   >
     <div
       class="pf-m-flex-1"
+      data-ouia-component-id="MultiContentCard-content-0"
     >
       <div
         class="pf-v5-c-card pf-m-full-height pf-m-plain"
@@ -1160,6 +1174,7 @@ exports[`MultiContentCard component should render multi content card with a sing
     </div>
     <div
       class="pf-m-flex-1"
+      data-ouia-component-id="MultiContentCard-content-1"
     >
       <div
         class="pf-v5-c-card pf-m-full-height pf-m-plain"
@@ -1265,6 +1280,7 @@ exports[`MultiContentCard component should render multi content card with a sing
     />
     <div
       class="pf-m-flex-1"
+      data-ouia-component-id="MultiContentCard-content-2"
     >
       <div
         class="pf-v5-c-card pf-m-full-height pf-m-plain"
@@ -1393,7 +1409,7 @@ exports[`MultiContentCard component should render multi content card with a sing
 exports[`MultiContentCard component should render multi content card with dividers 1`] = `
 <div
   class="pf-v5-c-card pf-m-expanded"
-  data-ouia-component-id="OUIA-Generated-Card-11"
+  data-ouia-component-id="MultiContentCard"
   data-ouia-component-type="PF5/Card"
   data-ouia-safe="true"
   id=""
@@ -1403,6 +1419,7 @@ exports[`MultiContentCard component should render multi content card with divide
   >
     <div
       class="pf-m-flex-1"
+      data-ouia-component-id="MultiContentCard-content-0"
     >
       <div
         class="pf-v5-c-card pf-m-full-height pf-m-plain"
@@ -1540,6 +1557,7 @@ exports[`MultiContentCard component should render multi content card with divide
     />
     <div
       class="pf-m-flex-1"
+      data-ouia-component-id="MultiContentCard-content-1"
     >
       <div
         class="pf-v5-c-card pf-m-full-height pf-m-plain"
@@ -1645,6 +1663,7 @@ exports[`MultiContentCard component should render multi content card with divide
     />
     <div
       class="pf-m-flex-1"
+      data-ouia-component-id="MultiContentCard-content-2"
     >
       <div
         class="pf-v5-c-card pf-m-full-height pf-m-plain"

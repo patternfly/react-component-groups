@@ -5,8 +5,10 @@ import { createUseStyles } from 'react-jss';
 export interface AnsibleProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
   /** Supported/unsupported variant flag */
   unsupported?: boolean | number;
-  /** Ansible icon className*/
+  /** Ansible icon className */
   className?: string;
+  /** Custom OUIA ID */
+  ouiaId?: string | number;
 }
 
 const useStyles = createUseStyles({
@@ -30,7 +32,7 @@ const useStyles = createUseStyles({
   } 
 })
 
-const Ansible: React.FunctionComponent<AnsibleProps> = ({ unsupported, className, ...props }: AnsibleProps) => {
+const Ansible: React.FunctionComponent<AnsibleProps> = ({ unsupported, className, ouiaId = "Ansible-icon", ...props }: AnsibleProps) => {
   const classes = useStyles();
   const ansibleLogoClass = clsx(
     classes.ansible,
@@ -71,7 +73,7 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ unsupported, className
   );
 
   return (
-    <i className={ansibleLogoClass} title={unsupported ? "Ansible is not supported" : "Ansible supported" }{...props}>
+    <i className={ansibleLogoClass} title={unsupported ? "Ansible is not supported" : "Ansible supported" } data-ouia-component-id={ouiaId} {...props}>
       <svg
         version="1.1"
         x="0px"

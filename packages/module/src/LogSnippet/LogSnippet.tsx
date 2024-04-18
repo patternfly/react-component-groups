@@ -17,6 +17,8 @@ export interface LogSnippetProps extends FlexProps {
   message: string | React.ReactNode;
   /** Custom color for left border */
   leftBorderVariant?: LogSnippetBorderVariant;
+  /** Custom OUIA ID */
+  ouiaId?: string | number;
 }
 
 export type LogSnippetBorderVariant = typeof LogSnippetBorderVariant[keyof typeof LogSnippetBorderVariant];
@@ -35,17 +37,17 @@ const useStyles = createUseStyles({
   },
 });
 
-export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippet, message, leftBorderVariant = LogSnippetBorderVariant.danger, ...props }: LogSnippetProps) => {
+export const LogSnippet: React.FunctionComponent<LogSnippetProps> = ({ logSnippet, message, leftBorderVariant = LogSnippetBorderVariant.danger, ouiaId = "LogSnippet", ...props }: LogSnippetProps) => {
   const classes = useStyles(leftBorderVariant);
 
   return (
-    <Flex direction={{ default: 'column' }} className={clsx(classes.logSnippet, classes.variantBorderColor)} {...props}>
+    <Flex direction={{ default: 'column' }} className={clsx(classes.logSnippet, classes.variantBorderColor)} data-ouia-component-id={ouiaId} {...props}>
       <FlexItem>
-        { typeof message === 'string' ? <Text component={TextVariants.p} className={classes.statusMessage}>{message}</Text> : message }
+        { typeof message === 'string' ? <Text component={TextVariants.p} className={classes.statusMessage} data-ouia-component-id={`${ouiaId}-message`}>{message}</Text> : message }
       </FlexItem>
       { logSnippet && <FlexItem>
-        <CodeBlock>
-          <CodeBlockCode id="code-content">{logSnippet}</CodeBlockCode>
+        <CodeBlock data-ouia-component-id={`${ouiaId}-code-block`}>
+          <CodeBlockCode data-ouia-component-id={`${ouiaId}-code-content`}>{logSnippet}</CodeBlockCode>
         </CodeBlock> 
       </FlexItem> }
     </Flex>

@@ -23,6 +23,8 @@ export interface ShortcutProps {
   dragAndDrop?: boolean;
   /** Shortcut className */
   className?: string;
+  /** Custom OUIA ID */
+  ouiaId?: string | number;
 }
 
 const symbols = {
@@ -52,7 +54,9 @@ const Shortcut: React.FunctionComponent<ShortcutProps> = ({
   drag, 
   rightClick, 
   dragAndDrop,
-  className
+  className,
+  ouiaId = 'Shortcut',
+  ...props
 }: ShortcutProps) => {
   const classes = useStyles();
   const badges = [
@@ -93,7 +97,7 @@ const Shortcut: React.FunctionComponent<ShortcutProps> = ({
 
   return (
     <>
-      <span className={clsx({ [classes.shortcut]: description, className })}>
+      <span className={clsx({ [classes.shortcut]: description, className })} data-ouia-component-id={ouiaId} {...props}>
         {badges.length > 0 && badges.reduce((prev, curr) => (
           <>{[ prev, ' + ', curr ]}</>
         ))}

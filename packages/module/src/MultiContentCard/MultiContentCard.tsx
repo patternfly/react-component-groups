@@ -58,7 +58,9 @@ export interface MultiContentCardProps extends Omit<CardProps, 'children' | 'tit
   /** Indicates whether the actions toggle is right aligned */
   isToggleRightAligned?: boolean;
   /** Indicates whether the card header has a bottom border */
-  withHeaderBorder?: boolean
+  withHeaderBorder?: boolean;
+  /** Custom OUIA ID */
+  ouiaId?: string | number;
 }
 
 const useStyles = createUseStyles({
@@ -85,7 +87,8 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   isExpandable = false,
   defaultExpanded = true,
   withHeaderBorder = false,
-  ...rest
+  ouiaId = 'MultiContentCard',
+  ...props
 }: MultiContentCardProps) => {
   const classes = useStyles(leftBorderVariant);
   const [ isExpanded, setIsExpanded ] = React.useState(defaultExpanded);
@@ -103,7 +106,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
               inset={{ default: 'inset3xl' }}
             />
           )}
-          <FlexItem key={`card-${index}`} flex={{ default: 'flex_1' }}>
+          <FlexItem key={`card-${index}`} flex={{ default: 'flex_1' }} data-ouia-component-id={`${ouiaId}-content-${index}`}>
             {isCardWithProps(card) ? card.content : card}
           </FlexItem>
           {(index + 1 < cards.length && (withDividers || isCardWithProps(card) && card.dividerVariant === MultiContentCardDividerVariant.right)) && (
@@ -118,9 +121,10 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   );
   
   return(
-    <Card className={clsx([ { [classes.multiContentCardLeftBorder]: leftBorderVariant !== MultiContentCardBorderVariant.hidden } ])} isExpanded={isExpanded} {...rest}>
+    <Card className={clsx([ { [classes.multiContentCardLeftBorder]: leftBorderVariant !== MultiContentCardBorderVariant.hidden } ])} isExpanded={isExpanded} ouiaId={ouiaId} {...props}>
       {isExpandable && (
         <CardHeader
+          data-ouia-component-id={`${ouiaId}-header`}
           className={clsx({ [classes.multiContentCardHeadingBorder]: withHeaderBorder })}
           onExpand={onExpand}
           isToggleRightAligned={isToggleRightAligned}
@@ -130,10 +134,10 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
           }}
           actions={{ actions }}
         >
-          <CardTitle>{toggleText ? <Title headingLevel="h2" size="xl">{toggleText}</Title> : toggleContent}</CardTitle>
+          <CardTitle data-ouia-component-id={`${ouiaId}-title`}>{toggleText ? <Title headingLevel="h2" size="xl">{toggleText}</Title> : toggleContent}</CardTitle>
         </CardHeader>
       )}
-      {isExpandable ? <CardExpandableContent>{renderCards(cards, withDividers)}</CardExpandableContent> : renderCards(cards, withDividers)}
+      {isExpandable ? <CardExpandableContent data-ouia-component-id={`${ouiaId}-expandable-content`}>{renderCards(cards, withDividers)}</CardExpandableContent> : renderCards(cards, withDividers)}
     </Card>
   );}
 

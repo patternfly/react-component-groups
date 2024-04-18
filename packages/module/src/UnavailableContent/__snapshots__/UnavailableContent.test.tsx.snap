@@ -7,12 +7,14 @@ exports[`Unavailable component should render with a link 1`] = `
     <div>
       <div
         class="pf-v5-c-empty-state pf-m-lg emptyStateUnavailable-0-2-1"
+        data-ouia-component-id="UnavailableContent"
       >
         <div
           class="pf-v5-c-empty-state__content"
         >
           <div
             class="pf-v5-c-empty-state__header"
+            data-ouia-component-id="UnavailableContent-header"
           >
             <div
               class="pf-v5-c-empty-state__icon"
@@ -20,6 +22,7 @@ exports[`Unavailable component should render with a link 1`] = `
               <svg
                 aria-hidden="true"
                 class="pf-v5-svg"
+                data-ouia-component-id="UnavailableContent-icon"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -43,13 +46,14 @@ exports[`Unavailable component should render with a link 1`] = `
           </div>
           <div
             class="pf-v5-c-empty-state__body"
+            data-ouia-component-id="UnavailableContent-body"
           >
             Try refreshing the page. If the problem persists, contact your organization administrator or visit our
              
             <a
               aria-disabled="false"
               class="pf-v5-c-button pf-m-link emptyStateLinkButton-0-2-2"
-              data-ouia-component-id="OUIA-Generated-Button-link-2"
+              data-ouia-component-id="UnavailableContent-link-button"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href="https://www.patternfly.org"
@@ -68,12 +72,14 @@ exports[`Unavailable component should render with a link 1`] = `
   "container": <div>
     <div
       class="pf-v5-c-empty-state pf-m-lg emptyStateUnavailable-0-2-1"
+      data-ouia-component-id="UnavailableContent"
     >
       <div
         class="pf-v5-c-empty-state__content"
       >
         <div
           class="pf-v5-c-empty-state__header"
+          data-ouia-component-id="UnavailableContent-header"
         >
           <div
             class="pf-v5-c-empty-state__icon"
@@ -81,6 +87,7 @@ exports[`Unavailable component should render with a link 1`] = `
             <svg
               aria-hidden="true"
               class="pf-v5-svg"
+              data-ouia-component-id="UnavailableContent-icon"
               fill="currentColor"
               height="1em"
               role="img"
@@ -104,13 +111,14 @@ exports[`Unavailable component should render with a link 1`] = `
         </div>
         <div
           class="pf-v5-c-empty-state__body"
+          data-ouia-component-id="UnavailableContent-body"
         >
           Try refreshing the page. If the problem persists, contact your organization administrator or visit our
            
           <a
             aria-disabled="false"
             class="pf-v5-c-button pf-m-link emptyStateLinkButton-0-2-2"
-            data-ouia-component-id="OUIA-Generated-Button-link-2"
+            data-ouia-component-id="UnavailableContent-link-button"
             data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
             href="https://www.patternfly.org"
@@ -186,12 +194,14 @@ exports[`Unavailable component should render with no link 1`] = `
     <div>
       <div
         class="pf-v5-c-empty-state pf-m-lg emptyStateUnavailable-0-2-1"
+        data-ouia-component-id="UnavailableContent"
       >
         <div
           class="pf-v5-c-empty-state__content"
         >
           <div
             class="pf-v5-c-empty-state__header"
+            data-ouia-component-id="UnavailableContent-header"
           >
             <div
               class="pf-v5-c-empty-state__icon"
@@ -199,6 +209,7 @@ exports[`Unavailable component should render with no link 1`] = `
               <svg
                 aria-hidden="true"
                 class="pf-v5-svg"
+                data-ouia-component-id="UnavailableContent-icon"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -222,13 +233,14 @@ exports[`Unavailable component should render with no link 1`] = `
           </div>
           <div
             class="pf-v5-c-empty-state__body"
+            data-ouia-component-id="UnavailableContent-body"
           >
             Try refreshing the page. If the problem persists, contact your organization administrator or visit our
              
             <a
               aria-disabled="false"
               class="pf-v5-c-button pf-m-link emptyStateLinkButton-0-2-2"
-              data-ouia-component-id="OUIA-Generated-Button-link-1"
+              data-ouia-component-id="UnavailableContent-link-button"
               data-ouia-component-type="PF5/Button"
               data-ouia-safe="true"
               href=""
@@ -247,12 +259,14 @@ exports[`Unavailable component should render with no link 1`] = `
   "container": <div>
     <div
       class="pf-v5-c-empty-state pf-m-lg emptyStateUnavailable-0-2-1"
+      data-ouia-component-id="UnavailableContent"
     >
       <div
         class="pf-v5-c-empty-state__content"
       >
         <div
           class="pf-v5-c-empty-state__header"
+          data-ouia-component-id="UnavailableContent-header"
         >
           <div
             class="pf-v5-c-empty-state__icon"
@@ -260,6 +274,7 @@ exports[`Unavailable component should render with no link 1`] = `
             <svg
               aria-hidden="true"
               class="pf-v5-svg"
+              data-ouia-component-id="UnavailableContent-icon"
               fill="currentColor"
               height="1em"
               role="img"
@@ -283,13 +298,14 @@ exports[`Unavailable component should render with no link 1`] = `
         </div>
         <div
           class="pf-v5-c-empty-state__body"
+          data-ouia-component-id="UnavailableContent-body"
         >
           Try refreshing the page. If the problem persists, contact your organization administrator or visit our
            
           <a
             aria-disabled="false"
             class="pf-v5-c-button pf-m-link emptyStateLinkButton-0-2-2"
-            data-ouia-component-id="OUIA-Generated-Button-link-1"
+            data-ouia-component-id="UnavailableContent-link-button"
             data-ouia-component-type="PF5/Button"
             data-ouia-safe="true"
             href=""
