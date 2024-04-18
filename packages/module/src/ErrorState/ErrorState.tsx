@@ -29,27 +29,29 @@ export interface ErrorStateProps extends Omit<EmptyStateProps, 'children'> {
   defaultErrorDescription?: React.ReactNode;
   /** Custom footer content */
   customFooter?: React.ReactNode;
+  /** ErrorState OUIA ID */
+  ouiaId?: string | number;
 }
 
-const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'Something went wrong', errorDescription, defaultErrorDescription, customFooter, ...props }: ErrorStateProps) => { 
+const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'Something went wrong', errorDescription, defaultErrorDescription, customFooter, ouiaId = "ErrorState", ...props }: ErrorStateProps) => { 
   const classes = useStyles();
   return (
     <EmptyState variant={EmptyStateVariant.lg} {...props}>
-      <EmptyStateHeader titleText={<>{errorTitle}</>} icon={<EmptyStateIcon className={classes.errorIcon} icon={ExclamationCircleIcon} />} headingLevel="h4" />
-      <EmptyStateBody>
+      <EmptyStateHeader titleText={<>{errorTitle}</>} icon={<EmptyStateIcon className={classes.errorIcon} icon={ExclamationCircleIcon} data-ouia-component-id={`${ouiaId}-icon`} />} headingLevel="h4" data-ouia-component-id={`${ouiaId}-header`}/>
+      <EmptyStateBody data-ouia-component-id={`${ouiaId}-body`}>
         <Stack>
           {errorDescription ? <StackItem>{errorDescription}</StackItem> : defaultErrorDescription}
         </Stack>
       </EmptyStateBody>
-      <EmptyStateFooter>
+      <EmptyStateFooter data-ouia-component-id={`${ouiaId}-footer`}>
         { customFooter ||
           (document.referrer ? (
-            <Button variant="primary" onClick={() => history.back()}>
-            Return to last page
+            <Button variant="primary" onClick={() => history.back()} ouiaId={`${ouiaId}-back-button`}>
+              Return to last page
             </Button>
           ) : (
-            <Button variant="primary" component="a" href="." target="_blank" rel="noopener noreferrer">
-            Go to home page
+            <Button variant="primary" component="a" href="." target="_blank" rel="noopener noreferrer" ouiaId={`${ouiaId}-home-button`}>
+              Go to home page
             </Button>
           ))}
       </EmptyStateFooter>

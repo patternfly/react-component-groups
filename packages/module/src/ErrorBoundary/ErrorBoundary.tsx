@@ -18,6 +18,8 @@ export interface ErrorPageProps {
   defaultErrorDescription?: React.ReactNode;
   /** The component that the error boundary component is wrapped around, which should be returned if there is no error  */
   children?: React.ReactNode;
+  /** Custom OUIA ID */
+  ouiaId?: string | number;
 }
 
 export interface ErrorPageState {
@@ -61,33 +63,36 @@ class ErrorBoundary extends React.Component<ErrorPageProps, ErrorPageState> {
   }
 
   render() {
+    const { ouiaId = 'ErrorBoundary', ...props } = this.props;
+    
     if (this.state.hasError) {
       if (this.props.silent) {
         return null;
       }
+
       return (
-        <React.Fragment>
-          <Title headingLevel="h1" size="2xl">{this.props.headerTitle}</Title>
+        <div data-ouia-component-id={ouiaId}>
+          <Title headingLevel="h1" size="2xl" ouiaId={`${ouiaId}-title`}>{props.headerTitle}</Title>
           <ErrorState
-            errorTitle={this.props.errorTitle}
+            errorTitle={props.errorTitle}
             errorDescription={
               <>
-                <span>{this.props.errorDescription}</span>
+                <span>{props.errorDescription}</span>
                 {this.state.error && ( 
-                  <ExpandableSection toggleText={this.props.errorToggleText ? this.props.errorToggleText : "Show details"}>
-                    <ErrorStack error={this.state.error} />
+                  <ExpandableSection toggleText={props.errorToggleText ? props.errorToggleText : "Show details"} data-ouia-component-id={`${ouiaId}-toggle`}>
+                    <ErrorStack error={this.state.error} data-ouia-component-id={`${ouiaId}-stack`}/>
                   </ExpandableSection>
                 )}
               </>
             }
-            defaultErrorDescription={this.props.defaultErrorDescription}
+            defaultErrorDescription={props.defaultErrorDescription}
           />
-        </React.Fragment>
+        </div>
       );
     }
 
-    return this.props.children;
+    return props.children;
   }
-}
+};
 
 export default ErrorBoundary;
