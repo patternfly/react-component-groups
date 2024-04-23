@@ -60,17 +60,17 @@ const ROWS = [
 
 export const ColumnManagementModalExample: React.FunctionComponent = () => {
   const [ columns, setColumns ] = React.useState(DEFAULT_COLUMNS);
-  const [ isModalOpen, setModalOpen ] = React.useState(false);
+  const [ isOpen, setOpen ] = React.useState(false);
   
   return (
     <>
       <ColumnManagementModal
         appliedColumns={columns}
         applyColumns={newColumns => setColumns(newColumns)}
-        isModalOpen={isModalOpen}
-        setModalOpen={setModalOpen}
+        isOpen={isOpen}
+        onClose={() => setOpen(false)}
       />
-      <Button onClick={() => setModalOpen(true)}>Manage columns</Button>
+      <Button onClick={() => setOpen(true)}>Manage columns</Button>
       <Table
         aria-label="Simple table"
         variant="compact"

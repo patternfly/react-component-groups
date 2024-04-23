@@ -33,20 +33,26 @@ export interface ColumnManagementModalColumn {
 
 export interface ColumnManagementModalProps extends Omit<ModalProps, 'ref' | 'children'> {
   /** Flag to show the modal */
-  isModalOpen: boolean,
+  isOpen?: boolean,
   /** Invoked when modal visibility is changed */
-  setModalOpen: (shouldOpen: boolean) => void
+  onClose?: (event: KeyboardEvent | React.MouseEvent) => void,
   /** Current column state */
   appliedColumns: ColumnManagementModalColumn[],
   /** Invoked with new column state after save button is clicked */
   applyColumns: (newColumns: ColumnManagementModalColumn[]) => void,
+  /* Modal description text */
+  description?: string,
+  /* Modal title text */
+  title?: string,
   /** Custom OUIA ID */
   ouiaId?: string | number,
 };
 
 const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps> = (
-  { isModalOpen,
-    setModalOpen,
+  { title = 'Manage columns',
+    description = 'Selected categories will be displayed in the table.',
+    isOpen = false,
+    onClose = () => undefined,
     appliedColumns,
     applyColumns,
     ouiaId = 'ColumnManagementModal',
@@ -77,25 +83,25 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
     setCurrentColumns(currentColumns.map(column => ({ ...column, isShown: column.isShownByDefault ?? false })));
   };
 
-  const handleSave = () => {
-    setModalOpen(false);
+  const handleSave = event => {
     applyColumns(currentColumns);
+    onClose(event);
   };
-
-  const handleCancel = () => {
-    setModalOpen(false);
+  
+  const handleCancel = event => {
     setCurrentColumns(appliedColumns.map(column => ({ ...column, isShown: column.isShown ?? column.isShownByDefault })));
+    onClose(event);
   };
 
   return (
     <Modal
-      title="Manage columns"
-      onClose={() => setModalOpen(false)}
-      isOpen={isModalOpen}
+      title={title}
+      onClose={onClose}
+      isOpen={isOpen}
       variant={ModalVariant.small}
       description={
         <TextContent>
-          <Text component={TextVariants.p}>Selected categories will be displayed in the table.</Text>
+          <Text component={TextVariants.p}>{description}</Text>
           <Split hasGutter>
             <SplitItem>
               <Button isInline onClick={selectAll} variant={ButtonVariant.link} ouiaId={`${ouiaId}-selectAll-button`}>

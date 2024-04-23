@@ -31,15 +31,15 @@ const DEFAULT_COLUMNS : ColumnManagementModalColumn[] = [
   }
 ];
 
-const setModalOpen = jest.fn();
+const onClose = jest.fn();
 const setColumns = jest.fn();
 
 beforeEach(() => {
   render(<ColumnManagementModal
     appliedColumns={DEFAULT_COLUMNS}
     applyColumns={newColumns => setColumns(newColumns)}
-    isModalOpen
-    setModalOpen={setModalOpen}
+    isOpen
+    onClose={onClose}
     data-testid="column-mgmt-modal"
   />);
 });
@@ -55,7 +55,7 @@ describe('ColumnManagementModal component', () => {
   });
 
   it('should have checkbox checked if column is shown by default', () => {
-    const idCheckbox = screen.getByTestId('column-mgmt-modal').querySelector('input[type="checkbox"][aria-labelledby="id"]');
+    const idCheckbox = screen.getByTestId('column-mgmt-modal').querySelector('input[type="checkbox"][data-ouia-component-id="ColumnManagementModal-column0-checkbox"]');
 
     expect(idCheckbox).toHaveAttribute('disabled');
     expect(idCheckbox).toHaveAttribute('checked');
@@ -95,7 +95,7 @@ describe('ColumnManagementModal component', () => {
 
     impactColumn.isShown = false;
 
-    expect(setModalOpen).toHaveBeenCalledWith(false);
+    expect(onClose).toHaveBeenCalled();
     expect(setColumns).toHaveBeenCalledWith(expectedColumns);
   });
 
@@ -103,7 +103,7 @@ describe('ColumnManagementModal component', () => {
     fireEvent.click(screen.getByText('Impact'));
     fireEvent.click(screen.getByText('Cancel'));
 
-    expect(setModalOpen).toHaveBeenCalledWith(false);
+    expect(onClose).toHaveBeenCalled();
     expect(setColumns).toHaveBeenCalledWith(DEFAULT_COLUMNS);
   });
 });
