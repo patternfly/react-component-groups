@@ -27,8 +27,8 @@ export interface ColumnManagementModalColumn {
   isShown?: boolean,
   /** Set to false if the column should be hidden initially */
   isShownByDefault: boolean,
-  /** The checkbox will be checked and disabled, this is applicable to identifier columns which user shouldn't be able to hide */
-  isAlwaysShown?: boolean
+  /** The checkbox will be disabled, this is applicable to columns which should not be toggleable by user */
+  isUntoggleable?: boolean
 }
 
 export interface ColumnManagementModalProps extends Omit<ModalProps, 'ref' | 'children'> {
@@ -134,7 +134,7 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
               <DataListCheck
                 checked={column.isShown}
                 onChange={() => handleChange(index)}
-                isDisabled={column.isAlwaysShown}
+                isDisabled={column.isUntoggleable}
                 aria-labelledby={`${ouiaId}-column${index}-label`}
                 data-ouia-component-id={`${ouiaId}-column${index}-checkbox`}
                 id={`${ouiaId}-column${index}-checkbox`}
