@@ -18,6 +18,9 @@ const useStyles = createUseStyles({
   errorIcon: {
     fill: 'var(--pf-v5-global--danger-color--100)',
   },
+  errorDescription: {
+    margin: 'auto'
+  }
 })
 
 export interface ErrorStateProps extends Omit<EmptyStateProps, 'children'> {
@@ -40,7 +43,7 @@ const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'So
       <EmptyStateHeader titleText={<>{errorTitle}</>} icon={<EmptyStateIcon className={classes.errorIcon} icon={ExclamationCircleIcon} data-ouia-component-id={`${ouiaId}-icon`} />} headingLevel="h4" data-ouia-component-id={`${ouiaId}-header`}/>
       <EmptyStateBody data-ouia-component-id={`${ouiaId}-body`}>
         <Stack>
-          {errorDescription ? <StackItem>{errorDescription}</StackItem> : defaultErrorDescription}
+          {errorDescription ? <StackItem className={classes.errorDescription}>{errorDescription}</StackItem> : defaultErrorDescription}
         </Stack>
       </EmptyStateBody>
       <EmptyStateFooter data-ouia-component-id={`${ouiaId}-footer`}>
