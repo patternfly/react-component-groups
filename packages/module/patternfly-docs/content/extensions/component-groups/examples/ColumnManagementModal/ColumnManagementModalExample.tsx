@@ -1,6 +1,7 @@
 import React from 'react'
-import { Button } from '@patternfly/react-core';
+import { Button, ButtonVariant } from '@patternfly/react-core';
 import { Table, Tbody, Td, Th, Tr, Thead } from '@patternfly/react-table';
+import { ColumnsIcon } from '@patternfly/react-icons';
 import ColumnManagementModal, { ColumnManagementModalColumn } from '@patternfly/react-component-groups/dist/dynamic/ColumnManagementModal';
 
 const DEFAULT_COLUMNS: ColumnManagementModalColumn[] = [
@@ -70,7 +71,7 @@ export const ColumnManagementModalExample: React.FunctionComponent = () => {
         isOpen={isOpen}
         onClose={() => setOpen(false)}
       />
-      <Button onClick={() => setOpen(true)}>Manage columns</Button>
+      <Button onClick={() => setOpen(true)} variant={ButtonVariant.secondary} icon={<ColumnsIcon />}>Manage columns</Button>
       <Table
         aria-label="Simple table"
         variant="compact"

@@ -15,6 +15,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 ---
 
 import ColumnManagementModal from '@patternfly/react-component-groups/dist/dynamic/ColumnManagementModal';
+import { ColumnsIcon } from '@patternfly/react-icons';
 
 The **column management modal** component can be used to implement customizable table columns. Columns can be configured to be enabled or disabled by default or be unhidable.
 
