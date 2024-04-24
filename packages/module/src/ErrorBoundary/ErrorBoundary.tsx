@@ -1,9 +1,18 @@
 import * as React from 'react';
 import { ExpandableSection, Title } from '@patternfly/react-core';
+import { createUseStyles } from 'react-jss';
 import ErrorState from '../ErrorState';
 import ErrorStack from '../ErrorStack';
 
-export interface ErrorPageProps {
+const useStyles = createUseStyles({
+  expandableSectionToggle: {
+    "& > .pf-v5-c-expandable-section__toggle": {
+      margin: "auto",
+    }
+  },
+})
+
+export interface ErrorBoundaryProps {
   /** The title text to display on the error page */
   headerTitle: string;
   /** Indicates if the error is silent */
@@ -22,7 +31,7 @@ export interface ErrorPageProps {
   ouiaId?: string | number;
 }
 
-export interface ErrorPageState {
+export interface ErrorBoundaryState {
   /** Indicates if there is currently an error */
   hasError: boolean;
   /** Error */
@@ -31,8 +40,18 @@ export interface ErrorPageState {
   historyState: History['state'];
 }
 
+interface ErrorPageProps extends ErrorBoundaryProps {
+  /** JSS classes */
+  classes: Record<string | number | symbol, string>;
+}
+
+export const ErrorBoundary: React.FunctionComponent<ErrorBoundaryProps> = (props: ErrorBoundaryProps) => {
+  const classes = useStyles();
+  return <ErrorBoundaryContent classes={classes} {...props} />
+}
+
 // As of time of writing, React only supports error boundaries in class components
-class ErrorBoundary extends React.Component<ErrorPageProps, ErrorPageState> {
+class ErrorBoundaryContent extends React.Component<ErrorPageProps, ErrorBoundaryState> {
   constructor(props: Readonly<ErrorPageProps>) {
     super(props);
     this.state = {
@@ -41,7 +60,7 @@ class ErrorBoundary extends React.Component<ErrorPageProps, ErrorPageState> {
     };
   }
 
-  static getDerivedStateFromError(error: Error): ErrorPageState {
+  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
     return { hasError: true, error, historyState: history.state };
   }
 
@@ -79,7 +98,7 @@ class ErrorBoundary extends React.Component<ErrorPageProps, ErrorPageState> {
               <>
                 <span>{props.errorDescription}</span>
                 {this.state.error && ( 
-                  <ExpandableSection toggleText={props.errorToggleText ? props.errorToggleText : "Show details"} data-ouia-component-id={`${ouiaId}-toggle`}>
+                  <ExpandableSection className={props.classes.expandableSectionToggle} toggleText={props.errorToggleText ? props.errorToggleText : "Show details"} data-ouia-component-id={`${ouiaId}-toggle`}>
                     <ErrorStack error={this.state.error} data-ouia-component-id={`${ouiaId}-stack`}/>
                   </ExpandableSection>
                 )}
