@@ -2,7 +2,6 @@ import React from 'react';
 import ShortcutGrid from '../../packages/module/dist/dynamic/ShortcutGrid';
 
 describe('ShortcutGrid', () => {
-  /* eslint-disable no-console */
   it('renders ShortcutGrid', () => {
     const shortCutGridExample = <ShortcutGrid 
       shortcuts={[ 

@@ -10,6 +10,7 @@ describe('NotAuthorized', () => {
       prevPageButtonText="Go to previous page"
     />);
     cy.get('div div div h5').should('have.text', 'You do not have access to Test bundle');
+    cy.get('[class="pf-v5-c-empty-state__body"').should('have.text', 'Test text');
   });
 
   it('renders NotAuthorized with custom action buttons', () => {

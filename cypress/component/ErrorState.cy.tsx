@@ -3,10 +3,10 @@ import ErrorState from '../../packages/module/dist/dynamic/ErrorState';
 import { ActionButton } from '../../packages/module/dist/dynamic/ActionButton'
 
 describe('ErrorState', () => {
-  /* eslint-disable no-console */
   it('renders the Close button', () => {
     cy.mount(<ErrorState errorTitle='Sample error title' errorDescription='Sample error description' />);
     cy.get('h4').should('have.text', 'Sample error title');
+    cy.get('div div div div div div').should('have.text', 'Sample error description');
   });
 
   it('render with a custom footer', () => {
