@@ -8,7 +8,6 @@ exports[`SkeletonTable component should render correctly 1`] = `
       <table
         aria-label="Loading"
         class="pf-v5-c-table pf-m-grid-md"
-        columns="first,second"
         data-ouia-component-id="SkeletonTable"
         data-ouia-component-type="PF5/Table"
         data-ouia-safe="true"
@@ -220,7 +219,6 @@ exports[`SkeletonTable component should render correctly 1`] = `
     <table
       aria-label="Loading"
       class="pf-v5-c-table pf-m-grid-md"
-      columns="first,second"
       data-ouia-component-id="SkeletonTable"
       data-ouia-component-type="PF5/Table"
       data-ouia-safe="true"
@@ -489,7 +487,6 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
       <table
         aria-label="Loading"
         class="pf-v5-c-table pf-m-grid-md"
-        columns="first,second"
         data-ouia-component-id="SkeletonTable"
         data-ouia-component-type="PF5/Table"
         data-ouia-safe="true"
@@ -701,7 +698,6 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
     <table
       aria-label="Loading"
       class="pf-v5-c-table pf-m-grid-md"
-      columns="first,second"
       data-ouia-component-id="SkeletonTable"
       data-ouia-component-type="PF5/Table"
       data-ouia-safe="true"
