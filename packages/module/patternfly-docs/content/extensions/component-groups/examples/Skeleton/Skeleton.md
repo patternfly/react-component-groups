@@ -27,6 +27,38 @@ To indicate that a table's cells are still loading, a basic skeleton table uses 
 
 ```
 
+### Compact skeleton table
+
+The skeleton table can be displayed as a compact table by setting the `variant` prop to `compact`. Borders can be toggled off by setting `borders` to `false`.
+
+```js file="./SkeletonTableCompactExample.tsx"
+
+```
+
+### Selectable columns
+
+The skeleton table can display selectable columns by setting the `isSelectable` prop to `true`. The `selectVariant` prop determines if radio buttons or checkboxes are used.
+
+```js file="./SkeletonTableSelectableExample.tsx"
+
+```
+
+### Expandable rows
+
+The skeleton table can display the indicator for expandable rows by setting the `isExpandable` prop to `true`.
+
+```js file="./SkeletonTableExpandableExample.tsx"
+
+```
+
+### Customizable column headers
+
+Custom column headers can be provided by passing an array of strings or `Th` components to the `columns` prop instead of an array of strings. This allows you to support sorting on columns, add custom content, or style the column headers.
+
+```js file="./SkeletonTableCustomExample.tsx"
+
+```
+
 ### Full loading simulation
 
 The following example demonstrates the typical behavior of a skeleton table transitioning to a normal table as the data becomes available.
