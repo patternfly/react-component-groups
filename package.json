@@ -18,7 +18,7 @@
     "cypress:run:e2e": "cypress run --headless",
     "cypress:run:cp": "cypress run --component",
     "cypress:run:ci": "start-server-and-test start http://localhost:8006 cypress:run:e2e",
-    "start": "concurrently --kill-others \"npm run build:watch\" \"npm run docs:develop -w @patternfly/react-component-groups\"",
+    "start": "npm run build && concurrently --kill-others \"npm run build:watch\" \"npm run docs:develop -w @patternfly/react-component-groups\"",
     "serve:docs": "npm run docs:serve -w @patternfly/react-component-groups",
     "clean": "npm run clean -w @patternfly/react-component-groups",
     "lint:js": "node --max-old-space-size=4096 node_modules/.bin/eslint packages --ext js,jsx,ts,tsx --cache",
