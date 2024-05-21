@@ -28,7 +28,7 @@ export interface SkeletonTableProps extends Omit<TableProps, 'ref'> {
   isSelectable?: boolean;
   /** Flag indicating if the table is expandable */
   isExpandable?: boolean;
-  /** Determines if the row is selectable using radio or checkbox */
+  /** Determines if the row selection variant (radio/checkbox) */
   selectVariant?: RowSelectVariant;
   /** Custom columns for the table */
   columns?: string[] | React.ReactElement<typeof Th>[];
