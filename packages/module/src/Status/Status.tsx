@@ -1,6 +1,5 @@
 import * as React from 'react';
-import clsx from 'clsx';
-import { Button, ButtonVariant, Flex, FlexItem, Popover, PopoverPosition, PopoverProps, Text, TextVariants, } from '@patternfly/react-core';
+import { Button, ButtonVariant, Flex, FlexItem, Icon, Popover, PopoverPosition, PopoverProps, Text, TextVariants, } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
 
 export const StatusVariant = {
@@ -10,6 +9,16 @@ export const StatusVariant = {
 } as const;
 
 export type StatusVariant = typeof StatusVariant[keyof typeof StatusVariant];
+
+export const IconStatus = {
+  custom: 'custom',
+  info: 'info',
+  success: 'success',
+  warning: 'warning',
+  danger: 'danger'
+} as const;
+
+export type IconStatus = typeof IconStatus[keyof typeof IconStatus];
 
 export interface StatusProps extends React.PropsWithChildren {
   /** Status label text */
@@ -22,10 +31,14 @@ export interface StatusProps extends React.PropsWithChildren {
   variant?: StatusVariant;
   /** Status icon */
   icon?: React.ReactElement;
+  /** Status to control icon color */
+  status: IconStatus;
+  /** Icon title for accessibility */
+  iconTitle?: string;
   /** Custom OUIA ID */
   ouiaId?: string | number;
   /** Props for the optional popover */
-  popoverProps?: PopoverProps,
+  popoverProps?: PopoverProps;
   /** Optional link variant onClick callback */
   onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
@@ -39,30 +52,37 @@ const useStyles = createUseStyles({
   },
   statusDescription: {
     color: 'var(--pf-v5-c-content--small--Color)',
-  } 
+  }
 })
 
-export const Status: React.FC<StatusProps> = ({ variant = StatusVariant.plain, label, children, iconOnly, icon, ouiaId = 'Status', popoverProps, onClick, description, ...props }: StatusProps) => {
+export const Status: React.FC<StatusProps> = ({ variant = StatusVariant.plain, label, children, iconOnly, icon, status, iconTitle, ouiaId = 'Status', popoverProps, onClick, description, ...props }: StatusProps) => {
   const classes = useStyles();
+
+  if (iconOnly && !iconTitle) {
+    // eslint-disable-next-line no-console
+    console.warn('iconOnly is true but no iconTitle is provided. Please provide a descriptive iconTitle for accessibility.');
+  }
 
   const statusBody = (
     <Flex title={label} alignItems={{ default: 'alignItemsCenter' }} {...props}>
-      { icon && (
+      {icon && (
         <FlexItem className={classes.icon}>
-          {React.cloneElement(icon, { className: clsx('pf-v5-u-mr-md', icon?.props?.className), title: label, 'data-ouia-component-id': `${ouiaId}-icon` })}
+          <Icon className='pf-v5-u-mr-md' status={status} title={iconTitle ?? status} data-ouia-component-id={`${ouiaId}-icon`}>
+            {icon}
+          </Icon>
         </FlexItem>
       )}
-      { !iconOnly && (
+      {!iconOnly && (
         <FlexItem>
           <Text ouiaId={`${ouiaId}-label`} className={classes.statusLabel}>{label}</Text>
-          <Text component={TextVariants.small} ouiaId={`${ouiaId}-description`} className={classes.statusDescription}>{description}</Text>
+          {description && <Text component={TextVariants.small} ouiaId={`${ouiaId}-description`} className={classes.statusDescription}>{description}</Text>}
         </FlexItem>
       )}
     </Flex>
   );
 
   if (variant === StatusVariant.link) {
-    return ( 
+    return (
       <Button variant={ButtonVariant.link} title={label} onClick={onClick} ouiaId={`${ouiaId}-link-icon`}>
         {statusBody}
       </Button>
@@ -83,10 +103,10 @@ export const Status: React.FC<StatusProps> = ({ variant = StatusVariant.plain, l
           {statusBody}
         </Button>
       </Popover>
-    )
-  };
+    );
+  }
 
-  return statusBody
+  return statusBody;
 };
 
 export default Status;

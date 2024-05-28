@@ -15,7 +15,7 @@ beta: true
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/Status/Status.md
 ---
 import { BanIcon, CheckCircleIcon, ExclamationCircleIcon, ExclamationTriangleIcon } from '@patternfly/react-icons/';
-import { Status, StatusVariant } from '@patternfly/react-component-groups/dist/dynamic/Status';
+import { Status, StatusVariant, IconStatus } from '@patternfly/react-component-groups/dist/dynamic/Status';
 
 The **status** component's purpose is to display status with icon and text to the user. 
 

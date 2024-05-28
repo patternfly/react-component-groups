@@ -1,7 +1,7 @@
 import React from 'react';
-import { Status } from '@patternfly/react-component-groups/dist/dynamic/Status';
+import { Status, IconStatus } from '@patternfly/react-component-groups/dist/dynamic/Status';
 import { ExclamationTriangleIcon } from '@patternfly/react-icons/';
 
 export const BasicExample: React.FunctionComponent = () => (
-  <Status iconOnly label='Warning' icon={<ExclamationTriangleIcon color='var(--pf-v5-global--warning-color--100)'/>}/>
+  <Status iconOnly iconTitle='1 security issue found' status={IconStatus.warning} label='Warning' icon={<ExclamationTriangleIcon/>}/>
 );
