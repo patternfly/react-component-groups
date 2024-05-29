@@ -4,14 +4,14 @@ import { ActionButton } from '../../packages/module/dist/dynamic/ActionButton'
 
 describe('ErrorState', () => {
   it('renders the Close button', () => {
-    cy.mount(<ErrorState errorTitle='Sample error title' errorDescription='Sample error description' />);
+    cy.mount(<ErrorState titleText='Sample error title' bodyText='Sample error description' />);
     cy.get('h4').should('have.text', 'Sample error title');
     cy.get('div div div div div div').should('have.text', 'Sample error description');
   });
 
   it('render with a custom footer', () => {
     const onClickSpy = cy.spy().as('onClickSpy');
-    cy.mount(<ErrorState errorTitle='Sample error title' errorDescription='Sample error description' customFooter={<ActionButton variant="secondary" onClick={onClickSpy}>
+    cy.mount(<ErrorState titleText='Sample error title' bodyText='Sample error description' customFooter={<ActionButton variant="secondary" onClick={onClickSpy}>
     Custom action
     </ActionButton>}/>);
     cy.get('button').should('exist');
