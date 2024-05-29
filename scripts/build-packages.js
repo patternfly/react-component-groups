@@ -1,5 +1,5 @@
 const fse = require('fs-extra');
-const glob = require('glob');
+const { globSync } = require('glob');
 const path = require('path');
 
 const root = process.cwd();
@@ -9,7 +9,7 @@ const sourceFiles = glob
   .sync(`${root}/src/*/`)
   .filter((item) => !foldersBlackList.some((name) => item.includes(name)))
   .map((name) => name.replace(/\/$/, ''));
-const indexTypings = glob.sync(`${root}/src/index.d.ts`);
+const indexTypings = globSync(`${root}/src/index.d.ts`);
 
 async function copyTypings(files, dest) {
   const cmds = [];
@@ -22,7 +22,7 @@ async function copyTypings(files, dest) {
 
 async function createPackage(file, forceTypes) {
   const fileName = file.split('/').pop();
-  const esmSource = glob.sync(`${root}/esm/${fileName}/**/index.js`)[0];
+  const esmSource = globSync(`${root}/esm/${fileName}/**/index.js`)[0];
   /**
    * Prevent creating package.json for directories with no JS files (like CSS directories)
    */
@@ -37,12 +37,12 @@ async function createPackage(file, forceTypes) {
     main: 'index.js',
     module: esmRelative,
   };
-  const typings = glob.sync(`${root}/src/${fileName}/*.d.ts`);
+  const typings = globSync(`${root}/src/${fileName}/*.d.ts`);
   const cmds = [];
   if (forceTypes) {
     content.typings = 'index.d.ts';
   } else if (typings.length > 0) {
-    const hasIndex = glob.sync(`${root}/src/${fileName}/index.d.ts`).length > 0;
+    const hasIndex = globSync(`${root}/src/${fileName}/index.d.ts`).length > 0;
     if (hasIndex) {
       content.typings = 'index.d.ts';
     }
@@ -67,6 +67,7 @@ async function run(files, forceTypes) {
       copyTypings(indexTypings, root);
     }
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(error);
     process.exit(1);
   }
