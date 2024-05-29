@@ -5,7 +5,7 @@ import NotAuthorized from '../../packages/module/dist/dynamic/NotAuthorized';
 describe('NotAuthorized', () => {
   it('renders basic NotAuthorized', () => {
     cy.mount(<NotAuthorized 
-      description="Test text" 
+      bodyText="Test text" 
       serviceName="Test bundle"
       prevPageButtonText="Go to previous page"
     />);
@@ -21,7 +21,7 @@ describe('NotAuthorized', () => {
     </Button>;
     const customNotAuthorized = <NotAuthorized 
       primaryAction={primaryAction}
-      description="Test text" 
+      bodyText="Test text" 
       serviceName="Demo bundle"
       prevPageButtonText="Go to previous page"
     />
