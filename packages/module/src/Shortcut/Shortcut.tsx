@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { MouseIcon } from '@patternfly/react-icons';
-import { Chip } from '@patternfly/react-core';
+import { Label } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
@@ -61,37 +61,37 @@ const Shortcut: React.FunctionComponent<ShortcutProps> = ({
   const classes = useStyles();
   const badges = [
     ...(hover ? [ 
-      <Chip key="hover" isReadOnly data-test-id="hover">
+      <Label variant="outline" key="hover" data-test-id="hover">
         <MouseIcon /> Hover
-      </Chip>
+      </Label>
     ] : []),
     ...keys.map((key) => {
       const trimmedKey = key.trim().toLowerCase();
       return(
-        <Chip key={key} isReadOnly data-test-id={`${key}-key`}>
+        <Label variant="outline" key={key} data-test-id={`${key}-key`}>
           {showSymbols && symbols[trimmedKey] ? `${symbols[trimmedKey]} ` : '' }
           {key.length === 1 ? key.toUpperCase() : key[0].toUpperCase() + key.slice(1).toLowerCase()}
-        </Chip>
+        </Label>
       )}),
     ...(click ? [ 
-      <Chip key="click" isReadOnly data-test-id="click">
+      <Label variant="outline" key="click" data-test-id="click">
         <MouseIcon /> Click
-      </Chip>
+      </Label>
     ] : []),
     ...(rightClick ? [ 
-      <Chip key="right-click" isReadOnly data-test-id="right-click">
+      <Label variant="outline" key="right-click" data-test-id="right-click">
         <MouseIcon /> Right click
-      </Chip>
+      </Label>
     ] : []),
     ...(drag ? [ 
-      <Chip key="drag" isReadOnly data-test-id="drag">
+      <Label variant="outline" key="drag" data-test-id="drag">
         <MouseIcon /> Drag
-      </Chip>
+      </Label>
     ] : []),
     ...(dragAndDrop ? [ 
-      <Chip key="drag-and-drop" isReadOnly data-test-id="drag-and-drop">
+      <Label variant="outline" key="drag-and-drop" data-test-id="drag-and-drop">
         <MouseIcon /> Drag + Drop
-      </Chip>
+      </Label>
     ] : [])
   ]
 
