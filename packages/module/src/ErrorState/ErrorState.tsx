@@ -21,7 +21,7 @@ const useStyles = createUseStyles({
   }
 })
 
-export interface ErrorStateProps extends Omit<EmptyStateProps, 'children' | 'titleText' | 'bodyText'> {
+export interface ErrorStateProps extends Omit<EmptyStateProps, 'children' | 'titleText'> {
   /** Title of the error. */
   titleText?: string;
   /** A description of the error, if no body text is provided then it will be set to the defaultBodyText. */
