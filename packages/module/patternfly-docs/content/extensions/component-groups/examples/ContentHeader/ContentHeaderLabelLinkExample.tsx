@@ -5,6 +5,11 @@ import ContentHeader from '@patternfly/react-component-groups/dist/dynamic/Conte
 export const BasicExample: React.FunctionComponent = () => (
   <ContentHeader 
     title='My Title'
-    subtitle='This is a subtitle for your content header' 
+    subtitle='This is a subtitle for your content header'
+    label='Org. Administrator'
+    linkProps={{
+      label: 'Go to this link',
+      isExternal: true,
+    }}
   />
 );

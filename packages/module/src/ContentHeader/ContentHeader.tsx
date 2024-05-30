@@ -1,89 +1,110 @@
 import React from 'react';
-import { Divider, Flex, FlexItem, Icon, Label, Split, SplitItem, Text } from '@patternfly/react-core';
+import {
+  Flex,
+  FlexItem,
+  Split,
+  SplitItem,
+  Text,
+  PageSection,
+  TextContent,
+  Button,
+  ButtonVariant,
+  ButtonProps,
+  Divider,
+  Label,
+  Icon,
+} from '@patternfly/react-core';
 import { ExternalLinkAltIcon } from '@patternfly/react-icons';
-import ActionMenu, { ActionMenuProps, ActionMenuVariant } from '../ActionMenu/ActionMenu';
 
-export interface ContentHeaderProps {
-/** title for content header */ 
-  title: string;
-/** subtitle for content header */
-  subtitle: string;
-/** Optional link below subtitle */
-  link?: string;
-/** Optional icon for content header (appears to the left of the content header's title with a divider) */
-  icon?: React.ReactNode
-/** Optional badge for content header (appears to the right of the content header's title) */
-  label?: React.ReactNode;
-/** Breadcrumbs component */
-  breadcrumbs?: React.ReactNode;
-/** Menu that appears to the far right of the title */
-  actionMenu?: ActionMenuProps;
-  /** Custom OUIA ID */
-  ouiaId?: string | number,
+export interface PageHeaderLinkProps extends ButtonProps {
+  /** Title for the link */
+  label: string;
+  /** Indicates if the link points to an external page */
+  isExternal?: boolean;
 }
 
-const ContentHeader: React.FunctionComponent<React.PropsWithChildren<ContentHeaderProps>> = ({
+export interface ContentHeaderProps {
+  /** Title for content header */
+  title: string;
+  /** Subtitle for content header */
+  subtitle: string;
+  /** Optional link below subtitle */
+  linkProps?: PageHeaderLinkProps;
+  /** Optional icon for content header (appears to the left of the content header's title with a divider) */
+  icon?: React.ReactNode;
+  /** Optional label for content header (appears to the right of the content header's title) */
+  label?: React.ReactNode;
+  /** Breadcrumbs component */
+  breadcrumbs?: React.ReactNode;
+  /** Menu that appears to the far right of the title */
+  actionMenu?: React.ReactNode;
+  /** Custom OUIA ID */
+  ouiaId?: string | number;
+}
+
+export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<ContentHeaderProps>> = ({
   title,
   subtitle,
-  link,
+  linkProps,
   icon,
   label,
   breadcrumbs = null,
   actionMenu,
+  ouiaId = 'ContentHeader',
 }: ContentHeaderProps) => (
-  <>
+  <PageSection variant="light" className='pf-v5-u-p-md'>
     <div className="pf-v5-u-mb-md">
       {breadcrumbs}
     </div>
     <Flex>
-      <FlexItem>
-        <Icon>{icon}</Icon>
-      </FlexItem>
-      <Divider
-        orientation={{
-          default: 'vertical',
-        }}
-      />
-      <FlexItem>
+      {icon && (
+        <>
+          <FlexItem>
+            <Icon size="lg">
+              {icon}
+            </Icon>
+          </FlexItem>
+          <Divider orientation={{
+            default: 'vertical',
+          }} />
+        </>
+      )}
+      <FlexItem flex={{ default: 'flex_1' }}>
         <Split hasGutter>
           <SplitItem>
-            <Text className="pf-v5-u-font-family-heading pf-v5-u-font-size-xl pf-v5-u-mb-md">{title}</Text>
+            <TextContent>
+              <Text component="h1" ouiaId={`${ouiaId}-title`}>
+                {title}
+              </Text>
+            </TextContent>
           </SplitItem>
-          <SplitItem>
-            <Label isCompact color='purple' className='pf-v5-u-mb-md'>{label}</Label>
-          </SplitItem>
-          <SplitItem isFilled></SplitItem>
-          <SplitItem>
-            {/* Optional action menu - ungrouped actions */}
-            {actionMenu?.actions && (
-              <ActionMenu
-                actions={actionMenu.actions}
-                isDisabled={actionMenu?.isDisabled}
-                variant={ActionMenuVariant.KEBAB}
-                id={actionMenu?.id}
-              />
-            )}
-          </SplitItem>
+          {label && (
+            <SplitItem>
+              <Label className='pf-v5-u-mb-md' isCompact>
+                {label}
+              </Label>
+            </SplitItem>
+          )}
+          <SplitItem isFilled />
+          {actionMenu && (
+            <SplitItem>
+              {actionMenu}
+            </SplitItem>
+          )}
         </Split>
-        <FlexItem>
-          <Text className="pf-v5-u-font-family-text pf-v5-u-font-size-sm pf-v5-u-mb-md">
+        <TextContent>
+          <Text component="p" ouiaId={`${ouiaId}-subtitle`}>
             {subtitle}
           </Text>
-        </FlexItem>
-        <FlexItem>
-          <a
-            href=""
-            title=""
-            target="_blank"
-            rel="noreferrer"
-          >
-            {link} <ExternalLinkAltIcon />
-          </a>          
-        </FlexItem>
+          {linkProps && (
+            <Button variant={ButtonVariant.link} ouiaId={`${ouiaId}-link-button`} isInline icon={linkProps.isExternal ? <ExternalLinkAltIcon /> : null} iconPosition="end" {...linkProps}>
+              {linkProps.label}
+            </Button>
+          )}
+        </TextContent>
       </FlexItem>
     </Flex>
-  </>
-)
-;
+  </PageSection>
+);
 
 export default ContentHeader;
