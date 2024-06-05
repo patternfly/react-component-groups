@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from 'react';
 import ContentHeader from '@patternfly/react-component-groups/dist/dynamic/ContentHeader';
 

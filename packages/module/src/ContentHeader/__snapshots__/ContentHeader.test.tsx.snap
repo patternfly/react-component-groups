@@ -6,11 +6,8 @@ exports[`Contentheader component should render 1`] = `
   "baseElement": <body>
     <div>
       <section
-        class="pf-v5-c-page__main-section pf-m-light pf-v5-u-p-md"
+        class="pf-v5-c-page__main-section pf-m-light"
       >
-        <div
-          class="pf-v5-u-mb-md"
-        />
         <div
           class="pf-v5-l-flex"
         >
@@ -27,7 +24,7 @@ exports[`Contentheader component should render 1`] = `
                   class="pf-v5-c-content"
                 >
                   <h1
-                    class=""
+                    class="pf-v5-u-mb-sm"
                     data-ouia-component-id="ContentHeader-title"
                     data-ouia-component-type="PF5/Text"
                     data-ouia-safe="true"
@@ -61,11 +58,8 @@ exports[`Contentheader component should render 1`] = `
   </body>,
   "container": <div>
     <section
-      class="pf-v5-c-page__main-section pf-m-light pf-v5-u-p-md"
+      class="pf-v5-c-page__main-section pf-m-light"
     >
-      <div
-        class="pf-v5-u-mb-md"
-      />
       <div
         class="pf-v5-l-flex"
       >
@@ -82,7 +76,7 @@ exports[`Contentheader component should render 1`] = `
                 class="pf-v5-c-content"
               >
                 <h1
-                  class=""
+                  class="pf-v5-u-mb-sm"
                   data-ouia-component-id="ContentHeader-title"
                   data-ouia-component-type="PF5/Text"
                   data-ouia-safe="true"
