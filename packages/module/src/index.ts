@@ -12,6 +12,9 @@ export * from './Ansible';
 export { default as Battery } from './Battery';
 export * from './Battery';
 
+export { default as BulkSelect } from './BulkSelect';
+export * from './BulkSelect';
+
 export { default as CloseButton } from './CloseButton';
 export * from './CloseButton';
 
