@@ -18,6 +18,9 @@ export * from './CloseButton';
 export { default as ColumnManagementModal } from './ColumnManagementModal';
 export * from './ColumnManagementModal';
 
+export { default as ContentHeader } from './ContentHeader';
+export * from './ContentHeader';
+
 export { default as DetailsPage } from './DetailsPage';
 export * from './DetailsPage';
 
