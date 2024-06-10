@@ -10,7 +10,7 @@ exports[`BulkSelect component should render 1`] = `
       >
         <label
           class="pf-v5-c-check pf-m-standalone"
-          for="page"
+          for="BulkSelect-checkbox"
         >
           <input
             aria-invalid="false"
@@ -19,7 +19,7 @@ exports[`BulkSelect component should render 1`] = `
             data-ouia-component-id="BulkSelect-checkbox"
             data-ouia-component-type="PF5/MenuToggleCheckbox"
             data-ouia-safe="true"
-            name="page"
+            name="BulkSelect-checkbox"
             type="checkbox"
           />
         </label>
@@ -30,7 +30,6 @@ exports[`BulkSelect component should render 1`] = `
           data-ouia-safe="true"
           data-pf-content="true"
         >
-           
           2 selected
         </p>
         <button
@@ -71,7 +70,7 @@ exports[`BulkSelect component should render 1`] = `
     >
       <label
         class="pf-v5-c-check pf-m-standalone"
-        for="page"
+        for="BulkSelect-checkbox"
       >
         <input
           aria-invalid="false"
@@ -80,7 +79,7 @@ exports[`BulkSelect component should render 1`] = `
           data-ouia-component-id="BulkSelect-checkbox"
           data-ouia-component-type="PF5/MenuToggleCheckbox"
           data-ouia-safe="true"
-          name="page"
+          name="BulkSelect-checkbox"
           type="checkbox"
         />
       </label>
@@ -91,7 +90,6 @@ exports[`BulkSelect component should render 1`] = `
         data-ouia-safe="true"
         data-pf-content="true"
       >
-         
         2 selected
       </p>
       <button
