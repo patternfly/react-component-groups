@@ -30,7 +30,7 @@ To display a default bulk select, you need to pass number of selected items usin
 
 ### Bulk select with all option
 
-To display an option for seleting all data at once, pass `canSelectAll` flag together with `totalCount` of data entries. You can also remove the page select option by setting `isDataPaginated` to `false`,
+To display an option for selecting all data at once, pass `canSelectAll` flag together with `totalCount` of data entries. You can also remove the page select option by setting `isDataPaginated` to `false`,
 
 ```js file="./BulkSelectAllExample.tsx"
 
