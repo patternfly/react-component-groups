@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BulkSelect component should render 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="pf-v5-c-menu-toggle pf-m-split-button"
+      >
+        <label
+          class="pf-v5-c-check pf-m-standalone"
+          for="BulkSelect-checkbox"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="Select page"
+            class="pf-v5-c-check__input"
+            data-ouia-component-id="BulkSelect-checkbox"
+            data-ouia-component-type="PF5/MenuToggleCheckbox"
+            data-ouia-safe="true"
+            name="BulkSelect-checkbox"
+            type="checkbox"
+          />
+        </label>
+        <p
+          class=""
+          data-ouia-component-id="BulkSelect-text"
+          data-ouia-component-type="PF5/Text"
+          data-ouia-safe="true"
+          data-pf-content="true"
+        >
+          2 selected
+        </p>
+        <button
+          aria-expanded="false"
+          aria-label="Bulk select toggle"
+          class="pf-v5-c-menu-toggle__button"
+          data-ouia-component-id="BulkSelect-toggle"
+          type="button"
+        >
+          <span
+            class="pf-v5-c-menu-toggle__controls"
+          >
+            <span
+              class="pf-v5-c-menu-toggle__toggle-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="pf-v5-svg"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                viewBox="0 0 320 512"
+                width="1em"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                />
+              </svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="pf-v5-c-menu-toggle pf-m-split-button"
+    >
+      <label
+        class="pf-v5-c-check pf-m-standalone"
+        for="BulkSelect-checkbox"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="Select page"
+          class="pf-v5-c-check__input"
+          data-ouia-component-id="BulkSelect-checkbox"
+          data-ouia-component-type="PF5/MenuToggleCheckbox"
+          data-ouia-safe="true"
+          name="BulkSelect-checkbox"
+          type="checkbox"
+        />
+      </label>
+      <p
+        class=""
+        data-ouia-component-id="BulkSelect-text"
+        data-ouia-component-type="PF5/Text"
+        data-ouia-safe="true"
+        data-pf-content="true"
+      >
+        2 selected
+      </p>
+      <button
+        aria-expanded="false"
+        aria-label="Bulk select toggle"
+        class="pf-v5-c-menu-toggle__button"
+        data-ouia-component-id="BulkSelect-toggle"
+        type="button"
+      >
+        <span
+          class="pf-v5-c-menu-toggle__controls"
+        >
+          <span
+            class="pf-v5-c-menu-toggle__toggle-icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="pf-v5-svg"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
