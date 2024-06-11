@@ -86,6 +86,7 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
 
   return (
     <Dropdown
+      shouldFocusToggleOnSelect
       ouiaId={`${ouiaId}-dropdown`}
       onSelect={(_e, value) => {
         setOpen(!isOpen);
