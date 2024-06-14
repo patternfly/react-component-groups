@@ -7,8 +7,7 @@ import {
   MenuToggle,
   MenuToggleCheckbox,
   MenuToggleCheckboxProps,
-  MenuToggleElement,
-  Text
+  MenuToggleElement
 } from '@patternfly/react-core';
 
 export const BulkSelectValue = {
@@ -118,9 +117,9 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
                 {...menuToggleCheckboxProps}
               />,
               selectedCount > 0 ? (
-                <Text ouiaId={`${ouiaId}-text`} key="bulk-select-text">
+                <span data-ouia-component-id={`${ouiaId}-text`} key="bulk-select-text">
                   {`${selectedCount} selected`}
-                </Text>
+                </span>
               ) : null
             ]
           }}
