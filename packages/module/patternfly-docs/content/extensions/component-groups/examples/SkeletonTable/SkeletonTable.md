@@ -13,6 +13,7 @@ source: react
 propComponents: ['SkeletonTable']
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/Skeleton/Skeleton.md
 ---
+import { useCallback, useEffect } from 'react';
 import SkeletonTable from '@patternfly/react-component-groups/dist/dynamic/SkeletonTable';
 
 The **skeleton table** component is used to display placeholder "skeletons" within a table as its contents load.
@@ -63,7 +64,7 @@ Custom column headers can be provided by passing an array of strings or `Th` com
 
 The following example demonstrates the typical behavior of a skeleton table transitioning to a normal table as the data becomes available.
 
-To simulate this loading process, select the `Reload table` button and wait for the data to populate.
+To simulate this loading process, click the "Reload table" button and wait for the data to populate.
 
 
 ```js file="./SkeletonTableLoadingExample.tsx"
