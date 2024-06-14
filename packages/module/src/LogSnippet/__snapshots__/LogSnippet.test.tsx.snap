@@ -6,16 +6,16 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pf-v5-l-flex pf-m-column logSnippet-0-2-1 variantBorderColor-0-2-2 variantBorderColor-d0-0-2-4"
+        class="pf-v6-l-flex pf-m-column logSnippet-0-2-1 variantBorderColor-0-2-2 variantBorderColor-d0-0-2-4"
         data-ouia-component-id="LogSnippet"
       >
         <div
           class=""
         >
           <p
-            class="statusMessage-0-2-3"
+            class="pf-v6-c-content--p statusMessage-0-2-3"
             data-ouia-component-id="LogSnippet-message"
-            data-ouia-component-type="PF5/Text"
+            data-ouia-component-type="PF6/Text"
             data-ouia-safe="true"
             data-pf-content="true"
           >
@@ -26,18 +26,18 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
           class=""
         >
           <div
-            class="pf-v5-c-code-block"
+            class="pf-v6-c-code-block"
             data-ouia-component-id="LogSnippet-code-block"
           >
             <div
-              class="pf-v5-c-code-block__content"
+              class="pf-v6-c-code-block__content"
             >
               <pre
-                class="pf-v5-c-code-block__pre"
+                class="pf-v6-c-code-block__pre"
                 data-ouia-component-id="LogSnippet-code-content"
               >
                 <code
-                  class="pf-v5-c-code-block__code"
+                  class="pf-v6-c-code-block__code"
                 >
                   console.log(hello world)
                 </code>
@@ -50,16 +50,16 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pf-v5-l-flex pf-m-column logSnippet-0-2-1 variantBorderColor-0-2-2 variantBorderColor-d0-0-2-4"
+      class="pf-v6-l-flex pf-m-column logSnippet-0-2-1 variantBorderColor-0-2-2 variantBorderColor-d0-0-2-4"
       data-ouia-component-id="LogSnippet"
     >
       <div
         class=""
       >
         <p
-          class="statusMessage-0-2-3"
+          class="pf-v6-c-content--p statusMessage-0-2-3"
           data-ouia-component-id="LogSnippet-message"
-          data-ouia-component-type="PF5/Text"
+          data-ouia-component-type="PF6/Text"
           data-ouia-safe="true"
           data-pf-content="true"
         >
@@ -70,18 +70,18 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
         class=""
       >
         <div
-          class="pf-v5-c-code-block"
+          class="pf-v6-c-code-block"
           data-ouia-component-id="LogSnippet-code-block"
         >
           <div
-            class="pf-v5-c-code-block__content"
+            class="pf-v6-c-code-block__content"
           >
             <pre
-              class="pf-v5-c-code-block__pre"
+              class="pf-v6-c-code-block__pre"
               data-ouia-component-id="LogSnippet-code-content"
             >
               <code
-                class="pf-v5-c-code-block__code"
+                class="pf-v6-c-code-block__code"
               >
                 console.log(hello world)
               </code>
