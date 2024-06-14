@@ -6,25 +6,25 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
   "baseElement": <body>
     <div>
       <button
-        aria-disabled="true"
+        aria-disabled="false"
         aria-label="Tag count"
-        class="pf-v5-c-button pf-m-plain pf-m-disabled buttonTagCount-0-2-1"
+        class="pf-v6-c-button pf-m-plain buttonTagCount-0-2-1"
         data-ouia-component-id="TagCount"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         disabled=""
         type="button"
       >
         <span
-          class="pf-v5-c-icon"
+          class="pf-v6-c-icon"
           data-ouia-component-id="TagCount-icon"
         >
           <span
-            class="pf-v5-c-icon__content pf-m-md"
+            class="pf-v6-c-icon__content pf-m-md"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"
@@ -46,25 +46,25 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
   </body>,
   "container": <div>
     <button
-      aria-disabled="true"
+      aria-disabled="false"
       aria-label="Tag count"
-      class="pf-v5-c-button pf-m-plain pf-m-disabled buttonTagCount-0-2-1"
+      class="pf-v6-c-button pf-m-plain buttonTagCount-0-2-1"
       data-ouia-component-id="TagCount"
-      data-ouia-component-type="PF5/Button"
+      data-ouia-component-type="PF6/Button"
       data-ouia-safe="true"
       disabled=""
       type="button"
     >
       <span
-        class="pf-v5-c-icon"
+        class="pf-v6-c-icon"
         data-ouia-component-id="TagCount-icon"
       >
         <span
-          class="pf-v5-c-icon__content pf-m-md"
+          class="pf-v6-c-icon__content pf-m-md"
         >
           <svg
             aria-hidden="true"
-            class="pf-v5-svg"
+            class="pf-v6-svg"
             fill="currentColor"
             height="1em"
             role="img"
@@ -145,22 +145,22 @@ exports[`TagCount component should render a tag count of 11 1`] = `
       <button
         aria-disabled="false"
         aria-label="Tag count"
-        class="pf-v5-c-button pf-m-plain buttonTagCount-0-2-1"
+        class="pf-v6-c-button pf-m-plain buttonTagCount-0-2-1"
         data-ouia-component-id="TagCount"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >
         <span
-          class="pf-v5-c-icon"
+          class="pf-v6-c-icon"
           data-ouia-component-id="TagCount-icon"
         >
           <span
-            class="pf-v5-c-icon__content pf-m-md"
+            class="pf-v6-c-icon__content pf-m-md"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"
@@ -186,22 +186,22 @@ exports[`TagCount component should render a tag count of 11 1`] = `
     <button
       aria-disabled="false"
       aria-label="Tag count"
-      class="pf-v5-c-button pf-m-plain buttonTagCount-0-2-1"
+      class="pf-v6-c-button pf-m-plain buttonTagCount-0-2-1"
       data-ouia-component-id="TagCount"
-      data-ouia-component-type="PF5/Button"
+      data-ouia-component-type="PF6/Button"
       data-ouia-safe="true"
       type="button"
     >
       <span
-        class="pf-v5-c-icon"
+        class="pf-v6-c-icon"
         data-ouia-component-id="TagCount-icon"
       >
         <span
-          class="pf-v5-c-icon__content pf-m-md"
+          class="pf-v6-c-icon__content pf-m-md"
         >
           <svg
             aria-hidden="true"
-            class="pf-v5-svg"
+            class="pf-v6-svg"
             fill="currentColor"
             height="1em"
             role="img"
