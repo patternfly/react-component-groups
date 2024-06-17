@@ -27,13 +27,13 @@ describe('NotAuthorized component', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should show custom description', () => {
-    const { container } = render(<NotAuthorized {...initialProps} description="Some text" />);
+  it('should show custom body text', () => {
+    const { container } = render(<NotAuthorized {...initialProps} bodyText="Some text" />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should show custom title', () => {
-    const { container } = render(<NotAuthorized title="Custom title" />);
+    const { container } = render(<NotAuthorized titleText="Custom title" />);
     expect(container.firstChild).toMatchSnapshot();
   });
 

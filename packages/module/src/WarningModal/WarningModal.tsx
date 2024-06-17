@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, ModalProps, Modal, ModalVariant, ButtonVariant, Checkbox } from '@patternfly/react-core';
+import { Button, ButtonVariant, Checkbox } from '@patternfly/react-core';
+import { ModalProps, Modal, ModalVariant } from '@patternfly/react-core/deprecated';
 
 export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   /** Callback for the confirm action button. */
@@ -74,13 +75,13 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
           onChange={(_event, value) => setChecked(value)}
           label={checkboxLabel}
           id="warning-modal-check"
-          className="pf-v5-u-mt-lg"
+          className="pf-v6-u-mt-lg"
           ouiaId={`${ouiaId}-confirm-checkbox`}
         />
       ) : null}
     </Modal>
   )
-  
+
 };
 
 

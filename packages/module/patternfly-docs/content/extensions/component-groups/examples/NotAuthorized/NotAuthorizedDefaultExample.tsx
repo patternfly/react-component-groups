@@ -3,9 +3,8 @@ import NotAuthorized from "@patternfly/react-component-groups/dist/dynamic/NotAu
 
 export const BasicExample: React.FunctionComponent = () => (
   <NotAuthorized 
-    description="Description text" 
+    bodyText="Description text" 
     serviceName="Demo bundle"
-    prevPageButtonText="Go to previous page"
   />
 );
 

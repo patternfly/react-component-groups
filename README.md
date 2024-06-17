@@ -33,7 +33,7 @@ export interface MyComponentProps {
 const useStyles = createUseStyles({
   myText: {
     fontFamily: 'monospace',
-    fontSize: 'var(--pf-v5-global--icon--FontSize--md)',
+    fontSize: 'var(--pf-v6-global--icon--FontSize--md)',
   },
 })
 
@@ -134,7 +134,7 @@ When adding/making changes to a component, always make sure your code is tested:
 ### Styling:
 - for styling always use JSS
 - new classNames should be named in camelCase starting with the name of a given component and following with more details clarifying its purpose/component's subsection to which the class is applied (`actionMenu`, `actionMenuDropdown`, `actionMenuDropdownToggle`, etc.)
-- do not use `pf-v5-u-XXX` classes, use CSS variables in a custom class instead (styles for the utility classes are not bundled with the standard patternfly.css - it would require the consumer to import also addons.css)
+- do not use `pf-v6-u-XXX` classes, use CSS variables in a custom class instead (styles for the utility classes are not bundled with the standard patternfly.css - it would require the consumer to import also addons.css)
 
 ## Building for production
 

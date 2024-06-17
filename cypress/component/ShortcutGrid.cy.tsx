@@ -1,17 +1,22 @@
 import React from 'react';
 import ShortcutGrid from '../../packages/module/dist/dynamic/ShortcutGrid';
 
+const shortcuts = [ 
+  { description: 'Open new tab', keys: [ 'cmd', 'shift', 't' ] }, 
+  { description: 'Open new page', keys: [ 'opt', 'n' ] },
+  { description: 'Move object', keys: [ 'ctrl' ], drag: true },  
+];
+
 describe('ShortcutGrid', () => {
   it('renders ShortcutGrid', () => {
     const shortCutGridExample = <ShortcutGrid 
-      shortcuts={[ 
-        { description: 'Open new tab', keys: [ 'cmd', 'shift', 't' ] }, 
-        { description: 'Open new page', keys: [ 'opt', 'n' ] },
-        { description: 'Move object', keys: [ 'ctrl' ], drag: true },  
-      ]}
+      shortcuts={shortcuts}
     />
     cy.mount(shortCutGridExample);
-    cy.get('[class="pf-v5-l-grid pf-m-all-6-col pf-m-gutter"]').should('exist');
-    cy.get('div div').should('have.text', '⌘ Cmd + ⇧ Shift + TOpen new tab⌥ Opt + NOpen new page^ Ctrl +  DragMove object⌘ Cmd + ⇧ Shift + T⌘ Cmd⇧ ShiftTOpen new tab⌥ Opt + N⌥ OptNOpen new page^ Ctrl +  Drag^ Ctrl DragMove object');
+    cy.get('[data-ouia-component-id="ShortcutGrid"]').should('exist');
+    shortcuts.forEach((shortcut, index) => {
+      cy.get(`[data-ouia-component-id="ShortcutGrid-item-description-${index}"]`)
+        .should('have.text', shortcut.description);
+    });
   });
 })
