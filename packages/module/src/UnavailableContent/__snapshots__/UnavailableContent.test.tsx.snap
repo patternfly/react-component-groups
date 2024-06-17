@@ -6,7 +6,7 @@ exports[`Unavailable component should render with a link 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pf-v6-c-empty-state pf-m-lg emptyStateUnavailable-0-2-1"
+        class="pf-v6-c-empty-state pf-m-lg pf-m-danger"
         data-ouia-component-id="UnavailableContent"
       >
         <div
@@ -50,7 +50,7 @@ exports[`Unavailable component should render with a link 1`] = `
              
             <a
               aria-disabled="false"
-              class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-2"
+              class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
               data-ouia-component-id="UnavailableContent-link-button"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
@@ -69,7 +69,7 @@ exports[`Unavailable component should render with a link 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pf-v6-c-empty-state pf-m-lg emptyStateUnavailable-0-2-1"
+      class="pf-v6-c-empty-state pf-m-lg pf-m-danger"
       data-ouia-component-id="UnavailableContent"
     >
       <div
@@ -113,7 +113,7 @@ exports[`Unavailable component should render with a link 1`] = `
            
           <a
             aria-disabled="false"
-            class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-2"
+            class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
             data-ouia-component-id="UnavailableContent-link-button"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
@@ -189,7 +189,7 @@ exports[`Unavailable component should render with no link 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pf-v6-c-empty-state pf-m-lg emptyStateUnavailable-0-2-1"
+        class="pf-v6-c-empty-state pf-m-lg pf-m-danger"
         data-ouia-component-id="UnavailableContent"
       >
         <div
@@ -233,7 +233,7 @@ exports[`Unavailable component should render with no link 1`] = `
              
             <a
               aria-disabled="false"
-              class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-2"
+              class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
               data-ouia-component-id="UnavailableContent-link-button"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
@@ -252,7 +252,7 @@ exports[`Unavailable component should render with no link 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pf-v6-c-empty-state pf-m-lg emptyStateUnavailable-0-2-1"
+      class="pf-v6-c-empty-state pf-m-lg pf-m-danger"
       data-ouia-component-id="UnavailableContent"
     >
       <div
@@ -296,7 +296,7 @@ exports[`Unavailable component should render with no link 1`] = `
            
           <a
             aria-disabled="false"
-            class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-2"
+            class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
             data-ouia-component-id="UnavailableContent-link-button"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"

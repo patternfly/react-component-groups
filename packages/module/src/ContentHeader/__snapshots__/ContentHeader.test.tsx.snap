@@ -6,27 +6,27 @@ exports[`Contentheader component should render 1`] = `
   "baseElement": <body>
     <div>
       <section
-        class="pf-v5-c-page__main-section pf-m-light"
+        class="pf-v6-c-page__main-section"
       >
         <div
-          class="pf-v5-l-flex"
+          class="pf-v6-l-flex"
         >
           <div
             class="pf-m-flex-1"
           >
             <div
-              class="pf-v5-l-split pf-m-gutter"
+              class="pf-v6-l-split pf-m-gutter"
             >
               <div
-                class="pf-v5-l-split__item"
+                class="pf-v6-l-split__item"
               >
                 <div
-                  class="pf-v5-c-content"
+                  class="pf-v6-c-content"
                 >
                   <h1
-                    class="pf-v5-u-mb-sm"
+                    class="pf-v6-c-content--h1 pf-v6-u-mb-sm"
                     data-ouia-component-id="ContentHeader-title"
-                    data-ouia-component-type="PF5/Text"
+                    data-ouia-component-type="PF6/Text"
                     data-ouia-safe="true"
                     data-pf-content="true"
                   >
@@ -35,16 +35,16 @@ exports[`Contentheader component should render 1`] = `
                 </div>
               </div>
               <div
-                class="pf-v5-l-split__item pf-m-fill"
+                class="pf-v6-l-split__item pf-m-fill"
               />
             </div>
             <div
-              class="pf-v5-c-content"
+              class="pf-v6-c-content"
             >
               <p
-                class=""
+                class="pf-v6-c-content--p"
                 data-ouia-component-id="ContentHeader-subtitle"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
@@ -58,27 +58,27 @@ exports[`Contentheader component should render 1`] = `
   </body>,
   "container": <div>
     <section
-      class="pf-v5-c-page__main-section pf-m-light"
+      class="pf-v6-c-page__main-section"
     >
       <div
-        class="pf-v5-l-flex"
+        class="pf-v6-l-flex"
       >
         <div
           class="pf-m-flex-1"
         >
           <div
-            class="pf-v5-l-split pf-m-gutter"
+            class="pf-v6-l-split pf-m-gutter"
           >
             <div
-              class="pf-v5-l-split__item"
+              class="pf-v6-l-split__item"
             >
               <div
-                class="pf-v5-c-content"
+                class="pf-v6-c-content"
               >
                 <h1
-                  class="pf-v5-u-mb-sm"
+                  class="pf-v6-c-content--h1 pf-v6-u-mb-sm"
                   data-ouia-component-id="ContentHeader-title"
-                  data-ouia-component-type="PF5/Text"
+                  data-ouia-component-type="PF6/Text"
                   data-ouia-safe="true"
                   data-pf-content="true"
                 >
@@ -87,16 +87,16 @@ exports[`Contentheader component should render 1`] = `
               </div>
             </div>
             <div
-              class="pf-v5-l-split__item pf-m-fill"
+              class="pf-v6-l-split__item pf-m-fill"
             />
           </div>
           <div
-            class="pf-v5-c-content"
+            class="pf-v6-c-content"
           >
             <p
-              class=""
+              class="pf-v6-c-content--p"
               data-ouia-component-id="ContentHeader-subtitle"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
