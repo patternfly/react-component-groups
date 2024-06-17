@@ -48,10 +48,10 @@ const useStyles = createUseStyles({
     margin: 0
   },
   statusLabel: {
-    lineHeight: 'var(--pf-v5-global--LineHeight--sm)',
+    lineHeight: 'var(--pf-v6-global--LineHeight--sm)',
   },
   statusDescription: {
-    color: 'var(--pf-v5-c-content--small--Color)',
+    color: 'var(--pf-t--color--gray--50)',
   }
 })
 
@@ -67,14 +67,14 @@ export const Status: React.FC<StatusProps> = ({ variant = StatusVariant.plain, l
     <Flex title={label} alignItems={{ default: 'alignItemsCenter' }} {...props}>
       {icon && (
         <FlexItem className={classes.icon}>
-          <Icon className='pf-v5-u-mr-md' status={status} title={iconTitle ?? status} data-ouia-component-id={`${ouiaId}-icon`}>
+          <Icon className='pf-v6-u-mr-md' status={status} title={iconTitle ?? status} data-ouia-component-id={`${ouiaId}-icon`}>
             {icon}
           </Icon>
         </FlexItem>
       )}
       {!iconOnly && (
         <FlexItem>
-          <Text ouiaId={`${ouiaId}-label`} className={classes.statusLabel}>{label}</Text>
+          <Text ouiaId={`${ouiaId}-label`} className={classes.statusLabel} style={{ marginBlockEnd: 0 }}>{label}</Text>
           {description && <Text component={TextVariants.small} ouiaId={`${ouiaId}-description`} className={classes.statusDescription}>{description}</Text>}
         </FlexItem>
       )}

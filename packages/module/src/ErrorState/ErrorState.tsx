@@ -1,12 +1,10 @@
-import { ExclamationCircleIcon } from '@patternfly/react-icons/';
 import {
   Button,
   EmptyState,
   EmptyStateBody,
   EmptyStateFooter,
-  EmptyStateHeader,
-  EmptyStateIcon,
   EmptyStateProps,
+  EmptyStateStatus,
   EmptyStateVariant,
   Stack,
   StackItem, 
@@ -16,34 +14,33 @@ import React from 'react';
 
 const useStyles = createUseStyles({
   errorIcon: {
-    fill: 'var(--pf-v5-global--danger-color--100)',
+    fill: 'var(--pf-t--global--color--status--danger--default)',
   },
   errorDescription: {
     margin: 'auto'
   }
 })
 
-export interface ErrorStateProps extends Omit<EmptyStateProps, 'children'> {
+export interface ErrorStateProps extends Omit<EmptyStateProps, 'children' | 'titleText'> {
   /** Title of the error. */
-  errorTitle?: string;
-  /** A description of the error, if no description is provided then it will be set to the defaultErrorDescription. */
-  errorDescription?: React.ReactNode;
+  titleText?: string;
+  /** A description of the error, if no body text is provided then it will be set to the defaultBodyText. */
+  bodyText?: React.ReactNode;
   /** A default description of the error used if no errorDescription is provided. */
-  defaultErrorDescription?: React.ReactNode;
+  defaultBodyText?: React.ReactNode;
   /** Custom footer content */
   customFooter?: React.ReactNode;
   /** ErrorState OUIA ID */
   ouiaId?: string | number;
 }
 
-const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ errorTitle = 'Something went wrong', errorDescription, defaultErrorDescription, customFooter, ouiaId = "ErrorState", ...props }: ErrorStateProps) => { 
+const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ titleText = 'Something went wrong', bodyText, defaultBodyText, customFooter, ouiaId = "ErrorState", ...props }: ErrorStateProps) => { 
   const classes = useStyles();
   return (
-    <EmptyState variant={EmptyStateVariant.lg} {...props}>
-      <EmptyStateHeader titleText={<>{errorTitle}</>} icon={<EmptyStateIcon className={classes.errorIcon} icon={ExclamationCircleIcon} data-ouia-component-id={`${ouiaId}-icon`} />} headingLevel="h4" data-ouia-component-id={`${ouiaId}-header`}/>
+    <EmptyState headingLevel="h4" status={EmptyStateStatus.danger} variant={EmptyStateVariant.lg} titleText={titleText} data-ouia-component-id={ouiaId} {...props}>
       <EmptyStateBody data-ouia-component-id={`${ouiaId}-body`}>
         <Stack>
-          {errorDescription ? <StackItem className={classes.errorDescription}>{errorDescription}</StackItem> : defaultErrorDescription}
+          {bodyText ? <StackItem className={classes.errorDescription}>{bodyText}</StackItem> : defaultBodyText}
         </Stack>
       </EmptyStateBody>
       <EmptyStateFooter data-ouia-component-id={`${ouiaId}-footer`}>

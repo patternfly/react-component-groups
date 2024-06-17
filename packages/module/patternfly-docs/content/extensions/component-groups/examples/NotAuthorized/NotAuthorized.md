@@ -15,7 +15,7 @@ A **not authorized** component displays an error screen to users when they attem
 
 ### Basic not authorized
 
-A basic not authorized component displays a title, a description, and custom actions. 
+A basic not authorized component displays a title, body text, and custom actions. 
 
 ```js file="./NotAuthorizedDefaultExample.tsx"
 
@@ -23,7 +23,7 @@ A basic not authorized component displays a title, a description, and custom act
 
 ### Not authorized with custom actions
 
-You can customize the not authorized component to fit your use case by specifying the `serviceName` to appear in the title, a `description` of appropriate context for the error, and the `actions` that a user can take instead.
+You can customize the not authorized component to fit your use case by specifying the `serviceName` to appear in the title, a `bodyText` of appropriate context for the error, and the `actions` that a user can take instead.
 
 ```js file="./NotAuthorizedCustomExample.tsx"
 

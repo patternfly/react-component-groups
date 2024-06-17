@@ -1,7 +1,7 @@
-import React from 'react';
-import SkeletonTable from '@patternfly/react-core/dist/js/components/Skeleton/SkeletonTable';
+import React, { useCallback, useEffect } from 'react';
 import { Table, Tbody, Td, Th, Tr, Thead } from '@patternfly/react-table';
 import { Button, Stack, StackItem } from '@patternfly/react-core';
+import SkeletonTable from "@patternfly/react-component-groups/dist/dynamic/SkeletonTable";
 
 interface Repository {
   name: string;
@@ -11,19 +11,24 @@ interface Repository {
   lastCommit: string;
 }
 
+
+
 export const SkeletonTableExample: React.FC = () => {
   const [ isLoaded, setIsLoaded ] = React.useState(false);
-
-  const simulatedAsyncCall = new Promise<boolean>((resolve) => {
-    setTimeout(() => {
-      resolve(true);
-    }, 5000);
-  });
-
-  const loadData = async () => {
-    const result = await simulatedAsyncCall;
+  
+  const loadData = useCallback(async () => {
+    const result = await new Promise<boolean>((resolve) => {
+      setTimeout(() => {
+        resolve(true);
+      }, 5000);
+    });
     setIsLoaded(result);
-  };
+  }, []);  
+
+  useEffect(() => {
+    loadData();
+  }, [ loadData ])
+ 
 
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },

@@ -6,23 +6,23 @@ exports[`Status component should render correctly 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pf-v5-l-flex pf-m-align-items-center"
+        class="pf-v6-l-flex pf-m-align-items-center"
         title="Warning"
       >
         <div
           class="icon-0-2-1"
         >
           <span
-            class="pf-v5-c-icon pf-v5-u-mr-md"
+            class="pf-v6-c-icon pf-v6-u-mr-md"
             data-ouia-component-id="Status-icon"
             title="warning"
           >
             <span
-              class="pf-v5-c-icon__content pf-m-warning"
+              class="pf-v6-c-icon__content pf-m-warning"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -40,11 +40,12 @@ exports[`Status component should render correctly 1`] = `
           class=""
         >
           <p
-            class="statusLabel-0-2-2"
+            class="pf-v6-c-content--p statusLabel-0-2-2"
             data-ouia-component-id="Status-label"
-            data-ouia-component-type="PF5/Text"
+            data-ouia-component-type="PF6/Text"
             data-ouia-safe="true"
             data-pf-content="true"
+            style="margin-block-end: 0;"
           >
             Warning
           </p>
@@ -54,23 +55,23 @@ exports[`Status component should render correctly 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pf-v5-l-flex pf-m-align-items-center"
+      class="pf-v6-l-flex pf-m-align-items-center"
       title="Warning"
     >
       <div
         class="icon-0-2-1"
       >
         <span
-          class="pf-v5-c-icon pf-v5-u-mr-md"
+          class="pf-v6-c-icon pf-v6-u-mr-md"
           data-ouia-component-id="Status-icon"
           title="warning"
         >
           <span
-            class="pf-v5-c-icon__content pf-m-warning"
+            class="pf-v6-c-icon__content pf-m-warning"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"
@@ -88,11 +89,12 @@ exports[`Status component should render correctly 1`] = `
         class=""
       >
         <p
-          class="statusLabel-0-2-2"
+          class="pf-v6-c-content--p statusLabel-0-2-2"
           data-ouia-component-id="Status-label"
-          data-ouia-component-type="PF5/Text"
+          data-ouia-component-type="PF6/Text"
           data-ouia-safe="true"
           data-pf-content="true"
+          style="margin-block-end: 0;"
         >
           Warning
         </p>
@@ -160,31 +162,31 @@ exports[`Status component should render correctly link 1`] = `
     <div>
       <button
         aria-disabled="false"
-        class="pf-v5-c-button pf-m-link"
+        class="pf-v6-c-button pf-m-link"
         data-ouia-component-id="Status-link-icon"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         title="Ready"
         type="button"
       >
         <div
-          class="pf-v5-l-flex pf-m-align-items-center"
+          class="pf-v6-l-flex pf-m-align-items-center"
           title="Ready"
         >
           <div
             class="icon-0-2-1"
           >
             <span
-              class="pf-v5-c-icon pf-v5-u-mr-md"
+              class="pf-v6-c-icon pf-v6-u-mr-md"
               data-ouia-component-id="Status-icon"
               title="success"
             >
               <span
-                class="pf-v5-c-icon__content pf-m-success"
+                class="pf-v6-c-icon__content pf-m-success"
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v5-svg"
+                  class="pf-v6-svg"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -202,11 +204,12 @@ exports[`Status component should render correctly link 1`] = `
             class=""
           >
             <p
-              class="statusLabel-0-2-2"
+              class="pf-v6-c-content--p statusLabel-0-2-2"
               data-ouia-component-id="Status-label"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
+              style="margin-block-end: 0;"
             >
               Ready
             </p>
@@ -218,31 +221,31 @@ exports[`Status component should render correctly link 1`] = `
   "container": <div>
     <button
       aria-disabled="false"
-      class="pf-v5-c-button pf-m-link"
+      class="pf-v6-c-button pf-m-link"
       data-ouia-component-id="Status-link-icon"
-      data-ouia-component-type="PF5/Button"
+      data-ouia-component-type="PF6/Button"
       data-ouia-safe="true"
       title="Ready"
       type="button"
     >
       <div
-        class="pf-v5-l-flex pf-m-align-items-center"
+        class="pf-v6-l-flex pf-m-align-items-center"
         title="Ready"
       >
         <div
           class="icon-0-2-1"
         >
           <span
-            class="pf-v5-c-icon pf-v5-u-mr-md"
+            class="pf-v6-c-icon pf-v6-u-mr-md"
             data-ouia-component-id="Status-icon"
             title="success"
           >
             <span
-              class="pf-v5-c-icon__content pf-m-success"
+              class="pf-v6-c-icon__content pf-m-success"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -260,11 +263,12 @@ exports[`Status component should render correctly link 1`] = `
           class=""
         >
           <p
-            class="statusLabel-0-2-2"
+            class="pf-v6-c-content--p statusLabel-0-2-2"
             data-ouia-component-id="Status-label"
-            data-ouia-component-type="PF5/Text"
+            data-ouia-component-type="PF6/Text"
             data-ouia-safe="true"
             data-pf-content="true"
+            style="margin-block-end: 0;"
           >
             Ready
           </p>
@@ -336,31 +340,31 @@ exports[`Status component should render correctly popover 1`] = `
       >
         <button
           aria-disabled="false"
-          class="pf-v5-c-button pf-m-link pf-m-inline"
+          class="pf-v6-c-button pf-m-link pf-m-inline"
           data-ouia-component-id="Status-popover-icon"
-          data-ouia-component-type="PF5/Button"
+          data-ouia-component-type="PF6/Button"
           data-ouia-safe="true"
           style="text-decoration: none;"
           type="button"
         >
           <div
-            class="pf-v5-l-flex pf-m-align-items-center"
+            class="pf-v6-l-flex pf-m-align-items-center"
             title="Not Ready"
           >
             <div
               class="icon-0-2-1"
             >
               <span
-                class="pf-v5-c-icon pf-v5-u-mr-md"
+                class="pf-v6-c-icon pf-v6-u-mr-md"
                 data-ouia-component-id="Status-icon"
                 title="danger"
               >
                 <span
-                  class="pf-v5-c-icon__content pf-m-danger"
+                  class="pf-v6-c-icon__content pf-m-danger"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -378,11 +382,12 @@ exports[`Status component should render correctly popover 1`] = `
               class=""
             >
               <p
-                class="statusLabel-0-2-2"
+                class="pf-v6-c-content--p statusLabel-0-2-2"
                 data-ouia-component-id="Status-label"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
+                style="margin-block-end: 0;"
               >
                 Not Ready
               </p>
@@ -398,31 +403,31 @@ exports[`Status component should render correctly popover 1`] = `
     >
       <button
         aria-disabled="false"
-        class="pf-v5-c-button pf-m-link pf-m-inline"
+        class="pf-v6-c-button pf-m-link pf-m-inline"
         data-ouia-component-id="Status-popover-icon"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         style="text-decoration: none;"
         type="button"
       >
         <div
-          class="pf-v5-l-flex pf-m-align-items-center"
+          class="pf-v6-l-flex pf-m-align-items-center"
           title="Not Ready"
         >
           <div
             class="icon-0-2-1"
           >
             <span
-              class="pf-v5-c-icon pf-v5-u-mr-md"
+              class="pf-v6-c-icon pf-v6-u-mr-md"
               data-ouia-component-id="Status-icon"
               title="danger"
             >
               <span
-                class="pf-v5-c-icon__content pf-m-danger"
+                class="pf-v6-c-icon__content pf-m-danger"
               >
                 <svg
                   aria-hidden="true"
-                  class="pf-v5-svg"
+                  class="pf-v6-svg"
                   fill="currentColor"
                   height="1em"
                   role="img"
@@ -440,11 +445,12 @@ exports[`Status component should render correctly popover 1`] = `
             class=""
           >
             <p
-              class="statusLabel-0-2-2"
+              class="pf-v6-c-content--p statusLabel-0-2-2"
               data-ouia-component-id="Status-label"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
+              style="margin-block-end: 0;"
             >
               Not Ready
             </p>
@@ -513,23 +519,23 @@ exports[`Status component should render correctly with description 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pf-v5-l-flex pf-m-align-items-center"
+        class="pf-v6-l-flex pf-m-align-items-center"
         title="Warning"
       >
         <div
           class="icon-0-2-1"
         >
           <span
-            class="pf-v5-c-icon pf-v5-u-mr-md"
+            class="pf-v6-c-icon pf-v6-u-mr-md"
             data-ouia-component-id="Status-icon"
             title="warning"
           >
             <span
-              class="pf-v5-c-icon__content pf-m-warning"
+              class="pf-v6-c-icon__content pf-m-warning"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -547,18 +553,19 @@ exports[`Status component should render correctly with description 1`] = `
           class=""
         >
           <p
-            class="statusLabel-0-2-2"
+            class="pf-v6-c-content--p statusLabel-0-2-2"
             data-ouia-component-id="Status-label"
-            data-ouia-component-type="PF5/Text"
+            data-ouia-component-type="PF6/Text"
             data-ouia-safe="true"
             data-pf-content="true"
+            style="margin-block-end: 0;"
           >
             Warning
           </p>
           <small
-            class="statusDescription-0-2-3"
+            class="pf-v6-c-content--small statusDescription-0-2-3"
             data-ouia-component-id="Status-description"
-            data-ouia-component-type="PF5/Text"
+            data-ouia-component-type="PF6/Text"
             data-ouia-safe="true"
             data-pf-content="true"
           >
@@ -570,23 +577,23 @@ exports[`Status component should render correctly with description 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pf-v5-l-flex pf-m-align-items-center"
+      class="pf-v6-l-flex pf-m-align-items-center"
       title="Warning"
     >
       <div
         class="icon-0-2-1"
       >
         <span
-          class="pf-v5-c-icon pf-v5-u-mr-md"
+          class="pf-v6-c-icon pf-v6-u-mr-md"
           data-ouia-component-id="Status-icon"
           title="warning"
         >
           <span
-            class="pf-v5-c-icon__content pf-m-warning"
+            class="pf-v6-c-icon__content pf-m-warning"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"
@@ -604,18 +611,19 @@ exports[`Status component should render correctly with description 1`] = `
         class=""
       >
         <p
-          class="statusLabel-0-2-2"
+          class="pf-v6-c-content--p statusLabel-0-2-2"
           data-ouia-component-id="Status-label"
-          data-ouia-component-type="PF5/Text"
+          data-ouia-component-type="PF6/Text"
           data-ouia-safe="true"
           data-pf-content="true"
+          style="margin-block-end: 0;"
         >
           Warning
         </p>
         <small
-          class="statusDescription-0-2-3"
+          class="pf-v6-c-content--small statusDescription-0-2-3"
           data-ouia-component-id="Status-description"
-          data-ouia-component-type="PF5/Text"
+          data-ouia-component-type="PF6/Text"
           data-ouia-safe="true"
           data-pf-content="true"
         >
@@ -684,23 +692,23 @@ exports[`Status component should render iconOnly correctly 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pf-v5-l-flex pf-m-align-items-center"
+        class="pf-v6-l-flex pf-m-align-items-center"
         title="Warning"
       >
         <div
           class="icon-0-2-1"
         >
           <span
-            class="pf-v5-c-icon pf-v5-u-mr-md"
+            class="pf-v6-c-icon pf-v6-u-mr-md"
             data-ouia-component-id="Status-icon"
             title="1 security issue found"
           >
             <span
-              class="pf-v5-c-icon__content pf-m-warning"
+              class="pf-v6-c-icon__content pf-m-warning"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -719,23 +727,23 @@ exports[`Status component should render iconOnly correctly 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pf-v5-l-flex pf-m-align-items-center"
+      class="pf-v6-l-flex pf-m-align-items-center"
       title="Warning"
     >
       <div
         class="icon-0-2-1"
       >
         <span
-          class="pf-v5-c-icon pf-v5-u-mr-md"
+          class="pf-v6-c-icon pf-v6-u-mr-md"
           data-ouia-component-id="Status-icon"
           title="1 security issue found"
         >
           <span
-            class="pf-v5-c-icon__content pf-m-warning"
+            class="pf-v6-c-icon__content pf-m-warning"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"

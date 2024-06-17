@@ -71,7 +71,7 @@ export const ColumnManagementModalExample: React.FunctionComponent = () => {
         isOpen={isOpen}
         onClose={() => setOpen(false)}
       />
-      <Button onClick={() => setOpen(true)} variant={ButtonVariant.secondary} icon={<ColumnsIcon />}>Manage columns</Button>
+      <Button className='pf-v6-u-mb-sm' onClick={() => setOpen(true)} variant={ButtonVariant.secondary} icon={<ColumnsIcon />}>Manage columns</Button>
       <Table
         aria-label="Simple table"
         variant="compact"

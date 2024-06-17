@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Modal,
   Button,
   TextContent,
   Text,
@@ -13,10 +12,9 @@ import {
   DataListItemCells,
   Split,
   SplitItem,
-  ModalProps,
-  ButtonVariant,
-  ModalVariant
+  ButtonVariant
 } from '@patternfly/react-core';
+import { ModalProps, Modal, ModalVariant } from '@patternfly/react-core/deprecated';
 
 export interface ColumnManagementModalColumn {
   /** Internal identifier of a column by which table displayed columns are filtered. */
@@ -87,7 +85,7 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
     applyColumns(currentColumns);
     onClose(event);
   };
-  
+
   const handleCancel = event => {
     setCurrentColumns(appliedColumns.map(column => ({ ...column, isShown: column.isShown ?? column.isShownByDefault })));
     onClose(event);

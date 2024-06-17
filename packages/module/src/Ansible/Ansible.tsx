@@ -14,19 +14,19 @@ export interface AnsibleProps extends React.DetailedHTMLProps<React.HTMLAttribut
 const useStyles = createUseStyles({
   ansible: {
     '& svg': {
-      height: 'var(--pf-v5-global--FontSize--xl)',
+      height: 'var(--pf-t--global--font--size--xl)',
       position: 'relative',
       top: '0.25rem'
     }
   },
   ansibleSupported: {
     '& .st0': {
-      fill: 'var(--pf-v5-global--info-color--100)',
+      fill: 'var(--pf-t--color--blue--40)',
     }
   },
   ansibleUnsupported: {
     '& .st0, .st1, .st2': {
-      fill: 'var(--pf-v5-global--disabled-color--100)',
+      fill: 'var(--pf-t--color--gray--50)',
       cursor: 'not-allowed',
     }
   } 
