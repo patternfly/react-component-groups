@@ -607,7 +607,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
               class="pf-v6-c-list pf-v6-u-font-size-sm pf-v6-u-link-color pf-v6-u-ml-0"
             >
               <li
-                class=""
+                class="pf-v6-c-content--li"
               >
                 <span>
                   <button
@@ -627,7 +627,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
                 </span>
               </li>
               <li
-                class=""
+                class="pf-v6-c-content--li"
               >
                 <span>
                   <button
@@ -647,7 +647,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
                 </span>
               </li>
               <li
-                class=""
+                class="pf-v6-c-content--li"
               >
                 <span>
                   <button
