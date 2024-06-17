@@ -16,11 +16,12 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 
 import LogSnippet from '@patternfly/react-component-groups/dist/dynamic/LogSnippet';
 
-A **log snippet** component provides a way to display a log snippet or code along with a message
+A **log snippet** component provides a way to display a log snippet or code along with a message.
 
 ## Examples
 
 ### Basic log snippet
+The log snippet supports several variants configurable using `variant` property for different scenarios. Each variant has an associated status icon and color similar to [alert component](/components/alert).
 
 ```js file="./LogSnippetExample.tsx"
 

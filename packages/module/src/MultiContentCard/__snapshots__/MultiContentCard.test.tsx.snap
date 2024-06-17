@@ -2,39 +2,39 @@
 
 exports[`MultiContentCard component should render basic multi content card 1`] = `
 <div
-  class="pf-v5-c-card pf-m-expanded"
+  class="pf-v6-c-card pf-m-expanded"
   data-ouia-component-id="MultiContentCard"
-  data-ouia-component-type="PF5/Card"
+  data-ouia-component-type="PF6/Card"
   data-ouia-safe="true"
   id=""
 >
   <div
-    class="pf-v5-l-flex pf-m-align-items-stretch pf-m-align-self-stretch"
+    class="pf-v6-l-flex pf-m-align-items-stretch pf-m-align-self-stretch"
   >
     <div
       class="pf-m-flex-1"
       data-ouia-component-id="MultiContentCard-content-0"
     >
       <div
-        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        class="pf-v6-c-card pf-m-full-height pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Card-2"
-        data-ouia-component-type="PF5/Card"
+        data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
       >
         <div
-          class="pf-v5-c-card__header"
+          class="pf-v6-c-card__header"
         >
           <div
-            class="pf-v5-c-card__header-main"
+            class="pf-v6-c-card__header-main"
           >
             <div
-              class="pf-v5-c-content"
+              class="pf-v6-c-content"
             >
               <h4
-                class=""
+                class="pf-v6-c-content--h4"
                 data-ouia-component-id="OUIA-Generated-Text-1"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
@@ -44,27 +44,27 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
           </div>
         </div>
         <div
-          class="pf-v5-c-card__body"
+          class="pf-v6-c-card__body"
         >
           <div
-            class="pf-v5-c-content"
+            class="pf-v6-c-content"
           >
             <p
-              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
               data-ouia-component-id="OUIA-Generated-Text-2"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               <span
-                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -80,9 +80,9 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
               Configure application
             </p>
             <p
-              class="pf-v5-u-font-size-sm"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-3"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
@@ -91,22 +91,22 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
           </div>
         </div>
         <div
-          class="pf-v5-c-card__footer"
+          class="pf-v6-c-card__footer"
         >
           <div
-            class="pf-v5-c-content"
+            class="pf-v6-c-content"
           >
             <ul
-              class="pf-v5-u-font-size-sm pf-v5-u-link-color pf-v5-u-ml-0"
+              class="pf-v6-c-content--ul pf-v6-u-font-size-sm pf-v6-u-link-color pf-v6-u-ml-0"
             >
               <li
-                class=""
+                class="pf-v6-c-content--li"
               >
                 <button
                   aria-disabled="false"
-                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-1"
-                  data-ouia-component-type="PF5/Button"
+                  data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -114,13 +114,13 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
                 </button>
               </li>
               <li
-                class=""
+                class="pf-v6-c-content--li"
               >
                 <button
                   aria-disabled="false"
-                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-2"
-                  data-ouia-component-type="PF5/Button"
+                  data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -128,13 +128,13 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
                 </button>
               </li>
               <li
-                class=""
+                class="pf-v6-c-content--li"
               >
                 <button
                   aria-disabled="false"
-                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-3"
-                  data-ouia-component-type="PF5/Button"
+                  data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -151,34 +151,34 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
       data-ouia-component-id="MultiContentCard-content-1"
     >
       <div
-        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        class="pf-v6-c-card pf-m-full-height pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Card-3"
-        data-ouia-component-type="PF5/Card"
+        data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
       >
         <div
-          class="pf-v5-c-card__body pf-v5-u-pt-3xl-on-md"
+          class="pf-v6-c-card__body pf-v6-u-pt-3xl-on-md"
         >
           <div
-            class="pf-v5-c-content"
+            class="pf-v6-c-content"
           >
             <p
-              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
               data-ouia-component-id="OUIA-Generated-Text-4"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               <span
-                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -194,9 +194,9 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
               Configure access
             </p>
             <p
-              class="pf-v5-u-font-size-sm"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-5"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
@@ -205,33 +205,33 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
           </div>
         </div>
         <div
-          class="pf-v5-c-card__footer"
+          class="pf-v6-c-card__footer"
         >
           <p
-            class=""
+            class="pf-v6-c-content--p"
             data-ouia-component-id="OUIA-Generated-Text-6"
-            data-ouia-component-type="PF5/Text"
+            data-ouia-component-type="PF6/Text"
             data-ouia-safe="true"
             data-pf-content="true"
           >
             <button
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link pf-m-inline"
+              class="pf-v6-c-button pf-m-link pf-m-inline"
               data-ouia-component-id="OUIA-Generated-Button-link-4"
-              data-ouia-component-type="PF5/Button"
+              data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               type="button"
             >
               Learn more
               <span
-                class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+                class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -254,25 +254,25 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
       data-ouia-component-id="MultiContentCard-content-2"
     >
       <div
-        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        class="pf-v6-c-card pf-m-full-height pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Card-4"
-        data-ouia-component-type="PF5/Card"
+        data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
       >
         <div
-          class="pf-v5-c-card__header"
+          class="pf-v6-c-card__header"
         >
           <div
-            class="pf-v5-c-card__header-main"
+            class="pf-v6-c-card__header-main"
           >
             <div
-              class="pf-v5-c-content"
+              class="pf-v6-c-content"
             >
               <h4
-                class=""
+                class="pf-v6-c-content--h4"
                 data-ouia-component-id="OUIA-Generated-Text-7"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
@@ -282,27 +282,27 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
           </div>
         </div>
         <div
-          class="pf-v5-c-card__body"
+          class="pf-v6-c-card__body"
         >
           <div
-            class="pf-v5-c-content"
+            class="pf-v6-c-content"
           >
             <p
-              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
               data-ouia-component-id="OUIA-Generated-Text-8"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               <span
-                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -318,9 +318,9 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
               Configure notifications
             </p>
             <p
-              class="pf-v5-u-font-size-sm"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-9"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
@@ -329,33 +329,33 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
           </div>
         </div>
         <div
-          class="pf-v5-c-card__footer"
+          class="pf-v6-c-card__footer"
         >
           <p
-            class=""
+            class="pf-v6-c-content--p"
             data-ouia-component-id="OUIA-Generated-Text-10"
-            data-ouia-component-type="PF5/Text"
+            data-ouia-component-type="PF6/Text"
             data-ouia-safe="true"
             data-pf-content="true"
           >
             <button
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link pf-m-inline"
+              class="pf-v6-c-button pf-m-link pf-m-inline"
               data-ouia-component-id="OUIA-Generated-Button-link-5"
-              data-ouia-component-type="PF5/Button"
+              data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               type="button"
             >
               Learn more
               <span
-                class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+                class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -379,35 +379,35 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
 
 exports[`MultiContentCard component should render expandable multi content card - collapsed 1`] = `
 <div
-  class="pf-v5-c-card"
+  class="pf-v6-c-card"
   data-ouia-component-id="MultiContentCard"
-  data-ouia-component-type="PF5/Card"
+  data-ouia-component-type="PF6/Card"
   data-ouia-safe="true"
   id=""
 >
   <div
-    class="pf-v5-c-card__header"
+    class="pf-v6-c-card__header"
     data-ouia-component-id="MultiContentCard-header"
   >
     <div
-      class="pf-v5-c-card__header-toggle"
+      class="pf-v6-c-card__header-toggle"
     >
       <button
         aria-disabled="false"
         aria-expanded="false"
         aria-label="Details"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-2"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >
         <span
-          class="pf-v5-c-card__header-toggle-icon"
+          class="pf-v6-c-card__header-toggle-icon"
         >
           <svg
             aria-hidden="true"
-            class="pf-v5-svg"
+            class="pf-v6-svg"
             fill="currentColor"
             height="1em"
             role="img"
@@ -422,22 +422,22 @@ exports[`MultiContentCard component should render expandable multi content card 
       </button>
     </div>
     <div
-      class="pf-v5-c-card__actions"
+      class="pf-v6-c-card__actions"
     />
     <div
-      class="pf-v5-c-card__header-main"
+      class="pf-v6-c-card__header-main"
     >
       <div
-        class="pf-v5-c-card__title"
+        class="pf-v6-c-card__title"
       >
         <div
-          class="pf-v5-c-card__title-text"
+          class="pf-v6-c-card__title-text"
           data-ouia-component-id="MultiContentCard-title"
         >
           <h2
-            class="pf-v5-c-title pf-m-xl"
+            class="pf-v6-c-title pf-m-xl"
             data-ouia-component-id="OUIA-Generated-Title-2"
-            data-ouia-component-type="PF5/Title"
+            data-ouia-component-type="PF6/Title"
             data-ouia-safe="true"
           >
             Expandable card toggle text
@@ -451,35 +451,35 @@ exports[`MultiContentCard component should render expandable multi content card 
 
 exports[`MultiContentCard component should render expandable multi content card - expanded 1`] = `
 <div
-  class="pf-v5-c-card pf-m-expanded"
+  class="pf-v6-c-card pf-m-expanded"
   data-ouia-component-id="MultiContentCard"
-  data-ouia-component-type="PF5/Card"
+  data-ouia-component-type="PF6/Card"
   data-ouia-safe="true"
   id=""
 >
   <div
-    class="pf-v5-c-card__header"
+    class="pf-v6-c-card__header"
     data-ouia-component-id="MultiContentCard-header"
   >
     <div
-      class="pf-v5-c-card__header-toggle"
+      class="pf-v6-c-card__header-toggle"
     >
       <button
         aria-disabled="false"
         aria-expanded="true"
         aria-label="Details"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-1"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >
         <span
-          class="pf-v5-c-card__header-toggle-icon"
+          class="pf-v6-c-card__header-toggle-icon"
         >
           <svg
             aria-hidden="true"
-            class="pf-v5-svg"
+            class="pf-v6-svg"
             fill="currentColor"
             height="1em"
             role="img"
@@ -494,22 +494,22 @@ exports[`MultiContentCard component should render expandable multi content card 
       </button>
     </div>
     <div
-      class="pf-v5-c-card__actions"
+      class="pf-v6-c-card__actions"
     />
     <div
-      class="pf-v5-c-card__header-main"
+      class="pf-v6-c-card__header-main"
     >
       <div
-        class="pf-v5-c-card__title"
+        class="pf-v6-c-card__title"
       >
         <div
-          class="pf-v5-c-card__title-text"
+          class="pf-v6-c-card__title-text"
           data-ouia-component-id="MultiContentCard-title"
         >
           <h2
-            class="pf-v5-c-title pf-m-xl"
+            class="pf-v6-c-title pf-m-xl"
             data-ouia-component-id="OUIA-Generated-Title-1"
-            data-ouia-component-type="PF5/Title"
+            data-ouia-component-type="PF6/Title"
             data-ouia-safe="true"
           >
             Expandable card toggle text
@@ -519,36 +519,36 @@ exports[`MultiContentCard component should render expandable multi content card 
     </div>
   </div>
   <div
-    class="pf-v5-c-card__expandable-content"
+    class="pf-v6-c-card__expandable-content"
     data-ouia-component-id="MultiContentCard-expandable-content"
   >
     <div
-      class="pf-v5-l-flex pf-m-align-items-stretch pf-m-align-self-stretch"
+      class="pf-v6-l-flex pf-m-align-items-stretch pf-m-align-self-stretch"
     >
       <div
         class="pf-m-flex-1"
         data-ouia-component-id="MultiContentCard-content-0"
       >
         <div
-          class="pf-v5-c-card pf-m-full-height pf-m-plain"
+          class="pf-v6-c-card pf-m-full-height pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Card-6"
-          data-ouia-component-type="PF5/Card"
+          data-ouia-component-type="PF6/Card"
           data-ouia-safe="true"
           id=""
         >
           <div
-            class="pf-v5-c-card__header"
+            class="pf-v6-c-card__header"
           >
             <div
-              class="pf-v5-c-card__header-main"
+              class="pf-v6-c-card__header-main"
             >
               <div
-                class="pf-v5-c-content"
+                class="pf-v6-c-content"
               >
                 <h4
-                  class=""
+                  class="pf-v6-c-content--h4"
                   data-ouia-component-id="OUIA-Generated-Text-11"
-                  data-ouia-component-type="PF5/Text"
+                  data-ouia-component-type="PF6/Text"
                   data-ouia-safe="true"
                   data-pf-content="true"
                 >
@@ -558,27 +558,27 @@ exports[`MultiContentCard component should render expandable multi content card 
             </div>
           </div>
           <div
-            class="pf-v5-c-card__body"
+            class="pf-v6-c-card__body"
           >
             <div
-              class="pf-v5-c-content"
+              class="pf-v6-c-content"
             >
               <p
-                class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+                class="pf-v6-c-content--p pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
                 data-ouia-component-id="OUIA-Generated-Text-12"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
                 <span
-                  class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                  class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
                 >
                   <span
-                    class="pf-v5-c-icon__content"
+                    class="pf-v6-c-icon__content"
                   >
                     <svg
                       aria-hidden="true"
-                      class="pf-v5-svg"
+                      class="pf-v6-svg"
                       fill="currentColor"
                       height="1em"
                       role="img"
@@ -594,9 +594,9 @@ exports[`MultiContentCard component should render expandable multi content card 
                 Configure application
               </p>
               <p
-                class="pf-v5-u-font-size-sm"
+                class="pf-v6-c-content--p pf-v6-u-font-size-sm"
                 data-ouia-component-id="OUIA-Generated-Text-13"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
@@ -605,22 +605,22 @@ exports[`MultiContentCard component should render expandable multi content card 
             </div>
           </div>
           <div
-            class="pf-v5-c-card__footer"
+            class="pf-v6-c-card__footer"
           >
             <div
-              class="pf-v5-c-content"
+              class="pf-v6-c-content"
             >
               <ul
-                class="pf-v5-u-font-size-sm pf-v5-u-link-color pf-v5-u-ml-0"
+                class="pf-v6-c-content--ul pf-v6-u-font-size-sm pf-v6-u-link-color pf-v6-u-ml-0"
               >
                 <li
-                  class=""
+                  class="pf-v6-c-content--li"
                 >
                   <button
                     aria-disabled="false"
-                    class="pf-v5-c-button pf-m-link pf-m-inline"
+                    class="pf-v6-c-button pf-m-link pf-m-inline"
                     data-ouia-component-id="OUIA-Generated-Button-link-6"
-                    data-ouia-component-type="PF5/Button"
+                    data-ouia-component-type="PF6/Button"
                     data-ouia-safe="true"
                     type="button"
                   >
@@ -628,13 +628,13 @@ exports[`MultiContentCard component should render expandable multi content card 
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-v6-c-content--li"
                 >
                   <button
                     aria-disabled="false"
-                    class="pf-v5-c-button pf-m-link pf-m-inline"
+                    class="pf-v6-c-button pf-m-link pf-m-inline"
                     data-ouia-component-id="OUIA-Generated-Button-link-7"
-                    data-ouia-component-type="PF5/Button"
+                    data-ouia-component-type="PF6/Button"
                     data-ouia-safe="true"
                     type="button"
                   >
@@ -642,13 +642,13 @@ exports[`MultiContentCard component should render expandable multi content card 
                   </button>
                 </li>
                 <li
-                  class=""
+                  class="pf-v6-c-content--li"
                 >
                   <button
                     aria-disabled="false"
-                    class="pf-v5-c-button pf-m-link pf-m-inline"
+                    class="pf-v6-c-button pf-m-link pf-m-inline"
                     data-ouia-component-id="OUIA-Generated-Button-link-8"
-                    data-ouia-component-type="PF5/Button"
+                    data-ouia-component-type="PF6/Button"
                     data-ouia-safe="true"
                     type="button"
                   >
@@ -665,34 +665,34 @@ exports[`MultiContentCard component should render expandable multi content card 
         data-ouia-component-id="MultiContentCard-content-1"
       >
         <div
-          class="pf-v5-c-card pf-m-full-height pf-m-plain"
+          class="pf-v6-c-card pf-m-full-height pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Card-7"
-          data-ouia-component-type="PF5/Card"
+          data-ouia-component-type="PF6/Card"
           data-ouia-safe="true"
           id=""
         >
           <div
-            class="pf-v5-c-card__body pf-v5-u-pt-3xl-on-md"
+            class="pf-v6-c-card__body pf-v6-u-pt-3xl-on-md"
           >
             <div
-              class="pf-v5-c-content"
+              class="pf-v6-c-content"
             >
               <p
-                class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+                class="pf-v6-c-content--p pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
                 data-ouia-component-id="OUIA-Generated-Text-14"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
                 <span
-                  class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                  class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
                 >
                   <span
-                    class="pf-v5-c-icon__content"
+                    class="pf-v6-c-icon__content"
                   >
                     <svg
                       aria-hidden="true"
-                      class="pf-v5-svg"
+                      class="pf-v6-svg"
                       fill="currentColor"
                       height="1em"
                       role="img"
@@ -708,9 +708,9 @@ exports[`MultiContentCard component should render expandable multi content card 
                 Configure access
               </p>
               <p
-                class="pf-v5-u-font-size-sm"
+                class="pf-v6-c-content--p pf-v6-u-font-size-sm"
                 data-ouia-component-id="OUIA-Generated-Text-15"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
@@ -719,33 +719,33 @@ exports[`MultiContentCard component should render expandable multi content card 
             </div>
           </div>
           <div
-            class="pf-v5-c-card__footer"
+            class="pf-v6-c-card__footer"
           >
             <p
-              class=""
+              class="pf-v6-c-content--p"
               data-ouia-component-id="OUIA-Generated-Text-16"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               <button
                 aria-disabled="false"
-                class="pf-v5-c-button pf-m-link pf-m-inline"
+                class="pf-v6-c-button pf-m-link pf-m-inline"
                 data-ouia-component-id="OUIA-Generated-Button-link-9"
-                data-ouia-component-type="PF5/Button"
+                data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 type="button"
               >
                 Learn more
                 <span
-                  class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+                  class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
                 >
                   <span
-                    class="pf-v5-c-icon__content"
+                    class="pf-v6-c-icon__content"
                   >
                     <svg
                       aria-hidden="true"
-                      class="pf-v5-svg"
+                      class="pf-v6-svg"
                       fill="currentColor"
                       height="1em"
                       role="img"
@@ -768,25 +768,25 @@ exports[`MultiContentCard component should render expandable multi content card 
         data-ouia-component-id="MultiContentCard-content-2"
       >
         <div
-          class="pf-v5-c-card pf-m-full-height pf-m-plain"
+          class="pf-v6-c-card pf-m-full-height pf-m-plain"
           data-ouia-component-id="OUIA-Generated-Card-8"
-          data-ouia-component-type="PF5/Card"
+          data-ouia-component-type="PF6/Card"
           data-ouia-safe="true"
           id=""
         >
           <div
-            class="pf-v5-c-card__header"
+            class="pf-v6-c-card__header"
           >
             <div
-              class="pf-v5-c-card__header-main"
+              class="pf-v6-c-card__header-main"
             >
               <div
-                class="pf-v5-c-content"
+                class="pf-v6-c-content"
               >
                 <h4
-                  class=""
+                  class="pf-v6-c-content--h4"
                   data-ouia-component-id="OUIA-Generated-Text-17"
-                  data-ouia-component-type="PF5/Text"
+                  data-ouia-component-type="PF6/Text"
                   data-ouia-safe="true"
                   data-pf-content="true"
                 >
@@ -796,27 +796,27 @@ exports[`MultiContentCard component should render expandable multi content card 
             </div>
           </div>
           <div
-            class="pf-v5-c-card__body"
+            class="pf-v6-c-card__body"
           >
             <div
-              class="pf-v5-c-content"
+              class="pf-v6-c-content"
             >
               <p
-                class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+                class="pf-v6-c-content--p pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
                 data-ouia-component-id="OUIA-Generated-Text-18"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
                 <span
-                  class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                  class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
                 >
                   <span
-                    class="pf-v5-c-icon__content"
+                    class="pf-v6-c-icon__content"
                   >
                     <svg
                       aria-hidden="true"
-                      class="pf-v5-svg"
+                      class="pf-v6-svg"
                       fill="currentColor"
                       height="1em"
                       role="img"
@@ -832,9 +832,9 @@ exports[`MultiContentCard component should render expandable multi content card 
                 Configure notifications
               </p>
               <p
-                class="pf-v5-u-font-size-sm"
+                class="pf-v6-c-content--p pf-v6-u-font-size-sm"
                 data-ouia-component-id="OUIA-Generated-Text-19"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
@@ -843,33 +843,33 @@ exports[`MultiContentCard component should render expandable multi content card 
             </div>
           </div>
           <div
-            class="pf-v5-c-card__footer"
+            class="pf-v6-c-card__footer"
           >
             <p
-              class=""
+              class="pf-v6-c-content--p"
               data-ouia-component-id="OUIA-Generated-Text-20"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               <button
                 aria-disabled="false"
-                class="pf-v5-c-button pf-m-link pf-m-inline"
+                class="pf-v6-c-button pf-m-link pf-m-inline"
                 data-ouia-component-id="OUIA-Generated-Button-link-10"
-                data-ouia-component-type="PF5/Button"
+                data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 type="button"
               >
                 Learn more
                 <span
-                  class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+                  class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
                 >
                   <span
-                    class="pf-v5-c-icon__content"
+                    class="pf-v6-c-icon__content"
                   >
                     <svg
                       aria-hidden="true"
-                      class="pf-v5-svg"
+                      class="pf-v6-svg"
                       fill="currentColor"
                       height="1em"
                       role="img"
@@ -894,35 +894,35 @@ exports[`MultiContentCard component should render expandable multi content card 
 
 exports[`MultiContentCard component should render expandable multi content card - with actions 1`] = `
 <div
-  class="pf-v5-c-card"
+  class="pf-v6-c-card"
   data-ouia-component-id="MultiContentCard"
-  data-ouia-component-type="PF5/Card"
+  data-ouia-component-type="PF6/Card"
   data-ouia-safe="true"
   id=""
 >
   <div
-    class="pf-v5-c-card__header"
+    class="pf-v6-c-card__header"
     data-ouia-component-id="MultiContentCard-header"
   >
     <div
-      class="pf-v5-c-card__header-toggle"
+      class="pf-v6-c-card__header-toggle"
     >
       <button
         aria-disabled="false"
         aria-expanded="false"
         aria-label="Details"
-        class="pf-v5-c-button pf-m-plain"
+        class="pf-v6-c-button pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Button-plain-3"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
       >
         <span
-          class="pf-v5-c-card__header-toggle-icon"
+          class="pf-v6-c-card__header-toggle-icon"
         >
           <svg
             aria-hidden="true"
-            class="pf-v5-svg"
+            class="pf-v6-svg"
             fill="currentColor"
             height="1em"
             role="img"
@@ -937,60 +937,64 @@ exports[`MultiContentCard component should render expandable multi content card 
       </button>
     </div>
     <div
-      class="pf-v5-c-card__actions"
+      class="pf-v6-c-card__actions"
     >
       <button
         aria-expanded="true"
         aria-label="kebab dropdown toggle"
-        class="pf-v5-c-menu-toggle pf-m-expanded pf-m-plain"
+        class="pf-v6-c-menu-toggle pf-m-expanded pf-m-plain"
         type="button"
       >
-        <svg
-          aria-hidden="true"
-          class="pf-v5-svg"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          viewBox="0 0 192 512"
-          width="1em"
+        <span
+          class="pf-v6-c-menu-toggle__text"
         >
-          <path
-            d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-          />
-        </svg>
+          <svg
+            aria-hidden="true"
+            class="pf-v6-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 192 512"
+            width="1em"
+          >
+            <path
+              d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+            />
+          </svg>
+        </span>
       </button>
       <div
-        class="pf-v5-c-menu"
+        class="pf-v6-c-menu"
         data-ouia-component-id="OUIA-Generated-Dropdown-1"
-        data-ouia-component-type="PF5/Dropdown"
+        data-ouia-component-type="PF6/Dropdown"
         data-ouia-safe="true"
         style="position: absolute; left: 0px; top: 0px; z-index: 9999; opacity: 0; transition: opacity 0ms cubic-bezier(.54, 1.5, .38, 1.11);"
       >
         <div
-          class="pf-v5-c-menu__content"
+          class="pf-v6-c-menu__content"
         >
           <ul
-            class="pf-v5-c-menu__list"
+            class="pf-v6-c-menu__list"
             role="menu"
           >
             <li
-              class="pf-v5-c-menu__list-item"
+              class="pf-v6-c-menu__list-item"
               data-ouia-component-id="OUIA-Generated-DropdownItem-1"
-              data-ouia-component-type="PF5/DropdownItem"
+              data-ouia-component-type="PF6/DropdownItem"
               data-ouia-safe="true"
               role="none"
             >
               <button
-                class="pf-v5-c-menu__item"
+                class="pf-v6-c-menu__item"
                 role="menuitem"
                 tabindex="0"
                 type="button"
               >
                 <span
-                  class="pf-v5-c-menu__item-main"
+                  class="pf-v6-c-menu__item-main"
                 >
                   <span
-                    class="pf-v5-c-menu__item-text"
+                    class="pf-v6-c-menu__item-text"
                   >
                     Action item
                   </span>
@@ -1002,19 +1006,19 @@ exports[`MultiContentCard component should render expandable multi content card 
       </div>
     </div>
     <div
-      class="pf-v5-c-card__header-main"
+      class="pf-v6-c-card__header-main"
     >
       <div
-        class="pf-v5-c-card__title"
+        class="pf-v6-c-card__title"
       >
         <div
-          class="pf-v5-c-card__title-text"
+          class="pf-v6-c-card__title-text"
           data-ouia-component-id="MultiContentCard-title"
         >
           <h2
-            class="pf-v5-c-title pf-m-xl"
+            class="pf-v6-c-title pf-m-xl"
             data-ouia-component-id="OUIA-Generated-Title-3"
-            data-ouia-component-type="PF5/Title"
+            data-ouia-component-type="PF6/Title"
             data-ouia-safe="true"
           >
             Expandable card toggle text
@@ -1028,39 +1032,39 @@ exports[`MultiContentCard component should render expandable multi content card 
 
 exports[`MultiContentCard component should render multi content card with a single divider 1`] = `
 <div
-  class="pf-v5-c-card pf-m-expanded"
+  class="pf-v6-c-card pf-m-expanded"
   data-ouia-component-id="MultiContentCard"
-  data-ouia-component-type="PF5/Card"
+  data-ouia-component-type="PF6/Card"
   data-ouia-safe="true"
   id=""
 >
   <div
-    class="pf-v5-l-flex pf-m-align-items-stretch pf-m-align-self-stretch"
+    class="pf-v6-l-flex pf-m-align-items-stretch pf-m-align-self-stretch"
   >
     <div
       class="pf-m-flex-1"
       data-ouia-component-id="MultiContentCard-content-0"
     >
       <div
-        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        class="pf-v6-c-card pf-m-full-height pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Card-16"
-        data-ouia-component-type="PF5/Card"
+        data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
       >
         <div
-          class="pf-v5-c-card__header"
+          class="pf-v6-c-card__header"
         >
           <div
-            class="pf-v5-c-card__header-main"
+            class="pf-v6-c-card__header-main"
           >
             <div
-              class="pf-v5-c-content"
+              class="pf-v6-c-content"
             >
               <h4
-                class=""
+                class="pf-v6-c-content--h4"
                 data-ouia-component-id="OUIA-Generated-Text-31"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
@@ -1070,27 +1074,27 @@ exports[`MultiContentCard component should render multi content card with a sing
           </div>
         </div>
         <div
-          class="pf-v5-c-card__body"
+          class="pf-v6-c-card__body"
         >
           <div
-            class="pf-v5-c-content"
+            class="pf-v6-c-content"
           >
             <p
-              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
               data-ouia-component-id="OUIA-Generated-Text-32"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               <span
-                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -1106,9 +1110,9 @@ exports[`MultiContentCard component should render multi content card with a sing
               Configure application
             </p>
             <p
-              class="pf-v5-u-font-size-sm"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-33"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
@@ -1117,22 +1121,22 @@ exports[`MultiContentCard component should render multi content card with a sing
           </div>
         </div>
         <div
-          class="pf-v5-c-card__footer"
+          class="pf-v6-c-card__footer"
         >
           <div
-            class="pf-v5-c-content"
+            class="pf-v6-c-content"
           >
             <ul
-              class="pf-v5-u-font-size-sm pf-v5-u-link-color pf-v5-u-ml-0"
+              class="pf-v6-c-content--ul pf-v6-u-font-size-sm pf-v6-u-link-color pf-v6-u-ml-0"
             >
               <li
-                class=""
+                class="pf-v6-c-content--li"
               >
                 <button
                   aria-disabled="false"
-                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-16"
-                  data-ouia-component-type="PF5/Button"
+                  data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -1140,13 +1144,13 @@ exports[`MultiContentCard component should render multi content card with a sing
                 </button>
               </li>
               <li
-                class=""
+                class="pf-v6-c-content--li"
               >
                 <button
                   aria-disabled="false"
-                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-17"
-                  data-ouia-component-type="PF5/Button"
+                  data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -1154,13 +1158,13 @@ exports[`MultiContentCard component should render multi content card with a sing
                 </button>
               </li>
               <li
-                class=""
+                class="pf-v6-c-content--li"
               >
                 <button
                   aria-disabled="false"
-                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-18"
-                  data-ouia-component-type="PF5/Button"
+                  data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -1177,34 +1181,34 @@ exports[`MultiContentCard component should render multi content card with a sing
       data-ouia-component-id="MultiContentCard-content-1"
     >
       <div
-        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        class="pf-v6-c-card pf-m-full-height pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Card-17"
-        data-ouia-component-type="PF5/Card"
+        data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
       >
         <div
-          class="pf-v5-c-card__body pf-v5-u-pt-3xl-on-md"
+          class="pf-v6-c-card__body pf-v6-u-pt-3xl-on-md"
         >
           <div
-            class="pf-v5-c-content"
+            class="pf-v6-c-content"
           >
             <p
-              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
               data-ouia-component-id="OUIA-Generated-Text-34"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               <span
-                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -1220,9 +1224,9 @@ exports[`MultiContentCard component should render multi content card with a sing
               Configure access
             </p>
             <p
-              class="pf-v5-u-font-size-sm"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-35"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
@@ -1231,33 +1235,33 @@ exports[`MultiContentCard component should render multi content card with a sing
           </div>
         </div>
         <div
-          class="pf-v5-c-card__footer"
+          class="pf-v6-c-card__footer"
         >
           <p
-            class=""
+            class="pf-v6-c-content--p"
             data-ouia-component-id="OUIA-Generated-Text-36"
-            data-ouia-component-type="PF5/Text"
+            data-ouia-component-type="PF6/Text"
             data-ouia-safe="true"
             data-pf-content="true"
           >
             <button
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link pf-m-inline"
+              class="pf-v6-c-button pf-m-link pf-m-inline"
               data-ouia-component-id="OUIA-Generated-Button-link-19"
-              data-ouia-component-type="PF5/Button"
+              data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               type="button"
             >
               Learn more
               <span
-                class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+                class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -1276,32 +1280,32 @@ exports[`MultiContentCard component should render multi content card with a sing
       </div>
     </div>
     <hr
-      class="pf-v5-c-divider pf-m-inset-3xl pf-m-vertical-on-md"
+      class="pf-v6-c-divider pf-m-inset-3xl pf-m-vertical-on-md"
     />
     <div
       class="pf-m-flex-1"
       data-ouia-component-id="MultiContentCard-content-2"
     >
       <div
-        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        class="pf-v6-c-card pf-m-full-height pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Card-18"
-        data-ouia-component-type="PF5/Card"
+        data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
       >
         <div
-          class="pf-v5-c-card__header"
+          class="pf-v6-c-card__header"
         >
           <div
-            class="pf-v5-c-card__header-main"
+            class="pf-v6-c-card__header-main"
           >
             <div
-              class="pf-v5-c-content"
+              class="pf-v6-c-content"
             >
               <h4
-                class=""
+                class="pf-v6-c-content--h4"
                 data-ouia-component-id="OUIA-Generated-Text-37"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
@@ -1311,27 +1315,27 @@ exports[`MultiContentCard component should render multi content card with a sing
           </div>
         </div>
         <div
-          class="pf-v5-c-card__body"
+          class="pf-v6-c-card__body"
         >
           <div
-            class="pf-v5-c-content"
+            class="pf-v6-c-content"
           >
             <p
-              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
               data-ouia-component-id="OUIA-Generated-Text-38"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               <span
-                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -1347,9 +1351,9 @@ exports[`MultiContentCard component should render multi content card with a sing
               Configure notifications
             </p>
             <p
-              class="pf-v5-u-font-size-sm"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-39"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
@@ -1358,33 +1362,33 @@ exports[`MultiContentCard component should render multi content card with a sing
           </div>
         </div>
         <div
-          class="pf-v5-c-card__footer"
+          class="pf-v6-c-card__footer"
         >
           <p
-            class=""
+            class="pf-v6-c-content--p"
             data-ouia-component-id="OUIA-Generated-Text-40"
-            data-ouia-component-type="PF5/Text"
+            data-ouia-component-type="PF6/Text"
             data-ouia-safe="true"
             data-pf-content="true"
           >
             <button
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link pf-m-inline"
+              class="pf-v6-c-button pf-m-link pf-m-inline"
               data-ouia-component-id="OUIA-Generated-Button-link-20"
-              data-ouia-component-type="PF5/Button"
+              data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               type="button"
             >
               Learn more
               <span
-                class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+                class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -1408,39 +1412,39 @@ exports[`MultiContentCard component should render multi content card with a sing
 
 exports[`MultiContentCard component should render multi content card with dividers 1`] = `
 <div
-  class="pf-v5-c-card pf-m-expanded"
+  class="pf-v6-c-card pf-m-expanded"
   data-ouia-component-id="MultiContentCard"
-  data-ouia-component-type="PF5/Card"
+  data-ouia-component-type="PF6/Card"
   data-ouia-safe="true"
   id=""
 >
   <div
-    class="pf-v5-l-flex pf-m-align-items-stretch pf-m-align-self-stretch"
+    class="pf-v6-l-flex pf-m-align-items-stretch pf-m-align-self-stretch"
   >
     <div
       class="pf-m-flex-1"
       data-ouia-component-id="MultiContentCard-content-0"
     >
       <div
-        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        class="pf-v6-c-card pf-m-full-height pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Card-12"
-        data-ouia-component-type="PF5/Card"
+        data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
       >
         <div
-          class="pf-v5-c-card__header"
+          class="pf-v6-c-card__header"
         >
           <div
-            class="pf-v5-c-card__header-main"
+            class="pf-v6-c-card__header-main"
           >
             <div
-              class="pf-v5-c-content"
+              class="pf-v6-c-content"
             >
               <h4
-                class=""
+                class="pf-v6-c-content--h4"
                 data-ouia-component-id="OUIA-Generated-Text-21"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
@@ -1450,27 +1454,27 @@ exports[`MultiContentCard component should render multi content card with divide
           </div>
         </div>
         <div
-          class="pf-v5-c-card__body"
+          class="pf-v6-c-card__body"
         >
           <div
-            class="pf-v5-c-content"
+            class="pf-v6-c-content"
           >
             <p
-              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
               data-ouia-component-id="OUIA-Generated-Text-22"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               <span
-                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -1486,9 +1490,9 @@ exports[`MultiContentCard component should render multi content card with divide
               Configure application
             </p>
             <p
-              class="pf-v5-u-font-size-sm"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-23"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
@@ -1497,22 +1501,22 @@ exports[`MultiContentCard component should render multi content card with divide
           </div>
         </div>
         <div
-          class="pf-v5-c-card__footer"
+          class="pf-v6-c-card__footer"
         >
           <div
-            class="pf-v5-c-content"
+            class="pf-v6-c-content"
           >
             <ul
-              class="pf-v5-u-font-size-sm pf-v5-u-link-color pf-v5-u-ml-0"
+              class="pf-v6-c-content--ul pf-v6-u-font-size-sm pf-v6-u-link-color pf-v6-u-ml-0"
             >
               <li
-                class=""
+                class="pf-v6-c-content--li"
               >
                 <button
                   aria-disabled="false"
-                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-11"
-                  data-ouia-component-type="PF5/Button"
+                  data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -1520,13 +1524,13 @@ exports[`MultiContentCard component should render multi content card with divide
                 </button>
               </li>
               <li
-                class=""
+                class="pf-v6-c-content--li"
               >
                 <button
                   aria-disabled="false"
-                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-12"
-                  data-ouia-component-type="PF5/Button"
+                  data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -1534,13 +1538,13 @@ exports[`MultiContentCard component should render multi content card with divide
                 </button>
               </li>
               <li
-                class=""
+                class="pf-v6-c-content--li"
               >
                 <button
                   aria-disabled="false"
-                  class="pf-v5-c-button pf-m-link pf-m-inline"
+                  class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-13"
-                  data-ouia-component-type="PF5/Button"
+                  data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
                 >
@@ -1553,41 +1557,41 @@ exports[`MultiContentCard component should render multi content card with divide
       </div>
     </div>
     <hr
-      class="pf-v5-c-divider pf-m-inset-3xl pf-m-vertical-on-md"
+      class="pf-v6-c-divider pf-m-inset-3xl pf-m-vertical-on-md"
     />
     <div
       class="pf-m-flex-1"
       data-ouia-component-id="MultiContentCard-content-1"
     >
       <div
-        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        class="pf-v6-c-card pf-m-full-height pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Card-13"
-        data-ouia-component-type="PF5/Card"
+        data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
       >
         <div
-          class="pf-v5-c-card__body pf-v5-u-pt-3xl-on-md"
+          class="pf-v6-c-card__body pf-v6-u-pt-3xl-on-md"
         >
           <div
-            class="pf-v5-c-content"
+            class="pf-v6-c-content"
           >
             <p
-              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
               data-ouia-component-id="OUIA-Generated-Text-24"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               <span
-                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -1603,9 +1607,9 @@ exports[`MultiContentCard component should render multi content card with divide
               Configure access
             </p>
             <p
-              class="pf-v5-u-font-size-sm"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-25"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
@@ -1614,33 +1618,33 @@ exports[`MultiContentCard component should render multi content card with divide
           </div>
         </div>
         <div
-          class="pf-v5-c-card__footer"
+          class="pf-v6-c-card__footer"
         >
           <p
-            class=""
+            class="pf-v6-c-content--p"
             data-ouia-component-id="OUIA-Generated-Text-26"
-            data-ouia-component-type="PF5/Text"
+            data-ouia-component-type="PF6/Text"
             data-ouia-safe="true"
             data-pf-content="true"
           >
             <button
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link pf-m-inline"
+              class="pf-v6-c-button pf-m-link pf-m-inline"
               data-ouia-component-id="OUIA-Generated-Button-link-14"
-              data-ouia-component-type="PF5/Button"
+              data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               type="button"
             >
               Learn more
               <span
-                class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+                class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -1659,32 +1663,32 @@ exports[`MultiContentCard component should render multi content card with divide
       </div>
     </div>
     <hr
-      class="pf-v5-c-divider pf-m-inset-3xl pf-m-vertical-on-md"
+      class="pf-v6-c-divider pf-m-inset-3xl pf-m-vertical-on-md"
     />
     <div
       class="pf-m-flex-1"
       data-ouia-component-id="MultiContentCard-content-2"
     >
       <div
-        class="pf-v5-c-card pf-m-full-height pf-m-plain"
+        class="pf-v6-c-card pf-m-full-height pf-m-plain"
         data-ouia-component-id="OUIA-Generated-Card-14"
-        data-ouia-component-type="PF5/Card"
+        data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
       >
         <div
-          class="pf-v5-c-card__header"
+          class="pf-v6-c-card__header"
         >
           <div
-            class="pf-v5-c-card__header-main"
+            class="pf-v6-c-card__header-main"
           >
             <div
-              class="pf-v5-c-content"
+              class="pf-v6-c-content"
             >
               <h4
-                class=""
+                class="pf-v6-c-content--h4"
                 data-ouia-component-id="OUIA-Generated-Text-27"
-                data-ouia-component-type="PF5/Text"
+                data-ouia-component-type="PF6/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
@@ -1694,27 +1698,27 @@ exports[`MultiContentCard component should render multi content card with divide
           </div>
         </div>
         <div
-          class="pf-v5-c-card__body"
+          class="pf-v6-c-card__body"
         >
           <div
-            class="pf-v5-c-content"
+            class="pf-v6-c-content"
           >
             <p
-              class="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
               data-ouia-component-id="OUIA-Generated-Text-28"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               <span
-                class="pf-v5-c-icon pf-m-md pf-v5-u-pl-sm pf-v5-u-pr-md"
+                class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
@@ -1730,9 +1734,9 @@ exports[`MultiContentCard component should render multi content card with divide
               Configure notifications
             </p>
             <p
-              class="pf-v5-u-font-size-sm"
+              class="pf-v6-c-content--p pf-v6-u-font-size-sm"
               data-ouia-component-id="OUIA-Generated-Text-29"
-              data-ouia-component-type="PF5/Text"
+              data-ouia-component-type="PF6/Text"
               data-ouia-safe="true"
               data-pf-content="true"
             >
@@ -1741,33 +1745,33 @@ exports[`MultiContentCard component should render multi content card with divide
           </div>
         </div>
         <div
-          class="pf-v5-c-card__footer"
+          class="pf-v6-c-card__footer"
         >
           <p
-            class=""
+            class="pf-v6-c-content--p"
             data-ouia-component-id="OUIA-Generated-Text-30"
-            data-ouia-component-type="PF5/Text"
+            data-ouia-component-type="PF6/Text"
             data-ouia-safe="true"
             data-pf-content="true"
           >
             <button
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link pf-m-inline"
+              class="pf-v6-c-button pf-m-link pf-m-inline"
               data-ouia-component-id="OUIA-Generated-Button-link-15"
-              data-ouia-component-type="PF5/Button"
+              data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               type="button"
             >
               Learn more
               <span
-                class="pf-v5-c-icon pf-m-inline pf-u-ml-sm"
+                class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
               >
                 <span
-                  class="pf-v5-c-icon__content"
+                  class="pf-v6-c-icon__content"
                 >
                   <svg
                     aria-hidden="true"
-                    class="pf-v5-svg"
+                    class="pf-v6-svg"
                     fill="currentColor"
                     height="1em"
                     role="img"
