@@ -2,9 +2,6 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
-  icon404: {
-    height: '150px',
-  },
   fillPolygon: { fill: '#fff', fillRule: 'evenodd' },
   fillPaths: { fillRule: 'evenodd' },
   iconOpacity: { opacity: 0.5 },
@@ -12,16 +9,16 @@ const useStyles = createUseStyles({
 });
 
 
-const NotFoundIcon: React.FunctionComponent = (props) => {
+export const NotFoundIcon: React.FunctionComponent = (props) => {
   const classes = useStyles();
   return (
     <svg
-      className={classes.icon404}
       id="Icon404"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 131 131"
+      height="150px"
       {...props}
     >
       <defs>

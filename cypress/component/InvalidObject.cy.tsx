@@ -4,7 +4,9 @@ import InvalidObject from '../../packages/module/dist/dynamic/InvalidObject';
 describe('InvalidObject', () => {
   it('renders InvalidObject', () => {
     cy.mount(<InvalidObject />)
-    cy.get('[class="pf-v5-c-empty-state"]').should('exist')
-    cy.get('h1').should('have.text', 'We lost that page');
+    cy.get('[data-ouia-component-id="InvalidObject"]').should('exist')
+    cy.get('[data-ouia-component-id="InvalidObject"]').contains('We lost that page');
+    cy.get('[data-ouia-component-id="InvalidObject-body"]').contains("Let's find you a new one. Try a new search or return home.");
+    cy.get('[data-ouia-component-id="InvalidObject-home-button"]').contains('Return to homepage');
   });
 })
