@@ -17,6 +17,7 @@ const useStyles = createUseStyles({
     color: 'var(--pf-t--global--color--brand--default)',
   },
 });
+
 export const BasicExample: React.FunctionComponent = () => {
   const classes = useStyles();
 
