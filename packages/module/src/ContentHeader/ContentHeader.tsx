@@ -60,9 +60,9 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
   const classes = useStyles();
 
   return (
-    <PageSection variant="light">
+    <PageSection>
       { breadcrumbs && (
-        <div className="pf-v5-u-mb-md">
+        <div className="pf-v6-u-mb-md">
           {breadcrumbs}
         </div>
       )}
@@ -81,7 +81,7 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
           <Split hasGutter>
             <SplitItem>
               <TextContent>
-                <Text className="pf-v5-u-mb-sm" component="h1" ouiaId={`${ouiaId}-title`}>
+                <Text className="pf-v6-u-mb-sm" component="h1" ouiaId={`${ouiaId}-title`}>
                   {title}
                 </Text>
               </TextContent>

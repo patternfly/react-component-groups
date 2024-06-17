@@ -7,8 +7,10 @@ propComponents: ['MultiContentCard']
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/MultiContentCard/MultiContentCard.md
 ---
 
-import MultiContentCard, { MultiContentCardDividerVariant, MultiContentCardBorderVariant } from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
+import MultiContentCard, { MultiContentCardDividerVariant } from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
 import { ArrowRightIcon, BellIcon, CogIcon, EllipsisVIcon, LockIcon } from '@patternfly/react-icons';
+import { createUseStyles } from 'react-jss';
+import clsx from 'clsx';
 
 A **multi content card** component allows to display multiple card components in a single layout. To further customize this layout, you can also utilize all properties of the [card component](/components/card), with the exception of `children` and `title`.
 
@@ -35,14 +37,6 @@ To make the multi content card expandable, pass `isExpandable` flag together wit
 Actions can be displayed in the multi content card heading using `actions` property. 
 
 ```js file="./MultiContentCardExpandableActionsExample.tsx"
-
-```
-
-### Expandable multi content card with left border and header border
-
-Left border can be displayed using `leftBorderVariant`. To display a border under the multi content card's heading, use `withHeaderBorder` flag. 
-
-```js file="./MultiContentCardExpandableBorderExample.tsx"
 
 ```
 

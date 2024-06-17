@@ -13,13 +13,13 @@ export interface ErrorStackProps {
 const useStyles = createUseStyles({
   errorStack: {
     fontFamily: 'monospace',
-    fontSize: 'var(--pf-v5-global--icon--FontSize--md)',
+    fontSize: 'var(--pf-t--global--font--size--300)',
     textAlign: 'left',
     backgroundColor: 'white',
     borderStyle: 'solid',
-    borderColor: 'var(--pf-v5-global--BackgroundColor--dark-300)',
+    borderColor: 'var(--pf-t--color--gray--90)',
     overflowWrap: 'break-word',
-    padding: 'var(--pf-v5-global--spacer--sm)'
+    padding: 'var(--pf-t--global--spacer--200)'
   },
 })
 

@@ -6,7 +6,7 @@ import ErrorStack from '../ErrorStack';
 
 const useStyles = createUseStyles({
   expandableSectionToggle: {
-    "& > .pf-v5-c-expandable-section__toggle": {
+    "& > .pf-v6-c-expandable-section__toggle": {
       margin: "auto",
     }
   },
@@ -21,10 +21,10 @@ export interface ErrorBoundaryProps {
   errorTitle?: string;
   /** The description text to display with the error */
   errorDescription?: React.ReactNode;
-  /** The text for the toggle link that users can select to view error details */
-  errorToggleText?: string;
   /** The default description text to display with the error if no errorDescription is provided */
   defaultErrorDescription?: React.ReactNode;
+  /** The text for the toggle link that users can select to view error details */
+  errorToggleText?: string;
   /** The component that the error boundary component is wrapped around, which should be returned if there is no error  */
   children?: React.ReactNode;
   /** Custom OUIA ID */
@@ -93,8 +93,8 @@ class ErrorBoundaryContent extends React.Component<ErrorPageProps, ErrorBoundary
         <div data-ouia-component-id={ouiaId}>
           <Title headingLevel="h1" size="2xl" ouiaId={`${ouiaId}-title`}>{props.headerTitle}</Title>
           <ErrorState
-            errorTitle={props.errorTitle}
-            errorDescription={
+            titleText={props.errorTitle}
+            bodyText={
               <>
                 <span>{props.errorDescription}</span>
                 {this.state.error && ( 
@@ -104,7 +104,7 @@ class ErrorBoundaryContent extends React.Component<ErrorPageProps, ErrorBoundary
                 )}
               </>
             }
-            defaultErrorDescription={props.defaultErrorDescription}
+            defaultBodyText={props.defaultErrorDescription}
           />
         </div>
       );
