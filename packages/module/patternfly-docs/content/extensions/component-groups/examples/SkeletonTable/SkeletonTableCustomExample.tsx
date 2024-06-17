@@ -1,5 +1,6 @@
 import React from 'react';
-import SkeletonTable from "@patternfly/react-component-groups/dist/dynamic/SkeletonTable";import { Th } from '@patternfly/react-table';
+import SkeletonTable from "@patternfly/react-component-groups/dist/dynamic/SkeletonTable";
+import { Th } from '@patternfly/react-table';
 
 export const SkeletonTableExample: React.FC = () => (
   <SkeletonTable
