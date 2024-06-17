@@ -6,7 +6,7 @@ import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
   buttonTagCount: {
-    color: 'var(--pf-v5-global--icon--Color--light)',
+    color: 'var(--pf-t--color--gray--50)',
     display: 'flex',
     alignItems: 'center'
   },

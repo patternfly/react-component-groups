@@ -1,14 +1,13 @@
 const fse = require('fs-extra');
-const glob = require('glob');
+const { globSync } = require('glob');
 const path = require('path');
 
 const root = process.cwd();
 
-const sourceFiles = glob
-  .sync(`${root}/src/*/`)
+const sourceFiles = globSync(`${root}/src/*/`)
   .map((name) => name.replace(/\/$/, ''));
   
-const indexTypings = glob.sync(`${root}/src/index.d.ts`);
+const indexTypings = globSync(`${root}/src/index.d.ts`);
 
 const ENV_AGNOSTIC_ROOT = `${root}/dist/dynamic`
 
@@ -23,9 +22,9 @@ async function copyTypings(files, dest) {
 
 async function createPackage(file) {
   const fileName = file.split('/').pop();
-  const esmSource = glob.sync(`${root}/dist/esm/${fileName}/**/index.js`)[0];
-  const cjsSource = glob.sync(`${root}/dist/cjs/${fileName}/**/index.js`)[0];
-  const typingsSource = glob.sync(`${root}/dist/esm/${fileName}/**/index.d.ts`)[0]
+  const esmSource = globSync(`${root}/dist/esm/${fileName}/**/index.js`)[0];
+  const cjsSource = globSync(`${root}/dist/cjs/${fileName}/**/index.js`)[0];
+  const typingsSource = globSync(`${root}/dist/esm/${fileName}/**/index.d.ts`)[0]
   /**
    * Prevent creating package.json for directories with no JS files (like CSS directories)
    */
@@ -46,7 +45,7 @@ async function createPackage(file) {
     main: cjsRelative,
     module: esmRelative,
   };
-  const typings = glob.sync(`${root}/src/${fileName}/*.d.ts`);
+  const typings = globSync(`${root}/src/${fileName}/*.d.ts`);
   const cmds = [];
   content.typings = tsRelative;
   cmds.push(copyTypings(typings, `${root}/dist/${fileName}`));
