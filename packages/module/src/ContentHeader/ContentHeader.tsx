@@ -59,7 +59,7 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
   const classes = useStyles();
 
   return (
-    <PageSection hasBodyWrapper={false}>
+    <PageSection>
       { breadcrumbs && (
         <div className="pf-v6-u-mb-md">
           {breadcrumbs}
