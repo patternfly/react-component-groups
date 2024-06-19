@@ -11,7 +11,7 @@ export const BasicExample: React.FunctionComponent = () => {
     value === BulkSelectValue.none && setSelected([]);
     value === BulkSelectValue.all && setSelected(allData);
     value === BulkSelectValue.nonePage && setSelected(selected.filter(item => !pageData.includes(item)));
-    value === BulkSelectValue.page && setSelected(pageData);
+    value === BulkSelectValue.page && setSelected(Array.from(new Set([ ...selected, ...pageData ])));
   };
 
   return (

@@ -14,10 +14,19 @@ const BulkSelectTestComponent = ({ canSelectAll, isDataPaginated }: Omit<BulkSel
   const pageSelected = pageDataNames.every(item => selected.find(selectedItem => selectedItem.name === item));
 
   const handleBulkSelect = (value: BulkSelectValue) => {
+    if (value === BulkSelectValue.page) {
+      const updatedSelection = [ ...selected ];
+      pageData.forEach(item => {
+        if (!updatedSelection.some(selectedItem => selectedItem.name === item.name)) {
+          updatedSelection.push(item);
+        }
+      });
+      setSelected(updatedSelection);
+    }
+    value === BulkSelectValue.nonePage && setSelected(selected.filter(item => !pageDataNames.includes(item.name)))
     value === BulkSelectValue.none && setSelected([]);
-    value === BulkSelectValue.page && setSelected(pageData);
     value === BulkSelectValue.all && setSelected(allData);
-    value === BulkSelectValue.nonePage && setSelected(selected.filter(item => !pageDataNames.includes(item.name)))};
+  };
 
   return (
     <BulkSelect
@@ -92,6 +101,6 @@ describe('BulkSelect', () => {
     // Select page
     cy.get('[data-ouia-component-id="BulkSelect-toggle"]').first().click({ force: true });
     cy.get('[data-ouia-component-id="BulkSelect-select-page"]').first().click();
-    cy.contains('5 selected').should('exist');
+    cy.contains('6 selected').should('exist');
   });
 });
