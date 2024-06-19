@@ -23,15 +23,11 @@ exports[`BulkSelect component should render 1`] = `
             type="checkbox"
           />
         </label>
-        <p
-          class=""
+        <span
           data-ouia-component-id="BulkSelect-text"
-          data-ouia-component-type="PF5/Text"
-          data-ouia-safe="true"
-          data-pf-content="true"
         >
           2 selected
-        </p>
+        </span>
         <button
           aria-expanded="false"
           aria-label="Bulk select toggle"
@@ -83,15 +79,11 @@ exports[`BulkSelect component should render 1`] = `
           type="checkbox"
         />
       </label>
-      <p
-        class=""
+      <span
         data-ouia-component-id="BulkSelect-text"
-        data-ouia-component-type="PF5/Text"
-        data-ouia-safe="true"
-        data-pf-content="true"
       >
         2 selected
-      </p>
+      </span>
       <button
         aria-expanded="false"
         aria-label="Bulk select toggle"
