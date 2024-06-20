@@ -16,11 +16,7 @@ const BulkSelectTestComponent = ({ canSelectAll, isDataPaginated }: Omit<BulkSel
   const handleBulkSelect = (value: BulkSelectValue) => {
     if (value === BulkSelectValue.page) {
       const updatedSelection = [ ...selected ];
-      pageData.forEach(item => {
-        if (!updatedSelection.some(selectedItem => selectedItem.name === item.name)) {
-          updatedSelection.push(item);
-        }
-      });
+      pageData.forEach(item => !updatedSelection.some(selectedItem => selectedItem.name === item.name) && updatedSelection.push(item));
       setSelected(updatedSelection);
     }
     value === BulkSelectValue.nonePage && setSelected(selected.filter(item => !pageDataNames.includes(item.name)))
