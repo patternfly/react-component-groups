@@ -51,7 +51,7 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
   pagePartiallySelected,
   pageCount,
   selectedCount = 0,
-  totalCount,
+  totalCount = 0,
   ouiaId = 'BulkSelect',
   onSelect,
   menuToggleCheckboxProps,
@@ -111,7 +111,7 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
                 aria-label={`Select ${allOption}`}
                 isChecked={
                   (isDataPaginated && pagePartiallySelected) ||
-                  (!isDataPaginated && selectedCount > 0)
+                  (!isDataPaginated && selectedCount > 0 && selectedCount < totalCount)
                     ? null
                     : pageSelected || selectedCount === totalCount
                 }
