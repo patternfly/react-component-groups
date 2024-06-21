@@ -7,8 +7,7 @@ import {
   MenuToggle,
   MenuToggleCheckbox,
   MenuToggleCheckboxProps,
-  MenuToggleElement,
-  Text
+  MenuToggleElement
 } from '@patternfly/react-core';
 
 export const BulkSelectValue = {
@@ -52,7 +51,7 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
   pagePartiallySelected,
   pageCount,
   selectedCount = 0,
-  totalCount,
+  totalCount = 0,
   ouiaId = 'BulkSelect',
   onSelect,
   menuToggleCheckboxProps,
@@ -84,6 +83,8 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
   const allOption = isDataPaginated ? BulkSelectValue.page : BulkSelectValue.all;
   const noneOption = isDataPaginated ? BulkSelectValue.nonePage : BulkSelectValue.none;
 
+  const onToggleClick = () => setOpen(!isOpen);
+
   return (
     <Dropdown
       shouldFocusToggleOnSelect
@@ -98,7 +99,7 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
         <MenuToggle
           ref={toggleRef}
           isExpanded={isOpen}
-          onClick={() => setOpen(!isOpen)}
+          onClick={onToggleClick}
           aria-label="Bulk select toggle"
           data-ouia-component-id={`${ouiaId}-toggle`}
           splitButtonOptions={{
@@ -110,7 +111,7 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
                 aria-label={`Select ${allOption}`}
                 isChecked={
                   (isDataPaginated && pagePartiallySelected) ||
-                  (!isDataPaginated && selectedCount > 0)
+                  (!isDataPaginated && selectedCount > 0 && selectedCount < totalCount)
                     ? null
                     : pageSelected || selectedCount === totalCount
                 }
@@ -118,9 +119,9 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
                 {...menuToggleCheckboxProps}
               />,
               selectedCount > 0 ? (
-                <Text ouiaId={`${ouiaId}-text`} key="bulk-select-text">
+                <span onClick={onToggleClick} data-ouia-component-id={`${ouiaId}-text`} key="bulk-select-text">
                   {`${selectedCount} selected`}
-                </Text>
+                </span>
               ) : null
             ]
           }}
