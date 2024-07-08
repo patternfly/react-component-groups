@@ -10,6 +10,7 @@ exports[`BulkSelect component should render 1`] = `
       >
         <label
           class="pf-v5-c-check pf-m-standalone"
+          for="BulkSelect-checkbox"
         >
           <input
             aria-invalid="false"
@@ -65,6 +66,7 @@ exports[`BulkSelect component should render 1`] = `
     >
       <label
         class="pf-v5-c-check pf-m-standalone"
+        for="BulkSelect-checkbox"
       >
         <input
           aria-invalid="false"

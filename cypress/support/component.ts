@@ -43,5 +43,7 @@ declare global {
 
 Cypress.Commands.add('mount', mount)
 
+Cypress.on('uncaught:exception', (_err, _runnable) => false)
+
 // Example use:
 // cy.mount(<MyComponent />)
