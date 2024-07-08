@@ -7,7 +7,7 @@ describe('ErrorBoundary', () => {
     cy.get('[data-ouia-component-id="test"]').should('have.text', 'Test');
   });
 
-  it.only('should expand the details section', () => {
+  it('should expand the details section', () => {
     const Surprise = () => {
       throw new Error('but a welcome one');
     };
