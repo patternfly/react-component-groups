@@ -1,7 +1,8 @@
 import React from 'react';
-import MultiContentCard from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
-import { Button, Card, CardHeader, CardBody, Text, TextContent, TextVariants, Icon, TextList, TextListItem, CardFooter } from '@patternfly/react-core';
-import { ArrowRightIcon, BellIcon, CogIcon, LockIcon } from '@patternfly/react-icons';
+import MultiContentCard, { MultiContentCardBorderVariant } from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
+import { Button, Card, CardHeader, CardBody, Text, TextContent, TextVariants, Icon, TextList, TextListItem, CardFooter, Divider, Dropdown, DropdownItem, DropdownList, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
+import { ArrowRightIcon, BellIcon, CogIcon, LockIcon, EllipsisVIcon } from '@patternfly/react-icons';
+
 
 const cards = [
   <Card isFullHeight isPlain key="card-1">
@@ -96,11 +97,85 @@ const cards = [
   </Card>
 ];
 
-const MultiContentCardExample: React.FunctionComponent = () => <MultiContentCard cards={cards} />;
+const MultiContentCardExample: React.FunctionComponent = () => <MultiContentCard cards={cards}/>;
+const HeaderExample: React.FunctionComponent = () => <MultiContentCard isExpandable withHeaderBorder toggleText='Card with border toggle text' leftBorderVariant={MultiContentCardBorderVariant.primary} cards={cards} />
+const DividerExample: React.FunctionComponent = () => <MultiContentCard isExpandable withHeaderBorder withDividers toggleText='Card with border toggle text' leftBorderVariant={MultiContentCardBorderVariant.primary} cards={cards} />
+
+
+
+const ActionsExample: React.FunctionComponent = () =>  {
+  const [ isMenuOpen, setMenuOpen ] = React.useState(false)
+
+  const onToggleClick = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+  return (
+    <MultiContentCard 
+      isExpandable
+      toggleText='Card with actions toggle text' 
+      cards={cards}
+      actions={
+        <Dropdown
+          isOpen={isMenuOpen}
+          onSelect={() => null}
+          onOpenChange={(isMenuOpen: boolean) => setMenuOpen(isMenuOpen)}
+          toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            <MenuToggle
+              ref={toggleRef}
+              aria-label="kebab dropdown toggle"
+              variant="plain"
+              onClick={onToggleClick}
+              isExpanded={isMenuOpen}
+            >
+              <EllipsisVIcon />
+            </MenuToggle>
+          )}
+          shouldFocusToggleOnSelect
+        >
+          <DropdownList>
+            <DropdownItem value={0} key="action">
+            Action
+            </DropdownItem>
+            <DropdownItem value={1} isDisabled key="disabled action">
+            Disabled Action
+            </DropdownItem>
+            <Divider component="li" key="separator" />
+            <DropdownItem value={2} key="separated action">
+            Separated Action
+            </DropdownItem>
+          </DropdownList>
+        </Dropdown>
+      }
+    />
+  )
+};
 
 describe('MultiContentCard', () => {
   it('renders MultiContentCard', () => {
     cy.mount(<MultiContentCardExample />);
     cy.get('[class="pf-v5-c-card pf-m-expanded"').should('exist');
   });
+
+  it('should display actions', () => {
+    cy.mount(<ActionsExample />);
+    cy.get('[class="pf-v5-c-menu-toggle pf-m-plain"').should('exist');
+    cy.get('[class="pf-v5-c-menu-toggle pf-m-plain"').click();
+    cy.get('[data-ouia-component-id="OUIA-Generated-Dropdown-1"').should('be.visible');
+  });
+
+  it('should display borders', () => {
+    cy.mount(<HeaderExample />);
+    cy.get('[data-ouia-component-id="MultiContentCard"')
+      .invoke('attr', 'class')
+      .then((classList) => {
+        const classes = classList ? classList.split(' ') : [];
+        expect('multiContentCardLeftBorder-0-2-2').to.be.oneOf(classes);
+      })
+  });
+
+  it('should display dividers', () => {
+    cy.mount(<DividerExample />);
+    cy.get('[data-ouia-component-id="MultiContentCard-expandable-content"')
+      .find('hr').should('exist');
+  })
 });
