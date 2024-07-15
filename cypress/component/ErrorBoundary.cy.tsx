@@ -15,7 +15,7 @@ describe('ErrorBoundary', () => {
       <Surprise />
     </ErrorBoundary>)
 
-    cy.get('[class="pf-v5-c-expandable-section__toggle"]').click();
+    cy.get('[data-ouia-component-id="ErrorBoundary-toggle"').click();
     cy.get('[class="pf-v5-c-expandable-section__content"]').should('contain.text', 'Error: but a welcome one');
   })
 })

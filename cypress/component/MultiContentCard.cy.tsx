@@ -99,6 +99,8 @@ const cards = [
 
 const MultiContentCardExample: React.FunctionComponent = () => <MultiContentCard cards={cards}/>;
 const HeaderExample: React.FunctionComponent = () => <MultiContentCard isExpandable withHeaderBorder toggleText='Card with border toggle text' leftBorderVariant={MultiContentCardBorderVariant.primary} cards={cards} />
+const DividerExample: React.FunctionComponent = () => <MultiContentCard isExpandable withHeaderBorder withDividers toggleText='Card with border toggle text' leftBorderVariant={MultiContentCardBorderVariant.primary} cards={cards} />
+
 
 
 const ActionsExample: React.FunctionComponent = () =>  {
@@ -158,7 +160,7 @@ describe('MultiContentCard', () => {
     cy.mount(<ActionsExample />);
     cy.get('[class="pf-v5-c-menu-toggle pf-m-plain"').should('exist');
     cy.get('[class="pf-v5-c-menu-toggle pf-m-plain"').click();
-    cy.get('[class="pf-v5-c-menu"').should('be.visible');
+    cy.get('[data-ouia-component-id="OUIA-Generated-Dropdown-1"').should('be.visible');
   });
 
   it('should display borders', () => {
@@ -170,4 +172,10 @@ describe('MultiContentCard', () => {
         expect('multiContentCardLeftBorder-0-2-2').to.be.oneOf(classes);
       })
   });
+
+  it('should display dividers', () => {
+    cy.mount(<DividerExample />);
+    cy.get('[data-ouia-component-id="MultiContentCard-expandable-content"')
+      .find('hr').should('exist');
+  })
 });
