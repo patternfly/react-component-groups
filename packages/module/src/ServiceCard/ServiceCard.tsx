@@ -1,22 +1,8 @@
 import React from 'react';
-import { Button, ButtonVariant, ButtonProps, Card, CardBody, CardFooter, CardHeader, Text, TextContent, TextVariants } from '@patternfly/react-core';
+import { Card, CardBody, CardFooter, CardHeader, Text, TextContent, TextVariants } from '@patternfly/react-core';
 import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { createUseStyles } from 'react-jss';
-
-export interface AnalyticsProps {
-  event: string;
-  properties: { name: string; url: string; };
-}
-
-export interface ServiceCardButtonProps extends ButtonProps {
-    /** Label for the button */
-    label: string;
-    /** button url */
-    url: string;
-    analytics: AnalyticsProps
-}
-
 
 export interface ServiceCardProps {
   /** Title for card */
@@ -78,27 +64,8 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
           </HelperTextItem>
         </HelperText>
         {learnMoreButton}
-        {/* <Button
-          variant={ButtonVariant.link}
-          component="a"
-          ouiaId={`${ouiaId}-learn-more-button`}
-          isInline
-          href={learnMoreUrl}
-          {...learnMoreButtonProps}>
-          {learnMoreButtonProps?.label}
-        </Button> */}
 
-        {launchButton ? ( launchButton ) : null
-        // <Button 
-        //   variant={ButtonVariant.primary}
-        //   ouiaId={`${ouiaId}-launch-button`}
-        //   isInline
-        //   component="a"
-        //   href={launchUrl}
-        //   {...launchButtonProps}>
-        //   {launchButtonProps?.label}
-        // </Button>
-        }
+        {launchButton ? ( launchButton ) : null}
       </CardFooter>
     </Card>
   )
