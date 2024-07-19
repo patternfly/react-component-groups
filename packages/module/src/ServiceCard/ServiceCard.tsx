@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, ButtonVariant, ButtonProps, Card, CardBody, CardFooter, CardHeader, Text, TextContent, TextVariants } from '@patternfly/react-core';
+import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
+import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { createUseStyles } from 'react-jss';
 
 export interface AnalyticsProps {
@@ -17,16 +19,22 @@ export interface ServiceCardButtonProps extends ButtonProps {
 
 
 export interface ServiceCardProps {
+  /** Title for card */
   title: string;
+  /** Subtitle for card */
   subtitle: string;
+  /** Custom description */
   description: string;
+  /** URL for service card icon */
   iconUrl: string;
-  learnMoreUrl: string;
-  launchUrl?: string;
+  /** Whether to show if button is disabled */
   showDisabledButton?: boolean;
-  helperText?: React.ReactElement;
-  learnMoreButtonProps?: ServiceCardButtonProps;
-  launchButtonProps: ServiceCardButtonProps;
+  /** Helper text for card */
+  helperText?: string;
+  /** Props to customize learn more Button */
+  learnMoreButton:React.ReactElement ;
+  /** Optional launch */
+  launchButton?: React.ReactElement;
   /** Custom OUIA ID */
   ouiaId?: string | number;
 }
@@ -46,17 +54,15 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
   subtitle,
   description,
   iconUrl,
-  learnMoreUrl,
-  launchUrl,
   helperText,
-  learnMoreButtonProps,
-  launchButtonProps,
+  learnMoreButton,
+  launchButton,
   ouiaId='ServiceCard'
 }: ServiceCardProps) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} ouiaId={`${ouiaId}-card`}>
       <CardHeader>
         <img src={iconUrl} className={classes.image} />
         <TextContent>
@@ -66,9 +72,13 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
       </CardHeader>
       <CardBody>{description}</CardBody>
       <CardFooter>
-        {helperText}
-      
-        <Button
+        <HelperText>
+          <HelperTextItem variant="indeterminate" className="pf-v5-u-mb-lg">
+            {helperText}
+          </HelperTextItem>
+        </HelperText>
+        {learnMoreButton}
+        {/* <Button
           variant={ButtonVariant.link}
           component="a"
           ouiaId={`${ouiaId}-learn-more-button`}
@@ -76,36 +86,19 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
           href={learnMoreUrl}
           {...learnMoreButtonProps}>
           {learnMoreButtonProps?.label}
-        </Button>
+        </Button> */}
 
-        {launchButtonProps && 
-        <Button 
-          variant={ButtonVariant.primary}
-          ouiaId={`${ouiaId}-launch-button`}
-          isInline
-          component="a"
-          href={launchUrl}
-          {...launchButtonProps}>
-          {launchButtonProps?.label}
-        </Button>}
-     
-        {/* <AnalyticsButton
-        variant={ButtonVariant.link}
-        component="a"
-        href={learnMoreUrl}
-        target="_blank"
-        rel="noopener"
-        isInline
-        analytics={{
-          event: 'DevSandbox Service Learn',
-          properties: {
-            name: `${title} ${subtitle}`,
-            url: learnMoreUrl,
-          },
-        }}
-      >
-        Learn more
-      </AnalyticsButton> */}
+        {launchButton ? ( launchButton ) : null
+        // <Button 
+        //   variant={ButtonVariant.primary}
+        //   ouiaId={`${ouiaId}-launch-button`}
+        //   isInline
+        //   component="a"
+        //   href={launchUrl}
+        //   {...launchButtonProps}>
+        //   {launchButtonProps?.label}
+        // </Button>
+        }
       </CardFooter>
     </Card>
   )

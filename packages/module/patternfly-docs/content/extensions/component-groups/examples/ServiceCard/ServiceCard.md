@@ -18,4 +18,3 @@ A **Service Card** component allows
 ```js file="./ServiceCardExample.tsx"
 
 ```
-
