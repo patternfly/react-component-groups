@@ -73,15 +73,15 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
           footer ?
             ( footer ) :
             ( <>
-             { launchUrl &&  
-              <Button
-                variant={ButtonVariant.secondary}
-                isInline
-                className={classes.launchButton}
-                component="a"
-                href="/">
-                  Launch
-              </Button> }
+              { launchUrl &&  
+                <Button
+                  variant={ButtonVariant.secondary}
+                  isInline
+                  className={classes.launchButton}
+                  component="a"
+                  href="/">
+                    Launch
+                </Button> }
               <Button
                 variant={ButtonVariant.link}
                 component="a"
@@ -95,7 +95,6 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
       </CardFooter>
     </Card>
   )
-  
 }
 
 export default ServiceCard;
