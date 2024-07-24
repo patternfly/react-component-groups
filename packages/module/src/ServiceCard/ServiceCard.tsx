@@ -32,7 +32,7 @@ const useStyles = createUseStyles({
     height: ('var(--pf-v5-u-h-100)')
   },
   image: {
-    marginRight: ('var(--pf-v5-u-mr-md)'),
+    marginRight: ('var(--pf-v5-global--spacer--md)'),
     width: 48
   },
   launchButton: {
