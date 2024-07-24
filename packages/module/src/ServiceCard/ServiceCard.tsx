@@ -29,14 +29,14 @@ export interface ServiceCardProps {
 
 const useStyles = createUseStyles({
   card: {
-    height: ('--pf-v5-u-h-100')
+    height: ('var(--pf-v5-u-h-100)')
   },
   image: {
-    marginRight: ('--pf-v5-u-mr-md'),
+    marginRight: ('var(--pf-v5-u-mr-md)'),
     width: 48
   },
   launchButton: {
-    marginRight: ('--pf-v5-u-mr-md')
+    marginRight: ('var(--pf-v5-global--spacer--sm)')
   }
 });
 
