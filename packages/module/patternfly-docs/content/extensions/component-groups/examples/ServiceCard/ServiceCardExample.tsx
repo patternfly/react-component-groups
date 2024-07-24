@@ -9,24 +9,6 @@ export const BasicExample: React.FunctionComponent = () => <ServiceCard
   iconUrl='/'
   showDisabledButton={false}
   helperText=''
-  learnMoreButton={
-    <Button
-      variant={ButtonVariant.link}
-      component="a"
-      isInline
-      href="google.com"
-    >
-        Learn More
-    </Button>
-  }
-  launchButton={
-    <Button 
-      variant={ButtonVariant.primary}
-      isInline
-      component="a"
-      href="/">
-        Launch
-    </Button>
-  }
-
+  learnMoreUrl='/'
+  launchUrl='/'
 />

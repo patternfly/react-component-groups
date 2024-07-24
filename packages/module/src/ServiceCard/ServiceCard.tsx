@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardBody, CardFooter, CardHeader, Text, TextContent, TextVariants } from '@patternfly/react-core';
+import { Button, ButtonVariant, Card, CardBody, CardFooter, CardHeader, Text, TextContent, TextVariants } from '@patternfly/react-core';
 import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { createUseStyles } from 'react-jss';
@@ -17,11 +17,13 @@ export interface ServiceCardProps {
   showDisabledButton?: boolean;
   /** Helper text for card */
   helperText?: string;
-  /** Props to customize learn more Button */
-  learnMoreButton:React.ReactElement ;
-  /** Optional launch */
-  launchButton?: React.ReactElement;
-  /** Custom OUIA ID */
+  /** learn more button url*/
+  learnMoreUrl: string;
+  /** Optional launch button url*/
+  launchUrl?: string;
+  /** Optional foot to override default Learn More and Launch buttons */
+  footer?: React.ReactElement
+  /** Optional custom OUIA ID */
   ouiaId?: string | number;
 }
 
@@ -32,8 +34,11 @@ const useStyles = createUseStyles({
   image: {
     marginRight: ('--pf-v5-u-mr-md'),
     width: 48
+  },
+  launchButton: {
+    marginRight: ('--pf-v5-u-mr-md')
   }
-})
+});
 
 const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
   title,
@@ -41,8 +46,9 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
   description,
   iconUrl,
   helperText,
-  learnMoreButton,
-  launchButton,
+  learnMoreUrl,
+  launchUrl,
+  footer,
   ouiaId='ServiceCard'
 }: ServiceCardProps) => {
   const classes = useStyles();
@@ -63,9 +69,29 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
             {helperText}
           </HelperTextItem>
         </HelperText>
-        {learnMoreButton}
-
-        {launchButton ? ( launchButton ) : null}
+        {
+          footer ?
+            ( footer ) :
+            ( <>
+             { launchUrl &&  
+              <Button
+                variant={ButtonVariant.secondary}
+                isInline
+                className={classes.launchButton}
+                component="a"
+                href="/">
+                  Launch
+              </Button> }
+              <Button
+                variant={ButtonVariant.link}
+                component="a"
+                isInline
+                href={learnMoreUrl}
+              >
+                Learn More
+              </Button>
+            </> )
+        }
       </CardFooter>
     </Card>
   )
