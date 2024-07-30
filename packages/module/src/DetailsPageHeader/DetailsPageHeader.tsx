@@ -5,9 +5,8 @@ import {
   LabelProps,
   Split,
   SplitItem,
-  Text,
-  TextContent,
-  TextVariants,
+  Content,
+  ContentVariants,
 } from '@patternfly/react-core';
 import React from 'react';
 import { createUseStyles } from 'react-jss'
@@ -68,9 +67,7 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
             )}
             {/* Page heading title */}
             <SplitItem>
-              <TextContent>
-                <Text component={TextVariants.h1}>{pageHeading.title}</Text>
-              </TextContent>
+              <Content component={ContentVariants.h1}>{pageHeading.title}</Content>
             </SplitItem>
             {/* Icon for details page heading (after title) */}
             {pageHeading?.iconAfterTitle && (
