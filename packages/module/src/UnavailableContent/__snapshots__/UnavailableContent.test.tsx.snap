@@ -58,7 +58,11 @@ exports[`Unavailable component should render with a link 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              status page
+              <span
+                class="pf-v6-c-button__text"
+              >
+                status page
+              </span>
             </a>
              
             for known outages.
@@ -121,7 +125,11 @@ exports[`Unavailable component should render with a link 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            status page
+            <span
+              class="pf-v6-c-button__text"
+            >
+              status page
+            </span>
           </a>
            
           for known outages.
@@ -241,7 +249,11 @@ exports[`Unavailable component should render with no link 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              status page
+              <span
+                class="pf-v6-c-button__text"
+              >
+                status page
+              </span>
             </a>
              
             for known outages.
@@ -304,7 +316,11 @@ exports[`Unavailable component should render with no link 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            status page
+            <span
+              class="pf-v6-c-button__text"
+            >
+              status page
+            </span>
           </a>
            
           for known outages.

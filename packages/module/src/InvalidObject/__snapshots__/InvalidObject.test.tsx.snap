@@ -286,7 +286,11 @@ exports[`InvalidObject component should render 1`] = `
               data-ouia-safe="true"
               href="http://localhost:5000"
             >
-              Return to homepage
+              <span
+                class="pf-v6-c-button__text"
+              >
+                Return to homepage
+              </span>
             </a>
           </div>
         </div>
@@ -575,7 +579,11 @@ exports[`InvalidObject component should render 1`] = `
             data-ouia-safe="true"
             href="http://localhost:5000"
           >
-            Return to homepage
+            <span
+              class="pf-v6-c-button__text"
+            >
+              Return to homepage
+            </span>
           </a>
         </div>
       </div>
