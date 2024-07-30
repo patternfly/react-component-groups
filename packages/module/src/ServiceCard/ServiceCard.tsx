@@ -11,8 +11,8 @@ export interface ServiceCardProps {
   subtitle: string;
   /** Custom description */
   description: string;
-  /** URL for service card icon */
-  iconUrl: string;
+  /** icon for service card */
+  icon: React.ReactNode;
   /** Whether to show if button is disabled */
   showDisabledButton?: boolean;
   /** Helper text for card */
@@ -44,7 +44,7 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
   title,
   subtitle,
   description,
-  iconUrl,
+  icon,
   helperText,
   learnMoreUrl,
   launchUrl,
@@ -56,7 +56,9 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
   return (
     <Card className={classes.card} ouiaId={`${ouiaId}-card`}>
       <CardHeader>
-        <img src={iconUrl} className={classes.image} />
+        <div className={classes.image}>
+          {icon}
+        </div>
         <TextContent>
           <Text component={TextVariants.h2}>{title}</Text>
           {subtitle}
@@ -79,7 +81,7 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
                   isInline
                   className={classes.launchButton}
                   component="a"
-                  href="/">
+                  href={launchUrl}>
                     Launch
                 </Button> }
               <Button
