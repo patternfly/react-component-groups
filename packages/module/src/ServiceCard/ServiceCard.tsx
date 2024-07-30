@@ -1,8 +1,9 @@
 import React from 'react';
-import { Card, CardBody, CardFooter, CardHeader, Text, TextContent, TextVariants } from '@patternfly/react-core';
+import { Card, CardBody, CardFooter, CardHeader, Content, ContentVariants } from '@patternfly/react-core';
 import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { createUseStyles } from 'react-jss';
+import clsx from 'clsx';
 
 export interface ServiceCardProps {
   /** Service card title */
@@ -23,10 +24,10 @@ export interface ServiceCardProps {
 
 const useStyles = createUseStyles({
   card: {
-    height: 'var(--pf-v5-u-h-100)'
+    height: 'var(--pf-v6-u-h-100)'
   },
   image: {
-    marginRight: 'var(--pf-v5-global--spacer--md)',
+    marginRight: 'var(--pf-t--global--spacer--md)',
     width: 48
   }
 });
@@ -48,16 +49,16 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
         <div className={classes.image}>
           {icon}
         </div>
-        <TextContent>
-          <Text component={TextVariants.h2} ouiaId={`${ouiaId}-title`}>{title}</Text>
+        <Content>
+          <Content component={ContentVariants.h2} ouiaId={`${ouiaId}-title`}>{title}</Content>
           {subtitle}
-        </TextContent>
+        </Content>
       </CardHeader>
       <CardBody data-ouia-component-id={`${ouiaId}-description`}>{description}</CardBody>
       <CardFooter data-ouia-component-id={`${ouiaId}-footer`}>
         { helperText ?
           ( <HelperText data-ouia-component-id={`${ouiaId}-helper-text`}>
-            <HelperTextItem variant="indeterminate" className="pf-v5-u-mb-lg">
+            <HelperTextItem className="pf-v6-u-mb-lg">
               {helperText}
             </HelperTextItem>
           </HelperText>) : null

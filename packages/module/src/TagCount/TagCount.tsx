@@ -42,12 +42,22 @@ const TagCount: React.FunctionComponent<TagCountProps> = ({
   const classes = useStyles(!count);
   const tagClasses = clsx(classes.buttonTagCount, className);
   return (
-    <Button aria-label="Tag count" {...props} variant="plain" isDisabled={!count} className={tagClasses} ouiaId={ouiaId} {...props}>
-      <Icon iconSize={iconSize} data-ouia-component-id={`${ouiaId}-icon`}>
-        <TagIcon className={classes.tagIcon} />
-      </Icon>
-      <span className={classes.tagText} data-ouia-component-id={`${ouiaId}-text`}>{count}</span>
-    </Button>
+    <Button 
+      icon={
+        <>
+          <Icon iconSize={iconSize} data-ouia-component-id={`${ouiaId}-icon`}>
+            <TagIcon className={classes.tagIcon} />
+          </Icon>
+          <span className={classes.tagText} data-ouia-component-id={`${ouiaId}-text`}>{count}</span>
+        </>
+      }
+      aria-label="Tag count" 
+      {...props}
+      variant="plain"
+      isDisabled={!count}
+      className={tagClasses}
+      ouiaId={ouiaId}
+    />
   );
 };
 

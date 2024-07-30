@@ -17,6 +17,9 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
       >
         <span
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
           class="pf-v6-c-button__text"
         >
           <span
@@ -28,7 +31,11 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
             >
               <svg
                 aria-hidden="true"
+<<<<<<< HEAD
                 class="pf-v6-svg tagIcon-0-2-2 tagIcon-d0-0-2-4"
+=======
+                class="pf-v6-svg"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -42,7 +49,11 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
             </span>
           </span>
           <span
+<<<<<<< HEAD
             class="tagText-0-2-3"
+=======
+            class="tagText-0-2-2"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
             data-ouia-component-id="TagCount-text"
           />
         </span>
@@ -64,8 +75,11 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
         class="pf-v6-c-button__text"
       >
         <span
+<<<<<<< HEAD
 =======
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
           class="pf-v6-c-icon"
           data-ouia-component-id="TagCount-icon"
         >
@@ -95,6 +109,7 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
           class="tagText-0-2-3"
           data-ouia-component-id="TagCount-text"
         />
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
       </button>
@@ -133,6 +148,8 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
           </svg>
         </span>
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
       </span>
     </button>
   </div>,
@@ -206,6 +223,9 @@ exports[`TagCount component should render a tag count of 11 1`] = `
       >
         <span
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
           class="pf-v6-c-button__text"
         >
           <span
@@ -217,7 +237,11 @@ exports[`TagCount component should render a tag count of 11 1`] = `
             >
               <svg
                 aria-hidden="true"
+<<<<<<< HEAD
                 class="pf-v6-svg tagIcon-0-2-2 tagIcon-d1-0-2-5"
+=======
+                class="pf-v6-svg"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -231,7 +255,11 @@ exports[`TagCount component should render a tag count of 11 1`] = `
             </span>
           </span>
           <span
+<<<<<<< HEAD
             class="tagText-0-2-3"
+=======
+            class="tagText-0-2-2"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
             data-ouia-component-id="TagCount-text"
           >
             11
@@ -254,8 +282,11 @@ exports[`TagCount component should render a tag count of 11 1`] = `
         class="pf-v6-c-button__text"
       >
         <span
+<<<<<<< HEAD
 =======
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
           class="pf-v6-c-icon"
           data-ouia-component-id="TagCount-icon"
         >
@@ -287,6 +318,7 @@ exports[`TagCount component should render a tag count of 11 1`] = `
         >
           11
         </span>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
       </button>
@@ -330,6 +362,8 @@ exports[`TagCount component should render a tag count of 11 1`] = `
       >
         11
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
       </span>
     </button>
   </div>,

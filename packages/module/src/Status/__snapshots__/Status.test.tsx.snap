@@ -44,6 +44,7 @@ exports[`Status component should render correctly 1`] = `
           class=""
         >
 <<<<<<< HEAD
+<<<<<<< HEAD
           <div
             class="pf-v6-c-content statusLabel-0-2-2"
             data-ouia-component-id="Status-label"
@@ -54,6 +55,12 @@ exports[`Status component should render correctly 1`] = `
             data-ouia-component-id="Status-label"
             data-ouia-component-type="PF6/Text"
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+          <div
+            class="pf-v6-c-content statusLabel-0-2-2"
+            data-ouia-component-id="Status-label"
+            data-ouia-component-type="PF6/Content"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
             data-ouia-safe="true"
             data-pf-content="true"
             style="margin-block-end: 0;"
@@ -104,6 +111,7 @@ exports[`Status component should render correctly 1`] = `
         class=""
       >
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div
           class="pf-v6-c-content statusLabel-0-2-2"
           data-ouia-component-id="Status-label"
@@ -114,6 +122,12 @@ exports[`Status component should render correctly 1`] = `
           data-ouia-component-id="Status-label"
           data-ouia-component-type="PF6/Text"
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+        <div
+          class="pf-v6-c-content statusLabel-0-2-2"
+          data-ouia-component-id="Status-label"
+          data-ouia-component-type="PF6/Content"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
           data-ouia-safe="true"
           data-pf-content="true"
           style="margin-block-end: 0;"
@@ -202,7 +216,11 @@ exports[`Status component should render correctly link 1`] = `
               class="icon-0-2-1"
             >
               <span
+<<<<<<< HEAD
                 class="pf-v6-c-icon pf-v6-u-mr-sm"
+=======
+                class="pf-v6-c-icon pf-v6-u-mr-md"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
                 data-ouia-component-id="Status-icon"
                 title="success"
               >
@@ -296,6 +314,7 @@ exports[`Status component should render correctly link 1`] = `
             class=""
           >
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div
               class="pf-v6-c-content statusLabel-0-2-2"
               data-ouia-component-id="Status-label"
@@ -306,6 +325,12 @@ exports[`Status component should render correctly link 1`] = `
               data-ouia-component-id="Status-label"
               data-ouia-component-type="PF6/Text"
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+            <div
+              class="pf-v6-c-content statusLabel-0-2-2"
+              data-ouia-component-id="Status-label"
+              data-ouia-component-type="PF6/Content"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
               data-ouia-safe="true"
               data-pf-content="true"
               style="margin-block-end: 0;"
@@ -314,6 +339,7 @@ exports[`Status component should render correctly link 1`] = `
             </div>
           </div>
         </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
       </span>
 =======
@@ -377,6 +403,9 @@ exports[`Status component should render correctly link 1`] = `
         </div>
       </div>
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+      </span>
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
     </button>
   </div>,
   "debug": [Function],
@@ -461,7 +490,11 @@ exports[`Status component should render correctly popover 1`] = `
                 class="icon-0-2-1"
               >
                 <span
+<<<<<<< HEAD
                   class="pf-v6-c-icon pf-v6-u-mr-sm"
+=======
+                  class="pf-v6-c-icon pf-v6-u-mr-md"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
                   data-ouia-component-id="Status-icon"
                   title="danger"
                 >
@@ -559,6 +592,7 @@ exports[`Status component should render correctly popover 1`] = `
               class=""
             >
 <<<<<<< HEAD
+<<<<<<< HEAD
               <div
                 class="pf-v6-c-content statusLabel-0-2-2"
                 data-ouia-component-id="Status-label"
@@ -569,6 +603,12 @@ exports[`Status component should render correctly popover 1`] = `
                 data-ouia-component-id="Status-label"
                 data-ouia-component-type="PF6/Text"
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+              <div
+                class="pf-v6-c-content statusLabel-0-2-2"
+                data-ouia-component-id="Status-label"
+                data-ouia-component-type="PF6/Content"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
                 data-ouia-safe="true"
                 data-pf-content="true"
                 style="margin-block-end: 0;"
@@ -577,6 +617,7 @@ exports[`Status component should render correctly popover 1`] = `
               </div>
             </div>
           </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
         </span>
 =======
@@ -644,6 +685,9 @@ exports[`Status component should render correctly popover 1`] = `
           </div>
         </div>
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+        </span>
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
       </button>
     </div>
   </div>,
@@ -745,6 +789,7 @@ exports[`Status component should render correctly with description 1`] = `
           class=""
         >
 <<<<<<< HEAD
+<<<<<<< HEAD
           <div
             class="pf-v6-c-content statusLabel-0-2-2"
             data-ouia-component-id="Status-label"
@@ -755,6 +800,12 @@ exports[`Status component should render correctly with description 1`] = `
             data-ouia-component-id="Status-label"
             data-ouia-component-type="PF6/Text"
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+          <div
+            class="pf-v6-c-content statusLabel-0-2-2"
+            data-ouia-component-id="Status-label"
+            data-ouia-component-type="PF6/Content"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
             data-ouia-safe="true"
             data-pf-content="true"
             style="margin-block-end: 0;"
@@ -765,10 +816,14 @@ exports[`Status component should render correctly with description 1`] = `
             class="pf-v6-c-content--small statusDescription-0-2-3"
             data-ouia-component-id="Status-description"
 <<<<<<< HEAD
+<<<<<<< HEAD
             data-ouia-component-type="PF6/Content"
 =======
             data-ouia-component-type="PF6/Text"
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+            data-ouia-component-type="PF6/Content"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
             data-ouia-safe="true"
             data-pf-content="true"
           >
@@ -818,6 +873,7 @@ exports[`Status component should render correctly with description 1`] = `
         class=""
       >
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div
           class="pf-v6-c-content statusLabel-0-2-2"
           data-ouia-component-id="Status-label"
@@ -828,6 +884,12 @@ exports[`Status component should render correctly with description 1`] = `
           data-ouia-component-id="Status-label"
           data-ouia-component-type="PF6/Text"
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+        <div
+          class="pf-v6-c-content statusLabel-0-2-2"
+          data-ouia-component-id="Status-label"
+          data-ouia-component-type="PF6/Content"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
           data-ouia-safe="true"
           data-pf-content="true"
           style="margin-block-end: 0;"
@@ -838,10 +900,14 @@ exports[`Status component should render correctly with description 1`] = `
           class="pf-v6-c-content--small statusDescription-0-2-3"
           data-ouia-component-id="Status-description"
 <<<<<<< HEAD
+<<<<<<< HEAD
           data-ouia-component-type="PF6/Content"
 =======
           data-ouia-component-type="PF6/Text"
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+          data-ouia-component-type="PF6/Content"
+>>>>>>> 7e689b6 (Update to the latest PF versions (#224))
           data-ouia-safe="true"
           data-pf-content="true"
         >
