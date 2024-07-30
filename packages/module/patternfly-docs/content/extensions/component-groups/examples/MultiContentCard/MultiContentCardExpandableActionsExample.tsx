@@ -1,13 +1,18 @@
 import React from 'react';
 import MultiContentCard from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
-import { Button, Card, CardHeader, CardBody, CardFooter, Content, ContentVariants, List, ListItem, Icon, Divider, Dropdown, DropdownItem, DropdownList, MenuToggle, MenuToggleElement, Label } from '@patternfly/react-core';
-import { ArrowRightIcon, BellIcon, CogIcon, LockIcon, EllipsisVIcon } from '@patternfly/react-icons';
+import { EllipsisVIcon } from '@patternfly/react-icons';
+import { Button, Card, CardHeader, CardBody, CardFooter, Content, ContentVariants, List, ListItem, Icon, Divider, Dropdown, DropdownItem, DropdownList, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
+import { ArrowRightIcon, BellIcon, CogIcon, LockIcon } from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
 const useStyles = createUseStyles({
-  cardHeaderTitle: {
-    fontSize: 'var(--pf-t--global--font--size--heading--h4)',
+  action: {
+    color: 'var(--pf-t--global--text--color--brand--default)',
+    fontSize: 'var(--pf-t--global--font--size--200)',
+  },
+  actionIcon: {
+    color: 'var(--pf-t--global--color--brand--default)',
   },
   bulletPoints: {
     color: 'var(--pf-t--global--color--brand--default)',
@@ -20,13 +25,16 @@ export const BasicExample: React.FunctionComponent = () => {
 
   const cards = [
     <Card isFullHeight isPlain key="card-1">
-      <CardHeader className="pf-v6-u-pt-0">
-        <Content component={ContentVariants.h3} className={classes.cardHeaderTitle}>Getting Started</Content>
+      <CardHeader>
+        <Content component={ContentVariants.h4}>Getting Started</Content>
       </CardHeader>
       <CardBody>
-        <Label className='pf-v6-u-mb-sm' icon={<CogIcon />} color="blue">
+        <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
+          <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
+            <CogIcon className={classes.actionIcon} />
+          </Icon>
           Configure application
-        </Label>
+        </Content>
         <Content className="pf-v6-u-font-size-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Content>
@@ -46,11 +54,13 @@ export const BasicExample: React.FunctionComponent = () => {
       </CardFooter>
     </Card>,
     <Card isFullHeight isPlain key="card-2">
-      <CardHeader/>
-      <CardBody>
-        <Label className='pf-v6-u-mb-sm' icon={<LockIcon />} color="green">
+      <CardBody className="pf-v6-u-pt-3xl-on-md">
+        <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
+          <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
+            <LockIcon className={classes.actionIcon} />
+          </Icon>
           Configure access
-        </Label>
+        </Content>
         <Content className="pf-v6-u-font-size-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </Content>
@@ -67,13 +77,16 @@ export const BasicExample: React.FunctionComponent = () => {
       </CardFooter>
     </Card>,
     <Card isFullHeight isPlain key="card-3">
-      <CardHeader className="pf-v6-u-pt-0">
-        <Content component={ContentVariants.h3} className={classes.cardHeaderTitle}>Next Steps</Content>
+      <CardHeader>
+        <Content component={ContentVariants.h4}>Next Steps</Content>
       </CardHeader>
       <CardBody>
-        <Label className='pf-v6-u-mb-sm' icon={<BellIcon />} color="orange">
+        <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
+          <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
+            <BellIcon className={classes.actionIcon} />
+          </Icon>
           Configure notifications
-        </Label>
+        </Content>
         <Content className="pf-v6-u-font-size-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Content>
