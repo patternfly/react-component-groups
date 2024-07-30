@@ -227,6 +227,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
               <span
                 class="pf-v6-c-button__icon pf-m-start"
               >
+                Learn more
                 <span
                   class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
                 >
@@ -351,6 +352,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
               <span
                 class="pf-v6-c-button__icon pf-m-start"
               >
+                Learn more
                 <span
                   class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
                 >
@@ -745,6 +747,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
                 <span
                   class="pf-v6-c-button__icon pf-m-start"
                 >
+                  Learn more
                   <span
                     class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
                   >
@@ -869,6 +872,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
                 <span
                   class="pf-v6-c-button__icon pf-m-start"
                 >
+                  Learn more
                   <span
                     class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
                   >
@@ -1230,6 +1234,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
               <span
                 class="pf-v6-c-button__icon pf-m-start"
               >
+                Learn more
                 <span
                   class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
                 >
@@ -1357,6 +1362,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
               <span
                 class="pf-v6-c-button__icon pf-m-start"
               >
+                Learn more
                 <span
                   class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
                 >
@@ -1623,6 +1629,7 @@ exports[`MultiContentCard component should render multi-content card with divide
               <span
                 class="pf-v6-c-button__icon pf-m-start"
               >
+                Learn more
                 <span
                   class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
                 >
@@ -1750,6 +1757,7 @@ exports[`MultiContentCard component should render multi-content card with divide
               <span
                 class="pf-v6-c-button__icon pf-m-start"
               >
+                Learn more
                 <span
                   class="pf-v6-c-icon pf-m-inline pf-v6-u-ml-sm"
                 >
