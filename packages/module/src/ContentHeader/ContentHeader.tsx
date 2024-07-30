@@ -4,9 +4,8 @@ import {
   FlexItem,
   Split,
   SplitItem,
-  Text,
+  Content,
   PageSection,
-  TextContent,
   Button,
   ButtonVariant,
   ButtonProps,
@@ -80,11 +79,9 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
         <FlexItem flex={{ default: 'flex_1' }}>
           <Split hasGutter>
             <SplitItem>
-              <TextContent>
-                <Text className="pf-v6-u-mb-sm" component="h1" ouiaId={`${ouiaId}-title`}>
-                  {title}
-                </Text>
-              </TextContent>
+              <Content className="pf-v6-u-mb-sm" component="h1" ouiaId={`${ouiaId}-title`}>
+                {title}
+              </Content>
             </SplitItem>
             {label && (
               <SplitItem>
@@ -98,16 +95,14 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
               </SplitItem>
             )}
           </Split>
-          <TextContent>
-            <Text component="p" ouiaId={`${ouiaId}-subtitle`}>
-              {subtitle}
-            </Text>
-            {linkProps && (
-              <Button variant={ButtonVariant.link} ouiaId={`${ouiaId}-link-button`} isInline icon={linkProps.isExternal ? <ExternalLinkAltIcon /> : null} iconPosition="end" {...linkProps}>
-                {linkProps.label}
-              </Button>
-            )}
-          </TextContent>
+          <Content component="p" ouiaId={`${ouiaId}-subtitle`}>
+            {subtitle}
+          </Content>
+          {linkProps && (
+            <Button variant={ButtonVariant.link} ouiaId={`${ouiaId}-link-button`} isInline icon={linkProps.isExternal ? <ExternalLinkAltIcon /> : null} iconPosition="end" {...linkProps}>
+              {linkProps.label}
+            </Button>
+          )}
         </FlexItem>
       </Flex>
     </PageSection>

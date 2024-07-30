@@ -1,9 +1,8 @@
 import React from 'react';
 import {
   Button,
-  TextContent,
-  Text,
-  TextVariants,
+  Content,
+  ContentVariants,
   DataListItem,
   DataList,
   DataListItemRow,
@@ -98,8 +97,8 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
       isOpen={isOpen}
       variant={ModalVariant.small}
       description={
-        <TextContent>
-          <Text component={TextVariants.p}>{description}</Text>
+        <>
+          <Content component={ContentVariants.p}>{description}</Content>
           <Split hasGutter>
             <SplitItem>
               <Button isInline onClick={selectAll} variant={ButtonVariant.link} ouiaId={`${ouiaId}-selectAll-button`}>
@@ -112,7 +111,7 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
               </Button>
             </SplitItem>
           </Split>
-        </TextContent>
+        </>
       }
       actions={[
         <Button key="save" variant={ButtonVariant.primary} onClick={handleSave} ouiaId={`${ouiaId}-save-button`}>

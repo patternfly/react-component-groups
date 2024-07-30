@@ -21,7 +21,7 @@ Please see the [migration guide](./migration.md)
 #### Example component:
 ```
 import * as React from 'react';
-import { Text } from '@patternfly/react-core';
+import { Content } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
 
 // do not forget to export your component's interface
@@ -42,9 +42,9 @@ const MyComponent: React.FunctionComponent<MyComponentProps> = () => {
   const classes = useStyles();
 
   return (
-    <Text className={classes.myText}>
+    <Content className={classes.myText}>
       This is my new reusable component
-    </Text>
+    </Content>
   );
 };
 
