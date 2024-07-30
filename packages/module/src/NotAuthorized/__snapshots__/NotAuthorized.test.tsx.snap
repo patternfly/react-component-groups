@@ -56,7 +56,11 @@ exports[`NotAuthorized component should apply custom styles 1`] = `
         data-ouia-safe="true"
         href="."
       >
-        Go to landing page
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Go to landing page
+        </span>
       </a>
       <div
         class="pf-v6-c-empty-state__actions"
@@ -178,7 +182,11 @@ exports[`NotAuthorized component should render 1`] = `
         data-ouia-safe="true"
         href="."
       >
-        Go to landing page
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Go to landing page
+        </span>
       </a>
       <div
         class="pf-v6-c-empty-state__actions"
@@ -324,7 +332,11 @@ exports[`NotAuthorized component should show custom body text 1`] = `
         data-ouia-safe="true"
         href="."
       >
-        Go to landing page
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Go to landing page
+        </span>
       </a>
       <div
         class="pf-v6-c-empty-state__actions"
@@ -390,7 +402,11 @@ exports[`NotAuthorized component should show custom title 1`] = `
         data-ouia-safe="true"
         href="."
       >
-        Go to landing page
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Go to landing page
+        </span>
       </a>
       <div
         class="pf-v6-c-empty-state__actions"
@@ -456,7 +472,11 @@ exports[`NotAuthorized component should use custom icon 1`] = `
         data-ouia-safe="true"
         href="."
       >
-        Go to landing page
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Go to landing page
+        </span>
       </a>
       <div
         class="pf-v6-c-empty-state__actions"

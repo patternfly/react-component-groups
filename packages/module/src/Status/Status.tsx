@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, ButtonVariant, Flex, FlexItem, Icon, Popover, PopoverPosition, PopoverProps, Text, TextVariants, } from '@patternfly/react-core';
+import { Button, ButtonVariant, Flex, FlexItem, Icon, Popover, PopoverPosition, PopoverProps, Content, ContentVariants, } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
 
 export const StatusVariant = {
@@ -74,8 +74,8 @@ export const Status: React.FC<StatusProps> = ({ variant = StatusVariant.plain, l
       )}
       {!iconOnly && (
         <FlexItem>
-          <Text ouiaId={`${ouiaId}-label`} className={classes.statusLabel} style={{ marginBlockEnd: 0 }}>{label}</Text>
-          {description && <Text component={TextVariants.small} ouiaId={`${ouiaId}-description`} className={classes.statusDescription}>{description}</Text>}
+          <Content ouiaId={`${ouiaId}-label`} className={classes.statusLabel} style={{ marginBlockEnd: 0 }}>{label}</Content>
+          {description && <Content component={ContentVariants.small} ouiaId={`${ouiaId}-description`} className={classes.statusDescription}>{description}</Content>}
         </FlexItem>
       )}
     </Flex>
