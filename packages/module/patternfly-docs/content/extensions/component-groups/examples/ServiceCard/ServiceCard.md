@@ -8,6 +8,8 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 ---
 
 import ServiceCard from "@patternfly/react-component-groups/dist/dynamic/ServiceCard";
+import { EllipsisVIcon } from '@patternfly/react-icons';
+import contentHeaderIcon from '../../assets/icons/content-header-icon.svg'
 
 A **Service Card** component allows
 
