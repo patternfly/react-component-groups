@@ -11,13 +11,13 @@ import ServiceCard from "@patternfly/react-component-groups/dist/dynamic/Service
 import { EllipsisVIcon } from '@patternfly/react-icons';
 import contentHeaderIcon from '../../assets/icons/content-header-icon.svg'
 
-A **Service Card** component displays a card with an icon, title, description, and an optional customized footer
+The **service card** component displays a card representing a service with an icon, title, description, and an optional customized footer
 
 ## Examples
 
 ### Service Card
 
-This shows a basic service card with a `icon`, `title`, `description`, and optional footer passed in.
+This shows a basic service card with an `icon`, `title`, `description`, and optional footer passed in.
 
 ```js file="./ServiceCardExample.tsx"
 
@@ -25,7 +25,7 @@ This shows a basic service card with a `icon`, `title`, `description`, and optio
 
 ### Service Card with Gallery example
 
-This shows how cards will look side by side in a `Gallery` component
+This shows how cards can look side by side in a [gallery layout](/layouts/gallery).
 
 ```js file="./ServiceCardGalleryExample.tsx"
 
