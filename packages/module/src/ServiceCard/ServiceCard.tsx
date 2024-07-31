@@ -5,17 +5,17 @@ import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/H
 import { createUseStyles } from 'react-jss';
 
 export interface ServiceCardProps {
-  /** Title for card */
+  /** Service card title */
   title: string;
-  /** Subtitle for card */
+  /** Service card subtitle */
   subtitle: string;
-  /** Custom description */
+  /** Service card description */
   description: string;
-  /** icon for service card */
+  /** Service card icon */
   icon: React.ReactNode;
   /** Whether to show if button is disabled */
   showDisabledButton?: boolean;
-  /** Helper text for card */
+  /** Optional Service card helper text*/
   helperText?: string;
   /** Optional footer */
   footer?: React.ReactElement
