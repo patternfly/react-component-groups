@@ -13,12 +13,10 @@ export interface ServiceCardProps {
   description: string;
   /** Service card icon */
   icon: React.ReactNode;
-  /** Whether to show if button is disabled */
-  showDisabledButton?: boolean;
   /** Optional Service card helper text*/
   helperText?: string;
   /** Optional footer */
-  footer?: React.ReactElement
+  footer?: React.ReactElement | null;
   /** Optional custom OUIA ID */
   ouiaId?: string | number;
 }
@@ -39,7 +37,7 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
   description,
   icon,
   helperText,
-  footer,
+  footer = null,
   ouiaId='ServiceCard'
 }: ServiceCardProps) => {
   const classes = useStyles();
@@ -64,7 +62,7 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
             </HelperTextItem>
           </HelperText>) : null
         }
-        { footer ? ( footer ) : null }
+        { footer }
       </CardFooter>
     </Card>
   )
