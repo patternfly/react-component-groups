@@ -25,7 +25,7 @@ This shows a basic service card with an `icon`, `title`, `description`, and opti
 
 ### Service Card with Gallery example
 
-This shows how cards will look side by side in a `Gallery` component
+This shows how cards can look side by side in a [gallery layout](/layouts/gallery).
 
 ```js file="./ServiceCardGalleryExample.tsx"
 
