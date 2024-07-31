@@ -9,7 +9,6 @@ describe('LogSnippet component', () => {
       subtitle='A basic example'
       description='This is a basic ServiceCard Example'
       icon='/'
-      showDisabledButton={false}
       helperText=''
     />)).toMatchSnapshot();
   });
