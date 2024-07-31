@@ -28,7 +28,7 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
             >
               <h2
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-1"
+                data-ouia-component-id="ServiceCard-title"
                 data-ouia-component-type="PF5/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -41,11 +41,13 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
         </div>
         <div
           class="pf-v5-c-card__body"
+          data-ouia-component-id="ServiceCard-description"
         >
           This is a basic ServiceCard Example
         </div>
         <div
           class="pf-v5-c-card__footer"
+          data-ouia-component-id="ServiceCard-footer"
         />
       </div>
     </div>
@@ -74,7 +76,7 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
           >
             <h2
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-1"
+              data-ouia-component-id="ServiceCard-title"
               data-ouia-component-type="PF5/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -87,11 +89,13 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
       </div>
       <div
         class="pf-v5-c-card__body"
+        data-ouia-component-id="ServiceCard-description"
       >
         This is a basic ServiceCard Example
       </div>
       <div
         class="pf-v5-c-card__footer"
+        data-ouia-component-id="ServiceCard-footer"
       />
     </div>
   </div>,
