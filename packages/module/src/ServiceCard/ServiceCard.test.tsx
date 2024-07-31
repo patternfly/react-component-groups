@@ -11,8 +11,6 @@ describe('LogSnippet component', () => {
       icon='/'
       showDisabledButton={false}
       helperText=''
-      learnMoreUrl='/'
-      launchUrl='/'
     />)).toMatchSnapshot();
   });
 });

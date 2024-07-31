@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonVariant, Card, CardBody, CardFooter, CardHeader, Text, TextContent, TextVariants } from '@patternfly/react-core';
+import { Card, CardBody, CardFooter, CardHeader, Text, TextContent, TextVariants } from '@patternfly/react-core';
 import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { createUseStyles } from 'react-jss';
@@ -17,11 +17,7 @@ export interface ServiceCardProps {
   showDisabledButton?: boolean;
   /** Helper text for card */
   helperText?: string;
-  /** learn more button url*/
-  learnMoreUrl: string;
-  /** Optional launch button url*/
-  launchUrl?: string;
-  /** Optional foot to override default Learn More and Launch buttons */
+  /** Optional footer */
   footer?: React.ReactElement
   /** Optional custom OUIA ID */
   ouiaId?: string | number;
@@ -29,14 +25,11 @@ export interface ServiceCardProps {
 
 const useStyles = createUseStyles({
   card: {
-    height: ('var(--pf-v5-u-h-100)')
+    height: 'var(--pf-v5-u-h-100)'
   },
   image: {
-    marginRight: ('var(--pf-v5-global--spacer--md)'),
+    marginRight: 'var(--pf-v5-global--spacer--md)',
     width: 48
-  },
-  launchButton: {
-    marginRight: ('var(--pf-v5-global--spacer--sm)')
   }
 });
 
@@ -46,8 +39,6 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
   description,
   icon,
   helperText,
-  learnMoreUrl,
-  launchUrl,
   footer,
   ouiaId='ServiceCard'
 }: ServiceCardProps) => {
@@ -66,34 +57,14 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
       </CardHeader>
       <CardBody>{description}</CardBody>
       <CardFooter>
-        <HelperText>
-          <HelperTextItem variant="indeterminate" className="pf-v5-u-mb-lg">
-            {helperText}
-          </HelperTextItem>
-        </HelperText>
-        {
-          footer ?
-            ( footer ) :
-            ( <>
-              { launchUrl &&  
-                <Button
-                  variant={ButtonVariant.secondary}
-                  isInline
-                  className={classes.launchButton}
-                  component="a"
-                  href={launchUrl}>
-                    Launch
-                </Button> }
-              <Button
-                variant={ButtonVariant.link}
-                component="a"
-                isInline
-                href={learnMoreUrl}
-              >
-                Learn More
-              </Button>
-            </> )
+        { helperText ?
+          ( <HelperText>
+            <HelperTextItem variant="indeterminate" className="pf-v5-u-mb-lg">
+              {helperText}
+            </HelperTextItem>
+          </HelperText>) : null
         }
+        { footer ? ( footer ) : null }
       </CardFooter>
     </Card>
   )
