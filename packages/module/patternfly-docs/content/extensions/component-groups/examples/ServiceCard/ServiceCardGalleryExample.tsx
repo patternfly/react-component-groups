@@ -13,7 +13,6 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
         subtitle='A basic example'
         description='This is a basic ServiceCard Example'
         icon={<img src={contentHeaderIcon} alt="content-header-icon" />}
-        showDisabledButton={false}
         helperText=''
 
       />
@@ -24,7 +23,6 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
         subtitle='A second example'
         description='This is another basic ServiceCard Example'
         icon={<img src={contentHeaderIcon} alt="content-header-icon" />}
-        showDisabledButton={false}
         helperText=''
         footer={<>
           <Button

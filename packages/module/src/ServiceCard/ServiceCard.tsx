@@ -49,14 +49,14 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
           {icon}
         </div>
         <TextContent>
-          <Text component={TextVariants.h2}>{title}</Text>
+          <Text component={TextVariants.h2} ouiaId={`${ouiaId}-title`}>{title}</Text>
           {subtitle}
         </TextContent>
       </CardHeader>
-      <CardBody>{description}</CardBody>
-      <CardFooter>
+      <CardBody data-ouia-component-id={`${ouiaId}-description`}>{description}</CardBody>
+      <CardFooter data-ouia-component-id={`${ouiaId}-footer`}>
         { helperText ?
-          ( <HelperText>
+          ( <HelperText data-ouia-component-id={`${ouiaId}-helper-text`}>
             <HelperTextItem variant="indeterminate" className="pf-v5-u-mb-lg">
               {helperText}
             </HelperTextItem>

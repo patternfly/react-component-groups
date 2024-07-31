@@ -10,7 +10,6 @@ export const BasicExample: React.FunctionComponent = () => (
     subtitle='A basic example'
     description='This is a basic ServiceCard Example'
     icon={<img src={contentHeaderIcon} alt="content-header-icon" />}
-    showDisabledButton={false}
     helperText='Here is helper text'
     footer={<>
       <Button
