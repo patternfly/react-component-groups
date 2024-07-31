@@ -4,7 +4,6 @@ import { Gallery } from '@patternfly/react-core/dist/dynamic/layouts/Gallery';
 import { GalleryItem } from '@patternfly/react-core/dist/dynamic/layouts/Gallery';
 import { Button, ButtonVariant } from '@patternfly/react-core';
 import contentHeaderIcon from '../../assets/icons/content-header-icon.svg';
-import { createUseStyles } from 'react-jss';
 
 export const ServiceCardGalleryExample: React.FunctionComponent = () => (
   <Gallery hasGutter minWidths={{ default: '330px' }}>
