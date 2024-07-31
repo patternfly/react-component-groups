@@ -17,7 +17,7 @@ The **service card** component displays a card representing a service with an ic
 
 ### Service Card
 
-This shows a basic service card with a `icon`, `title`, `description`, and optional footer passed in.
+This shows a basic service card with an `icon`, `title`, `description`, and optional footer passed in.
 
 ```js file="./ServiceCardExample.tsx"
 
