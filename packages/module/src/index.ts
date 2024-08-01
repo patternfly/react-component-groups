@@ -18,6 +18,9 @@ export * from './ShortcutGrid';
 export { default as Shortcut } from './Shortcut';
 export * from './Shortcut';
 
+export { default as ServiceCard } from './ServiceCard';
+export * from './ServiceCard';
+
 export { default as NotFoundIcon } from './NotFoundIcon';
 export * from './NotFoundIcon';
 
