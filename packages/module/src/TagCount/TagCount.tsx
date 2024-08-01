@@ -6,14 +6,15 @@ import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
   buttonTagCount: {
-    color: 'var(--pf-v5-global--icon--Color--light)',
+    color: 'var(--pf-t--global--icon--color--default)',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    padding: 'var(--pf-t--global--spacer--200) var(--pf-t--global--spacer--300)'
   },
 
   tagText: {
-    marginLeft: 'var(--pf-v5-global--spacer--sm)',
-    fontSize: 'var(--pf-v5-global--FontSize--sm)'
+    marginLeft: 'var(--pf-t--global--spacer--200)',
+    fontSize: 'var(--pf-t--global--font--size--200)'
   }
 });
 
