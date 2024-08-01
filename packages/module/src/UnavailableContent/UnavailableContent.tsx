@@ -6,6 +6,7 @@ import { createUseStyles } from 'react-jss';
 const useStyles = createUseStyles({
   emptyStateLinkButton: {
     padding: '0',
+    fontSize: 'var(--pf-v6-c-empty-state--body--FontSize)'
   }
 });
 
