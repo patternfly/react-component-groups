@@ -7,6 +7,7 @@ exports[`Contentheader component should render 1`] = `
     <div>
       <section
 <<<<<<< HEAD
+<<<<<<< HEAD
         class="pf-v6-c-page__main-section"
       >
         <div
@@ -31,11 +32,18 @@ exports[`Contentheader component should render 1`] = `
           class="pf-v6-c-page__main-body"
 >>>>>>> fbe8303 (Update to the latest PF versions (#224))
 >>>>>>> 7e689b6 (Update to the latest PF versions (#224))
+=======
+        class="pf-v6-c-page__main-section"
+      >
+        <div
+          class="pf-v6-c-page__main-body"
+>>>>>>> 34b69c4 (fix(v6): Fix generated files)
         >
           <div
             class="pf-v6-l-flex"
           >
             <div
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               class="pf-m-flex-1"
@@ -62,8 +70,9 @@ exports[`Contentheader component should render 1`] = `
 =======
               class="pf-v6-l-split pf-m-gutter"
 =======
+=======
+>>>>>>> 34b69c4 (fix(v6): Fix generated files)
               class="pf-m-flex-1"
->>>>>>> fbe8303 (Update to the latest PF versions (#224))
             >
               <div
                 class="pf-v6-l-split pf-m-gutter"
@@ -75,6 +84,7 @@ exports[`Contentheader component should render 1`] = `
                     class="pf-v6-c-content--h1 pf-v6-u-mb-sm"
                     data-ouia-component-id="ContentHeader-title"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     data-ouia-component-type="PF6/Text"
 >>>>>>> 7d5bf1e (Update to PatternFly 6 (#145))
 <<<<<<< HEAD
@@ -84,6 +94,9 @@ exports[`Contentheader component should render 1`] = `
                     data-ouia-component-type="PF6/Content"
 >>>>>>> fbe8303 (Update to the latest PF versions (#224))
 >>>>>>> 7e689b6 (Update to the latest PF versions (#224))
+=======
+                    data-ouia-component-type="PF6/Content"
+>>>>>>> 34b69c4 (fix(v6): Fix generated files)
                     data-ouia-safe="true"
                     data-pf-content="true"
                   >
@@ -94,6 +107,7 @@ exports[`Contentheader component should render 1`] = `
                   class="pf-v6-l-split__item pf-m-fill"
                 />
               </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -131,12 +145,17 @@ exports[`Contentheader component should render 1`] = `
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
 =======
 =======
+=======
+>>>>>>> 34b69c4 (fix(v6): Fix generated files)
               <p
                 class="pf-v6-c-content--p"
                 data-ouia-component-id="ContentHeader-subtitle"
                 data-ouia-component-type="PF6/Content"
+<<<<<<< HEAD
 >>>>>>> fbe8303 (Update to the latest PF versions (#224))
 >>>>>>> 7e689b6 (Update to the latest PF versions (#224))
+=======
+>>>>>>> 34b69c4 (fix(v6): Fix generated files)
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
@@ -150,6 +169,7 @@ exports[`Contentheader component should render 1`] = `
   </body>,
   "container": <div>
     <section
+<<<<<<< HEAD
 <<<<<<< HEAD
       class="pf-v6-c-page__main-section"
     >
@@ -175,11 +195,18 @@ exports[`Contentheader component should render 1`] = `
         class="pf-v6-c-page__main-body"
 >>>>>>> fbe8303 (Update to the latest PF versions (#224))
 >>>>>>> 7e689b6 (Update to the latest PF versions (#224))
+=======
+      class="pf-v6-c-page__main-section"
+    >
+      <div
+        class="pf-v6-c-page__main-body"
+>>>>>>> 34b69c4 (fix(v6): Fix generated files)
       >
         <div
           class="pf-v6-l-flex"
         >
           <div
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             class="pf-m-flex-1"
@@ -206,8 +233,9 @@ exports[`Contentheader component should render 1`] = `
 =======
             class="pf-v6-l-split pf-m-gutter"
 =======
+=======
+>>>>>>> 34b69c4 (fix(v6): Fix generated files)
             class="pf-m-flex-1"
->>>>>>> fbe8303 (Update to the latest PF versions (#224))
           >
             <div
               class="pf-v6-l-split pf-m-gutter"
@@ -219,6 +247,7 @@ exports[`Contentheader component should render 1`] = `
                   class="pf-v6-c-content--h1 pf-v6-u-mb-sm"
                   data-ouia-component-id="ContentHeader-title"
 <<<<<<< HEAD
+<<<<<<< HEAD
                   data-ouia-component-type="PF6/Text"
 >>>>>>> 7d5bf1e (Update to PatternFly 6 (#145))
 <<<<<<< HEAD
@@ -228,6 +257,9 @@ exports[`Contentheader component should render 1`] = `
                   data-ouia-component-type="PF6/Content"
 >>>>>>> fbe8303 (Update to the latest PF versions (#224))
 >>>>>>> 7e689b6 (Update to the latest PF versions (#224))
+=======
+                  data-ouia-component-type="PF6/Content"
+>>>>>>> 34b69c4 (fix(v6): Fix generated files)
                   data-ouia-safe="true"
                   data-pf-content="true"
                 >
@@ -238,6 +270,7 @@ exports[`Contentheader component should render 1`] = `
                 class="pf-v6-l-split__item pf-m-fill"
               />
             </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -275,12 +308,17 @@ exports[`Contentheader component should render 1`] = `
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
 =======
 =======
+=======
+>>>>>>> 34b69c4 (fix(v6): Fix generated files)
             <p
               class="pf-v6-c-content--p"
               data-ouia-component-id="ContentHeader-subtitle"
               data-ouia-component-type="PF6/Content"
+<<<<<<< HEAD
 >>>>>>> fbe8303 (Update to the latest PF versions (#224))
 >>>>>>> 7e689b6 (Update to the latest PF versions (#224))
+=======
+>>>>>>> 34b69c4 (fix(v6): Fix generated files)
               data-ouia-safe="true"
               data-pf-content="true"
             >
