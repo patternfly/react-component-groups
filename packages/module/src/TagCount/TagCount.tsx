@@ -12,7 +12,8 @@ const useStyles = createUseStyles({
   },
 
   tagText: {
-    marginLeft: 10
+    marginLeft: 'var(--pf-v5-global--spacer--sm)',
+    fontSize: 'var(--pf-v5-global--FontSize--sm)'
   }
 });
 
