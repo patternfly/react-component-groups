@@ -56,7 +56,7 @@ const cards = [
       <Text>
         <Button variant="link" isInline>
             Learn more  
-          <Icon className="pf-u-ml-sm" isInline>
+          <Icon className="pf-v5-u-ml-sm" isInline>
             <ArrowRightIcon />
           </Icon>
         </Button>
@@ -86,7 +86,7 @@ const cards = [
       <Text>
         <Button variant="link" isInline>
             Learn more  
-          <Icon className="pf-u-ml-sm" isInline>
+          <Icon className="pf-v5-u-ml-sm" isInline>
             <ArrowRightIcon />
           </Icon>
         </Button>
