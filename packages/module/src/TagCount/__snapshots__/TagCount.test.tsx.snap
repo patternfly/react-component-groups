@@ -27,7 +27,7 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg tagIcon-0-2-2"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -41,7 +41,7 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
             </span>
           </span>
           <span
-            class="tagText-0-2-2"
+            class="tagText-0-2-3"
             data-ouia-component-id="TagCount-text"
           />
         </span>
@@ -71,7 +71,7 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
           >
             <svg
               aria-hidden="true"
-              class="pf-v6-svg"
+              class="pf-v6-svg tagIcon-0-2-2"
               fill="currentColor"
               height="1em"
               role="img"
@@ -85,7 +85,7 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
           </span>
         </span>
         <span
-          class="tagText-0-2-2"
+          class="tagText-0-2-3"
           data-ouia-component-id="TagCount-text"
         />
       </span>
@@ -171,7 +171,7 @@ exports[`TagCount component should render a tag count of 11 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="pf-v6-svg"
+                class="pf-v6-svg tagIcon-0-2-2"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -185,7 +185,7 @@ exports[`TagCount component should render a tag count of 11 1`] = `
             </span>
           </span>
           <span
-            class="tagText-0-2-2"
+            class="tagText-0-2-3"
             data-ouia-component-id="TagCount-text"
           >
             11
@@ -216,7 +216,7 @@ exports[`TagCount component should render a tag count of 11 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="pf-v6-svg"
+              class="pf-v6-svg tagIcon-0-2-2"
               fill="currentColor"
               height="1em"
               role="img"
@@ -230,7 +230,7 @@ exports[`TagCount component should render a tag count of 11 1`] = `
           </span>
         </span>
         <span
-          class="tagText-0-2-2"
+          class="tagText-0-2-3"
           data-ouia-component-id="TagCount-text"
         >
           11
