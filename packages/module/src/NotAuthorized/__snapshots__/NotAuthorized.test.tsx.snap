@@ -2,23 +2,21 @@
 
 exports[`NotAuthorized component should apply custom styles 1`] = `
 <div
-  class="pf-v5-c-empty-state something"
+  class="pf-v6-c-empty-state something"
   data-ouia-component-id="NotAuthorized"
 >
   <div
-    class="pf-v5-c-empty-state__content"
+    class="pf-v6-c-empty-state__content"
   >
     <div
-      class="pf-v5-c-empty-state__header"
-      data-ouia-component-id="NotAuthorized-header"
+      class="pf-v6-c-empty-state__header"
     >
       <div
-        class="pf-v5-c-empty-state__icon"
+        class="pf-v6-c-empty-state__icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
-          data-ouia-component-id="NotAuthorized-icon"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -31,37 +29,41 @@ exports[`NotAuthorized component should apply custom styles 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-empty-state__title"
+        class="pf-v6-c-empty-state__title"
       >
         <h5
-          class="pf-v5-c-empty-state__title-text"
+          class="pf-v6-c-empty-state__title-text"
         >
           You do not have access to Foo
         </h5>
       </div>
     </div>
     <div
-      class="pf-v5-c-empty-state__body"
+      class="pf-v6-c-empty-state__body"
       data-ouia-component-id="NotAuthorized-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
-      class="pf-v5-c-empty-state__footer"
+      class="pf-v6-c-empty-state__footer"
       data-ouia-component-id="NotAuthorized-footer"
     >
       <a
         aria-disabled="false"
-        class="pf-v5-c-button pf-m-primary"
+        class="pf-v6-c-button pf-m-primary"
         data-ouia-component-id="NotAuthorized-home-button"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         href="."
       >
-        Go to landing page
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Go to landing page
+        </span>
       </a>
       <div
-        class="pf-v5-c-empty-state__actions"
+        class="pf-v6-c-empty-state__actions"
       />
     </div>
   </div>
@@ -70,23 +72,21 @@ exports[`NotAuthorized component should apply custom styles 1`] = `
 
 exports[`NotAuthorized component should not show buttons 1`] = `
 <div
-  class="pf-v5-c-empty-state"
+  class="pf-v6-c-empty-state"
   data-ouia-component-id="NotAuthorized"
 >
   <div
-    class="pf-v5-c-empty-state__content"
+    class="pf-v6-c-empty-state__content"
   >
     <div
-      class="pf-v5-c-empty-state__header"
-      data-ouia-component-id="NotAuthorized-header"
+      class="pf-v6-c-empty-state__header"
     >
       <div
-        class="pf-v5-c-empty-state__icon"
+        class="pf-v6-c-empty-state__icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
-          data-ouia-component-id="NotAuthorized-icon"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -99,27 +99,27 @@ exports[`NotAuthorized component should not show buttons 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-empty-state__title"
+        class="pf-v6-c-empty-state__title"
       >
         <h5
-          class="pf-v5-c-empty-state__title-text"
+          class="pf-v6-c-empty-state__title-text"
         >
           You do not have access to Foo
         </h5>
       </div>
     </div>
     <div
-      class="pf-v5-c-empty-state__body"
+      class="pf-v6-c-empty-state__body"
       data-ouia-component-id="NotAuthorized-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
-      class="pf-v5-c-empty-state__footer"
+      class="pf-v6-c-empty-state__footer"
       data-ouia-component-id="NotAuthorized-footer"
     >
       <div
-        class="pf-v5-c-empty-state__actions"
+        class="pf-v6-c-empty-state__actions"
       />
     </div>
   </div>
@@ -128,23 +128,21 @@ exports[`NotAuthorized component should not show buttons 1`] = `
 
 exports[`NotAuthorized component should render 1`] = `
 <div
-  class="pf-v5-c-empty-state"
+  class="pf-v6-c-empty-state"
   data-ouia-component-id="NotAuthorized"
 >
   <div
-    class="pf-v5-c-empty-state__content"
+    class="pf-v6-c-empty-state__content"
   >
     <div
-      class="pf-v5-c-empty-state__header"
-      data-ouia-component-id="NotAuthorized-header"
+      class="pf-v6-c-empty-state__header"
     >
       <div
-        class="pf-v5-c-empty-state__icon"
+        class="pf-v6-c-empty-state__icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
-          data-ouia-component-id="NotAuthorized-icon"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -157,37 +155,41 @@ exports[`NotAuthorized component should render 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-empty-state__title"
+        class="pf-v6-c-empty-state__title"
       >
         <h5
-          class="pf-v5-c-empty-state__title-text"
+          class="pf-v6-c-empty-state__title-text"
         >
           You do not have access to Foo
         </h5>
       </div>
     </div>
     <div
-      class="pf-v5-c-empty-state__body"
+      class="pf-v6-c-empty-state__body"
       data-ouia-component-id="NotAuthorized-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
-      class="pf-v5-c-empty-state__footer"
+      class="pf-v6-c-empty-state__footer"
       data-ouia-component-id="NotAuthorized-footer"
     >
       <a
         aria-disabled="false"
-        class="pf-v5-c-button pf-m-primary"
+        class="pf-v6-c-button pf-m-primary"
         data-ouia-component-id="NotAuthorized-home-button"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         href="."
       >
-        Go to landing page
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Go to landing page
+        </span>
       </a>
       <div
-        class="pf-v5-c-empty-state__actions"
+        class="pf-v6-c-empty-state__actions"
       />
     </div>
   </div>
@@ -196,23 +198,21 @@ exports[`NotAuthorized component should render 1`] = `
 
 exports[`NotAuthorized component should show custom actions 1`] = `
 <div
-  class="pf-v5-c-empty-state"
+  class="pf-v6-c-empty-state"
   data-ouia-component-id="NotAuthorized"
 >
   <div
-    class="pf-v5-c-empty-state__content"
+    class="pf-v6-c-empty-state__content"
   >
     <div
-      class="pf-v5-c-empty-state__header"
-      data-ouia-component-id="NotAuthorized-header"
+      class="pf-v6-c-empty-state__header"
     >
       <div
-        class="pf-v5-c-empty-state__icon"
+        class="pf-v6-c-empty-state__icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
-          data-ouia-component-id="NotAuthorized-icon"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -225,27 +225,27 @@ exports[`NotAuthorized component should show custom actions 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-empty-state__title"
+        class="pf-v6-c-empty-state__title"
       >
         <h5
-          class="pf-v5-c-empty-state__title-text"
+          class="pf-v6-c-empty-state__title-text"
         >
           You do not have access to Foo
         </h5>
       </div>
     </div>
     <div
-      class="pf-v5-c-empty-state__body"
+      class="pf-v6-c-empty-state__body"
       data-ouia-component-id="NotAuthorized-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
-      class="pf-v5-c-empty-state__footer"
+      class="pf-v6-c-empty-state__footer"
       data-ouia-component-id="NotAuthorized-footer"
     >
       <div
-        class="pf-v5-c-empty-state__actions"
+        class="pf-v6-c-empty-state__actions"
       >
         <button
           id="action-one"
@@ -254,10 +254,10 @@ exports[`NotAuthorized component should show custom actions 1`] = `
         </button>
       </div>
       <div
-        class="pf-v5-c-empty-state__actions"
+        class="pf-v6-c-empty-state__actions"
       >
         <div
-          class="pf-v5-c-empty-state__actions"
+          class="pf-v6-c-empty-state__actions"
         >
           <button
             id="action-one"
@@ -276,25 +276,23 @@ exports[`NotAuthorized component should show custom actions 1`] = `
 </div>
 `;
 
-exports[`NotAuthorized component should show custom description 1`] = `
+exports[`NotAuthorized component should show custom body text 1`] = `
 <div
-  class="pf-v5-c-empty-state"
+  class="pf-v6-c-empty-state"
   data-ouia-component-id="NotAuthorized"
 >
   <div
-    class="pf-v5-c-empty-state__content"
+    class="pf-v6-c-empty-state__content"
   >
     <div
-      class="pf-v5-c-empty-state__header"
-      data-ouia-component-id="NotAuthorized-header"
+      class="pf-v6-c-empty-state__header"
     >
       <div
-        class="pf-v5-c-empty-state__icon"
+        class="pf-v6-c-empty-state__icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
-          data-ouia-component-id="NotAuthorized-icon"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -307,37 +305,41 @@ exports[`NotAuthorized component should show custom description 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-empty-state__title"
+        class="pf-v6-c-empty-state__title"
       >
         <h5
-          class="pf-v5-c-empty-state__title-text"
+          class="pf-v6-c-empty-state__title-text"
         >
           You do not have access to Foo
         </h5>
       </div>
     </div>
     <div
-      class="pf-v5-c-empty-state__body"
+      class="pf-v6-c-empty-state__body"
       data-ouia-component-id="NotAuthorized-body"
     >
       Some text
     </div>
     <div
-      class="pf-v5-c-empty-state__footer"
+      class="pf-v6-c-empty-state__footer"
       data-ouia-component-id="NotAuthorized-footer"
     >
       <a
         aria-disabled="false"
-        class="pf-v5-c-button pf-m-primary"
+        class="pf-v6-c-button pf-m-primary"
         data-ouia-component-id="NotAuthorized-home-button"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         href="."
       >
-        Go to landing page
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Go to landing page
+        </span>
       </a>
       <div
-        class="pf-v5-c-empty-state__actions"
+        class="pf-v6-c-empty-state__actions"
       />
     </div>
   </div>
@@ -346,23 +348,21 @@ exports[`NotAuthorized component should show custom description 1`] = `
 
 exports[`NotAuthorized component should show custom title 1`] = `
 <div
-  class="pf-v5-c-empty-state"
+  class="pf-v6-c-empty-state"
   data-ouia-component-id="NotAuthorized"
 >
   <div
-    class="pf-v5-c-empty-state__content"
+    class="pf-v6-c-empty-state__content"
   >
     <div
-      class="pf-v5-c-empty-state__header"
-      data-ouia-component-id="NotAuthorized-header"
+      class="pf-v6-c-empty-state__header"
     >
       <div
-        class="pf-v5-c-empty-state__icon"
+        class="pf-v6-c-empty-state__icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
-          data-ouia-component-id="NotAuthorized-icon"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -375,37 +375,41 @@ exports[`NotAuthorized component should show custom title 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-empty-state__title"
+        class="pf-v6-c-empty-state__title"
       >
         <h5
-          class="pf-v5-c-empty-state__title-text"
+          class="pf-v6-c-empty-state__title-text"
         >
           Custom title
         </h5>
       </div>
     </div>
     <div
-      class="pf-v5-c-empty-state__body"
+      class="pf-v6-c-empty-state__body"
       data-ouia-component-id="NotAuthorized-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
-      class="pf-v5-c-empty-state__footer"
+      class="pf-v6-c-empty-state__footer"
       data-ouia-component-id="NotAuthorized-footer"
     >
       <a
         aria-disabled="false"
-        class="pf-v5-c-button pf-m-primary"
+        class="pf-v6-c-button pf-m-primary"
         data-ouia-component-id="NotAuthorized-home-button"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         href="."
       >
-        Go to landing page
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Go to landing page
+        </span>
       </a>
       <div
-        class="pf-v5-c-empty-state__actions"
+        class="pf-v6-c-empty-state__actions"
       />
     </div>
   </div>
@@ -414,23 +418,21 @@ exports[`NotAuthorized component should show custom title 1`] = `
 
 exports[`NotAuthorized component should use custom icon 1`] = `
 <div
-  class="pf-v5-c-empty-state"
+  class="pf-v6-c-empty-state"
   data-ouia-component-id="NotAuthorized"
 >
   <div
-    class="pf-v5-c-empty-state__content"
+    class="pf-v6-c-empty-state__content"
   >
     <div
-      class="pf-v5-c-empty-state__header"
-      data-ouia-component-id="NotAuthorized-header"
+      class="pf-v6-c-empty-state__header"
     >
       <div
-        class="pf-v5-c-empty-state__icon"
+        class="pf-v6-c-empty-state__icon"
       >
         <svg
           aria-hidden="true"
-          class="pf-v5-svg"
-          data-ouia-component-id="NotAuthorized-icon"
+          class="pf-v6-svg"
           fill="currentColor"
           height="1em"
           role="img"
@@ -443,37 +445,41 @@ exports[`NotAuthorized component should use custom icon 1`] = `
         </svg>
       </div>
       <div
-        class="pf-v5-c-empty-state__title"
+        class="pf-v6-c-empty-state__title"
       >
         <h5
-          class="pf-v5-c-empty-state__title-text"
+          class="pf-v6-c-empty-state__title-text"
         >
           You do not have access to Foo
         </h5>
       </div>
     </div>
     <div
-      class="pf-v5-c-empty-state__body"
+      class="pf-v6-c-empty-state__body"
       data-ouia-component-id="NotAuthorized-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
-      class="pf-v5-c-empty-state__footer"
+      class="pf-v6-c-empty-state__footer"
       data-ouia-component-id="NotAuthorized-footer"
     >
       <a
         aria-disabled="false"
-        class="pf-v5-c-button pf-m-primary"
+        class="pf-v6-c-button pf-m-primary"
         data-ouia-component-id="NotAuthorized-home-button"
-        data-ouia-component-type="PF5/Button"
+        data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         href="."
       >
-        Go to landing page
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Go to landing page
+        </span>
       </a>
       <div
-        class="pf-v5-c-empty-state__actions"
+        class="pf-v6-c-empty-state__actions"
       />
     </div>
   </div>

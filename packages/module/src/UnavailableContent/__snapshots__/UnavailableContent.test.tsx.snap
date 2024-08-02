@@ -6,23 +6,21 @@ exports[`Unavailable component should render with a link 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pf-v5-c-empty-state pf-m-lg emptyStateUnavailable-0-2-1"
+        class="pf-v6-c-empty-state pf-m-lg pf-m-danger"
         data-ouia-component-id="UnavailableContent"
       >
         <div
-          class="pf-v5-c-empty-state__content"
+          class="pf-v6-c-empty-state__content"
         >
           <div
-            class="pf-v5-c-empty-state__header"
-            data-ouia-component-id="UnavailableContent-header"
+            class="pf-v6-c-empty-state__header"
           >
             <div
-              class="pf-v5-c-empty-state__icon"
+              class="pf-v6-c-empty-state__icon"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
-                data-ouia-component-id="UnavailableContent-icon"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -35,32 +33,36 @@ exports[`Unavailable component should render with a link 1`] = `
               </svg>
             </div>
             <div
-              class="pf-v5-c-empty-state__title"
+              class="pf-v6-c-empty-state__title"
             >
               <h5
-                class="pf-v5-c-empty-state__title-text"
+                class="pf-v6-c-empty-state__title-text"
               >
                 This page is temporarily unavailable
               </h5>
             </div>
           </div>
           <div
-            class="pf-v5-c-empty-state__body"
+            class="pf-v6-c-empty-state__body"
             data-ouia-component-id="UnavailableContent-body"
           >
             Try refreshing the page. If the problem persists, contact your organization administrator or visit our
              
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link emptyStateLinkButton-0-2-2"
+              class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
               data-ouia-component-id="UnavailableContent-link-button"
-              data-ouia-component-type="PF5/Button"
+              data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="https://www.patternfly.org"
               rel="noopener noreferrer"
               target="_blank"
             >
-              status page
+              <span
+                class="pf-v6-c-button__text"
+              >
+                status page
+              </span>
             </a>
              
             for known outages.
@@ -71,23 +73,21 @@ exports[`Unavailable component should render with a link 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pf-v5-c-empty-state pf-m-lg emptyStateUnavailable-0-2-1"
+      class="pf-v6-c-empty-state pf-m-lg pf-m-danger"
       data-ouia-component-id="UnavailableContent"
     >
       <div
-        class="pf-v5-c-empty-state__content"
+        class="pf-v6-c-empty-state__content"
       >
         <div
-          class="pf-v5-c-empty-state__header"
-          data-ouia-component-id="UnavailableContent-header"
+          class="pf-v6-c-empty-state__header"
         >
           <div
-            class="pf-v5-c-empty-state__icon"
+            class="pf-v6-c-empty-state__icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
-              data-ouia-component-id="UnavailableContent-icon"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"
@@ -100,32 +100,36 @@ exports[`Unavailable component should render with a link 1`] = `
             </svg>
           </div>
           <div
-            class="pf-v5-c-empty-state__title"
+            class="pf-v6-c-empty-state__title"
           >
             <h5
-              class="pf-v5-c-empty-state__title-text"
+              class="pf-v6-c-empty-state__title-text"
             >
               This page is temporarily unavailable
             </h5>
           </div>
         </div>
         <div
-          class="pf-v5-c-empty-state__body"
+          class="pf-v6-c-empty-state__body"
           data-ouia-component-id="UnavailableContent-body"
         >
           Try refreshing the page. If the problem persists, contact your organization administrator or visit our
            
           <a
             aria-disabled="false"
-            class="pf-v5-c-button pf-m-link emptyStateLinkButton-0-2-2"
+            class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
             data-ouia-component-id="UnavailableContent-link-button"
-            data-ouia-component-type="PF5/Button"
+            data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             href="https://www.patternfly.org"
             rel="noopener noreferrer"
             target="_blank"
           >
-            status page
+            <span
+              class="pf-v6-c-button__text"
+            >
+              status page
+            </span>
           </a>
            
           for known outages.
@@ -193,23 +197,21 @@ exports[`Unavailable component should render with no link 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pf-v5-c-empty-state pf-m-lg emptyStateUnavailable-0-2-1"
+        class="pf-v6-c-empty-state pf-m-lg pf-m-danger"
         data-ouia-component-id="UnavailableContent"
       >
         <div
-          class="pf-v5-c-empty-state__content"
+          class="pf-v6-c-empty-state__content"
         >
           <div
-            class="pf-v5-c-empty-state__header"
-            data-ouia-component-id="UnavailableContent-header"
+            class="pf-v6-c-empty-state__header"
           >
             <div
-              class="pf-v5-c-empty-state__icon"
+              class="pf-v6-c-empty-state__icon"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
-                data-ouia-component-id="UnavailableContent-icon"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -222,32 +224,36 @@ exports[`Unavailable component should render with no link 1`] = `
               </svg>
             </div>
             <div
-              class="pf-v5-c-empty-state__title"
+              class="pf-v6-c-empty-state__title"
             >
               <h5
-                class="pf-v5-c-empty-state__title-text"
+                class="pf-v6-c-empty-state__title-text"
               >
                 This page is temporarily unavailable
               </h5>
             </div>
           </div>
           <div
-            class="pf-v5-c-empty-state__body"
+            class="pf-v6-c-empty-state__body"
             data-ouia-component-id="UnavailableContent-body"
           >
             Try refreshing the page. If the problem persists, contact your organization administrator or visit our
              
             <a
               aria-disabled="false"
-              class="pf-v5-c-button pf-m-link emptyStateLinkButton-0-2-2"
+              class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
               data-ouia-component-id="UnavailableContent-link-button"
-              data-ouia-component-type="PF5/Button"
+              data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href=""
               rel="noopener noreferrer"
               target="_blank"
             >
-              status page
+              <span
+                class="pf-v6-c-button__text"
+              >
+                status page
+              </span>
             </a>
              
             for known outages.
@@ -258,23 +264,21 @@ exports[`Unavailable component should render with no link 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pf-v5-c-empty-state pf-m-lg emptyStateUnavailable-0-2-1"
+      class="pf-v6-c-empty-state pf-m-lg pf-m-danger"
       data-ouia-component-id="UnavailableContent"
     >
       <div
-        class="pf-v5-c-empty-state__content"
+        class="pf-v6-c-empty-state__content"
       >
         <div
-          class="pf-v5-c-empty-state__header"
-          data-ouia-component-id="UnavailableContent-header"
+          class="pf-v6-c-empty-state__header"
         >
           <div
-            class="pf-v5-c-empty-state__icon"
+            class="pf-v6-c-empty-state__icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
-              data-ouia-component-id="UnavailableContent-icon"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"
@@ -287,32 +291,36 @@ exports[`Unavailable component should render with no link 1`] = `
             </svg>
           </div>
           <div
-            class="pf-v5-c-empty-state__title"
+            class="pf-v6-c-empty-state__title"
           >
             <h5
-              class="pf-v5-c-empty-state__title-text"
+              class="pf-v6-c-empty-state__title-text"
             >
               This page is temporarily unavailable
             </h5>
           </div>
         </div>
         <div
-          class="pf-v5-c-empty-state__body"
+          class="pf-v6-c-empty-state__body"
           data-ouia-component-id="UnavailableContent-body"
         >
           Try refreshing the page. If the problem persists, contact your organization administrator or visit our
            
           <a
             aria-disabled="false"
-            class="pf-v5-c-button pf-m-link emptyStateLinkButton-0-2-2"
+            class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
             data-ouia-component-id="UnavailableContent-link-button"
-            data-ouia-component-type="PF5/Button"
+            data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             href=""
             rel="noopener noreferrer"
             target="_blank"
           >
-            status page
+            <span
+              class="pf-v6-c-button__text"
+            >
+              status page
+            </span>
           </a>
            
           for known outages.

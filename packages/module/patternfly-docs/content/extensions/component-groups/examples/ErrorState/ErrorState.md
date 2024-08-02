@@ -22,7 +22,7 @@ The **error state** component repurposes the `EmptyState` component to display a
 
 ### Basic error state
 
-To provide users with error details, a basic error state should contain an appropriate and informative `errorTitle` and `errorDescription`. 
+To provide users with error details, a basic error state should contain an appropriate and informative `titleText` and `bodyText`. 
 
 ```js file="./ErrorStateExample.tsx"
 

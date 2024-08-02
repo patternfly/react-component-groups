@@ -6,7 +6,7 @@ import { Button } from '@patternfly/react-core';
 describe('ErrorState component', () => {
 
   it('should render correctly', () => {
-    render(<ErrorState errorTitle='A Basic Error' errorDescription='The following is an example of a basic error' customFooter={<Button>Custom button</Button>} />);
+    render(<ErrorState titleText='A Basic Error' bodyText='The following is an example of a basic error' customFooter={<Button>Custom button</Button>} />);
 
     expect(screen.getByText('A Basic Error')).toBeVisible();
     expect(screen.getByText('The following is an example of a basic error')).toBeVisible();

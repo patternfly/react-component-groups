@@ -1,98 +1,86 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
-import { Button, Card, CardHeader, CardBody, Text, TextContent, TextVariants, Icon, TextList, TextListItem, CardFooter, Dropdown, MenuToggle, DropdownList, DropdownItem, MenuToggleElement } from '@patternfly/react-core';
+import { Button, Card, CardHeader, CardBody, Content, ContentVariants, Icon, List, ListItem, CardFooter, Dropdown, MenuToggle, DropdownList, DropdownItem, MenuToggleElement } from '@patternfly/react-core';
 import { ArrowRightIcon, BellIcon, CogIcon, EllipsisVIcon, LockIcon } from '@patternfly/react-icons';
 import MultiContentCard, { MultiContentCardDividerVariant } from './MultiContentCard';
 
 const cards = [
   <Card isFullHeight isPlain key="card-1">
     <CardHeader>
-      <TextContent>
-        <Text component={TextVariants.h4}>Getting Started</Text>
-      </TextContent>
+      <Content component={ContentVariants.h4}>Getting Started</Content>
     </CardHeader>
     <CardBody>
-      <TextContent>
-        <Text className="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover">
-          <Icon size="md" className="pf-v5-u-pl-sm pf-v5-u-pr-md">
-            <CogIcon />
-          </Icon>
+      <Content className="pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover">
+        <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
+          <CogIcon />
+        </Icon>
           Configure application
-        </Text>
-        <Text className="pf-v5-u-font-size-sm">
+      </Content>
+      <Content className="pf-v6-u-font-size-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Text>
-      </TextContent>
+      </Content>
     </CardBody>
     <CardFooter>
-      <TextContent>
-        <TextList className="pf-v5-u-font-size-sm pf-v5-u-link-color pf-v5-u-ml-0">
-          <TextListItem>
-            <Button variant="link" isInline>First link</Button>
-          </TextListItem>
-          <TextListItem>
-            <Button variant="link" isInline>Second link</Button>
-          </TextListItem>
-          <TextListItem>
-            <Button variant="link" isInline>Another link</Button>
-          </TextListItem>
-        </TextList>
-      </TextContent>
+      <List className="pf-v6-u-font-size-sm pf-v6-u-link-color pf-v6-u-ml-0">
+        <ListItem>
+          <Button variant="link" isInline>First link</Button>
+        </ListItem>
+        <ListItem>
+          <Button variant="link" isInline>Second link</Button>
+        </ListItem>
+        <ListItem>
+          <Button variant="link" isInline>Another link</Button>
+        </ListItem>
+      </List>
     </CardFooter>
   </Card>,
   <Card isFullHeight isPlain key="card-2">
-    <CardBody className="pf-v5-u-pt-3xl-on-md">
-      <TextContent>
-        <Text className="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover">
-          <Icon size="md" className="pf-v5-u-pl-sm pf-v5-u-pr-md">
-            <LockIcon />
-          </Icon>
+    <CardBody className="pf-v6-u-pt-3xl-on-md">
+      <Content className="pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover">
+        <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
+          <LockIcon />
+        </Icon>
           Configure access
-        </Text>
-        <Text className="pf-v5-u-font-size-sm">
+      </Content>
+      <Content className="pf-v6-u-font-size-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </Text>
-      </TextContent>
+      </Content>
     </CardBody>
     <CardFooter>
-      <Text>
+      <Content>
         <Button variant="link" isInline>
             Learn more  
-          <Icon className="pf-u-ml-sm" isInline>
+          <Icon className="pf-v6-u-ml-sm" isInline>
             <ArrowRightIcon />
           </Icon>
         </Button>
-      </Text>
+      </Content>
     </CardFooter>
   </Card>,
   <Card isFullHeight isPlain key="card-3">
     <CardHeader>
-      <TextContent>
-        <Text component={TextVariants.h4}>Next Steps</Text>
-      </TextContent>
+      <Content component={ContentVariants.h4}>Next Steps</Content>
     </CardHeader>
     <CardBody>
-      <TextContent>
-        <Text className="pf-v5-u-font-size-sm pf-v5-u-font-weight-bold pf-v5-u-mb-sm pf-v5-u-link-color-hover">
-          <Icon size="md" className="pf-v5-u-pl-sm pf-v5-u-pr-md">
-            <BellIcon />
-          </Icon>
+      <Content className="pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover">
+        <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
+          <BellIcon />
+        </Icon>
           Configure notifications
-        </Text>
-        <Text className="pf-v5-u-font-size-sm">
+      </Content>
+      <Content className="pf-v6-u-font-size-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Text>
-      </TextContent>
+      </Content>
     </CardBody>
     <CardFooter>
-      <Text>
+      <Content>
         <Button variant="link" isInline>
             Learn more  
-          <Icon className="pf-u-ml-sm" isInline>
+          <Icon className="pf-v6-u-ml-sm" isInline>
             <ArrowRightIcon />
           </Icon>
         </Button>
-      </Text>
+      </Content>
     </CardFooter>
   </Card>
 ];

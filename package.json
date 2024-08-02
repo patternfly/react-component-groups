@@ -38,7 +38,7 @@
     "@babel/preset-flow": "^7.24.7",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
-    "@octokit/rest": "^21.0.0",
+    "@octokit/rest": "^21.0.1",
     "@swc/core": "1.6.13",
     "@testing-library/dom": "^10.3.2",
     "@testing-library/jest-dom": "^6.4.8",
@@ -81,5 +81,9 @@
     "ts-jest": "29.1.5",
     "wait-on": "^7.2.0",
     "whatwg-fetch": "^3.6.20"
+  },
+  "dependencies": {
+    "@patternfly/react-tokens": "^6.0.0-alpha.24",
+    "sharp": "^0.33.4"
   }
 }

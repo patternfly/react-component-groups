@@ -5,9 +5,8 @@ import {
   LabelProps,
   Split,
   SplitItem,
-  Text,
-  TextContent,
-  TextVariants,
+  Content,
+  ContentVariants,
 } from '@patternfly/react-core';
 import React from 'react';
 import { createUseStyles } from 'react-jss'
@@ -59,7 +58,7 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
       {breadcrumbs}
       <Split hasGutter isWrappable className={classes.detailsPageHeaderSplit}>
         <SplitItem>
-          <Split hasGutter isWrappable className={`pf-v5-u-mb-sm ${classes.detailsPageHeaderSplit}`}>       
+          <Split hasGutter isWrappable className={`pf-v6-u-mb-sm ${classes.detailsPageHeaderSplit}`}>       
             {/* Optional icon for details page heading (before title) */}
             {pageHeading?.iconBeforeTitle && (
               <SplitItem>
@@ -68,9 +67,7 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
             )}
             {/* Page heading title */}
             <SplitItem>
-              <TextContent>
-                <Text component={TextVariants.h1}>{pageHeading.title}</Text>
-              </TextContent>
+              <Content component={ContentVariants.h1}>{pageHeading.title}</Content>
             </SplitItem>
             {/* Icon for details page heading (after title) */}
             {pageHeading?.iconAfterTitle && (
@@ -111,7 +108,7 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
                         variant={actionButton?.variant}
                         isDisabled={actionButton?.isDisabled}
                         tooltip={actionButton?.tooltip}
-                        className="pf-v5-u-mb-sm"
+                        className="pf-v6-u-mb-sm"
                       >
                         {actionButton.children}
                       </ActionButton>
@@ -122,7 +119,7 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
             )}
             {/* Optional action menu - ungrouped actions */}
             {actionMenu?.actions && (
-              <SplitItem className="pf-v5-u-mb-sm">
+              <SplitItem className="pf-v6-u-mb-sm">
                 <ActionMenu
                   actions={actionMenu.actions}
                   isDisabled={actionMenu?.isDisabled}
@@ -135,7 +132,7 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
             )}
             {/* Optional action menu - Grouped actions */}
             {actionMenu?.groupedActions && (
-              <SplitItem className="pf-v5-u-mb-sm">
+              <SplitItem className="pf-v6-u-mb-sm">
                 <ActionMenu
                   groupedActions={actionMenu.groupedActions}
                   isDisabled={actionMenu?.isDisabled}

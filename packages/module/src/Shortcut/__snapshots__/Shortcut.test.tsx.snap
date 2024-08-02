@@ -9,63 +9,51 @@ exports[`Shortcut component should render correctly 1`] = `
         class="shortcut-0-2-1"
         data-ouia-component-id="Shortcut"
       >
-        <div
-          class="pf-v5-c-chip"
-          data-ouia-component-id="OUIA-Generated-Chip-1"
-          data-ouia-component-type="PF5/Chip"
-          data-ouia-safe="true"
+        <span
+          class="pf-v6-c-label pf-m-outline"
           data-test-id="cmd-key"
         >
           <span
-            class="pf-v5-c-chip__content"
+            class="pf-v6-c-label__content"
           >
             <span
-              class="pf-v5-c-chip__text"
-              id="pf-random-id-0"
+              class="pf-v6-c-label__text"
             >
               ⌘ 
               Cmd
             </span>
           </span>
-        </div>
+        </span>
          + 
-        <div
-          class="pf-v5-c-chip"
-          data-ouia-component-id="OUIA-Generated-Chip-2"
-          data-ouia-component-type="PF5/Chip"
-          data-ouia-safe="true"
+        <span
+          class="pf-v6-c-label pf-m-outline"
           data-test-id="shift-key"
         >
           <span
-            class="pf-v5-c-chip__content"
+            class="pf-v6-c-label__content"
           >
             <span
-              class="pf-v5-c-chip__text"
-              id="pf-random-id-1"
+              class="pf-v6-c-label__text"
             >
               ⇧ 
               Shift
             </span>
           </span>
-        </div>
+        </span>
          + 
-        <div
-          class="pf-v5-c-chip"
-          data-ouia-component-id="OUIA-Generated-Chip-3"
-          data-ouia-component-type="PF5/Chip"
-          data-ouia-safe="true"
+        <span
+          class="pf-v6-c-label pf-m-outline"
           data-test-id="click"
         >
           <span
-            class="pf-v5-c-chip__content"
+            class="pf-v6-c-label__content"
           >
             <span
-              class="pf-v5-c-chip__text"
-              id="pf-random-id-2"
+              class="pf-v6-c-label__text"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -79,7 +67,7 @@ exports[`Shortcut component should render correctly 1`] = `
                Click
             </span>
           </span>
-        </div>
+        </span>
       </span>
       Shortcut description
     </div>
@@ -89,63 +77,51 @@ exports[`Shortcut component should render correctly 1`] = `
       class="shortcut-0-2-1"
       data-ouia-component-id="Shortcut"
     >
-      <div
-        class="pf-v5-c-chip"
-        data-ouia-component-id="OUIA-Generated-Chip-1"
-        data-ouia-component-type="PF5/Chip"
-        data-ouia-safe="true"
+      <span
+        class="pf-v6-c-label pf-m-outline"
         data-test-id="cmd-key"
       >
         <span
-          class="pf-v5-c-chip__content"
+          class="pf-v6-c-label__content"
         >
           <span
-            class="pf-v5-c-chip__text"
-            id="pf-random-id-0"
+            class="pf-v6-c-label__text"
           >
             ⌘ 
             Cmd
           </span>
         </span>
-      </div>
+      </span>
        + 
-      <div
-        class="pf-v5-c-chip"
-        data-ouia-component-id="OUIA-Generated-Chip-2"
-        data-ouia-component-type="PF5/Chip"
-        data-ouia-safe="true"
+      <span
+        class="pf-v6-c-label pf-m-outline"
         data-test-id="shift-key"
       >
         <span
-          class="pf-v5-c-chip__content"
+          class="pf-v6-c-label__content"
         >
           <span
-            class="pf-v5-c-chip__text"
-            id="pf-random-id-1"
+            class="pf-v6-c-label__text"
           >
             ⇧ 
             Shift
           </span>
         </span>
-      </div>
+      </span>
        + 
-      <div
-        class="pf-v5-c-chip"
-        data-ouia-component-id="OUIA-Generated-Chip-3"
-        data-ouia-component-type="PF5/Chip"
-        data-ouia-safe="true"
+      <span
+        class="pf-v6-c-label pf-m-outline"
         data-test-id="click"
       >
         <span
-          class="pf-v5-c-chip__content"
+          class="pf-v6-c-label__content"
         >
           <span
-            class="pf-v5-c-chip__text"
-            id="pf-random-id-2"
+            class="pf-v6-c-label__text"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"
@@ -159,7 +135,7 @@ exports[`Shortcut component should render correctly 1`] = `
              Click
           </span>
         </span>
-      </div>
+      </span>
     </span>
     Shortcut description
   </div>,

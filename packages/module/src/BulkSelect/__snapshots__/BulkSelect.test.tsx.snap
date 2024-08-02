@@ -6,17 +6,17 @@ exports[`BulkSelect component should render 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pf-v5-c-menu-toggle pf-m-split-button"
+        class="pf-v6-c-menu-toggle pf-m-split-button"
       >
         <label
-          class="pf-v5-c-check pf-m-standalone"
+          class="pf-v6-c-check pf-m-standalone"
         >
           <input
             aria-invalid="false"
             aria-label="Select page"
-            class="pf-v5-c-check__input"
+            class="pf-v6-c-check__input"
             data-ouia-component-id="BulkSelect-checkbox"
-            data-ouia-component-type="PF5/MenuToggleCheckbox"
+            data-ouia-component-type="PF6/MenuToggleCheckbox"
             data-ouia-safe="true"
             name="BulkSelect-checkbox"
             type="checkbox"
@@ -30,19 +30,21 @@ exports[`BulkSelect component should render 1`] = `
         <button
           aria-expanded="false"
           aria-label="Bulk select toggle"
-          class="pf-v5-c-menu-toggle__button"
-          data-ouia-component-id="BulkSelect-toggle"
+          class="pf-v6-c-menu-toggle__button"
+          data-ouia-component-id="OUIA-Generated-MenuToggle-1"
+          data-ouia-component-type="PF6/MenuToggle"
+          data-ouia-safe="true"
           type="button"
         >
           <span
-            class="pf-v5-c-menu-toggle__controls"
+            class="pf-v6-c-menu-toggle__controls"
           >
             <span
-              class="pf-v5-c-menu-toggle__toggle-icon"
+              class="pf-v6-c-menu-toggle__toggle-icon"
             >
               <svg
                 aria-hidden="true"
-                class="pf-v5-svg"
+                class="pf-v6-svg"
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -61,17 +63,17 @@ exports[`BulkSelect component should render 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pf-v5-c-menu-toggle pf-m-split-button"
+      class="pf-v6-c-menu-toggle pf-m-split-button"
     >
       <label
-        class="pf-v5-c-check pf-m-standalone"
+        class="pf-v6-c-check pf-m-standalone"
       >
         <input
           aria-invalid="false"
           aria-label="Select page"
-          class="pf-v5-c-check__input"
+          class="pf-v6-c-check__input"
           data-ouia-component-id="BulkSelect-checkbox"
-          data-ouia-component-type="PF5/MenuToggleCheckbox"
+          data-ouia-component-type="PF6/MenuToggleCheckbox"
           data-ouia-safe="true"
           name="BulkSelect-checkbox"
           type="checkbox"
@@ -85,19 +87,21 @@ exports[`BulkSelect component should render 1`] = `
       <button
         aria-expanded="false"
         aria-label="Bulk select toggle"
-        class="pf-v5-c-menu-toggle__button"
-        data-ouia-component-id="BulkSelect-toggle"
+        class="pf-v6-c-menu-toggle__button"
+        data-ouia-component-id="OUIA-Generated-MenuToggle-1"
+        data-ouia-component-type="PF6/MenuToggle"
+        data-ouia-safe="true"
         type="button"
       >
         <span
-          class="pf-v5-c-menu-toggle__controls"
+          class="pf-v6-c-menu-toggle__controls"
         >
           <span
-            class="pf-v5-c-menu-toggle__toggle-icon"
+            class="pf-v6-c-menu-toggle__toggle-icon"
           >
             <svg
               aria-hidden="true"
-              class="pf-v5-svg"
+              class="pf-v6-svg"
               fill="currentColor"
               height="1em"
               role="img"

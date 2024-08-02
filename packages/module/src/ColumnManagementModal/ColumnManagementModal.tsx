@@ -1,10 +1,8 @@
 import React from 'react';
 import {
-  Modal,
   Button,
-  TextContent,
-  Text,
-  TextVariants,
+  Content,
+  ContentVariants,
   DataListItem,
   DataList,
   DataListItemRow,
@@ -13,10 +11,9 @@ import {
   DataListItemCells,
   Split,
   SplitItem,
-  ModalProps,
-  ButtonVariant,
-  ModalVariant
+  ButtonVariant
 } from '@patternfly/react-core';
+import { ModalProps, Modal, ModalVariant } from '@patternfly/react-core/deprecated';
 
 export interface ColumnManagementModalColumn {
   /** Internal identifier of a column by which table displayed columns are filtered. */
@@ -87,7 +84,7 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
     applyColumns(currentColumns);
     onClose(event);
   };
-  
+
   const handleCancel = event => {
     setCurrentColumns(appliedColumns.map(column => ({ ...column, isShown: column.isShown ?? column.isShownByDefault })));
     onClose(event);
@@ -100,8 +97,8 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
       isOpen={isOpen}
       variant={ModalVariant.small}
       description={
-        <TextContent>
-          <Text component={TextVariants.p}>{description}</Text>
+        <>
+          <Content component={ContentVariants.p}>{description}</Content>
           <Split hasGutter>
             <SplitItem>
               <Button isInline onClick={selectAll} variant={ButtonVariant.link} ouiaId={`${ouiaId}-selectAll-button`}>
@@ -114,7 +111,7 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
               </Button>
             </SplitItem>
           </Split>
-        </TextContent>
+        </>
       }
       actions={[
         <Button key="save" variant={ButtonVariant.primary} onClick={handleSave} ouiaId={`${ouiaId}-save-button`}>
