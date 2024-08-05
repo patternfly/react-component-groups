@@ -45,7 +45,8 @@ export interface StatusProps extends React.PropsWithChildren {
 
 const useStyles = createUseStyles({
   icon: {
-    margin: 0
+    margin: "0",
+    alignSelf: "flex-start",
   },
   statusLabel: {
     lineHeight: 'var(--pf-v6-global--LineHeight--sm)',
@@ -67,7 +68,7 @@ export const Status: React.FC<StatusProps> = ({ variant = StatusVariant.plain, l
     <Flex title={label} alignItems={{ default: 'alignItemsCenter' }} {...props}>
       {icon && (
         <FlexItem className={classes.icon}>
-          <Icon className='pf-v6-u-mr-md' status={status} title={iconTitle ?? status} data-ouia-component-id={`${ouiaId}-icon`}>
+          <Icon className='pf-v6-u-mr-sm' status={status} title={iconTitle ?? status} data-ouia-component-id={`${ouiaId}-icon`}>
             {icon}
           </Icon>
         </FlexItem>
