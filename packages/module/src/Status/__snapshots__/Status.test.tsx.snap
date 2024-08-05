@@ -13,7 +13,7 @@ exports[`Status component should render correctly 1`] = `
           class="icon-0-2-1"
         >
           <span
-            class="pf-v6-c-icon pf-v6-u-mr-md"
+            class="pf-v6-c-icon pf-v6-u-mr-sm"
             data-ouia-component-id="Status-icon"
             title="warning"
           >
@@ -62,7 +62,7 @@ exports[`Status component should render correctly 1`] = `
         class="icon-0-2-1"
       >
         <span
-          class="pf-v6-c-icon pf-v6-u-mr-md"
+          class="pf-v6-c-icon pf-v6-u-mr-sm"
           data-ouia-component-id="Status-icon"
           title="warning"
         >
@@ -180,7 +180,7 @@ exports[`Status component should render correctly link 1`] = `
               class="icon-0-2-1"
             >
               <span
-                class="pf-v6-c-icon pf-v6-u-mr-md"
+                class="pf-v6-c-icon pf-v6-u-mr-sm"
                 data-ouia-component-id="Status-icon"
                 title="success"
               >
@@ -243,7 +243,7 @@ exports[`Status component should render correctly link 1`] = `
             class="icon-0-2-1"
           >
             <span
-              class="pf-v6-c-icon pf-v6-u-mr-md"
+              class="pf-v6-c-icon pf-v6-u-mr-sm"
               data-ouia-component-id="Status-icon"
               title="success"
             >
@@ -366,7 +366,7 @@ exports[`Status component should render correctly popover 1`] = `
                 class="icon-0-2-1"
               >
                 <span
-                  class="pf-v6-c-icon pf-v6-u-mr-md"
+                  class="pf-v6-c-icon pf-v6-u-mr-sm"
                   data-ouia-component-id="Status-icon"
                   title="danger"
                 >
@@ -433,7 +433,7 @@ exports[`Status component should render correctly popover 1`] = `
               class="icon-0-2-1"
             >
               <span
-                class="pf-v6-c-icon pf-v6-u-mr-md"
+                class="pf-v6-c-icon pf-v6-u-mr-sm"
                 data-ouia-component-id="Status-icon"
                 title="danger"
               >
@@ -542,7 +542,7 @@ exports[`Status component should render correctly with description 1`] = `
           class="icon-0-2-1"
         >
           <span
-            class="pf-v6-c-icon pf-v6-u-mr-md"
+            class="pf-v6-c-icon pf-v6-u-mr-sm"
             data-ouia-component-id="Status-icon"
             title="warning"
           >
@@ -600,7 +600,7 @@ exports[`Status component should render correctly with description 1`] = `
         class="icon-0-2-1"
       >
         <span
-          class="pf-v6-c-icon pf-v6-u-mr-md"
+          class="pf-v6-c-icon pf-v6-u-mr-sm"
           data-ouia-component-id="Status-icon"
           title="warning"
         >
@@ -715,7 +715,7 @@ exports[`Status component should render iconOnly correctly 1`] = `
           class="icon-0-2-1"
         >
           <span
-            class="pf-v6-c-icon pf-v6-u-mr-md"
+            class="pf-v6-c-icon pf-v6-u-mr-sm"
             data-ouia-component-id="Status-icon"
             title="1 security issue found"
           >
@@ -750,7 +750,7 @@ exports[`Status component should render iconOnly correctly 1`] = `
         class="icon-0-2-1"
       >
         <span
-          class="pf-v6-c-icon pf-v6-u-mr-md"
+          class="pf-v6-c-icon pf-v6-u-mr-sm"
           data-ouia-component-id="Status-icon"
           title="1 security issue found"
         >
