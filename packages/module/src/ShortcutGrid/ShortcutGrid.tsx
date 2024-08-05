@@ -15,7 +15,7 @@ export interface ShortcutGridProps extends GridProps {
 const useStyles = createUseStyles({
   shortcutGridItem: {
     textAlign: 'right',
-    marginRight: 'var(--pf-t--global--spacer--200)'
+    marginRight: 'var(--pf-t--global--spacer--md)'
   }
 })
 
