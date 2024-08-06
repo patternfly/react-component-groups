@@ -24,7 +24,7 @@ export const BasicExample: React.FunctionComponent = () => {
   const cards = [
     <Card isFullHeight isPlain key="card-1">
       <CardHeader>
-        <Content component={ContentVariants.h4}>Getting Started</Content>
+        <Content component={ContentVariants.h3}>Getting Started</Content>
       </CardHeader>
       <CardBody>
         <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
@@ -65,7 +65,7 @@ export const BasicExample: React.FunctionComponent = () => {
       </CardBody>
       <CardFooter>
         <Content>
-          <Button className={classes.link} variant="link" isInline>
+          <Button variant="link" isInline>
             Learn more  
             <Icon className="pf-v6-u-ml-sm" isInline>
               <ArrowRightIcon />
@@ -78,7 +78,7 @@ export const BasicExample: React.FunctionComponent = () => {
       content: (
         <Card isFullHeight isPlain key="card-3">
           <CardHeader>
-            <Content component={ContentVariants.h4}>Next Steps</Content>
+            <Content component={ContentVariants.h3}>Next Steps</Content>
           </CardHeader>
           <CardBody>
             <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
@@ -93,7 +93,7 @@ export const BasicExample: React.FunctionComponent = () => {
           </CardBody>
           <CardFooter>
             <Content>
-              <Button className={classes.link} variant="link" isInline>
+              <Button variant="link" isInline>
               Learn more  
                 <Icon className="pf-v6-u-ml-sm" isInline>
                   <ArrowRightIcon />
