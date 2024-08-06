@@ -8,16 +8,16 @@ const useStyles = createUseStyles({
   buttonTagCount: {
     display: 'flex',
     alignItems: 'center',
-    padding: 'var(--pf-t--global--spacer--200) var(--pf-t--global--spacer--300)'
+    padding: 'var(--pf-t--global--spacer--sm) var(--pf-t--global--spacer--md)'
   },
 
-  tagIcon: {
-    color: 'var(--pf-t--global--icon--color--100)',
-  },
+  tagIcon: (isDisabled: boolean) => ({
+    color: `var(--pf-t--global--icon--color--${isDisabled ? '200' : '100'})`,
+  }),
 
   tagText: {
-    marginLeft: 'var(--pf-t--global--spacer--200)',
-    fontSize: 'var(--pf-t--global--font--size--200)'
+    marginLeft: 'var(--pf-t--global--spacer--sm)',
+    fontSize: 'var(--pf-t--global--font--size--sm)'
   }
 });
 
@@ -39,7 +39,7 @@ const TagCount: React.FunctionComponent<TagCountProps> = ({
   ouiaId = 'TagCount',
   ...props 
 }: TagCountProps) => {
-  const classes = useStyles();
+  const classes = useStyles(!count);
   const tagClasses = clsx(classes.buttonTagCount, className);
   return (
     <Button aria-label="Tag count" {...props} variant="plain" isDisabled={!count} className={tagClasses} ouiaId={ouiaId} {...props}>
