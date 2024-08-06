@@ -46,11 +46,15 @@ exports[`Unavailable component should render with a link 1`] = `
             class="pf-v6-c-empty-state__body"
             data-ouia-component-id="UnavailableContent-body"
           >
-            Try refreshing the page. If the problem persists, contact your organization administrator or visit our
-             
+            Try refreshing the page. If the problem persists, contact your organization administrator or visit our status page for known outages.
+          </div>
+          <div
+            class="pf-v6-c-empty-state__footer"
+            data-ouia-component-id="UnavailableContent-footer"
+          >
             <a
               aria-disabled="false"
-              class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
+              class="pf-v6-c-button pf-m-primary"
               data-ouia-component-id="UnavailableContent-link-button"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
@@ -61,11 +65,9 @@ exports[`Unavailable component should render with a link 1`] = `
               <span
                 class="pf-v6-c-button__text"
               >
-                status page
+                Status Page
               </span>
             </a>
-             
-            for known outages.
           </div>
         </div>
       </div>
@@ -113,11 +115,15 @@ exports[`Unavailable component should render with a link 1`] = `
           class="pf-v6-c-empty-state__body"
           data-ouia-component-id="UnavailableContent-body"
         >
-          Try refreshing the page. If the problem persists, contact your organization administrator or visit our
-           
+          Try refreshing the page. If the problem persists, contact your organization administrator or visit our status page for known outages.
+        </div>
+        <div
+          class="pf-v6-c-empty-state__footer"
+          data-ouia-component-id="UnavailableContent-footer"
+        >
           <a
             aria-disabled="false"
-            class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
+            class="pf-v6-c-button pf-m-primary"
             data-ouia-component-id="UnavailableContent-link-button"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
@@ -128,11 +134,9 @@ exports[`Unavailable component should render with a link 1`] = `
             <span
               class="pf-v6-c-button__text"
             >
-              status page
+              Status Page
             </span>
           </a>
-           
-          for known outages.
         </div>
       </div>
     </div>
@@ -237,11 +241,15 @@ exports[`Unavailable component should render with no link 1`] = `
             class="pf-v6-c-empty-state__body"
             data-ouia-component-id="UnavailableContent-body"
           >
-            Try refreshing the page. If the problem persists, contact your organization administrator or visit our
-             
+            Try refreshing the page. If the problem persists, contact your organization administrator or visit our status page for known outages.
+          </div>
+          <div
+            class="pf-v6-c-empty-state__footer"
+            data-ouia-component-id="UnavailableContent-footer"
+          >
             <a
               aria-disabled="false"
-              class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
+              class="pf-v6-c-button pf-m-primary"
               data-ouia-component-id="UnavailableContent-link-button"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
@@ -252,11 +260,9 @@ exports[`Unavailable component should render with no link 1`] = `
               <span
                 class="pf-v6-c-button__text"
               >
-                status page
+                Status Page
               </span>
             </a>
-             
-            for known outages.
           </div>
         </div>
       </div>
@@ -304,11 +310,15 @@ exports[`Unavailable component should render with no link 1`] = `
           class="pf-v6-c-empty-state__body"
           data-ouia-component-id="UnavailableContent-body"
         >
-          Try refreshing the page. If the problem persists, contact your organization administrator or visit our
-           
+          Try refreshing the page. If the problem persists, contact your organization administrator or visit our status page for known outages.
+        </div>
+        <div
+          class="pf-v6-c-empty-state__footer"
+          data-ouia-component-id="UnavailableContent-footer"
+        >
           <a
             aria-disabled="false"
-            class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
+            class="pf-v6-c-button pf-m-primary"
             data-ouia-component-id="UnavailableContent-link-button"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
@@ -319,11 +329,9 @@ exports[`Unavailable component should render with no link 1`] = `
             <span
               class="pf-v6-c-button__text"
             >
-              status page
+              Status Page
             </span>
           </a>
-           
-          for known outages.
         </div>
       </div>
     </div>
