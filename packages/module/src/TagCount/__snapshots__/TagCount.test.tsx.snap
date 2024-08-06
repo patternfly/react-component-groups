@@ -32,10 +32,14 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
               <svg
                 aria-hidden="true"
 <<<<<<< HEAD
+<<<<<<< HEAD
                 class="pf-v6-svg tagIcon-0-2-2 tagIcon-d0-0-2-4"
 =======
                 class="pf-v6-svg"
 >>>>>>> 7e689b6 (Update to the latest PF versions (#224))
+=======
+                class="pf-v6-svg tagIcon-0-2-2 tagIcon-d0-0-2-4"
+>>>>>>> 4d794db (fix(v6): Fix TagCount styling (#237))
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -50,10 +54,14 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
           </span>
           <span
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="tagText-0-2-3"
 =======
             class="tagText-0-2-2"
 >>>>>>> 7e689b6 (Update to the latest PF versions (#224))
+=======
+            class="tagText-0-2-3"
+>>>>>>> 4d794db (fix(v6): Fix TagCount styling (#237))
             data-ouia-component-id="TagCount-text"
           />
         </span>
@@ -89,10 +97,14 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
             <svg
               aria-hidden="true"
 <<<<<<< HEAD
+<<<<<<< HEAD
               class="pf-v6-svg tagIcon-0-2-2 tagIcon-d0-0-2-4"
 =======
               class="pf-v6-svg"
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+              class="pf-v6-svg tagIcon-0-2-2 tagIcon-d0-0-2-4"
+>>>>>>> 4d794db (fix(v6): Fix TagCount styling (#237))
               fill="currentColor"
               height="1em"
               role="img"
@@ -238,10 +250,14 @@ exports[`TagCount component should render a tag count of 11 1`] = `
               <svg
                 aria-hidden="true"
 <<<<<<< HEAD
+<<<<<<< HEAD
                 class="pf-v6-svg tagIcon-0-2-2 tagIcon-d1-0-2-5"
 =======
                 class="pf-v6-svg"
 >>>>>>> 7e689b6 (Update to the latest PF versions (#224))
+=======
+                class="pf-v6-svg tagIcon-0-2-2 tagIcon-d1-0-2-5"
+>>>>>>> 4d794db (fix(v6): Fix TagCount styling (#237))
                 fill="currentColor"
                 height="1em"
                 role="img"
@@ -256,10 +272,14 @@ exports[`TagCount component should render a tag count of 11 1`] = `
           </span>
           <span
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="tagText-0-2-3"
 =======
             class="tagText-0-2-2"
 >>>>>>> 7e689b6 (Update to the latest PF versions (#224))
+=======
+            class="tagText-0-2-3"
+>>>>>>> 4d794db (fix(v6): Fix TagCount styling (#237))
             data-ouia-component-id="TagCount-text"
           >
             11
@@ -296,10 +316,14 @@ exports[`TagCount component should render a tag count of 11 1`] = `
             <svg
               aria-hidden="true"
 <<<<<<< HEAD
+<<<<<<< HEAD
               class="pf-v6-svg tagIcon-0-2-2 tagIcon-d1-0-2-5"
 =======
               class="pf-v6-svg"
 >>>>>>> e4d8972 (Update to PatternFly 6 (#145))
+=======
+              class="pf-v6-svg tagIcon-0-2-2 tagIcon-d1-0-2-5"
+>>>>>>> 4d794db (fix(v6): Fix TagCount styling (#237))
               fill="currentColor"
               height="1em"
               role="img"
