@@ -6,14 +6,18 @@ import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
   buttonTagCount: {
-    color: 'var(--pf-v5-global--icon--Color--light)',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    padding: 'var(--pf-t--global--spacer--sm) var(--pf-t--global--spacer--md)'
   },
 
+  tagIcon: (isDisabled: boolean) => ({
+    color: `var(--pf-t--global--icon--color--${isDisabled ? '200' : '100'})`,
+  }),
+
   tagText: {
-    marginLeft: 'var(--pf-v5-global--spacer--sm)',
-    fontSize: 'var(--pf-v5-global--FontSize--sm)'
+    marginLeft: 'var(--pf-t--global--spacer--sm)',
+    fontSize: 'var(--pf-t--global--font--size--sm)'
   }
 });
 
@@ -35,12 +39,12 @@ const TagCount: React.FunctionComponent<TagCountProps> = ({
   ouiaId = 'TagCount',
   ...props 
 }: TagCountProps) => {
-  const classes = useStyles();
+  const classes = useStyles(!count);
   const tagClasses = clsx(classes.buttonTagCount, className);
   return (
     <Button aria-label="Tag count" {...props} variant="plain" isDisabled={!count} className={tagClasses} ouiaId={ouiaId} {...props}>
       <Icon iconSize={iconSize} data-ouia-component-id={`${ouiaId}-icon`}>
-        <TagIcon />
+        <TagIcon className={classes.tagIcon} />
       </Icon>
       <span className={classes.tagText} data-ouia-component-id={`${ouiaId}-text`}>{count}</span>
     </Button>
