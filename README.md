@@ -68,7 +68,7 @@ src
 ### Component's API rules:
 - prop names comply with PatternFly components naming standards (`variant`, `onClick`, `position`, etc.)
 - the API is maximally simplified and all props are provided with a description
-- it is built on the top of existing PatternFly types without prop omitting
+- it is build on top of existing PatternFly types without prop omitting
 - it is well documented using the PatternFly documentation (`/packages/module/patternfly-docs/content/extensions/component-groups/examples/MyComponent/MyComponent.md`) with examples of all possible use cases (`packages/module/patternfly-docs/content/extensions/component-groups/examples/MyComponent/MyComponent[...]Example.tsx`)
 - do not unnecessarily use external libraries in your component - rather, delegate the necessary logic to the component's user using the component's API
 
