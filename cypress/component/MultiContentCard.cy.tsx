@@ -7,8 +7,8 @@ import clsx from 'clsx';
 
 const useStyles = createUseStyles({
   action: {
-    color: 'var(--pf-t--color--blue--60)',
-    fontSize: 'var(--pf-t--global--font--size--200)',
+    color: 'var(--pf-t--global--text--color--brand--default)',
+    fontSize: 'var(-pf-t--global--font--size--sm)',
   }, 
   bulletPoints: {
     color: 'var(--pf-t--global--color--brand--default)',

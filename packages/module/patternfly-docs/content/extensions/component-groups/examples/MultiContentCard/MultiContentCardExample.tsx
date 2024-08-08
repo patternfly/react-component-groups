@@ -8,10 +8,10 @@ import clsx from 'clsx';
 const useStyles = createUseStyles({
   action: {
     color: 'var(--pf-t--global--text--color--brand--default)',
-    fontSize: 'var(--pf-t--global--font--size--200)',
+    fontSize: 'var(-pf-t--global--font--size--sm)',
   },
   actionIcon: {
-    color: 'var(--pf-t--global--color--brand--default)',
+    color: 'var(--pf-t--global--icon--color--regular)',
   },
   bulletPoints: {
     color: 'var(--pf-t--global--color--brand--default)',
