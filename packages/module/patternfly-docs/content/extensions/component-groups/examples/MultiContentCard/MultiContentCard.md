@@ -32,9 +32,9 @@ To make the multi content card expandable, pass `isExpandable` flag together wit
 
 ```
 
-### Expandable multi content card with actions
+### Expandable multi content card with actions and labels
 
-Actions can be displayed in the multi content card heading using `actions` property. 
+Actions can be displayed in the multi content card heading using `actions` property. Also, you can make use of [label components](/components/label) for your card content.
 
 ```js file="./MultiContentCardExpandableActionsExample.tsx"
 
