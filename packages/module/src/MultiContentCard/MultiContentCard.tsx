@@ -8,7 +8,6 @@ import {
   Divider,
   Flex,
   FlexItem,
-  Title,
 } from '@patternfly/react-core';
 
 export const MultiContentCardDividerVariant = {
@@ -104,7 +103,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
           }}
           actions={{ actions }}
         >
-          <CardTitle data-ouia-component-id={`${ouiaId}-title`}>{toggleText ? <Title headingLevel="h2" size="xl">{toggleText}</Title> : toggleContent}</CardTitle>
+          {toggleText ? <CardTitle data-ouia-component-id={`${ouiaId}-title`}>{toggleText}</CardTitle> : toggleContent}
         </CardHeader>
       )}
       {isExpandable ? <CardExpandableContent data-ouia-component-id={`${ouiaId}-expandable-content`}>{renderCards(cards, withDividers)}</CardExpandableContent> : renderCards(cards, withDividers)}
