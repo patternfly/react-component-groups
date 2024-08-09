@@ -28,15 +28,15 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
           <div
             class="pf-v6-c-card__header-main"
           >
-            <h4
-              class="pf-v6-c-content--h4"
+            <h3
+              class="pf-v6-c-content--h3"
               data-ouia-component-id="OUIA-Generated-Content-1"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               Getting Started
-            </h4>
+            </h3>
           </div>
         </div>
         <div
@@ -272,15 +272,15 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
           <div
             class="pf-v6-c-card__header-main"
           >
-            <h4
-              class="pf-v6-c-content--h4"
+            <h3
+              class="pf-v6-c-content--h3"
               data-ouia-component-id="OUIA-Generated-Content-7"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               Next Steps
-            </h4>
+            </h3>
           </div>
         </div>
         <div
@@ -440,14 +440,7 @@ exports[`MultiContentCard component should render expandable multi content card 
           class="pf-v6-c-card__title-text"
           data-ouia-component-id="MultiContentCard-title"
         >
-          <h2
-            class="pf-v6-c-title pf-m-xl"
-            data-ouia-component-id="OUIA-Generated-Title-2"
-            data-ouia-component-type="PF6/Title"
-            data-ouia-safe="true"
-          >
-            Expandable card toggle text
-          </h2>
+          Expandable card toggle text
         </div>
       </div>
     </div>
@@ -516,14 +509,7 @@ exports[`MultiContentCard component should render expandable multi content card 
           class="pf-v6-c-card__title-text"
           data-ouia-component-id="MultiContentCard-title"
         >
-          <h2
-            class="pf-v6-c-title pf-m-xl"
-            data-ouia-component-id="OUIA-Generated-Title-1"
-            data-ouia-component-type="PF6/Title"
-            data-ouia-safe="true"
-          >
-            Expandable card toggle text
-          </h2>
+          Expandable card toggle text
         </div>
       </div>
     </div>
@@ -552,15 +538,15 @@ exports[`MultiContentCard component should render expandable multi content card 
             <div
               class="pf-v6-c-card__header-main"
             >
-              <h4
-                class="pf-v6-c-content--h4"
+              <h3
+                class="pf-v6-c-content--h3"
                 data-ouia-component-id="OUIA-Generated-Content-11"
                 data-ouia-component-type="PF6/Content"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
                 Getting Started
-              </h4>
+              </h3>
             </div>
           </div>
           <div
@@ -796,15 +782,15 @@ exports[`MultiContentCard component should render expandable multi content card 
             <div
               class="pf-v6-c-card__header-main"
             >
-              <h4
-                class="pf-v6-c-content--h4"
+              <h3
+                class="pf-v6-c-content--h3"
                 data-ouia-component-id="OUIA-Generated-Content-17"
                 data-ouia-component-type="PF6/Content"
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
                 Next Steps
-              </h4>
+              </h3>
             </div>
           </div>
           <div
@@ -993,14 +979,7 @@ exports[`MultiContentCard component should render expandable multi content card 
           class="pf-v6-c-card__title-text"
           data-ouia-component-id="MultiContentCard-title"
         >
-          <h2
-            class="pf-v6-c-title pf-m-xl"
-            data-ouia-component-id="OUIA-Generated-Title-3"
-            data-ouia-component-type="PF6/Title"
-            data-ouia-safe="true"
-          >
-            Expandable card toggle text
-          </h2>
+          Expandable card toggle text
         </div>
       </div>
     </div>
@@ -1036,15 +1015,15 @@ exports[`MultiContentCard component should render multi content card with a sing
           <div
             class="pf-v6-c-card__header-main"
           >
-            <h4
-              class="pf-v6-c-content--h4"
+            <h3
+              class="pf-v6-c-content--h3"
               data-ouia-component-id="OUIA-Generated-Content-31"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               Getting Started
-            </h4>
+            </h3>
           </div>
         </div>
         <div
@@ -1283,15 +1262,15 @@ exports[`MultiContentCard component should render multi content card with a sing
           <div
             class="pf-v6-c-card__header-main"
           >
-            <h4
-              class="pf-v6-c-content--h4"
+            <h3
+              class="pf-v6-c-content--h3"
               data-ouia-component-id="OUIA-Generated-Content-37"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               Next Steps
-            </h4>
+            </h3>
           </div>
         </div>
         <div
@@ -1418,15 +1397,15 @@ exports[`MultiContentCard component should render multi content card with divide
           <div
             class="pf-v6-c-card__header-main"
           >
-            <h4
-              class="pf-v6-c-content--h4"
+            <h3
+              class="pf-v6-c-content--h3"
               data-ouia-component-id="OUIA-Generated-Content-21"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               Getting Started
-            </h4>
+            </h3>
           </div>
         </div>
         <div
@@ -1668,15 +1647,15 @@ exports[`MultiContentCard component should render multi content card with divide
           <div
             class="pf-v6-c-card__header-main"
           >
-            <h4
-              class="pf-v6-c-content--h4"
+            <h3
+              class="pf-v6-c-content--h3"
               data-ouia-component-id="OUIA-Generated-Content-27"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               Next Steps
-            </h4>
+            </h3>
           </div>
         </div>
         <div
