@@ -8,10 +8,10 @@ import clsx from 'clsx';
 const useStyles = createUseStyles({
   action: {
     color: 'var(--pf-t--global--text--color--brand--default)',
-    fontSize: 'var(--pf-t--global--font--size--200)',
+    fontSize: 'var(-pf-t--global--font--size--sm)',
   },
   actionIcon: {
-    color: 'var(--pf-t--global--color--brand--default)',
+    color: 'var(--pf-t--global--icon--color--regular)',
   },
   bulletPoints: {
     color: 'var(--pf-t--global--color--brand--default)',
@@ -23,8 +23,8 @@ export const BasicExample: React.FunctionComponent = () => {
 
   const cards = [
     <Card isFullHeight isPlain key="card-1">
-      <CardHeader>
-        <Content component={ContentVariants.h4}>Getting Started</Content>
+      <CardHeader className="pf-v6-u-pt-0">
+        <Content component={ContentVariants.h3}>Getting Started</Content>
       </CardHeader>
       <CardBody>
         <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
@@ -52,7 +52,8 @@ export const BasicExample: React.FunctionComponent = () => {
       </CardFooter>
     </Card>,
     <Card isFullHeight isPlain key="card-2">
-      <CardBody className="pf-v6-u-pt-3xl-on-md">
+      <CardHeader/>
+      <CardBody>
         <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
           <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
             <LockIcon className={classes.actionIcon} />
@@ -65,7 +66,7 @@ export const BasicExample: React.FunctionComponent = () => {
       </CardBody>
       <CardFooter>
         <Content>
-          <Button className={classes.link} variant="link" isInline>
+          <Button variant="link" isInline>
             Learn more  
             <Icon className="pf-v6-u-ml-sm" isInline>
               <ArrowRightIcon />
@@ -77,8 +78,8 @@ export const BasicExample: React.FunctionComponent = () => {
     {
       content: (
         <Card isFullHeight isPlain key="card-3">
-          <CardHeader>
-            <Content component={ContentVariants.h4}>Next Steps</Content>
+          <CardHeader className="pf-v6-u-pt-0">
+            <Content component={ContentVariants.h3}>Next Steps</Content>
           </CardHeader>
           <CardBody>
             <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
@@ -93,7 +94,7 @@ export const BasicExample: React.FunctionComponent = () => {
           </CardBody>
           <CardFooter>
             <Content>
-              <Button className={classes.link} variant="link" isInline>
+              <Button variant="link" isInline>
               Learn more  
                 <Icon className="pf-v6-u-ml-sm" isInline>
                   <ArrowRightIcon />
