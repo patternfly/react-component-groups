@@ -286,21 +286,11 @@ exports[`InvalidObject component should render 1`] = `
               data-ouia-safe="true"
               href="http://localhost:5000"
             >
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
               <span
                 class="pf-v6-c-button__text"
               >
                 Return to homepage
               </span>
-<<<<<<< HEAD
-=======
-              Return to homepage
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
-=======
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
             </a>
           </div>
         </div>

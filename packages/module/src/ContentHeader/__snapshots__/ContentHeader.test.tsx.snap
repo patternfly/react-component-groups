@@ -6,238 +6,12 @@ exports[`Contentheader component should render 1`] = `
   "baseElement": <body>
     <div>
       <section
-<<<<<<< HEAD
-<<<<<<< HEAD
         class="pf-v6-c-page__main-section"
       >
         <div
-<<<<<<< HEAD
-          class="pf-v6-c-page__main-body"
-=======
-<<<<<<< HEAD
-        class="pf-v5-c-page__main-section pf-m-light"
-      >
-        <div
-          class="pf-v5-l-flex"
-=======
-        class="pf-v6-c-page__main-section"
-      >
-        <div
-<<<<<<< HEAD
-          class="pf-v6-l-flex"
->>>>>>> 7d5bf1e (Update to PatternFly 6 (#145))
-<<<<<<< HEAD
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
-=======
-=======
-          class="pf-v6-c-page__main-body"
->>>>>>> fbe8303 (Update to the latest PF versions (#224))
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
-=======
-        class="pf-v6-c-page__main-section"
-      >
-        <div
-          class="pf-v6-c-page__main-body"
->>>>>>> 34b69c4 (fix(v6): Fix generated files)
-        >
-          <div
-            class="pf-v6-l-flex"
-          >
-            <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-              class="pf-m-flex-1"
-=======
-=======
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
-<<<<<<< HEAD
-              class="pf-v5-l-split pf-m-gutter"
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
-            >
-              <div
-                class="pf-v6-l-split pf-m-gutter"
-              >
-                <div
-                  class="pf-v6-l-split__item"
-                >
-                  <h1
-                    class="pf-v6-c-content--h1 pf-v6-u-mb-sm"
-                    data-ouia-component-id="ContentHeader-title"
-<<<<<<< HEAD
-                    data-ouia-component-type="PF6/Content"
-=======
-                    data-ouia-component-type="PF5/Text"
-=======
-              class="pf-v6-l-split pf-m-gutter"
-=======
-=======
->>>>>>> 34b69c4 (fix(v6): Fix generated files)
-              class="pf-m-flex-1"
-            >
-              <div
-                class="pf-v6-l-split pf-m-gutter"
-              >
-                <div
-                  class="pf-v6-l-split__item"
-                >
-                  <h1
-                    class="pf-v6-c-content--h1 pf-v6-u-mb-sm"
-                    data-ouia-component-id="ContentHeader-title"
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    data-ouia-component-type="PF6/Text"
->>>>>>> 7d5bf1e (Update to PatternFly 6 (#145))
-<<<<<<< HEAD
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
-=======
-=======
-                    data-ouia-component-type="PF6/Content"
->>>>>>> fbe8303 (Update to the latest PF versions (#224))
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
-=======
-                    data-ouia-component-type="PF6/Content"
->>>>>>> 34b69c4 (fix(v6): Fix generated files)
-                    data-ouia-safe="true"
-                    data-pf-content="true"
-                  >
-                    My title
-                  </h1>
-                </div>
-                <div
-                  class="pf-v6-l-split__item pf-m-fill"
-                />
-              </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
-              <div
-<<<<<<< HEAD
-                class="pf-v5-l-split__item pf-m-fill"
-              />
-            </div>
-            <div
-              class="pf-v5-c-content"
-            >
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
-              <p
-                class="pf-v6-c-content--p"
-                data-ouia-component-id="ContentHeader-subtitle"
-<<<<<<< HEAD
-                data-ouia-component-type="PF6/Content"
-=======
-                data-ouia-component-type="PF5/Text"
-=======
-                class="pf-v6-l-split__item pf-m-fill"
-              />
-            </div>
-            <div
-              class="pf-v6-c-content"
-            >
-              <p
-                class="pf-v6-c-content--p"
-                data-ouia-component-id="ContentHeader-subtitle"
-                data-ouia-component-type="PF6/Text"
->>>>>>> 7d5bf1e (Update to PatternFly 6 (#145))
-<<<<<<< HEAD
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
-=======
-=======
-=======
->>>>>>> 34b69c4 (fix(v6): Fix generated files)
-              <p
-                class="pf-v6-c-content--p"
-                data-ouia-component-id="ContentHeader-subtitle"
-                data-ouia-component-type="PF6/Content"
-<<<<<<< HEAD
->>>>>>> fbe8303 (Update to the latest PF versions (#224))
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
-=======
->>>>>>> 34b69c4 (fix(v6): Fix generated files)
-                data-ouia-safe="true"
-                data-pf-content="true"
-              >
-                This is a subtitle for your content header
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </body>,
-  "container": <div>
-    <section
-<<<<<<< HEAD
-<<<<<<< HEAD
-      class="pf-v6-c-page__main-section"
-    >
-      <div
-        class="pf-v6-c-page__main-body"
-=======
-<<<<<<< HEAD
-      class="pf-v5-c-page__main-section pf-m-light"
-    >
-      <div
-        class="pf-v5-l-flex"
-=======
-      class="pf-v6-c-page__main-section"
-    >
-      <div
-<<<<<<< HEAD
-        class="pf-v6-l-flex"
->>>>>>> 7d5bf1e (Update to PatternFly 6 (#145))
-<<<<<<< HEAD
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
-=======
-=======
-        class="pf-v6-c-page__main-body"
->>>>>>> fbe8303 (Update to the latest PF versions (#224))
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
-=======
-      class="pf-v6-c-page__main-section"
-    >
-      <div
-        class="pf-v6-c-page__main-body"
->>>>>>> 34b69c4 (fix(v6): Fix generated files)
-      >
-        <div
-=======
->>>>>>> e41be4f (Update snapshots)
           class="pf-v6-l-flex"
         >
           <div
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            class="pf-m-flex-1"
-=======
-=======
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
-<<<<<<< HEAD
-            class="pf-v5-l-split pf-m-gutter"
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
-          >
-            <div
-              class="pf-v6-l-split pf-m-gutter"
-            >
-              <div
-                class="pf-v6-l-split__item"
-              >
-                <h1
-                  class="pf-v6-c-content--h1 pf-v6-u-mb-sm"
-                  data-ouia-component-id="ContentHeader-title"
-<<<<<<< HEAD
-                  data-ouia-component-type="PF6/Content"
-=======
-                  data-ouia-component-type="PF5/Text"
-=======
-            class="pf-v6-l-split pf-m-gutter"
-=======
-=======
->>>>>>> 34b69c4 (fix(v6): Fix generated files)
             class="pf-m-flex-1"
           >
             <div
@@ -249,20 +23,7 @@ exports[`Contentheader component should render 1`] = `
                 <h1
                   class="pf-v6-c-content--h1 pf-v6-u-mb-sm"
                   data-ouia-component-id="ContentHeader-title"
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  data-ouia-component-type="PF6/Text"
->>>>>>> 7d5bf1e (Update to PatternFly 6 (#145))
-<<<<<<< HEAD
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
-=======
-=======
                   data-ouia-component-type="PF6/Content"
->>>>>>> fbe8303 (Update to the latest PF versions (#224))
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
-=======
-                  data-ouia-component-type="PF6/Content"
->>>>>>> 34b69c4 (fix(v6): Fix generated files)
                   data-ouia-safe="true"
                   data-pf-content="true"
                 >
@@ -273,55 +34,10 @@ exports[`Contentheader component should render 1`] = `
                 class="pf-v6-l-split__item pf-m-fill"
               />
             </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
-            <div
-<<<<<<< HEAD
-              class="pf-v5-l-split__item pf-m-fill"
-            />
-          </div>
-          <div
-            class="pf-v5-c-content"
-          >
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
-            <p
-              class="pf-v6-c-content--p"
-              data-ouia-component-id="ContentHeader-subtitle"
-<<<<<<< HEAD
-              data-ouia-component-type="PF6/Content"
-=======
-              data-ouia-component-type="PF5/Text"
-=======
-              class="pf-v6-l-split__item pf-m-fill"
-            />
-          </div>
-          <div
-            class="pf-v6-c-content"
-          >
-            <p
-              class="pf-v6-c-content--p"
-              data-ouia-component-id="ContentHeader-subtitle"
-              data-ouia-component-type="PF6/Text"
->>>>>>> 7d5bf1e (Update to PatternFly 6 (#145))
-<<<<<<< HEAD
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
-=======
-=======
-=======
->>>>>>> 34b69c4 (fix(v6): Fix generated files)
             <p
               class="pf-v6-c-content--p"
               data-ouia-component-id="ContentHeader-subtitle"
               data-ouia-component-type="PF6/Content"
-<<<<<<< HEAD
->>>>>>> fbe8303 (Update to the latest PF versions (#224))
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
-=======
->>>>>>> 34b69c4 (fix(v6): Fix generated files)
               data-ouia-safe="true"
               data-pf-content="true"
             >

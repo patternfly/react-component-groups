@@ -54,11 +54,7 @@ exports[`Unavailable component should render with a link 1`] = `
           >
             <a
               aria-disabled="false"
-<<<<<<< HEAD
               class="pf-v6-c-button pf-m-primary"
-=======
-              class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
               data-ouia-component-id="UnavailableContent-link-button"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
@@ -69,11 +65,7 @@ exports[`Unavailable component should render with a link 1`] = `
               <span
                 class="pf-v6-c-button__text"
               >
-<<<<<<< HEAD
                 Status Page
-=======
-                status page
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
               </span>
             </a>
           </div>
@@ -131,11 +123,7 @@ exports[`Unavailable component should render with a link 1`] = `
         >
           <a
             aria-disabled="false"
-<<<<<<< HEAD
             class="pf-v6-c-button pf-m-primary"
-=======
-            class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
             data-ouia-component-id="UnavailableContent-link-button"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
@@ -146,11 +134,7 @@ exports[`Unavailable component should render with a link 1`] = `
             <span
               class="pf-v6-c-button__text"
             >
-<<<<<<< HEAD
               Status Page
-=======
-              status page
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
             </span>
           </a>
         </div>
@@ -265,11 +249,7 @@ exports[`Unavailable component should render with no link 1`] = `
           >
             <a
               aria-disabled="false"
-<<<<<<< HEAD
               class="pf-v6-c-button pf-m-primary"
-=======
-              class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
               data-ouia-component-id="UnavailableContent-link-button"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
@@ -280,11 +260,7 @@ exports[`Unavailable component should render with no link 1`] = `
               <span
                 class="pf-v6-c-button__text"
               >
-<<<<<<< HEAD
                 Status Page
-=======
-                status page
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
               </span>
             </a>
           </div>
@@ -342,11 +318,7 @@ exports[`Unavailable component should render with no link 1`] = `
         >
           <a
             aria-disabled="false"
-<<<<<<< HEAD
             class="pf-v6-c-button pf-m-primary"
-=======
-            class="pf-v6-c-button pf-m-link emptyStateLinkButton-0-2-1"
->>>>>>> e4d8972 (Update to PatternFly 6 (#145))
             data-ouia-component-id="UnavailableContent-link-button"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
@@ -357,11 +329,7 @@ exports[`Unavailable component should render with no link 1`] = `
             <span
               class="pf-v6-c-button__text"
             >
-<<<<<<< HEAD
               Status Page
-=======
-              status page
->>>>>>> 7e689b6 (Update to the latest PF versions (#224))
             </span>
           </a>
         </div>
