@@ -18,9 +18,13 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
         <span
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 7e689b6 (Update to the latest PF versions (#224))
           class="pf-v6-c-button__text"
+=======
+          class="pf-v6-c-button__icon pf-m-start"
+>>>>>>> e41be4f (Update snapshots)
         >
           <span
             class="pf-v6-c-icon"
@@ -80,7 +84,7 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
       type="button"
     >
       <span
-        class="pf-v6-c-button__text"
+        class="pf-v6-c-button__icon pf-m-start"
       >
         <span
 <<<<<<< HEAD
@@ -236,9 +240,13 @@ exports[`TagCount component should render a tag count of 11 1`] = `
         <span
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 7e689b6 (Update to the latest PF versions (#224))
           class="pf-v6-c-button__text"
+=======
+          class="pf-v6-c-button__icon pf-m-start"
+>>>>>>> e41be4f (Update snapshots)
         >
           <span
             class="pf-v6-c-icon"
@@ -299,7 +307,7 @@ exports[`TagCount component should render a tag count of 11 1`] = `
       type="button"
     >
       <span
-        class="pf-v6-c-button__text"
+        class="pf-v6-c-button__icon pf-m-start"
       >
         <span
 <<<<<<< HEAD
