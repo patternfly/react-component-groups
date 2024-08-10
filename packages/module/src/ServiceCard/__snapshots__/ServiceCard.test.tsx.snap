@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LogSnippet component should render LogSnippet component 1`] = `
+exports[`ServiceCard component should render ServiceCard component 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -19,23 +19,31 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
             class="pf-v5-c-card__header-main"
           >
             <div
-              class="image-0-2-2"
+              class="pf-v5-l-flex pf-m-row pf-m-align-items-center"
             >
-              /
-            </div>
-            <div
-              class="pf-v5-c-content"
-            >
-              <h2
-                class=""
-                data-ouia-component-id="ServiceCard-title"
-                data-ouia-component-type="PF5/Text"
-                data-ouia-safe="true"
-                data-pf-content="true"
+              <div
+                class="image-0-2-2"
               >
-                Example
-              </h2>
-              A basic example
+                /
+              </div>
+              <div
+                class=""
+              >
+                <div
+                  class="pf-v5-c-content"
+                >
+                  <h2
+                    class=""
+                    data-ouia-component-id="ServiceCard-title"
+                    data-ouia-component-type="PF5/Text"
+                    data-ouia-safe="true"
+                    data-pf-content="true"
+                  >
+                    Example
+                  </h2>
+                  A basic example
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -67,23 +75,31 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
           class="pf-v5-c-card__header-main"
         >
           <div
-            class="image-0-2-2"
+            class="pf-v5-l-flex pf-m-row pf-m-align-items-center"
           >
-            /
-          </div>
-          <div
-            class="pf-v5-c-content"
-          >
-            <h2
-              class=""
-              data-ouia-component-id="ServiceCard-title"
-              data-ouia-component-type="PF5/Text"
-              data-ouia-safe="true"
-              data-pf-content="true"
+            <div
+              class="image-0-2-2"
             >
-              Example
-            </h2>
-            A basic example
+              /
+            </div>
+            <div
+              class=""
+            >
+              <div
+                class="pf-v5-c-content"
+              >
+                <h2
+                  class=""
+                  data-ouia-component-id="ServiceCard-title"
+                  data-ouia-component-type="PF5/Text"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                >
+                  Example
+                </h2>
+                A basic example
+              </div>
+            </div>
           </div>
         </div>
       </div>
