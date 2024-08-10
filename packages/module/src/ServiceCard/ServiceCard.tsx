@@ -1,10 +1,10 @@
 import React from 'react';
-import { Card, CardBody, CardFooter, CardHeader, Text, TextContent, TextVariants } from '@patternfly/react-core';
+import { Card, CardBody, CardFooter, CardHeader, Text, TextContent, TextVariants, Flex, FlexItem, CardProps } from '@patternfly/react-core';
 import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { createUseStyles } from 'react-jss';
 
-export interface ServiceCardProps {
+export interface ServiceCardProps extends CardProps {
   /** Service card title */
   title: string;
   /** Service card subtitle */
@@ -19,11 +19,13 @@ export interface ServiceCardProps {
   footer?: React.ReactElement | null;
   /** Optional custom OUIA ID */
   ouiaId?: string | number;
+  /** Optional flag modifying the card header layout */
+  isStacked?: boolean;
 }
 
 const useStyles = createUseStyles({
   card: {
-    height: 'var(--pf-v5-u-h-100)'
+    height: '100%'
   },
   image: {
     marginRight: 'var(--pf-v5-global--spacer--md)',
@@ -38,20 +40,26 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
   icon,
   helperText,
   footer = null,
-  ouiaId='ServiceCard'
+  ouiaId='ServiceCard',
+  isStacked = false,
+  ...props
 }: ServiceCardProps) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card} ouiaId={`${ouiaId}-card`}>
+    <Card className={classes.card} ouiaId={`${ouiaId}-card`} {...props}>
       <CardHeader>
-        <div className={classes.image}>
-          {icon}
-        </div>
-        <TextContent>
-          <Text component={TextVariants.h2} ouiaId={`${ouiaId}-title`}>{title}</Text>
-          {subtitle}
-        </TextContent>
+        <Flex direction={{ default: isStacked ? 'column' : 'row' }} alignItems={{ default: isStacked ? 'alignItemsFlexStart' : 'alignItemsCenter' }}>
+          <FlexItem className={classes.image}>
+            {icon}
+          </FlexItem>
+          <FlexItem>
+            <TextContent>
+              <Text component={TextVariants.h2} ouiaId={`${ouiaId}-title`}>{title}</Text>
+              {subtitle}
+            </TextContent>
+          </FlexItem>
+        </Flex>
       </CardHeader>
       <CardBody data-ouia-component-id={`${ouiaId}-description`}>{description}</CardBody>
       <CardFooter data-ouia-component-id={`${ouiaId}-footer`}>

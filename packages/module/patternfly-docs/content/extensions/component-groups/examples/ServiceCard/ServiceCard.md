@@ -15,15 +15,23 @@ The **service card** component displays a card representing a service with an ic
 
 ## Examples
 
-### Service Card
+### Basic service card
 
-This shows a basic service card with an `icon`, `title`, `description`, and optional footer passed in.
+This shows a basic service card with an `icon`, `title`, `description`, and optional footer passed in. You can also pass all props of the [card component](/components/card).
 
 ```js file="./ServiceCardExample.tsx"
 
 ```
 
-### Service Card with Gallery example
+### Stacked service card
+
+If you set `isStacked` property to `true`, the header layout changes to stacked.
+
+```js file="./ServiceCardStackedExample.tsx"
+
+```
+
+### Service card in a gallery
 
 This shows how cards can look side by side in a [gallery layout](/layouts/gallery).
 
