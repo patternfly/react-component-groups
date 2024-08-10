@@ -9,6 +9,7 @@ import {
   Flex,
   FlexItem,
 } from '@patternfly/react-core';
+import { createUseStyles } from 'react-jss';
 
 export const MultiContentCardDividerVariant = {
   left: 'left',
@@ -49,6 +50,12 @@ export const isCardWithProps = (
   card: React.ReactElement | MutliContentCardProps
 ): card is MutliContentCardProps => !!card && !React.isValidElement(card);
 
+const useStyles = createUseStyles({
+  cardTitle: {
+    fontSize: 'var(--pf-t--global--font--size--heading--h3)',
+  }
+});
+
 const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   cards = [],
   isToggleRightAligned = false,
@@ -62,6 +69,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   ...props
 }: MultiContentCardProps) => {
   const [ isExpanded, setIsExpanded ] = React.useState(defaultExpanded);
+  const classes = useStyles();
   const onExpand = () => {
     setIsExpanded(!isExpanded);
   };
@@ -90,7 +98,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
     </Flex>
   );
   
-  return(
+  return (
     <Card isExpanded={isExpanded} ouiaId={ouiaId} {...props}>
       {isExpandable && (
         <CardHeader
@@ -103,7 +111,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
           }}
           actions={{ actions }}
         >
-          {toggleText ? <CardTitle data-ouia-component-id={`${ouiaId}-title`}>{toggleText}</CardTitle> : toggleContent}
+          {toggleText ? <CardTitle component="h3" className={classes.cardTitle} data-ouia-component-id={`${ouiaId}-title`}>{toggleText}</CardTitle> : toggleContent}
         </CardHeader>
       )}
       {isExpandable ? <CardExpandableContent data-ouia-component-id={`${ouiaId}-expandable-content`}>{renderCards(cards, withDividers)}</CardExpandableContent> : renderCards(cards, withDividers)}
