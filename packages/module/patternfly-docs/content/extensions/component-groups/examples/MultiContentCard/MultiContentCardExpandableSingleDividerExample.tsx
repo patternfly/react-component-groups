@@ -53,7 +53,7 @@ export const BasicExample: React.FunctionComponent = () => {
     </Card>,
     <Card isFullHeight isPlain key="card-2">
       <CardHeader/>
-      <CardBody className="pf-v6-u-pt-3xl-on-md">
+      <CardBody>
         <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
           <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
             <LockIcon className={classes.actionIcon} />

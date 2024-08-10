@@ -35,7 +35,7 @@ const cards = [
     </CardFooter>
   </Card>,
   <Card isFullHeight isPlain key="card-2">
-    <CardBody className="pf-v6-u-pt-3xl-on-md">
+    <CardBody>
       <Content className="pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover">
         <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
           <LockIcon />

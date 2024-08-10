@@ -164,7 +164,7 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
         id=""
       >
         <div
-          class="pf-v6-c-card__body pf-v6-u-pt-3xl-on-md"
+          class="pf-v6-c-card__body"
         >
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
@@ -674,7 +674,7 @@ exports[`MultiContentCard component should render expandable multi content card 
           id=""
         >
           <div
-            class="pf-v6-c-card__body pf-v6-u-pt-3xl-on-md"
+            class="pf-v6-c-card__body"
           >
             <div
               class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
@@ -1151,7 +1151,7 @@ exports[`MultiContentCard component should render multi content card with a sing
         id=""
       >
         <div
-          class="pf-v6-c-card__body pf-v6-u-pt-3xl-on-md"
+          class="pf-v6-c-card__body"
         >
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
@@ -1536,7 +1536,7 @@ exports[`MultiContentCard component should render multi content card with divide
         id=""
       >
         <div
-          class="pf-v6-c-card__body pf-v6-u-pt-3xl-on-md"
+          class="pf-v6-c-card__body"
         >
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
