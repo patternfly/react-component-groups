@@ -33,7 +33,7 @@ If you set `isStacked` property to `true`, the header layout changes to stacked.
 
 ### Service card in a gallery
 
-This shows how cards can look side by side in a [gallery layout](/layouts/gallery).
+This shows how cards can look side by side in a [gallery layout](/layouts/gallery). If you set `isFullHeight` property to `true`, the card height will fill the available space.
 
 ```js file="./ServiceCardGalleryExample.tsx"
 

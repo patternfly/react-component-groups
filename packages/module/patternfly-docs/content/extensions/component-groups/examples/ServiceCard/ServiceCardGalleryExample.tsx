@@ -10,6 +10,7 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
     <GalleryItem>
       <ServiceCard
         isStacked
+        isFullHeight
         title='Example1'
         subtitle='A basic example'
         description='This is a basic ServiceCard Example'
@@ -21,6 +22,7 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
     <GalleryItem>
       <ServiceCard
         isStacked
+        isFullHeight
         title='Example2'
         subtitle='A second example'
         description='This is another basic ServiceCard Example'
