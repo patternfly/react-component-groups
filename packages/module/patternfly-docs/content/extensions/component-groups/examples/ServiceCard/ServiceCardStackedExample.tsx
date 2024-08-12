@@ -6,6 +6,7 @@ import { Button, ButtonVariant } from '@patternfly/react-core';
 
 export const BasicExample: React.FunctionComponent = () => (
   <ServiceCard
+    isStacked
     title='Example'
     subtitle='A basic example'
     description='This is a basic ServiceCard Example'

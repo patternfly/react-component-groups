@@ -8,7 +8,9 @@ import contentHeaderIcon from '../../assets/icons/content-header-icon.svg';
 export const ServiceCardGalleryExample: React.FunctionComponent = () => (
   <Gallery hasGutter minWidths={{ default: '330px' }}>
     <GalleryItem>
-      <ServiceCard 
+      <ServiceCard
+        isStacked
+        isFullHeight
         title='Example1'
         subtitle='A basic example'
         description='This is a basic ServiceCard Example'
@@ -18,7 +20,9 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
       />
     </GalleryItem>
     <GalleryItem>
-      <ServiceCard 
+      <ServiceCard
+        isStacked
+        isFullHeight
         title='Example2'
         subtitle='A second example'
         description='This is another basic ServiceCard Example'
@@ -26,8 +30,9 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
         helperText=''
         footer={<>
           <Button
-            variant={ButtonVariant.secondary}
+            variant={ButtonVariant.primary}
             isInline
+            className='pf-v5-u-mr-md'
             component="a"
             href='www.google.com'>
             Launch
@@ -38,7 +43,7 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
             isInline
             href='www.google.com'
           >
-            Learn More
+            Learn more
           </Button></>
         }
       />
