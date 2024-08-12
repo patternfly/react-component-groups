@@ -39,7 +39,7 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
             component="a"
             href='www.patternfly.org'
           >
-            Learn More
+            Learn more
           </Button></>
         }
       />
