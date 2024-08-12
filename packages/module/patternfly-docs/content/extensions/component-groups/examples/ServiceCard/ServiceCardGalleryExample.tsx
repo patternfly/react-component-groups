@@ -8,7 +8,9 @@ import contentHeaderIcon from '../../assets/icons/content-header-icon.svg';
 export const ServiceCardGalleryExample: React.FunctionComponent = () => (
   <Gallery hasGutter minWidths={{ default: '330px' }}>
     <GalleryItem>
-      <ServiceCard 
+      <ServiceCard
+        isStacked
+        isFullHeight
         title='Example1'
         subtitle='A basic example'
         description='This is a basic ServiceCard example'
@@ -17,7 +19,9 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
       />
     </GalleryItem>
     <GalleryItem>
-      <ServiceCard 
+      <ServiceCard
+        isStacked
+        isFullHeight
         title='Example2'
         subtitle='A second example'
         description='This is another basic ServiceCard example'
@@ -37,7 +41,7 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
             component="a"
             href='www.patternfly.org'
           >
-            Learn More
+            Learn more
           </Button></>
         }
       />
