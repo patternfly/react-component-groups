@@ -3,7 +3,6 @@ import { Card, CardBody, CardFooter, CardHeader, Content, ContentVariants } from
 import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { createUseStyles } from 'react-jss';
-import clsx from 'clsx';
 
 export interface ServiceCardProps {
   /** Service card title */
