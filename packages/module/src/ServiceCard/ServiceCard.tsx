@@ -8,8 +8,8 @@ import clsx from 'clsx';
 export interface ServiceCardProps extends CardProps {
   /** Service card title */
   title: string;
-  /** Service card subtitle */
-  subtitle: string;
+  /** Optional Service card subtitle */
+  subtitle?: string;
   /** Service card description */
   description: string;
   /** Service card icon */
@@ -60,7 +60,7 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
           <FlexItem>
             <Content>
               <Content component={ContentVariants.h2} ouiaId={`${ouiaId}-title`}>{title}</Content>
-              {subtitle}
+              {subtitle ?? null}
             </Content>
           </FlexItem>
         </Flex>
