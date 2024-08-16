@@ -91,8 +91,6 @@ export const BasicExample: React.FunctionComponent = () => {
     </Card>
   ];
 
-  
-
   const onToggleClick = () => {
     setMenuOpen(!isMenuOpen);
   };

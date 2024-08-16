@@ -13,35 +13,33 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
         isFullHeight
         title='Example1'
         subtitle='A basic example'
-        description='This is a basic ServiceCard Example'
+        description='This is a basic ServiceCard example'
         icon={<img src={contentHeaderIcon} alt="content-header-icon" />}
-        helperText=''
-
+        helperText='Example helper text'
       />
     </GalleryItem>
     <GalleryItem>
-      <ServiceCard
+      <ServiceCard 
         isStacked
         isFullHeight
         title='Example2'
         subtitle='A second example'
-        description='This is another basic ServiceCard Example'
+        description='This is another basic ServiceCard example'
         icon={<img src={contentHeaderIcon} alt="content-header-icon" />}
-        helperText=''
+        helperText='Example helper text'
         footer={<>
           <Button
-            variant={ButtonVariant.primary}
-            isInline
-            className='pf-v5-u-mr-md'
+            variant={ButtonVariant.secondary}
+            className='pf-v6-u-mr-md'
             component="a"
-            href='www.google.com'>
+            href='www.patternfly.org'
+          >
             Launch
           </Button>
           <Button
             variant={ButtonVariant.link}
             component="a"
-            isInline
-            href='www.google.com'
+            href='www.patternfly.org'
           >
             Learn more
           </Button></>

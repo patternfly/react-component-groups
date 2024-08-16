@@ -1,77 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ServiceCard component should render ServiceCard component 1`] = `
+exports[`LogSnippet component should render LogSnippet component 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="pf-v5-c-card"
+        class="pf-v6-c-card card-0-2-1"
         data-ouia-component-id="ServiceCard-card"
-        data-ouia-component-type="PF5/Card"
+        data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
       >
         <div
-          class="pf-v5-c-card__header"
+          class="pf-v6-c-card__header"
         >
           <div
-            class="pf-v5-c-card__header-main"
-          >
-            <div
-              class="pf-v5-l-flex pf-m-row pf-m-align-items-center"
-            >
-              <div
-                class="image-0-2-2"
-              >
-                /
-              </div>
-              <div
-                class=""
-              >
-                <div
-                  class="pf-v5-c-content"
-                >
-                  <h2
-                    class=""
-                    data-ouia-component-id="ServiceCard-title"
-                    data-ouia-component-type="PF5/Text"
-                    data-ouia-safe="true"
-                    data-pf-content="true"
-                  >
-                    Example
-                  </h2>
-                  A basic example
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="pf-v5-c-card__body"
-          data-ouia-component-id="ServiceCard-description"
-        >
-          This is a basic ServiceCard Example
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="pf-v5-c-card"
-      data-ouia-component-id="ServiceCard-card"
-      data-ouia-component-type="PF5/Card"
-      data-ouia-safe="true"
-      id=""
-    >
-      <div
-        class="pf-v5-c-card__header"
-      >
-        <div
-          class="pf-v5-c-card__header-main"
-        >
-          <div
-            class="pf-v5-l-flex pf-m-row pf-m-align-items-center"
+            class="pf-v6-c-card__header-main"
           >
             <div
               class="image-0-2-2"
@@ -79,32 +24,87 @@ exports[`ServiceCard component should render ServiceCard component 1`] = `
               /
             </div>
             <div
-              class=""
+              class="pf-v6-c-content"
+              data-ouia-component-id="OUIA-Generated-Content-1"
+              data-ouia-component-type="PF6/Content"
+              data-ouia-safe="true"
+              data-pf-content="true"
             >
-              <div
-                class="pf-v5-c-content"
+              <h2
+                class="pf-v6-c-content--h2"
+                data-ouia-component-id="ServiceCard-title"
+                data-ouia-component-type="PF6/Content"
+                data-ouia-safe="true"
+                data-pf-content="true"
               >
-                <h2
-                  class=""
-                  data-ouia-component-id="ServiceCard-title"
-                  data-ouia-component-type="PF5/Text"
-                  data-ouia-safe="true"
-                  data-pf-content="true"
-                >
-                  Example
-                </h2>
-                A basic example
-              </div>
+                Example
+              </h2>
+              A basic example
             </div>
+          </div>
+        </div>
+        <div
+          class="pf-v6-c-card__body"
+          data-ouia-component-id="ServiceCard-description"
+        >
+          This is a basic ServiceCard Example
+        </div>
+        <div
+          class="pf-v6-c-card__footer"
+          data-ouia-component-id="ServiceCard-footer"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="pf-v6-c-card card-0-2-1"
+      data-ouia-component-id="ServiceCard-card"
+      data-ouia-component-type="PF6/Card"
+      data-ouia-safe="true"
+      id=""
+    >
+      <div
+        class="pf-v6-c-card__header"
+      >
+        <div
+          class="pf-v6-c-card__header-main"
+        >
+          <div
+            class="image-0-2-2"
+          >
+            /
+          </div>
+          <div
+            class="pf-v6-c-content"
+            data-ouia-component-id="OUIA-Generated-Content-1"
+            data-ouia-component-type="PF6/Content"
+            data-ouia-safe="true"
+            data-pf-content="true"
+          >
+            <h2
+              class="pf-v6-c-content--h2"
+              data-ouia-component-id="ServiceCard-title"
+              data-ouia-component-type="PF6/Content"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              Example
+            </h2>
+            A basic example
           </div>
         </div>
       </div>
       <div
-        class="pf-v5-c-card__body"
+        class="pf-v6-c-card__body"
         data-ouia-component-id="ServiceCard-description"
       >
         This is a basic ServiceCard Example
       </div>
+      <div
+        class="pf-v6-c-card__footer"
+        data-ouia-component-id="ServiceCard-footer"
+      />
     </div>
   </div>,
   "debug": [Function],
