@@ -25,7 +25,7 @@ const CloseButton: React.FunctionComponent<CloseButtonProps> = ({
 }: CloseButtonProps) => {
   const classes = useStyles();
   return (
-    <Button
+    <Button icon={<CloseIcon />}
       aria-label={props['aria-label'] || 'Close'}
       className={clsx(classes.closeButton, className)}
       data-test-id={dataTestID}
@@ -33,9 +33,7 @@ const CloseButton: React.FunctionComponent<CloseButtonProps> = ({
       variant={ButtonVariant.plain}
       ouiaId={ouiaId}
       {...props}
-    >
-      <CloseIcon />
-    </Button>
+    />
   );
 };
 
