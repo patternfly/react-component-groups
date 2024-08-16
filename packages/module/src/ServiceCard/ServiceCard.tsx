@@ -1,15 +1,15 @@
 import React from 'react';
-import { Card, CardBody, CardFooter, CardHeader, CardProps, Content, ContentVariants, Flex, FlexItem } from '@patternfly/react-core';
+import { Card, CardBody, CardFooter, CardHeader, Content, ContentVariants, Flex, FlexItem } from '@patternfly/react-core';
 import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
-export interface ServiceCardProps extends CardProps {
+export interface ServiceCardProps {
   /** Service card title */
   title: string;
-  /** Optional Service card subtitle */
-  subtitle?: string;
+  /** Service card subtitle */
+  subtitle: string;
   /** Service card description */
   description: string;
   /** Service card icon */

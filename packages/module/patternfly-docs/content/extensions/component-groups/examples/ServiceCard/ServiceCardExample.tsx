@@ -23,7 +23,7 @@ export const BasicExample: React.FunctionComponent = () => (
         component="a"
         href='www.patternfly.org'
       >
-          Learn more
+          Learn More
       </Button></>
     }
   />
