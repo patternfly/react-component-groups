@@ -16,7 +16,7 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
         type="button"
       >
         <span
-          class="pf-v6-c-button__text"
+          class="pf-v6-c-button__icon pf-m-start"
         >
           <span
             class="pf-v6-c-icon"
@@ -60,7 +60,7 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
       type="button"
     >
       <span
-        class="pf-v6-c-button__text"
+        class="pf-v6-c-button__icon pf-m-start"
       >
         <span
           class="pf-v6-c-icon"
@@ -160,7 +160,7 @@ exports[`TagCount component should render a tag count of 11 1`] = `
         type="button"
       >
         <span
-          class="pf-v6-c-button__text"
+          class="pf-v6-c-button__icon pf-m-start"
         >
           <span
             class="pf-v6-c-icon"
@@ -205,7 +205,7 @@ exports[`TagCount component should render a tag count of 11 1`] = `
       type="button"
     >
       <span
-        class="pf-v6-c-button__text"
+        class="pf-v6-c-button__icon pf-m-start"
       >
         <span
           class="pf-v6-c-icon"

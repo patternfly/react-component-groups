@@ -7,7 +7,7 @@ import MultiContentCard, { MultiContentCardDividerVariant } from './MultiContent
 const cards = [
   <Card isFullHeight isPlain key="card-1">
     <CardHeader>
-      <Content component={ContentVariants.h3}>Getting Started</Content>
+      <Content component={ContentVariants.h4}>Getting Started</Content>
     </CardHeader>
     <CardBody>
       <Content className="pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover">
@@ -35,7 +35,7 @@ const cards = [
     </CardFooter>
   </Card>,
   <Card isFullHeight isPlain key="card-2">
-    <CardBody className="pf-v6-u-pt-3xl-on-md">
+    <CardBody>
       <Content className="pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover">
         <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
           <LockIcon />
@@ -59,7 +59,7 @@ const cards = [
   </Card>,
   <Card isFullHeight isPlain key="card-3">
     <CardHeader>
-      <Content component={ContentVariants.h3}>Next Steps</Content>
+      <Content component={ContentVariants.h4}>Next Steps</Content>
     </CardHeader>
     <CardBody>
       <Content className="pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover">
