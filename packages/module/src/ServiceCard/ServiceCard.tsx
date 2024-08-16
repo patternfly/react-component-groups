@@ -5,7 +5,7 @@ import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/H
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
-export interface ServiceCardProps extends CardProps {
+export interface ServiceCardProps {
   /** Service card title */
   title: string;
   /** Service card subtitle */

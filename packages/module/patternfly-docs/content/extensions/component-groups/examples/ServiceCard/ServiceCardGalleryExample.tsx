@@ -18,7 +18,7 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
       />
     </GalleryItem>
     <GalleryItem>
-      <ServiceCard
+      <ServiceCard 
         isStacked
         title='Example2'
         subtitle='A second example'
