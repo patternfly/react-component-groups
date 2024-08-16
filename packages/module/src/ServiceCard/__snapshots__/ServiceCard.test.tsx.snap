@@ -6,20 +6,20 @@ exports[`ServiceCard component should render ServiceCard component 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="pf-v5-c-card"
+        class="pf-v6-c-card"
         data-ouia-component-id="ServiceCard-card"
-        data-ouia-component-type="PF5/Card"
+        data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
       >
         <div
-          class="pf-v5-c-card__header"
+          class="pf-v6-c-card__header"
         >
           <div
-            class="pf-v5-c-card__header-main"
+            class="pf-v6-c-card__header-main"
           >
             <div
-              class="pf-v5-l-flex pf-m-row pf-m-align-items-center"
+              class="pf-v6-l-flex pf-m-row pf-m-align-items-center"
             >
               <div
                 class="image-0-2-2"
@@ -30,12 +30,16 @@ exports[`ServiceCard component should render ServiceCard component 1`] = `
                 class=""
               >
                 <div
-                  class="pf-v5-c-content"
+                  class="pf-v6-c-content"
+                  data-ouia-component-id="OUIA-Generated-Content-1"
+                  data-ouia-component-type="PF6/Content"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
                 >
                   <h2
-                    class=""
+                    class="pf-v6-c-content--h2"
                     data-ouia-component-id="ServiceCard-title"
-                    data-ouia-component-type="PF5/Text"
+                    data-ouia-component-type="PF6/Content"
                     data-ouia-safe="true"
                     data-pf-content="true"
                   >
@@ -48,7 +52,7 @@ exports[`ServiceCard component should render ServiceCard component 1`] = `
           </div>
         </div>
         <div
-          class="pf-v5-c-card__body"
+          class="pf-v6-c-card__body"
           data-ouia-component-id="ServiceCard-description"
         >
           This is a basic ServiceCard Example
@@ -58,20 +62,20 @@ exports[`ServiceCard component should render ServiceCard component 1`] = `
   </body>,
   "container": <div>
     <div
-      class="pf-v5-c-card"
+      class="pf-v6-c-card"
       data-ouia-component-id="ServiceCard-card"
-      data-ouia-component-type="PF5/Card"
+      data-ouia-component-type="PF6/Card"
       data-ouia-safe="true"
       id=""
     >
       <div
-        class="pf-v5-c-card__header"
+        class="pf-v6-c-card__header"
       >
         <div
-          class="pf-v5-c-card__header-main"
+          class="pf-v6-c-card__header-main"
         >
           <div
-            class="pf-v5-l-flex pf-m-row pf-m-align-items-center"
+            class="pf-v6-l-flex pf-m-row pf-m-align-items-center"
           >
             <div
               class="image-0-2-2"
@@ -82,12 +86,16 @@ exports[`ServiceCard component should render ServiceCard component 1`] = `
               class=""
             >
               <div
-                class="pf-v5-c-content"
+                class="pf-v6-c-content"
+                data-ouia-component-id="OUIA-Generated-Content-1"
+                data-ouia-component-type="PF6/Content"
+                data-ouia-safe="true"
+                data-pf-content="true"
               >
                 <h2
-                  class=""
+                  class="pf-v6-c-content--h2"
                   data-ouia-component-id="ServiceCard-title"
-                  data-ouia-component-type="PF5/Text"
+                  data-ouia-component-type="PF6/Content"
                   data-ouia-safe="true"
                   data-pf-content="true"
                 >
@@ -100,7 +108,7 @@ exports[`ServiceCard component should render ServiceCard component 1`] = `
         </div>
       </div>
       <div
-        class="pf-v5-c-card__body"
+        class="pf-v6-c-card__body"
         data-ouia-component-id="ServiceCard-description"
       >
         This is a basic ServiceCard Example

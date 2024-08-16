@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardBody, CardFooter, CardHeader, Text, TextContent, TextVariants, Flex, FlexItem, CardProps } from '@patternfly/react-core';
+import { Card, CardBody, CardFooter, CardHeader, Content, ContentVariants, Flex, FlexItem, CardProps } from '@patternfly/react-core';
 import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { createUseStyles } from 'react-jss';
@@ -8,7 +8,7 @@ import clsx from 'clsx';
 export interface ServiceCardProps extends CardProps {
   /** Service card title */
   title: string;
-  /** Optional Service card subtitle */
+  /** Service card subtitle */
   subtitle?: string;
   /** Service card description */
   description: string;
@@ -31,7 +31,7 @@ const useStyles = createUseStyles({
     height: '100%'
   },
   image: {
-    marginRight: 'var(--pf-v5-global--spacer--md)',
+    marginRight: 'var(--pf-t--global--spacer--md)',
     width: 48
   }
 });
@@ -58,10 +58,10 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
             {icon}
           </FlexItem>
           <FlexItem>
-            <TextContent>
-              <Text component={TextVariants.h2} ouiaId={`${ouiaId}-title`}>{title}</Text>
+            <Content>
+              <Content component={ContentVariants.h2} ouiaId={`${ouiaId}-title`}>{title}</Content>
               {subtitle ? subtitle : null}
-            </TextContent>
+            </Content>
           </FlexItem>
         </Flex>
       </CardHeader>
@@ -70,7 +70,7 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
         <CardFooter data-ouia-component-id={`${ouiaId}-footer`}>
           { helperText ?
             ( <HelperText data-ouia-component-id={`${ouiaId}-helper-text`}>
-              <HelperTextItem variant="indeterminate" className="pf-v5-u-mb-lg">
+              <HelperTextItem className="pf-v6-u-mb-lg">
                 {helperText}
               </HelperTextItem>
             </HelperText>) : null
