@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LogSnippet component should render LogSnippet component 1`] = `
+exports[`ServiceCard component should render ServiceCard component 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -116,16 +116,12 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
         >
           This is a basic ServiceCard Example
         </div>
-        <div
-          class="pf-v6-c-card__footer"
-          data-ouia-component-id="ServiceCard-footer"
-        />
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="pf-v6-c-card card-0-2-1"
+      class="pf-v6-c-card"
       data-ouia-component-id="ServiceCard-card"
       data-ouia-component-type="PF6/Card"
       data-ouia-safe="true"
@@ -138,27 +134,35 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
           class="pf-v6-c-card__header-main"
         >
           <div
-            class="image-0-2-2"
+            class="pf-v6-l-flex pf-m-row pf-m-align-items-center"
           >
-            /
-          </div>
-          <div
-            class="pf-v6-c-content"
-            data-ouia-component-id="OUIA-Generated-Content-1"
-            data-ouia-component-type="PF6/Content"
-            data-ouia-safe="true"
-            data-pf-content="true"
-          >
-            <h2
-              class="pf-v6-c-content--h2"
-              data-ouia-component-id="ServiceCard-title"
-              data-ouia-component-type="PF6/Content"
-              data-ouia-safe="true"
-              data-pf-content="true"
+            <div
+              class="image-0-2-2"
             >
-              Example
-            </h2>
-            A basic example
+              /
+            </div>
+            <div
+              class=""
+            >
+              <div
+                class="pf-v6-c-content"
+                data-ouia-component-id="OUIA-Generated-Content-1"
+                data-ouia-component-type="PF6/Content"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                <h2
+                  class="pf-v6-c-content--h2"
+                  data-ouia-component-id="ServiceCard-title"
+                  data-ouia-component-type="PF6/Content"
+                  data-ouia-safe="true"
+                  data-pf-content="true"
+                >
+                  Example
+                </h2>
+                A basic example
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -168,10 +172,6 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
       >
         This is a basic ServiceCard Example
       </div>
-      <div
-        class="pf-v6-c-card__footer"
-        data-ouia-component-id="ServiceCard-footer"
-      />
     </div>
   </div>,
   "debug": [Function],
