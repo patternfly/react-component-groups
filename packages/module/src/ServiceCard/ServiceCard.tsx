@@ -1,8 +1,9 @@
 import React from 'react';
-import { Card, CardBody, CardFooter, CardHeader, Content, ContentVariants } from '@patternfly/react-core';
+import { Card, CardBody, CardFooter, CardHeader, Content, ContentVariants, Flex, FlexItem } from '@patternfly/react-core';
 import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { createUseStyles } from 'react-jss';
+import clsx from 'clsx';
 
 export interface ServiceCardProps {
   /** Service card title */
@@ -19,11 +20,15 @@ export interface ServiceCardProps {
   footer?: React.ReactElement | null;
   /** Optional custom OUIA ID */
   ouiaId?: string | number;
+  /** Optional flag modifying the card header layout */
+  isStacked?: boolean;
+  /** Optional flag indicating if the card height fills the available space */
+  isFullHeight?: boolean;
 }
 
 const useStyles = createUseStyles({
-  card: {
-    height: 'var(--pf-v6-u-h-100)'
+  fullHeightCard: {
+    height: '100%'
   },
   image: {
     marginRight: 'var(--pf-t--global--spacer--md)',
@@ -38,32 +43,40 @@ const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
   icon,
   helperText,
   footer = null,
-  ouiaId='ServiceCard'
+  ouiaId='ServiceCard',
+  isStacked = false,
+  isFullHeight = false,
+  ...props
 }: ServiceCardProps) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card} ouiaId={`${ouiaId}-card`}>
+    <Card className={clsx({ [classes.fullHeightCard]: isFullHeight })} ouiaId={`${ouiaId}-card`} {...props}>
       <CardHeader>
-        <div className={classes.image}>
-          {icon}
-        </div>
-        <Content>
-          <Content component={ContentVariants.h2} ouiaId={`${ouiaId}-title`}>{title}</Content>
-          {subtitle}
-        </Content>
+        <Flex direction={{ default: isStacked ? 'column' : 'row' }} alignItems={{ default: isStacked ? 'alignItemsFlexStart' : 'alignItemsCenter' }}>
+          <FlexItem className={classes.image}>
+            {icon}
+          </FlexItem>
+          <FlexItem>
+            <Content>
+              <Content component={ContentVariants.h2} ouiaId={`${ouiaId}-title`}>{title}</Content>
+              {subtitle ?? null}
+            </Content>
+          </FlexItem>
+        </Flex>
       </CardHeader>
       <CardBody data-ouia-component-id={`${ouiaId}-description`}>{description}</CardBody>
-      <CardFooter data-ouia-component-id={`${ouiaId}-footer`}>
-        { helperText ?
-          ( <HelperText data-ouia-component-id={`${ouiaId}-helper-text`}>
-            <HelperTextItem className="pf-v6-u-mb-lg">
-              {helperText}
-            </HelperTextItem>
-          </HelperText>) : null
-        }
-        { footer }
-      </CardFooter>
+      { footer || helperText ? (
+        <CardFooter data-ouia-component-id={`${ouiaId}-footer`}>
+          { helperText ?
+            ( <HelperText data-ouia-component-id={`${ouiaId}-helper-text`}>
+              <HelperTextItem className="pf-v6-u-mb-lg">
+                {helperText}
+              </HelperTextItem>
+            </HelperText>) : null
+          }
+          { footer }
+        </CardFooter>) : null}
     </Card>
   )
 }

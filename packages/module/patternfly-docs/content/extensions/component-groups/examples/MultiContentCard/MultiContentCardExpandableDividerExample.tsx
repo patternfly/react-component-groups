@@ -8,7 +8,7 @@ import clsx from 'clsx';
 const useStyles = createUseStyles({
   action: {
     color: 'var(--pf-t--global--text--color--brand--default)',
-    fontSize: 'var(-pf-t--global--font--size--sm)',
+    fontSize: 'var(--pf-t--global--font--size--sm)',
   },
   actionIcon: {
     color: 'var(--pf-t--global--icon--color--regular)',
@@ -52,7 +52,7 @@ export const BasicExample: React.FunctionComponent = () => {
       </CardFooter>
     </Card>,
     <Card isFullHeight isPlain key="card-2">
-      <CardHeader/>
+      <CardHeader className='pf-v6-u-pt-0' style={{ visibility: 'hidden' }}>-</CardHeader>
       <CardBody>
         <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
           <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
