@@ -14,20 +14,18 @@ export const BasicExample: React.FunctionComponent = () => (
     helperText='Here is helper text'
     footer={<>
       <Button
-        variant={ButtonVariant.primary}
-        isInline
-        className='pf-v5-u-mr-md'
+        variant={ButtonVariant.secondary}
+        className='pf-v6-u-mr-md'
         component="a"
-        href='www.google.com'>
+        href='www.patternfly.org'>
           Launch
       </Button>
       <Button
         variant={ButtonVariant.link}
         component="a"
-        isInline
-        href='www.google.com'
+        href='www.patternfly.org'
       >
-          Learn more
+          Learn More
       </Button></>
     }
   />

@@ -1,6 +1,6 @@
 import React from 'react';
 import MultiContentCard from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
-import { Button, Card, CardHeader, CardBody, Content, ContentVariants, List, ListItem, Icon, CardFooter } from '@patternfly/react-core';
+import { Button, Card, CardHeader, CardBody, CardFooter, List, ListItem, Content, ContentVariants, Icon } from '@patternfly/react-core';
 import { ArrowRightIcon, BellIcon, CogIcon, LockIcon } from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
@@ -8,7 +8,7 @@ import clsx from 'clsx';
 const useStyles = createUseStyles({
   action: {
     color: 'var(--pf-t--global--text--color--brand--default)',
-    fontSize: 'var(-pf-t--global--font--size--sm)',
+    fontSize: 'var(--pf-t--global--font--size--sm)',
   },
   actionIcon: {
     color: 'var(--pf-t--global--icon--color--regular)',
@@ -17,9 +17,9 @@ const useStyles = createUseStyles({
     color: 'var(--pf-t--global--color--brand--default)',
   },
 });
+
 export const BasicExample: React.FunctionComponent = () => {
   const classes = useStyles();
-
   const cards = [
     <Card isFullHeight isPlain key="card-1">
       <CardHeader>
@@ -30,10 +30,10 @@ export const BasicExample: React.FunctionComponent = () => {
           <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
             <CogIcon className={classes.actionIcon} />
           </Icon>
-            Configure application
+          Configure application
         </Content>
         <Content className="pf-v6-u-font-size-sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Content>
       </CardBody>
       <CardFooter>
@@ -51,21 +51,22 @@ export const BasicExample: React.FunctionComponent = () => {
       </CardFooter>
     </Card>,
     <Card isFullHeight isPlain key="card-2">
+      <CardHeader style={{ visibility: 'hidden' }}>-</CardHeader>
       <CardBody>
         <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
           <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
             <LockIcon className={classes.actionIcon} />
           </Icon>
-            Configure access
+          Configure access
         </Content>
-        <Content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <Content className="pf-v6-u-font-size-sm">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </Content>
       </CardBody>
       <CardFooter>
         <Content>
           <Button variant="link" isInline>
-              Learn more  
+            Learn more  
             <Icon className="pf-v6-u-ml-sm" isInline>
               <ArrowRightIcon />
             </Icon>
@@ -82,16 +83,16 @@ export const BasicExample: React.FunctionComponent = () => {
           <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
             <BellIcon className={classes.actionIcon} />
           </Icon>
-            Configure notifications
+          Configure notifications
         </Content>
-        <Content>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <Content className="pf-v6-u-font-size-sm">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Content>
       </CardBody>
       <CardFooter>
         <Content>
           <Button variant="link" isInline>
-              Learn more  
+            Learn more  
             <Icon className="pf-v6-u-ml-sm" isInline>
               <ArrowRightIcon />
             </Icon>
@@ -101,5 +102,5 @@ export const BasicExample: React.FunctionComponent = () => {
     </Card>
   ];
 
-  return(<MultiContentCard cards={cards} />)
-};
+  return(<MultiContentCard cards={cards} />);
+}

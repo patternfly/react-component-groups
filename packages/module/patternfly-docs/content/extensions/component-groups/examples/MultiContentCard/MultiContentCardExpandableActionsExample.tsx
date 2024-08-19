@@ -1,14 +1,12 @@
 import React from 'react';
 import MultiContentCard from "@patternfly/react-component-groups/dist/dynamic/MultiContentCard";
+import { EllipsisVIcon } from '@patternfly/react-icons';
 import { Button, Card, CardHeader, CardBody, CardFooter, Content, ContentVariants, List, ListItem, Icon, Divider, Dropdown, DropdownItem, DropdownList, MenuToggle, MenuToggleElement, Label } from '@patternfly/react-core';
-import { ArrowRightIcon, BellIcon, CogIcon, LockIcon, EllipsisVIcon } from '@patternfly/react-icons';
+import { ArrowRightIcon, BellIcon, CogIcon, LockIcon } from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
 const useStyles = createUseStyles({
-  cardHeaderTitle: {
-    fontSize: 'var(--pf-t--global--font--size--heading--h4)',
-  },
   bulletPoints: {
     color: 'var(--pf-t--global--color--brand--default)',
   },
@@ -20,11 +18,11 @@ export const BasicExample: React.FunctionComponent = () => {
 
   const cards = [
     <Card isFullHeight isPlain key="card-1">
-      <CardHeader className="pf-v6-u-pt-0">
-        <Content component={ContentVariants.h3} className={classes.cardHeaderTitle}>Getting Started</Content>
+      <CardHeader  className="pf-v6-u-pt-0">
+        <Content component={ContentVariants.h4}>Getting Started</Content>
       </CardHeader>
       <CardBody>
-        <Label className='pf-v6-u-mb-sm' icon={<CogIcon />} color="blue">
+        <Label className="pf-v6-u-mb-sm" icon={<CogIcon />} color="blue">
           Configure application
         </Label>
         <Content className="pf-v6-u-font-size-sm">
@@ -46,9 +44,9 @@ export const BasicExample: React.FunctionComponent = () => {
       </CardFooter>
     </Card>,
     <Card isFullHeight isPlain key="card-2">
-      <CardHeader/>
+      <CardHeader className="pf-v6-u-pt-0" style={{ visibility: 'hidden' }}>-</CardHeader>
       <CardBody>
-        <Label className='pf-v6-u-mb-sm' icon={<LockIcon />} color="green">
+        <Label className="pf-v6-u-mb-sm" icon={<LockIcon />} color="green">
           Configure access
         </Label>
         <Content className="pf-v6-u-font-size-sm">
@@ -68,10 +66,10 @@ export const BasicExample: React.FunctionComponent = () => {
     </Card>,
     <Card isFullHeight isPlain key="card-3">
       <CardHeader className="pf-v6-u-pt-0">
-        <Content component={ContentVariants.h3} className={classes.cardHeaderTitle}>Next Steps</Content>
+        <Content component={ContentVariants.h4}>Next Steps</Content>
       </CardHeader>
       <CardBody>
-        <Label className='pf-v6-u-mb-sm' icon={<BellIcon />} color="orange">
+        <Label className="pf-v6-u-mb-sm" icon={<BellIcon />} color="orange">
           Configure notifications
         </Label>
         <Content className="pf-v6-u-font-size-sm">
