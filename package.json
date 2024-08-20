@@ -83,7 +83,7 @@
     "whatwg-fetch": "^3.6.20"
   },
   "dependencies": {
-    "@patternfly/react-tokens": "^6.0.0-alpha.24",
+    "@patternfly/react-tokens": "^6.0.0-alpha.34",
     "sharp": "^0.33.4"
   }
 }
