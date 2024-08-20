@@ -31,9 +31,9 @@
     "tag": "alpha"
   },
   "dependencies": {
-    "@patternfly/react-core": "^6.0.0-alpha.94",
-    "@patternfly/react-icons": "^6.0.0-alpha.34",
-    "@patternfly/react-table": "^6.0.0-alpha.95",
+    "@patternfly/react-core": "^6.0.0-alpha.100",
+    "@patternfly/react-icons": "^6.0.0-alpha.35",
+    "@patternfly/react-table": "^6.0.0-alpha.101",
     "react-jss": "^10.10.0",
     "clsx": "^2.1.1"
   },
@@ -43,7 +43,8 @@
   },
   "devDependencies": {
     "@patternfly/patternfly-a11y": "^4.3.1",
-    "@patternfly/documentation-framework": "^6.0.0-alpha.69",
+    "@patternfly/documentation-framework": "^6.0.0-alpha.79",
+    "@patternfly/react-code-editor": "^6.0.0-alpha.100",
     "@patternfly/patternfly": "6.0.0-alpha.205",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
