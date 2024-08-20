@@ -8,7 +8,7 @@ import clsx from 'clsx';
 export interface ServiceCardProps extends CardProps {
   /** Service card title */
   title: string;
-  /** Optional Service card subtitle */
+  /** Service card subtitle */
   subtitle?: string;
   /** Service card description */
   description: string;
