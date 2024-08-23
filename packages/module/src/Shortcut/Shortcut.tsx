@@ -61,35 +61,35 @@ const Shortcut: React.FunctionComponent<ShortcutProps> = ({
   const classes = useStyles();
   const badges = [
     ...(hover ? [ 
-      <Chip key="hover" isReadOnly data-test-id="hover">
+      <Chip key="hover" isReadOnly ouiaId={`${ouiaId}-hover`}>
         <MouseIcon /> Hover
       </Chip>
     ] : []),
     ...keys.map((key) => {
       const trimmedKey = key.trim().toLowerCase();
       return(
-        <Chip key={key} isReadOnly data-test-id={`${key}-key`}>
+        <Chip key={key} isReadOnly ouiaId={`${ouiaId}-key-${key}`}>
           {showSymbols && symbols[trimmedKey] ? `${symbols[trimmedKey]} ` : '' }
           {key.length === 1 ? key.toUpperCase() : key[0].toUpperCase() + key.slice(1).toLowerCase()}
         </Chip>
       )}),
     ...(click ? [ 
-      <Chip key="click" isReadOnly data-test-id="click">
+      <Chip key="click" isReadOnly ouiaId={`${ouiaId}-click`}>
         <MouseIcon /> Click
       </Chip>
     ] : []),
     ...(rightClick ? [ 
-      <Chip key="right-click" isReadOnly data-test-id="right-click">
+      <Chip key="right-click" isReadOnly ouiaId={`${ouiaId}-right-click`}>
         <MouseIcon /> Right click
       </Chip>
     ] : []),
     ...(drag ? [ 
-      <Chip key="drag" isReadOnly data-test-id="drag">
+      <Chip key="drag" isReadOnly ouiaId={`${ouiaId}-drag`}>
         <MouseIcon /> Drag
       </Chip>
     ] : []),
     ...(dragAndDrop ? [ 
-      <Chip key="drag-and-drop" isReadOnly data-test-id="drag-and-drop">
+      <Chip key="drag-and-drop" isReadOnly ouiaId={`${ouiaId}-drag-and-drop`}>
         <MouseIcon /> Drag + Drop
       </Chip>
     ] : [])

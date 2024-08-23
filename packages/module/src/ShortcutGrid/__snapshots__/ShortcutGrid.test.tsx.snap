@@ -19,10 +19,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
           >
             <div
               class="pf-v5-c-chip"
-              data-ouia-component-id="OUIA-Generated-Chip-1"
+              data-ouia-component-id="Shortcut-key-cmd"
               data-ouia-component-type="PF5/Chip"
               data-ouia-safe="true"
-              data-test-id="cmd-key"
             >
               <span
                 class="pf-v5-c-chip__content"
@@ -39,10 +38,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
              + 
             <div
               class="pf-v5-c-chip"
-              data-ouia-component-id="OUIA-Generated-Chip-2"
+              data-ouia-component-id="Shortcut-key-shift"
               data-ouia-component-type="PF5/Chip"
               data-ouia-safe="true"
-              data-test-id="shift-key"
             >
               <span
                 class="pf-v5-c-chip__content"
@@ -59,10 +57,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
              + 
             <div
               class="pf-v5-c-chip"
-              data-ouia-component-id="OUIA-Generated-Chip-3"
+              data-ouia-component-id="Shortcut-key-t"
               data-ouia-component-type="PF5/Chip"
               data-ouia-safe="true"
-              data-test-id="t-key"
             >
               <span
                 class="pf-v5-c-chip__content"
@@ -93,10 +90,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
           >
             <div
               class="pf-v5-c-chip"
-              data-ouia-component-id="OUIA-Generated-Chip-4"
+              data-ouia-component-id="Shortcut-key-opt"
               data-ouia-component-type="PF5/Chip"
               data-ouia-safe="true"
-              data-test-id="opt-key"
             >
               <span
                 class="pf-v5-c-chip__content"
@@ -113,10 +109,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
              + 
             <div
               class="pf-v5-c-chip"
-              data-ouia-component-id="OUIA-Generated-Chip-5"
+              data-ouia-component-id="Shortcut-key-n"
               data-ouia-component-type="PF5/Chip"
               data-ouia-safe="true"
-              data-test-id="n-key"
             >
               <span
                 class="pf-v5-c-chip__content"
@@ -147,10 +142,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
           >
             <div
               class="pf-v5-c-chip"
-              data-ouia-component-id="OUIA-Generated-Chip-6"
+              data-ouia-component-id="Shortcut-key-ctrl"
               data-ouia-component-type="PF5/Chip"
               data-ouia-safe="true"
-              data-test-id="ctrl-key"
             >
               <span
                 class="pf-v5-c-chip__content"
@@ -167,10 +161,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
              + 
             <div
               class="pf-v5-c-chip"
-              data-ouia-component-id="OUIA-Generated-Chip-7"
+              data-ouia-component-id="Shortcut-drag"
               data-ouia-component-type="PF5/Chip"
               data-ouia-safe="true"
-              data-test-id="drag"
             >
               <span
                 class="pf-v5-c-chip__content"
@@ -222,10 +215,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
         >
           <div
             class="pf-v5-c-chip"
-            data-ouia-component-id="OUIA-Generated-Chip-1"
+            data-ouia-component-id="Shortcut-key-cmd"
             data-ouia-component-type="PF5/Chip"
             data-ouia-safe="true"
-            data-test-id="cmd-key"
           >
             <span
               class="pf-v5-c-chip__content"
@@ -242,10 +234,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
            + 
           <div
             class="pf-v5-c-chip"
-            data-ouia-component-id="OUIA-Generated-Chip-2"
+            data-ouia-component-id="Shortcut-key-shift"
             data-ouia-component-type="PF5/Chip"
             data-ouia-safe="true"
-            data-test-id="shift-key"
           >
             <span
               class="pf-v5-c-chip__content"
@@ -262,10 +253,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
            + 
           <div
             class="pf-v5-c-chip"
-            data-ouia-component-id="OUIA-Generated-Chip-3"
+            data-ouia-component-id="Shortcut-key-t"
             data-ouia-component-type="PF5/Chip"
             data-ouia-safe="true"
-            data-test-id="t-key"
           >
             <span
               class="pf-v5-c-chip__content"
@@ -296,10 +286,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
         >
           <div
             class="pf-v5-c-chip"
-            data-ouia-component-id="OUIA-Generated-Chip-4"
+            data-ouia-component-id="Shortcut-key-opt"
             data-ouia-component-type="PF5/Chip"
             data-ouia-safe="true"
-            data-test-id="opt-key"
           >
             <span
               class="pf-v5-c-chip__content"
@@ -316,10 +305,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
            + 
           <div
             class="pf-v5-c-chip"
-            data-ouia-component-id="OUIA-Generated-Chip-5"
+            data-ouia-component-id="Shortcut-key-n"
             data-ouia-component-type="PF5/Chip"
             data-ouia-safe="true"
-            data-test-id="n-key"
           >
             <span
               class="pf-v5-c-chip__content"
@@ -350,10 +338,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
         >
           <div
             class="pf-v5-c-chip"
-            data-ouia-component-id="OUIA-Generated-Chip-6"
+            data-ouia-component-id="Shortcut-key-ctrl"
             data-ouia-component-type="PF5/Chip"
             data-ouia-safe="true"
-            data-test-id="ctrl-key"
           >
             <span
               class="pf-v5-c-chip__content"
@@ -370,10 +357,9 @@ exports[`ShortcutGrid component should render correctly 1`] = `
            + 
           <div
             class="pf-v5-c-chip"
-            data-ouia-component-id="OUIA-Generated-Chip-7"
+            data-ouia-component-id="Shortcut-drag"
             data-ouia-component-type="PF5/Chip"
             data-ouia-safe="true"
-            data-test-id="drag"
           >
             <span
               class="pf-v5-c-chip__content"
