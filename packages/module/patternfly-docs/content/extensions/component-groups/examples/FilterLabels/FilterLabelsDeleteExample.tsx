@@ -5,12 +5,14 @@ import { FilterLabel, FilterLabelGroup, FilterLabels, FilterLabelsFilter, isFilt
 const initialFilters: FilterLabelsFilter[] = [
   { text: 'Users', count: 3 },
   {
+    id: 'status',
     categoryName: 'Status',
     labels: [
       { text: 'Inactive' },
     ],
   },
   {
+    id: 'application',
     categoryName: 'Application',
     labels: [
       { text: 'Settings' },
