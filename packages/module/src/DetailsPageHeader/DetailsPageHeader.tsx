@@ -12,6 +12,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss'
 import ActionMenu, { ActionMenuProps } from '../ActionMenu/ActionMenu';
 import ActionButton, { ActionButtonProps } from '../ActionButton/ActionButton';
+import clsx from 'clsx';
 
 export type PageHeadingLabelProps = Omit<
   LabelProps,
@@ -43,6 +44,9 @@ export interface DetailsPageHeaderProps {
 const useStyles = createUseStyles({
   detailsPageHeaderSplit: {
     alignItems: 'center',
+  },
+  detailsPageBreadcrumbs: {
+    marginTop: 'var(--pf-t--global--spacer--md)'
   }
 });
 
@@ -56,7 +60,7 @@ const DetailsPageHeader: React.FunctionComponent<DetailsPageHeaderProps> = ({
   return (
     <>
       {breadcrumbs}
-      <Split hasGutter isWrappable className={classes.detailsPageHeaderSplit}>
+      <Split hasGutter isWrappable className={clsx(classes.detailsPageHeaderSplit, { [classes.detailsPageBreadcrumbs]: breadcrumbs })}>
         <SplitItem>
           <Split hasGutter isWrappable className={`pf-v6-u-mb-sm ${classes.detailsPageHeaderSplit}`}>       
             {/* Optional icon for details page heading (before title) */}
