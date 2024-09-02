@@ -29,8 +29,7 @@ export const BasicExample: React.FunctionComponent = () => (
         title: 'example-resource',
         label: {
           children: 'Ready',
-          icon: <CheckCircleIcon color="#3E8635" />,
-          isCompact: true,
+          icon: <CheckCircleIcon color="#3E8635" />
         },
       }}
       actionButtons={[
