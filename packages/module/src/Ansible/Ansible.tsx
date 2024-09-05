@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
+import RHAAPIconTEST from './rhaap-icon';
 
 export interface AnsibleProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
   /** Supported/unsupported variant flag */
@@ -78,7 +79,7 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ unsupported, RHAAPIcon
 
   return (
     <React.Fragment>
-      {RHAAPIcon ? (RHAAPTechIcon) : (
+      {RHAAPIcon ? <RHAAPIconTEST /> : (
         <i className={ansibleLogoClass} title={unsupported ? "Ansible is not supported" : "Ansible supported" } data-ouia-component-id={ouiaId} {...props}>
           <svg
             version="1.1"
