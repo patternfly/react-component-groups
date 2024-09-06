@@ -28,7 +28,7 @@ By default, the Ansible logo displays as normal and in full color, meaning that 
 
 ### Ansible unsupported
 
-To specify that Ansible is not supported, add the `unsupported` property to the `<Ansible>` component.
+To specify that Ansible is not supported, add the `isUnsupported` property to the `<Ansible>` component.
 
 ```js file="./AnsibleUnsupportedExample.tsx"
 
@@ -37,7 +37,7 @@ To specify that Ansible is not supported, add the `unsupported` property to the 
 
 ### Red Hat Ansible Automation Platform 
 
-To specify the Red Hat Ansible Automation Platform, add the `RHAAPIcon` property to the `<Ansible>` component.
+To display the Red Hat Ansible Automation Platform, add the `isRHAAP` property to the `<Ansible>` component.
 
 ```js file="./AnsibleTechnologyExample.tsx"
 

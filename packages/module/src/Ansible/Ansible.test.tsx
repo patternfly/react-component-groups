@@ -5,12 +5,7 @@ import Ansible from './Ansible';
 describe('Ansible component', () => {
 
   it('should render unsupported - boolean', () => {
-    const { container } = render(<Ansible unsupported />);
-    expect(container).toMatchSnapshot();
-  });
-
-  it('should render unsupported - number', () => {
-    const { container } = render(<Ansible unsupported={1} />);
+    const { container } = render(<Ansible isUnsupported />);
     expect(container).toMatchSnapshot();
   });
 
@@ -19,8 +14,8 @@ describe('Ansible component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should render supported - number', () => {
-    const { container } = render(<Ansible unsupported={0} />);
+  it('should render RHAAP - boolean', () => {
+    const { container } = render(<Ansible isRHAAP />);
     expect(container).toMatchSnapshot();
   });
 
