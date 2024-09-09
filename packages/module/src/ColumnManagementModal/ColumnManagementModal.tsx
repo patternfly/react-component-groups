@@ -114,7 +114,7 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
         </>
       }
       actions={[
-        <Button key="save" variant={ButtonVariant.primary} onClick={handleSave} ouiaId={`${ouiaId}-save-button`}>
+        <Button key="save" className='pf-v6-u-mr-md' variant={ButtonVariant.primary} onClick={handleSave} ouiaId={`${ouiaId}-save-button`}>
           Save
         </Button>,
         <Button key="cancel" variant={ButtonVariant.link} onClick={handleCancel} ouiaId={`${ouiaId}-cancel-button`}>
