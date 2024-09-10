@@ -1,6 +1,6 @@
 ---
-section: extensions
-subsection: Component groups
+section: Component groups
+subsection: Error communication
 id: Not authorized
 source: react
 propComponents: ['NotAuthorized']

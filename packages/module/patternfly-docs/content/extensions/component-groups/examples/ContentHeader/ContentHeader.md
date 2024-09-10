@@ -1,6 +1,6 @@
 ---
-section: extensions
-subsection: Component groups
+section: Component groups
+subsection: Content containers
 id: Content header
 source: react
 propComponents: ['ContentHeader']
