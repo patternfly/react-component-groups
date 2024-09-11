@@ -57,6 +57,7 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
   ouiaId = 'ContentHeader',
 }: ContentHeaderProps) => {
   const classes = useStyles();
+  const { isExternal = false, ...linkRestProps } = linkProps ?? {};
 
   return (
     <PageSection hasBodyWrapper={false}>
@@ -99,7 +100,7 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
             {subtitle}
           </Content>
           {linkProps && (
-            <Button variant={ButtonVariant.link} ouiaId={`${ouiaId}-link-button`} isInline icon={linkProps.isExternal ? <ExternalLinkAltIcon /> : null} iconPosition="end" {...linkProps}>
+            <Button variant={ButtonVariant.link} ouiaId={`${ouiaId}-link-button`} isInline icon={isExternal ? <ExternalLinkAltIcon /> : null} iconPosition="end" {...linkRestProps}>
               {linkProps.label}
             </Button>
           )}
