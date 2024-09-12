@@ -69,8 +69,8 @@ export * from './BulkSelect';
 export { default as Battery } from './Battery';
 export * from './Battery';
 
-export { default as Ansible } from './Ansible';
-export * from './Ansible';
+export { default as Ansible } from './AnsibleSupport';
+export * from './AnsibleSupport';
 
 export { default as ActionMenu } from './ActionMenu';
 export * from './ActionMenu';

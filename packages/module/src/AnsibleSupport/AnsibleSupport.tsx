@@ -2,9 +2,9 @@ import React from 'react';
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
 
-export interface AnsibleProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
+export interface AnsibleSupportProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
   /** Supported/unsupported variant flag */
-  unsupported?: boolean | number;
+  isSupported?: boolean;
   /** Ansible icon className */
   className?: string;
   /** Custom OUIA ID */
@@ -32,12 +32,12 @@ const useStyles = createUseStyles({
   } 
 })
 
-const Ansible: React.FunctionComponent<AnsibleProps> = ({ unsupported, className, ouiaId = "Ansible-icon", ...props }: AnsibleProps) => {
+export const AnsibleSupport: React.FunctionComponent<AnsibleSupportProps> = ({ isSupported = true, className, ouiaId = "AnsibleSupport-icon", ...props }: AnsibleSupportProps) => {
   const classes = useStyles();
   const ansibleLogoClass = clsx(
     classes.ansible,
-    { [classes.ansibleSupported]: !unsupported || unsupported === 0 },
-    { [classes.ansibleUnsupported]: unsupported || unsupported === 1 },
+    { [classes.ansibleSupported]: isSupported },
+    { [classes.ansibleUnsupported]: !isSupported },
     className
   );
 
@@ -73,7 +73,7 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ unsupported, className
   );
 
   return (
-    <i className={ansibleLogoClass} title={unsupported ? "Ansible is not supported" : "Ansible supported" } data-ouia-component-id={ouiaId} {...props}>
+    <i className={ansibleLogoClass} title={isSupported ? "Ansible supported" : "Ansible is not supported" } data-ouia-component-id={ouiaId} {...props}>
       <svg
         version="1.1"
         x="0px"
@@ -88,10 +88,10 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ unsupported, className
                         L1035.4,620.9z M1500.8,1416.5l-403-969.9c-11.5-28-34.5-42.8-62.4-42.8c-28,0-52.7,14.8-64.2,42.8L528.9,1510.4h151.3l175.1-438.6
                         l522.5,422.1c21,17,36.2,24.7,55.9,24.7c39.5,0,74-29.6,74-72.3C1507.7,1439.4,1505.3,1428.3,1500.8,1416.5L1500.8,1416.5z"
         />
-        {unsupported ? unsupportedSlash : null}
+        {isSupported ? null : unsupportedSlash}
       </svg>
     </i>
   );
 };
 
-export default Ansible;
+export default AnsibleSupport;
