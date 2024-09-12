@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InvalidObject component should render 1`] = `
+exports[`MissingPage component should render 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
         class="pf-v6-c-empty-state"
-        data-ouia-component-id="InvalidObject"
+        data-ouia-component-id="MissingPage"
       >
         <div
           class="pf-v6-c-empty-state__content"
@@ -270,18 +270,18 @@ exports[`InvalidObject component should render 1`] = `
           </div>
           <div
             class="pf-v6-c-empty-state__body"
-            data-ouia-component-id="InvalidObject-body"
+            data-ouia-component-id="MissingPage-body"
           >
             Let's find you a new one. Try a new search or return home.
           </div>
           <div
             class="pf-v6-c-empty-state__footer"
-            data-ouia-component-id="InvalidObject-footer"
+            data-ouia-component-id="MissingPage-footer"
           >
             <a
               aria-disabled="false"
               class="pf-v6-c-button pf-m-link"
-              data-ouia-component-id="InvalidObject-home-button"
+              data-ouia-component-id="MissingPage-home-button"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               href="http://localhost:5000"
@@ -300,7 +300,7 @@ exports[`InvalidObject component should render 1`] = `
   "container": <div>
     <div
       class="pf-v6-c-empty-state"
-      data-ouia-component-id="InvalidObject"
+      data-ouia-component-id="MissingPage"
     >
       <div
         class="pf-v6-c-empty-state__content"
@@ -563,18 +563,18 @@ exports[`InvalidObject component should render 1`] = `
         </div>
         <div
           class="pf-v6-c-empty-state__body"
-          data-ouia-component-id="InvalidObject-body"
+          data-ouia-component-id="MissingPage-body"
         >
           Let's find you a new one. Try a new search or return home.
         </div>
         <div
           class="pf-v6-c-empty-state__footer"
-          data-ouia-component-id="InvalidObject-footer"
+          data-ouia-component-id="MissingPage-footer"
         >
           <a
             aria-disabled="false"
             class="pf-v6-c-button pf-m-link"
-            data-ouia-component-id="InvalidObject-home-button"
+            data-ouia-component-id="MissingPage-home-button"
             data-ouia-component-type="PF6/Button"
             data-ouia-safe="true"
             href="http://localhost:5000"

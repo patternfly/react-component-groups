@@ -33,8 +33,8 @@ export * from './MultiContentCard';
 export { default as LogSnippet } from './LogSnippet';
 export * from './LogSnippet';
 
-export { default as InvalidObject } from './InvalidObject';
-export * from './InvalidObject';
+export { default as MissingPage } from './MissingPage';
+export * from './MissingPage';
 
 export { default as HorizontalNav } from './HorizontalNav';
 export * from './HorizontalNav';
