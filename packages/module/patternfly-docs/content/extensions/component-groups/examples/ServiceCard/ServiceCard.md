@@ -9,7 +9,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 
 import ServiceCard from "@patternfly/react-component-groups/dist/dynamic/ServiceCard";
 import { EllipsisVIcon } from '@patternfly/react-icons';
-import contentHeaderIcon from '../../assets/icons/content-header-icon.svg'
+import pageHeaderIcon from '../../assets/icons/page-header-icon.svg'
 
 The **service card** component displays a card representing a service with an icon, title, description, and an optional customized footer
 

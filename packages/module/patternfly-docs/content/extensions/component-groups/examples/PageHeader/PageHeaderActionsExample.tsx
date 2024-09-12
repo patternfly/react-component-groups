@@ -1,5 +1,5 @@
 import React from 'react';
-import ContentHeader from '@patternfly/react-component-groups/dist/dynamic/ContentHeader';
+import PageHeader from '@patternfly/react-component-groups/dist/dynamic/PageHeader';
 import { ActionList, ActionListItem, Dropdown, DropdownItem, DropdownList, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
 import { EllipsisVIcon } from '@patternfly/react-icons';
 
@@ -29,9 +29,9 @@ export const ActionsExample: React.FunctionComponent = () => {
       
   return (
     <React.Fragment>
-      <ContentHeader
+      <PageHeader
         title='My Title'
-        subtitle='This is a subtitle for your content header' 
+        subtitle='This is a subtitle for your page header' 
         actionMenu={
           <ActionList>
             <ActionListItem>

@@ -1,9 +1,9 @@
 import React from 'react';
-import ContentHeader from '@patternfly/react-component-groups/dist/dynamic/ContentHeader';
+import PageHeader from '@patternfly/react-component-groups/dist/dynamic/PageHeader';
 import { Breadcrumb, BreadcrumbItem } from '@patternfly/react-core';
 
-export const BreadCrumbExample: React.FunctionComponent = () => (
-  <ContentHeader 
+export const BreadcrumbExample: React.FunctionComponent = () => (
+  <PageHeader 
     breadcrumbs={ 
       <Breadcrumb>
         <BreadcrumbItem
@@ -29,6 +29,6 @@ export const BreadCrumbExample: React.FunctionComponent = () => (
       </Breadcrumb>
     }
     title='My Title'
-    subtitle='This is a subtitle for your content header' 
+    subtitle='This is a subtitle for your page header' 
   />
 );

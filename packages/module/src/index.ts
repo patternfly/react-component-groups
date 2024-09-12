@@ -54,8 +54,8 @@ export * from './DetailsPageHeader';
 export { default as DetailsPage } from './DetailsPage';
 export * from './DetailsPage';
 
-export { default as ContentHeader } from './ContentHeader';
-export * from './ContentHeader';
+export { default as PageHeader } from './PageHeader';
+export * from './PageHeader';
 
 export { default as ColumnManagementModal } from './ColumnManagementModal';
 export * from './ColumnManagementModal';

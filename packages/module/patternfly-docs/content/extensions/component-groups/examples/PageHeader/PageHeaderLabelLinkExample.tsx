@@ -1,11 +1,11 @@
 import React from 'react';
-import ContentHeader from '@patternfly/react-component-groups/dist/dynamic/ContentHeader';
+import PageHeader from '@patternfly/react-component-groups/dist/dynamic/PageHeader';
 import { Label } from '@patternfly/react-core';
 
 export const BasicExample: React.FunctionComponent = () => (
-  <ContentHeader 
+  <PageHeader 
     title='My Title'
-    subtitle='This is a subtitle for your content header'
+    subtitle='This is a subtitle for your page header'
     label={<Label className="pf-v5-u-align-content-center">Org. Administrator</Label>}
     linkProps={{
       label: 'Go to this link',

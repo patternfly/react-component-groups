@@ -21,16 +21,16 @@ export interface PageHeaderLinkProps extends ButtonProps {
   isExternal?: boolean;
 }
 
-export interface ContentHeaderProps {
-  /** Title for content header */
+export interface PageHeaderProps {
+  /** Title for page header */
   title: string;
-  /** Subtitle for content header */
+  /** Subtitle for page header */
   subtitle: string;
   /** Optional link below subtitle */
   linkProps?: PageHeaderLinkProps;
-  /** Optional icon for content header (appears to the left of the content header's title with a divider) */
+  /** Optional icon for page header (appears to the left of the page header's title with a divider) */
   icon?: React.ReactNode;
-  /** Optional label for content header (appears to the right of the content header's title) */
+  /** Optional label for page header (appears to the right of the page header's title) */
   label?: React.ReactNode;
   /** Breadcrumbs component */
   breadcrumbs?: React.ReactNode;
@@ -46,7 +46,7 @@ const useStyles = createUseStyles({
   }
 });
 
-export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<ContentHeaderProps>> = ({
+export const PageHeader: React.FunctionComponent<React.PropsWithChildren<PageHeaderProps>> = ({
   title,
   subtitle,
   linkProps,
@@ -54,8 +54,8 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
   label,
   breadcrumbs = null,
   actionMenu,
-  ouiaId = 'ContentHeader',
-}: ContentHeaderProps) => {
+  ouiaId = 'PageHeader',
+}: PageHeaderProps) => {
   const classes = useStyles();
   const { isExternal = false, ...linkRestProps } = linkProps ?? {};
 
@@ -109,4 +109,4 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
     </PageSection>
   )};
 
-export default ContentHeader;
+export default PageHeader;

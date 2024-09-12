@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Contentheader component should render 1`] = `
+exports[`PageHeader component should render 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -22,7 +22,7 @@ exports[`Contentheader component should render 1`] = `
               >
                 <h1
                   class="pf-v6-c-content--h1 pf-v6-u-mb-sm"
-                  data-ouia-component-id="ContentHeader-title"
+                  data-ouia-component-id="PageHeader-title"
                   data-ouia-component-type="PF6/Content"
                   data-ouia-safe="true"
                   data-pf-content="true"
@@ -36,12 +36,12 @@ exports[`Contentheader component should render 1`] = `
             </div>
             <p
               class="pf-v6-c-content--p"
-              data-ouia-component-id="ContentHeader-subtitle"
+              data-ouia-component-id="PageHeader-subtitle"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              This is a subtitle for your content header
+              This is a subtitle for your page header
             </p>
           </div>
         </div>
@@ -66,7 +66,7 @@ exports[`Contentheader component should render 1`] = `
             >
               <h1
                 class="pf-v6-c-content--h1 pf-v6-u-mb-sm"
-                data-ouia-component-id="ContentHeader-title"
+                data-ouia-component-id="PageHeader-title"
                 data-ouia-component-type="PF6/Content"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -80,12 +80,12 @@ exports[`Contentheader component should render 1`] = `
           </div>
           <p
             class="pf-v6-c-content--p"
-            data-ouia-component-id="ContentHeader-subtitle"
+            data-ouia-component-id="PageHeader-subtitle"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
           >
-            This is a subtitle for your content header
+            This is a subtitle for your page header
           </p>
         </div>
       </div>
