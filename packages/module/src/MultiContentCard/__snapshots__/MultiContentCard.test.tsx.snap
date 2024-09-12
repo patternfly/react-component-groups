@@ -51,7 +51,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
               data-pf-content="true"
             >
               <span
-                class="pf-v6-c-icon__content"
+                class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
               >
                 <svg
                   aria-hidden="true"
@@ -290,8 +290,8 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              <span
-                class="pf-v6-c-icon__content"
+              <li
+                class=""
               >
                 <svg
                   aria-hidden="true"
@@ -556,7 +556,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
                 data-pf-content="true"
               >
                 <span
-                  class="pf-v6-c-icon__content"
+                  class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
                 >
                   <svg
                     aria-hidden="true"
@@ -795,8 +795,8 @@ exports[`MultiContentCard component should render expandable multi-content card 
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
-                <span
-                  class="pf-v6-c-icon__content"
+                <li
+                  class=""
                 >
                   <svg
                     aria-hidden="true"
@@ -1028,7 +1028,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
               data-pf-content="true"
             >
               <span
-                class="pf-v6-c-icon__content"
+                class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
               >
                 <svg
                   aria-hidden="true"
@@ -1270,8 +1270,8 @@ exports[`MultiContentCard component should render multi-content card with a sing
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              <span
-                class="pf-v6-c-icon__content"
+              <li
+                class=""
               >
                 <svg
                   aria-hidden="true"
@@ -1405,7 +1405,7 @@ exports[`MultiContentCard component should render multi-content card with divide
               data-pf-content="true"
             >
               <span
-                class="pf-v6-c-icon__content"
+                class="pf-v6-c-icon pf-m-md pf-v6-u-pl-sm pf-v6-u-pr-md"
               >
                 <svg
                   aria-hidden="true"
@@ -1650,8 +1650,8 @@ exports[`MultiContentCard component should render multi-content card with divide
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              <span
-                class="pf-v6-c-icon__content"
+              <li
+                class=""
               >
                 <svg
                   aria-hidden="true"
