@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MultiContentCard component should render basic multi content card 1`] = `
+exports[`MultiContentCard component should render basic multi-content card 1`] = `
 <div
   class="pf-v6-c-card pf-m-expanded"
   data-ouia-component-id="MultiContentCard"
@@ -385,7 +385,7 @@ exports[`MultiContentCard component should render basic multi content card 1`] =
 </div>
 `;
 
-exports[`MultiContentCard component should render expandable multi content card - collapsed 1`] = `
+exports[`MultiContentCard component should render expandable multi-content card - collapsed 1`] = `
 <div
   class="pf-v6-c-card"
   data-ouia-component-id="MultiContentCard"
@@ -454,7 +454,7 @@ exports[`MultiContentCard component should render expandable multi content card 
 </div>
 `;
 
-exports[`MultiContentCard component should render expandable multi content card - expanded 1`] = `
+exports[`MultiContentCard component should render expandable multi-content card - expanded 1`] = `
 <div
   class="pf-v6-c-card pf-m-expanded"
   data-ouia-component-id="MultiContentCard"
@@ -902,7 +902,7 @@ exports[`MultiContentCard component should render expandable multi content card 
 </div>
 `;
 
-exports[`MultiContentCard component should render expandable multi content card - with actions 1`] = `
+exports[`MultiContentCard component should render expandable multi-content card - with actions 1`] = `
 <div
   class="pf-v6-c-card"
   data-ouia-component-id="MultiContentCard"
@@ -999,7 +999,7 @@ exports[`MultiContentCard component should render expandable multi content card 
 </div>
 `;
 
-exports[`MultiContentCard component should render multi content card with a single divider 1`] = `
+exports[`MultiContentCard component should render multi-content card with a single divider 1`] = `
 <div
   class="pf-v6-c-card pf-m-expanded"
   data-ouia-component-id="MultiContentCard"
@@ -1387,7 +1387,7 @@ exports[`MultiContentCard component should render multi content card with a sing
 </div>
 `;
 
-exports[`MultiContentCard component should render multi content card with dividers 1`] = `
+exports[`MultiContentCard component should render multi-content card with dividers 1`] = `
 <div
   class="pf-v6-c-card pf-m-expanded"
   data-ouia-component-id="MultiContentCard"
