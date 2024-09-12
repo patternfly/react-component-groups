@@ -28,7 +28,6 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 ---
 
 import { ActionMenu } from '@patternfly/react-component-groups';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { CheckCircleIcon } from '@patternfly/react-icons';
 import HorizontalNav from '@patternfly/react-component-groups/dist/dynamic/HorizontalNav';
 import DetailsPage from '@patternfly/react-component-groups/dist/dynamic/DetailsPage';
