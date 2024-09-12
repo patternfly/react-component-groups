@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import NotAuthorized from "@patternfly/react-component-groups/dist/dynamic/NotAuthorized";
+import UnauthorizedAccess from "@patternfly/react-component-groups/dist/dynamic/UnauthorizedAccess";
 
 export const BasicExample: React.FunctionComponent = () => {
   const primaryAction = 
@@ -16,7 +16,7 @@ export const BasicExample: React.FunctionComponent = () => {
     </Button>
   ];
   return (
-    <NotAuthorized 
+    <UnauthorizedAccess 
       primaryAction={primaryAction} 
       secondaryActions={secondaryActions}
       bodyText="Description text" 

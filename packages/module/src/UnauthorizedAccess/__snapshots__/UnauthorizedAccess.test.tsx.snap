@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NotAuthorized component should apply custom styles 1`] = `
+exports[`UnauthorizedAccess component should apply custom styles 1`] = `
 <div
   class="pf-v6-c-empty-state something"
-  data-ouia-component-id="NotAuthorized"
+  data-ouia-component-id="UnauthorizedAccess"
 >
   <div
     class="pf-v6-c-empty-state__content"
@@ -40,18 +40,18 @@ exports[`NotAuthorized component should apply custom styles 1`] = `
     </div>
     <div
       class="pf-v6-c-empty-state__body"
-      data-ouia-component-id="NotAuthorized-body"
+      data-ouia-component-id="UnauthorizedAccess-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
       class="pf-v6-c-empty-state__footer"
-      data-ouia-component-id="NotAuthorized-footer"
+      data-ouia-component-id="UnauthorizedAccess-footer"
     >
       <a
         aria-disabled="false"
         class="pf-v6-c-button pf-m-primary"
-        data-ouia-component-id="NotAuthorized-home-button"
+        data-ouia-component-id="UnauthorizedAccess-home-button"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         href="."
@@ -70,10 +70,10 @@ exports[`NotAuthorized component should apply custom styles 1`] = `
 </div>
 `;
 
-exports[`NotAuthorized component should not show buttons 1`] = `
+exports[`UnauthorizedAccess component should not show buttons 1`] = `
 <div
   class="pf-v6-c-empty-state"
-  data-ouia-component-id="NotAuthorized"
+  data-ouia-component-id="UnauthorizedAccess"
 >
   <div
     class="pf-v6-c-empty-state__content"
@@ -110,13 +110,13 @@ exports[`NotAuthorized component should not show buttons 1`] = `
     </div>
     <div
       class="pf-v6-c-empty-state__body"
-      data-ouia-component-id="NotAuthorized-body"
+      data-ouia-component-id="UnauthorizedAccess-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
       class="pf-v6-c-empty-state__footer"
-      data-ouia-component-id="NotAuthorized-footer"
+      data-ouia-component-id="UnauthorizedAccess-footer"
     >
       <div
         class="pf-v6-c-empty-state__actions"
@@ -126,10 +126,10 @@ exports[`NotAuthorized component should not show buttons 1`] = `
 </div>
 `;
 
-exports[`NotAuthorized component should render 1`] = `
+exports[`UnauthorizedAccess component should render 1`] = `
 <div
   class="pf-v6-c-empty-state"
-  data-ouia-component-id="NotAuthorized"
+  data-ouia-component-id="UnauthorizedAccess"
 >
   <div
     class="pf-v6-c-empty-state__content"
@@ -166,18 +166,18 @@ exports[`NotAuthorized component should render 1`] = `
     </div>
     <div
       class="pf-v6-c-empty-state__body"
-      data-ouia-component-id="NotAuthorized-body"
+      data-ouia-component-id="UnauthorizedAccess-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
       class="pf-v6-c-empty-state__footer"
-      data-ouia-component-id="NotAuthorized-footer"
+      data-ouia-component-id="UnauthorizedAccess-footer"
     >
       <a
         aria-disabled="false"
         class="pf-v6-c-button pf-m-primary"
-        data-ouia-component-id="NotAuthorized-home-button"
+        data-ouia-component-id="UnauthorizedAccess-home-button"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         href="."
@@ -196,10 +196,10 @@ exports[`NotAuthorized component should render 1`] = `
 </div>
 `;
 
-exports[`NotAuthorized component should show custom actions 1`] = `
+exports[`UnauthorizedAccess component should show custom actions 1`] = `
 <div
   class="pf-v6-c-empty-state"
-  data-ouia-component-id="NotAuthorized"
+  data-ouia-component-id="UnauthorizedAccess"
 >
   <div
     class="pf-v6-c-empty-state__content"
@@ -236,13 +236,13 @@ exports[`NotAuthorized component should show custom actions 1`] = `
     </div>
     <div
       class="pf-v6-c-empty-state__body"
-      data-ouia-component-id="NotAuthorized-body"
+      data-ouia-component-id="UnauthorizedAccess-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
       class="pf-v6-c-empty-state__footer"
-      data-ouia-component-id="NotAuthorized-footer"
+      data-ouia-component-id="UnauthorizedAccess-footer"
     >
       <div
         class="pf-v6-c-empty-state__actions"
@@ -276,10 +276,10 @@ exports[`NotAuthorized component should show custom actions 1`] = `
 </div>
 `;
 
-exports[`NotAuthorized component should show custom body text 1`] = `
+exports[`UnauthorizedAccess component should show custom body text 1`] = `
 <div
   class="pf-v6-c-empty-state"
-  data-ouia-component-id="NotAuthorized"
+  data-ouia-component-id="UnauthorizedAccess"
 >
   <div
     class="pf-v6-c-empty-state__content"
@@ -316,18 +316,18 @@ exports[`NotAuthorized component should show custom body text 1`] = `
     </div>
     <div
       class="pf-v6-c-empty-state__body"
-      data-ouia-component-id="NotAuthorized-body"
+      data-ouia-component-id="UnauthorizedAccess-body"
     >
       Some text
     </div>
     <div
       class="pf-v6-c-empty-state__footer"
-      data-ouia-component-id="NotAuthorized-footer"
+      data-ouia-component-id="UnauthorizedAccess-footer"
     >
       <a
         aria-disabled="false"
         class="pf-v6-c-button pf-m-primary"
-        data-ouia-component-id="NotAuthorized-home-button"
+        data-ouia-component-id="UnauthorizedAccess-home-button"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         href="."
@@ -346,10 +346,10 @@ exports[`NotAuthorized component should show custom body text 1`] = `
 </div>
 `;
 
-exports[`NotAuthorized component should show custom title 1`] = `
+exports[`UnauthorizedAccess component should show custom title 1`] = `
 <div
   class="pf-v6-c-empty-state"
-  data-ouia-component-id="NotAuthorized"
+  data-ouia-component-id="UnauthorizedAccess"
 >
   <div
     class="pf-v6-c-empty-state__content"
@@ -386,18 +386,18 @@ exports[`NotAuthorized component should show custom title 1`] = `
     </div>
     <div
       class="pf-v6-c-empty-state__body"
-      data-ouia-component-id="NotAuthorized-body"
+      data-ouia-component-id="UnauthorizedAccess-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
       class="pf-v6-c-empty-state__footer"
-      data-ouia-component-id="NotAuthorized-footer"
+      data-ouia-component-id="UnauthorizedAccess-footer"
     >
       <a
         aria-disabled="false"
         class="pf-v6-c-button pf-m-primary"
-        data-ouia-component-id="NotAuthorized-home-button"
+        data-ouia-component-id="UnauthorizedAccess-home-button"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         href="."
@@ -416,10 +416,10 @@ exports[`NotAuthorized component should show custom title 1`] = `
 </div>
 `;
 
-exports[`NotAuthorized component should use custom icon 1`] = `
+exports[`UnauthorizedAccess component should use custom icon 1`] = `
 <div
   class="pf-v6-c-empty-state"
-  data-ouia-component-id="NotAuthorized"
+  data-ouia-component-id="UnauthorizedAccess"
 >
   <div
     class="pf-v6-c-empty-state__content"
@@ -456,18 +456,18 @@ exports[`NotAuthorized component should use custom icon 1`] = `
     </div>
     <div
       class="pf-v6-c-empty-state__body"
-      data-ouia-component-id="NotAuthorized-body"
+      data-ouia-component-id="UnauthorizedAccess-body"
     >
       Contact your system administrator(s) for more information.
     </div>
     <div
       class="pf-v6-c-empty-state__footer"
-      data-ouia-component-id="NotAuthorized-footer"
+      data-ouia-component-id="UnauthorizedAccess-footer"
     >
       <a
         aria-disabled="false"
         class="pf-v6-c-button pf-m-primary"
-        data-ouia-component-id="NotAuthorized-home-button"
+        data-ouia-component-id="UnauthorizedAccess-home-button"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         href="."

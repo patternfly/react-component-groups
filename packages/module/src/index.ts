@@ -24,8 +24,8 @@ export * from './ServiceCard';
 export { default as NotFoundIcon } from './NotFoundIcon';
 export * from './NotFoundIcon';
 
-export { default as NotAuthorized } from './NotAuthorized';
-export * from './NotAuthorized';
+export { default as UnauthorizedAccess } from './UnauthorizedAccess';
+export * from './UnauthorizedAccess';
 
 export { default as MultiContentCard } from './MultiContentCard';
 export * from './MultiContentCard';

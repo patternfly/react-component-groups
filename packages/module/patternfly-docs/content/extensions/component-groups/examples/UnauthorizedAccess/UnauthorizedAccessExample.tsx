@@ -1,8 +1,8 @@
 import React from 'react';
-import NotAuthorized from "@patternfly/react-component-groups/dist/dynamic/NotAuthorized";
+import UnauthorizedAccess from "@patternfly/react-component-groups/dist/dynamic/UnauthorizedAccess";
 
 export const BasicExample: React.FunctionComponent = () => (
-  <NotAuthorized 
+  <UnauthorizedAccess 
     bodyText="Description text" 
     serviceName="Demo bundle"
   />

@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateProps, EmptyStateVariant, EmptyStateFooter, EmptyStateActions, ButtonVariant, } from '@patternfly/react-core';
 import { LockIcon } from '@patternfly/react-icons';
 
-export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | 'titleText'> {
+export interface UnauthorizedAccessProps extends Omit<EmptyStateProps, 'children' | 'titleText'> {
   /** Service name displayed in the title */
   serviceName?: string;
   /** Icon displayed above the title */
@@ -29,7 +29,7 @@ export interface NotAuthorizedProps extends Omit<EmptyStateProps, 'children' | '
   ouiaId?: string | number;
 }
 
-const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
+const UnauthorizedAccess: React.FunctionComponent<UnauthorizedAccessProps> = ({
   prevPageButtonText = 'Return to previous page',
   toLandingPageText = 'Go to landing page',
   toLandingPageUrl = ".",
@@ -41,9 +41,9 @@ const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
   bodyText = 'Contact your system administrator(s) for more information.',
   showReturnButton = true,
   className,
-  ouiaId = 'NotAuthorized',
+  ouiaId = 'UnauthorizedAccess',
   ...props
-}: NotAuthorizedProps) => (
+}: UnauthorizedAccessProps) => (
   <EmptyState headingLevel="h5" icon={Icon} variant={EmptyStateVariant.full} className={className} data-ouia-component-id={ouiaId} {...props} titleText={titleText}>
     <EmptyStateBody data-ouia-component-id={`${ouiaId}-body`}>{bodyText}</EmptyStateBody>
     <EmptyStateFooter data-ouia-component-id={`${ouiaId}-footer`}>
@@ -66,4 +66,4 @@ const NotAuthorized: React.FunctionComponent<NotAuthorizedProps> = ({
 );
 
 
-export default NotAuthorized;
+export default UnauthorizedAccess;
