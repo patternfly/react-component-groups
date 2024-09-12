@@ -4,37 +4,37 @@ import { createUseStyles } from 'react-jss'
 
 const batteryDefault = {
   '& svg': {
-    '& path': { fill: 'var(--pf-v5-global--icon--Color--light)' }
+    '& path': { fill: 'var(--pf-t--color--gray--60)' }
   }
 };
 
 const batteryLow = {
   '& svg': {
-    '& path': { fill: 'var(--pf-v5-global--success-color--100)' }
+    '& path': { fill: 'var(--pf-t--global--icon--color--status--success--default)' }
   }
 };
 
 const batteryMedium = {
   '& svg': {
-    '& path': { fill: 'var(--pf-v5-global--warning-color--100)' }
+    '& path': { fill: 'var(--pf-t--global--icon--color--status--warning--default)' }
   }
 };
 
 const batteryHigh = {
   '& svg': {
-    '& path': { fill: 'var(--pf-v5-global--palette--orange-300)' }
+    '& path': { fill: 'var(--pf-t--color--orange--50)' }
   }
 };
 
 const batteryCritical = {
   '& svg': {
-    '& path': { fill: 'var(--pf-v5-global--danger-color--100)' }
+    '& path': { fill: 'var(--pf-t--global--color--status--danger--default)' }
   }
 };
 
 const batteryLineColor = {
   '& svg': {
-    '& path': { stroke: 'var(--pf-v5-global--BorderColor--100)' }
+    '& path': { stroke: 'var(--pf-t--global--border--color--100)' }
   }
 };
 
@@ -44,7 +44,7 @@ const useStyles = createUseStyles({
     'line-height': 0,
     '& svg': {
       position: 'relative',
-      top: 'var(--pf-v5-global--spacer--sm)',
+      top: 'var(--pf-t--global--spacer--sm)',
       height: '1.75rem'
     }
   },

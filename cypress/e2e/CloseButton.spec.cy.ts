@@ -8,6 +8,5 @@ describe('Test the close button', () => {
     cy.get('[data-test-id="close-button-example"]').click();
     cy.wait(1000);
     cy.get('@consoleLog').should('be.calledWith', 'Close button clicked');
-    
   })
 })

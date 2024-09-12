@@ -1,17 +1,16 @@
-import { Button, EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateHeader, EmptyStateProps, EmptyStateVariant } from '@patternfly/react-core';
-
-import NotFoundIcon from '../NotFoundIcon/NotFoundIcon';
 import React from 'react';
+import { Button, EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateProps, EmptyStateVariant } from '@patternfly/react-core';
+import NotFoundIcon from '../NotFoundIcon';
 
-export interface InvalidObjectProps extends Omit<EmptyStateProps, 'children' | 'title'> {
+export interface InvalidObjectProps extends Omit<EmptyStateProps, 'children' | 'title' | 'titleText'> {
   /** The URL that the home page link points to */
   toHomePageUrl?: string;
   /** The text label for the link that points back to the home page */
   toHomePageText?: React.ReactNode;
   /** The title for the invalid object message */
-  invalidObjectTitleText?: string;
+  titleText?: string;
   /** The body text for the invalid object message */
-  invalidObjectBodyText?: string;
+  bodyText?: string;
   /** Custom OUIA ID */
   ouiaId?: string | number;
 }
@@ -19,14 +18,13 @@ export interface InvalidObjectProps extends Omit<EmptyStateProps, 'children' | '
 const InvalidObject: React.FunctionComponent<InvalidObjectProps> = ({
   toHomePageUrl = window.location.origin,
   toHomePageText = 'Return to homepage',
-  invalidObjectTitleText = 'We lost that page',
-  invalidObjectBodyText = "Let's find you a new one. Try a new search or return home.",
+  titleText = 'We lost that page',
+  bodyText = "Let's find you a new one. Try a new search or return home.",
   ouiaId = "InvalidObject",
   ...props
 }: InvalidObjectProps) => (
-  <EmptyState variant={EmptyStateVariant.full} data-ouia-component-id={ouiaId} {...props}>
-    <EmptyStateHeader titleText={invalidObjectTitleText} icon={<NotFoundIcon data-ouia-component-id={`${ouiaId}-icon`} />} headingLevel='h1' data-ouia-component-id={`${ouiaId}-header`} />
-    <EmptyStateBody data-ouia-component-id={`${ouiaId}-body`}>{invalidObjectBodyText}</EmptyStateBody>
+  <EmptyState headingLevel='h1' icon={NotFoundIcon} variant={EmptyStateVariant.full} data-ouia-component-id={ouiaId} {...props} titleText={titleText}>
+    <EmptyStateBody data-ouia-component-id={`${ouiaId}-body`}>{bodyText}</EmptyStateBody>
     <EmptyStateFooter data-ouia-component-id={`${ouiaId}-footer`}>
       <Button variant="link" component="a" href={toHomePageUrl} ouiaId={`${ouiaId}-home-button`}>
         {toHomePageText}

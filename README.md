@@ -4,10 +4,10 @@ This repo contains a set of opinionated react component groups used to standardi
 
 ### Migration from [RedHatInsights/frontend-components](https://github.com/RedHatInsights/frontend-components) to [patternfly/react-component-groups](https://github.com/patternfly/react-component-groups)
 Please see the [migration guide](./migration.md)
-
+ 
 ---
 ## Contribution guide
-
+  
 ### Before adding a new component:
 - make sure your use case is new/complex enough to be added to this extension
 - the component should bring a value value above and beyond existing PatternFly components
@@ -21,7 +21,7 @@ Please see the [migration guide](./migration.md)
 #### Example component:
 ```
 import * as React from 'react';
-import { Text } from '@patternfly/react-core';
+import { Content } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
 
 // do not forget to export your component's interface
@@ -33,7 +33,7 @@ export interface MyComponentProps {
 const useStyles = createUseStyles({
   myText: {
     fontFamily: 'monospace',
-    fontSize: 'var(--pf-v5-global--icon--FontSize--md)',
+    fontSize: 'var(--pf-v6-global--icon--FontSize--md)',
   },
 })
 
@@ -42,9 +42,9 @@ const MyComponent: React.FunctionComponent<MyComponentProps> = () => {
   const classes = useStyles();
 
   return (
-    <Text className={classes.myText}>
+    <Content className={classes.myText}>
       This is my new reusable component
-    </Text>
+    </Content>
   );
 };
 
@@ -68,7 +68,7 @@ src
 ### Component's API rules:
 - prop names comply with PatternFly components naming standards (`variant`, `onClick`, `position`, etc.)
 - the API is maximally simplified and all props are provided with a description
-- it is build on top of existing PatternFly types without prop omitting
+- it is built on the top of existing PatternFly types without prop omitting
 - it is well documented using the PatternFly documentation (`/packages/module/patternfly-docs/content/extensions/component-groups/examples/MyComponent/MyComponent.md`) with examples of all possible use cases (`packages/module/patternfly-docs/content/extensions/component-groups/examples/MyComponent/MyComponent[...]Example.tsx`)
 - do not unnecessarily use external libraries in your component - rather, delegate the necessary logic to the component's user using the component's API
 
@@ -129,12 +129,12 @@ When adding/making changes to a component, always make sure your code is tested:
 - add unit tests to a `[ComponentName].test.tsx` file to your component's directory
 - make sure all the core functionality is covered using Cypress component or E2E tests
 - add component tests to `cypress/component/[ComponentName].cy.tsx` file and E2E tests to `cypress/e2e/[ComponentName].spec.cy.ts`
-- add `ouiaId` to component props definition with a default value of the component name (for subcomponents, let's use `ComponentName-element-specification` naming convention e.g. `ouiaId="WarningModal-confirm-button"`)
+- add `ouiaId` to the component props definition with a default value of the component name (for subcomponents, let's use `ComponentName-element-specification` naming convention e.g. `ouiaId="WarningModal-confirm-button"`)
 
 ### Styling:
 - for styling always use JSS
 - new classNames should be named in camelCase starting with the name of a given component and following with more details clarifying its purpose/component's subsection to which the class is applied (`actionMenu`, `actionMenuDropdown`, `actionMenuDropdownToggle`, etc.)
-- do not use `pf-v5-u-XXX` classes, use CSS variables in a custom class instead (styles for the utility classes are not bundled with the standard patternfly.css - it would require the consumer to import also addons.css)
+- do not use `pf-v6-u-XXX` classes, use CSS variables in a custom class instead (styles for the utility classes are not bundled with the standard patternfly.css - it would require the consumer to import also addons.css)
 
 ## Building for production
 

@@ -19,7 +19,7 @@ export const BasicExample: React.FunctionComponent = () => {
     <NotAuthorized 
       primaryAction={primaryAction} 
       secondaryActions={secondaryActions}
-      description="Description text" 
+      bodyText="Description text" 
       serviceName="Demo bundle"
       prevPageButtonText="Go to previous page"
     />

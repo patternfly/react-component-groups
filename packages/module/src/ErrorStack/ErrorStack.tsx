@@ -1,6 +1,6 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { Text } from '@patternfly/react-core';
+import { Content } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
 
 export interface ErrorStackProps {
@@ -13,13 +13,13 @@ export interface ErrorStackProps {
 const useStyles = createUseStyles({
   errorStack: {
     fontFamily: 'monospace',
-    fontSize: 'var(--pf-v5-global--icon--FontSize--md)',
+    fontSize: 'var(--pf-t--global--font--size--300)',
     textAlign: 'left',
     backgroundColor: 'white',
     borderStyle: 'solid',
-    borderColor: 'var(--pf-v5-global--BackgroundColor--dark-300)',
+    borderColor: 'var(--pf-t--color--gray--90)',
     overflowWrap: 'break-word',
-    padding: 'var(--pf-v5-global--spacer--sm)'
+    padding: 'var(--pf-t--global--spacer--200)'
   },
 })
 
@@ -28,29 +28,29 @@ export const ErrorStack: React.FunctionComponent<ErrorStackProps> = ({ error, cl
 
   if (error.stack) {
     return (
-      <Text className={clsx(classes.errorStack, className)} {...props} >
+      <Content className={clsx(classes.errorStack, className)} {...props} >
         {error.stack.split('\n').map((line) => (
           <div key={line}>{line}</div>
         ))}
-      </Text>
+      </Content>
     );
   }
 
   if (error.name && error.message) {
     return (
       <>
-        <Text component="h6">{error.name}</Text>
-        <Text className={clsx(classes.errorStack, className)} component="blockquote" {...props}>
+        <Content component="h6">{error.name}</Content>
+        <Content className={clsx(classes.errorStack, className)} component="blockquote" {...props}>
           {error.message}
-        </Text>
+        </Content>
       </>
     );
   }
 
   return (
-    <Text className={classes.errorStack} component="blockquote">
+    <Content className={classes.errorStack} component="blockquote">
       {error.toString()}
-    </Text>
+    </Content>
   );
 };
 

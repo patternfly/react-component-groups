@@ -41,8 +41,9 @@ describe('WarningModal', () => {
   it('renders WarningModal', () => {
     cy.mount(<BasicModal />)
     cy.get('button').click();
-    cy.get('[class="pf-v5-c-modal-box pf-m-warning pf-m-sm"').should('exist');
-    cy.get('div header h1 span').should('have.text', 'Warning alert:Unsaved changes');
+    cy.get('[data-ouia-component-id="WarningModal"]').should('exist');
+    cy.get('[data-ouia-component-id="WarningModal"]').contains('Unsaved changes');
+    cy.get('[data-ouia-component-id="WarningModal"]').contains('Your page contains unsaved changes. Do you want to leave?');
   });
 
   it('confirm button should be disabled if checkbox is not checked', () => {

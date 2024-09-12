@@ -8,21 +8,8 @@ import {
   Divider,
   Flex,
   FlexItem,
-  Title,
 } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
-import clsx from 'clsx';
-
-export const MultiContentCardBorderVariant = {
-  primary: 'primary',
-  danger: 'danger',
-  success: 'success',
-  info: 'info',
-  warning: 'warning',
-  hidden: 'hidden'
-} as const;
-
-export type MultiContentCardBorderVariant = typeof MultiContentCardBorderVariant[keyof typeof MultiContentCardBorderVariant];
 
 export const MultiContentCardDividerVariant = {
   left: 'left',
@@ -47,8 +34,6 @@ export interface MultiContentCardProps extends Omit<CardProps, 'children' | 'tit
   toggleText?: string;
   /** Toggle content for the expandable section */
   toggleContent?: React.ReactElement;
-  /** Left border variant for the containing card */
-  leftBorderVariant?: MultiContentCardBorderVariant;
   /** When set to true, all content cards will be separated with dividers */
   withDividers?: boolean;
   /** Indicates whether the card is expandable */
@@ -57,24 +42,19 @@ export interface MultiContentCardProps extends Omit<CardProps, 'children' | 'tit
   defaultExpanded?: boolean;
   /** Indicates whether the actions toggle is right aligned */
   isToggleRightAligned?: boolean;
-  /** Indicates whether the card header has a bottom border */
-  withHeaderBorder?: boolean;
   /** Custom OUIA ID */
   ouiaId?: string | number;
 }
 
-const useStyles = createUseStyles({
-  multiContentCardHeadingBorder: {
-    borderBottom: 'var(--pf-v5-global--BorderWidth--sm) solid var(--pf-v5-global--disabled-color--200)',
-  },
-  multiContentCardLeftBorder: (leftBorderVariant: MultiContentCardBorderVariant) => ({
-    borderLeft: `var(--pf-v5-global--BorderWidth--lg) solid var(--pf-v5-global--${leftBorderVariant}-color--100)` 
-  })
-})
-
 export const isCardWithProps = (
   card: React.ReactElement | MutliContentCardProps
 ): card is MutliContentCardProps => !!card && !React.isValidElement(card);
+
+const useStyles = createUseStyles({
+  cardTitle: {
+    fontSize: 'var(--pf-t--global--font--size--heading--h3)',
+  }
+});
 
 const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   cards = [],
@@ -83,15 +63,13 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   toggleText,
   toggleContent,
   withDividers = false,
-  leftBorderVariant = MultiContentCardBorderVariant.hidden,
   isExpandable = false,
   defaultExpanded = true,
-  withHeaderBorder = false,
   ouiaId = 'MultiContentCard',
   ...props
 }: MultiContentCardProps) => {
-  const classes = useStyles(leftBorderVariant);
   const [ isExpanded, setIsExpanded ] = React.useState(defaultExpanded);
+  const classes = useStyles();
   const onExpand = () => {
     setIsExpanded(!isExpanded);
   };
@@ -120,12 +98,11 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
     </Flex>
   );
   
-  return(
-    <Card className={clsx([ { [classes.multiContentCardLeftBorder]: leftBorderVariant !== MultiContentCardBorderVariant.hidden } ])} isExpanded={isExpanded} ouiaId={ouiaId} {...props}>
+  return (
+    <Card isExpanded={isExpanded} ouiaId={ouiaId} {...props}>
       {isExpandable && (
         <CardHeader
           data-ouia-component-id={`${ouiaId}-header`}
-          className={clsx({ [classes.multiContentCardHeadingBorder]: withHeaderBorder })}
           onExpand={onExpand}
           isToggleRightAligned={isToggleRightAligned}
           toggleButtonProps={{
@@ -134,7 +111,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
           }}
           actions={{ actions }}
         >
-          <CardTitle data-ouia-component-id={`${ouiaId}-title`}>{toggleText ? <Title headingLevel="h2" size="xl">{toggleText}</Title> : toggleContent}</CardTitle>
+          {toggleText ? <CardTitle component="h3" className={classes.cardTitle} data-ouia-component-id={`${ouiaId}-title`}>{toggleText}</CardTitle> : toggleContent}
         </CardHeader>
       )}
       {isExpandable ? <CardExpandableContent data-ouia-component-id={`${ouiaId}-expandable-content`}>{renderCards(cards, withDividers)}</CardExpandableContent> : renderCards(cards, withDividers)}

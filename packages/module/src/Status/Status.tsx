@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, ButtonVariant, Flex, FlexItem, Icon, Popover, PopoverPosition, PopoverProps, Text, TextVariants, } from '@patternfly/react-core';
+import { Button, ButtonVariant, Flex, FlexItem, Icon, Popover, PopoverPosition, PopoverProps, Content, ContentVariants, } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
 
 export const StatusVariant = {
@@ -45,13 +45,14 @@ export interface StatusProps extends React.PropsWithChildren {
 
 const useStyles = createUseStyles({
   icon: {
-    margin: 0
+    margin: "0",
+    alignSelf: "flex-start",
   },
   statusLabel: {
-    lineHeight: 'var(--pf-v5-global--LineHeight--sm)',
+    lineHeight: 'var(--pf-v6-global--LineHeight--sm)',
   },
   statusDescription: {
-    color: 'var(--pf-v5-c-content--small--Color)',
+    color: 'var(--pf-t--color--gray--50)',
   }
 })
 
@@ -67,15 +68,15 @@ export const Status: React.FC<StatusProps> = ({ variant = StatusVariant.plain, l
     <Flex title={label} alignItems={{ default: 'alignItemsCenter' }} {...props}>
       {icon && (
         <FlexItem className={classes.icon}>
-          <Icon className='pf-v5-u-mr-md' status={status} title={iconTitle ?? status} data-ouia-component-id={`${ouiaId}-icon`}>
+          <Icon className='pf-v6-u-mr-sm' status={status} title={iconTitle ?? status} data-ouia-component-id={`${ouiaId}-icon`}>
             {icon}
           </Icon>
         </FlexItem>
       )}
       {!iconOnly && (
         <FlexItem>
-          <Text ouiaId={`${ouiaId}-label`} className={classes.statusLabel}>{label}</Text>
-          {description && <Text component={TextVariants.small} ouiaId={`${ouiaId}-description`} className={classes.statusDescription}>{description}</Text>}
+          <Content ouiaId={`${ouiaId}-label`} className={classes.statusLabel} style={{ marginBlockEnd: 0 }}>{label}</Content>
+          {description && <Content component={ContentVariants.small} ouiaId={`${ouiaId}-description`} className={classes.statusDescription}>{description}</Content>}
         </FlexItem>
       )}
     </Flex>
