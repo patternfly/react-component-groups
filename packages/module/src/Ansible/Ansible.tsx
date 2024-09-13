@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss';
 
 export interface AnsibleProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
   /** Supported/unsupported variant flag */
-  isUnsupported?: boolean;
+  isSupported?: boolean;
   /** Red Hat Ansible Automation Platform technology icon */
   isRHAAP?: boolean;
   /** Ansible icon className */
@@ -45,18 +45,18 @@ const useStyles = createUseStyles({
   },
   ansibleUnsupported: {
     '& .st0, .st1, .st2': {
-      fill: 'var(--pf-t--color--gray--50)',
+      fill: 'var(--pf-t-global--icon--color--disabled)',
       cursor: 'not-allowed',
     }
   }
 })
 
-const Ansible: React.FunctionComponent<AnsibleProps> = ({ isUnsupported, isRHAAP, className, ouiaId = "Ansible-icon", ...props }: AnsibleProps) => {
+const Ansible: React.FunctionComponent<AnsibleProps> = ({ isSupported, isRHAAP, className, ouiaId = "Ansible-icon", ...props }: AnsibleProps) => {
   const classes = useStyles();
   const ansibleLogoClass = clsx(
     classes.ansible,
-    { [classes.ansibleSupported]: !isUnsupported },
-    { [classes.ansibleUnsupported]: isUnsupported },
+    { [classes.ansibleSupported]: isSupported },
+    { [classes.ansibleUnsupported]: !isSupported },
     className
   );
 
@@ -94,7 +94,7 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ isUnsupported, isRHAAP
   return (
     <React.Fragment>
       {isRHAAP ? RHAAPTechnologyIcon : (
-        <i className={ansibleLogoClass} title={isUnsupported ? "Ansible is not supported" : "Ansible supported" } data-ouia-component-id={ouiaId} {...props}>
+        <i className={ansibleLogoClass} title={isSupported ? "Ansible supported" : "Ansible is not supported" } data-ouia-component-id={ouiaId} {...props}>
           <svg
             version="1.1"
             x="0px"
@@ -109,7 +109,7 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ isUnsupported, isRHAAP
                         L1035.4,620.9z M1500.8,1416.5l-403-969.9c-11.5-28-34.5-42.8-62.4-42.8c-28,0-52.7,14.8-64.2,42.8L528.9,1510.4h151.3l175.1-438.6
                         l522.5,422.1c21,17,36.2,24.7,55.9,24.7c39.5,0,74-29.6,74-72.3C1507.7,1439.4,1505.3,1428.3,1500.8,1416.5L1500.8,1416.5z"
             />
-            {isUnsupported ? unsupportedSlash : null}
+            {!isSupported ? unsupportedSlash : null}
           </svg>
         </i>
       ) }

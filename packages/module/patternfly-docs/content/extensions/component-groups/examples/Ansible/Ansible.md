@@ -28,7 +28,7 @@ By default, the Ansible logo displays as normal and in full color, meaning that 
 
 ### Ansible unsupported
 
-To specify that Ansible is not supported, add the `isUnsupported` property to the `<Ansible>` component.
+To specify that Ansible is not supported, add the `isSupported={false}` property to the `<Ansible>` component.
 
 ```js file="./AnsibleUnsupportedExample.tsx"
 

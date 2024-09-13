@@ -5,12 +5,12 @@ import Ansible from './Ansible';
 describe('Ansible component', () => {
 
   it('should render unsupported - boolean', () => {
-    const { container } = render(<Ansible isUnsupported />);
+    const { container } = render(<Ansible isSupported={false} />);
     expect(container).toMatchSnapshot();
   });
 
   it('should render supported - boolean', () => {
-    const { container } = render(<Ansible />);
+    const { container } = render(<Ansible isSupported/>);
     expect(container).toMatchSnapshot();
   });
 
