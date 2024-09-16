@@ -1,8 +1,8 @@
 ---
 # Sidenav top-level section
 # should be the same for all markdown files
-section: extensions
-subsection: Component groups
+section: Component groups
+subsection: Controls
 # Sidenav secondary level section
 # should be the same for all markdown files
 id: Bulk select

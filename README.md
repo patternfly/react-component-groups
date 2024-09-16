@@ -86,8 +86,8 @@ export const MyComponent: React.FunctionComponent<MyComponentProps> = ({ customL
 #### Markdown file example:
 ```
 ---
-section: extensions
-subsection: Component groups
+section: Component groups
+subsection: My component's category
 id: MyComponent
 propComponents: ['MyComponent']
 ---

@@ -94,7 +94,7 @@ export interface BatteryProps extends React.DetailedHTMLProps<React.HTMLAttribut
   ouiaId?: string | number;
 }
 
-const Battery: React.FunctionComponent<BatteryProps> = ({ severity, label, labelHidden, className, ouiaId = 'Battery-icon', ...props }: BatteryProps) => {
+export const Battery: React.FunctionComponent<BatteryProps> = ({ severity, label, labelHidden, className, ouiaId = 'Battery-icon', ...props }: BatteryProps) => {
   const classes = useStyles();
   const batteryClasses = clsx(classes.battery, classes[String(batteryLevels(severity, true))], className);
 

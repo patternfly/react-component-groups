@@ -3,7 +3,7 @@ import ServiceCard from "@patternfly/react-component-groups/dist/dynamic/Service
 import { Gallery } from '@patternfly/react-core/dist/dynamic/layouts/Gallery';
 import { GalleryItem } from '@patternfly/react-core/dist/dynamic/layouts/Gallery';
 import { Button, ButtonVariant } from '@patternfly/react-core';
-import contentHeaderIcon from '../../assets/icons/content-header-icon.svg';
+import pageHeaderIcon from '../../assets/icons/page-header-icon.svg';
 
 export const ServiceCardGalleryExample: React.FunctionComponent = () => (
   <Gallery hasGutter minWidths={{ default: '330px' }}>
@@ -13,7 +13,7 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
         title='Example1'
         subtitle='A basic example'
         description='This is a basic ServiceCard example'
-        icon={<img src={contentHeaderIcon} alt="content-header-icon" />}
+        icon={<img src={pageHeaderIcon} alt="page-header-icon" />}
         helperText='Example helper text'
       />
     </GalleryItem>
@@ -23,7 +23,7 @@ export const ServiceCardGalleryExample: React.FunctionComponent = () => (
         title='Example2'
         subtitle='A second example'
         description='This is another basic ServiceCard example'
-        icon={<img src={contentHeaderIcon} alt="content-header-icon" />}
+        icon={<img src={pageHeaderIcon} alt="page-header-icon" />}
         helperText='Example helper text'
         footer={<>
           <Button

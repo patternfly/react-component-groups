@@ -86,7 +86,7 @@ const cards = [
 ];
 
 describe('MultiContentCard component', () => {
-  it('should render basic multi content card', () => {
+  it('should render basic multi-content card', () => {
     const { container } = render(<MultiContentCard cards={cards} />);
     expect(screen.getByText('Getting Started')).toBeInTheDocument();
     expect(screen.getByText('Next Steps')).toBeInTheDocument();
@@ -103,7 +103,7 @@ describe('MultiContentCard component', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should render expandable multi content card - expanded', () => {
+  it('should render expandable multi-content card - expanded', () => {
     const { container } = render(
       <MultiContentCard
         isExpandable
@@ -117,7 +117,7 @@ describe('MultiContentCard component', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should render expandable multi content card - collapsed', () => {
+  it('should render expandable multi-content card - collapsed', () => {
     const { container } = render(
       <MultiContentCard
         isExpandable
@@ -132,7 +132,7 @@ describe('MultiContentCard component', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should render expandable multi content card - with actions', () => {
+  it('should render expandable multi-content card - with actions', () => {
     const { container } = render(
       <MultiContentCard
         isExpandable
@@ -171,7 +171,7 @@ describe('MultiContentCard component', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should render multi content card with dividers', () => {
+  it('should render multi-content card with dividers', () => {
     const { container } = render(<MultiContentCard cards={cards} withDividers />);
 
     expect(screen.getAllByRole('separator')).toHaveLength(2);
@@ -179,7 +179,7 @@ describe('MultiContentCard component', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should render multi content card with a single divider', () => {
+  it('should render multi-content card with a single divider', () => {
     const { container } = render(<MultiContentCard cards={[ cards[0], cards[1], { content: cards[2], dividerVariant: MultiContentCardDividerVariant.left } ]} />);
 
     expect(screen.getAllByRole('separator')).toHaveLength(1);
