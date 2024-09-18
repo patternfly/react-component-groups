@@ -100,7 +100,7 @@ export const PageHeader: React.FunctionComponent<React.PropsWithChildren<PageHea
             {subtitle}
           </Content>
           {linkProps && (
-            <Button variant={ButtonVariant.link} ouiaId={`${ouiaId}-link-button`} isInline icon={isExternal ? <ExternalLinkAltIcon /> : null} iconPosition="end" {...linkRestProps}>
+            <Button variant={ButtonVariant.link} component="a" ouiaId={`${ouiaId}-link-button`} isInline icon={isExternal ? <ExternalLinkAltIcon className='pf-v6-u-ml-sm' /> : null} iconPosition="end" {...linkRestProps}>
               {linkProps.label}
             </Button>
           )}
