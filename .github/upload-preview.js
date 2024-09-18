@@ -29,7 +29,7 @@ const publishFn = surge().publish();
       uploadURL += '-a11y.surge.sh';
       break;
     case 'public':
-      if (!prnum && prbranch === 'main') {
+      if (!prnum && prbranch === 'v5') {
         uploadURL = 'https://pf-extensions.surge.sh/';
       } else {
         uploadURL += '.surge.sh';
