@@ -10,7 +10,7 @@ describe('Ansible component', () => {
   });
 
   it('should render supported - boolean', () => {
-    const { container } = render(<Ansible isSupported/>);
+    const { container } = render(<Ansible />);
     expect(container).toMatchSnapshot();
   });
 
