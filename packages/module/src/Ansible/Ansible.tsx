@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
 
-export interface AnsibleSupportProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
+export interface AnsibleProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
   /** Supported/unsupported variant flag */
   isSupported?: boolean;
   /** Ansible icon className */
@@ -32,7 +32,7 @@ const useStyles = createUseStyles({
   } 
 })
 
-export const AnsibleSupport: React.FunctionComponent<AnsibleSupportProps> = ({ isSupported = true, className, ouiaId = "AnsibleSupport-icon", ...props }: AnsibleSupportProps) => {
+export const Ansible: React.FunctionComponent<AnsibleProps> = ({ isSupported = true, className, ouiaId = "AnsibleSupport-icon", ...props }: AnsibleProps) => {
   const classes = useStyles();
   const ansibleLogoClass = clsx(
     classes.ansible,
@@ -94,4 +94,4 @@ export const AnsibleSupport: React.FunctionComponent<AnsibleSupportProps> = ({ i
   );
 };
 
-export default AnsibleSupport;
+export default Ansible;
