@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AnsibleSupport component should render supported 1`] = `
+exports[`Ansible component should render supported 1`] = `
 <div>
   <i
     class="ansible-0-2-1 ansibleSupported-0-2-2"
@@ -26,7 +26,7 @@ exports[`AnsibleSupport component should render supported 1`] = `
 </div>
 `;
 
-exports[`AnsibleSupport component should render unsupported 1`] = `
+exports[`Ansible component should render unsupported 1`] = `
 <div>
   <i
     class="ansible-0-2-1 ansibleUnsupported-0-2-3"

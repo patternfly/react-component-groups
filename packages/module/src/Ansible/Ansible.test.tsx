@@ -1,16 +1,16 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import AnsibleSupport from './AnsibleSupport';
+import Ansible from './Ansible';
 
-describe('AnsibleSupport component', () => {
+describe('Ansible component', () => {
 
   it('should render unsupported', () => {
-    const { container } = render(<AnsibleSupport isSupported={false} />);
+    const { container } = render(<Ansible isSupported={false} />);
     expect(container).toMatchSnapshot();
   });
 
   it('should render supported', () => {
-    const { container } = render(<AnsibleSupport />);
+    const { container } = render(<Ansible />);
     expect(container).toMatchSnapshot();
   });
 
