@@ -103,7 +103,7 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
               {subtitle}
             </Text>
             {linkProps && (
-              <Button variant={ButtonVariant.link} ouiaId={`${ouiaId}-link-button`} isInline icon={linkProps.isExternal ? <ExternalLinkAltIcon /> : null} iconPosition="end" {...linkProps}>
+              <Button variant={ButtonVariant.link} component="a" ouiaId={`${ouiaId}-link-button`} isInline icon={linkProps.isExternal ? <ExternalLinkAltIcon className='pf-v5-u-ml-sm' /> : null} iconPosition="end" {...linkProps}>
                 {linkProps.label}
               </Button>
             )}
