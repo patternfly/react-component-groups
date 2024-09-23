@@ -94,9 +94,8 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ isSupported = true, is
   return (
     <React.Fragment>
       {isRHAAP ? (
-        <i title="Red Hat Ansible Auntomation Platform" data-ouia-component-id={ouiaId} {...props}>
+        <i title="Red Hat Ansible Automation Platform" data-ouia-component-id={ouiaId} {...props}>
           {RHAAPTechnologyIcon}
-          {isSupported ? null : unsupportedSlash}
         </i>
       ) : (
         <i className={ansibleLogoClass} title={isSupported ? "Ansible supported" : "Ansible is not supported" } data-ouia-component-id={ouiaId} {...props}>
