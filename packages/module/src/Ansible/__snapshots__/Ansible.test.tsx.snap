@@ -4,7 +4,7 @@ exports[`Ansible component should render RHAAP - boolean 1`] = `
 <div>
   <i
     data-ouia-component-id="Ansible-icon"
-    title="Red Hat Ansible Auntomation Platform"
+    title="Red Hat Ansible Automation Platform"
   >
     <svg
       height="24"
