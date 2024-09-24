@@ -14,4 +14,8 @@ describe('Ansible component', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('should render RHAAP', () => {
+    const { container } = render(<Ansible isRHAAP />);
+    expect(container).toMatchSnapshot();
+  });
 });
