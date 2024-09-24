@@ -33,3 +33,12 @@ To specify that Ansible is not supported, set the `isSupported` property to `fal
 ```js file="./AnsibleUnsupportedExample.tsx"
 
 ```
+
+
+### Red Hat Ansible Automation Platform 
+
+To display the Red Hat Ansible Automation Platform, add the `isRHAAP` property to the `<Ansible>` component.
+
+```js file="./AnsibleTechnologyExample.tsx"
+
+```
