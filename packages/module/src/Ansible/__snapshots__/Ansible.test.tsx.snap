@@ -74,7 +74,7 @@ exports[`Ansible component should render unsupported 1`] = `
 <div>
   <i
     class="ansible-0-2-1 ansibleUnsupported-0-2-3"
-    data-ouia-component-id="AnsibleSupport-icon"
+    data-ouia-component-id="Ansible-icon"
     title="Ansible is not supported"
   >
     <svg
