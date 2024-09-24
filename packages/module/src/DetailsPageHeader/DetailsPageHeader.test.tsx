@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
-import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import DetailsPageHeader, { DetailsPageHeaderProps } from './DetailsPageHeader';
 
 const mockCallback = jest.fn();
@@ -35,18 +34,9 @@ const mockProps: DetailsPageHeaderProps = {
   },
 };
 
-const detailsPageHeaderJSX = (args: DetailsPageHeaderProps) => (
-  <MemoryRouter initialEntries={[ '/resources/example-resource' ]}>
-    <Routes>
-      <Route element={<DetailsPageHeader {...args} />} path="/resources/example-resource" />
-      <Route element={<div>Resource list page</div>} path="/resources" />
-    </Routes>
-  </MemoryRouter>
-);
-
 describe('DetailsPageHeader', () => {
   test('DetailsPageHeader is rendered with breadcrumbs, heading, action buttons and action menu', () => {
-    render(detailsPageHeaderJSX(mockProps));
+    render(<DetailsPageHeader {...mockProps} />);
 
     // Breadcrumbs
     expect(screen.getByText('Some breadcrumbs')).toBeVisible();
@@ -58,14 +48,14 @@ describe('DetailsPageHeader', () => {
     expect(screen.getByText('Actions')).toBeVisible();
   });
   test('Clicking on actions menu reveals menu options', () => {
-    render(detailsPageHeaderJSX(mockProps));
+    render(<DetailsPageHeader {...mockProps} />);
 
     fireEvent.click(screen.getByText('Actions'));
     expect(screen.getByText('Edit resource')).toBeInTheDocument();
     expect(screen.getByText('Delete resource')).toBeInTheDocument();
   });
   test('Action button triggers callback', () => {
-    render(detailsPageHeaderJSX(mockProps));
+    render(<DetailsPageHeader {...mockProps} />);
 
     fireEvent.click(screen.getByText('Primary action'));
     expect(mockCallback).toHaveBeenCalled();

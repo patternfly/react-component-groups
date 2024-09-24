@@ -1,7 +1,7 @@
 ---
-section: extensions
-subsection: Component groups
-id: Multi content card
+section: Component groups
+subsection: Content containers
+id: Multi-content card
 source: react
 propComponents: ['MultiContentCard']
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/MultiContentCard/MultiContentCard.md
@@ -12,35 +12,35 @@ import { ArrowRightIcon, BellIcon, CogIcon, EllipsisVIcon, LockIcon } from '@pat
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
-A **multi content card** component allows to display multiple card components in a single layout. To further customize this layout, you can also utilize all properties of the [card component](/components/card), with the exception of `children` and `title`.
+A **multi-content card** component allows to display multiple card components in a single layout. To further customize this layout, you can also utilize all properties of the [card component](/components/card), with the exception of `children` and `title`.
 
 ## Examples
 
-### Basic multi content card
+### Basic multi-content card
 
-To display a basic multi content an array of content cards has to be passed using the `cards` property. It is recommended to use regular [card components](/components/card) in the content.
+To display a basic multi-content an array of content cards has to be passed using the `cards` property. It is recommended to use regular [card components](/components/card) in the content.
 
 ```js file="./MultiContentCardExample.tsx"
 
 ```
 
-### Expandable multi content card
+### Expandable multi-content card
 
-To make the multi content card expandable, pass `isExpandable` flag together with `toggleText` or `toggleContent` property. Default expansion state can be adjusted using `defaultExpanded` property.
+To make the multi-content card expandable, pass `isExpandable` flag together with `toggleText` or `toggleContent` property. Default expansion state can be adjusted using `defaultExpanded` property.
 
 ```js file="./MultiContentCardExpandableExample.tsx"
 
 ```
 
-### Expandable multi content card with actions and labels
+### Expandable multi-content card with actions and labels
 
-Actions can be displayed in the multi content card heading using `actions` property. Also, you can make use of [label components](/components/label) for your card content.
+Actions can be displayed in the multi-content card heading using `actions` property. Also, you can make use of [label components](/components/label) for your card content.
 
 ```js file="./MultiContentCardExpandableActionsExample.tsx"
 
 ```
 
-### Expandable multi content card with dividers
+### Expandable multi-content card with dividers
 
 Dividers between all cards in the content can be shown using `withDividers` flag. 
 
@@ -48,7 +48,7 @@ Dividers between all cards in the content can be shown using `withDividers` flag
 
 ```
 
-### Expandable multi content card with single dividers
+### Expandable multi-content card with single dividers
 
 To enable a divider just for a single card, use `dividerVariant` property passed to the `cards` array. 
 

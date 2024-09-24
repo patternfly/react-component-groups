@@ -24,8 +24,8 @@ export * from './ServiceCard';
 export { default as NotFoundIcon } from './NotFoundIcon';
 export * from './NotFoundIcon';
 
-export { default as NotAuthorized } from './NotAuthorized';
-export * from './NotAuthorized';
+export { default as UnauthorizedAccess } from './UnauthorizedAccess';
+export * from './UnauthorizedAccess';
 
 export { default as MultiContentCard } from './MultiContentCard';
 export * from './MultiContentCard';
@@ -33,8 +33,8 @@ export * from './MultiContentCard';
 export { default as LogSnippet } from './LogSnippet';
 export * from './LogSnippet';
 
-export { default as InvalidObject } from './InvalidObject';
-export * from './InvalidObject';
+export { default as MissingPage } from './MissingPage';
+export * from './MissingPage';
 
 export { default as HorizontalNav } from './HorizontalNav';
 export * from './HorizontalNav';
@@ -54,8 +54,8 @@ export * from './DetailsPageHeader';
 export { default as DetailsPage } from './DetailsPage';
 export * from './DetailsPage';
 
-export { default as ContentHeader } from './ContentHeader';
-export * from './ContentHeader';
+export { default as PageHeader } from './PageHeader';
+export * from './PageHeader';
 
 export { default as ColumnManagementModal } from './ColumnManagementModal';
 export * from './ColumnManagementModal';
@@ -69,8 +69,8 @@ export * from './BulkSelect';
 export { default as Battery } from './Battery';
 export * from './Battery';
 
-export { default as Ansible } from './Ansible';
-export * from './Ansible';
+export { default as Ansible } from './AnsibleSupport';
+export * from './AnsibleSupport';
 
 export { default as ActionMenu } from './ActionMenu';
 export * from './ActionMenu';

@@ -1,5 +1,5 @@
 # PatternFly React Component Groups
-
+  
 This repo contains a set of opinionated react component groups used to standardize functionality and look and feel across products.  The components are based on PatternFly with some additional functionality. 
 
 ### Migration from [RedHatInsights/frontend-components](https://github.com/RedHatInsights/frontend-components) to [patternfly/react-component-groups](https://github.com/patternfly/react-component-groups)
@@ -86,8 +86,8 @@ export const MyComponent: React.FunctionComponent<MyComponentProps> = ({ customL
 #### Markdown file example:
 ```
 ---
-section: extensions
-subsection: Component groups
+section: Component groups
+subsection: My component's category
 id: MyComponent
 propComponents: ['MyComponent']
 ---

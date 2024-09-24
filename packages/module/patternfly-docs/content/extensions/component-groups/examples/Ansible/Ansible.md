@@ -1,8 +1,8 @@
 ---
 # Sidenav top-level section
 # should be the same for all markdown files
-section: extensions
-subsection: Component groups
+section: Component groups
+subsection: Status and state indicators
 # Sidenav secondary level section
 # should be the same for all markdown files
 id: Ansible
@@ -28,7 +28,7 @@ By default, the Ansible logo displays as normal and in full color, meaning that 
 
 ### Ansible unsupported
 
-To specify that Ansible is not supported, add the `isSupported={false}` property to the `<Ansible>` component.
+To specify that Ansible is not supported, set the `isSupported` property to `false`.
 
 ```js file="./AnsibleUnsupportedExample.tsx"
 

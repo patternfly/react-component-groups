@@ -16,7 +16,7 @@ export interface CloseButtonProps extends ButtonProps {
   dataTestID?: string;
 };
 
-const CloseButton: React.FunctionComponent<CloseButtonProps> = ({
+export const CloseButton: React.FunctionComponent<CloseButtonProps> = ({
   className,
   dataTestID,
   onClick,

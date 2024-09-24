@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Ansible component should render RHAAP - boolean 1`] = `
+exports[`Ansible component should render RHAAP 1`] = `
 <div>
   <i
     data-ouia-component-id="Ansible-icon"
@@ -44,7 +44,7 @@ exports[`Ansible component should render RHAAP - boolean 1`] = `
 </div>
 `;
 
-exports[`Ansible component should render supported - boolean 1`] = `
+exports[`Ansible component should render supported 1`] = `
 <div>
   <i
     class="ansible-0-2-1 ansibleSupported-0-2-2"
@@ -70,11 +70,11 @@ exports[`Ansible component should render supported - boolean 1`] = `
 </div>
 `;
 
-exports[`Ansible component should render unsupported - boolean 1`] = `
+exports[`Ansible component should render unsupported 1`] = `
 <div>
   <i
     class="ansible-0-2-1 ansibleUnsupported-0-2-3"
-    data-ouia-component-id="Ansible-icon"
+    data-ouia-component-id="AnsibleSupport-icon"
     title="Ansible is not supported"
   >
     <svg

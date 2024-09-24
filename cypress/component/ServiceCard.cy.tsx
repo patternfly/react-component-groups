@@ -9,7 +9,7 @@ describe('ServiceCard', () => {
         title='Example'
         subtitle='A basic example'
         description='This is a basic ServiceCard Example'
-        icon={<img src="/" alt="content-header-icon" />}
+        icon={<img src="/" alt="page-header-icon" />}
         helperText='Here is helper text'
         ouiaId='Example'
       />)
@@ -21,7 +21,7 @@ describe('ServiceCard', () => {
         title='Example'
         subtitle='A basic example'
         description='This is a basic ServiceCard Example'
-        icon={<img src="/" alt="content-header-icon" />}
+        icon={<img src="/" alt="page-header-icon" />}
         helperText='Here is helper text'
         ouiaId='Example'
         footer={<>

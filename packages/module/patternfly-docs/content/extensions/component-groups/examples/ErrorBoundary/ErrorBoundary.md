@@ -1,8 +1,8 @@
 ---
 # Sidenav top-level section
 # should be the same for all markdown files
-section: extensions
-subsection: Component groups
+section: Component groups
+subsection: Error communication
 # Sidenav secondary level section
 # should be the same for all markdown files
 id: Error boundary
@@ -13,26 +13,20 @@ source: react
 propComponents: ['ErrorBoundary']
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/ErrorBoundary/ErrorBoundary.md
 ---
-
+import { useState } from 'react';
+import { Button, Card, CardBody, CardFooter, CardHeader } from '@patternfly/react-core';
 import ErrorBoundary from "@patternfly/react-component-groups/dist/dynamic/ErrorBoundary";
 
 The **error boundary** component repurposes the `<ErrorState>` component for an application error boundary.
 
 ## Examples 
 
-### Basic error boundary 
+### Error boundary usage example
 
-A basic error boundary has a `headerTitle`, an `errorTitle`, and lists error details when a user takes action (like selecting a link).
+A basic error boundary appears when an error is thrown inside of the wrapped content.
+
+The component itself has a `headerTitle`, an `errorTitle`, and shows an en error stack with details.
 
 ```js file="./ErrorBoundaryExample.tsx"
-
-```
-
-### Error boundary without error
-
-If you do not wish to share error details, you can remove `throw new Error("");` and share other content instead.
-
-
-```js file="./ErrorBoundaryNoExample.tsx"
 
 ```

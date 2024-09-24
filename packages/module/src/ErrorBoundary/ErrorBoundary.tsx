@@ -14,7 +14,7 @@ const useStyles = createUseStyles({
 
 export interface ErrorBoundaryProps {
   /** The title text to display on the error page */
-  headerTitle: string;
+  headerTitle?: string;
   /** Indicates if the error is silent */
   silent?: boolean;
   /** The title text to display with the error */
@@ -91,7 +91,7 @@ class ErrorBoundaryContent extends React.Component<ErrorPageProps, ErrorBoundary
 
       return (
         <div data-ouia-component-id={ouiaId}>
-          <Title headingLevel="h1" size="2xl" ouiaId={`${ouiaId}-title`}>{props.headerTitle}</Title>
+          {props?.headerTitle && <Title headingLevel="h1" size="2xl" ouiaId={`${ouiaId}-title`}>{props.headerTitle}</Title>}
           <ErrorState
             titleText={props.errorTitle}
             bodyText={
