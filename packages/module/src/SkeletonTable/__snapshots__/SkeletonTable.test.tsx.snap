@@ -15,29 +15,27 @@ exports[`SkeletonTable component should render correctly 1`] = `
       >
         <thead
           class="pf-v5-c-table__thead"
-          data-ouia-component-id="SkeletonTable-thead"
+          data-ouia-component-id="SkeletonTableHeader-thead"
         >
           <tr
             class="pf-v5-c-table__tr"
-            data-ouia-component-id="SkeletonTable-tr-head"
+            data-ouia-component-id="SkeletonTableHeader-tr-head"
             data-ouia-component-type="PF5/TableRow"
             data-ouia-safe="true"
           >
             <th
               class="pf-v5-c-table__th"
-              data-ouia-component-id="SkeletonTable-th-0"
+              data-ouia-component-id="SkeletonTableHeader-th-0"
               scope="col"
               tabindex="-1"
             >
-              first
-            </th>
-            <th
-              class="pf-v5-c-table__th"
-              data-ouia-component-id="SkeletonTable-th-1"
-              scope="col"
-              tabindex="-1"
-            >
-              second
+              <div
+                class="pf-v5-c-skeleton"
+              >
+                <span
+                  class="pf-v5-screen-reader"
+                />
+              </div>
             </th>
           </tr>
         </thead>
@@ -226,29 +224,27 @@ exports[`SkeletonTable component should render correctly 1`] = `
     >
       <thead
         class="pf-v5-c-table__thead"
-        data-ouia-component-id="SkeletonTable-thead"
+        data-ouia-component-id="SkeletonTableHeader-thead"
       >
         <tr
           class="pf-v5-c-table__tr"
-          data-ouia-component-id="SkeletonTable-tr-head"
+          data-ouia-component-id="SkeletonTableHeader-tr-head"
           data-ouia-component-type="PF5/TableRow"
           data-ouia-safe="true"
         >
           <th
             class="pf-v5-c-table__th"
-            data-ouia-component-id="SkeletonTable-th-0"
+            data-ouia-component-id="SkeletonTableHeader-th-0"
             scope="col"
             tabindex="-1"
           >
-            first
-          </th>
-          <th
-            class="pf-v5-c-table__th"
-            data-ouia-component-id="SkeletonTable-th-1"
-            scope="col"
-            tabindex="-1"
-          >
-            second
+            <div
+              class="pf-v5-c-skeleton"
+            >
+              <span
+                class="pf-v5-screen-reader"
+              />
+            </div>
           </th>
         </tr>
       </thead>
@@ -491,32 +487,31 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
         data-ouia-component-type="PF5/Table"
         data-ouia-safe="true"
         role="grid"
+        rows="10"
       >
         <thead
           class="pf-v5-c-table__thead"
-          data-ouia-component-id="SkeletonTable-thead"
+          data-ouia-component-id="SkeletonTableHeader-thead"
         >
           <tr
             class="pf-v5-c-table__tr"
-            data-ouia-component-id="SkeletonTable-tr-head"
+            data-ouia-component-id="SkeletonTableHeader-tr-head"
             data-ouia-component-type="PF5/TableRow"
             data-ouia-safe="true"
           >
             <th
               class="pf-v5-c-table__th"
-              data-ouia-component-id="SkeletonTable-th-0"
+              data-ouia-component-id="SkeletonTableHeader-th-0"
               scope="col"
               tabindex="-1"
             >
-              first
-            </th>
-            <th
-              class="pf-v5-c-table__th"
-              data-ouia-component-id="SkeletonTable-th-1"
-              scope="col"
-              tabindex="-1"
-            >
-              second
+              <div
+                class="pf-v5-c-skeleton"
+              >
+                <span
+                  class="pf-v5-screen-reader"
+                />
+              </div>
             </th>
           </tr>
         </thead>
@@ -702,32 +697,31 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
       data-ouia-component-type="PF5/Table"
       data-ouia-safe="true"
       role="grid"
+      rows="10"
     >
       <thead
         class="pf-v5-c-table__thead"
-        data-ouia-component-id="SkeletonTable-thead"
+        data-ouia-component-id="SkeletonTableHeader-thead"
       >
         <tr
           class="pf-v5-c-table__tr"
-          data-ouia-component-id="SkeletonTable-tr-head"
+          data-ouia-component-id="SkeletonTableHeader-tr-head"
           data-ouia-component-type="PF5/TableRow"
           data-ouia-safe="true"
         >
           <th
             class="pf-v5-c-table__th"
-            data-ouia-component-id="SkeletonTable-th-0"
+            data-ouia-component-id="SkeletonTableHeader-th-0"
             scope="col"
             tabindex="-1"
           >
-            first
-          </th>
-          <th
-            class="pf-v5-c-table__th"
-            data-ouia-component-id="SkeletonTable-th-1"
-            scope="col"
-            tabindex="-1"
-          >
-            second
+            <div
+              class="pf-v5-c-skeleton"
+            >
+              <span
+                class="pf-v5-screen-reader"
+              />
+            </div>
           </th>
         </tr>
       </thead>

@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkeletonTableHead component should render correctly with count 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <thead
+        class="pf-v5-c-table__thead"
+        data-ouia-component-id="SkeletonTableHeader-thead"
+      >
+        <tr
+          class="pf-v5-c-table__tr"
+          data-ouia-component-id="SkeletonTableHeader-tr-head"
+          data-ouia-component-type="PF5/TableRow"
+          data-ouia-safe="true"
+        />
+      </thead>
+    </div>
+  </body>,
+  "container": <div>
+    <thead
+      class="pf-v5-c-table__thead"
+      data-ouia-component-id="SkeletonTableHeader-thead"
+    >
+      <tr
+        class="pf-v5-c-table__tr"
+        data-ouia-component-id="SkeletonTableHeader-tr-head"
+        data-ouia-component-type="PF5/TableRow"
+        data-ouia-safe="true"
+      />
+    </thead>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`SkeletonTableHead component should render correctly with count 2`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <thead
+        class="pf-v5-c-table__thead"
+        data-ouia-component-id="SkeletonTableHeader-thead"
+      >
+        <tr
+          class="pf-v5-c-table__tr"
+          data-ouia-component-id="SkeletonTableHeader-tr-head"
+          data-ouia-component-type="PF5/TableRow"
+          data-ouia-safe="true"
+        >
+          <th
+            class="pf-v5-c-table__th"
+            data-ouia-component-id="SkeletonTableHeader-th-0"
+            scope="col"
+            tabindex="-1"
+          >
+            First
+          </th>
+          <th
+            class="pf-v5-c-table__th"
+            data-ouia-component-id="SkeletonTableHeader-th-1"
+            scope="col"
+            tabindex="-1"
+          >
+            Second
+          </th>
+        </tr>
+      </thead>
+    </div>
+  </body>,
+  "container": <div>
+    <thead
+      class="pf-v5-c-table__thead"
+      data-ouia-component-id="SkeletonTableHeader-thead"
+    >
+      <tr
+        class="pf-v5-c-table__tr"
+        data-ouia-component-id="SkeletonTableHeader-tr-head"
+        data-ouia-component-type="PF5/TableRow"
+        data-ouia-safe="true"
+      >
+        <th
+          class="pf-v5-c-table__th"
+          data-ouia-component-id="SkeletonTableHeader-th-0"
+          scope="col"
+          tabindex="-1"
+        >
+          First
+        </th>
+        <th
+          class="pf-v5-c-table__th"
+          data-ouia-component-id="SkeletonTableHeader-th-1"
+          scope="col"
+          tabindex="-1"
+        >
+          Second
+        </th>
+      </tr>
+    </thead>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
