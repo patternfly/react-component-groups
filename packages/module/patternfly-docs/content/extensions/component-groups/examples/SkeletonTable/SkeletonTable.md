@@ -10,10 +10,13 @@ id: Skeleton table
 source: react
 # If you use typescript, the name of the interface to display props for
 # These are found through the sourceProps function provided in patternfly-docs.source.js
-propComponents: ['SkeletonTable']
-sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/Skeleton/Skeleton.md
+propComponents: ['SkeletonTable', 'SkeletonTableHead', 'SkeletonTableBody']
+sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/SkeletonTable/SkeletonTable.md
 ---
+import { RowSelectVariant, TableVariant, Table } from '@patternfly/react-table';
 import SkeletonTable from '@patternfly/react-component-groups/dist/dynamic/SkeletonTable';
+import SkeletonTableHead from '@patternfly/react-component-groups/dist/dynamic/SkeletonTableHead';
+import SkeletonTableBody from '@patternfly/react-component-groups/dist/dynamic/SkeletonTableBody';
 
 The **skeleton table** component is used to display placeholder "skeletons" within a table as its contents load.
 
@@ -63,9 +66,25 @@ Custom column headers can be provided by passing an array of strings or `Th` com
 
 The following example demonstrates the typical behavior of a skeleton table transitioning to a normal table as the data becomes available.
 
-To simulate this loading process, select the `Reload table` button and wait for the data to populate.
+To simulate this loading process, click the "Reload table" button and wait for the data to populate.
 
 
 ```js file="./SkeletonTableLoadingExample.tsx"
+
+```
+
+### Skeleton table head
+
+You can render only the `<Thead>` part of the skeleton table by using the `<SkeletonTableHead/>`.
+
+```js file="./SkeletonTableHeadExample.tsx"
+
+```
+
+### Skeleton table body
+
+You can also render only the `<Tbody>` part of the skeleton table by using the `<SkeletonTableBody/>`.
+
+```js file="./SkeletonTableBodyExample.tsx"
 
 ```
