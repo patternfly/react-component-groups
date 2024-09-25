@@ -1,6 +1,6 @@
 import React from 'react';
-import { Th } from '@patternfly/react-table';
-import SkeletonTable from '../../packages/module/dist/dynamic/SkeletonTable';
+import { RowSelectVariant } from '@patternfly/react-table';
+import SkeletonTable from '@patternfly/react-component-groups/dist/dynamic/SkeletonTable';
 
 describe('SkeletonTable', () => {
   beforeEach(() => {
@@ -8,59 +8,66 @@ describe('SkeletonTable', () => {
   });
 
   it('renders SkeletonTable', () => {
-    const SkeletonTableExample = <SkeletonTable rows={10} columns={[ 'first', 'second' ]} />;
+    const SkeletonTableExample = <SkeletonTable rowsCount={10} columns={[ 'First', 'Second' ]} />;
     cy.mount(SkeletonTableExample);
     cy.get('table').should('exist');
-    cy.get('table thead tr').should('have.text', 'firstsecond');
+    cy.get('table thead tr th').eq(0).should('have.text', 'First');
+    cy.get('table thead tr th').eq(1).should('have.text', 'Second');
   });
 
   it ('can be used without passing columns', () => {
-    const SkeletonTableExample = <SkeletonTable rows={10} numberOfColumns={2} />;
+    const SkeletonTableExample = <SkeletonTable rowsCount={10} columnsCount={2} />;
     cy.mount(SkeletonTableExample);
     cy.get('table').should('exist');
     cy.get('table thead tr').should('have.text', '');
   });
 
   it('contains checkboxes when passed isSelectable', () => {
-    const SkeletonTableExample = <SkeletonTable rows={10} columns={[ 'first', 'second' ]} isSelectable />;
+    const SkeletonTableExample = <SkeletonTable rowsCount={10} columns={[ 'First', 'Second' ]} isSelectable />;
     cy.mount(SkeletonTableExample);
     cy.get('table').should('exist');
-    cy.get('table thead tr').should('have.text', 'firstsecond');
+    cy.get('table thead tr th').eq(0).should('have.text', 'Data selection table header cell');
+    cy.get('table thead tr th').eq(1).should('have.text', 'First');
+    cy.get('table thead tr th').eq(2).should('have.text', 'Second');
     cy.get('input[type="checkbox"]').should('have.length', 10);
   });
 
   it('is expandable when passed isExpandable', () => {
-    const SkeletonTableExample = <SkeletonTable rows={10} columns={[ 'first', 'second' ]} isExpandable />;
+    const SkeletonTableExample = <SkeletonTable rowsCount={10} columns={[ 'First', 'Second' ]} isExpandable />;
     cy.mount(SkeletonTableExample);
     cy.get('table').should('exist');
-    cy.get('table thead tr').should('have.text', 'firstsecond');
+    cy.get('table thead tr th').eq(0).should('have.text', 'Data expansion table header cell');
+    cy.get('table thead tr th').eq(1).should('have.text', 'First');
+    cy.get('table thead tr th').eq(2).should('have.text', 'Second');
     cy.get('.pf-v5-c-table__toggle-icon').should('have.length', 10);
   });
 
   it('can be passed a selectVariant to render radio buttons', () => {
-    const SkeletonTableExample = <SkeletonTable rows={10} columns={[ 'first', 'second' ]} isSelectable selectVariant="radio" />;
+    const SkeletonTableExample = <SkeletonTable rowsCount={10} columns={[ 'First', 'Second' ]} isSelectable selectVariant={RowSelectVariant.radio} />;
     cy.mount(SkeletonTableExample);
     cy.get('table').should('exist');
-    cy.get('table thead tr').should('have.text', 'firstsecond');
+    cy.get('table thead tr th').eq(0).should('have.text', 'Data selection table header cell');
+    cy.get('table thead tr th').eq(1).should('have.text', 'First');
+    cy.get('table thead tr th').eq(2).should('have.text', 'Second');
     cy.get('input[type="radio"]').should('have.length', 10);
   });
 
-  it('can be passed custom columns', () => {
+  it('can be passed custom columns props', () => {
     const SkeletonTableExample = (
       <SkeletonTable
         rows={10}
-        columns={[
-          <Th key="1" sort={{ columnIndex: 0, sortBy: { index: 0, direction: 'asc' } }}>
-            first
-          </Th>,
-          <Th key="2">second</Th>,
-          <Th key="3">third</Th>
+        columns={[ 
+          { cell: 'first', props: { sort: { columnIndex: 0, sortBy: { index: 0, direction: 'asc' } } } },
+          { cell: 'second' },
+          { cell: 'third' }
         ]}
       />
     );
     cy.mount(SkeletonTableExample);
     cy.get('table').should('exist');
-    cy.get('table thead tr').should('have.text', 'firstsecondthird');
+    cy.get('table thead tr th').eq(0).should('have.text', 'first');
+    cy.get('table thead tr th').eq(1).should('have.text', 'second');
+    cy.get('table thead tr th').eq(2).should('have.text', 'third');
     cy.get('.pf-v5-c-table__sort-indicator').eq(0).find('path').should(
       'have.attr',
       'd',
