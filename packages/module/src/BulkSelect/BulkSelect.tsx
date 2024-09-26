@@ -113,7 +113,7 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
                   (isDataPaginated && pagePartiallySelected) ||
                   (!isDataPaginated && selectedCount > 0 && selectedCount < totalCount)
                     ? null
-                    : pageSelected || selectedCount === totalCount
+                    : pageSelected || (selectedCount === totalCount && totalCount > 0)
                 }
                 onChange={(checked) => onSelect?.(!checked || checked === null ? noneOption : allOption)}
                 {...menuToggleCheckboxProps}
