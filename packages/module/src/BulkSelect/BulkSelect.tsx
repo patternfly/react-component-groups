@@ -101,7 +101,7 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
           isExpanded={isOpen}
           onClick={onToggleClick}
           aria-label="Bulk select toggle"
-          ouiaId={`${ouiaId}-toggle`}
+          data-ouia-component-id={`${ouiaId}-toggle`}
           splitButtonItems={[
             <MenuToggleCheckbox
               ouiaId={`${ouiaId}-checkbox`}
@@ -110,9 +110,9 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
               aria-label={`Select ${allOption}`}
               isChecked={
                 (isDataPaginated && pagePartiallySelected) ||
-                (!isDataPaginated && selectedCount > 0 && selectedCount < totalCount)
+                  (!isDataPaginated && selectedCount > 0 && selectedCount < totalCount)
                   ? null
-                  : pageSelected || selectedCount === totalCount
+                  : pageSelected || (selectedCount === totalCount && totalCount > 0)
               }
               onChange={(checked) => onSelect?.(!checked || checked === null ? noneOption : allOption)}
               {...menuToggleCheckboxProps}
