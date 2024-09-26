@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect } from 'react';
+import React from 'react';
+import SkeletonTable from "@patternfly/react-component-groups/dist/dynamic/SkeletonTable";
 import { Table, Tbody, Td, Th, Tr, Thead } from '@patternfly/react-table';
 import { Button, Stack, StackItem } from '@patternfly/react-core';
-import SkeletonTable from "@patternfly/react-component-groups/dist/dynamic/SkeletonTable";
 
 interface Repository {
   name: string;
@@ -11,24 +11,15 @@ interface Repository {
   lastCommit: string;
 }
 
-
-
 export const SkeletonTableExample: React.FC = () => {
   const [ isLoaded, setIsLoaded ] = React.useState(false);
-  
-  const loadData = useCallback(async () => {
-    const result = await new Promise<boolean>((resolve) => {
-      setTimeout(() => {
-        resolve(true);
-      }, 5000);
-    });
-    setIsLoaded(result);
-  }, []);  
 
-  useEffect(() => {
-    loadData();
-  }, [ loadData ])
- 
+  const loadData = () => {
+    setIsLoaded(false);
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 5000);
+  };
 
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },
@@ -44,59 +35,52 @@ export const SkeletonTableExample: React.FC = () => {
     lastCommit: 'Last commit'
   };
 
-  let table: React.ReactNode;
-
-  if (!isLoaded) {
-    table = (
-      <SkeletonTable
-        rows={3}
-        columns={[
-          columnNames.name,
-          columnNames.branches,
-          columnNames.prs,
-          columnNames.workspaces,
-          columnNames.lastCommit
-        ]}
-      />
-    );
-  } else {
-    table = (
-      <Table>
-        <Thead>
-          <Tr>
-            <Th>{columnNames.name}</Th>
-            <Th>{columnNames.branches}</Th>
-            <Th>{columnNames.prs}</Th>
-            <Th>{columnNames.workspaces}</Th>
-            <Th>{columnNames.lastCommit}</Th>
+  const table: React.ReactNode = !isLoaded ? (
+    <SkeletonTable
+      rowsCount={3}
+      columns={[
+        columnNames.name,
+        columnNames.branches,
+        columnNames.prs,
+        columnNames.workspaces,
+        columnNames.lastCommit
+      ]}
+    />
+  ) : (
+    <Table>
+      <Thead>
+        <Tr>
+          <Th>{columnNames.name}</Th>
+          <Th>{columnNames.branches}</Th>
+          <Th>{columnNames.prs}</Th>
+          <Th>{columnNames.workspaces}</Th>
+          <Th>{columnNames.lastCommit}</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        {repositories.map((repo) => (
+          <Tr key={repo.name}>
+            <Td dataLabel={columnNames.name}>{repo.name}</Td>
+            <Td dataLabel={columnNames.branches}>{repo.branches || 'N/A'}</Td>
+            <Td dataLabel={columnNames.prs}>{repo.prs || 'N/A'}</Td>
+            <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
+            <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
           </Tr>
-        </Thead>
-        <Tbody>
-          {repositories.map((repo) => (
-            <Tr key={repo.name}>
-              <Td dataLabel={columnNames.name}>{repo.name}</Td>
-              <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
-              <Td dataLabel={columnNames.prs}>{repo.prs}</Td>
-              <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
-              <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
-            </Tr>
-          ))}
-        </Tbody>
-      </Table>
-    );
-  }
+        ))}
+      </Tbody>
+    </Table>
+  );
+
+  React.useEffect(() => {
+    loadData();
+  }, []);
 
   return (
     <>
       <Stack hasGutter>
         <StackItem>{table}</StackItem>
         <StackItem>
-          <Button
-            onClick={() => {
-              setIsLoaded(false);
-              loadData();
-            }}
-          >
+          <Button onClick={loadData}>
             Reload table
           </Button>
         </StackItem>

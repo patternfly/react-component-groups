@@ -3,5 +3,5 @@ import SkeletonTable from "@patternfly/react-component-groups/dist/dynamic/Skele
 import { RowSelectVariant } from '@patternfly/react-table';
 
 export const SkeletonTableExample: React.FC = () => (
-  <SkeletonTable rows={10} columns={[ 'first', 'second' ]} isSelectable selectVariant={RowSelectVariant.radio} />
+  <SkeletonTable rowsCount={10} columns={[ 'First', 'Second' ]} isSelectable selectVariant={RowSelectVariant.radio} />
 );

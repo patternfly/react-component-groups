@@ -12,6 +12,12 @@ export * from './UnauthorizedAccess';
 export { default as TagCount } from './TagCount';
 export * from './TagCount';
 
+export { default as SkeletonTableHead } from './SkeletonTableHead';
+export * from './SkeletonTableHead';
+
+export { default as SkeletonTableBody } from './SkeletonTableBody';
+export * from './SkeletonTableBody';
+
 export { default as SkeletonTable } from './SkeletonTable';
 export * from './SkeletonTable';
 

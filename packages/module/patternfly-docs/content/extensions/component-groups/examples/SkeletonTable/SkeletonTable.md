@@ -10,11 +10,13 @@ id: Skeleton table
 source: react
 # If you use typescript, the name of the interface to display props for
 # These are found through the sourceProps function provided in patternfly-docs.source.js
-propComponents: ['SkeletonTable']
-sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/Skeleton/Skeleton.md
+propComponents: ['SkeletonTable', 'SkeletonTableHead', 'SkeletonTableBody']
+sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/SkeletonTable/SkeletonTable.md
 ---
-import { useCallback, useEffect } from 'react';
+import { RowSelectVariant, TableVariant, Table } from '@patternfly/react-table';
 import SkeletonTable from '@patternfly/react-component-groups/dist/dynamic/SkeletonTable';
+import SkeletonTableHead from '@patternfly/react-component-groups/dist/dynamic/SkeletonTableHead';
+import SkeletonTableBody from '@patternfly/react-component-groups/dist/dynamic/SkeletonTableBody';
 
 The **skeleton table** component is used to display placeholder "skeletons" within a table as its contents load.
 
@@ -68,5 +70,21 @@ To simulate this loading process, click the "Reload table" button and wait for t
 
 
 ```js file="./SkeletonTableLoadingExample.tsx"
+
+```
+
+### Skeleton table head
+
+You can render only the `<Thead>` part of the skeleton table by using the `<SkeletonTableHead/>`.
+
+```js file="./SkeletonTableHeadExample.tsx"
+
+```
+
+### Skeleton table body
+
+You can also render only the `<Tbody>` part of the skeleton table by using the `<SkeletonTableBody/>`.
+
+```js file="./SkeletonTableBodyExample.tsx"
 
 ```
