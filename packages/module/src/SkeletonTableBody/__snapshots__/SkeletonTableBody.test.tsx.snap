@@ -6,16 +6,11 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
   "baseElement": <body>
     <div>
       <tbody
-<<<<<<< HEAD
         class="pf-v6-c-table__tbody"
-=======
-        class="pf-v5-c-table__tbody"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
         data-ouia-component-id="SkeletonTableBody-tbody"
         role="rowgroup"
       >
         <tr
-<<<<<<< HEAD
           class="pf-v6-c-table__tr"
           data-ouia-component-id="SkeletonTableBody-tr-0"
           data-ouia-component-type="PF6/TableRow"
@@ -23,60 +18,32 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
         >
           <td
             class="pf-v6-c-table__td"
-=======
-          class="pf-v5-c-table__tr"
-          data-ouia-component-id="SkeletonTableBody-tr-0"
-          data-ouia-component-type="PF5/TableRow"
-          data-ouia-safe="true"
-        >
-          <td
-            class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             data-ouia-component-id="SkeletonTableBody-td-0-0"
             tabindex="-1"
           >
             <div
-<<<<<<< HEAD
               class="pf-v6-c-skeleton"
             >
               <span
                 class="pf-v6-screen-reader"
-=======
-              class="pf-v5-c-skeleton"
-            >
-              <span
-                class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
               />
             </div>
           </td>
           <td
-<<<<<<< HEAD
             class="pf-v6-c-table__td"
-=======
-            class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             data-ouia-component-id="SkeletonTableBody-td-0-1"
             tabindex="-1"
           >
             <div
-<<<<<<< HEAD
               class="pf-v6-c-skeleton"
             >
               <span
                 class="pf-v6-screen-reader"
-=======
-              class="pf-v5-c-skeleton"
-            >
-              <span
-                class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
               />
             </div>
           </td>
         </tr>
         <tr
-<<<<<<< HEAD
           class="pf-v6-c-table__tr"
           data-ouia-component-id="SkeletonTableBody-tr-1"
           data-ouia-component-type="PF6/TableRow"
@@ -84,60 +51,32 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
         >
           <td
             class="pf-v6-c-table__td"
-=======
-          class="pf-v5-c-table__tr"
-          data-ouia-component-id="SkeletonTableBody-tr-1"
-          data-ouia-component-type="PF5/TableRow"
-          data-ouia-safe="true"
-        >
-          <td
-            class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             data-ouia-component-id="SkeletonTableBody-td-1-0"
             tabindex="-1"
           >
             <div
-<<<<<<< HEAD
               class="pf-v6-c-skeleton"
             >
               <span
                 class="pf-v6-screen-reader"
-=======
-              class="pf-v5-c-skeleton"
-            >
-              <span
-                class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
               />
             </div>
           </td>
           <td
-<<<<<<< HEAD
             class="pf-v6-c-table__td"
-=======
-            class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             data-ouia-component-id="SkeletonTableBody-td-1-1"
             tabindex="-1"
           >
             <div
-<<<<<<< HEAD
               class="pf-v6-c-skeleton"
             >
               <span
                 class="pf-v6-screen-reader"
-=======
-              class="pf-v5-c-skeleton"
-            >
-              <span
-                class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
               />
             </div>
           </td>
         </tr>
         <tr
-<<<<<<< HEAD
           class="pf-v6-c-table__tr"
           data-ouia-component-id="SkeletonTableBody-tr-2"
           data-ouia-component-type="PF6/TableRow"
@@ -145,60 +84,32 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
         >
           <td
             class="pf-v6-c-table__td"
-=======
-          class="pf-v5-c-table__tr"
-          data-ouia-component-id="SkeletonTableBody-tr-2"
-          data-ouia-component-type="PF5/TableRow"
-          data-ouia-safe="true"
-        >
-          <td
-            class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             data-ouia-component-id="SkeletonTableBody-td-2-0"
             tabindex="-1"
           >
             <div
-<<<<<<< HEAD
               class="pf-v6-c-skeleton"
             >
               <span
                 class="pf-v6-screen-reader"
-=======
-              class="pf-v5-c-skeleton"
-            >
-              <span
-                class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
               />
             </div>
           </td>
           <td
-<<<<<<< HEAD
             class="pf-v6-c-table__td"
-=======
-            class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             data-ouia-component-id="SkeletonTableBody-td-2-1"
             tabindex="-1"
           >
             <div
-<<<<<<< HEAD
               class="pf-v6-c-skeleton"
             >
               <span
                 class="pf-v6-screen-reader"
-=======
-              class="pf-v5-c-skeleton"
-            >
-              <span
-                class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
               />
             </div>
           </td>
         </tr>
         <tr
-<<<<<<< HEAD
           class="pf-v6-c-table__tr"
           data-ouia-component-id="SkeletonTableBody-tr-3"
           data-ouia-component-type="PF6/TableRow"
@@ -206,60 +117,32 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
         >
           <td
             class="pf-v6-c-table__td"
-=======
-          class="pf-v5-c-table__tr"
-          data-ouia-component-id="SkeletonTableBody-tr-3"
-          data-ouia-component-type="PF5/TableRow"
-          data-ouia-safe="true"
-        >
-          <td
-            class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             data-ouia-component-id="SkeletonTableBody-td-3-0"
             tabindex="-1"
           >
             <div
-<<<<<<< HEAD
               class="pf-v6-c-skeleton"
             >
               <span
                 class="pf-v6-screen-reader"
-=======
-              class="pf-v5-c-skeleton"
-            >
-              <span
-                class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
               />
             </div>
           </td>
           <td
-<<<<<<< HEAD
             class="pf-v6-c-table__td"
-=======
-            class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             data-ouia-component-id="SkeletonTableBody-td-3-1"
             tabindex="-1"
           >
             <div
-<<<<<<< HEAD
               class="pf-v6-c-skeleton"
             >
               <span
                 class="pf-v6-screen-reader"
-=======
-              class="pf-v5-c-skeleton"
-            >
-              <span
-                class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
               />
             </div>
           </td>
         </tr>
         <tr
-<<<<<<< HEAD
           class="pf-v6-c-table__tr"
           data-ouia-component-id="SkeletonTableBody-tr-4"
           data-ouia-component-type="PF6/TableRow"
@@ -267,54 +150,27 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
         >
           <td
             class="pf-v6-c-table__td"
-=======
-          class="pf-v5-c-table__tr"
-          data-ouia-component-id="SkeletonTableBody-tr-4"
-          data-ouia-component-type="PF5/TableRow"
-          data-ouia-safe="true"
-        >
-          <td
-            class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             data-ouia-component-id="SkeletonTableBody-td-4-0"
             tabindex="-1"
           >
             <div
-<<<<<<< HEAD
               class="pf-v6-c-skeleton"
             >
               <span
                 class="pf-v6-screen-reader"
-=======
-              class="pf-v5-c-skeleton"
-            >
-              <span
-                class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
               />
             </div>
           </td>
           <td
-<<<<<<< HEAD
             class="pf-v6-c-table__td"
-=======
-            class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             data-ouia-component-id="SkeletonTableBody-td-4-1"
             tabindex="-1"
           >
             <div
-<<<<<<< HEAD
               class="pf-v6-c-skeleton"
             >
               <span
                 class="pf-v6-screen-reader"
-=======
-              class="pf-v5-c-skeleton"
-            >
-              <span
-                class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
               />
             </div>
           </td>
@@ -324,16 +180,11 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
   </body>,
   "container": <div>
     <tbody
-<<<<<<< HEAD
       class="pf-v6-c-table__tbody"
-=======
-      class="pf-v5-c-table__tbody"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
       data-ouia-component-id="SkeletonTableBody-tbody"
       role="rowgroup"
     >
       <tr
-<<<<<<< HEAD
         class="pf-v6-c-table__tr"
         data-ouia-component-id="SkeletonTableBody-tr-0"
         data-ouia-component-type="PF6/TableRow"
@@ -341,60 +192,32 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
       >
         <td
           class="pf-v6-c-table__td"
-=======
-        class="pf-v5-c-table__tr"
-        data-ouia-component-id="SkeletonTableBody-tr-0"
-        data-ouia-component-type="PF5/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
           data-ouia-component-id="SkeletonTableBody-td-0-0"
           tabindex="-1"
         >
           <div
-<<<<<<< HEAD
             class="pf-v6-c-skeleton"
           >
             <span
               class="pf-v6-screen-reader"
-=======
-            class="pf-v5-c-skeleton"
-          >
-            <span
-              class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             />
           </div>
         </td>
         <td
-<<<<<<< HEAD
           class="pf-v6-c-table__td"
-=======
-          class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
           data-ouia-component-id="SkeletonTableBody-td-0-1"
           tabindex="-1"
         >
           <div
-<<<<<<< HEAD
             class="pf-v6-c-skeleton"
           >
             <span
               class="pf-v6-screen-reader"
-=======
-            class="pf-v5-c-skeleton"
-          >
-            <span
-              class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             />
           </div>
         </td>
       </tr>
       <tr
-<<<<<<< HEAD
         class="pf-v6-c-table__tr"
         data-ouia-component-id="SkeletonTableBody-tr-1"
         data-ouia-component-type="PF6/TableRow"
@@ -402,60 +225,32 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
       >
         <td
           class="pf-v6-c-table__td"
-=======
-        class="pf-v5-c-table__tr"
-        data-ouia-component-id="SkeletonTableBody-tr-1"
-        data-ouia-component-type="PF5/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
           data-ouia-component-id="SkeletonTableBody-td-1-0"
           tabindex="-1"
         >
           <div
-<<<<<<< HEAD
             class="pf-v6-c-skeleton"
           >
             <span
               class="pf-v6-screen-reader"
-=======
-            class="pf-v5-c-skeleton"
-          >
-            <span
-              class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             />
           </div>
         </td>
         <td
-<<<<<<< HEAD
           class="pf-v6-c-table__td"
-=======
-          class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
           data-ouia-component-id="SkeletonTableBody-td-1-1"
           tabindex="-1"
         >
           <div
-<<<<<<< HEAD
             class="pf-v6-c-skeleton"
           >
             <span
               class="pf-v6-screen-reader"
-=======
-            class="pf-v5-c-skeleton"
-          >
-            <span
-              class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             />
           </div>
         </td>
       </tr>
       <tr
-<<<<<<< HEAD
         class="pf-v6-c-table__tr"
         data-ouia-component-id="SkeletonTableBody-tr-2"
         data-ouia-component-type="PF6/TableRow"
@@ -463,60 +258,32 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
       >
         <td
           class="pf-v6-c-table__td"
-=======
-        class="pf-v5-c-table__tr"
-        data-ouia-component-id="SkeletonTableBody-tr-2"
-        data-ouia-component-type="PF5/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
           data-ouia-component-id="SkeletonTableBody-td-2-0"
           tabindex="-1"
         >
           <div
-<<<<<<< HEAD
             class="pf-v6-c-skeleton"
           >
             <span
               class="pf-v6-screen-reader"
-=======
-            class="pf-v5-c-skeleton"
-          >
-            <span
-              class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             />
           </div>
         </td>
         <td
-<<<<<<< HEAD
           class="pf-v6-c-table__td"
-=======
-          class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
           data-ouia-component-id="SkeletonTableBody-td-2-1"
           tabindex="-1"
         >
           <div
-<<<<<<< HEAD
             class="pf-v6-c-skeleton"
           >
             <span
               class="pf-v6-screen-reader"
-=======
-            class="pf-v5-c-skeleton"
-          >
-            <span
-              class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             />
           </div>
         </td>
       </tr>
       <tr
-<<<<<<< HEAD
         class="pf-v6-c-table__tr"
         data-ouia-component-id="SkeletonTableBody-tr-3"
         data-ouia-component-type="PF6/TableRow"
@@ -524,60 +291,32 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
       >
         <td
           class="pf-v6-c-table__td"
-=======
-        class="pf-v5-c-table__tr"
-        data-ouia-component-id="SkeletonTableBody-tr-3"
-        data-ouia-component-type="PF5/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
           data-ouia-component-id="SkeletonTableBody-td-3-0"
           tabindex="-1"
         >
           <div
-<<<<<<< HEAD
             class="pf-v6-c-skeleton"
           >
             <span
               class="pf-v6-screen-reader"
-=======
-            class="pf-v5-c-skeleton"
-          >
-            <span
-              class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             />
           </div>
         </td>
         <td
-<<<<<<< HEAD
           class="pf-v6-c-table__td"
-=======
-          class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
           data-ouia-component-id="SkeletonTableBody-td-3-1"
           tabindex="-1"
         >
           <div
-<<<<<<< HEAD
             class="pf-v6-c-skeleton"
           >
             <span
               class="pf-v6-screen-reader"
-=======
-            class="pf-v5-c-skeleton"
-          >
-            <span
-              class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             />
           </div>
         </td>
       </tr>
       <tr
-<<<<<<< HEAD
         class="pf-v6-c-table__tr"
         data-ouia-component-id="SkeletonTableBody-tr-4"
         data-ouia-component-type="PF6/TableRow"
@@ -585,54 +324,27 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
       >
         <td
           class="pf-v6-c-table__td"
-=======
-        class="pf-v5-c-table__tr"
-        data-ouia-component-id="SkeletonTableBody-tr-4"
-        data-ouia-component-type="PF5/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
           data-ouia-component-id="SkeletonTableBody-td-4-0"
           tabindex="-1"
         >
           <div
-<<<<<<< HEAD
             class="pf-v6-c-skeleton"
           >
             <span
               class="pf-v6-screen-reader"
-=======
-            class="pf-v5-c-skeleton"
-          >
-            <span
-              class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             />
           </div>
         </td>
         <td
-<<<<<<< HEAD
           class="pf-v6-c-table__td"
-=======
-          class="pf-v5-c-table__td"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
           data-ouia-component-id="SkeletonTableBody-td-4-1"
           tabindex="-1"
         >
           <div
-<<<<<<< HEAD
             class="pf-v6-c-skeleton"
           >
             <span
               class="pf-v6-screen-reader"
-=======
-            class="pf-v5-c-skeleton"
-          >
-            <span
-              class="pf-v5-screen-reader"
->>>>>>> 2d86523 (Make SkeletonTable modular (#352))
             />
           </div>
         </td>
