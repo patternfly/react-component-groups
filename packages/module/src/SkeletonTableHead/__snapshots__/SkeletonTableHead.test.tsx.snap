@@ -14,7 +14,58 @@ exports[`SkeletonTableHead component should render correctly with count 1`] = `
           data-ouia-component-id="SkeletonTableHeader-tr-head"
           data-ouia-component-type="PF5/TableRow"
           data-ouia-safe="true"
-        />
+        >
+          <th
+            class="pf-v5-c-table__th"
+            scope="col"
+            tabindex="-1"
+          >
+            <span
+              class="pf-v5-screen-reader"
+            >
+              Data expansion table header cell
+            </span>
+          </th>
+          <th
+            class="pf-v5-c-table__th"
+            scope="col"
+            tabindex="-1"
+          >
+            <span
+              class="pf-v5-screen-reader"
+            >
+              Data selection table header cell
+            </span>
+          </th>
+          <th
+            class="pf-v5-c-table__th"
+            data-ouia-component-id="SkeletonTableHeader-th-0"
+            scope="col"
+            tabindex="-1"
+          >
+            <div
+              class="pf-v5-c-skeleton"
+            >
+              <span
+                class="pf-v5-screen-reader"
+              />
+            </div>
+          </th>
+          <th
+            class="pf-v5-c-table__th"
+            data-ouia-component-id="SkeletonTableHeader-th-1"
+            scope="col"
+            tabindex="-1"
+          >
+            <div
+              class="pf-v5-c-skeleton"
+            >
+              <span
+                class="pf-v5-screen-reader"
+              />
+            </div>
+          </th>
+        </tr>
       </thead>
     </div>
   </body>,
@@ -28,7 +79,58 @@ exports[`SkeletonTableHead component should render correctly with count 1`] = `
         data-ouia-component-id="SkeletonTableHeader-tr-head"
         data-ouia-component-type="PF5/TableRow"
         data-ouia-safe="true"
-      />
+      >
+        <th
+          class="pf-v5-c-table__th"
+          scope="col"
+          tabindex="-1"
+        >
+          <span
+            class="pf-v5-screen-reader"
+          >
+            Data expansion table header cell
+          </span>
+        </th>
+        <th
+          class="pf-v5-c-table__th"
+          scope="col"
+          tabindex="-1"
+        >
+          <span
+            class="pf-v5-screen-reader"
+          >
+            Data selection table header cell
+          </span>
+        </th>
+        <th
+          class="pf-v5-c-table__th"
+          data-ouia-component-id="SkeletonTableHeader-th-0"
+          scope="col"
+          tabindex="-1"
+        >
+          <div
+            class="pf-v5-c-skeleton"
+          >
+            <span
+              class="pf-v5-screen-reader"
+            />
+          </div>
+        </th>
+        <th
+          class="pf-v5-c-table__th"
+          data-ouia-component-id="SkeletonTableHeader-th-1"
+          scope="col"
+          tabindex="-1"
+        >
+          <div
+            class="pf-v5-c-skeleton"
+          >
+            <span
+              class="pf-v5-screen-reader"
+            />
+          </div>
+        </th>
+      </tr>
     </thead>
   </div>,
   "debug": [Function],
