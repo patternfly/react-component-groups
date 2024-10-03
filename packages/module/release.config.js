@@ -1,7 +1,7 @@
 module.exports = {
   branches: [ 
     'do-not-delete',
-    { name: 'v5', prerelease: true, channel: 'prerelease-v5' },
+    { name: 'v5', prerelease: true, channel: 'prerelease-v5', range: '5.x' },
     { name: 'main', channel: 'prerelease', prerelease: 'prerelease' }
   ],
   analyzeCommits: {
