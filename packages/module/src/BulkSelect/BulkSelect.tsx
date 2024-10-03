@@ -17,7 +17,7 @@ export const BulkSelectValue = {
   nonePage: 'nonePage'
 } as const;
 
-export type BulkSelectValue = typeof BulkSelectValue[keyof typeof BulkSelectValue];
+export type BulkSelectValue = (typeof BulkSelectValue)[keyof typeof BulkSelectValue];
 
 export interface BulkSelectProps extends Omit<DropdownProps, 'toggle' | 'onSelect'> {
   /** BulkSelect className */
@@ -102,29 +102,27 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
           onClick={onToggleClick}
           aria-label="Bulk select toggle"
           ouiaId={`${ouiaId}-toggle`}
-          splitButtonOptions={{
-            items: [
-              <MenuToggleCheckbox
-                ouiaId={`${ouiaId}-checkbox`}
-                id={`${ouiaId}-checkbox`}
-                key="bulk-select-checkbox"
-                aria-label={`Select ${allOption}`}
-                isChecked={
-                  (isDataPaginated && pagePartiallySelected) ||
-                  (!isDataPaginated && selectedCount > 0 && selectedCount < totalCount)
-                    ? null
-                    : pageSelected || selectedCount === totalCount
-                }
-                onChange={(checked) => onSelect?.(!checked || checked === null ? noneOption : allOption)}
-                {...menuToggleCheckboxProps}
-              />,
-              selectedCount > 0 ? (
-                <span onClick={onToggleClick} data-ouia-component-id={`${ouiaId}-text`} key="bulk-select-text">
-                  {`${selectedCount} selected`}
-                </span>
-              ) : null
-            ]
-          }}
+          splitButtonItems={[
+            <MenuToggleCheckbox
+              ouiaId={`${ouiaId}-checkbox`}
+              id={`${ouiaId}-checkbox`}
+              key="bulk-select-checkbox"
+              aria-label={`Select ${allOption}`}
+              isChecked={
+                (isDataPaginated && pagePartiallySelected) ||
+                (!isDataPaginated && selectedCount > 0 && selectedCount < totalCount)
+                  ? null
+                  : pageSelected || selectedCount === totalCount
+              }
+              onChange={(checked) => onSelect?.(!checked || checked === null ? noneOption : allOption)}
+              {...menuToggleCheckboxProps}
+            />,
+            selectedCount > 0 ? (
+              <span onClick={onToggleClick} data-ouia-component-id={`${ouiaId}-text`} key="bulk-select-text">
+                {`${selectedCount} selected`}
+              </span>
+            ) : null
+          ]}
         />
       )}
       {...props}
