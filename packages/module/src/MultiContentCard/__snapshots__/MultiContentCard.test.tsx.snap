@@ -411,7 +411,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <span
             class="pf-v6-c-card__header-toggle-icon"
@@ -480,7 +480,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <span
             class="pf-v6-c-card__header-toggle-icon"
@@ -928,7 +928,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
         type="button"
       >
         <span
-          class="pf-v6-c-button__icon pf-m-start"
+          class="pf-v6-c-button__icon"
         >
           <span
             class="pf-v6-c-card__header-toggle-icon"

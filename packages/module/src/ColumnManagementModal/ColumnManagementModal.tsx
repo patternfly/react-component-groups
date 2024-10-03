@@ -129,11 +129,11 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
           <DataListItem key={column.key}>
             <DataListItemRow>
               <DataListCheck
-                checked={column.isShown}
+                isChecked={column.isShown}
                 onChange={() => handleChange(index)}
                 isDisabled={column.isUntoggleable}
                 aria-labelledby={`${ouiaId}-column${index}-label`}
-                data-ouia-component-id={`${ouiaId}-column${index}-checkbox`}
+                ouiaId={`${ouiaId}-column${index}-checkbox`}
                 id={`${ouiaId}-column${index}-checkbox`}
               />
               <DataListItemCells
