@@ -27,8 +27,7 @@
   },
   "homepage": "https://github.com/patternfly/react-component-groups#readme",
   "publishConfig": {
-    "access": "public",
-    "tag": "prerelease"
+    "access": "public"
   },
   "dependencies": {
     "@patternfly/react-core": "^5.3.3",
