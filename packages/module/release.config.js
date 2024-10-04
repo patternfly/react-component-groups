@@ -14,5 +14,5 @@ module.exports = {
     '@semantic-release/npm'
   ],
   tagFormat: 'prerelease-v${version}',
-  dryRun: false
+  dryRun: true
 };
