@@ -16,7 +16,7 @@ export interface SkeletonTableProps extends Omit<TableProps, 'ref'>, Omit<Skelet
   /** Flag indicating if the table should have borders */
   borders?: boolean;
   /** The number of rows the skeleton table should contain */
-  numberOfRows?: number;
+  rowsCount?: number;
   /** Any captions that should be added to the table */
   caption?: React.ReactNode;
   /** Custom OUIA ID */
