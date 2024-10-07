@@ -5,7 +5,7 @@ This repo contains a set of opinionated react component groups used to standardi
 ### Migration from [RedHatInsights/frontend-components](https://github.com/RedHatInsights/frontend-components) to [patternfly/react-component-groups](https://github.com/patternfly/react-component-groups)
 Please see the [migration guide](./migration.md)
 
----
+--- 
 ## Contribution guide
 
 ### Before adding a new component:

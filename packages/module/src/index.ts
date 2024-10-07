@@ -30,6 +30,12 @@ export * from './Shortcut';
 export { default as ServiceCard } from './ServiceCard';
 export * from './ServiceCard';
 
+export { default as ResponsiveActions } from './ResponsiveActions';
+export * from './ResponsiveActions';
+
+export { default as ResponsiveAction } from './ResponsiveAction';
+export * from './ResponsiveAction';
+
 export { default as PageHeader } from './PageHeader';
 export * from './PageHeader';
 
