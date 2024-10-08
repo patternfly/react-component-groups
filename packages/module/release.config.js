@@ -9,17 +9,17 @@ module.exports = {
   },
   plugins: [
     [
-      "@semantic-release/commit-analyzer",
+      '@semantic-release/commit-analyzer',
       {
-        "preset": "angular",
-        "releaseRules": [
-          {"type": "fix", "release": "patch"},
-          {"type": "docs", "release": "patch"},
-          {"type": "refactor", "release": "patch"},
-          {"type": "chore", "release": "patch"},
-          {"type": "style", "release": "patch"},
-          {"type": "feat", "release": "patch"},
-          {"type": "perf", "release": "patch"}
+        'preset': 'angular',
+        'releaseRules': [
+          { 'type': 'fix', 'release': 'patch' },
+          { 'type': 'docs', 'release': 'patch' },
+          { 'type': 'refactor', 'release': 'patch' },
+          { 'type': 'chore', 'release': 'patch' },
+          { 'type': 'style', 'release': 'patch' },
+          { 'type': 'feat', 'release': 'patch' },
+          { 'type': 'perf', 'release': 'patch' }
         ]
       }
     ],
