@@ -77,7 +77,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   const renderCards = (cards: (React.ReactElement | MutliContentCardProps)[], withDividers?: boolean) =>  (
     <Flex alignSelf={{ default: 'alignSelfStretch' }} alignItems={{ default: 'alignItemsStretch' }}>
       {cards.map((card, index) => (
-        <div key={`card-${index}`}>
+        <>
           {index > 0 && isCardWithProps(card) && card.dividerVariant === MultiContentCardDividerVariant.left && (
             <Divider 
               orientation={{ md: 'vertical' }} 
@@ -93,7 +93,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
               inset={{ default: 'inset3xl' }}
             />
           )}
-        </div>
+        </>
       ))} 
     </Flex>
   );
