@@ -18,11 +18,11 @@ export const ActionsExample: React.FunctionComponent = () => {
   const dropdownItems = (
     <>
       <DropdownItem to="#" key="link">
-            Link
+        Link
       </DropdownItem>
       <DropdownItem key="action">Action</DropdownItem>
       <DropdownItem to="#" key="disabled link" isDisabled>
-            Disabled Link
+        Disabled Link
       </DropdownItem>
     </>
   );
@@ -41,13 +41,12 @@ export const ActionsExample: React.FunctionComponent = () => {
                 toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
                   <MenuToggle
                     ref={toggleRef}
+                    icon={<EllipsisVIcon />}
                     onClick={onToggle}
                     variant="plain"
                     isExpanded={isOpen}
                     aria-label="Action list single group kebab"
-                  >
-                    <EllipsisVIcon />
-                  </MenuToggle>
+                  />
                 )}
                 isOpen={isOpen}
                 onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}

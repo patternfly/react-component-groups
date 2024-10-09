@@ -66,11 +66,11 @@ export const BasicExample: React.FunctionComponent = () => {
       </CardBody>
       <CardFooter>
         <Content>
-          <Button variant="link" isInline>
+          <Button icon={<Icon className="pf-v6-u-ml-sm" isInline>
+            <ArrowRightIcon />
+          </Icon>} variant="link" isInline>
             Learn more  
-            <Icon className="pf-v6-u-ml-sm" isInline>
-              <ArrowRightIcon />
-            </Icon>
+            
           </Button>
         </Content>
       </CardFooter>
@@ -94,11 +94,11 @@ export const BasicExample: React.FunctionComponent = () => {
           </CardBody>
           <CardFooter>
             <Content>
-              <Button variant="link" isInline>
+              <Button icon={<Icon className="pf-v6-u-ml-sm" isInline>
+                <ArrowRightIcon />
+              </Icon>} variant="link" isInline>
               Learn more  
-                <Icon className="pf-v6-u-ml-sm" isInline>
-                  <ArrowRightIcon />
-                </Icon>
+                
               </Button>
             </Content>
           </CardFooter>

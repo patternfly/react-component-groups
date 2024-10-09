@@ -14,10 +14,10 @@ const cards = [
         <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
           <CogIcon />
         </Icon>
-          Configure application
+        Configure application
       </Content>
       <Content className="pf-v6-u-font-size-sm">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </Content>
     </CardBody>
     <CardFooter>
@@ -40,19 +40,16 @@ const cards = [
         <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
           <LockIcon />
         </Icon>
-          Configure access
+        Configure access
       </Content>
       <Content className="pf-v6-u-font-size-sm">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </Content>
     </CardBody>
     <CardFooter>
       <Content>
-        <Button variant="link" isInline>
-            Learn more  
-          <Icon className="pf-v6-u-ml-sm" isInline>
-            <ArrowRightIcon />
-          </Icon>
+        <Button icon={<Icon className="pf-v6-u-ml-sm" isInline><ArrowRightIcon /></Icon>} variant="link" isInline>
+          Learn more
         </Button>
       </Content>
     </CardFooter>
@@ -66,19 +63,16 @@ const cards = [
         <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
           <BellIcon />
         </Icon>
-          Configure notifications
+        Configure notifications
       </Content>
       <Content className="pf-v6-u-font-size-sm">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </Content>
     </CardBody>
     <CardFooter>
       <Content>
-        <Button variant="link" isInline>
-            Learn more  
-          <Icon className="pf-v6-u-ml-sm" isInline>
-            <ArrowRightIcon />
-          </Icon>
+        <Button icon={<Icon className="pf-v6-u-ml-sm" isInline><ArrowRightIcon /></Icon>} variant="link" isInline>
+          Learn more  
         </Button>
       </Content>
     </CardFooter>
@@ -149,11 +143,10 @@ describe('MultiContentCard component', () => {
                 ref={toggleRef}
                 aria-label="kebab dropdown toggle"
                 variant="plain"
+                icon={<EllipsisVIcon />}
                 onClick={() => null}
                 isExpanded
-              >
-                <EllipsisVIcon />
-              </MenuToggle>
+              />
             )}
             shouldFocusToggleOnSelect
           >

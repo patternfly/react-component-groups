@@ -70,11 +70,10 @@ export const ResponsiveActions: React.FunctionComponent<ResponsiveActionsProps> 
                 ref={toggleRef}
                 aria-label="Actions overflow menu"
                 variant="plain"
+                icon={<EllipsisVIcon />}
                 onClick={() => setIsOpen(!isOpen)}
                 isExpanded={isOpen}
-              >
-                <EllipsisVIcon />
-              </MenuToggle>
+              />
             )}
             isOpen={isOpen}
             onOpenChange={setIsOpen}
