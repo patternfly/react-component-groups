@@ -101,7 +101,7 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
           isExpanded={isOpen}
           onClick={onToggleClick}
           aria-label="Bulk select toggle"
-          data-ouia-component-id={`${ouiaId}-toggle`}
+          ouiaId={`${ouiaId}-toggle`}
           splitButtonOptions={{
             items: [
               <MenuToggleCheckbox

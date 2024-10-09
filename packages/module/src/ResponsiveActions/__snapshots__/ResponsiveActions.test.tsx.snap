@@ -66,6 +66,8 @@ exports[`ResponsiveActions component should render correctly ResponsiveActions 1
         aria-label="Actions overflow menu"
         class="pf-v5-c-menu-toggle pf-m-plain"
         data-ouia-component-id="ResponsiveActions-menu-dropdown-toggle"
+        data-ouia-component-type="PF5/MenuToggle"
+        data-ouia-safe="true"
         type="button"
       >
         <svg
