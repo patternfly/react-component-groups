@@ -32,6 +32,8 @@ exports[`BulkSelect component should render 1`] = `
           aria-label="Bulk select toggle"
           class="pf-v5-c-menu-toggle__button"
           data-ouia-component-id="BulkSelect-toggle"
+          data-ouia-component-type="PF5/MenuToggle"
+          data-ouia-safe="true"
           type="button"
         >
           <span
@@ -87,6 +89,8 @@ exports[`BulkSelect component should render 1`] = `
         aria-label="Bulk select toggle"
         class="pf-v5-c-menu-toggle__button"
         data-ouia-component-id="BulkSelect-toggle"
+        data-ouia-component-type="PF5/MenuToggle"
+        data-ouia-safe="true"
         type="button"
       >
         <span

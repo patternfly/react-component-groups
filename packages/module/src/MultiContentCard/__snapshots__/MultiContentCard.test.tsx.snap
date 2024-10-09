@@ -943,6 +943,9 @@ exports[`MultiContentCard component should render expandable multi content card 
         aria-expanded="true"
         aria-label="kebab dropdown toggle"
         class="pf-v5-c-menu-toggle pf-m-expanded pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-MenuToggle-plain-1"
+        data-ouia-component-type="PF5/MenuToggle"
+        data-ouia-safe="true"
         type="button"
       >
         <svg
