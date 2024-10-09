@@ -79,7 +79,7 @@ exports[`ResponsiveActions component should render correctly ResponsiveActions 1
         type="button"
       >
         <span
-          class="pf-v6-c-menu-toggle__text"
+          class="pf-v6-c-menu-toggle__icon"
         >
           <svg
             aria-hidden="true"

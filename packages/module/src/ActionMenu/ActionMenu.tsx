@@ -83,9 +83,7 @@ export const ActionMenu: React.FunctionComponent<ActionMenuProps> = ({  // repla
       popperProps={popperProps}
       toggle={
         (toggleRef: React.Ref<MenuToggleElement>) => 
-          <MenuToggle ref={toggleRef} id={`toggle-menu-${id}`} onClick={onToggle} isDisabled={isDisabled} variant={variant} isExpanded={isOpen}>
-            {variant === ActionMenuVariant.DROPDOWN ? label : <EllipsisVIcon />}
-          </MenuToggle>   
+          <MenuToggle ref={toggleRef} id={`toggle-menu-${id}`} onClick={onToggle} isDisabled={isDisabled} variant={variant} isExpanded={isOpen} icon={variant === ActionMenuVariant.DROPDOWN ? label : <EllipsisVIcon />} />   
       }
     >
       {actions.length > 0 ?
