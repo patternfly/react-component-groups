@@ -66,7 +66,7 @@ export const ResponsiveActions: React.FunctionComponent<ResponsiveActionsProps> 
             onSelect={() => setIsOpen(false)}
             toggle={(toggleRef) => (
               <MenuToggle
-                data-ouia-component-id={`${ouiaId}-menu-dropdown-toggle`}
+                ouiaId={`${ouiaId}-menu-dropdown-toggle`}
                 ref={toggleRef}
                 aria-label="Actions overflow menu"
                 variant="plain"
