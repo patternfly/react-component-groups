@@ -12,6 +12,12 @@ export * from './UnauthorizedAccess';
 export { default as TagCount } from './TagCount';
 export * from './TagCount';
 
+export { default as SkeletonTableHead } from './SkeletonTableHead';
+export * from './SkeletonTableHead';
+
+export { default as SkeletonTableBody } from './SkeletonTableBody';
+export * from './SkeletonTableBody';
+
 export { default as SkeletonTable } from './SkeletonTable';
 export * from './SkeletonTable';
 
@@ -23,6 +29,12 @@ export * from './Shortcut';
 
 export { default as ServiceCard } from './ServiceCard';
 export * from './ServiceCard';
+
+export { default as ResponsiveActions } from './ResponsiveActions';
+export * from './ResponsiveActions';
+
+export { default as ResponsiveAction } from './ResponsiveAction';
+export * from './ResponsiveAction';
 
 export { default as PageHeader } from './PageHeader';
 export * from './PageHeader';

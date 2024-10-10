@@ -29,7 +29,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
               scope="col"
               tabindex="-1"
             >
-              first
+              First
             </th>
             <th
               class="pf-v6-c-table__th"
@@ -37,7 +37,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
               scope="col"
               tabindex="-1"
             >
-              second
+              Second
             </th>
           </tr>
         </thead>
@@ -240,7 +240,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
             scope="col"
             tabindex="-1"
           >
-            first
+            First
           </th>
           <th
             class="pf-v6-c-table__th"
@@ -248,7 +248,7 @@ exports[`SkeletonTable component should render correctly 1`] = `
             scope="col"
             tabindex="-1"
           >
-            second
+            Second
           </th>
         </tr>
       </thead>
@@ -491,6 +491,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
         data-ouia-component-type="PF6/Table"
         data-ouia-safe="true"
         role="grid"
+        rows="10"
       >
         <thead
           class="pf-v6-c-table__thead"
@@ -508,7 +509,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
               scope="col"
               tabindex="-1"
             >
-              first
+              First
             </th>
             <th
               class="pf-v6-c-table__th"
@@ -516,7 +517,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
               scope="col"
               tabindex="-1"
             >
-              second
+              Second
             </th>
           </tr>
         </thead>
@@ -702,6 +703,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
       data-ouia-component-type="PF6/Table"
       data-ouia-safe="true"
       role="grid"
+      rows="10"
     >
       <thead
         class="pf-v6-c-table__thead"
@@ -719,7 +721,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
             scope="col"
             tabindex="-1"
           >
-            first
+            First
           </th>
           <th
             class="pf-v6-c-table__th"
@@ -727,7 +729,7 @@ exports[`SkeletonTable component should render correctly with rows 1`] = `
             scope="col"
             tabindex="-1"
           >
-            second
+            Second
           </th>
         </tr>
       </thead>

@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResponsiveActions component should render correctly ResponsiveActions 1`] = `
+<div>
+  <div
+    class="pf-v6-c-overflow-menu"
+    data-ouia-component-id="ResponsiveActions-menu"
+  >
+    <div
+      class="pf-v6-c-overflow-menu__content"
+    >
+      <div
+        class="pf-v6-c-overflow-menu__group pf-m-button-group"
+        data-ouia-component-id="ResponsiveActions-menu-persistent-group"
+      >
+        <div
+          class="pf-v6-c-overflow-menu__item"
+        >
+           
+          <button
+            aria-disabled="false"
+            class="pf-v6-c-button pf-m-primary"
+            data-ouia-component-id="ResponsiveActions-action-0"
+            data-ouia-component-type="PF6/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            <span
+              class="pf-v6-c-button__text"
+            >
+              Persistent action
+            </span>
+          </button>
+           
+        </div>
+      </div>
+    </div>
+    <div
+      class="pf-v6-c-overflow-menu__content"
+    >
+      <div
+        class="pf-v6-c-overflow-menu__group pf-m-button-group"
+        data-ouia-component-id="ResponsiveActions-menu-pinned-group"
+      >
+        <div
+          class="pf-v6-c-overflow-menu__item"
+        >
+           
+          <button
+            aria-disabled="false"
+            class="pf-v6-c-button pf-m-secondary"
+            data-ouia-component-id="ResponsiveActions-action-1"
+            data-ouia-component-type="PF6/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            <span
+              class="pf-v6-c-button__text"
+            >
+              Pinned action
+            </span>
+          </button>
+           
+        </div>
+      </div>
+    </div>
+    <div
+      class="pf-v6-c-overflow-menu__control"
+      data-ouia-component-id="ResponsiveActions-menu-control"
+    >
+       
+      <button
+        aria-expanded="false"
+        aria-label="Actions overflow menu"
+        class="pf-v6-c-menu-toggle pf-m-plain"
+        data-ouia-component-id="ResponsiveActions-menu-dropdown-toggle"
+        data-ouia-component-type="PF6/MenuToggle"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-v6-c-menu-toggle__icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="pf-v6-svg"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            viewBox="0 0 192 512"
+            width="1em"
+          >
+            <path
+              d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+            />
+          </svg>
+        </span>
+      </button>
+       
+    </div>
+  </div>
+</div>
+`;

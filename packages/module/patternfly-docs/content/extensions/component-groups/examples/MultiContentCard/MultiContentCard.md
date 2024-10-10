@@ -40,7 +40,7 @@ Actions can be displayed in the multi-content card heading using `actions` prope
 
 ```
 
-### Expandable multi-content card with dividers
+### Expandable multi content card with dividers
 
 Dividers between all cards in the content can be shown using `withDividers` flag. 
 

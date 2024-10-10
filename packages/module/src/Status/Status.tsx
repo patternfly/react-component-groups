@@ -49,7 +49,7 @@ const useStyles = createUseStyles({
     alignSelf: "flex-start",
   },
   statusLabel: {
-    lineHeight: 'var(--pf-v6-global--LineHeight--sm)',
+    lineHeight: 'var(--pf-t--global--font--line-height--body)',
   },
   statusDescription: {
     color: 'var(--pf-t--color--gray--50)',
