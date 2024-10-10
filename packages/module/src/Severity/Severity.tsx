@@ -47,16 +47,18 @@ const severityUndefined = {
 };
 
 const useStyles = createUseStyles({
-  battery: {
+  severity: {
     display: 'inline-block',
     'line-height': 0,
     '& svg': {
       position: 'relative',
       top: 'var(--pf-t--global--spacer--sm)',
-      height: '1.75rem'
-    }
+      height: 'calc(var(--pf-t--global--spacer--md) * 1.75)',
+    },
   },
-
+  severityLabel: {
+    'margin-left': 'var(--pf-t--global--spacer--xs)'
+  },
   severityNone,
   severityMinor,
   severityModerate,
@@ -65,7 +67,7 @@ const useStyles = createUseStyles({
   severityUndefined
 });
 
-const batteryLevels = (severity: SeverityType, classMode?: boolean) => {
+const severityLevels = (severity: SeverityType, classMode?: boolean) => {
   switch (severity) {
   case 'critical':
     return classMode ? 'severityCritical' : <SeverityCriticalIcon />;
@@ -94,9 +96,9 @@ export const SeverityType = {
 export type SeverityType = (typeof SeverityType)[keyof typeof SeverityType];
 
 export interface SeverityProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
-  /** Determines a variant of displayed battery */
+  /** Determines a variant of displayed severity */
   severity: SeverityType;
-  /** Label displayed next to the battery */
+  /** Label displayed next to the severity */
   label: string;
   /** Option to hide the label */
   labelHidden?: boolean;
@@ -115,19 +117,19 @@ export const Severity: React.FunctionComponent<SeverityProps> = ({
   ...props
 }: SeverityProps) => {
   const classes = useStyles();
-  const batteryClasses = clsx(classes.battery, classes[String(batteryLevels(severity, true))], className);
+  const severityClasses = clsx(classes.severity, classes[String(severityLevels(severity, true))], className);
 
   const title = { title: `${severity} ${label}` };
 
-  const batteryVariant = useMemo(() => batteryLevels(severity), [ severity ]);
+  const severityVariant = useMemo(() => severityLevels(severity), [ severity ]);
 
   return (
     <React.Fragment>
       {/* eslint-disable-next-line react/no-unknown-property */}
-      <i className={batteryClasses} {...title} {...props} widget-type="Severity" widget-id={label} data-ouia-component-id={ouiaId}>
-        {batteryVariant}
+      <i className={severityClasses} {...title} {...props} widget-type="Severity" widget-id={label} data-ouia-component-id={ouiaId}>
+        {severityVariant}
       </i>
-      {!labelHidden && <span> {label} </span>}
+      {!labelHidden && <span className={clsx(classes.severityLabel)}> {label} </span>}
     </React.Fragment>
   );
 };

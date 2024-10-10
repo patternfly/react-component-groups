@@ -3,7 +3,7 @@
 exports[`Severity component API should hide label 1`] = `
 <div>
   <i
-    class="battery-0-2-1 severityImportant-0-2-5"
+    class="severity-0-2-1 severityImportant-0-2-6"
     data-ouia-component-id="Severity-icon"
     title="important important"
     widget-id="important"
@@ -29,7 +29,7 @@ exports[`Severity component API should hide label 1`] = `
 exports[`Severity component should render correctly CriticalSeverity 1`] = `
 <div>
   <i
-    class="battery-0-2-1 severityCritical-0-2-6"
+    class="severity-0-2-1 severityCritical-0-2-7"
     data-ouia-component-id="Severity-icon"
     title="critical Critical"
     widget-id="Critical"
@@ -49,7 +49,9 @@ exports[`Severity component should render correctly CriticalSeverity 1`] = `
       />
     </svg>
   </i>
-  <span>
+  <span
+    class="severityLabel-0-2-2"
+  >
      
     Critical
      
@@ -60,7 +62,7 @@ exports[`Severity component should render correctly CriticalSeverity 1`] = `
 exports[`Severity component should render correctly HighSeverity 1`] = `
 <div>
   <i
-    class="battery-0-2-1 severityImportant-0-2-5"
+    class="severity-0-2-1 severityImportant-0-2-6"
     data-ouia-component-id="Severity-icon"
     title="important Important"
     widget-id="Important"
@@ -80,7 +82,9 @@ exports[`Severity component should render correctly HighSeverity 1`] = `
       />
     </svg>
   </i>
-  <span>
+  <span
+    class="severityLabel-0-2-2"
+  >
      
     Important
      
@@ -91,7 +95,7 @@ exports[`Severity component should render correctly HighSeverity 1`] = `
 exports[`Severity component should render correctly LowSeverity 1`] = `
 <div>
   <i
-    class="battery-0-2-1 severityMinor-0-2-3"
+    class="severity-0-2-1 severityMinor-0-2-4"
     data-ouia-component-id="Severity-icon"
     title="minor Minor"
     widget-id="Minor"
@@ -111,7 +115,9 @@ exports[`Severity component should render correctly LowSeverity 1`] = `
       />
     </svg>
   </i>
-  <span>
+  <span
+    class="severityLabel-0-2-2"
+  >
      
     Minor
      
@@ -122,7 +128,7 @@ exports[`Severity component should render correctly LowSeverity 1`] = `
 exports[`Severity component should render correctly LowSeverity 2`] = `
 <div>
   <i
-    class="battery-0-2-1 severityMinor-0-2-3"
+    class="severity-0-2-1 severityMinor-0-2-4"
     data-ouia-component-id="Severity-icon"
     title="none None"
     widget-id="None"
@@ -142,7 +148,9 @@ exports[`Severity component should render correctly LowSeverity 2`] = `
       />
     </svg>
   </i>
-  <span>
+  <span
+    class="severityLabel-0-2-2"
+  >
      
     None
      
@@ -153,7 +161,7 @@ exports[`Severity component should render correctly LowSeverity 2`] = `
 exports[`Severity component should render correctly MediumSeverity 1`] = `
 <div>
   <i
-    class="battery-0-2-1 severityModerate-0-2-4"
+    class="severity-0-2-1 severityModerate-0-2-5"
     data-ouia-component-id="Severity-icon"
     title="moderate Moderate"
     widget-id="Moderate"
@@ -173,7 +181,9 @@ exports[`Severity component should render correctly MediumSeverity 1`] = `
       />
     </svg>
   </i>
-  <span>
+  <span
+    class="severityLabel-0-2-2"
+  >
      
     Moderate
      
@@ -184,7 +194,7 @@ exports[`Severity component should render correctly MediumSeverity 1`] = `
 exports[`Severity component should render correctly UndefinedSeverity, default 1`] = `
 <div>
   <i
-    class="battery-0-2-1 severityNone-0-2-2"
+    class="severity-0-2-1 severityNone-0-2-3"
     data-ouia-component-id="Severity-icon"
     title=" "
     widget-id=""
@@ -204,7 +214,9 @@ exports[`Severity component should render correctly UndefinedSeverity, default 1
       />
     </svg>
   </i>
-  <span>
+  <span
+    class="severityLabel-0-2-2"
+  >
      
      
   </span>
