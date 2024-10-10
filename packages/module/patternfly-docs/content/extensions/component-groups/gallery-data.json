@@ -1,0 +1,17 @@
+{
+    "content-containers": {
+      "summary": "Provide layout components to organize and display content in structured and flexible formats."
+    }, 
+    "controls": {
+      "summary": "Include components that manage user interactions and input, enabling intuitive navigation and selection."
+    },
+    "error-communication": {
+      "summary": "Contain various error and alert states to communicate issues or restrictions."
+    },
+    "helpers": {
+      "summary": "Offer utility components that enhance usability and provide additional guidance or information within the UI."
+    },
+    "status-and-state-indicators": {
+      "summary": "Visualize entity states, statuses, and loading indicators to inform users of system conditions or processes."
+    }
+  }

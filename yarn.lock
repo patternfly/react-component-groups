@@ -1760,9 +1760,9 @@
   version "5.0.0-prerelease.0"
   resolved "file:packages/module"
   dependencies:
-    "@patternfly/react-core" "^6.0.0-alpha.101"
-    "@patternfly/react-icons" "^6.0.0-alpha.36"
-    "@patternfly/react-table" "^6.0.0-alpha.102"
+    "@patternfly/react-core" "^6.0.0-prerelease.21"
+    "@patternfly/react-icons" "^6.0.0-prerelease.7"
+    "@patternfly/react-table" "^6.0.0-prerelease.22"
     clsx "^2.1.1"
     react-jss "^10.10.0"
 
