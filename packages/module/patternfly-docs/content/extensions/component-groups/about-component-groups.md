@@ -9,7 +9,7 @@ import galleryData from './gallery-data.json';
 
 Component groups lives in its own package [`@patternfly/react-component-groups`](https://www.npmjs.com/package/@patternfly/react-component-groups) 
 
-**Note:** This extension replaces [`RedHatInsights/frontend-components`](https://github.com/RedHatInsights/frontend-components). If you previoulsy used `frontend-components`, you can refer to [this migration guide](https://github.com/patternfly/react-component-groups/blob/main/migration.md) to help you transition to `react-component-groups`.
+**Note:** This extension replaces [`RedHatInsights/frontend-components`](https://github.com/RedHatInsights/frontend-components). If you previously used `frontend-components`, you can refer to [this migration guide](https://github.com/patternfly/react-component-groups/blob/main/migration.md) to help you transition to `react-component-groups`.
 
 # Component groups
 
