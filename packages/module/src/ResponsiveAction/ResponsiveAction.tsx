@@ -13,6 +13,6 @@ export interface ResponsiveActionProps extends ButtonProps {
 };
 
 // This component is only used declaratively - rendering ishandled by ResponsiveActions
-export const ResponsiveAction: React.FunctionComponent<ResponsiveActionProps> = (_props: ResponsiveActionProps) => null;
+export const ResponsiveAction: React.FunctionComponent<ResponsiveActionProps> = (_props: ResponsiveActionProps) => <div/>;
 
 export default ResponsiveAction;
