@@ -10,12 +10,6 @@ The guide should be applicable when migrating from frontend-components **version
 ​
   **SOLUTION:** use the `className` property if you need a custom color
 ​
-​
-## Battery
-​
-- No action required
-​
-​
 ## ErrorState
 ​
 - The default error description *“If the problem persists, contact [Red Hat Support](https://access.redhat.com/support) or check our [status page](https://status.redhat.com) for known outages.”* has been removed. 
@@ -55,7 +49,10 @@ The guide should be applicable when migrating from frontend-components **version
 ​
   **SOLUTION:** handle `/beta` in your URL on your own and pass a final URL using the new `toLandingPageUrl` property
 ​
-​
+​## Severity
+
+- No action required
+  
 ## SkeletonTable
 ​
 - No action required
