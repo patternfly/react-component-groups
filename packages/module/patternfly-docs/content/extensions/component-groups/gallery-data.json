@@ -1,0 +1,17 @@
+{
+    "content-containers": {
+      "summary": "Organize and display information in structured or flexible containers."
+    }, 
+    "controls": {
+      "summary": "Enable more effective navigation and selection by providing users with options for interaction and input."
+    },
+    "error-communication": {
+      "summary": "Communicate issues or restrictions through error and alert states."
+    },
+    "helpers": {
+      "summary": "Provide users with utilities that enhance usability and provide additional guidance or information within the UI."
+    },
+    "status-and-state-indicators": {
+      "summary": "Inform users of system conditions or processes through visualizations of entity states, statuses, and loading indicators."
+    }
+  }
