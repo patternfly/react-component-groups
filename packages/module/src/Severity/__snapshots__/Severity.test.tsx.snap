@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Severity component API should hide label 1`] = `
+<div>
+  <div
+    class="pf-v6-l-flex pf-m-space-items-sm"
+  >
+    <div
+      class=""
+    >
+      <span
+        data-ouia-component-id="Severity-icon"
+        title="important important"
+        widget-id="important"
+        widget-type="Severity"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v6-svg"
+          color="var(--pf-t--global--icon--color--severity--important--default)"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          viewBox="0 0 1024 1024"
+          width="1em"
+        >
+          <path
+            d="M0,587.2c0,23.2,10.8,40.4,30.7,51.6,20.8,11.7,42.1,12.5,63.1-.5l378.4-235.4c26.5-16.7,51.7-16.4,78.7.5,123.4,77.2,247.5,153.4,371,230.5,22.9,14.3,44.9,18.7,69.3,5.3,24.5-13.5,32.5-35,32.3-61.4-.4-49.4,0-41.9,0-91.3s-.3-99.9,0-149.8c.2-27.6-11.5-47.8-35.1-61.8C841.4,187.2,694.4,99.5,547.5,11.7c-24.5-14.6-48.1-14.4-72.4.2C327.3,100.3,179.4,188.5,31.7,276.8c-21.1,12.6-31.7,31.5-31.7,56.1v254.3ZM1023.8,857.8c0,1.9,0-.6.2-10.3,0-2.1,0-4.1-.2-6.1v-35.1c0-29.9,0,8.8,0,33.8-1.8-23.9-13.4-41.7-34.9-54.4-147-87.7-294-175.4-441-263.3-24.5-14.6-48.1-14.4-72.4.2-147.7,88.4-295.6,176.6-443.4,265-21.1,12.6-31.7,31.4-31.7,56.1v120.3c0,23.2,10.8,40.4,30.7,51.6,20.8,11.7,42.1,12.5,63.1-.5l378.4-235.4c26.5-16.7,51.7-16.4,78.7.5,123.4,77.2,247.5,153.4,371,230.5,22.9,14.3,44.9,18.7,69.3,5.3,24.5-13.5,32.5-35,32.3-61.4-.2-32.3-.2-64.6-.2-96.9h.2Z"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class=""
+    />
+  </div>
+</div>
+`;
+
+exports[`Severity component should render correctly CriticalSeverity 1`] = `
+<div>
+  <div
+    class="pf-v6-l-flex pf-m-space-items-sm"
+  >
+    <div
+      class=""
+    >
+      <span
+        data-ouia-component-id="Severity-icon"
+        title="critical Critical"
+        widget-id="Critical"
+        widget-type="Severity"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v6-svg"
+          color="var(--pf-t--global--icon--color--severity--critical--default)"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          viewBox="0 0 1024 1024"
+          width="1em"
+        >
+          <path
+            d="M0,963.4c0,23.2,10.8,40.4,30.7,51.6,20.8,11.7,42.1,12.5,63.1-.5l378.6-235.6c26.5-16.7,51.7-16.4,78.7.5,123.5,77.3,247.6,153.5,371.2,230.7,22.9,14.3,44.9,18.7,69.3,5.3,24.5-13.5,32.5-35,32.3-61.5-.4-49.4,0-41.9,0-91.4s-.3-476.6,0-526.5c.2-27.6-11.5-47.8-35.1-61.9C841.8,186.5,694.7,98.6,547.8,10.8c-24.5-14.6-48.1-14.4-72.4.2C327.5,99.4,179.5,187.8,31.7,276.2,10.6,288.8,0,307.7,0,332.3v631.1H0Z"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class=""
+    >
+      Critical
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Severity component should render correctly HighSeverity 1`] = `
+<div>
+  <div
+    class="pf-v6-l-flex pf-m-space-items-sm"
+  >
+    <div
+      class=""
+    >
+      <span
+        data-ouia-component-id="Severity-icon"
+        title="important Important"
+        widget-id="Important"
+        widget-type="Severity"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v6-svg"
+          color="var(--pf-t--global--icon--color--severity--important--default)"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          viewBox="0 0 1024 1024"
+          width="1em"
+        >
+          <path
+            d="M0,587.2c0,23.2,10.8,40.4,30.7,51.6,20.8,11.7,42.1,12.5,63.1-.5l378.4-235.4c26.5-16.7,51.7-16.4,78.7.5,123.4,77.2,247.5,153.4,371,230.5,22.9,14.3,44.9,18.7,69.3,5.3,24.5-13.5,32.5-35,32.3-61.4-.4-49.4,0-41.9,0-91.3s-.3-99.9,0-149.8c.2-27.6-11.5-47.8-35.1-61.8C841.4,187.2,694.4,99.5,547.5,11.7c-24.5-14.6-48.1-14.4-72.4.2C327.3,100.3,179.4,188.5,31.7,276.8c-21.1,12.6-31.7,31.5-31.7,56.1v254.3ZM1023.8,857.8c0,1.9,0-.6.2-10.3,0-2.1,0-4.1-.2-6.1v-35.1c0-29.9,0,8.8,0,33.8-1.8-23.9-13.4-41.7-34.9-54.4-147-87.7-294-175.4-441-263.3-24.5-14.6-48.1-14.4-72.4.2-147.7,88.4-295.6,176.6-443.4,265-21.1,12.6-31.7,31.4-31.7,56.1v120.3c0,23.2,10.8,40.4,30.7,51.6,20.8,11.7,42.1,12.5,63.1-.5l378.4-235.4c26.5-16.7,51.7-16.4,78.7.5,123.4,77.2,247.5,153.4,371,230.5,22.9,14.3,44.9,18.7,69.3,5.3,24.5-13.5,32.5-35,32.3-61.4-.2-32.3-.2-64.6-.2-96.9h.2Z"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class=""
+    >
+      Important
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Severity component should render correctly LowSeverity 1`] = `
+<div>
+  <div
+    class="pf-v6-l-flex pf-m-space-items-sm"
+  >
+    <div
+      class=""
+    >
+      <span
+        data-ouia-component-id="Severity-icon"
+        title="minor Minor"
+        widget-id="Minor"
+        widget-type="Severity"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v6-svg"
+          color="var(--pf-t--global--icon--color--severity--minor--default)"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          viewBox="0 0 1024 1024"
+          width="1em"
+        >
+          <path
+            d="M1023.9,538.3c0-49.4-.3-41.9,0-91.3.2-26.4-7.8-48-32.3-61.4-24.4-13.4-46.5-9-69.3,5.3-123.5,77.1-247.6,153.3-371,230.5-27,16.9-52.3,17.2-78.7.5L94.3,386.5c-20.9-13-42.2-12.2-63.1-.5-19.9,11.1-30.7,28.4-30.7,51.6v254.3c0,24.6,10.6,43.5,31.7,56.1,147.8,88.4,295.6,176.5,443.4,265,24.4,14.6,48,14.8,72.4.2,146.9-87.9,293.9-175.6,441-263.3,23.6-14.1,35.3-34.2,35.1-61.8-.4-49.9,0-99.9,0-149.8h0ZM1024.4,177.2c0-9.7,0-12.2-.2-10.3,0-32.3,0-64.6.2-96.9.2-26.4-7.8-48-32.3-61.4-24.4-13.4-46.5-9-69.3,5.3-123.5,77.1-247.6,153.3-371,230.5-27,16.9-52.3,17.2-78.7.5L94.7,9.7c-20.9-13-42.2-12.2-63.1-.5C11.7,20.3.9,37.5.9,60.7v120.3c0,24.6,10.6,43.5,31.7,56.1,147.8,88.4,295.6,176.5,443.4,265,24.4,14.6,48,14.8,72.4.2,146.9-87.9,293.9-175.6,441-263.3,21.4-12.8,33.1-30.6,34.9-54.4,0,25.1,0,63.7,0,33.8v-35.1c0-2,.2-4,.2-6.1h-.2Z"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class=""
+    >
+      Minor
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Severity component should render correctly LowSeverity 2`] = `
+<div>
+  <div
+    class="pf-v6-l-flex pf-m-space-items-sm"
+  >
+    <div
+      class=""
+    >
+      <span
+        data-ouia-component-id="Severity-icon"
+        title="none None"
+        widget-id="None"
+        widget-type="Severity"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v6-svg"
+          color="var(--pf-t--global--icon--color--severity--none--default)"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          viewBox="0 0 1024 1024"
+          width="1em"
+        >
+          <path
+            d="M64,128h896c35.3,0,64,28.7,64,64v64c0,35.3-28.7,64-64,64H64c-35.3,0-64-28.7-64-64v-64c0-35.3,28.7-64,64-64ZM64,448h896c35.3,0,64,28.7,64,64v256c0,35.3-28.7,64-64,64H64c-35.3,0-64-28.7-64-64v-256c0-35.3,28.7-64,64-64Z"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class=""
+    >
+      None
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Severity component should render correctly MediumSeverity 1`] = `
+<div>
+  <div
+    class="pf-v6-l-flex pf-m-space-items-sm"
+  >
+    <div
+      class=""
+    >
+      <span
+        data-ouia-component-id="Severity-icon"
+        title="moderate Moderate"
+        widget-id="Moderate"
+        widget-type="Severity"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v6-svg"
+          color="var(--pf-t--global--icon--color--severity--moderate--default)"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          viewBox="0 0 1024 1024"
+          width="1em"
+        >
+          <path
+            d="M.8,403.4c.2,25.2,0,28.2-.1,39.9,0-10.5,0-23.3.1-39.9ZM1023.2,389.4c0,1.7,0,3.4,0,5.2v8.7-13.9h0ZM1023.5,475h0v-32.2c0,6.4.2,15.3.2,32.2h-.2ZM1023.9,577.1c0,31.9-31.9,62.8-63.9,62.8H63.9C31.9,639.9,0,609,0,577.1c.4-62,.1-168.9.2-182.1,1.2-24.9,12.9-43.4,35-56.5,147.1-87.4,265.8-153.3,412.7-240.8,13.6-6.8,27.2-11.4,40.8-13.8,15.3-2.8,31.1-2.8,46.4,0,13.6,2.5,27.2,7.1,40.8,13.8,147,87.5,265.7,153.4,412.7,240.8,22.5,13.2,34.3,32.4,35,57.7,0,4.4-.2,131.6.2,180.8h0ZM.5,475c0-16.4,0-25.3.1-31.7v31.7h-.1ZM.7,394.6c0-1.8,0-3.5.1-5.2v13.8-8.6h-.1ZM1023.3,442.7c0-11.2-.3-14.6,0-39.3,0,16.3,0,29,0,39.3ZM63.9,752.1h896.1c35.3,0,64,28.3,64,63.3v63.3c0,34.9-28.6,63.3-64,63.3H63.9c-35.3.1-63.9-28.2-63.9-63.2v-63.3c0-34.9,28.6-63.3,64-63.3h0Z"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class=""
+    >
+      Moderate
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Severity component should render correctly UndefinedSeverity, default 1`] = `
+<div>
+  <div
+    class="pf-v6-l-flex pf-m-space-items-sm"
+  >
+    <div
+      class=""
+    >
+      <span
+        data-ouia-component-id="Severity-icon"
+        title=" "
+        widget-id=""
+        widget-type="Severity"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v6-svg"
+          color="var(--pf-t--global--icon--color--severity--undefined--default)"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          viewBox="0 0 1024 1024"
+          width="1em"
+        >
+          <path
+            d="M640,384h320c35.3,0,64,28.7,64,64v64c0,35.3-28.7,64-64,64h-320c-35.3,0-64-28.7-64-64v-64c0-35.3,28.7-64,64-64ZM64,384h320c35.3,0,64,28.7,64,64v64c0,35.3-28.7,64-64,64H64c-35.3,0-64-28.7-64-64v-64c0-35.3,28.7-64,64-64Z"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class=""
+    />
+  </div>
+</div>
+`;

@@ -112,7 +112,7 @@ const MyComponentExample: React.FunctionComponent = () => (
   <MyComponent customLabel="My label">
 );
 
-export default BatteryLowExample;
+export default MyComponentExample;
 ```
 
 ### Sub-components:
