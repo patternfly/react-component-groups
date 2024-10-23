@@ -13,13 +13,12 @@ updates:
       - dependency-type: "direct"
     ignore:
       - dependency-name: "*"
-        update-types:
-          - version-update:semver-major
+        update-types: ["semver-major"]
     open-pull-requests-limit: 10
     reviewers:
-    - fhlavac
-    - nicolethoen
-    - dlabaj
+      - fhlavac
+      - nicolethoen
+      - dlabaj
 
   - package-ecosystem: npm
     commit-message:
@@ -30,16 +29,13 @@ updates:
       day: tuesday
       time: "12:00"
       timezone: EST
-    schedule:
-      interval: weekly
     allow:
       - dependency-type: "direct"
     ignore:
       - dependency-name: "*"
-        update-types:
-          - version-update:semver-major
+        update-types: ["semver-major"]
     open-pull-requests-limit: 10
     reviewers:
-    - fhlavac
-    - nicolethoen
-    - dlabaj
+      - fhlavac
+      - nicolethoen
+      - dlabaj
