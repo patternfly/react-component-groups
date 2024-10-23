@@ -14,7 +14,7 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types:
-          - version-update:semver-major
+          - "version-update:semver-major"
     open-pull-requests-limit: 10
     reviewers:
       - fhlavac
@@ -35,7 +35,7 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types:
-          - version-update:semver-major
+          - "version-update:semver-major"
     open-pull-requests-limit: 10
     reviewers:
       - fhlavac
