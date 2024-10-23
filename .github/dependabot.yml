@@ -13,7 +13,8 @@ updates:
       - dependency-type: "direct"
     ignore:
       - dependency-name: "*"
-        update-types: ["semver-major"]
+        update-types:
+          - version-update:semver-major
     open-pull-requests-limit: 10
     reviewers:
       - fhlavac
@@ -33,7 +34,8 @@ updates:
       - dependency-type: "direct"
     ignore:
       - dependency-name: "*"
-        update-types: ["semver-major"]
+        update-types:
+          - version-update:semver-major
     open-pull-requests-limit: 10
     reviewers:
       - fhlavac
