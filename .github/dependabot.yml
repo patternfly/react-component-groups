@@ -1,6 +1,8 @@
 version: 2
 updates:
   - package-ecosystem: npm
+    commit-message:
+      prefix: "fix(deps)"
     directory: "/"
     schedule:
       interval: weekly
@@ -8,7 +10,7 @@ updates:
       time: "12:00"
       timezone: EST
     allow:
-      - dependency-type: "all"
+      - dependency-type: "direct"
     ignore:
       - dependency-name: "*"
         update-types:
@@ -18,8 +20,10 @@ updates:
     - fhlavac
     - nicolethoen
     - dlabaj
-  
+
   - package-ecosystem: npm
+    commit-message:
+      prefix: "fix(deps)"
     directory: "/packages/module"
     schedule:
       interval: weekly
@@ -29,7 +33,7 @@ updates:
     schedule:
       interval: weekly
     allow:
-      - dependency-type: "all"
+      - dependency-type: "direct"
     ignore:
       - dependency-name: "*"
         update-types:
