@@ -55,7 +55,7 @@
     "eslint": "^8.57.0",
     "eslint-config-prettier": "8.10.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
-    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-markdown": "^1.0.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-prettier": "^5.2.1",
