@@ -39,7 +39,7 @@ export interface PageHeaderProps extends React.PropsWithChildren {
   actionMenu?: React.ReactNode;
   /** Custom OUIA ID */
   ouiaId?: string | number;
-  /** Children element */
+  /** Child nodes */
   children?: React.ReactNode;
 }
 
