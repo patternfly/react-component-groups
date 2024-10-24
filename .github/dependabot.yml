@@ -10,11 +10,11 @@ updates:
       time: "12:00"
       timezone: EST
     allow:
-      - dependency-type: "direct"
+      - dependency-type: "all"
     ignore:
       - dependency-name: "*"
         update-types:
-          - "version-update:semver-major"
+          - version-update:semver-major
     open-pull-requests-limit: 10
     reviewers:
       - fhlavac
@@ -31,11 +31,11 @@ updates:
       time: "12:00"
       timezone: EST
     allow:
-      - dependency-type: "direct"
+      - dependency-type: "all"
     ignore:
       - dependency-name: "*"
         update-types:
-          - "version-update:semver-major"
+          - version-update:semver-major
     open-pull-requests-limit: 10
     reviewers:
       - fhlavac
