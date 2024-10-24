@@ -45,7 +45,7 @@
     "@patternfly/patternfly-a11y": "^4.3.1",
     "@patternfly/documentation-framework": "^6.0.0-alpha.113",
     "@patternfly/react-code-editor": "^6.0.0",
-    "@patternfly/patternfly": "6.0.0",
+    "@patternfly/patternfly": "^6.0.0",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
     "react": "^18.3.1",
