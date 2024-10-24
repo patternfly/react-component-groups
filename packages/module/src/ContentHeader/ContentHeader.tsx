@@ -22,7 +22,7 @@ export interface PageHeaderLinkProps extends ButtonProps {
   isExternal?: boolean;
 }
 
-export interface ContentHeaderProps {
+export interface ContentHeaderProps extends React.PropsWithChildren {
   /** Title for content header */
   title: string;
   /** Subtitle for content header */
@@ -39,6 +39,8 @@ export interface ContentHeaderProps {
   actionMenu?: React.ReactNode;
   /** Custom OUIA ID */
   ouiaId?: string | number;
+  /** Child nodes */
+  children?: React.ReactNode;
 }
 
 const useStyles = createUseStyles({
@@ -55,6 +57,7 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
   label,
   breadcrumbs = null,
   actionMenu,
+  children = null,
   ouiaId = 'ContentHeader',
 }: ContentHeaderProps) => {
   const classes = useStyles();
@@ -110,6 +113,7 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
           </TextContent>
         </FlexItem>
       </Flex>
+      {children}
     </PageSection>
   )};
 
