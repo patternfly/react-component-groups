@@ -58,7 +58,7 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   breadcrumbs = null,
   actionMenu,
   ouiaId = 'PageHeader',
-  children
+  children = null
 }: PageHeaderProps) => {
   const classes = useStyles();
   const { isExternal = false, ...linkRestProps } = linkProps ?? {};
