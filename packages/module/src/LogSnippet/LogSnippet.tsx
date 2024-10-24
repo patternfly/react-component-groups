@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Alert, AlertVariant, CodeBlock, CodeBlockCode, Flex, FlexItem, FlexProps } from '@patternfly/react-core';
 
+/** extends FlexProps */
 export interface LogSnippetProps extends FlexProps {
   /** Log snippet or code to be displayed */
   logSnippet?: string;

@@ -22,16 +22,16 @@ export interface PageHeaderLinkProps extends ButtonProps {
   isExternal?: boolean;
 }
 
-export interface PageHeaderProps extends React.PropsWithChildren {
-  /** Title for page header */
+export interface ContentHeaderProps {
+  /** Title for content header */
   title: string;
-  /** Subtitle for page header */
+  /** Subtitle for content header */
   subtitle: string;
   /** Optional link below subtitle */
   linkProps?: PageHeaderLinkProps;
-  /** Optional icon for page header (appears to the left of the page header's title with a divider) */
+  /** Optional icon for content header (appears to the left of the content header's title with a divider) */
   icon?: React.ReactNode;
-  /** Optional label for page header (appears to the right of the page header's title) */
+  /** Optional label for content header (appears to the right of the content header's title) */
   label?: React.ReactNode;
   /** Breadcrumbs component */
   breadcrumbs?: React.ReactNode;
@@ -39,8 +39,6 @@ export interface PageHeaderProps extends React.PropsWithChildren {
   actionMenu?: React.ReactNode;
   /** Custom OUIA ID */
   ouiaId?: string | number;
-  /** Child nodes */
-  children?: React.ReactNode;
 }
 
 const useStyles = createUseStyles({
@@ -49,7 +47,7 @@ const useStyles = createUseStyles({
   }
 });
 
-export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
+export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<ContentHeaderProps>> = ({
   title,
   subtitle,
   linkProps,
@@ -57,9 +55,8 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   label,
   breadcrumbs = null,
   actionMenu,
-  ouiaId = 'PageHeader',
-  children = null
-}: PageHeaderProps) => {
+  ouiaId = 'ContentHeader',
+}: ContentHeaderProps) => {
   const classes = useStyles();
   const { isExternal = false, ...linkRestProps } = linkProps ?? {};
 
@@ -110,8 +107,7 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
           )}
         </FlexItem>
       </Flex>
-      {children}
     </PageSection>
   )};
 
-export default PageHeader;
+export default ContentHeader;

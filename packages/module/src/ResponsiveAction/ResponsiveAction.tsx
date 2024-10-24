@@ -1,6 +1,7 @@
 import React from 'react';
 import { ButtonProps } from '@patternfly/react-core';
 
+/** extends ButtonProps */
 export interface ResponsiveActionProps extends ButtonProps {
   /** Determines whether the action should be displayed next to dropdown if possible */
   isPinned?: boolean;

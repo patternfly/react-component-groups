@@ -3,6 +3,7 @@ import { Button, Dropdown, DropdownList, MenuToggle, OverflowMenu, OverflowMenuC
 import { EllipsisVIcon } from '@patternfly/react-icons';
 import { ResponsiveActionProps } from '../ResponsiveAction';
 
+/** extends OverflowMenuProps */
 export interface ResponsiveActionsProps extends Omit<OverflowMenuProps, 'ref' | 'breakpoint'> {
   /** Indicates breakpoint at which to switch between horizontal menu and vertical dropdown */
   breakpoint?: OverflowMenuProps['breakpoint'];

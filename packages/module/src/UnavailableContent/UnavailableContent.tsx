@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateProps, EmptyStateStatus, EmptyStateVariant } from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
+/** extends EmptyStateProps */
 export interface UnavailableContentProps extends Omit<EmptyStateProps, 'children' | 'titleText' | 'bodyText'> {
   /** The URL that the status page link points to */
   statusPageUrl?: string;

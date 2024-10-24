@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateProps, EmptyStateVariant, EmptyStateFooter, EmptyStateActions, ButtonVariant, } from '@patternfly/react-core';
 import { LockIcon } from '@patternfly/react-icons';
 
+/** extends EmptyStateProps */
 export interface UnauthorizedAccessProps extends Omit<EmptyStateProps, 'children' | 'titleText'> {
   /** Service name displayed in the title */
   serviceName?: string;

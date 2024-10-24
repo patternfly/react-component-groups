@@ -10,6 +10,7 @@ import {
 import SkeletonTableBody, { SkeletonTableBodyProps } from '../SkeletonTableBody';
 import SkeletonTableHead, { SkeletonTableHeadProps } from '../SkeletonTableHead';
 
+/** extends TableProps */
 export interface SkeletonTableProps extends Omit<TableProps, 'ref'>, Omit<SkeletonTableBodyProps, 'columnsCount'>, SkeletonTableHeadProps {
   /** Indicates the table variant */
   variant?: TableVariant;

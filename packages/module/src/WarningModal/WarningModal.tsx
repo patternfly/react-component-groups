@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, ButtonVariant, Checkbox } from '@patternfly/react-core';
 import { ModalProps, Modal, ModalVariant } from '@patternfly/react-core/deprecated';
 
+/** extends ModalProps */
 export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   /** Callback for the confirm action button. */
   onConfirm?: () => void;

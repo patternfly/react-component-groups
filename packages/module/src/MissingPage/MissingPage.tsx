@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateProps, EmptyStateVariant } from '@patternfly/react-core';
 import NotFoundIcon from '../NotFoundIcon';
 
+/** extends EmptyStateProps */
 export interface MissingPageProps extends Omit<EmptyStateProps, 'children' | 'title' | 'titleText'> {
   /** The URL that the home page link points to */
   toHomePageUrl?: string;

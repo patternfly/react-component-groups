@@ -1,5 +1,5 @@
 import React from 'react';
-import MissingPage from '../../packages/module/dist/dynamic/MissingPage';
+import MissingPage from '@patternfly/react-component-groups/dist/dynamic/MissingPage';
 
 describe('MissingPage', () => {
   it('renders MissingPage', () => {

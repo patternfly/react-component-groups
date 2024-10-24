@@ -98,8 +98,8 @@ const Shortcut: React.FunctionComponent<ShortcutProps> = ({
   return (
     <>
       <span className={clsx({ [classes.shortcut]: description, className })} data-ouia-component-id={ouiaId} {...props}>
-        {badges.length > 0 && badges.reduce((prev, curr) => (
-          <>{[ prev, ' + ', curr ]}</>
+        {badges.length > 0 && badges.reduce((prev, curr, idx) => (
+          <span key={idx}>{[ prev, ' + ', curr ]}</span>
         ))}
       </span>
       {description}
