@@ -9,37 +9,112 @@ exports[`Shortcut component should render correctly 1`] = `
         class="shortcut-0-2-1"
         data-ouia-component-id="Shortcut"
       >
-        <span
-          class="pf-v6-c-label pf-m-outline"
-          data-test-id="cmd-key"
-        >
+        <div>
+          <div>
+            <span
+              class="pf-v6-c-label pf-m-outline"
+              data-test-id="cmd-key"
+            >
+              <span
+                class="pf-v6-c-label__content"
+              >
+                <span
+                  class="pf-v6-c-label__text"
+                >
+                  ⌘ 
+                  Cmd
+                </span>
+              </span>
+            </span>
+             + 
+            <span
+              class="pf-v6-c-label pf-m-outline"
+              data-test-id="shift-key"
+            >
+              <span
+                class="pf-v6-c-label__content"
+              >
+                <span
+                  class="pf-v6-c-label__text"
+                >
+                  ⇧ 
+                  Shift
+                </span>
+              </span>
+            </span>
+          </div>
+           + 
           <span
-            class="pf-v6-c-label__content"
+            class="pf-v6-c-label pf-m-outline"
+            data-test-id="click"
           >
             <span
-              class="pf-v6-c-label__text"
+              class="pf-v6-c-label__content"
             >
-              ⌘ 
-              Cmd
+              <span
+                class="pf-v6-c-label__text"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="pf-v6-svg"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 384 512"
+                  width="1em"
+                >
+                  <path
+                    d="M0 352a160 160 0 0 0 160 160h64a160 160 0 0 0 160-160V224H0zM176 0h-16A160 160 0 0 0 0 160v32h176zm48 0h-16v192h176v-32A160 160 0 0 0 224 0z"
+                  />
+                </svg>
+                 Click
+              </span>
             </span>
           </span>
-        </span>
-         + 
-        <span
-          class="pf-v6-c-label pf-m-outline"
-          data-test-id="shift-key"
-        >
+        </div>
+      </span>
+      Shortcut description
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="shortcut-0-2-1"
+      data-ouia-component-id="Shortcut"
+    >
+      <div>
+        <div>
           <span
-            class="pf-v6-c-label__content"
+            class="pf-v6-c-label pf-m-outline"
+            data-test-id="cmd-key"
           >
             <span
-              class="pf-v6-c-label__text"
+              class="pf-v6-c-label__content"
             >
-              ⇧ 
-              Shift
+              <span
+                class="pf-v6-c-label__text"
+              >
+                ⌘ 
+                Cmd
+              </span>
             </span>
           </span>
-        </span>
+           + 
+          <span
+            class="pf-v6-c-label pf-m-outline"
+            data-test-id="shift-key"
+          >
+            <span
+              class="pf-v6-c-label__content"
+            >
+              <span
+                class="pf-v6-c-label__text"
+              >
+                ⇧ 
+                Shift
+              </span>
+            </span>
+          </span>
+        </div>
          + 
         <span
           class="pf-v6-c-label pf-m-outline"
@@ -68,74 +143,7 @@ exports[`Shortcut component should render correctly 1`] = `
             </span>
           </span>
         </span>
-      </span>
-      Shortcut description
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="shortcut-0-2-1"
-      data-ouia-component-id="Shortcut"
-    >
-      <span
-        class="pf-v6-c-label pf-m-outline"
-        data-test-id="cmd-key"
-      >
-        <span
-          class="pf-v6-c-label__content"
-        >
-          <span
-            class="pf-v6-c-label__text"
-          >
-            ⌘ 
-            Cmd
-          </span>
-        </span>
-      </span>
-       + 
-      <span
-        class="pf-v6-c-label pf-m-outline"
-        data-test-id="shift-key"
-      >
-        <span
-          class="pf-v6-c-label__content"
-        >
-          <span
-            class="pf-v6-c-label__text"
-          >
-            ⇧ 
-            Shift
-          </span>
-        </span>
-      </span>
-       + 
-      <span
-        class="pf-v6-c-label pf-m-outline"
-        data-test-id="click"
-      >
-        <span
-          class="pf-v6-c-label__content"
-        >
-          <span
-            class="pf-v6-c-label__text"
-          >
-            <svg
-              aria-hidden="true"
-              class="pf-v6-svg"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              viewBox="0 0 384 512"
-              width="1em"
-            >
-              <path
-                d="M0 352a160 160 0 0 0 160 160h64a160 160 0 0 0 160-160V224H0zM176 0h-16A160 160 0 0 0 0 160v32h176zm48 0h-16v192h176v-32A160 160 0 0 0 224 0z"
-              />
-            </svg>
-             Click
-          </span>
-        </span>
-      </span>
+      </div>
     </span>
     Shortcut description
   </div>,

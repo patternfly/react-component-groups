@@ -17,52 +17,56 @@ exports[`ShortcutGrid component should render correctly 1`] = `
             class=""
             data-ouia-component-id="Shortcut"
           >
-            <span
-              class="pf-v6-c-label pf-m-outline"
-              data-test-id="cmd-key"
-            >
+            <div>
+              <div>
+                <span
+                  class="pf-v6-c-label pf-m-outline"
+                  data-test-id="cmd-key"
+                >
+                  <span
+                    class="pf-v6-c-label__content"
+                  >
+                    <span
+                      class="pf-v6-c-label__text"
+                    >
+                      ⌘ 
+                      Cmd
+                    </span>
+                  </span>
+                </span>
+                 + 
+                <span
+                  class="pf-v6-c-label pf-m-outline"
+                  data-test-id="shift-key"
+                >
+                  <span
+                    class="pf-v6-c-label__content"
+                  >
+                    <span
+                      class="pf-v6-c-label__text"
+                    >
+                      ⇧ 
+                      Shift
+                    </span>
+                  </span>
+                </span>
+              </div>
+               + 
               <span
-                class="pf-v6-c-label__content"
+                class="pf-v6-c-label pf-m-outline"
+                data-test-id="t-key"
               >
                 <span
-                  class="pf-v6-c-label__text"
+                  class="pf-v6-c-label__content"
                 >
-                  ⌘ 
-                  Cmd
+                  <span
+                    class="pf-v6-c-label__text"
+                  >
+                    T
+                  </span>
                 </span>
               </span>
-            </span>
-             + 
-            <span
-              class="pf-v6-c-label pf-m-outline"
-              data-test-id="shift-key"
-            >
-              <span
-                class="pf-v6-c-label__content"
-              >
-                <span
-                  class="pf-v6-c-label__text"
-                >
-                  ⇧ 
-                  Shift
-                </span>
-              </span>
-            </span>
-             + 
-            <span
-              class="pf-v6-c-label pf-m-outline"
-              data-test-id="t-key"
-            >
-              <span
-                class="pf-v6-c-label__content"
-              >
-                <span
-                  class="pf-v6-c-label__text"
-                >
-                  T
-                </span>
-              </span>
-            </span>
+            </div>
           </span>
         </div>
         <div
@@ -79,6 +83,190 @@ exports[`ShortcutGrid component should render correctly 1`] = `
             class=""
             data-ouia-component-id="Shortcut"
           >
+            <div>
+              <span
+                class="pf-v6-c-label pf-m-outline"
+                data-test-id="opt-key"
+              >
+                <span
+                  class="pf-v6-c-label__content"
+                >
+                  <span
+                    class="pf-v6-c-label__text"
+                  >
+                    ⌥ 
+                    Opt
+                  </span>
+                </span>
+              </span>
+               + 
+              <span
+                class="pf-v6-c-label pf-m-outline"
+                data-test-id="n-key"
+              >
+                <span
+                  class="pf-v6-c-label__content"
+                >
+                  <span
+                    class="pf-v6-c-label__text"
+                  >
+                    N
+                  </span>
+                </span>
+              </span>
+            </div>
+          </span>
+        </div>
+        <div
+          class="pf-v6-l-grid__item"
+          data-ouia-component-id="ShortcutGrid-item-description-1"
+        >
+          Open new page
+        </div>
+        <div
+          class="pf-v6-l-grid__item shortcutGridItem-0-2-1"
+          data-ouia-component-id="ShortcutGrid-item-2"
+        >
+          <span
+            class=""
+            data-ouia-component-id="Shortcut"
+          >
+            <div>
+              <span
+                class="pf-v6-c-label pf-m-outline"
+                data-test-id="ctrl-key"
+              >
+                <span
+                  class="pf-v6-c-label__content"
+                >
+                  <span
+                    class="pf-v6-c-label__text"
+                  >
+                    ^ 
+                    Ctrl
+                  </span>
+                </span>
+              </span>
+               + 
+              <span
+                class="pf-v6-c-label pf-m-outline"
+                data-test-id="drag"
+              >
+                <span
+                  class="pf-v6-c-label__content"
+                >
+                  <span
+                    class="pf-v6-c-label__text"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="pf-v6-svg"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 384 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M0 352a160 160 0 0 0 160 160h64a160 160 0 0 0 160-160V224H0zM176 0h-16A160 160 0 0 0 0 160v32h176zm48 0h-16v192h176v-32A160 160 0 0 0 224 0z"
+                      />
+                    </svg>
+                     Drag
+                  </span>
+                </span>
+              </span>
+            </div>
+          </span>
+        </div>
+        <div
+          class="pf-v6-l-grid__item"
+          data-ouia-component-id="ShortcutGrid-item-description-2"
+        >
+          Move object
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="pf-v6-l-grid pf-m-all-6-col pf-m-gutter"
+      data-ouia-component-id="ShortcutGrid"
+    >
+      <div
+        class="pf-v6-l-grid__item shortcutGridItem-0-2-1"
+        data-ouia-component-id="ShortcutGrid-item-0"
+      >
+        <span
+          class=""
+          data-ouia-component-id="Shortcut"
+        >
+          <div>
+            <div>
+              <span
+                class="pf-v6-c-label pf-m-outline"
+                data-test-id="cmd-key"
+              >
+                <span
+                  class="pf-v6-c-label__content"
+                >
+                  <span
+                    class="pf-v6-c-label__text"
+                  >
+                    ⌘ 
+                    Cmd
+                  </span>
+                </span>
+              </span>
+               + 
+              <span
+                class="pf-v6-c-label pf-m-outline"
+                data-test-id="shift-key"
+              >
+                <span
+                  class="pf-v6-c-label__content"
+                >
+                  <span
+                    class="pf-v6-c-label__text"
+                  >
+                    ⇧ 
+                    Shift
+                  </span>
+                </span>
+              </span>
+            </div>
+             + 
+            <span
+              class="pf-v6-c-label pf-m-outline"
+              data-test-id="t-key"
+            >
+              <span
+                class="pf-v6-c-label__content"
+              >
+                <span
+                  class="pf-v6-c-label__text"
+                >
+                  T
+                </span>
+              </span>
+            </span>
+          </div>
+        </span>
+      </div>
+      <div
+        class="pf-v6-l-grid__item"
+        data-ouia-component-id="ShortcutGrid-item-description-0"
+      >
+        Open in a new tab
+      </div>
+      <div
+        class="pf-v6-l-grid__item shortcutGridItem-0-2-1"
+        data-ouia-component-id="ShortcutGrid-item-1"
+      >
+        <span
+          class=""
+          data-ouia-component-id="Shortcut"
+        >
+          <div>
             <span
               class="pf-v6-c-label pf-m-outline"
               data-test-id="opt-key"
@@ -109,22 +297,24 @@ exports[`ShortcutGrid component should render correctly 1`] = `
                 </span>
               </span>
             </span>
-          </span>
-        </div>
-        <div
-          class="pf-v6-l-grid__item"
-          data-ouia-component-id="ShortcutGrid-item-description-1"
+          </div>
+        </span>
+      </div>
+      <div
+        class="pf-v6-l-grid__item"
+        data-ouia-component-id="ShortcutGrid-item-description-1"
+      >
+        Open new page
+      </div>
+      <div
+        class="pf-v6-l-grid__item shortcutGridItem-0-2-1"
+        data-ouia-component-id="ShortcutGrid-item-2"
+      >
+        <span
+          class=""
+          data-ouia-component-id="Shortcut"
         >
-          Open new page
-        </div>
-        <div
-          class="pf-v6-l-grid__item shortcutGridItem-0-2-1"
-          data-ouia-component-id="ShortcutGrid-item-2"
-        >
-          <span
-            class=""
-            data-ouia-component-id="Shortcut"
-          >
+          <div>
             <span
               class="pf-v6-c-label pf-m-outline"
               data-test-id="ctrl-key"
@@ -168,181 +358,7 @@ exports[`ShortcutGrid component should render correctly 1`] = `
                 </span>
               </span>
             </span>
-          </span>
-        </div>
-        <div
-          class="pf-v6-l-grid__item"
-          data-ouia-component-id="ShortcutGrid-item-description-2"
-        >
-          Move object
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="pf-v6-l-grid pf-m-all-6-col pf-m-gutter"
-      data-ouia-component-id="ShortcutGrid"
-    >
-      <div
-        class="pf-v6-l-grid__item shortcutGridItem-0-2-1"
-        data-ouia-component-id="ShortcutGrid-item-0"
-      >
-        <span
-          class=""
-          data-ouia-component-id="Shortcut"
-        >
-          <span
-            class="pf-v6-c-label pf-m-outline"
-            data-test-id="cmd-key"
-          >
-            <span
-              class="pf-v6-c-label__content"
-            >
-              <span
-                class="pf-v6-c-label__text"
-              >
-                ⌘ 
-                Cmd
-              </span>
-            </span>
-          </span>
-           + 
-          <span
-            class="pf-v6-c-label pf-m-outline"
-            data-test-id="shift-key"
-          >
-            <span
-              class="pf-v6-c-label__content"
-            >
-              <span
-                class="pf-v6-c-label__text"
-              >
-                ⇧ 
-                Shift
-              </span>
-            </span>
-          </span>
-           + 
-          <span
-            class="pf-v6-c-label pf-m-outline"
-            data-test-id="t-key"
-          >
-            <span
-              class="pf-v6-c-label__content"
-            >
-              <span
-                class="pf-v6-c-label__text"
-              >
-                T
-              </span>
-            </span>
-          </span>
-        </span>
-      </div>
-      <div
-        class="pf-v6-l-grid__item"
-        data-ouia-component-id="ShortcutGrid-item-description-0"
-      >
-        Open in a new tab
-      </div>
-      <div
-        class="pf-v6-l-grid__item shortcutGridItem-0-2-1"
-        data-ouia-component-id="ShortcutGrid-item-1"
-      >
-        <span
-          class=""
-          data-ouia-component-id="Shortcut"
-        >
-          <span
-            class="pf-v6-c-label pf-m-outline"
-            data-test-id="opt-key"
-          >
-            <span
-              class="pf-v6-c-label__content"
-            >
-              <span
-                class="pf-v6-c-label__text"
-              >
-                ⌥ 
-                Opt
-              </span>
-            </span>
-          </span>
-           + 
-          <span
-            class="pf-v6-c-label pf-m-outline"
-            data-test-id="n-key"
-          >
-            <span
-              class="pf-v6-c-label__content"
-            >
-              <span
-                class="pf-v6-c-label__text"
-              >
-                N
-              </span>
-            </span>
-          </span>
-        </span>
-      </div>
-      <div
-        class="pf-v6-l-grid__item"
-        data-ouia-component-id="ShortcutGrid-item-description-1"
-      >
-        Open new page
-      </div>
-      <div
-        class="pf-v6-l-grid__item shortcutGridItem-0-2-1"
-        data-ouia-component-id="ShortcutGrid-item-2"
-      >
-        <span
-          class=""
-          data-ouia-component-id="Shortcut"
-        >
-          <span
-            class="pf-v6-c-label pf-m-outline"
-            data-test-id="ctrl-key"
-          >
-            <span
-              class="pf-v6-c-label__content"
-            >
-              <span
-                class="pf-v6-c-label__text"
-              >
-                ^ 
-                Ctrl
-              </span>
-            </span>
-          </span>
-           + 
-          <span
-            class="pf-v6-c-label pf-m-outline"
-            data-test-id="drag"
-          >
-            <span
-              class="pf-v6-c-label__content"
-            >
-              <span
-                class="pf-v6-c-label__text"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="pf-v6-svg"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 384 512"
-                  width="1em"
-                >
-                  <path
-                    d="M0 352a160 160 0 0 0 160 160h64a160 160 0 0 0 160-160V224H0zM176 0h-16A160 160 0 0 0 0 160v32h176zm48 0h-16v192h176v-32A160 160 0 0 0 224 0z"
-                  />
-                </svg>
-                 Drag
-              </span>
-            </span>
-          </span>
+          </div>
         </span>
       </div>
       <div
