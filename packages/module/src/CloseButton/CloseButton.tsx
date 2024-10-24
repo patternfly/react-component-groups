@@ -11,6 +11,7 @@ const useStyles = createUseStyles({
   },
 });
 
+/** extends ButtonProps */
 export interface CloseButtonProps extends ButtonProps {
   /** Data test ID used for testing. */
   dataTestID?: string;

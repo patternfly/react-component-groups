@@ -28,6 +28,7 @@ export interface ColumnManagementModalColumn {
   isUntoggleable?: boolean
 }
 
+/** extends ModalProps */
 export interface ColumnManagementModalProps extends Omit<ModalProps, 'ref' | 'children'> {
   /** Flag to show the modal */
   isOpen?: boolean,

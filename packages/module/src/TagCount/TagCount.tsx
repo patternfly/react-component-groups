@@ -21,6 +21,7 @@ const useStyles = createUseStyles({
   }
 });
 
+/** extends ButtonProps */
 export interface TagCountProps extends ButtonProps {
   /** Count to display in tag count component */
   count?: number;

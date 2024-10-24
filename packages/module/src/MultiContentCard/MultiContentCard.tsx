@@ -25,6 +25,7 @@ export interface MutliContentCardProps {
   dividerVariant?: MultiContentCardDividerVariant;
 }
 
+/** extends CardProps */
 export interface MultiContentCardProps extends Omit<CardProps, 'children' | 'title'> {
   /** Cards to be displayed as a content */
   cards?: (React.ReactElement | MutliContentCardProps)[];
@@ -77,7 +78,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   const renderCards = (cards: (React.ReactElement | MutliContentCardProps)[], withDividers?: boolean) =>  (
     <Flex alignSelf={{ default: 'alignSelfStretch' }} alignItems={{ default: 'alignItemsStretch' }}>
       {cards.map((card, index) => (
-        <div key={`card-${index}`}>
+        <React.Fragment key={`card-${index}`}>
           {index > 0 && isCardWithProps(card) && card.dividerVariant === MultiContentCardDividerVariant.left && (
             <Divider 
               orientation={{ md: 'vertical' }} 
@@ -93,7 +94,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
               inset={{ default: 'inset3xl' }}
             />
           )}
-        </div>
+        </React.Fragment>
       ))} 
     </Flex>
   );

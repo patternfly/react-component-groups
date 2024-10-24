@@ -19,6 +19,7 @@ export const BulkSelectValue = {
 
 export type BulkSelectValue = (typeof BulkSelectValue)[keyof typeof BulkSelectValue];
 
+/** extends DropdownProps */
 export interface BulkSelectProps extends Omit<DropdownProps, 'toggle' | 'onSelect'> {
   /** BulkSelect className */
   className?: string;

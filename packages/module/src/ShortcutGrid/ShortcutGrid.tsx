@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import Shortcut, { ShortcutProps } from '../Shortcut/Shortcut';
 import { Grid, GridItem, GridItemProps, GridProps } from '@patternfly/react-core';
 
+/** extends GridProps */
 export interface ShortcutGridProps extends GridProps {
   /** Array of shortcuts to be displayed in the grid */
   shortcuts: ShortcutProps[];

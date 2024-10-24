@@ -54,9 +54,6 @@ export * from './MissingPage';
 export { default as LogSnippet } from './LogSnippet';
 export * from './LogSnippet';
 
-export { default as HorizontalNav } from './HorizontalNav';
-export * from './HorizontalNav';
-
 export { default as ErrorState } from './ErrorState';
 export * from './ErrorState';
 
@@ -65,12 +62,6 @@ export * from './ErrorStack';
 
 export { default as ErrorBoundary } from './ErrorBoundary';
 export * from './ErrorBoundary';
-
-export { default as DetailsPageHeader } from './DetailsPageHeader';
-export * from './DetailsPageHeader';
-
-export { default as DetailsPage } from './DetailsPage';
-export * from './DetailsPage';
 
 export { default as ColumnManagementModal } from './ColumnManagementModal';
 export * from './ColumnManagementModal';
@@ -84,8 +75,3 @@ export * from './BulkSelect';
 export { default as Ansible } from './Ansible';
 export * from './Ansible';
 
-export { default as ActionMenu } from './ActionMenu';
-export * from './ActionMenu';
-
-export { default as ActionButton } from './ActionButton';
-export * from './ActionButton';
