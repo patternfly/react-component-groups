@@ -22,8 +22,7 @@ A **maintenance** component displays a screen to users when they are undergoing 
 
 ### Basic maintenance
 
-A basic unavailable content component provides users with instructions, including a link to check a status page for known issues.
-The status page link can be specified using `statusPageUrl`.
+A basic maintenance component provides users with information regarding scheduled maintenance.
 
 ```js file="./MaintenanceExample.tsx"
 
