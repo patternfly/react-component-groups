@@ -22,8 +22,16 @@ A **maintenance** component displays a screen to users when they are undergoing 
 
 ### Basic maintenance
 
-A basic maintenance component provides users with information regarding scheduled maintenance.
+To provide users with basic information regarding maintenance. A basic maintenance state should contain an appropriate and informative `titleText`. `defaultBodyText` will be used by default. 
 
 ```js file="./MaintenanceExample.tsx"
+
+```
+
+### Custom body and footer
+
+To override the default bodyText and footer link, specify your own using `bodyText` and `customFooter`. 
+
+```js file="./MaintenanceCustomExample.tsx"
 
 ```
