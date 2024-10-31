@@ -28,9 +28,9 @@ To provide users with basic information regarding maintenance. A basic maintenan
 
 ```
 
-### Custom body and footer
+### Custom maintenance
 
-To override the default bodyText and footer link, specify your own using `bodyText` and `customFooter`. 
+To override the default bodyText and footer link, specify your own using `bodyText` and `customFooter`. You may add a `startTime`, `endTime` and `timeZone` that will be displayed as shown below. `timeZone` will be set to UTC by default.
 
 ```js file="./MaintenanceCustomExample.tsx"
 
