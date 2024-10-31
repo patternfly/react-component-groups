@@ -1,5 +1,5 @@
 import React from 'react';
-import Maintenance from '../../packages/module/dist/dynamic/Maintenance';
+import Maintenance from '@patternfly/react-component-groups/dist/dynamic/Maintenance';
 
 describe('Maintenance', () => {
   it('renders Maintenance', () => {
