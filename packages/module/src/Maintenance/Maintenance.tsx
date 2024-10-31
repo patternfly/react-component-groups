@@ -8,13 +8,13 @@ export interface MaintenanceProps extends Omit<EmptyStateProps, 'children' | 'ti
     titleText?: string;
     /** Custom body text */
     bodyText?: React.ReactNode;
-    /** A default bodyText used if no bodyText is provided. */
+    /** A default bodyText used if no bodyText is provided */
     defaultBodyText?: React.ReactNode;
-    /** start time in a specific time zone */
+    /** Start time in a specific time zone */
     startTime?: string;
-    /** end time in a specific time zone */
+    /** End time in a specific time zone */
     endTime?: string;
-    /** specify time zone */
+    /** Time zone specification */
     timeZone?: string;
     /** Information link */
     redirectLinkUrl?: string;
