@@ -73,7 +73,7 @@
     "react-dom": "^18",
     "rimraf": "^5.0.10",
     "sass": "^1.80.6",
-    "sass-loader": "^14.2.1",
+    "sass-loader": "^16.0.3",
     "serve": "^14.2.4",
     "start-server-and-test": "^2.0.5",
     "surge": "^0.24.6",
