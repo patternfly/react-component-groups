@@ -29,6 +29,10 @@ export interface ErrorBoundaryProps {
   children?: React.ReactNode;
   /** Custom OUIA ID */
   ouiaId?: string | number;
+  /** The heading level to use on the header title, default is h1 */
+  headerTitleHeadingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /** The heading level to use on the error title, default is h2 */
+  errorTitleHeadingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 export interface ErrorBoundaryState {
@@ -45,9 +49,20 @@ interface ErrorPageProps extends ErrorBoundaryProps {
   classes: Record<string | number | symbol, string>;
 }
 
-export const ErrorBoundary: React.FunctionComponent<ErrorBoundaryProps> = (props: ErrorBoundaryProps) => {
+export const ErrorBoundary: React.FunctionComponent<ErrorBoundaryProps> = ({
+  headerTitleHeadingLevel = "h1",
+  errorTitleHeadingLevel = "h2",
+  ...props
+}: ErrorBoundaryProps) => {
   const classes = useStyles();
-  return <ErrorBoundaryContent classes={classes} {...props} />
+  return (
+    <ErrorBoundaryContent 
+      classes={classes} 
+      headerTitleHeadingLevel={headerTitleHeadingLevel} 
+      errorTitleHeadingLevel={errorTitleHeadingLevel}
+      {...props} 
+    />
+  );
 }
 
 // As of time of writing, React only supports error boundaries in class components
@@ -82,7 +97,7 @@ class ErrorBoundaryContent extends React.Component<ErrorPageProps, ErrorBoundary
   }
 
   render() {
-    const { ouiaId = 'ErrorBoundary', ...props } = this.props;
+    const { ouiaId = 'ErrorBoundary', errorTitleHeadingLevel, headerTitleHeadingLevel, ...props } = this.props;
     
     if (this.state.hasError) {
       if (this.props.silent) {
@@ -91,9 +106,10 @@ class ErrorBoundaryContent extends React.Component<ErrorPageProps, ErrorBoundary
 
       return (
         <div data-ouia-component-id={ouiaId}>
-          {props?.headerTitle && <Title headingLevel="h1" size="2xl" ouiaId={`${ouiaId}-title`}>{props.headerTitle}</Title>}
+          {props?.headerTitle && <Title headingLevel={headerTitleHeadingLevel || 'h1'} size="2xl" ouiaId={`${ouiaId}-title`}>{props.headerTitle}</Title>}
           <ErrorState
             titleText={props.errorTitle}
+            headingLevel={errorTitleHeadingLevel}
             bodyText={
               <>
                 <span>{props.errorDescription}</span>

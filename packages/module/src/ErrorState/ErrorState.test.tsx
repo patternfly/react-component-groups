@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ErrorState from './ErrorState';
-import { getByRole, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Button } from '@patternfly/react-core';
 
 describe('ErrorState component', () => {

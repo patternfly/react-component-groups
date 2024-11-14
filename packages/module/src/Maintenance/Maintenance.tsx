@@ -36,6 +36,7 @@ const Maintenance: React.FunctionComponent<MaintenanceProps> = ({
   redirectLinkText = 'status.redhat.com.',
   customFooter = 'For more information please visit',
   ouiaId = 'Maintenance',
+  headingLevel = 'h5',
   ...props 
 }: MaintenanceProps) => {
   let formattedBodyText = bodyText;
@@ -44,7 +45,7 @@ const Maintenance: React.FunctionComponent<MaintenanceProps> = ({
   }
 
   return (
-    <EmptyState headingLevel="h5" status={EmptyStateStatus.danger} icon={HourglassHalfIcon}  titleText={titleText} variant={EmptyStateVariant.lg} data-ouia-component-id={ouiaId} {...props}>
+    <EmptyState headingLevel={headingLevel} status={EmptyStateStatus.danger} icon={HourglassHalfIcon}  titleText={titleText} variant={EmptyStateVariant.lg} data-ouia-component-id={ouiaId} {...props}>
       <EmptyStateBody data-ouia-component-id={`${ouiaId}-body`}>
         {bodyText ? formattedBodyText : defaultBodyText}
       </EmptyStateBody>

@@ -43,9 +43,10 @@ const UnauthorizedAccess: React.FunctionComponent<UnauthorizedAccessProps> = ({
   showReturnButton = true,
   className,
   ouiaId = 'UnauthorizedAccess',
+  headingLevel = 'h5',
   ...props
 }: UnauthorizedAccessProps) => (
-  <EmptyState headingLevel="h5" icon={Icon} variant={EmptyStateVariant.full} className={className} data-ouia-component-id={ouiaId} {...props} titleText={titleText}>
+  <EmptyState headingLevel={headingLevel} icon={Icon} variant={EmptyStateVariant.full} className={className} data-ouia-component-id={ouiaId} {...props} titleText={titleText}>
     <EmptyStateBody data-ouia-component-id={`${ouiaId}-body`}>{bodyText}</EmptyStateBody>
     <EmptyStateFooter data-ouia-component-id={`${ouiaId}-footer`}>
       {primaryAction ? <EmptyStateActions>{primaryAction}</EmptyStateActions> : null}

@@ -49,7 +49,7 @@ const ErrorState: React.FunctionComponent<ErrorStateProps> = ({
   return (
     <EmptyState 
       headingLevel={headingLevel} 
-      {...(status !== 'none' && {status: status} )}
+      {...(status !== 'none' && { status } )}
       variant={variant} 
       titleText={titleText} 
       data-ouia-component-id={ouiaId} 
