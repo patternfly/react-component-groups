@@ -155,6 +155,8 @@ jobs:
         if: steps.dist.outputs.cache-hit != 'true'
       - name: Build docs
         run: npm run build:docs
+      - run: npx puppeteer browsers install chrome
+        name: Install Chrome for Puppeteer
       - name: A11y tests
         run: npm run serve:docs & npm run test:a11y
   test_cypress:
