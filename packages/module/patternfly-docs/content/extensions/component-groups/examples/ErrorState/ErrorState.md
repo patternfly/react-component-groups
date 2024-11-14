@@ -15,6 +15,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 ---
 
 import ErrorState from "@patternfly/react-component-groups/dist/dynamic/ErrorState";
+import { PathMissingIcon } from '@patternfly/react-icons/dist/dynamic/icons/path-missing-icon';
 
 The **error state** component repurposes the `EmptyState` component to display an error to users. To further customize this component, you can also utilize all properties of the [empty state component](/components/empty-state), with the `exception` of `children`.
 
@@ -22,7 +23,7 @@ The **error state** component repurposes the `EmptyState` component to display a
 
 ### Basic error state
 
-To provide users with error details, a basic error state should contain an appropriate and informative `titleText` and `bodyText`. 
+To provide users with error details, a basic error state should contain an appropriate and informative `titleText` and `bodyText`. Error state provides a default action to navigate back to the previous page, or the home page in the empty state's footer.
 
 ```js file="./ErrorStateExample.tsx"
 
@@ -33,5 +34,13 @@ To provide users with error details, a basic error state should contain an appro
 To override the default action button, specify your own using `customFooter`. 
 
 ```js file="./ErrorStateFooterExample.tsx"
+
+```
+
+### Customizations using EmptyState props
+
+All properties of the [empty state component](/components/empty-state) are spread to the error state component group. Passing `status='none'` to the error state will cause the icon color to be grey.
+
+```js file="./ErrorStateExtraProps.tsx"
 
 ```

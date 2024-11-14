@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ErrorState from './ErrorState';
-import { render, screen } from '@testing-library/react';
+import { getByRole, render, screen } from '@testing-library/react';
 import { Button } from '@patternfly/react-core';
 
 describe('ErrorState component', () => {
@@ -18,6 +18,13 @@ describe('ErrorState component', () => {
 
     expect(screen.getByText('Something went wrong')).toBeVisible();
     expect(screen.getByText('Go to home page')).toBeVisible();
+  });
+
+  it('should spread empty state props', () => {
+    render(<ErrorState headingLevel="h2" variant="xs" data-testid="test"/>);
+
+    expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
+    expect(screen.getByTestId('test')).toHaveClass('pf-m-xs');
   });
 
 });
