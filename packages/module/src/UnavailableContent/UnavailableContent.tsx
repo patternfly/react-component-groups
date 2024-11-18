@@ -22,9 +22,10 @@ const UnavailableContent: React.FunctionComponent<UnavailableContentProps> = ({
   titleText = 'This page is temporarily unavailable',
   bodyText = 'Try refreshing the page. If the problem persists, contact your organization administrator or visit our status page for known outages.',
   ouiaId = 'UnavailableContent',
+  headingLevel = "h5",
   ...props 
 }: UnavailableContentProps) => (
-  <EmptyState headingLevel="h5" status={EmptyStateStatus.danger} icon={ExclamationCircleIcon}  titleText={titleText} variant={EmptyStateVariant.lg} data-ouia-component-id={ouiaId} {...props}>
+  <EmptyState headingLevel={headingLevel} status={EmptyStateStatus.danger} icon={ExclamationCircleIcon}  titleText={titleText} variant={EmptyStateVariant.lg} data-ouia-component-id={ouiaId} {...props}>
     <EmptyStateBody data-ouia-component-id={`${ouiaId}-body`}>
       {bodyText}
     </EmptyStateBody>

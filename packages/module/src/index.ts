@@ -51,6 +51,9 @@ export * from './MultiContentCard';
 export { default as MissingPage } from './MissingPage';
 export * from './MissingPage';
 
+export { default as Maintenance } from './Maintenance';
+export * from './Maintenance';
+
 export { default as LogSnippet } from './LogSnippet';
 export * from './LogSnippet';
 

@@ -22,9 +22,10 @@ export const MissingPage: React.FunctionComponent<MissingPageProps> = ({
   titleText = 'We lost that page',
   bodyText = "Let's find you a new one. Try a new search or return home.",
   ouiaId = "MissingPage",
+  headingLevel = 'h1',
   ...props
 }: MissingPageProps) => (
-  <EmptyState headingLevel='h1' icon={NotFoundIcon} variant={EmptyStateVariant.full} data-ouia-component-id={ouiaId} {...props} titleText={titleText}>
+  <EmptyState headingLevel={headingLevel} icon={NotFoundIcon} variant={EmptyStateVariant.full} data-ouia-component-id={ouiaId} {...props} titleText={titleText}>
     <EmptyStateBody data-ouia-component-id={`${ouiaId}-body`}>{bodyText}</EmptyStateBody>
     <EmptyStateFooter data-ouia-component-id={`${ouiaId}-footer`}>
       <Button variant="link" component="a" href={toHomePageUrl} ouiaId={`${ouiaId}-home-button`}>

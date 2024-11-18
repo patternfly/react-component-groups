@@ -20,4 +20,11 @@ describe('ErrorState component', () => {
     expect(screen.getByText('Go to home page')).toBeVisible();
   });
 
+  it('should spread empty state props', () => {
+    render(<ErrorState headingLevel="h2" variant="xs" data-testid="test"/>);
+
+    expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
+    expect(screen.getByTestId('test')).toHaveClass('pf-m-xs');
+  });
+
 });
