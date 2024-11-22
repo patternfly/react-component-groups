@@ -3,15 +3,15 @@ import { ResponsiveAction } from '@patternfly/react-component-groups/dist/dynami
 import { ResponsiveActions } from '@patternfly/react-component-groups/dist/dynamic/ResponsiveActions';
 
 export const TagCountDisabledExample: React.FunctionComponent = () => (
-  <ResponsiveActions breakpoint="lg">
+  <ResponsiveActions breakpoint="md">
     <ResponsiveAction isPersistent>
-        Persistent Action
+      Persistent Action
     </ResponsiveAction>
     <ResponsiveAction isPinned variant='secondary'>
-        Pinned Action
+      Pinned Action
     </ResponsiveAction>
     <ResponsiveAction>
-        Overflow Action
+      Overflow Action
     </ResponsiveAction>
   </ResponsiveActions>
 );
