@@ -1,5 +1,10 @@
-import React, { useState } from 'react';
-import { Button, Dropdown, DropdownList, MenuToggle, OverflowMenu, OverflowMenuContent, OverflowMenuControl, OverflowMenuDropdownItem, OverflowMenuGroup, OverflowMenuItem, OverflowMenuProps } from '@patternfly/react-core';
+import React, { useState, useEffect } from 'react';
+import {
+  Button, Dropdown, DropdownList, MenuToggle,
+  OverflowMenu, OverflowMenuContent, OverflowMenuControl,
+  OverflowMenuDropdownItem, OverflowMenuGroup, OverflowMenuItem,
+  OverflowMenuProps,
+} from '@patternfly/react-core';
 import { EllipsisVIcon } from '@patternfly/react-icons';
 import { ResponsiveActionProps } from '../ResponsiveAction';
 
@@ -10,12 +15,51 @@ export interface ResponsiveActionsProps extends Omit<OverflowMenuProps, 'ref' | 
   ouiaId?: string;
   /** Child actions to be displayed */
   children: React.ReactNode;
+  /** Reference element for breakpoint calculations */
+  breakpointReference?: React.RefObject<HTMLElement>;
 }
 
-export const ResponsiveActions: React.FunctionComponent<ResponsiveActionsProps> = ({ ouiaId = 'ResponsiveActions', breakpoint = 'lg', children, ...props }: ResponsiveActionsProps) => {
-  const [ isOpen, setIsOpen ] = useState(false);
+const breakpoints = {
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200,
+  '2xl': 1450,
+};
 
-  // separate persistent, pinned and collapsed actions
+export const ResponsiveActions: React.FunctionComponent<ResponsiveActionsProps> = ({
+  ouiaId = 'ResponsiveActions',
+  breakpoint = 'lg',
+  children,
+  breakpointReference,
+  ...props
+}: ResponsiveActionsProps) => {
+  const [ isOpen, setIsOpen ] = useState(false);
+  const [ isBelowBreakpoint, setIsBelowBreakpoint ] = useState(false);
+  const currentBreakpoint = breakpoints[breakpoint];
+
+  useEffect(() => {
+    const referenceElement = breakpointReference?.current;
+    const observeSize = () => {
+      const elementWidth = referenceElement?.offsetWidth || window.innerWidth;
+      setIsBelowBreakpoint(elementWidth < currentBreakpoint);
+    };
+  
+    const observer = new ResizeObserver(observeSize);
+  
+    if (referenceElement) {
+      observer.observe(referenceElement);
+    } else {
+      window.addEventListener('resize', observeSize);
+      observeSize();
+    }
+  
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', observeSize);
+    };
+  }, [ breakpointReference, currentBreakpoint ]);
+
   const persistentActions: React.ReactNode[] = [];
   const pinnedActions: React.ReactNode[] = [];
   const dropdownItems: React.ReactNode[] = [];
@@ -24,7 +68,7 @@ export const ResponsiveActions: React.FunctionComponent<ResponsiveActionsProps> 
     if (React.isValidElement<ResponsiveActionProps>(child)) {
       const { isPersistent, isPinned, key = index, children, onClick, ...actionProps } = child.props;
 
-      if (isPersistent || isPinned) {
+      if (isPersistent || (isPinned && !isBelowBreakpoint)) {
         (isPersistent ? persistentActions : pinnedActions).push(
           <OverflowMenuItem key={key} isPersistent={isPersistent}>
             <Button onClick={onClick} ouiaId={`${ouiaId}-action-${key}`} {...actionProps}>
@@ -32,10 +76,9 @@ export const ResponsiveActions: React.FunctionComponent<ResponsiveActionsProps> 
             </Button>
           </OverflowMenuItem>
         );
-      }
-      if (!isPersistent) {
+      } else {
         dropdownItems.push(
-          <OverflowMenuDropdownItem key={key} onClick={onClick} isShared={isPinned} ouiaId={`${ouiaId}-action-${key}`}>
+          <OverflowMenuDropdownItem key={key} onClick={onClick} ouiaId={`${ouiaId}-action-${key}`}>
             {children}
           </OverflowMenuDropdownItem>
         );
@@ -45,20 +88,20 @@ export const ResponsiveActions: React.FunctionComponent<ResponsiveActionsProps> 
 
   return (
     <OverflowMenu breakpoint={breakpoint} data-ouia-component-id={`${ouiaId}-menu`} {...props}>
-      {persistentActions.length > 0 ? (
+      {persistentActions.length > 0 && (
         <OverflowMenuContent isPersistent data-ouia-component-id={`${ouiaId}-menu-persistent-content`}>
           <OverflowMenuGroup groupType="button" data-ouia-component-id={`${ouiaId}-menu-persistent-group`} isPersistent>
             {persistentActions}
           </OverflowMenuGroup>
         </OverflowMenuContent>
-      ) : null}
-      {pinnedActions.length > 0 ? (
+      )}
+      {pinnedActions.length > 0 && (
         <OverflowMenuContent data-ouia-component-id={`${ouiaId}-menu-pinned-content`}>
           <OverflowMenuGroup groupType="button" data-ouia-component-id={`${ouiaId}-menu-pinned-group`}>
             {pinnedActions}
           </OverflowMenuGroup>
         </OverflowMenuContent>
-      ) : null}
+      )}
       {dropdownItems.length > 0 && (
         <OverflowMenuControl hasAdditionalOptions data-ouia-component-id={`${ouiaId}-menu-control`}>
           <Dropdown
