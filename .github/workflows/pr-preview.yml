@@ -33,7 +33,7 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-npm-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('package-lock.json') }}
-      - run: npm install --frozen-lockfile
+      - run: npm install --frozen-lockfile --legacy-peer-deps
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - run: npm run build
         name: Build component groups
