@@ -36,7 +36,7 @@ export const ResponsiveActions: React.FunctionComponent<ResponsiveActionsProps> 
       }
       if (!isPersistent) {
         dropdownItems.push(
-          <OverflowMenuDropdownItem key={key} onClick={onClick} isShared={isPinned} ouiaId={`${ouiaId}-action-${key}`}>
+          <OverflowMenuDropdownItem key={key} onClick={onClick} isShared={isPinned} ouiaId={`${ouiaId}-action-${key}`} isDisabled={actionProps.isDisabled}>
             {children}
           </OverflowMenuDropdownItem>
         );
