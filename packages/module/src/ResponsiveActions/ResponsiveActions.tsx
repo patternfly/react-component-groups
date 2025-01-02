@@ -78,7 +78,7 @@ export const ResponsiveActions: React.FunctionComponent<ResponsiveActionsProps> 
         );
       } else {
         dropdownItems.push(
-          <OverflowMenuDropdownItem key={key} onClick={onClick} ouiaId={`${ouiaId}-action-${key}`}>
+          <OverflowMenuDropdownItem key={key} onClick={onClick} ouiaId={`${ouiaId}-action-${key}`} isDisabled={actionProps.isDisabled}>
             {children}
           </OverflowMenuDropdownItem>
         );
