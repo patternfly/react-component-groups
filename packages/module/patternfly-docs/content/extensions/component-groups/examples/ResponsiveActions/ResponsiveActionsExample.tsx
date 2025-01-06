@@ -13,5 +13,8 @@ export const TagCountDisabledExample: React.FunctionComponent = () => (
     <ResponsiveAction>
         Overflow Action
     </ResponsiveAction>
+    <ResponsiveAction isDisabled>
+        Disabled action
+    </ResponsiveAction>
   </ResponsiveActions>
 );
