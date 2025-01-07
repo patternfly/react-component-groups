@@ -49,3 +49,11 @@ To confirm that a user wishes to initiate a selected action, you can add a check
 
 ```
 
+
+### Warning modal with a text confirmation
+
+To confirm that a user wishes to initiate a selected action, you can add a text confirmation.
+
+```js file="./WarningModalTextConfirmationExample.tsx"
+
+```
