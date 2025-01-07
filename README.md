@@ -9,6 +9,8 @@ This repo contains a set of opinionated react component groups used to standardi
 
 > NOTE: If new features are not needed in `v5,` they should be added directly to the `main` branch. For bug fixes, it is preferred to fix the bug for both versions (fix in one branch and cherry-pick to another). Pulling new changes from 5 to 6 and vice versa is not recommended using `rebase`. Rather, always cherry-pick specific commits.
 
+---
+
 ### Migration from [RedHatInsights/frontend-components](https://github.com/RedHatInsights/frontend-components) to [patternfly/react-component-groups](https://github.com/patternfly/react-component-groups)
 Please see the [migration guide](./migration.md)
 
