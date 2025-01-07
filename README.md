@@ -3,9 +3,11 @@
 This repo contains a set of opinionated react component groups used to standardize functionality and look and feel across products. The components are based on PatternFly with some additional functionality.
 
 ### Branches
-`main` branch - PatternFly 6 implementation
+`main` - PatternFly 6 implementation
 
-`v5` branch - PatternFly 5 implementation
+`v5` - PatternFly 5 implementation
+
+`do-not-delete` - do not delete
 
 > NOTE: If new features are not needed in `v5,` they should be added directly to the `main` branch. For bug fixes, it is preferred to fix the bug for both versions (fix in one branch and cherry-pick to another). Pulling new changes from 5 to 6 and vice versa is not recommended using `rebase`. Rather, always cherry-pick specific commits.
 
