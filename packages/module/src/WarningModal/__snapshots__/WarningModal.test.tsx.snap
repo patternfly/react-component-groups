@@ -99,7 +99,21 @@ exports[`WarningModal component should render 1`] = `
             confirmcheckmessage="hi there"
             id="pf-modal-part-2"
           >
-            Warning modal content
+            <div
+              class="pf-v6-l-stack pf-m-gutter"
+            >
+              <div
+                class="pf-v6-l-stack__item"
+              >
+                Warning modal content
+              </div>
+              <div
+                class="pf-v6-l-stack__item"
+              />
+              <div
+                class="pf-v6-l-stack__item"
+              />
+            </div>
           </div>
           <footer
             class="pf-v6-c-modal-box__footer"
