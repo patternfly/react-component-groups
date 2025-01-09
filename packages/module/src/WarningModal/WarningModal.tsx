@@ -18,12 +18,12 @@ export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   confirmButtonVariant?: ButtonVariant;
   /** Custom OUIA ID */
   ouiaId?: string | number;
-  /** Whether modal requires a text confirmation */
-  textConfirmation?: TextInputProps;
-  /** Label for the text confirmation */
-  textConfirmationLabel?: (deleteName?: string) => ReactNode;
-  /** Text the user should type to confirm selection when using textConfirmation */
-  deleteName?: string;
+  /** Confirmation text input props */
+  confirmationInputProps?: TextInputProps;
+  /** Label for the text confirmation input */
+  confirmationInputLabel?: (deleteName?: string) => ReactNode;
+  /** Text the user should type to confirm selection when using confirmation input */
+  confirmationText?: string;
 }
 
 const WarningModal: React.FunctionComponent<WarningModalProps> = ({
@@ -39,32 +39,26 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
   checkboxLabel='I understand that this action cannot be undone',
   confirmButtonVariant = ButtonVariant.primary,
   ouiaId = 'WarningModal',
-  textConfirmation,
-  textConfirmationLabel = (deleteName) => (
+  confirmationInputProps,
+  confirmationInputLabel = (deleteName) => (
     <>Type <strong>{deleteName} </strong> to confirm deletion:</>
   ),
-  deleteName,
+  confirmationText,
   ...props
 }: WarningModalProps) => {
   const [ checked, setChecked ] = useState(false);
   const [ inputValue, setInputValue ] = React.useState('');
 
-  const deleteNameSanitized = React.useMemo(() => deleteName?.trim().replace(/\s+/g, ' '), [ deleteName ]);
+  const deleteNameSanitized = React.useMemo(() => confirmationText?.trim().replace(/\s+/g, ' '), [ confirmationText ]);
 
-  const textConfirmed = textConfirmation ? inputValue.trim() === deleteNameSanitized : true;
+  const textConfirmed = confirmationInputProps ? inputValue.trim() === deleteNameSanitized : true;
 
-  const isConfirmButtonDisabled = () => {
-    if(withCheckbox && textConfirmation) {
-      return !checked || !textConfirmed;
+  const isConfirmButtonDisabled = React.useMemo(() => {
+    if (withCheckbox) {
+      return !checked || (confirmationInputProps && !textConfirmed);
     }
-    if(withCheckbox && !textConfirmation) {
-      return !checked;
-    }
-    if(!withCheckbox && textConfirmation) {
-      return !textConfirmed;
-    }
-    else {return false;}
-  }
+    return confirmationInputProps ? !textConfirmed : false;
+  }, [ checked, textConfirmed, withCheckbox, confirmationInputProps ]);
 
   return (
     <Modal
@@ -81,9 +75,8 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
           onClick={() => {
             onConfirm?.();
             setChecked(false);
-            setInputValue('');
           }}
-          isDisabled={isConfirmButtonDisabled()}
+          isDisabled={isConfirmButtonDisabled}
         >
           {confirmButtonLabel}
         </Button>,
@@ -102,15 +95,16 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
       <Stack hasGutter>
         <StackItem>{children}</StackItem>
         <StackItem>
-          {textConfirmation ? (
+          {confirmationInputProps ? (
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsSm' }}>
               <FlexItem>
-                {textConfirmationLabel && textConfirmationLabel(deleteNameSanitized)}
+                {confirmationInputProps && confirmationInputLabel(deleteNameSanitized)}
               </FlexItem>
               <TextInput
                 ouiaId={`${ouiaId}-confirmation-text-input`}
                 value={inputValue}
                 onChange={(_e, value) => setInputValue(value)}
+                {...confirmationInputProps}
               />
             </Flex>
           ) : null}          

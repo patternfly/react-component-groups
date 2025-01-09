@@ -13,8 +13,8 @@ export const BasicExample: React.FunctionComponent = () => {
       cancelButtonLabel='No'
       onClose={() => setIsOpen(false)}
       onConfirm={() => setIsOpen(false)}
-      textConfirmation={{ type: 'text', isRequired: true }}
-      deleteName='Item1'>
+      confirmationInputProps={{ type: 'text', isRequired: true }}
+      confirmationText='Item1'>
       The item will be deleted.
     </WarningModal>
   </>
