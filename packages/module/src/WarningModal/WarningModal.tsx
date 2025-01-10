@@ -98,13 +98,13 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
           {confirmationInputProps ? (
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsSm' }}>
               <FlexItem>
-                {confirmationInputProps && confirmationInputLabel(deleteNameSanitized)}
+                {confirmationInputLabel(deleteNameSanitized)}
               </FlexItem>
               <TextInput
                 ouiaId={`${ouiaId}-confirmation-text-input`}
                 value={inputValue}
                 onChange={(_e, value) => setInputValue(value)}
-                {...confirmationInputProps}
+                {...{ type: 'text', isRequired: true, ...confirmationInputProps }}
               />
             </Flex>
           ) : null}          
