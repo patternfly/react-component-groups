@@ -21,7 +21,7 @@ export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   /** Confirmation text input props */
   confirmationInputProps?: TextInputProps;
   /** Label for the text confirmation input */
-  confirmationInputLabel?: (deleteName?: string) => ReactNode;
+  confirmationInputLabel?: ReactNode;
   /** Text the user should type to confirm selection when using confirmation input */
   confirmationText?: string;
 }
@@ -40,9 +40,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
   confirmButtonVariant = ButtonVariant.primary,
   ouiaId = 'WarningModal',
   confirmationInputProps,
-  confirmationInputLabel = (deleteName) => (
-    <>Type <strong>{deleteName} </strong> to confirm deletion:</>
-  ),
+  confirmationInputLabel = 'Type to confirm',
   confirmationText,
   ...props
 }: WarningModalProps) => {
@@ -98,7 +96,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
           {confirmationInputProps ? (
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsSm' }}>
               <FlexItem>
-                {confirmationInputLabel(deleteNameSanitized)}
+                {confirmationInputLabel}
               </FlexItem>
               <TextInput
                 ouiaId={`${ouiaId}-confirmation-text-input`}
