@@ -50,7 +50,7 @@ const useStyles = createUseStyles({
 });
 
 export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<ContentHeaderProps>> = ({
-  title = null,
+  title,
   subtitle = null,
   linkProps,
   icon,
