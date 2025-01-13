@@ -20,10 +20,10 @@ export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   ouiaId?: string | number;
   /** Confirmation text input props */
   confirmationInputProps?: TextInputProps;
-  /** Label for the text confirmation input */
-  confirmationInputLabel?: ReactNode;
   /** Text the user should type to confirm selection when using confirmation input */
   confirmationText?: string;
+  /** Label for the text confirmation input */
+  confirmationInputLabel?: ReactNode;
 }
 
 const WarningModal: React.FunctionComponent<WarningModalProps> = ({
@@ -40,8 +40,8 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
   confirmButtonVariant = ButtonVariant.primary,
   ouiaId = 'WarningModal',
   confirmationInputProps,
-  confirmationInputLabel = 'Type to confirm',
   confirmationText,
+  confirmationInputLabel = <>Type <strong>{confirmationText} </strong> to confirm the action:</>,
   ...props
 }: WarningModalProps) => {
   const [ checked, setChecked ] = useState(false);
@@ -93,7 +93,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
       <Stack hasGutter>
         <StackItem>{children}</StackItem>
         <StackItem>
-          {confirmationInputProps ? (
+          {confirmationText ? (
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsSm' }}>
               <FlexItem>
                 {confirmationInputLabel}
