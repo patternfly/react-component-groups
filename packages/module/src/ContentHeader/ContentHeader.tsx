@@ -24,9 +24,9 @@ export interface PageHeaderLinkProps extends ButtonProps {
 
 export interface ContentHeaderProps {
   /** Title for content header */
-  title: string;
-  /** Subtitle for content header */
-  subtitle: string;
+  title: React.ReactNode;
+  /** Optional subtitle for content header */
+  subtitle?: React.ReactNode;
   /** Optional link below subtitle */
   linkProps?: PageHeaderLinkProps;
   /** Optional icon for content header (appears to the left of the content header's title with a divider) */
@@ -49,7 +49,7 @@ const useStyles = createUseStyles({
 
 export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<ContentHeaderProps>> = ({
   title,
-  subtitle,
+  subtitle = null,
   linkProps,
   icon,
   label,
@@ -81,9 +81,11 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
         <FlexItem flex={{ default: 'flex_1' }}>
           <Split hasGutter>
             <SplitItem>
-              <Content className="pf-v6-u-mb-sm" component="h1" ouiaId={`${ouiaId}-title`}>
-                {title}
-              </Content>
+              {typeof title === 'string' ? (
+                <Content className="pf-v6-u-mb-sm" component="h1" ouiaId={`${ouiaId}-title`}>
+                  {title}
+                </Content>
+              ) : title}
             </SplitItem>
             {label && (
               <SplitItem>
@@ -97,9 +99,11 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
               </SplitItem>
             )}
           </Split>
-          <Content component="p" ouiaId={`${ouiaId}-subtitle`}>
-            {subtitle}
-          </Content>
+          {typeof subtitle === 'string' ? (
+            <Content component="p" ouiaId={`${ouiaId}-subtitle`}>
+              {subtitle}
+            </Content>
+          ) : subtitle}
           {linkProps && (
             <Button variant={ButtonVariant.link} component="a" ouiaId={`${ouiaId}-link-button`} isInline icon={isExternal ? <ExternalLinkAltIcon className='pf-v6-u-ml-sm' /> : null} iconPosition="end" {...linkRestProps}>
               {linkProps.label}
@@ -108,6 +112,7 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
         </FlexItem>
       </Flex>
     </PageSection>
-  )};
+  );
+};
 
 export default ContentHeader;
