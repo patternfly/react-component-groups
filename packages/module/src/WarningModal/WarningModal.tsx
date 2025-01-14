@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Button, ButtonVariant, Checkbox } from '@patternfly/react-core';
+import React, { ReactNode, useState } from 'react';
+import { Button, ButtonVariant, Checkbox, Flex, FlexItem, Stack, StackItem, TextInput, TextInputProps } from '@patternfly/react-core';
 import { ModalProps, Modal, ModalVariant } from '@patternfly/react-core/deprecated';
 
 /** extends ModalProps */
@@ -13,11 +13,17 @@ export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   /** Whether modal requires a checkbox before confirming */
   withCheckbox?: boolean;
   /** Custom checkbox label */
-  checkboxLabel?: string;
+  checkboxLabel?: ReactNode;
   /** Visual variant of the confirm button */
   confirmButtonVariant?: ButtonVariant;
   /** Custom OUIA ID */
   ouiaId?: string | number;
+  /** Confirmation text input props */
+  confirmationInputProps?: TextInputProps;
+  /** Text the user should type to confirm selection when using confirmation input */
+  confirmationText?: string;
+  /** Label for the text confirmation input */
+  confirmationInputLabel?: ReactNode;
 }
 
 const WarningModal: React.FunctionComponent<WarningModalProps> = ({
@@ -33,9 +39,24 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
   checkboxLabel='I understand that this action cannot be undone',
   confirmButtonVariant = ButtonVariant.primary,
   ouiaId = 'WarningModal',
+  confirmationInputProps,
+  confirmationText,
+  confirmationInputLabel = <>Type <strong>{confirmationText} </strong> to confirm the action:</>,
   ...props
 }: WarningModalProps) => {
   const [ checked, setChecked ] = useState(false);
+  const [ inputValue, setInputValue ] = React.useState('');
+
+  const deleteNameSanitized = React.useMemo(() => confirmationText?.trim().replace(/\s+/g, ' '), [ confirmationText ]);
+
+  const textConfirmed = confirmationInputProps ? inputValue.trim() === deleteNameSanitized : true;
+
+  const isConfirmButtonDisabled = React.useMemo(() => {
+    if (withCheckbox) {
+      return !checked || (confirmationInputProps && !textConfirmed);
+    }
+    return confirmationInputProps ? !textConfirmed : false;
+  }, [ checked, textConfirmed, withCheckbox, confirmationInputProps ]);
 
   return (
     <Modal
@@ -53,7 +74,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
             onConfirm?.();
             setChecked(false);
           }}
-          isDisabled={withCheckbox && !checked}
+          isDisabled={isConfirmButtonDisabled}
         >
           {confirmButtonLabel}
         </Button>,
@@ -69,17 +90,36 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
       ouiaId={ouiaId}
       {...props}
     >
-      {children}
-      {withCheckbox ? (
-        <Checkbox
-          isChecked={checked}
-          onChange={(_event, value) => setChecked(value)}
-          label={checkboxLabel}
-          id="warning-modal-check"
-          className="pf-v6-u-mt-lg"
-          ouiaId={`${ouiaId}-confirm-checkbox`}
-        />
-      ) : null}
+      <Stack hasGutter>
+        <StackItem>{children}</StackItem>
+        <StackItem>
+          {confirmationText ? (
+            <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsSm' }}>
+              <FlexItem>
+                {confirmationInputLabel}
+              </FlexItem>
+              <TextInput
+                ouiaId={`${ouiaId}-confirmation-text-input`}
+                value={inputValue}
+                onChange={(_e, value) => setInputValue(value)}
+                {...{ type: 'text', isRequired: true, ...confirmationInputProps }}
+              />
+            </Flex>
+          ) : null}          
+        </StackItem>
+        <StackItem>
+          {withCheckbox ? (
+            <Checkbox
+              isChecked={checked}
+              onChange={(_event, value) => setChecked(value)}
+              label={checkboxLabel}
+              id="warning-modal-check"
+              className="pf-v6-u-mt-lg"
+              ouiaId={`${ouiaId}-confirm-checkbox`}
+            />
+          ) : null}
+        </StackItem>
+      </Stack>
     </Modal>
   )
 
