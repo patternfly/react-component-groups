@@ -24,9 +24,9 @@ export interface PageHeaderLinkProps extends ButtonProps {
 
 export interface ContentHeaderProps extends React.PropsWithChildren {
   /** Title for content header */
-  title: string;
+  title: React.ReactNode;
   /** Optional subtitle for content header */
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   /** Optional link below subtitle */
   linkProps?: PageHeaderLinkProps;
   /** Optional icon for content header (appears to the left of the content header's title with a divider) */
@@ -51,7 +51,7 @@ const useStyles = createUseStyles({
 
 export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<ContentHeaderProps>> = ({
   title,
-  subtitle,
+  subtitle = null,
   linkProps,
   icon,
   label,
@@ -64,7 +64,7 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
 
   return (
     <PageSection variant="light">
-      { breadcrumbs && (
+      {breadcrumbs && (
         <div className="pf-v5-u-mb-md">
           {breadcrumbs}
         </div>
@@ -84,9 +84,11 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
           <Split hasGutter>
             <SplitItem>
               <TextContent>
-                <Text className="pf-v5-u-mb-sm" component="h1" ouiaId={`${ouiaId}-title`}>
-                  {title}
-                </Text>
+                {typeof title === 'string' ? (
+                  <Text className="pf-v5-u-mb-sm" component="h1" ouiaId={`${ouiaId}-title`}>
+                    {title}
+                  </Text>
+                ) : title}
               </TextContent>
             </SplitItem>
             {label && (
@@ -102,13 +104,21 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
             )}
           </Split>
           <TextContent>
-            {subtitle && (
+            {typeof subtitle === 'string' ? (
               <Text component="p" ouiaId={`${ouiaId}-subtitle`}>
                 {subtitle}
               </Text>
-            )}
+            ) : subtitle}
             {linkProps && (
-              <Button variant={ButtonVariant.link} component="a" ouiaId={`${ouiaId}-link-button`} isInline icon={linkProps.isExternal ? <ExternalLinkAltIcon className='pf-v5-u-ml-sm' /> : null} iconPosition="end" {...linkProps}>
+              <Button
+                variant={ButtonVariant.link}
+                component="a"
+                ouiaId={`${ouiaId}-link-button`}
+                isInline
+                icon={linkProps.isExternal ? <ExternalLinkAltIcon className='pf-v5-u-ml-sm' /> : null}
+                iconPosition="end"
+                {...linkProps}
+              >
                 {linkProps.label}
               </Button>
             )}
@@ -117,6 +127,7 @@ export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<Cont
       </Flex>
       {children}
     </PageSection>
-  )};
+  );
+};
 
 export default ContentHeader;
