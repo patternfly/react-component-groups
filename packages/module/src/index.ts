@@ -66,6 +66,9 @@ export * from './ErrorStack';
 export { default as ErrorBoundary } from './ErrorBoundary';
 export * from './ErrorBoundary';
 
+export { default as CullingInfo } from './CullingInfo';
+export * from './CullingInfo';
+
 export { default as ColumnManagementModal } from './ColumnManagementModal';
 export * from './ColumnManagementModal';
 
