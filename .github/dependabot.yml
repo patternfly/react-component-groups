@@ -16,7 +16,9 @@ updates:
           - version-update:semver-major
     open-pull-requests-limit: 10
     reviewers:
-      - fhlavac
+      - aferd
+      - epwinchell
+      - InsaneZein
       - nicolethoen
       - dlabaj
 
@@ -36,6 +38,8 @@ updates:
           - version-update:semver-major
     open-pull-requests-limit: 10
     reviewers:
-      - fhlavac
+      - aferd
+      - epwinchell
+      - InsaneZein
       - nicolethoen
       - dlabaj
