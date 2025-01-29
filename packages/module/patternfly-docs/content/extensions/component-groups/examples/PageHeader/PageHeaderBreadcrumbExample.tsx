@@ -7,24 +7,23 @@ export const BreadcrumbExample: React.FunctionComponent = () => (
     breadcrumbs={ 
       <Breadcrumb>
         <BreadcrumbItem
-          to="/resources"
-          key="resources"
+          to="#"
+          key="home"
         >
-        Section home
+        Home
+        </BreadcrumbItem>
+        <BreadcrumbItem
+          to="#"
+          key="services"
+        >
+        Services
         </BreadcrumbItem>
         <BreadcrumbItem
           isActive
-          to="/resources/example-resource"
-          key="resources-example"
+          to="#"
+          key="serviceA"
         >
-        Section title
-        </BreadcrumbItem>
-        <BreadcrumbItem
-          isActive
-          to="/resources/example-resource/example"
-          key="example"
-        >
-        Section title
+        Service A
         </BreadcrumbItem>
       </Breadcrumb>
     }
