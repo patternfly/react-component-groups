@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import React from 'react';
 import { Card, CardBody, CardFooter, CardHeader, CardProps, Content, ContentVariants, Flex, FlexItem } from '@patternfly/react-core';
