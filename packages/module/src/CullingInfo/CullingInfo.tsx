@@ -119,10 +119,10 @@ const CullingInformation: React.FunctionComponent<CullingInformation> = ({
     <React.Fragment>
       <Tooltip {...props} content={msg} position="bottom">
         <span
-          className={clsx({ [classes.inventoryCullingWarning]: isWarn, [classes.inventoryCullingDanger]: isError }, className)}
+          className={clsx(className)}
         >
           {isError && <Button variant="plain" aria-label="Action" role="tooltip" icon={<ExclamationTriangleIcon className={clsx( classes.inventoryCullingWarning )}/>} />}
-          {isWarn && <Button variant="plain" aria-label="Action" role="tooltip" icon={<ExclamationCircleIcon  className={clsx( classes.iconMargin, classes.inventoryCullingDanger )}/>} />}
+          {isWarn && <Button variant="plain" aria-label="Action" role="tooltip" icon={<ExclamationCircleIcon  className={clsx( classes.inventoryCullingDanger )}/>} />}
           {children}
         </span>
       </Tooltip>
