@@ -1,6 +1,6 @@
 import React from 'react';
 import { ExclamationCircleIcon, ExclamationTriangleIcon } from '@patternfly/react-icons';
-import { Tooltip, TooltipProps } from '@patternfly/react-core';
+import { Button, Tooltip, TooltipProps } from '@patternfly/react-core';
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
 
@@ -31,7 +31,7 @@ const useStyles = createUseStyles({
     marginRight: 'var(--pf-t--global--spacer--sm)'
   },
   messageFont: {
-    fontWeight: 'var(--pf-t--global--font--weight--200)',
+    fontWeight: 'var(--pf-t--global--font--weight--body--bold)',
   },
 });
 
@@ -101,8 +101,12 @@ const CullingInformation: React.FunctionComponent<CullingInformation> = ({
       <span
         className={clsx({ [classes.inventoryCullingWarning]: isWarn, [classes.inventoryCullingDanger]: isError }, className)}
       >
-        {isWarn && <ExclamationTriangleIcon className={clsx( classes.iconMargin )}/>}
-        {isError && <ExclamationCircleIcon  className={clsx( classes.iconMargin )}/>}
+        {isWarn &&
+          <Button variant="plain" aria-label="Action" role="tooltip" icon={<ExclamationTriangleIcon className={clsx( classes.iconMargin, classes.inventoryCullingWarning )}/>} />   
+        }
+        {isError &&
+          <Button variant="plain" aria-label="Action" role="tooltip" icon={<ExclamationCircleIcon  className={clsx( classes.iconMargin, classes.inventoryCullingDanger )}/>} />   
+        }
         <span className={clsx( classes.messageFont )}>
           {render({ msg })}
         </span>
