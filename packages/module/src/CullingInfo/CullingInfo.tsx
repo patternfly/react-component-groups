@@ -121,8 +121,8 @@ const CullingInformation: React.FunctionComponent<CullingInformation> = ({
         <span
           className={clsx({ [classes.inventoryCullingWarning]: isWarn, [classes.inventoryCullingDanger]: isError }, className)}
         >
-          {isError && <ExclamationCircleIcon />}
-          {isWarn && <ExclamationTriangleIcon />}
+          {isError && <Button variant="plain" aria-label="Action" role="tooltip" icon={<ExclamationTriangleIcon className={clsx( classes.inventoryCullingWarning )}/>} />}
+          {isWarn && <Button variant="plain" aria-label="Action" role="tooltip" icon={<ExclamationCircleIcon  className={clsx( classes.iconMargin, classes.inventoryCullingDanger )}/>} />}
           {children}
         </span>
       </Tooltip>
