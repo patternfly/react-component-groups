@@ -116,13 +116,11 @@ const CullingInformation: React.FunctionComponent<CullingInformation> = ({
   }
 
   return (
-    <Tooltip {...props} content={<div>{msg}</div>} aria="none">
-      <span role='tooltip'>
-        {isError && <Button variant="plain" role="tooltip" icon={<ExclamationTriangleIcon className={clsx( classes.inventoryCullingWarning )}/>} alt="warning icon" />}
-        {isWarn && <Button variant="plain" role="tooltip" icon={<ExclamationCircleIcon  className={clsx( classes.inventoryCullingDanger )}/>} alt="danger icon" />}
+    <>
+        {isError && <Tooltip {...props} content={<div>{msg}</div>}><Button variant="plain" role="tooltip" icon={<ExclamationTriangleIcon className={clsx( classes.inventoryCullingWarning )}/>} alt="warning icon" /></Tooltip>}
+        {isWarn && <Tooltip {...props} content={<div>{msg}</div>}><Button variant="plain" role="tooltip" icon={<ExclamationCircleIcon  className={clsx( classes.inventoryCullingDanger )}/>} alt="danger icon" /></Tooltip>}
         {children}
-      </span>
-    </Tooltip>
+    </>
   );
 };
 
