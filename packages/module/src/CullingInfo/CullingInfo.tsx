@@ -1,6 +1,6 @@
 import React from 'react';
 import { ExclamationCircleIcon, ExclamationTriangleIcon } from '@patternfly/react-icons';
-import { Button, Tooltip, TooltipProps } from '@patternfly/react-core';
+import { Button, Icon, Tooltip, TooltipProps } from '@patternfly/react-core';
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
 
@@ -53,6 +53,8 @@ export interface CullingInformation extends Omit<TooltipProps, 'content'> {
   render?: Render;
   /** Optional custom warning message */
   message?: string;
+  /** Accessible label for the icon */
+  "aria-label"?: string;
 }
 
 const CullingInformation: React.FunctionComponent<CullingInformation> = ({
@@ -64,6 +66,7 @@ const CullingInformation: React.FunctionComponent<CullingInformation> = ({
   children,
   render,
   message,
+  "aria-label": ariaLabel,
   ...props
 }) => {
   const classes = useStyles();
@@ -102,27 +105,24 @@ const CullingInformation: React.FunctionComponent<CullingInformation> = ({
         className={clsx({ [classes.inventoryCullingWarning]: isWarn, [classes.inventoryCullingDanger]: isError }, className)}
       >
         {isWarn &&
-          <Button variant="plain" aria-label="Action" role="tooltip" icon={<ExclamationTriangleIcon className={clsx( classes.iconMargin, classes.inventoryCullingWarning )}/>} />   
+          <Icon status="warning"><ExclamationTriangleIcon className={clsx( classes.iconMargin )} aria-label={ariaLabel || "Warning"}/></Icon>   
         }
         {isError &&
-          <Button variant="plain" aria-label="Action" role="tooltip" icon={<ExclamationCircleIcon  className={clsx( classes.iconMargin, classes.inventoryCullingDanger )}/>} />   
+          <Icon status="danger"><ExclamationCircleIcon  className={clsx( classes.iconMargin )} aria-label={ariaLabel || "Danger"}/></Icon>   
         }
         <span className={clsx( classes.messageFont )}>
           {render({ msg })}
         </span>
-        
       </span>
     );
   }
 
   return (
-    <Tooltip {...props} content={<div>{msg}</div>} aria="none">
-      <span role='tooltip'>
-        {isError && <Button variant="plain" role="tooltip" icon={<ExclamationTriangleIcon className={clsx( classes.inventoryCullingWarning )}/>} alt="warning icon" />}
-        {isWarn && <Button variant="plain" role="tooltip" icon={<ExclamationCircleIcon  className={clsx( classes.inventoryCullingDanger )}/>} alt="danger icon" />}
+    <>
+        {isError && <Tooltip {...props} content={<div>{msg}</div>}><Button variant="plain" icon={<Icon status="warning"><ExclamationTriangleIcon/></Icon>} aria-label={ariaLabel || "Warning"} /></Tooltip>}
+        {isWarn && <Tooltip {...props} content={<div>{msg}</div>}><Button variant="plain" icon={<Icon status="danger"><ExclamationCircleIcon/></Icon>} aria-label={ariaLabel || "Danger"} /></Tooltip>}
         {children}
-      </span>
-    </Tooltip>
+    </>
   );
 };
 
