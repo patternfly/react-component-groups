@@ -1,5 +1,5 @@
 import React from 'react';
-import CullingInformation from '@patternfly/react-component-groups/dist/dynamic/CullingInfo';
+import StaleDataWarning from '@patternfly/react-component-groups/dist/dynamic/StaleDataWarning';
 import { Stack, StackItem } from '@patternfly/react-core';
 
 export const BasicExample: React.FunctionComponent = () => {
@@ -9,22 +9,22 @@ export const BasicExample: React.FunctionComponent = () => {
   return <>
     <Stack>
       <StackItem>
-        <CullingInformation
+        <StaleDataWarning
           stale={staleDate}
           currDate={new Date()}
           culled={cullingDate}
           staleWarning={warningDate}>
-        </CullingInformation>
+        </StaleDataWarning>
       </StackItem>
 
       <StackItem>
-        <CullingInformation
+        <StaleDataWarning
           stale={staleDate}
           currDate={new Date()}
           culled={new Date('Fri Feb 17 2024')}
           staleWarning={new Date('Mon Feb 5 2024')}
         >
-        </CullingInformation>
+        </StaleDataWarning>
       </StackItem>
     </Stack>
     

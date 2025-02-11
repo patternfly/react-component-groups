@@ -12,6 +12,9 @@ export * from './UnauthorizedAccess';
 export { default as TagCount } from './TagCount';
 export * from './TagCount';
 
+export { default as StaleDataWarning } from './StaleDataWarning';
+export * from './StaleDataWarning';
+
 export { default as SkeletonTableHead } from './SkeletonTableHead';
 export * from './SkeletonTableHead';
 
@@ -65,9 +68,6 @@ export * from './ErrorStack';
 
 export { default as ErrorBoundary } from './ErrorBoundary';
 export * from './ErrorBoundary';
-
-export { default as CullingInfo } from './CullingInfo';
-export * from './CullingInfo';
 
 export { default as ColumnManagementModal } from './ColumnManagementModal';
 export * from './ColumnManagementModal';

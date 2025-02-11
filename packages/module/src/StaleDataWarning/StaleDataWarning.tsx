@@ -7,7 +7,7 @@ import { createUseStyles } from 'react-jss';
 type Render = (config: { msg: string }) => React.ReactElement<any, any> | null;
 type CullingDate = string | number | Date;
 
-interface CullingInfo {
+interface StaleDataInfo {
   isWarn?: boolean;
   isError?: boolean;
   msg: string;
@@ -18,7 +18,7 @@ const minutes: number = seconds * 60;
 const hours: number = minutes * 60;
 const days: number = hours * 24;
 
-type CalculateTooltip = (culled: CullingDate, warning: CullingDate, currDate: CullingDate) => CullingInfo;
+type CalculateTooltip = (culled: CullingDate, warning: CullingDate, currDate: CullingDate) => StaleDataInfo;
 
 const useStyles = createUseStyles({
   inventoryCullingWarning: {
@@ -36,7 +36,7 @@ const useStyles = createUseStyles({
 });
 
 /** extends TooltipProps */
-export interface CullingInformation extends Omit<TooltipProps, 'content'> {
+export interface StaleDataWarningProps extends Omit<TooltipProps, 'content'> {
   /** Option to add custom css classes */
   className?: string;
   /** Warning date for when object becomes stale */
@@ -57,7 +57,7 @@ export interface CullingInformation extends Omit<TooltipProps, 'content'> {
   "aria-label"?: string;
 }
 
-const CullingInformation: React.FunctionComponent<CullingInformation> = ({
+const StaleDataWarning: React.FunctionComponent<StaleDataWarningProps> = ({
   culled = new Date(0),
   className,
   staleWarning = new Date(0),
@@ -98,7 +98,7 @@ const CullingInformation: React.FunctionComponent<CullingInformation> = ({
       : children || null;
   }
 
-  const { isWarn, isError, msg }: CullingInfo = calculateTooltip(culled, staleWarning, currDate);
+  const { isWarn, isError, msg }: StaleDataInfo = calculateTooltip(culled, staleWarning, currDate);
   if (render) {
     return (
       <span
@@ -119,12 +119,12 @@ const CullingInformation: React.FunctionComponent<CullingInformation> = ({
 
   return (
     <>
-        {isError && <Tooltip {...props} content={<div>{msg}</div>}><Button variant="plain" icon={<Icon status="warning"><ExclamationTriangleIcon/></Icon>} aria-label={ariaLabel || "Warning"} /></Tooltip>}
-        {isWarn && <Tooltip {...props} content={<div>{msg}</div>}><Button variant="plain" icon={<Icon status="danger"><ExclamationCircleIcon/></Icon>} aria-label={ariaLabel || "Danger"} /></Tooltip>}
-        {children}
+      {isError && <Tooltip {...props} content={<div>{msg}</div>}><Button variant="plain" icon={<Icon status="warning"><ExclamationTriangleIcon/></Icon>} aria-label={ariaLabel || "Warning"} /></Tooltip>}
+      {isWarn && <Tooltip {...props} content={<div>{msg}</div>}><Button variant="plain" icon={<Icon status="danger"><ExclamationCircleIcon/></Icon>} aria-label={ariaLabel || "Danger"} /></Tooltip>}
+      {children}
     </>
   );
 };
 
-export default CullingInformation;
+export default StaleDataWarning;
 

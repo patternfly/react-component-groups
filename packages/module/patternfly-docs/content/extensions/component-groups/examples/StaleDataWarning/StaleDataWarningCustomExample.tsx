@@ -1,5 +1,5 @@
 import React from 'react';
-import CullingInformation from '@patternfly/react-component-groups/dist/dynamic/CullingInfo';
+import StaleDataWarning from '@patternfly/react-component-groups/dist/dynamic/StaleDataWarning';
 import { Stack, StackItem } from '@patternfly/react-core';
 
 
@@ -10,23 +10,23 @@ export const CustomizedRenderExample: React.FunctionComponent = () => {
   return <>
     <Stack>
       <StackItem>
-        <CullingInformation
+        <StaleDataWarning
           stale={staleDate}
           currDate={new Date()}
           culled={cullingDate}
           staleWarning={warningDate}
           render={({ msg }) => (<React.Fragment>{msg}</React.Fragment>)}>
-        </CullingInformation>
+        </StaleDataWarning>
       </StackItem>
 
       <StackItem>
-        <CullingInformation
+        <StaleDataWarning
           stale={staleDate}
           currDate={new Date()}
           culled={new Date('Fri Feb 07 2024')}
           staleWarning={new Date('Mon Feb 03 2024')}
-          render={() => (<React.Fragment>This is an error message. Item is past due</React.Fragment>)}>
-        </CullingInformation>
+          render={() => (<React.Fragment>This is an error message where the item is overdue</React.Fragment>)}>
+        </StaleDataWarning>
       </StackItem>
     </Stack>
    
