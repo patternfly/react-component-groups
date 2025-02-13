@@ -5,7 +5,7 @@ section: Component groups
 subsection: Status and state indicators
 # Sidenav secondary level section
 # should be the same for all markdown files
-id: Stale Data Warning
+id: Stale data warning
 # Tab (react | react-demos | html | html-demos | design-guidelines | accessibility)
 source: react
 # If you use typescript, the name of the interface to display props for
@@ -16,7 +16,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 
 import StaleDataWarning from '@patternfly/react-component-groups/dist/dynamic/StaleDataWarning';
 
-A **Stale Data Warning** component displays a warning status when an object is stale and planned for removal. Additional warning details can be displayed as a tooltip or text label. 
+A **stale data warning** component displays a warning status when an object is stale and planned for removal. Additional warning details can be displayed as a tooltip or text label. 
 
 ## Examples
 
@@ -30,7 +30,7 @@ A basic stale data warning component displays a warning icon with additional det
 
 ### Stale data warning with customized props
 
-Instead of sharing details in a tooltip, you can place a short message beside the icon. You can still utilize all properties of the [Tooltip component](/components/tooltip), with the exception of `content`.
+Instead of sharing details in a tooltip, you can place a short message beside the icon. You can still utilize all properties of the [tooltip component](/components/tooltip), with the exception of `content`.
 
 ```js file="./StaleDataWarningCustomExample.tsx"
 
