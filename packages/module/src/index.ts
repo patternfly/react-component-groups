@@ -12,6 +12,9 @@ export * from './UnauthorizedAccess';
 export { default as TagCount } from './TagCount';
 export * from './TagCount';
 
+export { default as StaleDataWarning } from './StaleDataWarning';
+export * from './StaleDataWarning';
+
 export { default as SkeletonTableHead } from './SkeletonTableHead';
 export * from './SkeletonTableHead';
 
