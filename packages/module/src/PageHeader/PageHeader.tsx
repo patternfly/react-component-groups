@@ -1,15 +1,16 @@
 import React from 'react';
 import {
+  Button,
+  ButtonProps,
+  ButtonVariant,
+  Content,
+  Divider,
   Flex,
   FlexItem,
+  PageBreadcrumb,
+  PageSection,
   Split,
   SplitItem,
-  Content,
-  PageSection,
-  Button,
-  ButtonVariant,
-  ButtonProps,
-  Divider,
 } from '@patternfly/react-core';
 import { ExternalLinkAltIcon } from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
@@ -24,9 +25,9 @@ export interface PageHeaderLinkProps extends ButtonProps {
 
 export interface PageHeaderProps extends React.PropsWithChildren {
   /** Title for page header */
-  title: React.ReactNode;
+  title?: React.ReactNode;
   /** Subtitle for page header */
-  subtitle: React.ReactNode;
+  subtitle?: React.ReactNode;
   /** Optional link below subtitle */
   linkProps?: PageHeaderLinkProps;
   /** Optional icon for page header (appears to the left of the page header's title with a divider) */
@@ -62,56 +63,71 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
 }: PageHeaderProps) => {
   const classes = useStyles();
   const { isExternal = false, ...linkRestProps } = linkProps ?? {};
+  const showSplitRow = title || label || actionMenu;
+  const showMainFlex = showSplitRow || subtitle || linkProps;
 
   return (
-    <PageSection hasBodyWrapper={false}>
-      { breadcrumbs && (
-        <div className="pf-v6-u-mb-md">
+    <>
+      {breadcrumbs && (
+        <PageBreadcrumb>
           {breadcrumbs}
-        </div>
+        </PageBreadcrumb>
       )}
-      <Flex>
-        {icon && (
-          <>
-            <FlexItem alignSelf={{ default: 'alignSelfCenter' }} className={`${classes.iconMinWidth}`}>
-              {icon}
-            </FlexItem>
-            <Divider orientation={{
-              default: 'vertical',
-            }} />
-          </>
-        )}
-        <FlexItem flex={{ default: 'flex_1' }}>
-          <Split hasGutter>
-            <SplitItem>
-              <Content className="pf-v6-u-mb-sm" component="h1" ouiaId={`${ouiaId}-title`}>
-                {title}
-              </Content>
-            </SplitItem>
-            {label && (
-              <SplitItem>
-                {label}
-              </SplitItem>
+      <PageSection hasBodyWrapper={false}>
+        {(showMainFlex || icon) &&
+          <Flex>
+            {icon && (
+              <>
+                <FlexItem alignSelf={{ default: 'alignSelfCenter' }} className={classes.iconMinWidth}>
+                  {icon}
+                </FlexItem>
+                <Divider orientation={{
+                  default: 'vertical',
+                }} />
+              </>
             )}
-            <SplitItem isFilled />
-            {actionMenu && (
-              <SplitItem>
-                {actionMenu}
-              </SplitItem>
+            {(showMainFlex) && (
+              <FlexItem flex={{ default: 'flex_1' }}>
+                {(showSplitRow) && (
+                  <Split hasGutter>
+                    {title && (
+                      <SplitItem>
+                        <Content className="pf-v6-u-mb-sm" component="h1" ouiaId={`${ouiaId}-title`}>
+                          {title}
+                        </Content>
+                      </SplitItem>
+                    )}
+                    {label && (
+                      <SplitItem>
+                        {label}
+                      </SplitItem>
+                    )}
+                    <SplitItem isFilled />
+                    {actionMenu && (
+                      <SplitItem>
+                        {actionMenu}
+                      </SplitItem>
+                    )}
+                  </Split>
+                )}
+                {subtitle && (
+                  <Content component="p" ouiaId={`${ouiaId}-subtitle`}>
+                    {subtitle}
+                  </Content>
+                )}
+                {linkProps && (
+                  <Button variant={ButtonVariant.link} component="a" ouiaId={`${ouiaId}-link-button`} isInline icon={isExternal ? <ExternalLinkAltIcon className='pf-v6-u-ml-sm' /> : null} iconPosition="end" {...linkRestProps}>
+                    {linkProps.label}
+                  </Button>
+                )}
+              </FlexItem>
             )}
-          </Split>
-          <Content component="p" ouiaId={`${ouiaId}-subtitle`}>
-            {subtitle}
-          </Content>
-          {linkProps && (
-            <Button variant={ButtonVariant.link} component="a" ouiaId={`${ouiaId}-link-button`} isInline icon={isExternal ? <ExternalLinkAltIcon className='pf-v6-u-ml-sm' /> : null} iconPosition="end" {...linkRestProps}>
-              {linkProps.label}
-            </Button>
-          )}
-        </FlexItem>
-      </Flex>
-      {children}
-    </PageSection>
-  )};
+          </Flex>
+        }
+        {children}
+      </PageSection>
+    </>
+  )
+};
 
 export default PageHeader;
