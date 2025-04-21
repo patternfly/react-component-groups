@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-component-groups",
-  "version": "5.0.0-prerelease.0",
+  "version": "6.2.0",
   "description": "Extended components used for Red Hat projects.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
