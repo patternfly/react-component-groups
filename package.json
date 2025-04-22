@@ -39,7 +39,7 @@
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.26.0",
     "@octokit/rest": "^21.1.1",
-    "@swc/core": "1.11.7",
+    "@swc/core": "1.11.21",
     "@testing-library/dom": "^10.3.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
