@@ -42,7 +42,7 @@ export interface PageHeaderProps extends React.PropsWithChildren {
   ouiaId?: string | number;
   /** Child nodes */
   children?: React.ReactNode;
-  /** Optional classname that replaces the existing classname on the h1 element */
+  /** Classname for the h1 element */
   headingClassname?: string;
 }
 
@@ -62,7 +62,7 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   actionMenu,
   ouiaId = 'PageHeader',
   children = null,
-  headingClassname,
+  headingClassname = subtitle ? 'pf-v6-u-mb-sm' : ''
 }: PageHeaderProps) => {
   const classes = useStyles();
   const { isExternal = false, ...linkRestProps } = linkProps ?? {};
@@ -95,7 +95,7 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
                   <Split hasGutter>
                     {title && (
                       <SplitItem>
-                        <Content className={headingClassname ?? 'pf-v6-u-mb-sm'} component="h1" ouiaId={`${ouiaId}-title`}>
+                        <Content className={headingClassname} component="h1" ouiaId={`${ouiaId}-title`}>
                           {title}
                         </Content>
                       </SplitItem>
