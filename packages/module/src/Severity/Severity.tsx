@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import type { HTMLAttributes, DetailedHTMLProps, ReactNode, FunctionComponent } from 'react';
+import { Fragment, useMemo } from 'react';
 import {
   SeverityCriticalIcon,
   SeverityImportantIcon,
@@ -37,11 +38,11 @@ export const SeverityType = {
 
 export type SeverityType = (typeof SeverityType)[keyof typeof SeverityType];
 
-export interface SeverityProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
+export interface SeverityProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
   /** Determines a variant of displayed severity */
   severity: SeverityType;
   /** Label displayed next to the severity */
-  label: React.ReactNode;
+  label: ReactNode;
   /** Option to hide the label */
   labelHidden?: boolean;
   /** Custom className */
@@ -50,7 +51,7 @@ export interface SeverityProps extends React.DetailedHTMLProps<React.HTMLAttribu
   ouiaId?: string | number;
 }
 
-export const Severity: React.FunctionComponent<SeverityProps> = ({
+export const Severity: FunctionComponent<SeverityProps> = ({
   severity,
   label,
   labelHidden,
@@ -64,7 +65,7 @@ export const Severity: React.FunctionComponent<SeverityProps> = ({
   const severityVariant = useMemo(() => severityLevels(severity), [ severity ]);
 
   return (
-    <React.Fragment>
+    (<Fragment>
       <Flex spaceItems={{ default: 'spaceItemsSm' }}>
         <FlexItem>
           {/* eslint-disable-next-line react/no-unknown-property */}
@@ -76,7 +77,7 @@ export const Severity: React.FunctionComponent<SeverityProps> = ({
           {!labelHidden && label}
         </FlexItem>
       </Flex>
-    </React.Fragment>
+    </Fragment>)
   );
 };
 

@@ -1,36 +1,36 @@
-import React from 'react';
+import type { ReactNode, ComponentType, FunctionComponent } from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateProps, EmptyStateVariant, EmptyStateFooter, EmptyStateActions, ButtonVariant, } from '@patternfly/react-core';
 import { LockIcon } from '@patternfly/react-icons';
 
 /** extends EmptyStateProps */
 export interface UnauthorizedAccessProps extends Omit<EmptyStateProps, 'children' | 'titleText'> {
   /** Service name displayed in the title */
-  serviceName?: React.ReactNode;
+  serviceName?: ReactNode;
   /** Icon displayed above the title */
-  icon?: React.ComponentType;
+  icon?: ComponentType;
   /** Custom body text */
-  bodyText?: React.ReactNode;
+  bodyText?: ReactNode;
   /** Shows link to the previous page */
   showReturnButton?: boolean;
   /** Custom previous page button text */
-  prevPageButtonText?: React.ReactNode;
+  prevPageButtonText?: ReactNode;
   /** Custom className */
   className?: string;
   /** Custom title text */
-  titleText?: React.ReactNode;
+  titleText?: ReactNode;
   /** Custom primary action - there should only be one defined */
-  primaryAction?: React.ReactNode;
+  primaryAction?: ReactNode;
   /** Custom secondary actions */
-  secondaryActions?: React.ReactNode;
+  secondaryActions?: ReactNode;
   /** Custom landing page button text */
-  toLandingPageText?: React.ReactNode;
+  toLandingPageText?: ReactNode;
   /** Custom landing page button URL */
   toLandingPageUrl?: string;
   /** Custom OUIA ID */
   ouiaId?: string | number;
 }
 
-const UnauthorizedAccess: React.FunctionComponent<UnauthorizedAccessProps> = ({
+const UnauthorizedAccess: FunctionComponent<UnauthorizedAccessProps> = ({
   prevPageButtonText = 'Return to previous page',
   toLandingPageText = 'Go to landing page',
   toLandingPageUrl = ".",

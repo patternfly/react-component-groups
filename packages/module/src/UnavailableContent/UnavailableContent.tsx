@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactNode, FunctionComponent } from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateProps, EmptyStateStatus, EmptyStateVariant } from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
@@ -7,16 +7,16 @@ export interface UnavailableContentProps extends Omit<EmptyStateProps, 'children
   /** The URL that the status page link points to */
   statusPageUrl?: string;
   /** The text label for the link that points to the status page */
-  statusPageLinkText?: React.ReactNode;
+  statusPageLinkText?: ReactNode;
   /** The title for the unavailable content message */
-  titleText?: React.ReactNode;
+  titleText?: ReactNode;
   /** The body text for the unavailable content message */
-  bodyText?: React.ReactNode;
+  bodyText?: ReactNode;
   /** Custom OUIA ID */
   ouiaId?: string | number;
 }
 
-const UnavailableContent: React.FunctionComponent<UnavailableContentProps> = ({ 
+const UnavailableContent: FunctionComponent<UnavailableContentProps> = ({ 
   statusPageUrl = '',
   statusPageLinkText = 'Status Page',
   titleText = 'This page is temporarily unavailable',

@@ -1,4 +1,5 @@
-import React from 'react';
+import type { ReactNode, MouseEvent, FunctionComponent } from 'react';
+import { useState } from 'react';
 import {
   Button,
   Content,
@@ -19,7 +20,7 @@ export interface ColumnManagementModalColumn {
   /** Internal identifier of a column by which table displayed columns are filtered. */
   key: string,
   /** The actual display name of the column possibly with a tooltip or icon. */
-  title: React.ReactNode,
+  title: ReactNode,
   /** If user changes checkboxes, the component will send back column array with this property altered. */
   isShown?: boolean,
   /** Set to false if the column should be hidden initially */
@@ -33,7 +34,7 @@ export interface ColumnManagementModalProps extends Omit<ModalProps, 'ref' | 'ch
   /** Flag to show the modal */
   isOpen?: boolean,
   /** Invoked when modal visibility is changed */
-  onClose?: (event: KeyboardEvent | React.MouseEvent) => void,
+  onClose?: (event: KeyboardEvent | MouseEvent) => void,
   /** Current column state */
   appliedColumns: ColumnManagementModalColumn[],
   /** Invoked with new column state after save button is clicked */
@@ -44,9 +45,9 @@ export interface ColumnManagementModalProps extends Omit<ModalProps, 'ref' | 'ch
   title?: string,
   /** Custom OUIA ID */
   ouiaId?: string | number,
-};
+}
 
-const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps> = (
+const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
   { title = 'Manage columns',
     description = 'Selected categories will be displayed in the table.',
     isOpen = false,
@@ -56,7 +57,7 @@ const ColumnManagementModal: React.FunctionComponent<ColumnManagementModalProps>
     ouiaId = 'ColumnManagementModal',
     ...props }: ColumnManagementModalProps) => {
 
-  const [ currentColumns, setCurrentColumns ] = React.useState(
+  const [ currentColumns, setCurrentColumns ] = useState(
     appliedColumns.map(column => ({ ...column, isShown: column.isShown ?? column.isShownByDefault }))
   );
 

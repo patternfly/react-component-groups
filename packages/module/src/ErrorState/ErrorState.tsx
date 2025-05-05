@@ -10,7 +10,7 @@ import {
   StackItem, 
 } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss'
-import React from 'react';
+import type { ReactNode, FunctionComponent } from 'react';
 
 const useStyles = createUseStyles({
   errorDescription: {
@@ -21,20 +21,20 @@ const useStyles = createUseStyles({
 /** extends EmptyStateProps */
 export interface ErrorStateProps extends Omit<EmptyStateProps, 'children' | 'titleText' | 'status'> {
   /** Title of the error. */
-  titleText?: React.ReactNode;
+  titleText?: ReactNode;
   /** A description of the error, if no body text is provided then it will be set to the defaultBodyText. */
-  bodyText?: React.ReactNode;
+  bodyText?: ReactNode;
   /** A default description of the error used if no errorDescription is provided. */
-  defaultBodyText?: React.ReactNode;
+  defaultBodyText?: ReactNode;
   /** Custom footer content */
-  customFooter?: React.ReactNode;
+  customFooter?: ReactNode;
   /** ErrorState OUIA ID */
   ouiaId?: string | number;
   /** Status of the error message. */
   status?: 'danger' | 'warning' | 'success' | 'info' | 'custom' | 'none';
 }
 
-const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ 
+const ErrorState: FunctionComponent<ErrorStateProps> = ({ 
   titleText = 'Something went wrong', 
   bodyText, 
   defaultBodyText, 

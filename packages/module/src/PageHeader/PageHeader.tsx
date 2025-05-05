@@ -1,4 +1,4 @@
-import React from 'react';
+import type { PropsWithChildren, ReactNode, FunctionComponent } from 'react';
 import {
   Button,
   ButtonProps,
@@ -23,25 +23,25 @@ export interface PageHeaderLinkProps extends ButtonProps {
   isExternal?: boolean;
 }
 
-export interface PageHeaderProps extends React.PropsWithChildren {
+export interface PageHeaderProps extends PropsWithChildren {
   /** Title for page header */
-  title?: React.ReactNode;
+  title?: ReactNode;
   /** Subtitle for page header */
-  subtitle?: React.ReactNode;
+  subtitle?: ReactNode;
   /** Optional link below subtitle */
   linkProps?: PageHeaderLinkProps;
   /** Optional icon for page header (appears to the left of the page header's title with a divider) */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** Optional label for page header (appears to the right of the page header's title) */
-  label?: React.ReactNode;
+  label?: ReactNode;
   /** Breadcrumbs component */
-  breadcrumbs?: React.ReactNode;
+  breadcrumbs?: ReactNode;
   /** Menu that appears to the far right of the title */
-  actionMenu?: React.ReactNode;
+  actionMenu?: ReactNode;
   /** Custom OUIA ID */
   ouiaId?: string | number;
   /** Child nodes */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Classname for the h1 element */
   headingClassname?: string;
 }
@@ -52,7 +52,7 @@ const useStyles = createUseStyles({
   }
 });
 
-export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
+export const PageHeader: FunctionComponent<PageHeaderProps> = ({
   title,
   subtitle,
   linkProps,

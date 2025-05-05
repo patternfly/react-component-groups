@@ -1,31 +1,31 @@
-import React from 'react';
+import type { ReactNode, FunctionComponent } from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateProps, EmptyStateStatus, EmptyStateVariant } from '@patternfly/react-core';
 import { HourglassHalfIcon } from '@patternfly/react-icons';
 
 /** extends EmptyStateProps */
 export interface MaintenanceProps extends Omit<EmptyStateProps, 'children' | 'title'> {
     /** The title for the maintenance message */
-    titleText?: React.ReactNode;
+    titleText?: ReactNode;
     /** Custom body text */
-    bodyText?: React.ReactNode;
+    bodyText?: ReactNode;
     /** A default bodyText used if no bodyText is provided */
-    defaultBodyText?: React.ReactNode;
+    defaultBodyText?: ReactNode;
     /** Start time in a specific time zone */
-    startTime?: React.ReactNode;
+    startTime?: ReactNode;
     /** End time in a specific time zone */
-    endTime?: React.ReactNode;
+    endTime?: ReactNode;
     /** Time zone specification */
-    timeZone?: React.ReactNode;
+    timeZone?: ReactNode;
     /** Information link */
     redirectLinkUrl?: string;
     /** Information link title */
-    redirectLinkText?: React.ReactNode;
+    redirectLinkText?: ReactNode;
     /** Custom footer content */
-    customFooter?: React.ReactNode;
+    customFooter?: ReactNode;
     /** Custom OUIA ID */
     ouiaId?: string | number;  }
 
-const Maintenance: React.FunctionComponent<MaintenanceProps> = ({ 
+const Maintenance: FunctionComponent<MaintenanceProps> = ({ 
   titleText = 'Maintenance in progress',
   defaultBodyText = 'We are currently undergoing scheduled maintenance. Thank you for understanding.',
   startTime,

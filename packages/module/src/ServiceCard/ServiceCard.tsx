@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactNode, ReactElement, FunctionComponent } from 'react';
 import { Card, CardBody, CardFooter, CardHeader, CardProps, Content, ContentVariants, Flex, FlexItem } from '@patternfly/react-core';
 import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
@@ -10,15 +10,15 @@ export interface ServiceCardProps extends CardProps {
   /** Service card title */
   title: string;
   /** Service card subtitle */
-  subtitle?: React.ReactNode;
+  subtitle?: ReactNode;
   /** Service card description */
-  description: React.ReactNode;
+  description: ReactNode;
   /** Service card icon */
-  icon: React.ReactNode;
+  icon: ReactNode;
   /** Optional Service card helper text*/
-  helperText?: React.ReactNode;
+  helperText?: ReactNode;
   /** Optional footer */
-  footer?: React.ReactElement | null;
+  footer?: ReactElement | null;
   /** Optional custom OUIA ID */
   ouiaId?: string | number;
   /** Optional flag modifying the card header layout */
@@ -37,7 +37,7 @@ const useStyles = createUseStyles({
   }
 });
 
-const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
+const ServiceCard: FunctionComponent<ServiceCardProps> = ({
   title,
   subtitle,
   description,

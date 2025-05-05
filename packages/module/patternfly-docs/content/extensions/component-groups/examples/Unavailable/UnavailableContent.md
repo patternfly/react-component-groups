@@ -15,6 +15,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 ---
 
 import UnavailableContent from '@patternfly/react-component-groups/dist/dynamic/UnavailableContent';
+import { FunctionComponent } from 'react';
 
 An **unavailable content** component displays a screen to users when they attempt to view a page that is currently unavailable to view.
 

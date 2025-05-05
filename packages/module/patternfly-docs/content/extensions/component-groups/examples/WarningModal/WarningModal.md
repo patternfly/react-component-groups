@@ -15,6 +15,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 ---
 
 import WarningModal from '@patternfly/react-component-groups/dist/dynamic/WarningModal';
+import { FunctionComponent, useState } from 'react';
 
 A **warning modal** component displays a modal when a user tries to perform a risky action, which asks them to confirm or cancel the action.
 
@@ -22,9 +23,9 @@ A **warning modal** component displays a modal when a user tries to perform a ri
 
 ### Basic warning modal
 
-A basic warning modal is triggered when a user tries to perform an action that is deemed risky. 
+A basic warning modal is triggered when a user tries to perform an action that is deemed risky.
 
-You can customize the contents of the modal to fit your use cases. To adjust the text in the modal, pass your desired title to `title` and your message to the `<WarningModal>` component. To customize the action buttons in the modal, use `onConfirm` and `onClose`. 
+You can customize the contents of the modal to fit your use cases. To adjust the text in the modal, pass your desired title to `title` and your message to the `<WarningModal>` component. To customize the action buttons in the modal, use `onConfirm` and `onClose`.
 
 For further customization, you can utilize all properties of the [modal component](/components/modal), with the exception of `ref`.
 
@@ -40,7 +41,6 @@ You can apply custom variant to a warning modal's confirmation button.
 
 ```
 
-
 ### Warning modal with a checkbox
 
 To confirm that a user wishes to initiate a selected action, you can add a checkbox to a warning modal.
@@ -48,7 +48,6 @@ To confirm that a user wishes to initiate a selected action, you can add a check
 ```js file="./WarningModalCheckboxExample.tsx"
 
 ```
-
 
 ### Warning modal with a text confirmation
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactNode, FunctionComponent } from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateProps, EmptyStateVariant } from '@patternfly/react-core';
 import NotFoundIcon from '../NotFoundIcon';
 
@@ -7,16 +7,16 @@ export interface MissingPageProps extends Omit<EmptyStateProps, 'children' | 'ti
   /** The URL that the home page link points to */
   toHomePageUrl?: string;
   /** The text label for the link that points back to the home page */
-  toHomePageText?: React.ReactNode;
+  toHomePageText?: ReactNode;
   /** The title for the invalid object message */
-  titleText?: React.ReactNode;
+  titleText?: ReactNode;
   /** The body text for the invalid object message */
-  bodyText?: React.ReactNode;
+  bodyText?: ReactNode;
   /** Custom OUIA ID */
   ouiaId?: string | number;
 }
 
-export const MissingPage: React.FunctionComponent<MissingPageProps> = ({
+export const MissingPage: FunctionComponent<MissingPageProps> = ({
   toHomePageUrl = window.location.origin,
   toHomePageText = 'Return to homepage',
   titleText = 'We lost that page',

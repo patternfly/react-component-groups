@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactNode, PropsWithChildren, FunctionComponent } from 'react';
 import {
   Flex,
   FlexItem,
@@ -24,19 +24,19 @@ export interface PageHeaderLinkProps extends ButtonProps {
 
 export interface ContentHeaderProps {
   /** Title for content header */
-  title: React.ReactNode;
+  title: ReactNode;
   /** Optional subtitle for content header */
-  subtitle?: React.ReactNode;
+  subtitle?: ReactNode;
   /** Optional link below subtitle */
   linkProps?: PageHeaderLinkProps;
   /** Optional icon for content header (appears to the left of the content header's title with a divider) */
-  icon?: React.ReactNode;
+  icon?: ReactNode;
   /** Optional label for content header (appears to the right of the content header's title) */
-  label?: React.ReactNode;
+  label?: ReactNode;
   /** Breadcrumbs component */
-  breadcrumbs?: React.ReactNode;
+  breadcrumbs?: ReactNode;
   /** Menu that appears to the far right of the title */
-  actionMenu?: React.ReactNode;
+  actionMenu?: ReactNode;
   /** Custom OUIA ID */
   ouiaId?: string | number;
 }
@@ -47,7 +47,7 @@ const useStyles = createUseStyles({
   }
 });
 
-export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<ContentHeaderProps>> = ({
+export const ContentHeader: FunctionComponent<PropsWithChildren<ContentHeaderProps>> = ({
   title,
   subtitle = null,
   linkProps,

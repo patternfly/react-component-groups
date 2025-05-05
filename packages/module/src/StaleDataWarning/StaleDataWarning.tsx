@@ -1,10 +1,10 @@
-import React from 'react';
+import type { ReactElement, JSXElementConstructor, FunctionComponent } from 'react';
 import { ExclamationCircleIcon, ExclamationTriangleIcon } from '@patternfly/react-icons';
 import { Button, Icon, Tooltip, TooltipProps } from '@patternfly/react-core';
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
 
-type Render = (config: { msg: string }) => React.ReactElement<any, any> | null;
+type Render = (config: { msg: string }) => ReactElement<any, any> | null;
 type CullingDate = string | number | Date;
 
 interface StaleDataInfo {
@@ -48,7 +48,7 @@ export interface StaleDataWarningProps extends Omit<TooltipProps, 'content'> {
   /** Current date */
   currDate: CullingDate;
   /** Optional prop to add custom children */
-  children?: React.ReactElement<any, string | React.JSXElementConstructor<any>> | undefined;
+  children?: ReactElement<any, string | JSXElementConstructor<any>> | undefined;
   /** Option to add custom message ReactElement */
   render?: Render;
   /** Optional custom warning message */
@@ -57,7 +57,7 @@ export interface StaleDataWarningProps extends Omit<TooltipProps, 'content'> {
   "aria-label"?: string;
 }
 
-const StaleDataWarning: React.FunctionComponent<StaleDataWarningProps> = ({
+const StaleDataWarning: FunctionComponent<StaleDataWarningProps> = ({
   culled = new Date(0),
   className,
   staleWarning = new Date(0),

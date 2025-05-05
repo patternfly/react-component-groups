@@ -1,24 +1,19 @@
-import React from 'react';
 import { ResponsiveActions } from '@patternfly/react-component-groups/dist/dynamic/ResponsiveActions';
 import { ResponsiveAction } from '@patternfly/react-component-groups/dist/dynamic/ResponsiveAction';
 
 describe('ResponsiveActions', () => {
   beforeEach(() => {
     cy.viewport(1280, 2000);
-  })
+  });
 
   it('renders persistent, pinned, and overflow actions', () => {
     cy.mount(
       <ResponsiveActions breakpoint="lg">
-        <ResponsiveAction isPersistent>
-          Persistent action
-        </ResponsiveAction>
-        <ResponsiveAction isPinned variant='secondary'>
+        <ResponsiveAction isPersistent>Persistent action</ResponsiveAction>
+        <ResponsiveAction isPinned variant="secondary">
           Pinned action
         </ResponsiveAction>
-        <ResponsiveAction>
-          Overflow action
-        </ResponsiveAction>
+        <ResponsiveAction>Overflow action</ResponsiveAction>
       </ResponsiveActions>
     );
 
@@ -29,7 +24,7 @@ describe('ResponsiveActions', () => {
     cy.get('[data-ouia-component-id="ResponsiveActions-menu-dropdown-toggle"]').click();
     cy.get('[data-ouia-component-id="ResponsiveActions-action-2"]').should('be.visible');
   });
-  
+
   it('handles click events on actions', () => {
     const onClickSpy = cy.spy().as('actionClickSpy');
 
@@ -38,12 +33,10 @@ describe('ResponsiveActions', () => {
         <ResponsiveAction isPersistent onClick={onClickSpy}>
           Persistent action
         </ResponsiveAction>
-        <ResponsiveAction isPinned variant='secondary' onClick={onClickSpy}>
+        <ResponsiveAction isPinned variant="secondary" onClick={onClickSpy}>
           Pinned action
         </ResponsiveAction>
-        <ResponsiveAction onClick={onClickSpy}>
-          Overflow action
-        </ResponsiveAction>
+        <ResponsiveAction onClick={onClickSpy}>Overflow action</ResponsiveAction>
       </ResponsiveActions>
     );
 
@@ -61,9 +54,7 @@ describe('ResponsiveActions', () => {
   it('renders no persistent or pinned actions without flags', () => {
     cy.mount(
       <ResponsiveActions breakpoint="lg">
-        <ResponsiveAction>
-          Overflow action
-        </ResponsiveAction>
+        <ResponsiveAction>Overflow action</ResponsiveAction>
       </ResponsiveActions>
     );
 

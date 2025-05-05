@@ -1,8 +1,9 @@
-import React from 'react';
+import type { HTMLAttributes, DetailedHTMLProps, FunctionComponent, CSSProperties } from 'react';
+import { Fragment } from 'react';
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
 
-export interface AnsibleProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
+export interface AnsibleProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
   /** Supported/unsupported variant flag */
   isSupported?: boolean;
   /** Red Hat Ansible Automation Platform technology icon */
@@ -51,7 +52,7 @@ const useStyles = createUseStyles({
   }
 })
 
-const Ansible: React.FunctionComponent<AnsibleProps> = ({ isSupported = true, isRHAAP, className, ouiaId = "Ansible-icon", ...props }: AnsibleProps) => {
+const Ansible: FunctionComponent<AnsibleProps> = ({ isSupported = true, isRHAAP, className, ouiaId = "Ansible-icon", ...props }: AnsibleProps) => {
   const classes = useStyles();
   const ansibleLogoClass = clsx(
     classes.ansible,
@@ -61,7 +62,7 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ isSupported = true, is
   );
 
   const unsupportedSlash = (
-    <React.Fragment>
+    <Fragment>
       <rect
         x="1245.1"
         y="272.4"
@@ -88,11 +89,11 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ isSupported = true, is
         width="563.7"
         height="221.5"
       />
-    </React.Fragment>
+    </Fragment>
   );
 
   return (
-    <React.Fragment>
+    (<Fragment>
       {isRHAAP ? (
         <i title="Red Hat Ansible Automation Platform" data-ouia-component-id={ouiaId} {...props}>
           {RHAAPTechnologyIcon}
@@ -104,7 +105,7 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ isSupported = true, is
             x="0px"
             y="0px"
             viewBox="0 0 2032 2027.2"
-            style={{ enableBackground: 'new 0 0 2032 2027.2' } as React.CSSProperties}
+            style={{ enableBackground: 'new 0 0 2032 2027.2' } as CSSProperties}
           >
             <path
               className="st0"
@@ -117,7 +118,7 @@ const Ansible: React.FunctionComponent<AnsibleProps> = ({ isSupported = true, is
           </svg>
         </i>
       ) }
-    </React.Fragment>
+    </Fragment>)
   );
 };
 

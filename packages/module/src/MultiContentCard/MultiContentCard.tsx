@@ -1,4 +1,5 @@
-import React from 'react';
+import type { ReactElement, ReactNode, FunctionComponent } from 'react';
+import { isValidElement, useState, Fragment } from 'react';
 import {
   Card,
   CardExpandableContent,
@@ -20,7 +21,7 @@ export type MultiContentCardDividerVariant = typeof MultiContentCardDividerVaria
 
 export interface MutliContentCardProps {
   /** Card element to be displayed as a content */
-  content: React.ReactElement;
+  content: ReactElement;
   /** Allows adding divider on the left/right from the card */
   dividerVariant?: MultiContentCardDividerVariant;
 }
@@ -28,13 +29,13 @@ export interface MutliContentCardProps {
 /** extends CardProps */
 export interface MultiContentCardProps extends Omit<CardProps, 'children' | 'title'> {
   /** Cards to be displayed as a content */
-  cards?: (React.ReactElement | MutliContentCardProps)[];
+  cards?: (ReactElement | MutliContentCardProps)[];
   /** Actions to be displayed in the expandable section */
-  actions?: React.ReactElement;
+  actions?: ReactElement;
   /** Toggle text for the expandable section */
-  toggleText?: React.ReactNode;
+  toggleText?: ReactNode;
   /** Toggle content for the expandable section */
-  toggleContent?: React.ReactElement;
+  toggleContent?: ReactElement;
   /** When set to true, all content cards will be separated with dividers */
   withDividers?: boolean;
   /** Indicates whether the card is expandable */
@@ -48,8 +49,8 @@ export interface MultiContentCardProps extends Omit<CardProps, 'children' | 'tit
 }
 
 export const isCardWithProps = (
-  card: React.ReactElement | MutliContentCardProps
-): card is MutliContentCardProps => !!card && !React.isValidElement(card);
+  card: ReactElement | MutliContentCardProps
+): card is MutliContentCardProps => !!card && !isValidElement(card);
 
 const useStyles = createUseStyles({
   cardTitle: {
@@ -57,7 +58,7 @@ const useStyles = createUseStyles({
   }
 });
 
-const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
+const MultiContentCard: FunctionComponent<MultiContentCardProps> = ({
   cards = [],
   isToggleRightAligned = false,
   actions,
@@ -69,16 +70,16 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
   ouiaId = 'MultiContentCard',
   ...props
 }: MultiContentCardProps) => {
-  const [ isExpanded, setIsExpanded ] = React.useState(defaultExpanded);
+  const [ isExpanded, setIsExpanded ] = useState(defaultExpanded);
   const classes = useStyles();
   const onExpand = () => {
     setIsExpanded(!isExpanded);
   };
   
-  const renderCards = (cards: (React.ReactElement | MutliContentCardProps)[], withDividers?: boolean) =>  (
+  const renderCards = (cards: (ReactElement | MutliContentCardProps)[], withDividers?: boolean) =>  (
     <Flex alignSelf={{ default: 'alignSelfStretch' }} alignItems={{ default: 'alignItemsStretch' }}>
       {cards.map((card, index) => (
-        <React.Fragment key={`card-${index}`}>
+        <Fragment key={`card-${index}`}>
           {index > 0 && isCardWithProps(card) && card.dividerVariant === MultiContentCardDividerVariant.left && (
             <Divider 
               orientation={{ md: 'vertical' }} 
@@ -94,7 +95,7 @@ const MultiContentCard: React.FunctionComponent<MultiContentCardProps> = ({
               inset={{ default: 'inset3xl' }}
             />
           )}
-        </React.Fragment>
+        </Fragment>
       ))} 
     </Flex>
   );

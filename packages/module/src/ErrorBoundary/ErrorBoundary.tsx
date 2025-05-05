@@ -1,4 +1,5 @@
-import * as React from 'react';
+import type { ReactNode, FunctionComponent } from 'react';
+import { Component } from 'react';
 import { ExpandableSection, Title } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
 import ErrorState from '../ErrorState';
@@ -14,19 +15,19 @@ const useStyles = createUseStyles({
 
 export interface ErrorBoundaryProps {
   /** The title text to display on the error page */
-  headerTitle?: React.ReactNode;
+  headerTitle?: ReactNode;
   /** Indicates if the error is silent */
   silent?: boolean;
   /** The title text to display with the error */
-  errorTitle?: React.ReactNode;
+  errorTitle?: ReactNode;
   /** The description text to display with the error */
-  errorDescription?: React.ReactNode;
+  errorDescription?: ReactNode;
   /** The default description text to display with the error if no errorDescription is provided */
-  defaultErrorDescription?: React.ReactNode;
+  defaultErrorDescription?: ReactNode;
   /** The text for the toggle link that users can select to view error details */
   errorToggleText?: string;
   /** The component that the error boundary component is wrapped around, which should be returned if there is no error  */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** Custom OUIA ID */
   ouiaId?: string | number;
   /** The heading level to use on the header title, default is h1 */
@@ -49,7 +50,7 @@ interface ErrorPageProps extends ErrorBoundaryProps {
   classes: Record<string | number | symbol, string>;
 }
 
-export const ErrorBoundary: React.FunctionComponent<ErrorBoundaryProps> = ({
+export const ErrorBoundary: FunctionComponent<ErrorBoundaryProps> = ({
   headerTitleHeadingLevel = "h1",
   errorTitleHeadingLevel = "h2",
   ...props
@@ -66,7 +67,7 @@ export const ErrorBoundary: React.FunctionComponent<ErrorBoundaryProps> = ({
 }
 
 // As of time of writing, React only supports error boundaries in class components
-class ErrorBoundaryContent extends React.Component<ErrorPageProps, ErrorBoundaryState> {
+class ErrorBoundaryContent extends Component<ErrorPageProps, ErrorBoundaryState> {
   constructor(props: Readonly<ErrorPageProps>) {
     super(props);
     this.state = {
@@ -128,6 +129,6 @@ class ErrorBoundaryContent extends React.Component<ErrorPageProps, ErrorBoundary
 
     return props.children;
   }
-};
+}
 
 export default ErrorBoundary;

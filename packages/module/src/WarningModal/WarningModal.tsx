@@ -1,5 +1,15 @@
-import React, { ReactNode, useState } from 'react';
-import { Button, ButtonVariant, Checkbox, Flex, FlexItem, Stack, StackItem, TextInput, TextInputProps } from '@patternfly/react-core';
+import { FunctionComponent, ReactNode, useMemo, useState } from 'react';
+import {
+  Button,
+  ButtonVariant,
+  Checkbox,
+  Flex,
+  FlexItem,
+  Stack,
+  StackItem,
+  TextInput,
+  TextInputProps
+} from '@patternfly/react-core';
 import { ModalProps, Modal, ModalVariant } from '@patternfly/react-core/deprecated';
 
 /** extends ModalProps */
@@ -7,9 +17,9 @@ export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   /** Callback for the confirm action button. */
   onConfirm?: () => void;
   /** Custom label for the confirm action button */
-  confirmButtonLabel?: React.ReactNode;
+  confirmButtonLabel?: ReactNode;
   /** Custom label for the cancel action button */
-  cancelButtonLabel?: React.ReactNode;
+  cancelButtonLabel?: ReactNode;
   /** Whether modal requires a checkbox before confirming */
   withCheckbox?: boolean;
   /** Custom checkbox label */
@@ -26,7 +36,7 @@ export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   confirmationInputLabel?: ReactNode;
 }
 
-const WarningModal: React.FunctionComponent<WarningModalProps> = ({
+const WarningModal: FunctionComponent<WarningModalProps> = ({
   isOpen,
   onConfirm,
   onClose,
@@ -36,22 +46,26 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
   variant = ModalVariant.small,
   titleIconVariant = 'warning',
   withCheckbox = false,
-  checkboxLabel='I understand that this action cannot be undone',
+  checkboxLabel = 'I understand that this action cannot be undone',
   confirmButtonVariant = ButtonVariant.primary,
   ouiaId = 'WarningModal',
   confirmationInputProps,
   confirmationText,
-  confirmationInputLabel = <>Type <strong>{confirmationText} </strong> to confirm the action:</>,
+  confirmationInputLabel = (
+    <>
+      Type <strong>{confirmationText} </strong> to confirm the action:
+    </>
+  ),
   ...props
 }: WarningModalProps) => {
   const [ checked, setChecked ] = useState(false);
-  const [ inputValue, setInputValue ] = React.useState('');
+  const [ inputValue, setInputValue ] = useState('');
 
-  const deleteNameSanitized = React.useMemo(() => confirmationText?.trim().replace(/\s+/g, ' '), [ confirmationText ]);
+  const deleteNameSanitized = useMemo(() => confirmationText?.trim().replace(/\s+/g, ' '), [ confirmationText ]);
 
   const textConfirmed = confirmationInputProps ? inputValue.trim() === deleteNameSanitized : true;
 
-  const isConfirmButtonDisabled = React.useMemo(() => {
+  const isConfirmButtonDisabled = useMemo(() => {
     if (withCheckbox) {
       return !checked || (confirmationInputProps && !textConfirmed);
     }
@@ -78,14 +92,9 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
         >
           {confirmButtonLabel}
         </Button>,
-        <Button
-          ouiaId={`${ouiaId}-cancel-button`}
-          key="cancel"
-          variant={ButtonVariant.link}
-          onClick={onClose}
-        >
+        <Button ouiaId={`${ouiaId}-cancel-button`} key="cancel" variant={ButtonVariant.link} onClick={onClose}>
           {cancelButtonLabel}
-        </Button>,
+        </Button>
       ]}
       ouiaId={ouiaId}
       {...props}
@@ -95,9 +104,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
         <StackItem>
           {confirmationText ? (
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsSm' }}>
-              <FlexItem>
-                {confirmationInputLabel}
-              </FlexItem>
+              <FlexItem>{confirmationInputLabel}</FlexItem>
               <TextInput
                 ouiaId={`${ouiaId}-confirmation-text-input`}
                 value={inputValue}
@@ -105,7 +112,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
                 {...{ type: 'text', isRequired: true, ...confirmationInputProps }}
               />
             </Flex>
-          ) : null}          
+          ) : null}
         </StackItem>
         <StackItem>
           {withCheckbox ? (
@@ -121,9 +128,7 @@ const WarningModal: React.FunctionComponent<WarningModalProps> = ({
         </StackItem>
       </Stack>
     </Modal>
-  )
-
+  );
 };
-
 
 export default WarningModal;
