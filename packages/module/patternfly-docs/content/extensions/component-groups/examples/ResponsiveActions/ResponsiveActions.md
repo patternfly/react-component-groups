@@ -13,9 +13,10 @@ source: react
 propComponents: ['ResponsiveAction', 'ResponsiveActions']
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/ResponsiveActions/ResponsiveActions.md
 ---
-import { useState } from 'react';
+
 import { ResponsiveAction } from '@patternfly/react-component-groups/dist/dynamic/ResponsiveAction';
 import { ResponsiveActions } from '@patternfly/react-component-groups/dist/dynamic/ResponsiveActions';
+import { FunctionComponent, useState, useRef } from 'react';
 
 The **responsive actions** component allows for the display of actions in a responsive layout. Actions can be presented as persistent, pinned or collapsed to dropdown.
 
@@ -27,7 +28,6 @@ The `ResponsiveAction` component is used to declare individual actions within th
 
 This example demonstrates how to create responsive actions with persistent and pinned actions.
 
-
 ```js file="./ResponsiveActionsExample.tsx"
 
 ```
@@ -37,7 +37,6 @@ This example demonstrates how to create responsive actions with persistent and p
 By passing in the `breakpointReference` property, the overflow menu's breakpoint will be relative to the width of the reference container rather than the viewport width.
 
 You can change the container width in this example by adjusting the slider. As the container width changes, the actions will change their layout despite the viewport width not changing.
-
 
 ```js file="./ResponsiveActionsBreakpointExample.tsx"
 

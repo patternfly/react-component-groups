@@ -1,9 +1,15 @@
 /* eslint-disable no-console */
-import React from 'react'
+import { FunctionComponent } from 'react';
 import CloseButton from '@patternfly/react-component-groups/dist/dynamic/CloseButton';
 
-export const BasicExample: React.FunctionComponent = () => (
+export const BasicExample: FunctionComponent = () => (
   <>
-    <CloseButton dataTestID="close-button-example" onClick={()=>{console.log('Close button clicked')}} style={{ float: 'none' }} />
+    <CloseButton
+      dataTestID="close-button-example"
+      onClick={() => {
+        console.log('Close button clicked');
+      }}
+      style={{ float: 'none' }}
+    />
   </>
 );

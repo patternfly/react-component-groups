@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FunctionComponent } from 'react';
 import { ButtonProps } from '@patternfly/react-core';
 
 /** extends ButtonProps */
@@ -14,6 +14,6 @@ export interface ResponsiveActionProps extends ButtonProps {
 };
 
 // This component is only used declaratively - rendering ishandled by ResponsiveActions
-export const ResponsiveAction: React.FunctionComponent<ResponsiveActionProps> = (_props: ResponsiveActionProps) => <div/>;
+export const ResponsiveAction: FunctionComponent<ResponsiveActionProps> = (_props: ResponsiveActionProps) => <div/>;
 
 export default ResponsiveAction;

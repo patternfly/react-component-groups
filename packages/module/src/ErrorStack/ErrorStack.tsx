@@ -1,4 +1,4 @@
-import * as React from 'react';
+import type { FunctionComponent } from 'react';
 import clsx from 'clsx';
 import { Content } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
@@ -23,7 +23,7 @@ const useStyles = createUseStyles({
   },
 })
 
-export const ErrorStack: React.FunctionComponent<ErrorStackProps> = ({ error, className, ...props }) => {
+export const ErrorStack: FunctionComponent<ErrorStackProps> = ({ error, className, ...props }) => {
   const classes = useStyles();
 
   if (error.stack) {

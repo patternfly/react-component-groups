@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FunctionComponent } from 'react';
 import { Card, CardBody, CardFooter, CardHeader, CardProps, Content, ContentVariants, Flex, FlexItem } from '@patternfly/react-core';
 import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
@@ -37,7 +37,7 @@ const useStyles = createUseStyles({
   }
 });
 
-const ServiceCard: React.FunctionComponent<ServiceCardProps> = ({
+const ServiceCard: FunctionComponent<ServiceCardProps> = ({
   title,
   subtitle,
   description,

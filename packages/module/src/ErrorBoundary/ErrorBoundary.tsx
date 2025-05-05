@@ -1,4 +1,5 @@
-import * as React from 'react';
+import type { FunctionComponent } from 'react';
+import { Component } from 'react';
 import { ExpandableSection, Title } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
 import ErrorState from '../ErrorState';
@@ -49,7 +50,7 @@ interface ErrorPageProps extends ErrorBoundaryProps {
   classes: Record<string | number | symbol, string>;
 }
 
-export const ErrorBoundary: React.FunctionComponent<ErrorBoundaryProps> = ({
+export const ErrorBoundary: FunctionComponent<ErrorBoundaryProps> = ({
   headerTitleHeadingLevel = "h1",
   errorTitleHeadingLevel = "h2",
   ...props
@@ -66,7 +67,7 @@ export const ErrorBoundary: React.FunctionComponent<ErrorBoundaryProps> = ({
 }
 
 // As of time of writing, React only supports error boundaries in class components
-class ErrorBoundaryContent extends React.Component<ErrorPageProps, ErrorBoundaryState> {
+class ErrorBoundaryContent extends Component<ErrorPageProps, ErrorBoundaryState> {
   constructor(props: Readonly<ErrorPageProps>) {
     super(props);
     this.state = {
@@ -128,6 +129,6 @@ class ErrorBoundaryContent extends React.Component<ErrorPageProps, ErrorBoundary
 
     return props.children;
   }
-};
+}
 
 export default ErrorBoundary;

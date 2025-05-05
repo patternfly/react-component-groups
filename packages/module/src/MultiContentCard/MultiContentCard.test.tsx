@@ -1,4 +1,4 @@
-import React from 'react';
+import type { Ref } from 'react';
 import { screen, render } from '@testing-library/react';
 import { Button, Card, CardHeader, CardBody, Content, ContentVariants, Icon, List, ListItem, CardFooter, Dropdown, MenuToggle, DropdownList, DropdownItem, MenuToggleElement } from '@patternfly/react-core';
 import { ArrowRightIcon, BellIcon, CogIcon, EllipsisVIcon, LockIcon } from '@patternfly/react-icons';
@@ -138,7 +138,7 @@ describe('MultiContentCard component', () => {
             isOpen
             onSelect={() => null}
             onOpenChange={() => null}
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+            toggle={(toggleRef: Ref<MenuToggleElement>) => (
               <MenuToggle
                 ref={toggleRef}
                 aria-label="kebab dropdown toggle"

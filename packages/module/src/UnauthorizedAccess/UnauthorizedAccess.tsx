@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FunctionComponent } from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateProps, EmptyStateVariant, EmptyStateFooter, EmptyStateActions, ButtonVariant, } from '@patternfly/react-core';
 import { LockIcon } from '@patternfly/react-icons';
 
@@ -30,7 +30,7 @@ export interface UnauthorizedAccessProps extends Omit<EmptyStateProps, 'children
   ouiaId?: string | number;
 }
 
-const UnauthorizedAccess: React.FunctionComponent<UnauthorizedAccessProps> = ({
+const UnauthorizedAccess: FunctionComponent<UnauthorizedAccessProps> = ({
   prevPageButtonText = 'Return to previous page',
   toLandingPageText = 'Go to landing page',
   toLandingPageUrl = ".",
