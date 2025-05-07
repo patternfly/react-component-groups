@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import { BulkSelect, BulkSelectValue } from '@patternfly/react-component-groups/dist/dynamic/BulkSelect';
 
-const allData = [ "Item 1", "Item 2" , "Item 3", "Item4", "Item 5" ];
-const pageData = [ "Item 1", "Item 2" ];
+const allData = [ 'Item 1', 'Item 2', 'Item 3', 'Item4', 'Item 5' ];
+const pageData = [ 'Item 1', 'Item 2' ];
 
-export const BasicExample: React.FunctionComponent = () => { 
+export const BasicExample: FunctionComponent = () => {
   const [ selected, setSelected ] = useState<string[]>(pageData);
 
   const handleBulkSelect = (value: BulkSelectValue) => {
     value === BulkSelectValue.none && setSelected([]);
     value === BulkSelectValue.all && setSelected(allData);
-    value === BulkSelectValue.nonePage && setSelected(selected.filter(item => !pageData.includes(item)));
+    value === BulkSelectValue.nonePage && setSelected(selected.filter((item) => !pageData.includes(item)));
     value === BulkSelectValue.page && setSelected(Array.from(new Set([ ...selected, ...pageData ])));
   };
 
@@ -21,8 +21,10 @@ export const BasicExample: React.FunctionComponent = () => {
       pageCount={pageData.length}
       totalCount={allData.length}
       onSelect={handleBulkSelect}
-      pageSelected={pageData.every(item => selected.includes(item))}
-      pagePartiallySelected={pageData.some(item => selected.includes(item)) && !pageData.every(item => selected.includes(item))}
+      pageSelected={pageData.every((item) => selected.includes(item))}
+      pagePartiallySelected={
+        pageData.some((item) => selected.includes(item)) && !pageData.every((item) => selected.includes(item))
+      }
     />
   );
-}
+};

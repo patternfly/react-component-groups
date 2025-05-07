@@ -15,6 +15,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 ---
 
 import Maintenance from '@patternfly/react-component-groups/dist/dynamic/Maintenance';
+import { FunctionComponent } from 'react';
 
 A **maintenance** component displays a screen to users when they are undergoing scheduled maintenance.
 
@@ -22,7 +23,7 @@ A **maintenance** component displays a screen to users when they are undergoing 
 
 ### Basic maintenance
 
-To provide users with basic information regarding maintenance. A basic maintenance state should contain an appropriate and informative `titleText`. `defaultBodyText` will be used by default. 
+To provide users with basic information regarding maintenance. A basic maintenance state should contain an appropriate and informative `titleText`. `defaultBodyText` will be used by default.
 
 ```js file="./MaintenanceExample.tsx"
 

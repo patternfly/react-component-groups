@@ -1,4 +1,3 @@
-import React from 'react';
 import { RowSelectVariant } from '@patternfly/react-table';
 import SkeletonTableBody from '@patternfly/react-component-groups/dist/dynamic/SkeletonTableBody';
 

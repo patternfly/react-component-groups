@@ -1,4 +1,5 @@
-import React, { useMemo, useState } from 'react';
+import type { FC, Ref } from 'react';
+import { useMemo, useState } from 'react';
 import {
   Dropdown,
   DropdownItem,
@@ -45,7 +46,7 @@ export interface BulkSelectProps extends Omit<DropdownProps, 'toggle' | 'onSelec
   menuToggleCheckboxProps?: Omit<MenuToggleCheckboxProps, 'onChange' | 'isChecked' | 'instance' | 'ref'>;
 }
 
-export const BulkSelect: React.FC<BulkSelectProps> = ({
+export const BulkSelect: FC<BulkSelectProps> = ({
   isDataPaginated = true,
   canSelectAll,
   pageSelected,
@@ -87,7 +88,7 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
   const onToggleClick = () => setOpen(!isOpen);
 
   return (
-    <Dropdown
+    (<Dropdown
       shouldFocusToggleOnSelect
       ouiaId={`${ouiaId}-dropdown`}
       onSelect={(_e, value) => {
@@ -96,7 +97,7 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
       }}
       isOpen={isOpen}
       onOpenChange={(isOpen: boolean) => setOpen(isOpen)}
-      toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+      toggle={(toggleRef: Ref<MenuToggleElement>) => (
         <MenuToggle
           ref={toggleRef}
           isExpanded={isOpen}
@@ -129,7 +130,7 @@ export const BulkSelect: React.FC<BulkSelectProps> = ({
       {...props}
     >
       <DropdownList>{splitButtonDropdownItems}</DropdownList>
-    </Dropdown>
+    </Dropdown>)
   );
 };
 

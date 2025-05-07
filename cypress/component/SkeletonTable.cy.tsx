@@ -1,4 +1,3 @@
-import React from 'react';
 import { RowSelectVariant } from '@patternfly/react-table';
 import SkeletonTable from '@patternfly/react-component-groups/dist/dynamic/SkeletonTable';
 
@@ -15,7 +14,7 @@ describe('SkeletonTable', () => {
     cy.get('table thead tr th').eq(1).should('have.text', 'Second');
   });
 
-  it ('can be used without passing columns', () => {
+  it('can be used without passing columns', () => {
     const SkeletonTableExample = <SkeletonTable rowsCount={10} columnsCount={2} />;
     cy.mount(SkeletonTableExample);
     cy.get('table').should('exist');
@@ -43,7 +42,9 @@ describe('SkeletonTable', () => {
   });
 
   it('can be passed a selectVariant to render radio buttons', () => {
-    const SkeletonTableExample = <SkeletonTable rowsCount={10} columns={[ 'First', 'Second' ]} isSelectable selectVariant={RowSelectVariant.radio} />;
+    const SkeletonTableExample = (
+      <SkeletonTable rowsCount={10} columns={[ 'First', 'Second' ]} isSelectable selectVariant={RowSelectVariant.radio} />
+    );
     cy.mount(SkeletonTableExample);
     cy.get('table').should('exist');
     cy.get('table thead tr th').eq(0).should('have.text', 'Data selection table header cell');
@@ -56,7 +57,7 @@ describe('SkeletonTable', () => {
     const SkeletonTableExample = (
       <SkeletonTable
         rows={10}
-        columns={[ 
+        columns={[
           { cell: 'first', props: { sort: { columnIndex: 0, sortBy: { index: 0, direction: 'asc' } } } },
           { cell: 'second' },
           { cell: 'third' }
@@ -73,5 +74,5 @@ describe('SkeletonTable', () => {
       'd',
       'M88 166.059V468c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12V166.059h46.059c21.382 0 32.09-25.851 16.971-40.971l-86.059-86.059c-9.373-9.373-24.569-9.373-33.941 0l-86.059 86.059c-15.119 15.119-4.411 40.971 16.971 40.971H88z' // ascending
     );
-  })
+  });
 });

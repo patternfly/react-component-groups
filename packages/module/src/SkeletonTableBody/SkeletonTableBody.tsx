@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FunctionComponent } from 'react';
 import {
   Tbody,
   Td,
@@ -22,7 +22,7 @@ export interface SkeletonTableBodyProps {
   selectVariant?: RowSelectVariant;
 }
 
-const SkeletonTableBody: React.FunctionComponent<SkeletonTableBodyProps> = ({
+const SkeletonTableBody: FunctionComponent<SkeletonTableBodyProps> = ({
   rowsCount = 5,
   ouiaId = 'SkeletonTableBody',
   isSelectable,

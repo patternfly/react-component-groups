@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FunctionComponent } from 'react';
 import clsx from 'clsx';
 import { Button, ButtonProps, Icon } from '@patternfly/react-core';
 import { TagIcon } from '@patternfly/react-icons';
@@ -33,7 +33,7 @@ export interface TagCountProps extends ButtonProps {
   ouiaId?: string | number;
 }
 
-const TagCount: React.FunctionComponent<TagCountProps> = ({
+const TagCount: FunctionComponent<TagCountProps> = ({
   count, 
   className,
   iconSize= 'md',

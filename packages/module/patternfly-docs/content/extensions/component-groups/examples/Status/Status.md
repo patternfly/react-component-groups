@@ -14,14 +14,16 @@ propComponents: ['Status']
 beta: true
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/Status/Status.md
 ---
+
 import { BanIcon, CheckCircleIcon, ExclamationCircleIcon, ExclamationTriangleIcon } from '@patternfly/react-icons/';
 import { Status, StatusVariant, IconStatus } from '@patternfly/react-component-groups/dist/dynamic/Status';
+import { FunctionComponent } from 'react';
 
-The **status** component's purpose is to display status with icon and text to the user. 
+The **status** component's purpose is to display status with icon and text to the user.
 
 ### Basic status
 
-Status component consinsts of an icon configured using `icon` and a message, specified with `label`. 
+Status component consinsts of an icon configured using `icon` and a message, specified with `label`.
 
 ```js file="./StatusExample.tsx"
 

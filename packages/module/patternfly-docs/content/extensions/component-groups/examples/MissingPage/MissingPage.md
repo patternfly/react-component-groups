@@ -15,6 +15,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 ---
 
 import MissingPage from '@patternfly/react-component-groups/dist/dynamic/MissingPage';
+import { FunctionComponent } from 'react';
 
 The **missing page** component can be used to display an error message and "return to homepage" button when an error occurs.
 
@@ -22,7 +23,7 @@ The **missing page** component can be used to display an error message and "retu
 
 ### Basic missing page
 
-A basic missing page component informs users that an error has occurred. It also includes a button link, which users can select to return to the homepage.  
+A basic missing page component informs users that an error has occurred. It also includes a button link, which users can select to return to the homepage.
 
 ```js file="./MissingPageExample.tsx"
 

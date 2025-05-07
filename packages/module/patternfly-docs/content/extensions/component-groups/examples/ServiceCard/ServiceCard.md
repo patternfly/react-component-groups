@@ -10,6 +10,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 import ServiceCard from "@patternfly/react-component-groups/dist/dynamic/ServiceCard";
 import { EllipsisVIcon } from '@patternfly/react-icons';
 import pageHeaderIcon from '../../assets/icons/page-header-icon.svg'
+import { FunctionComponent } from 'react'
 
 The **service card** component displays a card representing a service with an icon, title, description, and an optional customized footer
 
@@ -38,4 +39,3 @@ This shows how cards can look side by side in a [gallery layout](/layouts/galler
 ```js file="./ServiceCardGalleryExample.tsx"
 
 ```
-

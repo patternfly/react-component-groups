@@ -1,4 +1,4 @@
-import React from 'react';
+import type { PropsWithChildren, FunctionComponent } from 'react';
 import {
   Flex,
   FlexItem,
@@ -47,7 +47,7 @@ const useStyles = createUseStyles({
   }
 });
 
-export const ContentHeader: React.FunctionComponent<React.PropsWithChildren<ContentHeaderProps>> = ({
+export const ContentHeader: FunctionComponent<PropsWithChildren<ContentHeaderProps>> = ({
   title,
   subtitle = null,
   linkProps,

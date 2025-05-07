@@ -1,8 +1,10 @@
-import React from 'react'
+import { FunctionComponent, useState } from 'react';
 import { Button, ButtonVariant } from '@patternfly/react-core';
 import { Table, Tbody, Td, Th, Tr, Thead } from '@patternfly/react-table';
 import { ColumnsIcon } from '@patternfly/react-icons';
-import ColumnManagementModal, { ColumnManagementModalColumn } from '@patternfly/react-component-groups/dist/dynamic/ColumnManagementModal';
+import ColumnManagementModal, {
+  ColumnManagementModalColumn
+} from '@patternfly/react-component-groups/dist/dynamic/ColumnManagementModal';
 
 const DEFAULT_COLUMNS: ColumnManagementModalColumn[] = [
   {
@@ -57,40 +59,50 @@ const ROWS = [
     impact: 'Moderate',
     score: '6.1'
   }
-]
+];
 
-export const ColumnManagementModalExample: React.FunctionComponent = () => {
-  const [ columns, setColumns ] = React.useState(DEFAULT_COLUMNS);
-  const [ isOpen, setOpen ] = React.useState(false);
-  
+export const ColumnManagementModalExample: FunctionComponent = () => {
+  const [ columns, setColumns ] = useState(DEFAULT_COLUMNS);
+  const [ isOpen, setOpen ] = useState(false);
+
   return (
     <>
       <ColumnManagementModal
         appliedColumns={columns}
-        applyColumns={newColumns => setColumns(newColumns)}
+        applyColumns={(newColumns) => setColumns(newColumns)}
         isOpen={isOpen}
         onClose={() => setOpen(false)}
       />
-      <Button className='pf-v6-u-mb-sm' onClick={() => setOpen(true)} variant={ButtonVariant.secondary} icon={<ColumnsIcon />}>Manage columns</Button>
-      <Table
-        aria-label="Simple table"
-        variant="compact"
+      <Button
+        className="pf-v6-u-mb-sm"
+        onClick={() => setOpen(true)}
+        variant={ButtonVariant.secondary}
+        icon={<ColumnsIcon />}
       >
+        Manage columns
+      </Button>
+      <Table aria-label="Simple table" variant="compact">
         <Thead>
           <Tr>
-            {columns.filter(column => column.isShown).map(column => <Th key={column.key}>{column.title}</Th>)}
+            {columns
+              .filter((column) => column.isShown)
+              .map((column) => (
+                <Th key={column.key}>{column.title}</Th>
+              ))}
           </Tr>
         </Thead>
         <Tbody>
-          {ROWS.map((row, rowIndex) => 
+          {ROWS.map((row, rowIndex) => (
             <Tr key={rowIndex}>
-              {columns.filter(column => column.isShown).map((column, columnIndex) =>
-                <Td key={columnIndex}>{row[column.key]}</Td>
-              )}
-            </Tr>  
-          )}
+              {columns
+                .filter((column) => column.isShown)
+                .map((column, columnIndex) => (
+                  <Td key={columnIndex}>{row[column.key]}</Td>
+                ))}
+            </Tr>
+          ))}
         </Tbody>
       </Table>
     </>
-  )
-}
+  );
+};

@@ -13,13 +13,14 @@ source: react
 propComponents: ['ErrorBoundary']
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/ErrorBoundary/ErrorBoundary.md
 ---
-import { useState } from 'react';
+
 import { Button, Card, CardBody, CardFooter, CardHeader } from '@patternfly/react-core';
 import ErrorBoundary from "@patternfly/react-component-groups/dist/dynamic/ErrorBoundary";
+import { FunctionComponent, useState } from 'react';
 
 The **error boundary** component repurposes the `<ErrorState>` component for an application error boundary.
 
-## Examples 
+## Examples
 
 ### Error boundary usage example
 

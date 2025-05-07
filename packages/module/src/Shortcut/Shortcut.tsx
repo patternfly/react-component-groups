@@ -1,4 +1,4 @@
-import * as React from 'react';
+import type { FunctionComponent } from 'react';
 import { MouseIcon } from '@patternfly/react-icons';
 import { Label } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
@@ -45,7 +45,7 @@ const useStyles = createUseStyles({
   }
 })
 
-const Shortcut: React.FunctionComponent<ShortcutProps> = ({
+const Shortcut: FunctionComponent<ShortcutProps> = ({
   keys = [],
   description = null,
   showSymbols = true,

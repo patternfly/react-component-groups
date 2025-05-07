@@ -10,7 +10,7 @@ import {
   StackItem, 
 } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss'
-import React from 'react';
+import type { FunctionComponent } from 'react';
 
 const useStyles = createUseStyles({
   errorDescription: {
@@ -34,7 +34,7 @@ export interface ErrorStateProps extends Omit<EmptyStateProps, 'children' | 'tit
   status?: 'danger' | 'warning' | 'success' | 'info' | 'custom' | 'none';
 }
 
-const ErrorState: React.FunctionComponent<ErrorStateProps> = ({ 
+const ErrorState: FunctionComponent<ErrorStateProps> = ({ 
   titleText = 'Something went wrong', 
   bodyText, 
   defaultBodyText, 
