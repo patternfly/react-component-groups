@@ -15,7 +15,7 @@ export interface SkeletonTableProps
   /** The number of rows the skeleton table should contain */
   rowsCount?: number;
   /** Any captions that should be added to the table */
-  caption?: ReactNode;
+  caption?: React.ReactNode;
   /** Custom OUIA ID */
   ouiaId?: string | number;
   /** Flag indicating if the table is selectable */

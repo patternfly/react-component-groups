@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactNode, ReactElement, MouseEvent, FC } from 'react';
+import { FC } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -31,17 +31,17 @@ export const IconStatus = {
 
 export type IconStatus = (typeof IconStatus)[keyof typeof IconStatus];
 
-export interface StatusProps extends PropsWithChildren {
+export interface StatusProps extends React.PropsWithChildren {
   /** Status label text */
   label?: string;
   /** Description to be displayed under the label */
-  description?: ReactNode;
+  description?: React.ReactNode;
   /** If true, only displays icon */
   iconOnly?: boolean;
   /** Variant of the status component to be displayed */
   variant?: StatusVariant;
   /** Status icon */
-  icon?: ReactElement;
+  icon?: React.ReactElement;
   /** Status to control icon color */
   status: IconStatus;
   /** Icon title for accessibility */
@@ -51,7 +51,7 @@ export interface StatusProps extends PropsWithChildren {
   /** Props for the optional popover */
   popoverProps?: PopoverProps;
   /** Optional link variant onClick callback */
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
 
 const useStyles = createUseStyles({

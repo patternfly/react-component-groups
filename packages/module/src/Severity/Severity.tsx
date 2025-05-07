@@ -1,4 +1,4 @@
-import type { HTMLAttributes, DetailedHTMLProps, ReactNode, FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import { Fragment, useMemo } from 'react';
 import {
   SeverityCriticalIcon,
@@ -38,11 +38,11 @@ export const SeverityType = {
 
 export type SeverityType = (typeof SeverityType)[keyof typeof SeverityType];
 
-export interface SeverityProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
+export interface SeverityProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
   /** Determines a variant of displayed severity */
   severity: SeverityType;
   /** Label displayed next to the severity */
-  label: ReactNode;
+  label: React.ReactNode;
   /** Option to hide the label */
   labelHidden?: boolean;
   /** Custom className */

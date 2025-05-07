@@ -11,7 +11,7 @@ export interface ResponsiveActionsProps extends Omit<OverflowMenuProps, 'ref' | 
   /** Custom OUIA ID */
   ouiaId?: string;
   /** Child actions to be displayed */
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ ouiaId = 'ResponsiveActions', breakpoint = 'lg', children, ...props }: ResponsiveActionsProps) => {

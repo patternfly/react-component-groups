@@ -1,4 +1,4 @@
-import type { ReactElement, ReactNode, FunctionComponent } from 'react';
+import type { ReactElement, FunctionComponent } from 'react';
 import { isValidElement, useState, Fragment } from 'react';
 import {
   Card,
@@ -21,7 +21,7 @@ export type MultiContentCardDividerVariant = typeof MultiContentCardDividerVaria
 
 export interface MutliContentCardProps {
   /** Card element to be displayed as a content */
-  content: ReactElement;
+  content: React.ReactElement;
   /** Allows adding divider on the left/right from the card */
   dividerVariant?: MultiContentCardDividerVariant;
 }
@@ -29,13 +29,13 @@ export interface MutliContentCardProps {
 /** extends CardProps */
 export interface MultiContentCardProps extends Omit<CardProps, 'children' | 'title'> {
   /** Cards to be displayed as a content */
-  cards?: (ReactElement | MutliContentCardProps)[];
+  cards?: (React.ReactElement | MutliContentCardProps)[];
   /** Actions to be displayed in the expandable section */
-  actions?: ReactElement;
+  actions?: React.ReactElement;
   /** Toggle text for the expandable section */
-  toggleText?: ReactNode;
+  toggleText?: React.ReactNode;
   /** Toggle content for the expandable section */
-  toggleContent?: ReactElement;
+  toggleContent?: React.ReactElement;
   /** When set to true, all content cards will be separated with dividers */
   withDividers?: boolean;
   /** Indicates whether the card is expandable */

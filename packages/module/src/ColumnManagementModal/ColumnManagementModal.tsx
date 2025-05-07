@@ -1,4 +1,4 @@
-import type { ReactNode, MouseEvent, FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 import {
   Button,
@@ -18,33 +18,33 @@ import { ModalProps, Modal, ModalVariant } from '@patternfly/react-core/deprecat
 
 export interface ColumnManagementModalColumn {
   /** Internal identifier of a column by which table displayed columns are filtered. */
-  key: string,
+  key: string;
   /** The actual display name of the column possibly with a tooltip or icon. */
-  title: ReactNode,
+  title: React.ReactNode;
   /** If user changes checkboxes, the component will send back column array with this property altered. */
-  isShown?: boolean,
+  isShown?: boolean;
   /** Set to false if the column should be hidden initially */
-  isShownByDefault: boolean,
+  isShownByDefault: boolean;
   /** The checkbox will be disabled, this is applicable to columns which should not be toggleable by user */
-  isUntoggleable?: boolean
+  isUntoggleable?: boolean;
 }
 
 /** extends ModalProps */
 export interface ColumnManagementModalProps extends Omit<ModalProps, 'ref' | 'children'> {
   /** Flag to show the modal */
-  isOpen?: boolean,
+  isOpen?: boolean;
   /** Invoked when modal visibility is changed */
-  onClose?: (event: KeyboardEvent | MouseEvent) => void,
+  onClose?: (event: KeyboardEvent | React.MouseEvent) => void;
   /** Current column state */
-  appliedColumns: ColumnManagementModalColumn[],
+  appliedColumns: ColumnManagementModalColumn[];
   /** Invoked with new column state after save button is clicked */
-  applyColumns: (newColumns: ColumnManagementModalColumn[]) => void,
+  applyColumns: (newColumns: ColumnManagementModalColumn[]) => void;
   /* Modal description text */
-  description?: string,
+  description?: string;
   /* Modal title text */
-  title?: string,
+  title?: string;
   /** Custom OUIA ID */
-  ouiaId?: string | number,
+  ouiaId?: string | number;
 }
 
 const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (

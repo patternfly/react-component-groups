@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode, useMemo, useState } from 'react';
+import { FunctionComponent, useMemo, useState } from 'react';
 import {
   Button,
   ButtonVariant,
@@ -17,13 +17,13 @@ export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   /** Callback for the confirm action button. */
   onConfirm?: () => void;
   /** Custom label for the confirm action button */
-  confirmButtonLabel?: ReactNode;
+  confirmButtonLabel?: React.ReactNode;
   /** Custom label for the cancel action button */
-  cancelButtonLabel?: ReactNode;
+  cancelButtonLabel?: React.ReactNode;
   /** Whether modal requires a checkbox before confirming */
   withCheckbox?: boolean;
   /** Custom checkbox label */
-  checkboxLabel?: ReactNode;
+  checkboxLabel?: React.ReactNode;
   /** Visual variant of the confirm button */
   confirmButtonVariant?: ButtonVariant;
   /** Custom OUIA ID */
@@ -33,7 +33,7 @@ export interface WarningModalProps extends Omit<ModalProps, 'ref'> {
   /** Text the user should type to confirm selection when using confirmation input */
   confirmationText?: string;
   /** Label for the text confirmation input */
-  confirmationInputLabel?: ReactNode;
+  confirmationInputLabel?: React.ReactNode;
 }
 
 const WarningModal: FunctionComponent<WarningModalProps> = ({

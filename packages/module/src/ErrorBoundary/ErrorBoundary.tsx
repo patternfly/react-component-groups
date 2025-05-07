@@ -1,4 +1,4 @@
-import type { ReactNode, FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import { Component } from 'react';
 import { ExpandableSection, Title } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
@@ -15,19 +15,19 @@ const useStyles = createUseStyles({
 
 export interface ErrorBoundaryProps {
   /** The title text to display on the error page */
-  headerTitle?: ReactNode;
+  headerTitle?: React.ReactNode;
   /** Indicates if the error is silent */
   silent?: boolean;
   /** The title text to display with the error */
-  errorTitle?: ReactNode;
+  errorTitle?: React.ReactNode;
   /** The description text to display with the error */
-  errorDescription?: ReactNode;
+  errorDescription?: React.ReactNode;
   /** The default description text to display with the error if no errorDescription is provided */
-  defaultErrorDescription?: ReactNode;
+  defaultErrorDescription?: React.ReactNode;
   /** The text for the toggle link that users can select to view error details */
   errorToggleText?: string;
   /** The component that the error boundary component is wrapped around, which should be returned if there is no error  */
-  children?: ReactNode;
+  children?: React.ReactNode;
   /** Custom OUIA ID */
   ouiaId?: string | number;
   /** The heading level to use on the header title, default is h1 */

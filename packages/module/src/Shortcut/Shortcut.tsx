@@ -1,4 +1,4 @@
-import type { ReactNode, FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import { MouseIcon } from '@patternfly/react-icons';
 import { Label } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
@@ -8,7 +8,7 @@ export interface ShortcutProps {
   /** Array of shortcut keys */
   keys: string[];
   /** Shortcut description */
-  description?: ReactNode;
+  description?: React.ReactNode;
   /** Indicates whether symbols should be displayed for certain keys */
   showSymbols?: boolean;
   /** Show hover in the shortcut */

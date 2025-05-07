@@ -1,4 +1,4 @@
-import type { ReactNode, FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import { ButtonProps } from '@patternfly/react-core';
 
 /** extends ButtonProps */
@@ -10,7 +10,7 @@ export interface ResponsiveActionProps extends ButtonProps {
   /** Key for the action */
   key?: string;
   /** Action label */
-  children: ReactNode;
+  children: React.ReactNode;
 };
 
 // This component is only used declaratively - rendering ishandled by ResponsiveActions

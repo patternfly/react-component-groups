@@ -1,4 +1,4 @@
-import type { PropsWithChildren, ReactNode, FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import {
   Button,
   ButtonProps,
@@ -23,25 +23,25 @@ export interface PageHeaderLinkProps extends ButtonProps {
   isExternal?: boolean;
 }
 
-export interface PageHeaderProps extends PropsWithChildren {
+export interface PageHeaderProps extends React.PropsWithChildren {
   /** Title for page header */
-  title?: ReactNode;
+  title?: React.ReactNode;
   /** Subtitle for page header */
-  subtitle?: ReactNode;
+  subtitle?: React.ReactNode;
   /** Optional link below subtitle */
   linkProps?: PageHeaderLinkProps;
   /** Optional icon for page header (appears to the left of the page header's title with a divider) */
-  icon?: ReactNode;
+  icon?: React.ReactNode;
   /** Optional label for page header (appears to the right of the page header's title) */
-  label?: ReactNode;
+  label?: React.ReactNode;
   /** Breadcrumbs component */
-  breadcrumbs?: ReactNode;
+  breadcrumbs?: React.ReactNode;
   /** Menu that appears to the far right of the title */
-  actionMenu?: ReactNode;
+  actionMenu?: React.ReactNode;
   /** Custom OUIA ID */
   ouiaId?: string | number;
   /** Child nodes */
-  children?: ReactNode;
+  children?: React.ReactNode;
   /** Classname for the h1 element */
   headingClassname?: string;
 }

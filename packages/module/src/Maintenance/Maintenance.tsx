@@ -1,27 +1,27 @@
-import type { ReactNode, FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateProps, EmptyStateStatus, EmptyStateVariant } from '@patternfly/react-core';
 import { HourglassHalfIcon } from '@patternfly/react-icons';
 
 /** extends EmptyStateProps */
 export interface MaintenanceProps extends Omit<EmptyStateProps, 'children' | 'title'> {
     /** The title for the maintenance message */
-    titleText?: ReactNode;
+    titleText?: React.ReactNode;
     /** Custom body text */
-    bodyText?: ReactNode;
+    bodyText?: React.ReactNode;
     /** A default bodyText used if no bodyText is provided */
-    defaultBodyText?: ReactNode;
+    defaultBodyText?: React.ReactNode;
     /** Start time in a specific time zone */
-    startTime?: ReactNode;
+    startTime?: React.ReactNode;
     /** End time in a specific time zone */
-    endTime?: ReactNode;
+    endTime?: React.ReactNode;
     /** Time zone specification */
-    timeZone?: ReactNode;
+    timeZone?: React.ReactNode;
     /** Information link */
     redirectLinkUrl?: string;
     /** Information link title */
-    redirectLinkText?: ReactNode;
+    redirectLinkText?: React.ReactNode;
     /** Custom footer content */
-    customFooter?: ReactNode;
+    customFooter?: React.ReactNode;
     /** Custom OUIA ID */
     ouiaId?: string | number;  }
 

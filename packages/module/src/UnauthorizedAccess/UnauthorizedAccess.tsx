@@ -1,29 +1,29 @@
-import type { ReactNode, ComponentType, FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateProps, EmptyStateVariant, EmptyStateFooter, EmptyStateActions, ButtonVariant, } from '@patternfly/react-core';
 import { LockIcon } from '@patternfly/react-icons';
 
 /** extends EmptyStateProps */
 export interface UnauthorizedAccessProps extends Omit<EmptyStateProps, 'children' | 'titleText'> {
   /** Service name displayed in the title */
-  serviceName?: ReactNode;
+  serviceName?: React.ReactNode;
   /** Icon displayed above the title */
-  icon?: ComponentType;
+  icon?: React.ComponentType;
   /** Custom body text */
-  bodyText?: ReactNode;
+  bodyText?: React.ReactNode;
   /** Shows link to the previous page */
   showReturnButton?: boolean;
   /** Custom previous page button text */
-  prevPageButtonText?: ReactNode;
+  prevPageButtonText?: React.ReactNode;
   /** Custom className */
   className?: string;
   /** Custom title text */
-  titleText?: ReactNode;
+  titleText?: React.ReactNode;
   /** Custom primary action - there should only be one defined */
-  primaryAction?: ReactNode;
+  primaryAction?: React.ReactNode;
   /** Custom secondary actions */
-  secondaryActions?: ReactNode;
+  secondaryActions?: React.ReactNode;
   /** Custom landing page button text */
-  toLandingPageText?: ReactNode;
+  toLandingPageText?: React.ReactNode;
   /** Custom landing page button URL */
   toLandingPageUrl?: string;
   /** Custom OUIA ID */

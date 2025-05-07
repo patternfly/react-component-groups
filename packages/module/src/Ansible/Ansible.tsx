@@ -1,9 +1,9 @@
-import type { HTMLAttributes, DetailedHTMLProps, FunctionComponent, CSSProperties } from 'react';
+import type { FunctionComponent, CSSProperties } from 'react';
 import { Fragment } from 'react';
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
 
-export interface AnsibleProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
+export interface AnsibleProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
   /** Supported/unsupported variant flag */
   isSupported?: boolean;
   /** Red Hat Ansible Automation Platform technology icon */

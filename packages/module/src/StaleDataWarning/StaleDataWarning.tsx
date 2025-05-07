@@ -1,4 +1,4 @@
-import type { ReactElement, JSXElementConstructor, FunctionComponent } from 'react';
+import type { ReactElement, FunctionComponent } from 'react';
 import { ExclamationCircleIcon, ExclamationTriangleIcon } from '@patternfly/react-icons';
 import { Button, Icon, Tooltip, TooltipProps } from '@patternfly/react-core';
 import clsx from 'clsx';
@@ -48,13 +48,13 @@ export interface StaleDataWarningProps extends Omit<TooltipProps, 'content'> {
   /** Current date */
   currDate: CullingDate;
   /** Optional prop to add custom children */
-  children?: ReactElement<any, string | JSXElementConstructor<any>> | undefined;
+  children?: React.ReactElement<any, string | React.JSXElementConstructor<any>> | undefined;
   /** Option to add custom message ReactElement */
   render?: Render;
   /** Optional custom warning message */
   message?: string;
   /** Accessible label for the icon */
-  "aria-label"?: string;
+  'aria-label'?: string;
 }
 
 const StaleDataWarning: FunctionComponent<StaleDataWarningProps> = ({

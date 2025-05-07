@@ -1,4 +1,4 @@
-import type { ReactNode, ReactElement, FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import { Card, CardBody, CardFooter, CardHeader, CardProps, Content, ContentVariants, Flex, FlexItem } from '@patternfly/react-core';
 import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
@@ -10,15 +10,15 @@ export interface ServiceCardProps extends CardProps {
   /** Service card title */
   title: string;
   /** Service card subtitle */
-  subtitle?: ReactNode;
+  subtitle?: React.ReactNode;
   /** Service card description */
-  description: ReactNode;
+  description: React.ReactNode;
   /** Service card icon */
-  icon: ReactNode;
+  icon: React.ReactNode;
   /** Optional Service card helper text*/
-  helperText?: ReactNode;
+  helperText?: React.ReactNode;
   /** Optional footer */
-  footer?: ReactElement | null;
+  footer?: React.ReactElement | null;
   /** Optional custom OUIA ID */
   ouiaId?: string | number;
   /** Optional flag modifying the card header layout */
