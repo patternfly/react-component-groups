@@ -1,17 +1,13 @@
-import React, { ReactNode } from 'react';
-import {
-  Caption,
-  Table,
-  TableProps,
-  TableVariant,
-  RowSelectVariant,
-  ThProps
-} from '@patternfly/react-table';
+import { FunctionComponent, ReactNode } from 'react';
+import { Caption, Table, TableProps, TableVariant, RowSelectVariant, ThProps } from '@patternfly/react-table';
 import SkeletonTableBody, { SkeletonTableBodyProps } from '../SkeletonTableBody';
 import SkeletonTableHead, { SkeletonTableHeadProps } from '../SkeletonTableHead';
 
 /** extends TableProps */
-export interface SkeletonTableProps extends Omit<TableProps, 'ref'>, Omit<SkeletonTableBodyProps, 'columnsCount'>, SkeletonTableHeadProps {
+export interface SkeletonTableProps
+  extends Omit<TableProps, 'ref'>,
+    Omit<SkeletonTableBodyProps, 'columnsCount'>,
+    SkeletonTableHeadProps {
   /** Indicates the table variant */
   variant?: TableVariant;
   /** Flag indicating if the table should have borders */
@@ -34,7 +30,7 @@ export interface SkeletonTableProps extends Omit<TableProps, 'ref'>, Omit<Skelet
   columnsCount?: number;
 }
 
-const SkeletonTable: React.FunctionComponent<SkeletonTableProps> = ({
+const SkeletonTable: FunctionComponent<SkeletonTableProps> = ({
   variant,
   borders = true,
   rowsCount = 5,
@@ -53,7 +49,7 @@ const SkeletonTable: React.FunctionComponent<SkeletonTableProps> = ({
   return (
     <Table aria-label="Loading" variant={variant} borders={borders} ouiaId={ouiaId} {...rest}>
       {caption && <Caption>{caption}</Caption>}
-      <SkeletonTableHead 
+      <SkeletonTableHead
         ouiaId={ouiaId}
         isSelectable={isSelectable}
         isExpandable={isExpandable}
@@ -61,7 +57,7 @@ const SkeletonTable: React.FunctionComponent<SkeletonTableProps> = ({
         columns={columns}
         isTreeTable={isTreeTable}
       />
-      <SkeletonTableBody 
+      <SkeletonTableBody
         columnsCount={rowCellsCount ?? 0}
         rowsCount={rowsCount}
         isSelectable={isSelectable}

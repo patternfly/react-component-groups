@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import { QuestionCircleIcon } from '@patternfly/react-icons';
 import UnauthorizedAccess from './UnauthorizedAccess';

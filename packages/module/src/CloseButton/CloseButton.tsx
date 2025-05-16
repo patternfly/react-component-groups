@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FunctionComponent } from 'react';
 import { Button, ButtonProps, ButtonVariant } from '@patternfly/react-core';
 import { CloseIcon } from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
@@ -17,7 +17,7 @@ export interface CloseButtonProps extends ButtonProps {
   dataTestID?: string;
 };
 
-export const CloseButton: React.FunctionComponent<CloseButtonProps> = ({
+export const CloseButton: FunctionComponent<CloseButtonProps> = ({
   className,
   dataTestID,
   onClick,

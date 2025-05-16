@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import ResponsiveActions from './ResponsiveActions';
 import ResponsiveAction from '../ResponsiveAction';

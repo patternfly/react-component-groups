@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import type { ReactNode, FunctionComponent } from 'react';
+import { Children, isValidElement, useState } from 'react';
 import { Button, Dropdown, DropdownList, MenuToggle, OverflowMenu, OverflowMenuContent, OverflowMenuControl, OverflowMenuDropdownItem, OverflowMenuGroup, OverflowMenuItem, OverflowMenuProps } from '@patternfly/react-core';
 import { EllipsisVIcon } from '@patternfly/react-icons';
 import { ResponsiveActionProps } from '../ResponsiveAction';
@@ -13,16 +14,16 @@ export interface ResponsiveActionsProps extends Omit<OverflowMenuProps, 'ref' | 
   children: React.ReactNode;
 }
 
-export const ResponsiveActions: React.FunctionComponent<ResponsiveActionsProps> = ({ ouiaId = 'ResponsiveActions', breakpoint = 'lg', children, ...props }: ResponsiveActionsProps) => {
+export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ ouiaId = 'ResponsiveActions', breakpoint = 'lg', children, ...props }: ResponsiveActionsProps) => {
   const [ isOpen, setIsOpen ] = useState(false);
 
   // separate persistent, pinned and collapsed actions
-  const persistentActions: React.ReactNode[] = [];
-  const pinnedActions: React.ReactNode[] = [];
-  const dropdownItems: React.ReactNode[] = [];
+  const persistentActions: ReactNode[] = [];
+  const pinnedActions: ReactNode[] = [];
+  const dropdownItems: ReactNode[] = [];
 
-  React.Children.forEach(children, (child, index) => {
-    if (React.isValidElement<ResponsiveActionProps>(child)) {
+  Children.forEach(children, (child, index) => {
+    if (isValidElement<ResponsiveActionProps>(child)) {
       const { isPersistent, isPinned, key = index, children, onClick, ...actionProps } = child.props;
 
       if (isPersistent || isPinned) {

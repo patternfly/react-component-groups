@@ -1,4 +1,5 @@
-import React, { ReactNode, useMemo } from 'react';
+import type { FunctionComponent } from 'react';
+import { ReactNode, useMemo } from 'react';
 import {
   Th,
   ThProps,
@@ -24,7 +25,7 @@ export interface SkeletonTableHeadProps {
   isTreeTable?: boolean;
 }
 
-export const SkeletonTableHead: React.FunctionComponent<SkeletonTableHeadProps> = ({
+export const SkeletonTableHead: FunctionComponent<SkeletonTableHeadProps> = ({
   ouiaId = 'SkeletonTableHeader',
   isSelectable,
   isExpandable,

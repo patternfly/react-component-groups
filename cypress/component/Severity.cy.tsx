@@ -1,7 +1,6 @@
-import React from 'react';
 import Severity, { SeverityType } from '../../packages/module/dist/dynamic/Severity';
 
-const severities = [    
+const severities = [
   { type: SeverityType.critical, label: 'Critical severity', ouiaId: 'Severity-critical' },
   { type: SeverityType.important, label: 'Important severity', ouiaId: 'Severity-important' },
   { type: SeverityType.moderate, label: 'Moderate severity', ouiaId: 'Severity-moderate' },
@@ -19,7 +18,7 @@ describe('Severity', () => {
       cy.get('span').contains(label);
     });
   });
-  
+
   it('hides label when labelHidden is true', () => {
     cy.mount(<Severity severity={SeverityType.important} label="Important severity" labelHidden />);
     cy.contains('Important severity').should('not.exist');

@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FunctionComponent } from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateProps, EmptyStateStatus, EmptyStateVariant } from '@patternfly/react-core';
 import { HourglassHalfIcon } from '@patternfly/react-icons';
 
@@ -25,7 +25,7 @@ export interface MaintenanceProps extends Omit<EmptyStateProps, 'children' | 'ti
     /** Custom OUIA ID */
     ouiaId?: string | number;  }
 
-const Maintenance: React.FunctionComponent<MaintenanceProps> = ({ 
+const Maintenance: FunctionComponent<MaintenanceProps> = ({ 
   titleText = 'Maintenance in progress',
   defaultBodyText = 'We are currently undergoing scheduled maintenance. Thank you for understanding.',
   startTime,

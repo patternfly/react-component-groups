@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FunctionComponent } from 'react';
 import { Button, EmptyState, EmptyStateBody, EmptyStateFooter, EmptyStateProps, EmptyStateVariant } from '@patternfly/react-core';
 import NotFoundIcon from '../NotFoundIcon';
 
@@ -16,7 +16,7 @@ export interface MissingPageProps extends Omit<EmptyStateProps, 'children' | 'ti
   ouiaId?: string | number;
 }
 
-export const MissingPage: React.FunctionComponent<MissingPageProps> = ({
+export const MissingPage: FunctionComponent<MissingPageProps> = ({
   toHomePageUrl = window.location.origin,
   toHomePageText = 'Return to homepage',
   titleText = 'We lost that page',
