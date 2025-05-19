@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import LogSnippet from '@patternfly/react-component-groups/dist/dynamic/LogSnippet';
 
-export const BasicExample: React.FunctionComponent = () => {
+export const BasicExample: FunctionComponent = () => {
   const code = `apiVersion: helm.openshift.io/v1beta1/
   kind: HelmChartRepository
   metadata:
@@ -10,5 +10,5 @@ export const BasicExample: React.FunctionComponent = () => {
   connectionConfig:
   url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
 
-  return <LogSnippet message='Failure - check logs for details' logSnippet={code} />;
-}
+  return <LogSnippet message="Failure - check logs for details" logSnippet={code} />;
+};

@@ -11,6 +11,7 @@ import MultiContentCard, { MultiContentCardDividerVariant } from "@patternfly/re
 import { ArrowRightIcon, BellIcon, CogIcon, EllipsisVIcon, LockIcon } from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
+import { FunctionComponent, useState } from 'react';
 
 A **multi-content card** component allows to display multiple card components in a single layout. To further customize this layout, you can also utilize all properties of the [card component](/components/card), with the exception of `children` and `title`.
 
@@ -42,7 +43,7 @@ Actions can be displayed in the multi-content card heading using `actions` prope
 
 ### Expandable multi content card with dividers
 
-Dividers between all cards in the content can be shown using `withDividers` flag. 
+Dividers between all cards in the content can be shown using `withDividers` flag.
 
 ```js file="./MultiContentCardExpandableDividerExample.tsx"
 
@@ -50,7 +51,7 @@ Dividers between all cards in the content can be shown using `withDividers` flag
 
 ### Expandable multi-content card with single dividers
 
-To enable a divider just for a single card, use `dividerVariant` property passed to the `cards` array. 
+To enable a divider just for a single card, use `dividerVariant` property passed to the `cards` array.
 
 ```js file="./MultiContentCardExpandableSingleDividerExample.tsx"
 

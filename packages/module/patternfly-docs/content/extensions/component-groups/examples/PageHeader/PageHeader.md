@@ -10,6 +10,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 import PageHeader from "@patternfly/react-component-groups/dist/dynamic/PageHeader"
 import { EllipsisVIcon } from '@patternfly/react-icons';
 import pageHeaderIcon from '../../assets/icons/page-header-icon.svg'
+import { Fragment, FunctionComponent, MouseEvent, Ref, useState } from 'react';
 
 The **page header** component displays a page header section with a title, subtitle and other optional content.
 

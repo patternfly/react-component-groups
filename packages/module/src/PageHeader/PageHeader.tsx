@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FunctionComponent } from 'react';
 import {
   Button,
   ButtonProps,
@@ -52,7 +52,7 @@ const useStyles = createUseStyles({
   }
 });
 
-export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
+export const PageHeader: FunctionComponent<PageHeaderProps> = ({
   title,
   subtitle,
   linkProps,

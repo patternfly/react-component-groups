@@ -1,5 +1,5 @@
-import React from 'react';
-import SkeletonTable from "@patternfly/react-component-groups/dist/dynamic/SkeletonTable";
+import { FC, ReactNode, useState, useEffect } from 'react';
+import SkeletonTable from '@patternfly/react-component-groups/dist/dynamic/SkeletonTable';
 import { Table, Tbody, Td, Th, Tr, Thead } from '@patternfly/react-table';
 import { Button, Stack, StackItem } from '@patternfly/react-core';
 
@@ -11,8 +11,8 @@ interface Repository {
   lastCommit: string;
 }
 
-export const SkeletonTableExample: React.FC = () => {
-  const [ isLoaded, setIsLoaded ] = React.useState(false);
+export const SkeletonTableExample: FC = () => {
+  const [ isLoaded, setIsLoaded ] = useState(false);
 
   const loadData = () => {
     setIsLoaded(false);
@@ -35,7 +35,7 @@ export const SkeletonTableExample: React.FC = () => {
     lastCommit: 'Last commit'
   };
 
-  const table: React.ReactNode = !isLoaded ? (
+  const table: ReactNode = !isLoaded ? (
     <SkeletonTable
       rowsCount={3}
       columns={[
@@ -71,7 +71,7 @@ export const SkeletonTableExample: React.FC = () => {
     </Table>
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     loadData();
   }, []);
 
@@ -80,9 +80,7 @@ export const SkeletonTableExample: React.FC = () => {
       <Stack hasGutter>
         <StackItem>{table}</StackItem>
         <StackItem>
-          <Button onClick={loadData}>
-            Reload table
-          </Button>
+          <Button onClick={loadData}>Reload table</Button>
         </StackItem>
       </Stack>
     </>

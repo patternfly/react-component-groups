@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import SkeletonTableHead from './SkeletonTableHead';
 import { Table } from '@patternfly/react-table';

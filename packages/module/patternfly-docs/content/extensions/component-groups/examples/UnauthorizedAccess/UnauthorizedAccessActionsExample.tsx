@@ -1,12 +1,9 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import { Button } from '@patternfly/react-core';
-import UnauthorizedAccess from "@patternfly/react-component-groups/dist/dynamic/UnauthorizedAccess";
+import UnauthorizedAccess from '@patternfly/react-component-groups/dist/dynamic/UnauthorizedAccess';
 
-export const BasicExample: React.FunctionComponent = () => {
-  const primaryAction = 
-    <Button key="1">
-      Custom primary action
-    </Button>;
+export const BasicExample: FunctionComponent = () => {
+  const primaryAction = <Button key="1">Custom primary action</Button>;
   const secondaryActions = [
     <Button key="2" variant="link">
       Second action
@@ -16,12 +13,12 @@ export const BasicExample: React.FunctionComponent = () => {
     </Button>
   ];
   return (
-    <UnauthorizedAccess 
-      primaryAction={primaryAction} 
+    <UnauthorizedAccess
+      primaryAction={primaryAction}
       secondaryActions={secondaryActions}
-      bodyText="Description text" 
+      bodyText="Description text"
       serviceName="Demo bundle"
       prevPageButtonText="Go to previous page"
     />
   );
-}
+};

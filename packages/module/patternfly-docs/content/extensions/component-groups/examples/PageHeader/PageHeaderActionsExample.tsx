@@ -1,16 +1,24 @@
-import React from 'react';
+import { Fragment, FunctionComponent, MouseEvent, Ref, useState } from 'react';
 import PageHeader from '@patternfly/react-component-groups/dist/dynamic/PageHeader';
-import { ActionList, ActionListItem, Dropdown, DropdownItem, DropdownList, MenuToggle, MenuToggleElement } from '@patternfly/react-core';
+import {
+  ActionList,
+  ActionListItem,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
+  MenuToggle,
+  MenuToggleElement
+} from '@patternfly/react-core';
 import { EllipsisVIcon } from '@patternfly/react-icons';
 
-export const ActionsExample: React.FunctionComponent = () => {
-  const [ isOpen, setIsOpen ] = React.useState(false);
+export const ActionsExample: FunctionComponent = () => {
+  const [ isOpen, setIsOpen ] = useState(false);
 
   const onToggle = () => {
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (event: React.MouseEvent<Element, MouseEvent> | undefined) => {
+  const onSelect = (event: MouseEvent<Element, MouseEvent> | undefined) => {
     event?.stopPropagation();
     setIsOpen(!isOpen);
   };
@@ -26,19 +34,19 @@ export const ActionsExample: React.FunctionComponent = () => {
       </DropdownItem>
     </>
   );
-      
+
   return (
-    <React.Fragment>
+    <Fragment>
       <PageHeader
-        title='My Title'
-        subtitle='This is a subtitle for your page header' 
+        title="My Title"
+        subtitle="This is a subtitle for your page header"
         actionMenu={
           <ActionList>
             <ActionListItem>
               <Dropdown
                 popperProps={{ position: 'right' }}
                 onSelect={onSelect}
-                toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+                toggle={(toggleRef: Ref<MenuToggleElement>) => (
                   <MenuToggle
                     ref={toggleRef}
                     icon={<EllipsisVIcon />}
@@ -55,8 +63,8 @@ export const ActionsExample: React.FunctionComponent = () => {
               </Dropdown>
             </ActionListItem>
           </ActionList>
-        } 
+        }
       />
-    </React.Fragment>
-  )
+    </Fragment>
+  );
 };

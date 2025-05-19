@@ -1,4 +1,5 @@
-import * as React from 'react';
+import type { FunctionComponent } from 'react';
+import { Fragment } from 'react';
 import { createUseStyles } from 'react-jss';
 import Shortcut, { ShortcutProps } from '../Shortcut/Shortcut';
 import { Grid, GridItem, GridItemProps, GridProps } from '@patternfly/react-core';
@@ -20,21 +21,22 @@ const useStyles = createUseStyles({
   }
 })
 
-const ShortcutGrid: React.FunctionComponent<ShortcutGridProps> = ({ shortcuts, gridItemProps, ouiaId = 'ShortcutGrid', ...props }: ShortcutGridProps) => {
+const ShortcutGrid: FunctionComponent<ShortcutGridProps> = ({ shortcuts, gridItemProps, ouiaId = 'ShortcutGrid', ...props }: ShortcutGridProps) => {
   const classes = useStyles();
   return (
-    <Grid span={6} hasGutter key="grid" data-ouia-component-id={ouiaId} {...props}>
+    (<Grid span={6} hasGutter key="grid" data-ouia-component-id={ouiaId} {...props}>
       {shortcuts.map((shortcut, index) => {
         const { description, ...props } = shortcut;
-        return(
-          <React.Fragment key={index}>
+        return (
+          (<Fragment key={index}>
             <GridItem className={classes.shortcutGridItem} data-ouia-component-id={`${ouiaId}-item-${index}`} {...gridItemProps}>
               <Shortcut {...props}/>
             </GridItem>
             <GridItem data-ouia-component-id={`${ouiaId}-item-description-${index}`}>{description}</GridItem>
-          </React.Fragment>
-        )})}
+          </Fragment>)
+        );})}
     </Grid>)
+  );
 }
 
 export default ShortcutGrid;

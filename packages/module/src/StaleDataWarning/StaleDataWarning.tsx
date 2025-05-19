@@ -1,10 +1,10 @@
-import React from 'react';
+import type { ReactElement, FunctionComponent } from 'react';
 import { ExclamationCircleIcon, ExclamationTriangleIcon } from '@patternfly/react-icons';
 import { Button, Icon, Tooltip, TooltipProps } from '@patternfly/react-core';
 import clsx from 'clsx';
 import { createUseStyles } from 'react-jss';
 
-type Render = (config: { msg: string }) => React.ReactElement<any, any> | null;
+type Render = (config: { msg: string }) => ReactElement<any, any> | null;
 type CullingDate = string | number | Date;
 
 interface StaleDataInfo {
@@ -54,10 +54,10 @@ export interface StaleDataWarningProps extends Omit<TooltipProps, 'content'> {
   /** Optional custom warning message */
   message?: string;
   /** Accessible label for the icon */
-  "aria-label"?: string;
+  'aria-label'?: string;
 }
 
-const StaleDataWarning: React.FunctionComponent<StaleDataWarningProps> = ({
+const StaleDataWarning: FunctionComponent<StaleDataWarningProps> = ({
   culled = new Date(0),
   className,
   staleWarning = new Date(0),
