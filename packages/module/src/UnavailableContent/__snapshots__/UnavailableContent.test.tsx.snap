@@ -53,7 +53,6 @@ exports[`Unavailable component should render with a link 1`] = `
             data-ouia-component-id="UnavailableContent-footer"
           >
             <a
-              aria-disabled="false"
               class="pf-v6-c-button pf-m-primary"
               data-ouia-component-id="UnavailableContent-link-button"
               data-ouia-component-type="PF6/Button"
@@ -122,7 +121,6 @@ exports[`Unavailable component should render with a link 1`] = `
           data-ouia-component-id="UnavailableContent-footer"
         >
           <a
-            aria-disabled="false"
             class="pf-v6-c-button pf-m-primary"
             data-ouia-component-id="UnavailableContent-link-button"
             data-ouia-component-type="PF6/Button"
@@ -248,7 +246,6 @@ exports[`Unavailable component should render with no link 1`] = `
             data-ouia-component-id="UnavailableContent-footer"
           >
             <a
-              aria-disabled="false"
               class="pf-v6-c-button pf-m-primary"
               data-ouia-component-id="UnavailableContent-link-button"
               data-ouia-component-type="PF6/Button"
@@ -317,7 +314,6 @@ exports[`Unavailable component should render with no link 1`] = `
           data-ouia-component-id="UnavailableContent-footer"
         >
           <a
-            aria-disabled="false"
             class="pf-v6-c-button pf-m-primary"
             data-ouia-component-id="UnavailableContent-link-button"
             data-ouia-component-type="PF6/Button"

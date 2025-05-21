@@ -31,7 +31,6 @@ exports[`WarningModal component should render 1`] = `
             class="pf-v6-c-modal-box__close"
           >
             <button
-              aria-disabled="false"
               aria-label="Close"
               class="pf-v6-c-button pf-m-plain"
               data-ouia-component-id="WarningModal-ModalBoxCloseButton"
@@ -119,7 +118,6 @@ exports[`WarningModal component should render 1`] = `
             class="pf-v6-c-modal-box__footer"
           >
             <button
-              aria-disabled="false"
               class="pf-v6-c-button pf-m-primary"
               data-ouia-component-id="WarningModal-confirm-button"
               data-ouia-component-type="PF6/Button"
@@ -133,7 +131,6 @@ exports[`WarningModal component should render 1`] = `
               </span>
             </button>
             <button
-              aria-disabled="false"
               class="pf-v6-c-button pf-m-link"
               data-ouia-component-id="WarningModal-cancel-button"
               data-ouia-component-type="PF6/Button"
