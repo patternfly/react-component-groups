@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'react';
-import clsx from 'clsx';
+import { css } from '@patternfly/react-styles';
 import { Content } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
 
@@ -28,7 +28,7 @@ export const ErrorStack: FunctionComponent<ErrorStackProps> = ({ error, classNam
 
   if (error.stack) {
     return (
-      <Content className={clsx(classes.errorStack, className)} {...props} >
+      <Content className={css(classes.errorStack, className)} {...props} >
         {error.stack.split('\n').map((line) => (
           <div key={line}>{line}</div>
         ))}
@@ -40,7 +40,7 @@ export const ErrorStack: FunctionComponent<ErrorStackProps> = ({ error, classNam
     return (
       <>
         <Content component="h6">{error.name}</Content>
-        <Content className={clsx(classes.errorStack, className)} component="blockquote" {...props}>
+        <Content className={css(classes.errorStack, className)} component="blockquote" {...props}>
           {error.message}
         </Content>
       </>

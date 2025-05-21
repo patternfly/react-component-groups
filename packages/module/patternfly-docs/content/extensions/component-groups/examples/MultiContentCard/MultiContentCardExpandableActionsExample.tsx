@@ -22,7 +22,7 @@ import {
 } from '@patternfly/react-core';
 import { ArrowRightIcon, BellIcon, CogIcon, LockIcon } from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
-import clsx from 'clsx';
+import { css } from '@patternfly/react-styles';
 
 const useStyles = createUseStyles({
   bulletPoints: {
@@ -49,7 +49,7 @@ export const BasicExample: FunctionComponent = () => {
         </Content>
       </CardBody>
       <CardFooter>
-        <List className={clsx(classes.bulletPoints, 'pf-v6-u-font-size-sm', 'pf-v6-u-ml-0')}>
+        <List className={css(classes.bulletPoints, 'pf-v6-u-font-size-sm', 'pf-v6-u-ml-0')}>
           <ListItem>
             <Button variant="link" isInline>
               First link

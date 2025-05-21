@@ -2,7 +2,7 @@ import type { FunctionComponent } from 'react';
 import { MouseIcon } from '@patternfly/react-icons';
 import { Label } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
-import clsx from 'clsx';
+import { css } from '@patternfly/react-styles';
 
 export interface ShortcutProps {
   /** Array of shortcut keys */
@@ -51,8 +51,8 @@ const Shortcut: FunctionComponent<ShortcutProps> = ({
   showSymbols = true,
   hover,
   click,
-  drag, 
-  rightClick, 
+  drag,
+  rightClick,
   dragAndDrop,
   className,
   ouiaId = 'Shortcut',
@@ -60,7 +60,7 @@ const Shortcut: FunctionComponent<ShortcutProps> = ({
 }: ShortcutProps) => {
   const classes = useStyles();
   const badges = [
-    ...(hover ? [ 
+    ...(hover ? [
       <Label variant="outline" key="hover" data-test-id="hover">
         <MouseIcon /> Hover
       </Label>
@@ -73,22 +73,22 @@ const Shortcut: FunctionComponent<ShortcutProps> = ({
           {key.length === 1 ? key.toUpperCase() : key[0].toUpperCase() + key.slice(1).toLowerCase()}
         </Label>
       )}),
-    ...(click ? [ 
+    ...(click ? [
       <Label variant="outline" key="click" data-test-id="click">
         <MouseIcon /> Click
       </Label>
     ] : []),
-    ...(rightClick ? [ 
+    ...(rightClick ? [
       <Label variant="outline" key="right-click" data-test-id="right-click">
         <MouseIcon /> Right click
       </Label>
     ] : []),
-    ...(drag ? [ 
+    ...(drag ? [
       <Label variant="outline" key="drag" data-test-id="drag">
         <MouseIcon /> Drag
       </Label>
     ] : []),
-    ...(dragAndDrop ? [ 
+    ...(dragAndDrop ? [
       <Label variant="outline" key="drag-and-drop" data-test-id="drag-and-drop">
         <MouseIcon /> Drag + Drop
       </Label>
@@ -97,7 +97,7 @@ const Shortcut: FunctionComponent<ShortcutProps> = ({
 
   return (
     <>
-      <span className={clsx({ [classes.shortcut]: description, className })} data-ouia-component-id={ouiaId} {...props}>
+      <span className={css({ [classes.shortcut]: description, className })} data-ouia-component-id={ouiaId} {...props}>
         {badges.length > 0 && badges.reduce((prev, curr, idx) => (
           <span key={idx}>{[ prev, ' + ', curr ]}</span>
         ))}

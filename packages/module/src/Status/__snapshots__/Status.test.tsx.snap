@@ -161,7 +161,6 @@ exports[`Status component should render correctly link 1`] = `
   "baseElement": <body>
     <div>
       <button
-        aria-disabled="false"
         class="pf-v6-c-button pf-m-link"
         data-ouia-component-id="Status-link-icon"
         data-ouia-component-type="PF6/Button"
@@ -224,7 +223,6 @@ exports[`Status component should render correctly link 1`] = `
   </body>,
   "container": <div>
     <button
-      aria-disabled="false"
       class="pf-v6-c-button pf-m-link"
       data-ouia-component-id="Status-link-icon"
       data-ouia-component-type="PF6/Button"
@@ -347,7 +345,6 @@ exports[`Status component should render correctly popover 1`] = `
         style="display: contents;"
       >
         <button
-          aria-disabled="false"
           class="pf-v6-c-button pf-m-link pf-m-inline"
           data-ouia-component-id="Status-popover-icon"
           data-ouia-component-type="PF6/Button"
@@ -414,7 +411,6 @@ exports[`Status component should render correctly popover 1`] = `
       style="display: contents;"
     >
       <button
-        aria-disabled="false"
         class="pf-v6-c-button pf-m-link pf-m-inline"
         data-ouia-component-id="Status-popover-icon"
         data-ouia-component-type="PF6/Button"

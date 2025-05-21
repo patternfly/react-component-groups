@@ -3,7 +3,7 @@ import { Card, CardBody, CardFooter, CardHeader, CardProps, Content, ContentVari
 import { HelperText } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { HelperTextItem } from '@patternfly/react-core/dist/dynamic/components/HelperText';
 import { createUseStyles } from 'react-jss';
-import clsx from 'clsx';
+import { css } from '@patternfly/react-styles';
 
 /** extends CardProps */
 export interface ServiceCardProps extends CardProps {
@@ -52,7 +52,7 @@ const ServiceCard: FunctionComponent<ServiceCardProps> = ({
   const classes = useStyles();
 
   return (
-    <Card className={clsx({ [classes.fullHeightCard]: isFullHeight })} ouiaId={`${ouiaId}-card`} {...props}>
+    <Card className={css({ [classes.fullHeightCard]: isFullHeight })} ouiaId={`${ouiaId}-card`} {...props}>
       <CardHeader>
         <Flex direction={{ default: isStacked ? 'column' : 'row' }} alignItems={{ default: isStacked ? 'alignItemsFlexStart' : 'alignItemsCenter' }}>
           <FlexItem className={classes.image}>

@@ -93,7 +93,6 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
             >
               <span>
                 <button
-                  aria-disabled="false"
                   class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-1"
                   data-ouia-component-type="PF6/Button"
@@ -113,7 +112,6 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
             >
               <span>
                 <button
-                  aria-disabled="false"
                   class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-2"
                   data-ouia-component-type="PF6/Button"
@@ -133,7 +131,6 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
             >
               <span>
                 <button
-                  aria-disabled="false"
                   class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-3"
                   data-ouia-component-type="PF6/Button"
@@ -217,7 +214,6 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
             data-pf-content="true"
           >
             <button
-              aria-disabled="false"
               class="pf-v6-c-button pf-m-link pf-m-inline"
               data-ouia-component-id="OUIA-Generated-Button-link-4"
               data-ouia-component-type="PF6/Button"
@@ -341,7 +337,6 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
             data-pf-content="true"
           >
             <button
-              aria-disabled="false"
               class="pf-v6-c-button pf-m-link pf-m-inline"
               data-ouia-component-id="OUIA-Generated-Button-link-5"
               data-ouia-component-type="PF6/Button"
@@ -403,7 +398,6 @@ exports[`MultiContentCard component should render expandable multi-content card 
       class="pf-v6-c-card__header-toggle"
     >
       <button
-        aria-disabled="false"
         aria-expanded="false"
         aria-label="Details"
         class="pf-v6-c-button pf-m-plain"
@@ -472,7 +466,6 @@ exports[`MultiContentCard component should render expandable multi-content card 
       class="pf-v6-c-card__header-toggle"
     >
       <button
-        aria-disabled="false"
         aria-expanded="true"
         aria-label="Details"
         class="pf-v6-c-button pf-m-plain"
@@ -611,7 +604,6 @@ exports[`MultiContentCard component should render expandable multi-content card 
               >
                 <span>
                   <button
-                    aria-disabled="false"
                     class="pf-v6-c-button pf-m-link pf-m-inline"
                     data-ouia-component-id="OUIA-Generated-Button-link-6"
                     data-ouia-component-type="PF6/Button"
@@ -631,7 +623,6 @@ exports[`MultiContentCard component should render expandable multi-content card 
               >
                 <span>
                   <button
-                    aria-disabled="false"
                     class="pf-v6-c-button pf-m-link pf-m-inline"
                     data-ouia-component-id="OUIA-Generated-Button-link-7"
                     data-ouia-component-type="PF6/Button"
@@ -651,7 +642,6 @@ exports[`MultiContentCard component should render expandable multi-content card 
               >
                 <span>
                   <button
-                    aria-disabled="false"
                     class="pf-v6-c-button pf-m-link pf-m-inline"
                     data-ouia-component-id="OUIA-Generated-Button-link-8"
                     data-ouia-component-type="PF6/Button"
@@ -735,7 +725,6 @@ exports[`MultiContentCard component should render expandable multi-content card 
               data-pf-content="true"
             >
               <button
-                aria-disabled="false"
                 class="pf-v6-c-button pf-m-link pf-m-inline"
                 data-ouia-component-id="OUIA-Generated-Button-link-9"
                 data-ouia-component-type="PF6/Button"
@@ -859,7 +848,6 @@ exports[`MultiContentCard component should render expandable multi-content card 
               data-pf-content="true"
             >
               <button
-                aria-disabled="false"
                 class="pf-v6-c-button pf-m-link pf-m-inline"
                 data-ouia-component-id="OUIA-Generated-Button-link-10"
                 data-ouia-component-type="PF6/Button"
@@ -922,7 +910,6 @@ exports[`MultiContentCard component should render expandable multi-content card 
       class="pf-v6-c-card__header-toggle"
     >
       <button
-        aria-disabled="false"
         aria-expanded="false"
         aria-label="Details"
         class="pf-v6-c-button pf-m-plain"
@@ -1096,7 +1083,6 @@ exports[`MultiContentCard component should render multi-content card with a sing
             >
               <span>
                 <button
-                  aria-disabled="false"
                   class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-16"
                   data-ouia-component-type="PF6/Button"
@@ -1116,7 +1102,6 @@ exports[`MultiContentCard component should render multi-content card with a sing
             >
               <span>
                 <button
-                  aria-disabled="false"
                   class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-17"
                   data-ouia-component-type="PF6/Button"
@@ -1136,7 +1121,6 @@ exports[`MultiContentCard component should render multi-content card with a sing
             >
               <span>
                 <button
-                  aria-disabled="false"
                   class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-18"
                   data-ouia-component-type="PF6/Button"
@@ -1220,7 +1204,6 @@ exports[`MultiContentCard component should render multi-content card with a sing
             data-pf-content="true"
           >
             <button
-              aria-disabled="false"
               class="pf-v6-c-button pf-m-link pf-m-inline"
               data-ouia-component-id="OUIA-Generated-Button-link-19"
               data-ouia-component-type="PF6/Button"
@@ -1347,7 +1330,6 @@ exports[`MultiContentCard component should render multi-content card with a sing
             data-pf-content="true"
           >
             <button
-              aria-disabled="false"
               class="pf-v6-c-button pf-m-link pf-m-inline"
               data-ouia-component-id="OUIA-Generated-Button-link-20"
               data-ouia-component-type="PF6/Button"
@@ -1486,7 +1468,6 @@ exports[`MultiContentCard component should render multi-content card with divide
             >
               <span>
                 <button
-                  aria-disabled="false"
                   class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-11"
                   data-ouia-component-type="PF6/Button"
@@ -1506,7 +1487,6 @@ exports[`MultiContentCard component should render multi-content card with divide
             >
               <span>
                 <button
-                  aria-disabled="false"
                   class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-12"
                   data-ouia-component-type="PF6/Button"
@@ -1526,7 +1506,6 @@ exports[`MultiContentCard component should render multi-content card with divide
             >
               <span>
                 <button
-                  aria-disabled="false"
                   class="pf-v6-c-button pf-m-link pf-m-inline"
                   data-ouia-component-id="OUIA-Generated-Button-link-13"
                   data-ouia-component-type="PF6/Button"
@@ -1613,7 +1592,6 @@ exports[`MultiContentCard component should render multi-content card with divide
             data-pf-content="true"
           >
             <button
-              aria-disabled="false"
               class="pf-v6-c-button pf-m-link pf-m-inline"
               data-ouia-component-id="OUIA-Generated-Button-link-14"
               data-ouia-component-type="PF6/Button"
@@ -1740,7 +1718,6 @@ exports[`MultiContentCard component should render multi-content card with divide
             data-pf-content="true"
           >
             <button
-              aria-disabled="false"
               class="pf-v6-c-button pf-m-link pf-m-inline"
               data-ouia-component-id="OUIA-Generated-Button-link-15"
               data-ouia-component-type="PF6/Button"
