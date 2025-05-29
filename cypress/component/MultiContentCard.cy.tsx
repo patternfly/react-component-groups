@@ -14,7 +14,7 @@ import {
 } from '@patternfly/react-core';
 import { ArrowRightIcon, BellIcon, CogIcon, LockIcon } from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
-import clsx from 'clsx';
+import { css } from '@patternfly/react-styles';
 
 const useStyles = createUseStyles({
   action: {
@@ -35,7 +35,7 @@ export const MultiContentCardExample: FunctionComponent = () => {
         <Content component={ContentVariants.h4}>Getting Started</Content>
       </CardHeader>
       <CardBody>
-        <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
+        <Content className={css(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
           <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
             <CogIcon />
           </Icon>
@@ -47,7 +47,7 @@ export const MultiContentCardExample: FunctionComponent = () => {
         </Content>
       </CardBody>
       <CardFooter>
-        <List className={clsx(classes.bulletPoints, 'pf-v6-u-font-size-sm', 'pf-v6-u-ml-0')}>
+        <List className={css(classes.bulletPoints, 'pf-v6-u-font-size-sm', 'pf-v6-u-ml-0')}>
           <ListItem>
             <Button variant="link" isInline>
               First link
@@ -68,7 +68,7 @@ export const MultiContentCardExample: FunctionComponent = () => {
     </Card>,
     <Card isFullHeight isPlain key="card-2">
       <CardBody>
-        <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
+        <Content className={css(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
           <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
             <LockIcon />
           </Icon>
@@ -101,7 +101,7 @@ export const MultiContentCardExample: FunctionComponent = () => {
         <Content component={ContentVariants.h4}>Next Steps</Content>
       </CardHeader>
       <CardBody>
-        <Content className={clsx(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
+        <Content className={css(classes.action, 'pf-v6-u-font-weight-bold', 'pf-v6-u-mb-sm')}>
           <Icon size="md" className="pf-v6-u-pl-sm pf-v6-u-pr-md">
             <BellIcon />
           </Icon>

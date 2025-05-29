@@ -6,7 +6,6 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
   "baseElement": <body>
     <div>
       <button
-        aria-disabled="false"
         aria-label="Tag count"
         class="pf-v6-c-button pf-m-plain buttonTagCount-0-2-1"
         data-ouia-component-id="TagCount"
@@ -50,7 +49,6 @@ exports[`TagCount component should render a disabled tag count with no value 1`]
   </body>,
   "container": <div>
     <button
-      aria-disabled="false"
       aria-label="Tag count"
       class="pf-v6-c-button pf-m-plain buttonTagCount-0-2-1"
       data-ouia-component-id="TagCount"
@@ -151,7 +149,6 @@ exports[`TagCount component should render a tag count of 11 1`] = `
   "baseElement": <body>
     <div>
       <button
-        aria-disabled="false"
         aria-label="Tag count"
         class="pf-v6-c-button pf-m-plain buttonTagCount-0-2-1"
         data-ouia-component-id="TagCount"
@@ -196,7 +193,6 @@ exports[`TagCount component should render a tag count of 11 1`] = `
   </body>,
   "container": <div>
     <button
-      aria-disabled="false"
       aria-label="Tag count"
       class="pf-v6-c-button pf-m-plain buttonTagCount-0-2-1"
       data-ouia-component-id="TagCount"

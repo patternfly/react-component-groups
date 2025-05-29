@@ -18,7 +18,6 @@ exports[`ResponsiveActions component should render correctly ResponsiveActions 1
         >
            
           <button
-            aria-disabled="false"
             class="pf-v6-c-button pf-m-primary"
             data-ouia-component-id="ResponsiveActions-action-0"
             data-ouia-component-type="PF6/Button"
@@ -47,7 +46,6 @@ exports[`ResponsiveActions component should render correctly ResponsiveActions 1
         >
            
           <button
-            aria-disabled="false"
             class="pf-v6-c-button pf-m-secondary"
             data-ouia-component-id="ResponsiveActions-action-1"
             data-ouia-component-type="PF6/Button"

@@ -1,6 +1,6 @@
 import type { FunctionComponent, CSSProperties } from 'react';
 import { Fragment } from 'react';
-import clsx from 'clsx';
+import { css } from '@patternfly/react-styles';
 import { createUseStyles } from 'react-jss';
 
 export interface AnsibleProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
@@ -14,7 +14,7 @@ export interface AnsibleProps extends React.DetailedHTMLProps<React.HTMLAttribut
   ouiaId?: string | number;
 }
 
-const RHAAPTechnologyIcon = 
+const RHAAPTechnologyIcon =
 <svg
   width="24" height="24" viewBox="0 0 38 38"
   xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +54,7 @@ const useStyles = createUseStyles({
 
 const Ansible: FunctionComponent<AnsibleProps> = ({ isSupported = true, isRHAAP, className, ouiaId = "Ansible-icon", ...props }: AnsibleProps) => {
   const classes = useStyles();
-  const ansibleLogoClass = clsx(
+  const ansibleLogoClass = css(
     classes.ansible,
     { [classes.ansibleSupported]: isSupported },
     { [classes.ansibleUnsupported]: !isSupported },
@@ -71,7 +71,7 @@ const Ansible: FunctionComponent<AnsibleProps> = ({ isSupported = true, isRHAAP,
         width="803.8"
         height="221.5"
       />
-  
+
       <rect
         x="-279.7"
         y="904"
@@ -80,7 +80,7 @@ const Ansible: FunctionComponent<AnsibleProps> = ({ isSupported = true, isRHAAP,
         width="2590.2"
         height="221.5"
       />
-  
+
       <rect
         x="17.1"
         y="1620.5"

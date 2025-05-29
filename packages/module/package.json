@@ -33,9 +33,9 @@
   "dependencies": {
     "@patternfly/react-core": "^6.0.0",
     "@patternfly/react-icons": "^6.0.0",
+    "@patternfly/react-styles": "^6.0.0",
     "@patternfly/react-table": "^6.0.0",
-    "react-jss": "^10.10.0",
-    "clsx": "^2.1.1"
+    "react-jss": "^10.10.0"
   },
   "peerDependencies": {
     "react": "^17 || ^18 || ^19",
