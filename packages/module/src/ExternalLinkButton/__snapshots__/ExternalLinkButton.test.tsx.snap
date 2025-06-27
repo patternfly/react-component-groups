@@ -7,7 +7,7 @@ exports[`ExternalLinkButton component should accept IconProps 1`] = `
     <div>
       <a
         class="pf-v6-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-2"
+        data-ouia-component-id="ExternalLinkButton"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         rel="noopener noreferrer"
@@ -41,7 +41,7 @@ exports[`ExternalLinkButton component should accept IconProps 1`] = `
   "container": <div>
     <a
       class="pf-v6-c-button pf-m-primary"
-      data-ouia-component-id="OUIA-Generated-Button-primary-2"
+      data-ouia-component-id="ExternalLinkButton"
       data-ouia-component-type="PF6/Button"
       data-ouia-safe="true"
       rel="noopener noreferrer"
@@ -132,7 +132,7 @@ exports[`ExternalLinkButton component should render 1`] = `
     <div>
       <a
         class="pf-v6-c-button pf-m-primary"
-        data-ouia-component-id="OUIA-Generated-Button-primary-1"
+        data-ouia-component-id="ExternalLinkButton"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         rel="noopener noreferrer"
@@ -161,7 +161,7 @@ exports[`ExternalLinkButton component should render 1`] = `
   "container": <div>
     <a
       class="pf-v6-c-button pf-m-primary"
-      data-ouia-component-id="OUIA-Generated-Button-primary-1"
+      data-ouia-component-id="ExternalLinkButton"
       data-ouia-component-type="PF6/Button"
       data-ouia-safe="true"
       rel="noopener noreferrer"
