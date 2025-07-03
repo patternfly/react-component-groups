@@ -1,4 +1,4 @@
-import type { PropsWithChildren, FunctionComponent } from 'react';
+import type { PropsWithChildren, FunctionComponent, ReactNode } from 'react';
 import {
   Flex,
   FlexItem,
@@ -17,7 +17,7 @@ import { createUseStyles } from 'react-jss';
 /** extends ButtonProps */
 export interface PageHeaderLinkProps extends ButtonProps {
   /** Title for the link */
-  label: string;
+  label: ReactNode;
   /** Indicates if the link points to an external page */
   isExternal?: boolean;
 }

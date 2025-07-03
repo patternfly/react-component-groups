@@ -1,4 +1,4 @@
-import type { FunctionComponent } from 'react';
+import type { FunctionComponent, ReactNode } from 'react';
 import {
   Button,
   ButtonProps,
@@ -18,7 +18,7 @@ import { createUseStyles } from 'react-jss';
 /** extends ButtonProps */
 export interface PageHeaderLinkProps extends ButtonProps {
   /** Title for the link */
-  label: string;
+  label: ReactNode;
   /** Indicates if the link points to an external page */
   isExternal?: boolean;
 }
