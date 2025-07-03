@@ -9,13 +9,13 @@ import {
   Button,
   ButtonVariant,
   ButtonProps,
-  Divider,
+  Divider
 } from '@patternfly/react-core';
 import { ExternalLinkAltIcon } from '@patternfly/react-icons';
 import { createUseStyles } from 'react-jss';
 
 /** extends ButtonProps */
-export interface PageHeaderLinkProps extends ButtonProps {
+export interface PageHeaderLinkProps extends Omit<ButtonProps, 'label'> {
   /** Title for the link */
   label: ReactNode;
   /** Indicates if the link points to an external page */
@@ -43,7 +43,7 @@ export interface ContentHeaderProps {
 
 const useStyles = createUseStyles({
   iconMinWidth: {
-    minWidth: '48px',
+    minWidth: '48px'
   }
 });
 
@@ -52,30 +52,28 @@ export const ContentHeader: FunctionComponent<PropsWithChildren<ContentHeaderPro
   subtitle = null,
   linkProps,
   icon,
-  label,
+  label: labelProp,
   breadcrumbs = null,
   actionMenu,
-  ouiaId = 'ContentHeader',
+  ouiaId = 'ContentHeader'
 }: ContentHeaderProps) => {
   const classes = useStyles();
-  const { isExternal = false, ...linkRestProps } = linkProps ?? {};
+  const { isExternal = false, label = String(linkProps?.label), ...linkRestProps } = linkProps ?? {};
 
   return (
     <PageSection hasBodyWrapper={false}>
-      { breadcrumbs && (
-        <div className="pf-v6-u-mb-md">
-          {breadcrumbs}
-        </div>
-      )}
+      {breadcrumbs && <div className="pf-v6-u-mb-md">{breadcrumbs}</div>}
       <Flex>
         {icon && (
           <>
             <FlexItem alignSelf={{ default: 'alignSelfCenter' }} className={`${classes.iconMinWidth}`}>
               {icon}
             </FlexItem>
-            <Divider orientation={{
-              default: 'vertical',
-            }} />
+            <Divider
+              orientation={{
+                default: 'vertical'
+              }}
+            />
           </>
         )}
         <FlexItem flex={{ default: 'flex_1' }}>
@@ -85,27 +83,32 @@ export const ContentHeader: FunctionComponent<PropsWithChildren<ContentHeaderPro
                 <Content className="pf-v6-u-mb-sm" component="h1" ouiaId={`${ouiaId}-title`}>
                   {title}
                 </Content>
-              ) : title}
+              ) : (
+                title
+              )}
             </SplitItem>
-            {label && (
-              <SplitItem>
-                {label}
-              </SplitItem>
-            )}
+            {labelProp && <SplitItem>{labelProp}</SplitItem>}
             <SplitItem isFilled />
-            {actionMenu && (
-              <SplitItem>
-                {actionMenu}
-              </SplitItem>
-            )}
+            {actionMenu && <SplitItem>{actionMenu}</SplitItem>}
           </Split>
           {typeof subtitle === 'string' ? (
             <Content component="p" ouiaId={`${ouiaId}-subtitle`}>
               {subtitle}
             </Content>
-          ) : subtitle}
+          ) : (
+            subtitle
+          )}
           {linkProps && (
-            <Button variant={ButtonVariant.link} component="a" ouiaId={`${ouiaId}-link-button`} isInline icon={isExternal ? <ExternalLinkAltIcon className='pf-v6-u-ml-sm' /> : null} iconPosition="end" {...linkRestProps}>
+            <Button
+              variant={ButtonVariant.link}
+              component="a"
+              ouiaId={`${ouiaId}-link-button`}
+              isInline
+              icon={isExternal ? <ExternalLinkAltIcon className="pf-v6-u-ml-sm" /> : null}
+              iconPosition="end"
+              label={label as string}
+              {...linkRestProps}
+            >
               {linkProps.label}
             </Button>
           )}
