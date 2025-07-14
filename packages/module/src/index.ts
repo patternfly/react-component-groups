@@ -72,6 +72,9 @@ export * from './ErrorBoundary';
 export { default as ColumnManagementModal } from './ColumnManagementModal';
 export * from './ColumnManagementModal';
 
+export { default as Column } from './Column';
+export * from './Column';
+
 export { default as CloseButton } from './CloseButton';
 export * from './CloseButton';
 
