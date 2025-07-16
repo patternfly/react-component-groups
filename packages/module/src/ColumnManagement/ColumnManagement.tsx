@@ -23,7 +23,7 @@ import {
   Draggable
 } from '@patternfly/react-core/deprecated';
 
-export interface ColumnColumn {
+export interface Column {
   /** Internal identifier of a column by which table displayed columns are filtered. */
   key: string;
   /** The actual display name of the column possibly with a tooltip or icon. */
@@ -38,7 +38,7 @@ export interface ColumnColumn {
 
 export interface ColumnProps {
   /** Current column state */
-  columns: ColumnColumn[];
+  columns: Column[];
   /* Column description text */
   description?: string;
   /* Column title text */
@@ -46,21 +46,24 @@ export interface ColumnProps {
   /** Custom OUIA ID */
   ouiaId?: string | number;
   /** Callback when a column is selected or deselected */
-  onSelect?: (column: ColumnColumn) => void;
+  onSelect?: (column: Column) => void;
+  /** Callback when all columns are selected or deselected */
+  onSelectAll?: (columns: Column[]) => void;
   /** Callback when the column order changes */
-  onOrderChange?: (columns: ColumnColumn[]) => void;
+  onOrderChange?: (columns: Column[]) => void;
   /** Callback to save the column state */
-  onSave?: (columns: ColumnColumn[]) => void;
+  onSave?: (columns: Column[]) => void;
   /** Callback to close the modal */
   onCancel?: () => void;
 }
 
-const Column: FunctionComponent<ColumnProps> = (
+const ColumnManagement: FunctionComponent<ColumnProps> = (
   { columns,
     description,
     title,
     ouiaId = 'Column',
     onSelect,
+    onSelectAll,
     onOrderChange,
     onSave,
     onCancel }: ColumnProps) => {
@@ -99,24 +102,23 @@ const Column: FunctionComponent<ColumnProps> = (
 
   const handleSave = () => {
     onSave?.(currentColumns);
-    onCancel?.();
   }
 
-  const onSelectAll = (select = true) => {
+  const handleSelectAll = (select = true) => {
     const newColumns = currentColumns.map(c => ({ ...c, isShown: c.isUntoggleable ? c.isShown : select }));
     setCurrentColumns(newColumns);
-    onOrderChange?.(newColumns);
+    onSelectAll?.(newColumns);
   }
 
   const isAllSelected = () => currentColumns.every(c => c.isShown || c.isUntoggleable);
   const isSomeSelected = () => currentColumns.some(c => c.isShown);
 
   const dropdownItems = [
-    <DropdownItem key="select-all" onClick={() => onSelectAll(true)}>Select all</DropdownItem>,
-    <DropdownItem key="deselect-all" onClick={() => onSelectAll(false)}>Select none</DropdownItem>
+    <DropdownItem key="select-all" onClick={() => handleSelectAll(true)}>Select all</DropdownItem>,
+    <DropdownItem key="deselect-all" onClick={() => handleSelectAll(false)}>Select none</DropdownItem>
   ];
 
-  const content = (
+  return (
     <>
       <Title headingLevel="h3">{title}</Title>
       {description && <div style={{ paddingBottom: '1rem' }}><p>{description}</p></div>}
@@ -146,7 +148,7 @@ const Column: FunctionComponent<ColumnProps> = (
           <DataList aria-label="Selected columns" isCompact data-ouia-component-id={`${ouiaId}-column-list`}>
             {currentColumns.map((column, index) =>
               <Draggable key={column.key} id={column.key}>
-                <DataListItem key={column.key}>
+                <DataListItem key={column.key} data-testid={`column-item-${column.key}`}>
                   <DataListItemRow>
                     <DataListControl>
                       <DataListDragButton
@@ -155,6 +157,7 @@ const Column: FunctionComponent<ColumnProps> = (
                       />
                     </DataListControl>
                     <DataListCheck
+                      data-testid={`column-check-${column.key}`}
                       isChecked={column.isShown}
                       onChange={() => handleChange(index)}
                       isDisabled={column.isUntoggleable}
@@ -188,8 +191,6 @@ const Column: FunctionComponent<ColumnProps> = (
       </div>
     </>
   );
-
-  return content;
 }
 
-export default Column;
+export default ColumnManagement;
