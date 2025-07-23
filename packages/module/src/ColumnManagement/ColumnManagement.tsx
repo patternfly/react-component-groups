@@ -152,34 +152,36 @@ const ColumnManagement: FunctionComponent<ColumnProps> = (
           <DataList aria-label="Selected columns" isCompact data-ouia-component-id={`${ouiaId}-column-list`}>
             {currentColumns.map((column, index) =>
               <Draggable key={column.key} id={column.key}>
-                <DataListItem key={column.key} data-testid={`column-item-${column.key}`}>
-                  <DataListItemRow>
-                    <DataListControl>
-                      <DataListDragButton
-                        aria-label="Reorder"
+                <ul>
+                  <DataListItem key={column.key} data-testid={`column-item-${column.key}`}>
+                    <DataListItemRow>
+                      <DataListControl>
+                        <DataListDragButton
+                          aria-label="Reorder"
+                          aria-labelledby={`${ouiaId}-column-${index}-label`}
+                        />
+                      </DataListControl>
+                      <DataListCheck
+                        data-testid={`column-check-${column.key}`}
+                        isChecked={column.isShown}
+                        onChange={() => handleChange(index)}
+                        isDisabled={column.isUntoggleable}
                         aria-labelledby={`${ouiaId}-column-${index}-label`}
+                        ouiaId={`${ouiaId}-column-${index}-checkbox`}
+                        id={`${ouiaId}-column-${index}-checkbox`}
                       />
-                    </DataListControl>
-                    <DataListCheck
-                      data-testid={`column-check-${column.key}`}
-                      isChecked={column.isShown}
-                      onChange={() => handleChange(index)}
-                      isDisabled={column.isUntoggleable}
-                      aria-labelledby={`${ouiaId}-column-${index}-label`}
-                      ouiaId={`${ouiaId}-column-${index}-checkbox`}
-                      id={`${ouiaId}-column-${index}-checkbox`}
-                    />
-                    <DataListItemCells
-                      dataListCells={[
-                        <DataListCell key={column.key} data-ouia-component-id={`${ouiaId}-column-${index}-label`}>
-                          <label htmlFor={`${ouiaId}-column-${index}-checkbox`} id={`${ouiaId}-column-${index}-label`}>
-                            {column.title}
-                          </label>
-                        </DataListCell>
-                      ]}
-                    />
-                  </DataListItemRow>
-                </DataListItem>
+                      <DataListItemCells
+                        dataListCells={[
+                          <DataListCell key={column.key} data-ouia-component-id={`${ouiaId}-column-${index}-label`}>
+                            <label htmlFor={`${ouiaId}-column-${index}-checkbox`} id={`${ouiaId}-column-${index}-label`}>
+                              {column.title}
+                            </label>
+                          </DataListCell>
+                        ]}
+                      />
+                    </DataListItemRow>
+                  </DataListItem>
+                </ul>
               </Draggable>
             )}
           </DataList>
