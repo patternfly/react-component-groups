@@ -15,6 +15,7 @@ import {
   Checkbox,
   Dropdown,
   DropdownItem,
+  DropdownList,
   MenuToggle
 } from '@patternfly/react-core';
 import {
@@ -131,16 +132,19 @@ const ColumnManagement: FunctionComponent<ColumnProps> = (
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               isExpanded={isDropdownOpen}
             >
-              <Checkbox
-                aria-label="Select all"
-                isChecked={isAllSelected() ? true : isSomeSelected() ? null : false}
-                id={`${ouiaId}-select-all-checkbox`}
-              />
+              <div>
+                <Checkbox
+                  aria-label="Select all"
+                  tabIndex={-1}
+                  isChecked={isAllSelected() ? true : isSomeSelected() ? null : false}
+                  id={`${ouiaId}-select-all-checkbox`}
+                />
+              </div>
             </MenuToggle>
           )}
           isOpen={isDropdownOpen}
         >
-          {dropdownItems}
+          <DropdownList>{dropdownItems}</DropdownList>
         </Dropdown>
       </div>
       <DragDrop onDrop={onDrag}>
