@@ -1,28 +1,17 @@
 import type { FunctionComponent } from 'react';
 import { useState, useEffect } from 'react';
 import {
-  DataListItem,
   DataList,
   DataListItemRow,
   DataListCheck,
   DataListCell,
   DataListItemCells,
-  DataListControl,
-  DataListDragButton,
   Button,
   ButtonVariant,
-  Title,
-  Checkbox,
-  Dropdown,
-  DropdownItem,
-  DropdownList,
-  MenuToggle
+  Title
 } from '@patternfly/react-core';
-import {
-  DragDrop,
-  Droppable,
-  Draggable
-} from '@patternfly/react-core/deprecated';
+import { DragDropSort, Droppable } from '@patternfly/react-drag-drop';
+import BulkSelect, { BulkSelectValue } from '../BulkSelect';
 
 export interface Column {
   /** Internal identifier of a column by which table displayed columns are filtered. */
@@ -69,7 +58,6 @@ const ColumnManagement: FunctionComponent<ColumnProps> = (
     onSave,
     onCancel }: ColumnProps) => {
 
-  const [ isDropdownOpen, setIsDropdownOpen ] = useState(false);
   const [ currentColumns, setCurrentColumns ] = useState(
     () => columns.map(column => ({ ...column, isShown: column.isShown ?? column.isShownByDefault, id: column.key }))
   );
@@ -89,21 +77,20 @@ const ColumnManagement: FunctionComponent<ColumnProps> = (
     onSelect?.(changedColumn);
   };
 
-  const onDrag = (source, dest) => {
-    if (dest) {
-      const newColumns = [ ...currentColumns ];
-      const [ removed ] = newColumns.splice(source.index, 1);
-      newColumns.splice(dest.index, 0, removed);
-      setCurrentColumns(newColumns);
-      onOrderChange?.(newColumns);
-      return true;
-    }
-    return false;
+  const onDrag = (_event, newOrder) => {
+    const newColumns = newOrder.map(item => currentColumns.find(c => c.key === item.id));
+    setCurrentColumns(newColumns);
+    onOrderChange?.(newColumns);
   };
 
   const handleSave = () => {
     onSave?.(currentColumns);
   }
+
+  const handleBulkSelect = (value: BulkSelectValue) => {
+    const allSelected = value === 'all' || value === 'page';
+    handleSelectAll(allSelected);
+  };
 
   const handleSelectAll = (select = true) => {
     const newColumns = currentColumns.map(c => ({ ...c, isShown: c.isUntoggleable ? c.isShown : select }));
@@ -111,81 +98,58 @@ const ColumnManagement: FunctionComponent<ColumnProps> = (
     onSelectAll?.(newColumns);
   }
 
-  const isAllSelected = () => currentColumns.every(c => c.isShown || c.isUntoggleable);
-  const isSomeSelected = () => currentColumns.some(c => c.isShown);
-
-  const dropdownItems = [
-    <DropdownItem key="select-all" onClick={() => handleSelectAll(true)}>Select all</DropdownItem>,
-    <DropdownItem key="deselect-all" onClick={() => handleSelectAll(false)}>Select none</DropdownItem>
-  ];
-
   return (
     <>
       <Title headingLevel="h3">{title}</Title>
       {description && <div style={{ paddingBottom: '1rem' }}><p>{description}</p></div>}
       <div style={{ paddingBottom: '1rem' }}>
-        <Dropdown
-          onSelect={() => setIsDropdownOpen(false)}
-          toggle={(toggleRef) => (
-            <MenuToggle
-              ref={toggleRef}
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              isExpanded={isDropdownOpen}
-            >
-              <div>
-                <Checkbox
-                  aria-label="Select all"
-                  tabIndex={-1}
-                  isChecked={isAllSelected() ? true : isSomeSelected() ? null : false}
-                  id={`${ouiaId}-select-all-checkbox`}
-                />
-              </div>
-            </MenuToggle>
-          )}
-          isOpen={isDropdownOpen}
-        >
-          <DropdownList>{dropdownItems}</DropdownList>
-        </Dropdown>
+        <BulkSelect
+          canSelectAll
+          isDataPaginated={false}
+          selectedCount={currentColumns.filter(({ isShown }) => isShown).length}
+          totalCount={currentColumns.length}
+          onSelect={handleBulkSelect}
+          pageSelected={currentColumns.every((item) => item.isShown)}
+          pagePartiallySelected={
+            currentColumns.some((item) => item.isShown) && !currentColumns.every((item) => item.isShown)
+          }
+        />
       </div>
-      <DragDrop onDrop={onDrag}>
-        <Droppable droppableId="draggable-datalist">
-          <DataList aria-label="Selected columns" isCompact data-ouia-component-id={`${ouiaId}-column-list`}>
-            {currentColumns.map((column, index) =>
-              <Draggable key={column.key} id={column.key}>
-                <DataListItem key={column.key} data-testid={`column-item-${column.key}`}>
-                  <DataListItemRow>
-                    <DataListControl>
-                      <DataListDragButton
-                        aria-label="Reorder"
-                        aria-labelledby={`${ouiaId}-column-${index}-label`}
-                      />
-                    </DataListControl>
-                    <DataListCheck
-                      data-testid={`column-check-${column.key}`}
-                      isChecked={column.isShown}
-                      onChange={() => handleChange(index)}
-                      isDisabled={column.isUntoggleable}
-                      aria-labelledby={`${ouiaId}-column-${index}-label`}
-                      ouiaId={`${ouiaId}-column-${index}-checkbox`}
-                      id={`${ouiaId}-column-${index}-checkbox`}
-                    />
-                    <DataListItemCells
-                      dataListCells={[
-                        <DataListCell key={column.key} data-ouia-component-id={`${ouiaId}-column-${index}-label`}>
-                          <label htmlFor={`${ouiaId}-column-${index}-checkbox`} id={`${ouiaId}-column-${index}-label`}>
-                            {column.title}
-                          </label>
-                        </DataListCell>
-                      ]}
-                    />
-                  </DataListItemRow>
-                </DataListItem>
-              </Draggable>
-            )}
-          </DataList>
-        </Droppable>
-      </DragDrop>
-      <div style={{ display: 'flex', justifyContent: 'normal', paddingTop: '1rem' }}>
+      <DragDropSort
+        variant="DataList"
+        items={currentColumns.map((column, index) => ({ id: column.key, content: 
+            <DataListItemRow>
+              <DataListCheck
+                data-testid={`column-check-${column.key}`}
+                isChecked={column.isShown}
+                onChange={() => handleChange(index)}
+                isDisabled={column.isUntoggleable}
+                aria-labelledby={`${ouiaId}-column-${index}-label`}
+                ouiaId={`${ouiaId}-column-${index}-checkbox`}
+                id={`${ouiaId}-column-${index}-checkbox`}
+              />
+              <DataListItemCells
+                dataListCells={[
+                  <DataListCell key={column.key} data-ouia-component-id={`${ouiaId}-column-${index}-label`}>
+                    <label htmlFor={`${ouiaId}-column-${index}-checkbox`} id={`${ouiaId}-column-${index}-label`}>
+                      {column.title}
+                    </label>
+                  </DataListCell>
+                ]}
+              />
+            </DataListItemRow>
+        }))}
+        onDrop={onDrag}
+        overlayProps={{ isCompact: true }}
+      >
+        <Droppable 
+          items={currentColumns.map((column) => 
+            // eslint-disable-next-line no-console
+            ({ id: column.key, content: column.title })
+          )} 
+          wrapper={<DataList aria-label="Selected columns" isCompact data-ouia-component-id={`${ouiaId}-column-list`}/>}
+        />
+      </DragDropSort>      <div style={{ display: 'flex', justifyContent: 'normal', paddingTop: '1rem' }}>
         <Button key="save" variant={ButtonVariant.primary} onClick={handleSave} ouiaId={`${ouiaId}-save-button`}>
           Save
         </Button>

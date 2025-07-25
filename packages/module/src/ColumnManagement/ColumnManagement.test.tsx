@@ -3,6 +3,20 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import ColumnManagement from './ColumnManagement';
 
+jest.mock('@patternfly/react-drag-drop', () => {
+  const originalModule = jest.requireActual('@patternfly/react-drag-drop');
+  return {
+    ...originalModule,
+    DragDropSort: ({ onDrop, items }) => {
+      const handleDrop = () => {
+        const reorderedItems = [ ...items ].reverse();
+        onDrop({}, reorderedItems);
+      };
+      return <div onDrop={handleDrop}>{items.map(item => item.content)}</div>;
+    },
+  };
+});
+
 const mockColumns = [
   { key: 'name', title: 'Name', isShown: true, isShownByDefault: true },
   { key: 'status', title: 'Status', isShown: true, isShownByDefault: true },
@@ -43,11 +57,11 @@ describe('Column', () => {
 
   it('selects all columns', async () => {
     render(<ColumnManagement columns={mockColumns} />);
-    const menuToggle = screen.getByLabelText('Select all').closest('button');
+    const menuToggle = screen.getByLabelText('Bulk select toggle');
     if (menuToggle) {
       await userEvent.click(menuToggle);
     }
-    const selectAllButton = screen.getByText('Select all');
+    const selectAllButton = screen.getByText('Select all (3)');
     await userEvent.click(selectAllButton);
     expect(screen.getByTestId('column-check-name')).toBeChecked();
     expect(screen.getByTestId('column-check-status')).toBeChecked();
@@ -56,11 +70,11 @@ describe('Column', () => {
 
   it('selects no columns', async () => {
     render(<ColumnManagement columns={mockColumns} />);
-    const menuToggle = screen.getByLabelText('Select all').closest('button');
+    const menuToggle = screen.getByLabelText('Bulk select toggle');
     if (menuToggle) {
       await userEvent.click(menuToggle);
     }
-    const selectNoneButton = screen.getByText('Select none');
+    const selectNoneButton = screen.getByText('Select none (0)');
     await userEvent.click(selectNoneButton);
     expect(screen.getByTestId('column-check-name')).not.toBeChecked();
     expect(screen.getByTestId('column-check-status')).not.toBeChecked();
