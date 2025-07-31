@@ -228,6 +228,24 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
           {liveRegionMessage}
         </div>
 
+        {/* Render the column headers */}
+        <Grid hasGutter className="pf-v6-u-mb-md">
+          <GridItem span={secondColumnLabel ? 5 : 10}>
+            <span className="pf-v6-c-form__label-text">
+              {firstColumnLabel}
+            </span>
+          </GridItem>
+          {secondColumnLabel && (
+            <GridItem span={5}>
+              <span className="pf-v6-c-form__label-text">
+                {secondColumnLabel}
+              </span>
+            </GridItem>
+          )}
+          {/* Empty GridItem to align with the remove button column */}
+          <GridItem span={2} />
+        </Grid>
+
         {/* Render all the dynamic rows of fields */}
         {renderRows()}
 
