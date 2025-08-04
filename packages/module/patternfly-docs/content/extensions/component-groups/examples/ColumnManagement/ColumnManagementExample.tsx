@@ -39,17 +39,17 @@ export const ColumnExample: FunctionComponent = () => {
       columns={columns}
       onOrderChange={setColumns}
       onSelect={(col) => {
-          const newColumns = [...columns];
-          const changedColumn = newColumns.find(c => c.key === col.key);
-          if (changedColumn) {
-              changedColumn.isShown = col.isShown;
-          }
-          setColumns(newColumns);
+        const newColumns = [ ...columns ];
+        const changedColumn = newColumns.find(c => c.key === col.key);
+        if (changedColumn) {
+          changedColumn.isShown = col.isShown;
+        }
+        setColumns(newColumns);
       }}
       onSelectAll={(newColumns) => setColumns(newColumns)}
       onSave={(newColumns) => {
-          setColumns(newColumns);
-          alert('Changes saved!');
+        setColumns(newColumns);
+        alert('Changes saved!');
       }}
       onCancel={() => alert('Changes cancelled!')}
     />
