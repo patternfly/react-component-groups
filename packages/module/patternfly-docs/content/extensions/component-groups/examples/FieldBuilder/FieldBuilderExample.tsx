@@ -21,15 +21,6 @@ export const FieldBuilderExample: React.FunctionComponent = () => {
     console.log('Add button clicked:', event.currentTarget);
     const newContacts = [ ...contacts, { name: '', email: '' } ];
     setContacts(newContacts);
-    
-    // Focus management: focus the first field of the new row
-    setTimeout(() => {
-      const newRowNumber = newContacts.length;
-      const newRowFirstInput = document.querySelector(`input[aria-label*="Row ${newRowNumber}"][aria-label*="Name"]`) as HTMLInputElement;
-      if (newRowFirstInput) {
-        newRowFirstInput.focus();
-      }
-    }, 100);
   };
 
   // Handle removing a contact row
@@ -38,34 +29,6 @@ export const FieldBuilderExample: React.FunctionComponent = () => {
     console.log('Remove button clicked:', event.currentTarget, 'for index:', index);
     const newContacts = contacts.filter((_, i) => i !== index);
     setContacts(newContacts);
-    
-    // Focus management: avoid focusing on destructive actions
-    setTimeout(() => {
-      // If there are still contacts after removal
-      if (newContacts.length > 0) {
-        // If we removed the last row, focus the new last row's first input
-        if (index >= newContacts.length) {
-          const newLastRowIndex = newContacts.length;
-          const previousRowFirstInput = document.querySelector(`input[aria-label*="Row ${newLastRowIndex}"][aria-label*="Name"]`) as HTMLInputElement;
-          if (previousRowFirstInput) {
-            previousRowFirstInput.focus();
-          }
-        } else {
-          // If we removed a middle row, focus the first input of the row that took its place
-          const newRowNumber = index + 1;
-          const sameIndexFirstInput = document.querySelector(`input[aria-label*="Row ${newRowNumber}"][aria-label*="Name"]`) as HTMLInputElement;
-          if (sameIndexFirstInput) {
-            sameIndexFirstInput.focus();
-          }
-        }
-      } else {
-        // If this was the last contact, focus the add button
-        const addButton = document.querySelector('button[aria-label*="Add"]') as HTMLButtonElement;
-        if (addButton) {
-          addButton.focus();
-        }
-      }
-    }, 100);
   };
 
   // Handle updating contact data
@@ -112,7 +75,7 @@ export const FieldBuilderExample: React.FunctionComponent = () => {
         onAddRowAnnouncement={customAddAnnouncement}
         onRemoveRowAnnouncement={customRemoveAnnouncement}
         removeButtonAriaLabel={customRemoveAriaLabel}
-        addButtonContent="Add team member"
+        addButtonContent="Add contact"
       >
         {({ focusRef, firstColumnAriaLabel, secondColumnAriaLabel }, index) => [
           <TextInput

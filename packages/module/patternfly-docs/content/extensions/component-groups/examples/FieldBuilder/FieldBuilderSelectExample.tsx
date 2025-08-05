@@ -22,15 +22,6 @@ export const FieldBuilderSelectExample: React.FunctionComponent = () => {
     console.log('Add button clicked:', event.currentTarget);
     const newTeamMembers = [ ...teamMembers, { department: '', role: '' } ];
     setTeamMembers(newTeamMembers);
-    
-    // Focus management: focus the first field of the new row
-    setTimeout(() => {
-      const newRowNumber = newTeamMembers.length;
-      const newRowFirstSelect = document.querySelector(`select[aria-label*="Team member ${newRowNumber}"][aria-label*="Department"]`) as HTMLSelectElement;
-      if (newRowFirstSelect) {
-        newRowFirstSelect.focus();
-      }
-    }, 100);
   };
 
   // Handle removing a team member row
@@ -39,34 +30,6 @@ export const FieldBuilderSelectExample: React.FunctionComponent = () => {
     console.log('Remove button clicked:', event.currentTarget, 'for index:', index);
     const newTeamMembers = teamMembers.filter((_, i) => i !== index);
     setTeamMembers(newTeamMembers);
-    
-    // Focus management: avoid focusing on destructive actions
-    setTimeout(() => {
-      // If there are still team members after removal
-      if (newTeamMembers.length > 0) {
-        // If we removed the last row, focus the new last row's first select
-        if (index >= newTeamMembers.length) {
-          const newLastRowIndex = newTeamMembers.length;
-          const previousRowFirstSelect = document.querySelector(`select[aria-label*="Team member ${newLastRowIndex}"][aria-label*="Department"]`) as HTMLSelectElement;
-          if (previousRowFirstSelect) {
-            previousRowFirstSelect.focus();
-          }
-        } else {
-          // If we removed a middle row, focus the first select of the row that took its place
-          const newRowNumber = index + 1;
-          const sameIndexFirstSelect = document.querySelector(`select[aria-label*="Team member ${newRowNumber}"][aria-label*="Department"]`) as HTMLSelectElement;
-          if (sameIndexFirstSelect) {
-            sameIndexFirstSelect.focus();
-          }
-        }
-      } else {
-        // If this was the last team member, focus the add button
-        const addButton = document.querySelector('button[aria-label*="Add"]') as HTMLButtonElement;
-        if (addButton) {
-          addButton.focus();
-        }
-      }
-    }, 100);
   };
 
   // Handle updating team member data

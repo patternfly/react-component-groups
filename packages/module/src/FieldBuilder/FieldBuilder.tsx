@@ -1,4 +1,4 @@
-import React, { FunctionComponent, Children, useRef, useCallback, useState } from 'react';
+import React, { FunctionComponent, Children, useRef, useCallback, useState, useEffect } from 'react';
 import {
   Button,
   ButtonProps,
@@ -6,9 +6,8 @@ import {
   type FormGroupProps,
   Flex,
   FlexItem,
-  Grid,
-  GridItem,
 } from '@patternfly/react-core';
+import { Table, Tbody, Td, Th, Tr, Thead } from '@patternfly/react-table';
 import { PlusCircleIcon, MinusCircleIcon } from '@patternfly/react-icons';
 
 /**
@@ -116,6 +115,12 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
   const focusableElementsRef = useRef<Map<number, HTMLElement>>(new Map());
   // State for ARIA live region announcements
   const [ liveRegionMessage, setLiveRegionMessage ] = useState<string>('');
+  // Track previous row count for focus management
+  const previousRowCountRef = useRef<number>(rowCount);
+  // Track the last removed row index for focus management
+  const lastRemovedIndexRef = useRef<number | null>(null);
+  // Reference to the add button for focus management
+  const addButtonRef = useRef<HTMLButtonElement>(null);
 
   // Function to announce changes to screen readers
   const announceChange = useCallback((message: string) => {
@@ -125,6 +130,49 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
       setLiveRegionMessage('');
     }, 1000);
   }, []);
+
+  // Focus management effect - runs when rowCount changes
+  useEffect(() => {
+    const previousRowCount = previousRowCountRef.current;
+    
+    if (rowCount > previousRowCount) {
+      // Row was added - focus the first input of the new row
+      const newRowIndex = rowCount - 1;
+      const newRowFirstElement = focusableElementsRef.current.get(newRowIndex);
+      if (newRowFirstElement) {
+        newRowFirstElement.focus();
+      }
+    } else if (rowCount < previousRowCount && lastRemovedIndexRef.current !== null) {
+      // Row was removed - apply smart focus logic
+      const removedIndex = lastRemovedIndexRef.current;
+      
+      if (rowCount === 0) {
+        // No rows left - focus the add button
+        if (addButtonRef.current) {
+          addButtonRef.current.focus();
+        }
+      } else if (removedIndex >= rowCount) {
+        // Removed the last row - focus the new last row's first element
+        const newLastRowIndex = rowCount - 1;
+        const newLastRowFirstElement = focusableElementsRef.current.get(newLastRowIndex);
+        if (newLastRowFirstElement) {
+          newLastRowFirstElement.focus();
+        }
+      } else {
+        // Removed a middle row - focus the first element of the row that took its place
+        const sameIndexFirstElement = focusableElementsRef.current.get(removedIndex);
+        if (sameIndexFirstElement) {
+          sameIndexFirstElement.focus();
+        }
+      }
+      
+      // Reset the removed index tracker
+      lastRemovedIndexRef.current = null;
+    }
+    
+    // Update the previous row count
+    previousRowCountRef.current = rowCount;
+  }, [ rowCount ]);
 
   // Create ref callback for focusable elements
   const createFocusRef = useCallback((rowIndex: number) => 
@@ -144,9 +192,12 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
     announceChange(announcementMessage);
   }, [ onAddRow, announceChange, rowGroupLabelPrefix, rowCount, onAddRowAnnouncement ]);
 
-  // Enhanced onRemoveRow with announcements
+  // Enhanced onRemoveRow with announcements and focus tracking
   const handleRemoveRow = useCallback((event: React.MouseEvent, index: number) => {
     const rowNumber = index + 1;
+    
+    // Track which row is being removed for focus management
+    lastRemovedIndexRef.current = index;
     
     onRemoveRow(event, index);
     
@@ -183,24 +234,26 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
         }
       }
 
-      // Determine span based on number of children
-      const cellSpan = cells.length === 1 ? 10 : 5;
-
       return (
-        <Grid 
-          key={`field-row-${index}`} 
-          hasGutter 
-          className="pf-v6-u-mb-md"
-          role="group"
-        >
-          {/* Map over the user's components and wrap each one in a GridItem with dynamic spans. */}
-          {cells.map((cell, cellIndex) => (
-            <GridItem key={cellIndex} span={cellSpan}>
-              {cell}
-            </GridItem>
-          ))}
-          {/* Automatically add the remove button as the last item in the row. */}
-          <GridItem span={2}>
+        <Tr key={`field-row-${index}`} role="group">
+          {/* First column cell */}
+          <Td 
+            dataLabel={String(firstColumnLabel)}
+            className={secondColumnLabel ? "pf-m-width-40" : "pf-m-width-80"}
+          >
+            {cells[0]}
+          </Td>
+          {/* Second column cell (if two-column layout) */}
+          {secondColumnLabel && (
+            <Td 
+              dataLabel={String(secondColumnLabel)}
+              className="pf-m-width-40"
+            >
+              {cells[1] || <div />}
+            </Td>
+          )}
+          {/* Remove button column */}
+          <Td className="pf-m-width-20">
             <Button
               variant="plain"
               aria-label={removeButtonAriaLabel ? removeButtonAriaLabel(rowNumber, rowGroupLabelPrefix) : `Remove ${rowGroupLabelPrefix.toLowerCase()} ${rowNumber}`}
@@ -208,8 +261,8 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
               icon={<MinusCircleIcon />}
               {...removeButtonProps}
             />
-          </GridItem>
-        </Grid>
+          </Td>
+        </Tr>
       );
     });
   };
@@ -221,41 +274,50 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
         {/* ARIA Live Region for announcing dynamic changes */}
         <div 
           className="pf-v6-screen-reader"
-          aria-live="polite" 
-          aria-atomic="true"
-          role="status"
+          aria-live="polite"
         >
           {liveRegionMessage}
         </div>
 
-        {/* Render the column headers */}
-        <Grid hasGutter className="pf-v6-u-mb-md">
-          <GridItem span={secondColumnLabel ? 5 : 10}>
-            <span className="pf-v6-c-form__label-text">
-              {firstColumnLabel}
-            </span>
-          </GridItem>
-          {secondColumnLabel && (
-            <GridItem span={5}>
-              <span className="pf-v6-c-form__label-text">
-                {secondColumnLabel}
-              </span>
-            </GridItem>
-          )}
-          {/* Empty GridItem to align with the remove button column */}
-          <GridItem span={2} />
-        </Grid>
-
-        {/* Render all the dynamic rows of fields */}
-        {renderRows()}
+        {/* Table layout */}
+        <Table 
+          aria-label={`${rowGroupLabelPrefix} management table`} 
+          variant="compact" 
+          borders={false}
+          style={{
+            '--pf-v6-c-table--cell--PaddingInlineStart': '0',
+            '--pf-v6-c-table--cell--first-last-child--PaddingInline': '0 1rem 0 0',
+            '--pf-v6-c-table--cell--PaddingBlockStart': 'var(--pf-t--global--spacer--sm)',
+            '--pf-v6-c-table--cell--PaddingBlockEnd': 'var(--pf-t--global--spacer--sm)',
+            '--pf-v6-c-table__thead--cell--PaddingBlockEnd': 'var(--pf-t--global--spacer--sm)'
+          } as React.CSSProperties}
+        >
+          <Thead>
+            <Tr>
+              <Th className={secondColumnLabel ? "pf-m-width-40" : "pf-m-width-80"}>
+                {firstColumnLabel}
+              </Th>
+              {secondColumnLabel && (
+                <Th className="pf-m-width-40">
+                  {secondColumnLabel}
+                </Th>
+              )}
+              <Th screenReaderText="Actions" className="pf-m-width-20" />
+            </Tr>
+          </Thead>
+          <Tbody>
+            {renderRows()}
+          </Tbody>
+        </Table>
 
         {/* The "Add" button for creating a new row */}
-        <FlexItem className="pf-v6-u-mt-md">
+        <FlexItem className="pf-v6-u-mt-sm">
           <Button 
+            ref={addButtonRef}
             variant="link" 
-            isInline 
             onClick={handleAddRow} 
             icon={<PlusCircleIcon />} 
+            aria-label={`Add ${rowGroupLabelPrefix.toLowerCase()}`}
             {...addButtonProps}
           >
             {addButtonContent || 'Add another'}
