@@ -22,6 +22,10 @@ Please see the [migration guide](./migration.md)
 
 ## Contribution guide
 
+### AI-assisted development guidelines
+
+Please reference [PatternFly's AI-assisted development guidelines](https://github.com/patternfly/.github/blob/main/CONTRIBUTING.md) if you'd like to contribute code generated using AI.
+
 ### Before adding a new component:
 
 - make sure your use case is new/complex enough to be added to this extension
