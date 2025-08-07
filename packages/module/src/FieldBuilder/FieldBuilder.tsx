@@ -241,7 +241,7 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
       }
 
       return (
-        <Tr key={`field-row-${index}`} role="group">
+        <Tr key={`field-row-${index}`}>
           {/* First column cell */}
           <Td 
             dataLabel={String(firstColumnLabel)}
