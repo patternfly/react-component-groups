@@ -8,7 +8,6 @@ import {
   DataListItemCells,
   Button,
   ButtonVariant,
-  Title
 } from '@patternfly/react-core';
 import { DragDropSort, Droppable } from '@patternfly/react-drag-drop';
 import BulkSelect, { BulkSelectValue } from '../BulkSelect';
@@ -26,13 +25,9 @@ export interface Column {
   isUntoggleable?: boolean;
 }
 
-export interface ColumnProps {
+export interface ListManagerProps {
   /** Current column state */
   columns: Column[];
-  /* Column description text */
-  description?: string;
-  /* Column title text */
-  title?: string;
   /** Custom OUIA ID */
   ouiaId?: string | number;
   /** Callback when a column is selected or deselected */
@@ -47,16 +42,14 @@ export interface ColumnProps {
   onCancel?: () => void;
 }
 
-const ColumnManagement: FunctionComponent<ColumnProps> = (
+const ListManager: FunctionComponent<ListManagerProps> = (
   { columns,
-    description,
-    title,
     ouiaId = 'Column',
     onSelect,
     onSelectAll,
     onOrderChange,
     onSave,
-    onCancel }: ColumnProps) => {
+    onCancel }: ListManagerProps) => {
 
   const [ currentColumns, setCurrentColumns ] = useState(
     () => columns.map(column => ({ ...column, isShown: column.isShown ?? column.isShownByDefault, id: column.key }))
@@ -100,8 +93,6 @@ const ColumnManagement: FunctionComponent<ColumnProps> = (
 
   return (
     <>
-      <Title headingLevel="h3">{title}</Title>
-      {description && <div style={{ paddingBottom: '1rem' }}><p>{description}</p></div>}
       <div style={{ paddingBottom: '1rem' }}>
         <BulkSelect
           canSelectAll
@@ -161,4 +152,4 @@ const ColumnManagement: FunctionComponent<ColumnProps> = (
   );
 }
 
-export default ColumnManagement;
+export default ListManager;

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
-import ColumnManagement from './ColumnManagement';
+import ListManager from './ListManager';
 
 jest.mock('@patternfly/react-drag-drop', () => {
   const originalModule = jest.requireActual('@patternfly/react-drag-drop');
@@ -23,23 +23,17 @@ const mockColumns = [
   { key: 'version', title: 'Version', isShown: false, isShownByDefault: false },
 ];
 
-describe('Column', () => {
+describe('ListManager', () => {
   it('renders with initial columns', () => {
-    render(<ColumnManagement columns={mockColumns} />);
+    render(<ListManager columns={mockColumns} />);
     expect(screen.getByTestId('column-check-name')).toBeChecked();
     expect(screen.getByTestId('column-check-status')).toBeChecked();
     expect(screen.getByTestId('column-check-version')).not.toBeChecked();
   });
 
-  it('renders title and description', () => {
-    render(<ColumnManagement columns={mockColumns} title="Test Title" description="Test Description" />);
-    expect(screen.getByText('Test Title')).toBeInTheDocument();
-    expect(screen.getByText('Test Description')).toBeInTheDocument();
-  });
-
   it('renders a cancel button', async () => {
     const onCancel = jest.fn();
-    render(<ColumnManagement columns={mockColumns} onCancel={onCancel} />);
+    render(<ListManager columns={mockColumns} onCancel={onCancel} />);
     const cancelButton = screen.getByText('Cancel');
     expect(cancelButton).toBeInTheDocument();
     await userEvent.click(cancelButton);
@@ -48,7 +42,7 @@ describe('Column', () => {
 
   it('toggles a column', async () => {
     const onSelect = jest.fn();
-    render(<ColumnManagement columns={mockColumns} onSelect={onSelect} />);
+    render(<ListManager columns={mockColumns} onSelect={onSelect} />);
     const nameCheckbox = screen.getByTestId('column-check-name');
     await userEvent.click(nameCheckbox);
     expect(nameCheckbox).not.toBeChecked();
@@ -56,7 +50,7 @@ describe('Column', () => {
   });
 
   it('selects all columns', async () => {
-    render(<ColumnManagement columns={mockColumns} />);
+    render(<ListManager columns={mockColumns} />);
     const menuToggle = screen.getByLabelText('Bulk select toggle');
     if (menuToggle) {
       await userEvent.click(menuToggle);
@@ -69,7 +63,7 @@ describe('Column', () => {
   });
 
   it('selects no columns', async () => {
-    render(<ColumnManagement columns={mockColumns} />);
+    render(<ListManager columns={mockColumns} />);
     const menuToggle = screen.getByLabelText('Bulk select toggle');
     if (menuToggle) {
       await userEvent.click(menuToggle);
@@ -83,7 +77,7 @@ describe('Column', () => {
 
   it('saves changes', async () => {
     const onSave = jest.fn();
-    render(<ColumnManagement columns={mockColumns} onSave={onSave} />);
+    render(<ListManager columns={mockColumns} onSave={onSave} />);
     const saveButton = screen.getByText('Save');
     await userEvent.click(saveButton);
     expect(onSave).toHaveBeenCalledWith(expect.any(Array));

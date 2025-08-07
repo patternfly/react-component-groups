@@ -1,5 +1,5 @@
 import { FunctionComponent, useState } from 'react';
-import { Column, ColumnManagement } from '@patternfly/react-component-groups';
+import { Column, ListManager } from '@patternfly/react-component-groups';
 
 const DEFAULT_COLUMNS: Column[] = [
   {
@@ -33,9 +33,7 @@ export const ColumnExample: FunctionComponent = () => {
   const [ columns, setColumns ] = useState(DEFAULT_COLUMNS);
 
   return (
-    <ColumnManagement
-      title="Manage columns"
-      description="Select the columns to display in the table."
+    <ListManager
       columns={columns}
       onOrderChange={setColumns}
       onSelect={(col) => {
