@@ -137,37 +137,43 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
     
     if (rowCount > previousRowCount) {
       // Row was added - focus the first input of the new row
-      const newRowIndex = rowCount - 1;
-      const newRowFirstElement = focusableElementsRef.current.get(newRowIndex);
-      if (newRowFirstElement) {
-        newRowFirstElement.focus();
-      }
+      // Use setTimeout to ensure DOM is fully rendered for complex components like Select
+      setTimeout(() => {
+        const newRowIndex = rowCount - 1;
+        const newRowFirstElement = focusableElementsRef.current.get(newRowIndex);
+        if (newRowFirstElement) {
+          newRowFirstElement.focus();
+        }
+      }, 0);
     } else if (rowCount < previousRowCount && lastRemovedIndexRef.current !== null) {
       // Row was removed - apply smart focus logic
-      const removedIndex = lastRemovedIndexRef.current;
-      
-      if (rowCount === 0) {
-        // No rows left - focus the add button
-        if (addButtonRef.current) {
-          addButtonRef.current.focus();
+      // Use setTimeout to ensure DOM is fully updated after row removal
+      setTimeout(() => {
+        const removedIndex = lastRemovedIndexRef.current!;
+        
+        if (rowCount === 0) {
+          // No rows left - focus the add button
+          if (addButtonRef.current) {
+            addButtonRef.current.focus();
+          }
+        } else if (removedIndex >= rowCount) {
+          // Removed the last row - focus the new last row's first element
+          const newLastRowIndex = rowCount - 1;
+          const newLastRowFirstElement = focusableElementsRef.current.get(newLastRowIndex);
+          if (newLastRowFirstElement) {
+            newLastRowFirstElement.focus();
+          }
+        } else {
+          // Removed a middle row - focus the first element of the row that took its place
+          const sameIndexFirstElement = focusableElementsRef.current.get(removedIndex);
+          if (sameIndexFirstElement) {
+            sameIndexFirstElement.focus();
+          }
         }
-      } else if (removedIndex >= rowCount) {
-        // Removed the last row - focus the new last row's first element
-        const newLastRowIndex = rowCount - 1;
-        const newLastRowFirstElement = focusableElementsRef.current.get(newLastRowIndex);
-        if (newLastRowFirstElement) {
-          newLastRowFirstElement.focus();
-        }
-      } else {
-        // Removed a middle row - focus the first element of the row that took its place
-        const sameIndexFirstElement = focusableElementsRef.current.get(removedIndex);
-        if (sameIndexFirstElement) {
-          sameIndexFirstElement.focus();
-        }
-      }
-      
-      // Reset the removed index tracker
-      lastRemovedIndexRef.current = null;
+        
+        // Reset the removed index tracker
+        lastRemovedIndexRef.current = null;
+      }, 0);
     }
     
     // Update the previous row count
