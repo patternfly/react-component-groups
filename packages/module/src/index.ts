@@ -60,6 +60,9 @@ export * from './Maintenance';
 export { default as LogSnippet } from './LogSnippet';
 export * from './LogSnippet';
 
+export { default as ListManager } from './ListManager';
+export * from './ListManager';
+
 export { default as ExternalLinkButton } from './ExternalLinkButton';
 export * from './ExternalLinkButton';
 
