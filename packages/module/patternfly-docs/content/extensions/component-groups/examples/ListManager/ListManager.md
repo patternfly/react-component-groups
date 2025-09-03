@@ -23,6 +23,6 @@ The **list manager** component can be used to implement customizable table colum
 
 ### Basic column list
 
-The order of the columns can be changed by dragging and dropping the columns themselves. This list can be used within a page or within a modal. Always make sure to set `isShownByDefault` and `isShown` to the same boolean value in the initial state.
+The order of the columns can be changed by dragging and dropping the columns themselves. This list can be used within a page or within a modal. Always make sure to set `isShownByDefault` and `isSelected` (if needed) to the same boolean value in the initial state.
 
 ```js file="./ListManagerExample.tsx"
