@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   DataList,
   DataListItemRow,
@@ -8,17 +8,20 @@ import {
   DataListItemCells,
   Button,
   ButtonVariant,
+  ActionList,
+  ActionListItem,
+  ActionListGroup,
 } from '@patternfly/react-core';
 import { DragDropSort, Droppable } from '@patternfly/react-drag-drop';
 import BulkSelect, { BulkSelectValue } from '../BulkSelect';
 
-export interface Column {
+export interface ListManagerItem {
   /** Internal identifier of a column by which table displayed columns are filtered. */
   key: string;
   /** The actual display name of the column possibly with a tooltip or icon. */
   title: React.ReactNode;
   /** If user changes checkboxes, the component will send back column array with this property altered. */
-  isShown?: boolean;
+  isSelected?: boolean;
   /** Set to false if the column should be hidden initially */
   isShownByDefault: boolean;
   /** The checkbox will be disabled, this is applicable to columns which should not be toggleable by user */
@@ -27,17 +30,17 @@ export interface Column {
 
 export interface ListManagerProps {
   /** Current column state */
-  columns: Column[];
+  columns: ListManagerItem[];
   /** Custom OUIA ID */
   ouiaId?: string | number;
   /** Callback when a column is selected or deselected */
-  onSelect?: (column: Column) => void;
+  onSelect?: (column: ListManagerItem) => void;
   /** Callback when all columns are selected or deselected */
-  onSelectAll?: (columns: Column[]) => void;
+  onSelectAll?: (columns: ListManagerItem[]) => void;
   /** Callback when the column order changes */
-  onOrderChange?: (columns: Column[]) => void;
+  onOrderChange?: (columns: ListManagerItem[]) => void;
   /** Callback to save the column state */
-  onSave?: (columns: Column[]) => void;
+  onSave?: (columns: ListManagerItem[]) => void;
   /** Callback to close the modal */
   onCancel?: () => void;
 }
@@ -52,33 +55,38 @@ const ListManager: FunctionComponent<ListManagerProps> = (
     onCancel }: ListManagerProps) => {
 
   const [ currentColumns, setCurrentColumns ] = useState(
-    () => columns.map(column => ({ ...column, isShown: column.isShown ?? column.isShownByDefault, id: column.key }))
+    () => columns.map(column => ({ ...column, isSelected: column.isSelected ?? column.isShownByDefault, id: column.key }))
   );
 
-  useEffect(() => {
-    setCurrentColumns(columns.map(column => ({ ...column, isShown: column.isShown ?? column.isShownByDefault, id: column.key })));
-  }, [ columns ]);
 
-  const handleChange = index => {
+  const handleChange = (columnKey: string) => {
     const newColumns = [ ...currentColumns ];
+    const index = newColumns.findIndex(col => col.key === columnKey);
+    if (index === -1) {return;}
+    
     const changedColumn = { ...newColumns[index] };
-
-    changedColumn.isShown = !changedColumn.isShown;
+    changedColumn.isSelected = !changedColumn.isSelected;
     newColumns[index] = changedColumn;
 
     setCurrentColumns(newColumns);
     onSelect?.(changedColumn);
   };
 
-  const onDrag = (_event, newOrder) => {
-    const newColumns = newOrder.map(item => currentColumns.find(c => c.key === item.id));
+  const onDrag = (_event: unknown, newOrder: any[]) => {
+    const newColumns = newOrder.map((item: any) => {
+      const found = currentColumns.find(c => c.key === item.id);
+      if (!found) {
+        throw new Error(`Column with key ${item.id} not found`);
+      }
+      return found;
+    });
     setCurrentColumns(newColumns);
     onOrderChange?.(newColumns);
   };
 
   const handleSave = () => {
     onSave?.(currentColumns);
-  }
+  };
 
   const handleBulkSelect = (value: BulkSelectValue) => {
     const allSelected = value === 'all' || value === 'page';
@@ -86,10 +94,10 @@ const ListManager: FunctionComponent<ListManagerProps> = (
   };
 
   const handleSelectAll = (select = true) => {
-    const newColumns = currentColumns.map(c => ({ ...c, isShown: c.isUntoggleable ? c.isShown : select }));
+    const newColumns = currentColumns.map(c => ({ ...c, isSelected: c.isUntoggleable ? c.isSelected : select }));
     setCurrentColumns(newColumns);
     onSelectAll?.(newColumns);
-  }
+  };
 
   return (
     <>
@@ -97,12 +105,12 @@ const ListManager: FunctionComponent<ListManagerProps> = (
         <BulkSelect
           canSelectAll
           isDataPaginated={false}
-          selectedCount={currentColumns.filter(({ isShown }) => isShown).length}
+          selectedCount={currentColumns.filter(({ isSelected }) => isSelected).length}
           totalCount={currentColumns.length}
           onSelect={handleBulkSelect}
-          pageSelected={currentColumns.every((item) => item.isShown)}
+          pageSelected={currentColumns.every((item) => item.isSelected)}
           pagePartiallySelected={
-            currentColumns.some((item) => item.isShown) && !currentColumns.every((item) => item.isShown)
+            currentColumns.some((item) => item.isSelected) && !currentColumns.every((item) => item.isSelected)
           }
         />
       </div>
@@ -112,8 +120,8 @@ const ListManager: FunctionComponent<ListManagerProps> = (
             <DataListItemRow>
               <DataListCheck
                 data-testid={`column-check-${column.key}`}
-                isChecked={column.isShown}
-                onChange={() => handleChange(index)}
+                isChecked={column.isSelected}
+                onChange={() => handleChange(column.key)}
                 isDisabled={column.isUntoggleable}
                 aria-labelledby={`${ouiaId}-column-${index}-label`}
                 ouiaId={`${ouiaId}-column-${index}-checkbox`}
@@ -140,14 +148,21 @@ const ListManager: FunctionComponent<ListManagerProps> = (
           )} 
           wrapper={<DataList aria-label="Selected columns" isCompact data-ouia-component-id={`${ouiaId}-column-list`}/>}
         />
-      </DragDropSort>      <div style={{ display: 'flex', justifyContent: 'normal', paddingTop: '1rem' }}>
-        <Button key="save" variant={ButtonVariant.primary} onClick={handleSave} ouiaId={`${ouiaId}-save-button`}>
-          Save
-        </Button>
-        <Button key="cancel" variant={ButtonVariant.link} onClick={onCancel} ouiaId={`${ouiaId}-cancel-button`}>
-          Cancel
-        </Button>
-      </div>
+      </DragDropSort>
+      <ActionList style={{ paddingTop: '1rem' }}>
+        <ActionListGroup>
+          <ActionListItem>
+            <Button key="save" variant={ButtonVariant.primary} onClick={handleSave} ouiaId={`${ouiaId}-save-button`}>
+              Save
+            </Button>
+          </ActionListItem>
+          <ActionListItem>
+            <Button key="cancel" variant={ButtonVariant.link} onClick={onCancel} ouiaId={`${ouiaId}-cancel-button`}>
+              Cancel
+            </Button>
+          </ActionListItem>
+        </ActionListGroup>
+      </ActionList>
     </>
   );
 }
