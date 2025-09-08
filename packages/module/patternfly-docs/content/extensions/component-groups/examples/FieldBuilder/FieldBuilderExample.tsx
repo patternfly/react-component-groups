@@ -64,8 +64,6 @@ export const FieldBuilderExample: React.FunctionComponent = () => {
   return (
     <Form>
       <FieldBuilder
-        label=""
-        labelInfo=""
         isRequired
         firstColumnLabel="Name"
         secondColumnLabel="Email"

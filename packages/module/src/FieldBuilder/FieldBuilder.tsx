@@ -287,7 +287,7 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
 
         {/* Table layout */}
         <Table 
-          aria-label={`${rowGroupLabelPrefix} management table`} 
+          aria-label={`${rowGroupLabelPrefix} management`} 
           variant="compact" 
           borders={false}
           style={{

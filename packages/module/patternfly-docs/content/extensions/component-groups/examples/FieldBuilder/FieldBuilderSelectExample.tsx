@@ -126,8 +126,6 @@ export const FieldBuilderSelectExample: React.FunctionComponent = () => {
   return (
     <Form>
       <FieldBuilder
-        label=""
-        labelInfo=""
         isRequired
         firstColumnLabel="Department"
         secondColumnLabel="Role"
@@ -152,27 +150,35 @@ export const FieldBuilderSelectExample: React.FunctionComponent = () => {
               newOpenStates[index] = isOpen;
               setDepartmentOpenStates(newOpenStates);
             }}
-            toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
-              <MenuToggle
-                ref={(element) => {
-                  // Handle both the toggle ref and focus ref
-                  if (typeof toggleRef === 'function') {
-                    toggleRef(element);
-                  } else if (toggleRef && 'current' in toggleRef && toggleRef.current !== element) {
-                    (toggleRef as React.MutableRefObject<MenuToggleElement | null>).current = element;
-                  }
-                  focusRef(element);
-                }}
-                onClick={() => handleDepartmentToggle(index)}
-                isExpanded={departmentOpenStates[index] || false}
-                aria-label={firstColumnAriaLabel}
-                style={{ width: '100%' }}
-              >
-                {teamMembers[index]?.department ? 
-                  departmentOptions.find(opt => opt.value === teamMembers[index]?.department)?.label || 'Choose a department'
-                  : 'Choose a department'}
-              </MenuToggle>
-            )}
+            toggle={(toggleRef: React.Ref<MenuToggleElement>) => {
+              // Compute extra context for aria-label
+              const selectedDepartment = teamMembers[index]?.department;
+              const departmentLabel = selectedDepartment
+                ? departmentOptions.find(opt => opt.value === selectedDepartment)?.label
+                : 'choose a department';
+              const ariaLabel = `${firstColumnAriaLabel}, ${departmentLabel}`;
+              return (
+                <MenuToggle
+                  ref={(element) => {
+                    // Handle both the toggle ref and focus ref
+                    if (typeof toggleRef === 'function') {
+                      toggleRef(element);
+                    } else if (toggleRef && 'current' in toggleRef && toggleRef.current !== element) {
+                      (toggleRef as React.MutableRefObject<MenuToggleElement | null>).current = element;
+                    }
+                    focusRef(element);
+                  }}
+                  onClick={() => handleDepartmentToggle(index)}
+                  isExpanded={departmentOpenStates[index] || false}
+                  aria-label={ariaLabel}
+                  style={{ width: '100%' }}
+                >
+                  {selectedDepartment
+                    ? departmentOptions.find(opt => opt.value === selectedDepartment)?.label || 'Choose a department'
+                    : 'Choose a department'}
+                </MenuToggle>
+              );
+            }}
             shouldFocusToggleOnSelect
           >
             <SelectList>
@@ -203,11 +209,15 @@ export const FieldBuilderSelectExample: React.FunctionComponent = () => {
                 ref={toggleRef}
                 onClick={() => handleRoleToggle(index)}
                 isExpanded={roleOpenStates[index] || false}
-                aria-label={secondColumnAriaLabel}
+                aria-label={`${secondColumnAriaLabel}, ${
+                  teamMembers[index]?.role
+                    ? roleOptions.find(opt => opt.value === teamMembers[index]?.role)?.label
+                    : 'choose a role'
+                }`}
                 style={{ width: '100%' }}
               >
-                {teamMembers[index]?.role ? 
-                  roleOptions.find(opt => opt.value === teamMembers[index]?.role)?.label || 'Choose a role'
+                {teamMembers[index]?.role
+                  ? roleOptions.find(opt => opt.value === teamMembers[index]?.role)?.label || 'Choose a role'
                   : 'Choose a role'}
               </MenuToggle>
             )}
