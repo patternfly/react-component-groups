@@ -101,7 +101,7 @@ const ListManager: FunctionComponent<ListManagerProps> = (
 
   return (
     <>
-      <div style={{ paddingBottom: '1rem' }}>
+      <div style={{ paddingBlockEnd: 'var(--pf-t--global--spacer--md)' }}>
         <BulkSelect
           canSelectAll
           isDataPaginated={false}
@@ -149,7 +149,7 @@ const ListManager: FunctionComponent<ListManagerProps> = (
           wrapper={<DataList aria-label="Selected columns" isCompact data-ouia-component-id={`${ouiaId}-column-list`}/>}
         />
       </DragDropSort>
-      <ActionList style={{ paddingTop: '1rem' }}>
+      <ActionList style={{ paddingBlockStart: 'var(--pf-t--global--spacer--md)' }}>
         <ActionListGroup>
           <ActionListItem>
             <Button key="save" variant={ButtonVariant.primary} onClick={handleSave} ouiaId={`${ouiaId}-save-button`}>

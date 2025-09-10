@@ -18,9 +18,9 @@ jest.mock('@patternfly/react-drag-drop', () => {
 });
 
 const mockColumns = [
-  { key: 'name', title: 'Name', isShown: true, isShownByDefault: true },
-  { key: 'status', title: 'Status', isShown: true, isShownByDefault: true },
-  { key: 'version', title: 'Version', isShown: false, isShownByDefault: false },
+  { key: 'name', title: 'Name', isSelected: true, isShownByDefault: true },
+  { key: 'status', title: 'Status', isSelected: true, isShownByDefault: true },
+  { key: 'version', title: 'Version', isSelected: false, isShownByDefault: false },
 ];
 
 describe('ListManager', () => {
@@ -46,7 +46,7 @@ describe('ListManager', () => {
     const nameCheckbox = screen.getByTestId('column-check-name');
     await userEvent.click(nameCheckbox);
     expect(nameCheckbox).not.toBeChecked();
-    expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ key: 'name', isShown: false }));
+    expect(onSelect).toHaveBeenCalledWith(expect.objectContaining({ key: 'name', isSelected: false }));
   });
 
   it('selects all columns', async () => {
