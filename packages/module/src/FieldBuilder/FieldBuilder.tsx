@@ -219,6 +219,7 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
     return rows.map((_, index) => {
       const rowNumber = index + 1;
       const rowGroupId = `${fieldBuilderIdPrefix}-row-${index}`;
+      const topPaddingClass = index > 0 ? 'pf-v6-u-pt-0' : '';
 
       // Call the user's render prop function to get the React nodes for this row's cells.
       const rowContent = children({ 
@@ -245,7 +246,7 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
           {/* First column cell */}
           <Td 
             dataLabel={String(firstColumnLabel)}
-            className={secondColumnLabel ? "pf-m-width-40" : "pf-m-width-80"}
+            className={`${secondColumnLabel ? 'pf-m-width-40' : 'pf-m-width-80'} ${topPaddingClass}`.trim()}
           >
             {cells[0]}
           </Td>
@@ -253,13 +254,13 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
           {secondColumnLabel && (
             <Td 
               dataLabel={String(secondColumnLabel)}
-              className="pf-m-width-40"
+              className={`pf-m-width-40 ${topPaddingClass}`.trim()}
             >
               {cells[1] || <div />}
             </Td>
           )}
           {/* Remove button column */}
-          <Td className="pf-m-width-20">
+          <Td className={`pf-m-width-20 ${topPaddingClass}`.trim()}>
             <Button
               variant="plain"
               aria-label={removeButtonAriaLabel ? removeButtonAriaLabel(rowNumber, rowGroupLabelPrefix) : `Remove ${rowGroupLabelPrefix.toLowerCase()} ${rowNumber}`}
@@ -295,16 +296,17 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
             '--pf-v6-c-table--cell--first-last-child--PaddingInline': '0 1rem 0 0',
             '--pf-v6-c-table--cell--PaddingBlockStart': 'var(--pf-t--global--spacer--sm)',
             '--pf-v6-c-table--cell--PaddingBlockEnd': 'var(--pf-t--global--spacer--sm)',
-            '--pf-v6-c-table__thead--cell--PaddingBlockEnd': 'var(--pf-t--global--spacer--sm)'
+            '--pf-v6-c-table__thead--cell--PaddingBlockEnd': '0',
+
           } as React.CSSProperties}
         >
           <Thead>
             <Tr>
-              <Th className={secondColumnLabel ? "pf-m-width-40" : "pf-m-width-80"}>
+              <Th className={secondColumnLabel ? "pf-m-width-40" : "pf-m-width-80"} style={{ paddingBottom: 0 }}>
                 {firstColumnLabel}
               </Th>
               {secondColumnLabel && (
-                <Th className="pf-m-width-40">
+                <Th className="pf-m-width-40" style={{ paddingBottom: 0 }}>
                   {secondColumnLabel}
                 </Th>
               )}
@@ -317,7 +319,8 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
         </Table>
 
         {/* The "Add" button for creating a new row */}
-        <FlexItem className="pf-v6-u-mt-sm">
+        <FlexItem className="pf-v6-u-mt-0">
+          {/* <FlexItem className="pf-v6-u-mt-sm"> */}
           <Button 
             ref={addButtonRef}
             variant="link" 
