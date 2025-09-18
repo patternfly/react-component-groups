@@ -1,7 +1,8 @@
 import type { FunctionComponent } from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   DataList,
+  DataListItem,
   DataListItemRow,
   DataListCheck,
   DataListCell,
@@ -12,7 +13,7 @@ import {
   ActionListItem,
   ActionListGroup,
 } from '@patternfly/react-core';
-import { DragDropSort, Droppable } from '@patternfly/react-drag-drop';
+import { DragDropSort, Droppable, DraggableObject } from '@patternfly/react-drag-drop';
 import BulkSelect, { BulkSelectValue } from '../BulkSelect';
 
 export interface ListManagerItem {
@@ -43,6 +44,8 @@ export interface ListManagerProps {
   onSave?: (columns: ListManagerItem[]) => void;
   /** Callback to close the modal */
   onCancel?: () => void;
+  /** Enable drag and drop functionality for reordering items */
+  enableDragDrop?: boolean;
 }
 
 const ListManager: FunctionComponent<ListManagerProps> = (
@@ -52,11 +55,17 @@ const ListManager: FunctionComponent<ListManagerProps> = (
     onSelectAll,
     onOrderChange,
     onSave,
-    onCancel }: ListManagerProps) => {
+    onCancel,
+    enableDragDrop = true }: ListManagerProps) => {
 
   const [ currentColumns, setCurrentColumns ] = useState(
     () => columns.map(column => ({ ...column, isSelected: column.isSelected ?? column.isShownByDefault, id: column.key }))
   );
+
+  // Sync with columns prop when it changes
+  useEffect(() => {
+    setCurrentColumns(columns.map(column => ({ ...column, isSelected: column.isSelected ?? column.isShownByDefault, id: column.key })));
+  }, [ columns ]);
 
 
   const handleChange = (columnKey: string) => {
@@ -72,9 +81,9 @@ const ListManager: FunctionComponent<ListManagerProps> = (
     onSelect?.(changedColumn);
   };
 
-  const onDrag = (_event: unknown, newOrder: any[]) => {
-    const newColumns = newOrder.map((item: any) => {
-      const found = currentColumns.find(c => c.key === item.id);
+  const onDrag = (_event: unknown, newOrder: DraggableObject[]) => {
+    const newColumns = newOrder.map((item: DraggableObject) => {
+      const found = currentColumns.find(c => c.key === String(item.id));
       if (!found) {
         throw new Error(`Column with key ${item.id} not found`);
       }
@@ -99,6 +108,29 @@ const ListManager: FunctionComponent<ListManagerProps> = (
     onSelectAll?.(newColumns);
   };
 
+  const renderDataListItem = (column: ListManagerItem & { id: string }, index: number) => (
+    <DataListItemRow key={column.key}>
+      <DataListCheck
+        data-testid={`column-check-${column.key}`}
+        isChecked={column.isSelected}
+        onChange={() => handleChange(column.key)}
+        isDisabled={column.isUntoggleable}
+        aria-labelledby={`${ouiaId}-column-${index}-label`}
+        ouiaId={`${ouiaId}-column-${index}-checkbox`}
+        id={`${ouiaId}-column-${index}-checkbox`}
+      />
+      <DataListItemCells
+        dataListCells={[
+          <DataListCell key={column.key} data-ouia-component-id={`${ouiaId}-column-${index}-label`}>
+            <label htmlFor={`${ouiaId}-column-${index}-checkbox`} id={`${ouiaId}-column-${index}-label`}>
+              {column.title}
+            </label>
+          </DataListCell>
+        ]}
+      />
+    </DataListItemRow>
+  );
+
   return (
     <>
       <div style={{ paddingBlockEnd: 'var(--pf-t--global--spacer--md)' }}>
@@ -114,41 +146,30 @@ const ListManager: FunctionComponent<ListManagerProps> = (
           }
         />
       </div>
-      <DragDropSort
-        variant="DataList"
-        items={currentColumns.map((column, index) => ({ id: column.key, content: 
-            <DataListItemRow>
-              <DataListCheck
-                data-testid={`column-check-${column.key}`}
-                isChecked={column.isSelected}
-                onChange={() => handleChange(column.key)}
-                isDisabled={column.isUntoggleable}
-                aria-labelledby={`${ouiaId}-column-${index}-label`}
-                ouiaId={`${ouiaId}-column-${index}-checkbox`}
-                id={`${ouiaId}-column-${index}-checkbox`}
-              />
-              <DataListItemCells
-                dataListCells={[
-                  <DataListCell key={column.key} data-ouia-component-id={`${ouiaId}-column-${index}-label`}>
-                    <label htmlFor={`${ouiaId}-column-${index}-checkbox`} id={`${ouiaId}-column-${index}-label`}>
-                      {column.title}
-                    </label>
-                  </DataListCell>
-                ]}
-              />
-            </DataListItemRow>
-        }))}
-        onDrop={onDrag}
-        overlayProps={{ isCompact: true }}
-      >
-        <Droppable 
-          items={currentColumns.map((column) => 
-            // eslint-disable-next-line no-console
-            ({ id: column.key, content: column.title })
-          )} 
-          wrapper={<DataList aria-label="Selected columns" isCompact data-ouia-component-id={`${ouiaId}-column-list`}/>}
-        />
-      </DragDropSort>
+      {enableDragDrop ? (
+        <DragDropSort
+          variant="DataList"
+          items={currentColumns.map((column, index) => ({ id: column.key, content: renderDataListItem(column, index) }))}
+          onDrop={onDrag}
+          overlayProps={{ isCompact: true }}
+        >
+          <Droppable
+            items={currentColumns.map((column) =>
+              // eslint-disable-next-line no-console
+              ({ id: column.key, content: column.title })
+            )}
+            wrapper={<DataList aria-label="Selected columns" isCompact data-ouia-component-id={`${ouiaId}-column-list`}/>}
+          />
+        </DragDropSort>
+      ) : (
+        <DataList aria-label="Selected columns" isCompact data-ouia-component-id={`${ouiaId}-column-list`}>
+          {currentColumns.map((column, index) => (
+            <DataListItem key={column.key}>
+              {renderDataListItem(column, index)}
+            </DataListItem>
+          ))}
+        </DataList>
+      )}
       <ActionList style={{ paddingBlockStart: 'var(--pf-t--global--spacer--md)' }}>
         <ActionListGroup>
           <ActionListItem>

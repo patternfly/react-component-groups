@@ -63,6 +63,9 @@ export * from './LogSnippet';
 export { default as ListManager } from './ListManager';
 export * from './ListManager';
 
+export { default as FieldBuilder } from './FieldBuilder';
+export * from './FieldBuilder';
+
 export { default as ExternalLinkButton } from './ExternalLinkButton';
 export * from './ExternalLinkButton';
 
