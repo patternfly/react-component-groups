@@ -113,7 +113,7 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
   // Track focusable elements for each row (for consumers who want to use focusRef)
   const focusableElementsRef = useRef<Map<number, HTMLElement>>(new Map());
   // State for ARIA live region announcements
-  const [liveRegionMessage, setLiveRegionMessage] = useState<string>('');
+  const [ liveRegionMessage, setLiveRegionMessage ] = useState<string>('');
   // Track previous row count for focus management
   const previousRowCountRef = useRef<number>(rowCount);
   // Track the last removed row index for focus management
@@ -177,7 +177,7 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
 
     // Update the previous row count
     previousRowCountRef.current = rowCount;
-  }, [rowCount]);
+  }, [ rowCount ]);
 
   // Create ref callback for focusable elements
   const createFocusRef = useCallback(
@@ -201,7 +201,7 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
         : `New ${rowGroupLabelPrefix.toLowerCase()} added. ${rowGroupLabelPrefix} ${newRowNumber}.`;
       announceChange(announcementMessage);
     },
-    [onAddRow, announceChange, rowGroupLabelPrefix, rowCount, onAddRowAnnouncement]
+    [ onAddRow, announceChange, rowGroupLabelPrefix, rowCount, onAddRowAnnouncement ]
   );
 
   // Enhanced onRemoveRow with announcements and focus tracking
@@ -220,7 +220,7 @@ export const FieldBuilder: FunctionComponent<FieldBuilderProps> = ({
         : `${rowGroupLabelPrefix} ${rowNumber} removed.`;
       announceChange(announcementMessage);
     },
-    [onRemoveRow, announceChange, rowGroupLabelPrefix, onRemoveRowAnnouncement]
+    [ onRemoveRow, announceChange, rowGroupLabelPrefix, onRemoveRowAnnouncement ]
   );
 
   // Helper function to render all the dynamic rows.
