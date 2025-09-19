@@ -1,6 +1,6 @@
 ---
-section: Component groups
-subsection: Content containers
+section: Extensions
+subsection: Component groups
 id: Page header
 source: react
 propComponents: ['PageHeader']

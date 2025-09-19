@@ -1,5 +1,6 @@
 ---
-section: Component groups
+section: Extensions
+subsection: Component groups
 id: About component groups
 sortValue: 1
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/about-component-groups.md
@@ -16,17 +17,6 @@ Component groups lives in its own package [`@patternfly/react-component-groups`]
 The component groups extension contains a range of React components that are more complex than basic PatternFly components. These component groups combine and adjust multiple base components to provide opinionated solutions for recurring use cases across products using PatternFly.
 
 The creation and maintenance of this extension is a collaborative effort between the PatternFly and Red Hat Hybrid Cloud Console teams. All component groups receive accessibility and design reviews, and we are working to improve internationalization, add test coverage, and ensure that CSS overrides all correctly reference the PatternFly CSS API.
-
-There are a few different functional categories of component groups:
-
-<SectionGallery
-  section="Component groups"
-  galleryItemsData={galleryData}
-  placeholderText="Search component groups by name"
-  includeSubsections={true}
-  hasGridText={true}
-  isFullWidth={false}
-/>
 
 ## Contribution guidelines
 
