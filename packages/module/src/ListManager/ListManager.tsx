@@ -46,6 +46,8 @@ export interface ListManagerProps {
   onCancel?: () => void;
   /** Enable drag and drop functionality for reordering items */
   enableDragDrop?: boolean;
+  /** Custom aria-label for the DataList */
+  dataListAriaLabel?: string;
 }
 
 const ListManager: FunctionComponent<ListManagerProps> = (
@@ -56,7 +58,8 @@ const ListManager: FunctionComponent<ListManagerProps> = (
     onOrderChange,
     onSave,
     onCancel,
-    enableDragDrop = true }: ListManagerProps) => {
+    enableDragDrop = true,
+    dataListAriaLabel = 'Selected columns' }: ListManagerProps) => {
 
   const [ currentColumns, setCurrentColumns ] = useState(
     () => columns.map(column => ({ ...column, isSelected: column.isSelected ?? column.isShownByDefault, id: column.key }))
@@ -115,14 +118,13 @@ const ListManager: FunctionComponent<ListManagerProps> = (
         isChecked={column.isSelected}
         onChange={() => handleChange(column.key)}
         isDisabled={column.isUntoggleable}
-        aria-labelledby={`${ouiaId}-column-${index}-label`}
         ouiaId={`${ouiaId}-column-${index}-checkbox`}
         id={`${ouiaId}-column-${index}-checkbox`}
       />
       <DataListItemCells
         dataListCells={[
           <DataListCell key={column.key} data-ouia-component-id={`${ouiaId}-column-${index}-label`}>
-            <label htmlFor={`${ouiaId}-column-${index}-checkbox`} id={`${ouiaId}-column-${index}-label`}>
+            <label htmlFor={`${ouiaId}-column-${index}-checkbox`}>
               {column.title}
             </label>
           </DataListCell>
@@ -158,11 +160,11 @@ const ListManager: FunctionComponent<ListManagerProps> = (
               // eslint-disable-next-line no-console
               ({ id: column.key, content: column.title })
             )}
-            wrapper={<DataList aria-label="Selected columns" isCompact data-ouia-component-id={`${ouiaId}-column-list`}/>}
+            wrapper={<DataList aria-label={dataListAriaLabel} isCompact data-ouia-component-id={`${ouiaId}-column-list`}/>}
           />
         </DragDropSort>
       ) : (
-        <DataList aria-label="Selected columns" isCompact data-ouia-component-id={`${ouiaId}-column-list`}>
+        <DataList aria-label={dataListAriaLabel} isCompact data-ouia-component-id={`${ouiaId}-column-list`}>
           {currentColumns.map((column, index) => (
             <DataListItem key={column.key}>
               {renderDataListItem(column, index)}

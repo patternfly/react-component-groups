@@ -75,16 +75,7 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
     setCurrentColumns(currentColumns.map(column => ({ ...column, isShown: column.isShownByDefault ?? false })));
   };
 
-  const handleSelect = (item: ListManagerItem) => {
-    const newColumns = currentColumns.map(column =>
-      column.key === item.key
-        ? { ...column, isShown: item.isSelected ?? column.isShownByDefault }
-        : column
-    );
-    setCurrentColumns(newColumns);
-  };
-
-  const handleSelectAll = (items: ListManagerItem[]) => {
+  const updateColumns = (items: ListManagerItem[]) => {
     const newColumns = currentColumns.map(column => {
       const matchingItem = items.find(item => item.key === column.key);
       return matchingItem
@@ -92,6 +83,14 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
         : column;
     });
     setCurrentColumns(newColumns);
+  };
+
+  const handleSelect = (item: ListManagerItem) => {
+    updateColumns([item]);
+  };
+
+  const handleSelectAll = (items: ListManagerItem[]) => {
+    updateColumns(items);
   };
 
   const handleOrderChange = (items: ListManagerItem[]) => {
