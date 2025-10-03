@@ -120,6 +120,7 @@ const ListManager: FunctionComponent<ListManagerProps> = (
         isDisabled={column.isUntoggleable}
         ouiaId={`${ouiaId}-column-${index}-checkbox`}
         id={`${ouiaId}-column-${index}-checkbox`}
+        aria-labelledby={`${ouiaId}-column-${index}-label`}
       />
       <DataListItemCells
         dataListCells={[
