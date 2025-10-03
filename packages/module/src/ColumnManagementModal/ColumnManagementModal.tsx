@@ -86,7 +86,7 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
   };
 
   const handleSelect = (item: ListManagerItem) => {
-    updateColumns([item]);
+    updateColumns([ item ]);
   };
 
   const handleSelectAll = (items: ListManagerItem[]) => {
