@@ -82,4 +82,27 @@ describe('ListManager', () => {
     await userEvent.click(saveButton);
     expect(onSave).toHaveBeenCalledWith(expect.any(Array));
   });
+
+  describe('enableDragDrop prop', () => {
+    it('should sync columns when props change', async () => {
+      const { rerender } = render(<ListManager columns={mockColumns} enableDragDrop={false} />);
+
+      // Initial state
+      expect(screen.getByTestId('column-check-name')).toBeChecked();
+      expect(screen.getByTestId('column-check-version')).not.toBeChecked();
+
+      // Update columns
+      const updatedColumns = [
+        { key: 'name', title: 'Name', isSelected: false, isShownByDefault: true },
+        { key: 'status', title: 'Status', isSelected: true, isShownByDefault: true },
+        { key: 'version', title: 'Version', isSelected: true, isShownByDefault: false },
+      ];
+
+      rerender(<ListManager columns={updatedColumns} enableDragDrop={false} />);
+
+      // State should sync with new props
+      expect(screen.getByTestId('column-check-name')).not.toBeChecked();
+      expect(screen.getByTestId('column-check-version')).toBeChecked();
+    });
+  });
 });

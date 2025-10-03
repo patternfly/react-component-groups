@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom'
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import ColumnManagementModal, { ColumnManagementModalColumn } from './ColumnManagementModal';
 
 const DEFAULT_COLUMNS : ColumnManagementModalColumn[] = [
@@ -33,18 +34,29 @@ const DEFAULT_COLUMNS : ColumnManagementModalColumn[] = [
 const onClose = jest.fn();
 const setColumns = jest.fn();
 
+// Simple mock to track when DragDropSort is used
+jest.mock('@patternfly/react-drag-drop', () => ({
+  DragDropSort: ({ children }) => <div data-testid="drag-drop-sort">{children}</div>,
+  Droppable: ({ wrapper }) => wrapper,
+}));
+
+const renderColumnManagementModal = (props = {}) => render(<ColumnManagementModal
+  appliedColumns={DEFAULT_COLUMNS}
+  applyColumns={newColumns => setColumns(newColumns)}
+  isOpen
+  onClose={onClose}
+  data-testid="column-mgmt-modal"
+  {...props}
+/>);
+
 beforeEach(() => {
-  render(<ColumnManagementModal
-    appliedColumns={DEFAULT_COLUMNS}
-    applyColumns={newColumns => setColumns(newColumns)}
-    isOpen
-    onClose={onClose}
-    data-testid="column-mgmt-modal"
-  />);
+  jest.clearAllMocks();
+  renderColumnManagementModal();
 });
 
 const getCheckboxesState = () => {
-  const checkboxes = screen.getByTestId('column-mgmt-modal').querySelectorAll('input[type="checkbox"]');
+  // Get only the column checkboxes (exclude the BulkSelect checkbox)
+  const checkboxes = screen.getByTestId('column-mgmt-modal').querySelectorAll('input[type="checkbox"][data-testid^="column-check-"]');
   return (Array.from(checkboxes) as HTMLInputElement[]).map(c => c.checked);
 }
 
@@ -54,7 +66,7 @@ describe('ColumnManagementModal component', () => {
   });
 
   it('should have checkbox checked if column is shown by default', () => {
-    const idCheckbox = screen.getByTestId('column-mgmt-modal').querySelector('input[type="checkbox"][data-ouia-component-id="ColumnManagementModal-column0-checkbox"]');
+    const idCheckbox = screen.getByTestId('column-mgmt-modal').querySelector('input[type="checkbox"][data-testid="column-check-id"]');
 
     expect(idCheckbox).toHaveAttribute('disabled');
     expect(idCheckbox).toHaveAttribute('checked');
@@ -72,11 +84,15 @@ describe('ColumnManagementModal component', () => {
     expect(getCheckboxesState()).toEqual(DEFAULT_COLUMNS.map(c => c.isShownByDefault));
   });
 
-  it('should set all columns to show upon clicking on "Select all"', () => {
+  it('should set all columns to show upon clicking on "Select all"', async () => {
     // disable Impact column which is enabled by default
     fireEvent.click(screen.getByText('Impact'));
 
-    fireEvent.click(screen.getByText('Select all'));
+    // Use the BulkSelect to select all
+    const menuToggle = screen.getByLabelText('Bulk select toggle');
+    await userEvent.click(menuToggle);
+    const selectAllButton = screen.getByText('Select all (4)');
+    await userEvent.click(selectAllButton);
 
     expect(getCheckboxesState()).toEqual(DEFAULT_COLUMNS.map(_ => true));
   });
@@ -103,6 +119,23 @@ describe('ColumnManagementModal component', () => {
     fireEvent.click(screen.getByText('Cancel'));
 
     expect(onClose).toHaveBeenCalled();
-    expect(setColumns).toHaveBeenCalledWith(DEFAULT_COLUMNS);
+    // applyColumns should NOT be called on cancel
+    expect(setColumns).not.toHaveBeenCalled();
+  });
+
+  describe('enableDragDrop prop', () => {
+    it('should default enableDragDrop to false', () => {
+      // Default behavior should not enable drag and drop
+      expect(screen.queryByTestId('drag-drop-sort')).not.toBeInTheDocument();
+    });
+
+    it('should pass enableDragDrop prop to ListManager', () => {
+      // Test that the prop is properly passed through to ListManager
+      jest.clearAllMocks();
+      renderColumnManagementModal({ enableDragDrop: true });
+
+      // When enableDragDrop is true, DragDropSort should be rendered
+      expect(screen.getByTestId('drag-drop-sort')).toBeInTheDocument();
+    });
   });
 });

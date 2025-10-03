@@ -38,6 +38,7 @@
     "react-jss": "^10.10.0"
   },
   "peerDependencies": {
+    "@patternfly/react-drag-drop": "^6.0.0",
     "react": "^17 || ^18 || ^19",
     "react-dom": "^17 || ^18 || ^19"
   },

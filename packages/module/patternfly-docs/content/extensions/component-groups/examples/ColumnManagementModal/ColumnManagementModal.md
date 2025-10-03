@@ -29,3 +29,11 @@ Clicking the "Manage columns" button will open the column management modal. The 
 ```js file="./ColumnManagementModalExample.tsx"
 
 ```
+
+### With drag and drop reordering
+
+When `enableDragDrop` is set to `true`, users can drag and drop columns to reorder them. The order changes are reflected both in the modal and in the table when applied. This is useful when column order matters for the user experience.
+
+```js file="./ColumnManagementModalDragDropExample.tsx"
+
+```
