@@ -4,6 +4,7 @@ import {
   Dropdown,
   DropdownItem,
   DropdownList,
+  DropdownListProps,
   DropdownProps,
   MenuToggle,
   MenuToggleCheckbox,
@@ -44,6 +45,8 @@ export interface BulkSelectProps extends Omit<DropdownProps, 'toggle' | 'onSelec
   ouiaId?: string;
   /** Additional props for MenuToggleCheckbox */
   menuToggleCheckboxProps?: Omit<MenuToggleCheckboxProps, 'onChange' | 'isChecked' | 'instance' | 'ref'>;
+  /** Additional props for DropdownList */
+  dropdownListProps?: Omit<DropdownListProps, 'children'>;
 }
 
 export const BulkSelect: FC<BulkSelectProps> = ({
@@ -57,6 +60,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
   ouiaId = 'BulkSelect',
   onSelect,
   menuToggleCheckboxProps,
+  dropdownListProps,
   ...props
 }: BulkSelectProps) => {
   const [ isOpen, setOpen ] = useState(false);
@@ -129,7 +133,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
       )}
       {...props}
     >
-      <DropdownList>{splitButtonDropdownItems}</DropdownList>
+      <DropdownList {...dropdownListProps}>{splitButtonDropdownItems}</DropdownList>
     </Dropdown>)
   );
 };
