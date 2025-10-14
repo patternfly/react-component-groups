@@ -1,8 +1,8 @@
 ---
 # Sidenav top-level section
 # should be the same for all markdown files
-section: Component groups
-subsection: Helpers
+section: Extensions
+subsection: Component groups
 # Sidenav secondary level section
 # should be the same for all markdown files
 id: Shortcut grid
