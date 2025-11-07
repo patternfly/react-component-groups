@@ -239,7 +239,6 @@ describe('Deck component', () => {
   });
 
   test('should not navigate beyond last page', async () => {
-    const user = userEvent.setup();
     const onPageChange = jest.fn();
     
     render(<Deck pages={mockPages} onPageChange={onPageChange} initialPage={2} />);
@@ -252,7 +251,6 @@ describe('Deck component', () => {
   });
 
   test('should not navigate before first page', async () => {
-    const user = userEvent.setup();
     const onPageChange = jest.fn();
     
     render(<Deck pages={mockPages} onPageChange={onPageChange} initialPage={0} />);

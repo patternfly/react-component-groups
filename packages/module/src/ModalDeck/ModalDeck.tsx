@@ -14,19 +14,17 @@ export const ModalDeck: FunctionComponent<ModalDeckProps> = ({
   isOpen,
   children,
   modalProps
-}: ModalDeckProps) => {
-  return (
-    <Modal
-      isOpen={isOpen}
-      variant="small"
-      {...modalProps}
-    >
-      <ModalBody>
-        {children}
-      </ModalBody>
-    </Modal>
-  );
-};
+}: ModalDeckProps) => (
+  <Modal
+    isOpen={isOpen}
+    variant="small"
+    {...modalProps}
+  >
+    <ModalBody>
+      {children}
+    </ModalBody>
+  </Modal>
+);
 
 export default ModalDeck;
 

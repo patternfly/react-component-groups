@@ -59,7 +59,7 @@ export const Deck: FunctionComponent<DeckProps> = ({
   getPageLabel = (current, total) => `Page ${current} of ${total}`,
   ...props
 }: DeckProps) => {
-  const [currentPageIndex, setCurrentPageIndex] = useState(initialPage);
+  const [ currentPageIndex, setCurrentPageIndex ] = useState(initialPage);
 
   const handlePageChange = (newIndex: number) => {
     if (newIndex >= 0 && newIndex < pages.length) {
@@ -143,35 +143,35 @@ export const Deck: FunctionComponent<DeckProps> = ({
         {currentPage?.buttons && currentPage.buttons.length > 0 && (
           <FlexItem>
             <ActionList data-ouia-component-id={`${ouiaId}-buttons`}>
-                <ActionListGroup>
-                    {currentPage.buttons.map((buttonConfig, index) => {
-                        const { navigation, onClick, ...buttonProps } = buttonConfig;
-                        
-                        // Auto-wire navigation if specified
-                        const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-                        // Call user's custom onClick first if provided
-                        onClick?.(event);
-                        
-                        // Then handle navigation
-                        if (navigation === 'next') {
-                            handlePageChange(currentPageIndex + 1);
-                        } else if (navigation === 'previous') {
-                            handlePageChange(currentPageIndex - 1);
-                        } else if (navigation === 'close') {
-                            onClose?.();
-                        }
-                        };
+              <ActionListGroup>
+                {currentPage.buttons.map((buttonConfig, index) => {
+                  const { navigation, onClick, ...buttonProps } = buttonConfig;
+                  
+                  // Auto-wire navigation if specified
+                  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+                    // Call user's custom onClick first if provided
+                    onClick?.(event);
+                    
+                    // Then handle navigation
+                    if (navigation === 'next') {
+                      handlePageChange(currentPageIndex + 1);
+                    } else if (navigation === 'previous') {
+                      handlePageChange(currentPageIndex - 1);
+                    } else if (navigation === 'close') {
+                      onClose?.();
+                    }
+                  };
 
-                        return (
-                        <ActionListItem key={index}>
-                            <Button 
-                            {...buttonProps} 
-                            onClick={navigation || onClick ? handleClick : undefined}
-                            />
-                        </ActionListItem>
-                        );
-                    })}
-                </ActionListGroup>
+                  return (
+                    <ActionListItem key={index}>
+                      <Button 
+                        {...buttonProps} 
+                        onClick={navigation || onClick ? handleClick : undefined}
+                      />
+                    </ActionListItem>
+                  );
+                })}
+              </ActionListGroup>
             </ActionList>
           </FlexItem>
         )}
