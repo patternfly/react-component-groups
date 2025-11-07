@@ -125,7 +125,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
             >
               {selectedCount > 0 ? (
                 <span data-ouia-component-id={`${ouiaId}-text`}>
-                 {`${selectedCount} selected`}
+                  {`${selectedCount} selected`}
                 </span>
               ) : null}
             </MenuToggleCheckbox>
