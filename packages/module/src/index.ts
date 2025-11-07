@@ -78,6 +78,9 @@ export * from './ErrorStack';
 export { default as ErrorBoundary } from './ErrorBoundary';
 export * from './ErrorBoundary';
 
+export { default as Deck } from './Deck';
+export * from './Deck';
+
 export { default as ColumnManagementModal } from './ColumnManagementModal';
 export * from './ColumnManagementModal';
 
