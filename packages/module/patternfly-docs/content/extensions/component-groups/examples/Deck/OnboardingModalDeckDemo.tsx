@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
-import React, { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import Deck, { DeckButton } from '@patternfly/react-component-groups/dist/dynamic/Deck';
 import { ModalDeck } from '@patternfly/react-component-groups/dist/dynamic/ModalDeck';
 import { Button, ButtonVariant, Label, Title, Stack, StackItem, Content } from '@patternfly/react-core';
 
 export const OnboardingModalDeckDemo: FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [ isModalOpen, setIsModalOpen ] = useState(false);
 
   const handleClose = () => {
     setIsModalOpen(false);
@@ -34,11 +34,11 @@ export const OnboardingModalDeckDemo: FunctionComponent = () => {
           <StackItem>
             <Title headingLevel="h2" size="2xl">Welcome to [Product Name]</Title>
           </StackItem>
-            <StackItem>
-                <Content component="p">
-                    Harness the full potential of the hybrid cloud, simply by asking.  
-                </Content>
-            </StackItem>
+          <StackItem>
+            <Content component="p">
+              Harness the full potential of the hybrid cloud, simply by asking.  
+            </Content>
+          </StackItem>
         </Stack>
       ),
       buttons: [

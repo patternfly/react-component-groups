@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
-import React, { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import Deck, { DeckButton } from '@patternfly/react-component-groups/dist/dynamic/Deck';
 import { ButtonVariant } from '@patternfly/react-core';
 
 export const BasicExample: FunctionComponent = () => {
-  const [deckKey, setDeckKey] = useState(0);
+  const [ deckKey, setDeckKey ] = useState(0);
 
   // Simulated analytics function
   const trackEvent = (eventName, data) => {
@@ -29,7 +29,7 @@ export const BasicExample: FunctionComponent = () => {
           variant: ButtonVariant.primary,
           navigation: 'next',
           // Custom onClick for analytics - called before navigation
-          onClick: () => trackEvent('deck_next_clicked', { from_page: 1 })
+          onClick: () => trackEvent('deck_next_clicked', { fromPage: 1 })
         }
       ] as DeckButton[]
     },
@@ -44,7 +44,7 @@ export const BasicExample: FunctionComponent = () => {
           children: 'Next',
           variant: ButtonVariant.primary,
           navigation: 'next',
-          onClick: () => trackEvent('deck_next_clicked', { from_page: 2 })
+          onClick: () => trackEvent('deck_next_clicked', { fromPage: 2 })
         }
       ] as DeckButton[]
     },
@@ -60,7 +60,7 @@ export const BasicExample: FunctionComponent = () => {
           variant: ButtonVariant.primary,
           // Restart the deck for demo purposes
           onClick: () => {
-            trackEvent('deck_completed', { total_pages: 3 });
+            trackEvent('deck_completed', { totalPages: 3 });
             console.log('Deck completed! Restarting...');
             restartDeck();
           }

@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
-import React, { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import Deck, { DeckButton } from '@patternfly/react-component-groups/dist/dynamic/Deck';
 import { ModalDeck } from '@patternfly/react-component-groups/dist/dynamic/ModalDeck';
 import { Button, ButtonVariant } from '@patternfly/react-core';
 
 export const ModalDeckExample: FunctionComponent = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [ isModalOpen, setIsModalOpen ] = useState(false);
 
   const handleClose = () => {
     setIsModalOpen(false);
