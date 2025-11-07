@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Deck component should render with basic pages 1`] = `
+<div>
+  <div
+    class="pf-v6-l-bullseye"
+    data-ouia-component-id="Deck"
+  >
+    <div
+      aria-label="Information deck"
+      aria-roledescription="sequential information deck"
+      class="pf-v6-l-flex pf-m-space-items-md pf-m-column pf-m-align-items-center"
+      role="region"
+    >
+      <span
+        aria-atomic="true"
+        aria-live="polite"
+        class="pf-v6-screen-reader"
+        id="Deck-page-info"
+      >
+        Page 1 of 1
+      </span>
+      <div
+        aria-describedby="Deck-page-info"
+        class="pf-v6-u-text-align-center"
+        data-ouia-component-id="Deck-content"
+      >
+        <div>
+          Page 1 content
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

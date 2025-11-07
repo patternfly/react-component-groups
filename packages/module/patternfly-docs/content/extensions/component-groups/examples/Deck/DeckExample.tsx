@@ -20,7 +20,6 @@ export const BasicExample: FunctionComponent = () => {
     {
       content: (
         <div>
-          <h2>Welcome to the Deck</h2>
           <p>This is the first page of your informational walkthrough.</p>
         </div>
       ),
@@ -37,7 +36,6 @@ export const BasicExample: FunctionComponent = () => {
     {
       content: (
         <div>
-          <h2>Page 2</h2>
           <p>Continue through your walkthrough.</p>
         </div>
       ),
@@ -53,7 +51,6 @@ export const BasicExample: FunctionComponent = () => {
     {
       content: (
         <div>
-          <h2>Final Page</h2>
           <p>You've reached the end of the deck.</p>
         </div>
       ),

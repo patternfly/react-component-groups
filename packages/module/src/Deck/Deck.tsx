@@ -1,6 +1,6 @@
 import type { FunctionComponent, ReactNode } from 'react';
 import { useState } from 'react';
-import { ActionList, ActionListItem, Bullseye, Button, ButtonProps, Flex, FlexItem, FlexProps } from '@patternfly/react-core';
+import { ActionList, ActionListItem, ActionListGroup, Bullseye, Button, ButtonProps, Flex, FlexItem, FlexProps } from '@patternfly/react-core';
 
 /** 
  * extends PatternFly's ButtonProps 
@@ -75,6 +75,7 @@ export const Deck: FunctionComponent<DeckProps> = ({
 
   // Generate accessible label with page information
   const pageInfo = getPageLabel(currentPageIndex + 1, pages.length);
+  const pageInfoId = `${ouiaId}-page-info`;
 
   return (
     <Bullseye 
@@ -84,20 +85,28 @@ export const Deck: FunctionComponent<DeckProps> = ({
     >
       <Flex 
         direction={{ default: 'column' }}
-        spaceItems={{ default: 'spaceItemsLg' }}
+        spaceItems={{ default: 'spaceItemsMd' }}
         alignItems={{ default: 'alignItemsCenter' }}
         role="region"
         aria-label={ariaLabel}
         aria-roledescription={ariaRoleDescription}
         {...contentFlexProps}
       >
+        {/* Visually hidden page info for screen readers */}
+        <span
+          id={pageInfoId}
+          className="pf-v6-screen-reader"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {pageInfo}
+        </span>
+
         {/* Current page content */}
         <FlexItem 
           className={textAlignClass} 
           data-ouia-component-id={`${ouiaId}-content`}
-          aria-live="polite"
-          aria-atomic="true"
-          aria-label={pageInfo}
+          aria-describedby={pageInfoId}
         >
           {currentPage?.content}
         </FlexItem>
@@ -120,7 +129,7 @@ export const Deck: FunctionComponent<DeckProps> = ({
                       border: index === currentPageIndex 
                         ? 'none' 
                         : '1px solid var(--pf-t--global--background--color--inverse--default)',
-                      transition: 'all 0.2s ease'
+                      transition: `all var(--pf-t--global--motion--duration--fade--default) var(--pf-t--global--motion--timing-function--default)`
                     }}
                     aria-hidden="true"
                   />
@@ -134,33 +143,35 @@ export const Deck: FunctionComponent<DeckProps> = ({
         {currentPage?.buttons && currentPage.buttons.length > 0 && (
           <FlexItem>
             <ActionList data-ouia-component-id={`${ouiaId}-buttons`}>
-              {currentPage.buttons.map((buttonConfig, index) => {
-                const { navigation, onClick, ...buttonProps } = buttonConfig;
-                
-                // Auto-wire navigation if specified
-                const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-                  // Call user's custom onClick first if provided
-                  onClick?.(event);
-                  
-                  // Then handle navigation
-                  if (navigation === 'next') {
-                    handlePageChange(currentPageIndex + 1);
-                  } else if (navigation === 'previous') {
-                    handlePageChange(currentPageIndex - 1);
-                  } else if (navigation === 'close') {
-                    onClose?.();
-                  }
-                };
+                <ActionListGroup>
+                    {currentPage.buttons.map((buttonConfig, index) => {
+                        const { navigation, onClick, ...buttonProps } = buttonConfig;
+                        
+                        // Auto-wire navigation if specified
+                        const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+                        // Call user's custom onClick first if provided
+                        onClick?.(event);
+                        
+                        // Then handle navigation
+                        if (navigation === 'next') {
+                            handlePageChange(currentPageIndex + 1);
+                        } else if (navigation === 'previous') {
+                            handlePageChange(currentPageIndex - 1);
+                        } else if (navigation === 'close') {
+                            onClose?.();
+                        }
+                        };
 
-                return (
-                  <ActionListItem key={index}>
-                    <Button 
-                      {...buttonProps} 
-                      onClick={navigation || onClick ? handleClick : undefined}
-                    />
-                  </ActionListItem>
-                );
-              })}
+                        return (
+                        <ActionListItem key={index}>
+                            <Button 
+                            {...buttonProps} 
+                            onClick={navigation || onClick ? handleClick : undefined}
+                            />
+                        </ActionListItem>
+                        );
+                    })}
+                </ActionListGroup>
             </ActionList>
           </FlexItem>
         )}

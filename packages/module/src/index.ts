@@ -51,6 +51,9 @@ export * from './NotFoundIcon';
 export { default as MultiContentCard } from './MultiContentCard';
 export * from './MultiContentCard';
 
+export { default as ModalDeck } from './ModalDeck';
+export * from './ModalDeck';
+
 export { default as MissingPage } from './MissingPage';
 export * from './MissingPage';
 
