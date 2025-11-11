@@ -1,6 +1,6 @@
 ---
-section: Component groups
-subsection: Controls
+section: Extensions
+subsection: Component groups
 id: External link button
 source: react
 propComponents: ['ExternalLinkButton']

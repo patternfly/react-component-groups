@@ -1,6 +1,6 @@
 ---
-section: Component groups
-subsection: Error communication
+section: Extensions
+subsection: Component groups
 id: Unauthorized access
 source: react
 propComponents: ['UnauthorizedAccess']

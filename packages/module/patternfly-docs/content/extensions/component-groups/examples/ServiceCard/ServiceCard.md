@@ -1,6 +1,6 @@
 ---
-section: Component groups
-subsection: Content containers
+section: Extensions
+subsection: Component groups
 id: Service card
 source: react
 propComponents: ['ServiceCard']
