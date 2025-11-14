@@ -1,8 +1,8 @@
 ---
 # Sidenav top-level section
 # should be the same for all markdown files
-section: Component groups
-subsection: Controls
+section: Extensions
+subsection: Component groups
 # Sidenav secondary level section
 # should be the same for all markdown files
 id: Close button

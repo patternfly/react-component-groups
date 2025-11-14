@@ -1,6 +1,6 @@
 ---
-section: Component groups
-subsection: Helpers
+section: Extensions
+subsection: Component groups
 id: Field Builder
 source: react
 propComponents: ['FieldBuilder']

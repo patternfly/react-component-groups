@@ -1,6 +1,8 @@
 ---
-section: Component groups
-id: About component groups
+section: Extensions
+subsection: Component groups
+id: Overview
+title: Component groups overview
 sortValue: 1
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/about-component-groups.md
 --- 
