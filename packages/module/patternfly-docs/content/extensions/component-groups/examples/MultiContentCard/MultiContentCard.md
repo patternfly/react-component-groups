@@ -1,6 +1,6 @@
 ---
-section: Extensions
-subsection: Component groups
+section: extensions
+subsection: component-groups
 id: Multi-content card
 source: react
 propComponents: ['MultiContentCard']
