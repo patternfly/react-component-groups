@@ -1,17 +1,77 @@
 {
-    "content-containers": {
-      "summary": "Organize and display information in structured or flexible containers."
-    }, 
-    "controls": {
-      "summary": "Enable more effective navigation and selection by providing users with options for interaction and input."
-    },
-    "error-communication": {
-      "summary": "Communicate issues or restrictions through error and alert states."
-    },
-    "helpers": {
-      "summary": "Provide users with utilities that enhance usability and provide additional guidance or information within the UI."
-    },
-    "status-and-state-indicators": {
-      "summary": "Inform users of system conditions or processes through visualizations of entity states, statuses, and loading indicators."
-    }
+  "ansible": {
+    "summary": "Displays the Ansible project logo, with a support status style."
+  },
+  "bulk-select": {
+    "summary": "Enables users to select data records in batches."
+  },
+  "close-button": {
+    "summary": "Provides a way for users to exit a modal, dialogue, or similar action."
+  },
+  "column-management-modal": {
+    "summary": "A modal that allows users to manage the display of table columns."
+  },
+  "error-boundary": {
+    "summary": "Displays an application error boundary."
+  },
+  "error-state": {
+    "summary": "Displays an error state message to users."
+  },
+  "external-link-button": {
+    "summary": "A button that opens links in an external tab."
+  },
+  "field-builder": {
+    "summary": "Builds dynamic form fields with customizable fields."
+  },
+  "list-manager": {
+    "summary": "Allows users to manage and reorder lists."
+  },
+  "log-snippet": {
+    "summary": "Displays a log snippet or code along with a message."
+  },
+  "maintenance": {
+    "summary": "A maintenance state message."
+  },
+  "missing-page": {
+    "summary": "An error message with a return to homepage button."
+  },
+  "multi-content-card": {
+    "summary": "A single layout that contains multiple cards."
+  },
+  "page-header": {
+    "summary": "A page header with a title, subtitle and other optional content."
+  },
+  "responsive-actions": {
+    "summary": "Displays actions in a responsive layout."
+  },
+  "service-card": {
+    "summary": "A service card with an icon, title, description, and an optional customized footer."
+  },
+  "severity": {
+    "summary": "An icon with an optional label that corresponds to a severity level."
+  },
+  "shortcut-grid": {
+    "summary": "A grid of keyboard shortcuts with their description."
+  },
+  "skeleton-table": {
+    "summary": "Placeholder skeletons to use in a table as its contents load."
+  },
+  "stale-data-warning": {
+    "summary": "A warning status to use when an object is stale and planned for removal."
+  },
+  "status": {
+    "summary": "An icon and text pair that conveys different statuses."
+  },
+  "tag-count": {
+    "summary": "A tag icon with a number that represents a count value."
+  },
+  "unauthorized-access": {
+    "summary": "An error screen with a no access permissions message."
+  },
+  "unavailable-content": {
+    "summary": "A temporarily unavailable message."
+  },
+  "warning-modal": {
+    "summary": "A modal that asks users to confirm or cancel a risky action."
   }
+}
