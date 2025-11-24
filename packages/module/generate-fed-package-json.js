@@ -1,6 +1,7 @@
 const fse = require('fs-extra');
 const { globSync } = require('glob');
 const path = require('path');
+const { default: getDynamicModuleMap } = require('../../scripts/parse-dynamic-modules.mjs');
 
 const root = process.cwd();
 
@@ -60,12 +61,29 @@ async function generatePackages(files) {
   return Promise.all(cmds);
 }
 
+async function generateDynamicModuleMap() {
+  const moduleMap = getDynamicModuleMap(root);
+  // eslint-disable-next-line no-console
+  console.log('Generating dynamic module map for', Object.keys(moduleMap).length, 'modules');
+
+  if (Object.keys(moduleMap).length === 0) {
+    return Promise.resolve();
+  }
+
+  const moduleMapSorted = Object.keys(moduleMap)
+    .sort()
+    .reduce((acc, key) => ({ ...acc, [key]: moduleMap[key] }), {});
+
+  return fse.writeJSON(path.resolve(root, 'dist/dynamic-modules.json'), moduleMapSorted, { spaces: 2 });
+}
+
 async function run(files) {
   try {
     await generatePackages(files);
     if (indexTypings.length === 1) {
       copyTypings(indexTypings, root);
     }
+    await generateDynamicModuleMap()
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(error);
