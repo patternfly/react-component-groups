@@ -9,7 +9,8 @@ import {
   MenuToggle,
   MenuToggleCheckbox,
   MenuToggleCheckboxProps,
-  MenuToggleElement
+  MenuToggleElement,
+  MenuToggleProps
 } from '@patternfly/react-core';
 
 export const BulkSelectValue = {
@@ -47,6 +48,8 @@ export interface BulkSelectProps extends Omit<DropdownProps, 'toggle' | 'onSelec
   menuToggleCheckboxProps?: Omit<MenuToggleCheckboxProps, 'onChange' | 'isChecked' | 'instance' | 'ref'>;
   /** Additional props for DropdownList */
   dropdownListProps?: Omit<DropdownListProps, 'children'>;
+  /** Additional props for MenuToggleProps */
+  menuToggleProps?: Omit<MenuToggleProps, 'children' | 'splitButtonItems' | 'ref' | 'isExpanded' | 'onClick'>;
 }
 
 export const BulkSelect: FC<BulkSelectProps> = ({
@@ -61,6 +64,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
   onSelect,
   menuToggleCheckboxProps,
   dropdownListProps,
+  menuToggleProps,
   ...props
 }: BulkSelectProps) => {
   const [ isOpen, setOpen ] = useState(false);
@@ -116,7 +120,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
               aria-label={`Select ${allOption}`}
               isChecked={
                 (isDataPaginated && pagePartiallySelected) ||
-                  (!isDataPaginated && selectedCount > 0 && selectedCount < totalCount)
+                (!isDataPaginated && selectedCount > 0 && selectedCount < totalCount)
                   ? null
                   : pageSelected || (selectedCount === totalCount && totalCount > 0)
               }
@@ -130,6 +134,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
               ) : null}
             </MenuToggleCheckbox>
           ]}
+          {...menuToggleProps}
         />
       )}
       {...props}
