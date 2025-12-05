@@ -122,12 +122,13 @@ export const BulkSelect: FC<BulkSelectProps> = ({
               }
               onChange={(checked) => onSelect?.(!checked || checked === null ? noneOption : allOption)}
               {...menuToggleCheckboxProps}
-            />,
-            selectedCount > 0 ? (
-              <span onClick={onToggleClick} data-ouia-component-id={`${ouiaId}-text`} key="bulk-select-text">
-                {`${selectedCount} selected`}
-              </span>
-            ) : null
+            >
+              {selectedCount > 0 ? (
+                <span data-ouia-component-id={`${ouiaId}-text`}>
+                  {`${selectedCount} selected`}
+                </span>
+              ) : null}
+            </MenuToggleCheckbox>
           ]}
         />
       )}
