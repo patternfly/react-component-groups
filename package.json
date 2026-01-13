@@ -84,7 +84,7 @@
   },
   "dependencies": {
     "@patternfly/react-drag-drop": "^6.0.0",
-    "@patternfly/react-tokens": "^6.0.0",
+    "@patternfly/react-tokens": "^6.4.0",
     "sharp": "^0.34.0"
   }
 }
