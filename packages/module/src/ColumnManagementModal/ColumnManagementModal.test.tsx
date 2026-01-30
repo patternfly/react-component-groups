@@ -80,8 +80,38 @@ describe('ColumnManagementModal component', () => {
     fireEvent.click(screen.getByText('Score'));
 
     fireEvent.click(screen.getByText('Reset to default'));
-  
+
     expect(getCheckboxesState()).toEqual(DEFAULT_COLUMNS.map(c => c.isShownByDefault));
+  });
+
+  it('should call onReset callback when reset to default is clicked', () => {
+    const onResetMock = jest.fn();
+    render(<ColumnManagementModal
+      appliedColumns={DEFAULT_COLUMNS}
+      applyColumns={setColumns}
+      isOpen
+      onClose={onClose}
+      onReset={onResetMock}
+    />);
+
+    const resetButtons = screen.getAllByText('Reset to default');
+    // Click the last one rendered (the new modal)
+    fireEvent.click(resetButtons[resetButtons.length - 1]);
+
+    expect(onResetMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('should display custom reset button label', () => {
+    const customLabel = 'Restaurer par défaut';
+    render(<ColumnManagementModal
+      appliedColumns={DEFAULT_COLUMNS}
+      applyColumns={setColumns}
+      isOpen
+      onClose={onClose}
+      resetToDefaultLabel={customLabel}
+    />);
+
+    expect(screen.getByText(customLabel)).toBeInTheDocument();
   });
 
   it('should set all columns to show upon clicking on "Select all"', async () => {
@@ -136,6 +166,42 @@ describe('ColumnManagementModal component', () => {
 
       // When enableDragDrop is true, DragDropSort should be rendered
       expect(screen.getByTestId('drag-drop-sort')).toBeInTheDocument();
+    });
+  });
+
+  describe('reset functionality', () => {
+    it('should reset column order to original when reset to default is clicked', () => {
+      const reorderedColumns = [
+        DEFAULT_COLUMNS[3], // Score (last -> first)
+        DEFAULT_COLUMNS[0], // ID
+        DEFAULT_COLUMNS[2], // Impact
+        DEFAULT_COLUMNS[1], // Publish date
+      ];
+
+      const applyColumnsMock = jest.fn();
+      render(<ColumnManagementModal
+        appliedColumns={reorderedColumns}
+        applyColumns={applyColumnsMock}
+        isOpen
+        onClose={onClose}
+      />);
+
+      // Click reset to default - get all buttons and click the last one
+      const resetButtons = screen.getAllByText('Reset to default');
+      fireEvent.click(resetButtons[resetButtons.length - 1]);
+
+      // Click save to apply changes
+      const saveButtons = screen.getAllByText('Save');
+      fireEvent.click(saveButtons[saveButtons.length - 1]);
+
+      // Verify that the saved columns match the original reordered columns order
+      // (after reset, it should restore the order from appliedColumns which is reorderedColumns)
+      expect(applyColumnsMock).toHaveBeenCalledWith(
+        reorderedColumns.map(col => ({
+          ...col,
+          isShown: col.isShownByDefault
+        }))
+      );
     });
   });
 });
