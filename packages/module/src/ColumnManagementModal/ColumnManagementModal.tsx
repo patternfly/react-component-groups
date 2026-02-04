@@ -40,6 +40,10 @@ export interface ColumnManagementModalProps extends Omit<ModalProps, 'ref' | 'ch
   ouiaId?: string | number;
   /** Enable drag and drop functionality for reordering columns */
   enableDragDrop?: boolean;
+  /** Invoked when reset to default button is clicked */
+  onReset?: () => void;
+  /** Custom label for reset to default button */
+  resetToDefaultLabel?: string;
 }
 
 const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
@@ -51,6 +55,8 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
     applyColumns,
     ouiaId = 'ColumnManagementModal',
     enableDragDrop = false,
+    onReset,
+    resetToDefaultLabel = 'Reset to default',
     ...props }: ColumnManagementModalProps) => {
 
   const [ currentColumns, setCurrentColumns ] = useState(() =>
@@ -72,7 +78,9 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
   }));
 
   const resetToDefault = () => {
-    setCurrentColumns(currentColumns.map(column => ({ ...column, isShown: column.isShownByDefault ?? false })));
+    // Reset both visibility and order to match the original appliedColumns
+    setCurrentColumns(appliedColumns.map(column => ({ ...column, isShown: column.isShownByDefault ?? false })));
+    onReset?.();
   };
 
   const updateColumns = (items: ListManagerItem[]) => {
@@ -131,7 +139,7 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
         <>
           <Content component={ContentVariants.p}>{description}</Content>
           <Button isInline onClick={resetToDefault} variant={ButtonVariant.link} ouiaId={`${ouiaId}-reset-button`}>
-            Reset to default
+            {resetToDefaultLabel}
           </Button>
         </>
       }
