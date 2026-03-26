@@ -99,3 +99,126 @@ exports[`ResponsiveActions component should render correctly ResponsiveActions 1
   </div>
 </div>
 `;
+
+exports[`ResponsiveActions component should render correctly ResponsiveActions with mix of isPersistent and isPinned actions 1`] = `
+<div>
+  <div
+    class="pf-v6-c-overflow-menu"
+    data-ouia-component-id="ResponsiveActions-menu"
+  >
+    <div
+      class="pf-v6-c-overflow-menu__content"
+    >
+      <div
+        class="pf-v6-c-overflow-menu__group pf-m-button-group"
+        data-ouia-component-id="ResponsiveActions-menu-persistent-group"
+      >
+        <div
+          class="pf-v6-c-overflow-menu__item"
+        >
+           
+          <button
+            class="pf-v6-c-button pf-m-primary"
+            data-ouia-component-id="ResponsiveActions-action-0"
+            data-ouia-component-type="PF6/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            <span
+              class="pf-v6-c-button__text"
+            >
+              Persistent action
+            </span>
+          </button>
+           
+        </div>
+      </div>
+    </div>
+    <div
+      class="pf-v6-c-overflow-menu__content"
+    >
+      <div
+        class="pf-v6-c-overflow-menu__group pf-m-button-group"
+        data-ouia-component-id="ResponsiveActions-menu-pinned-group"
+      >
+        <div
+          class="pf-v6-c-overflow-menu__item"
+        >
+           
+          <button
+            class="pf-v6-c-button pf-m-primary"
+            data-ouia-component-id="ResponsiveActions-action-1"
+            data-ouia-component-type="PF6/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            <span
+              class="pf-v6-c-button__text"
+            >
+              Pinned action
+            </span>
+          </button>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ResponsiveActions component should render correctly ResponsiveActions with only isPinned actions 1`] = `
+<div>
+  <div
+    class="pf-v6-c-overflow-menu"
+    data-ouia-component-id="ResponsiveActions-menu"
+  >
+    <div
+      class="pf-v6-c-overflow-menu__content"
+    >
+      <div
+        class="pf-v6-c-overflow-menu__group pf-m-button-group"
+        data-ouia-component-id="ResponsiveActions-menu-pinned-group"
+      >
+        <div
+          class="pf-v6-c-overflow-menu__item"
+        >
+           
+          <button
+            class="pf-v6-c-button pf-m-primary"
+            data-ouia-component-id="ResponsiveActions-action-0"
+            data-ouia-component-type="PF6/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            <span
+              class="pf-v6-c-button__text"
+            >
+              Pinned action 1
+            </span>
+          </button>
+           
+        </div>
+        <div
+          class="pf-v6-c-overflow-menu__item"
+        >
+           
+          <button
+            class="pf-v6-c-button pf-m-primary"
+            data-ouia-component-id="ResponsiveActions-action-1"
+            data-ouia-component-type="PF6/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            <span
+              class="pf-v6-c-button__text"
+            >
+              Pinned action 2
+            </span>
+          </button>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

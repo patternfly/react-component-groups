@@ -21,6 +21,7 @@ export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ o
   const persistentActions: ReactNode[] = [];
   const pinnedActions: ReactNode[] = [];
   const dropdownItems: ReactNode[] = [];
+  let hasRegularActions = false;
 
   Children.forEach(children, (child, index) => {
     if (isValidElement<ResponsiveActionProps>(child)) {
@@ -34,7 +35,11 @@ export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ o
             </Button>
           </OverflowMenuItem>
         );
+      } else {
+        // Track if there are any regular (non-persistent, non-pinned) actions
+        hasRegularActions = true;
       }
+
       if (!isPersistent) {
         dropdownItems.push(
           <OverflowMenuDropdownItem key={key} onClick={onClick} isShared={isPinned} ouiaId={`${ouiaId}-action-${key}`} isDisabled={actionProps.isDisabled}>
@@ -44,6 +49,11 @@ export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ o
       }
     }
   });
+
+  // Only render OverflowMenu if there are actions to display
+  if (persistentActions.length === 0 && pinnedActions.length === 0 && dropdownItems.length === 0) {
+    return null;
+  }
 
   return (
     <OverflowMenu breakpoint={breakpoint} data-ouia-component-id={`${ouiaId}-menu`} {...props}>
@@ -62,7 +72,7 @@ export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ o
         </OverflowMenuContent>
       ) : null}
       {dropdownItems.length > 0 && (
-        <OverflowMenuControl hasAdditionalOptions data-ouia-component-id={`${ouiaId}-menu-control`}>
+        <OverflowMenuControl hasAdditionalOptions={hasRegularActions} data-ouia-component-id={`${ouiaId}-menu-control`}>
           <Dropdown
             ouiaId={`${ouiaId}-menu-dropdown`}
             onSelect={() => setIsOpen(false)}
