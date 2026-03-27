@@ -69,4 +69,35 @@ describe('BulkSelect component', () => {
     expect(toggleWrapper).toBeInTheDocument();
     expect(toggleWrapper).toHaveClass('custom-menu-toggle');
   });
+
+  test('should render with custom i18n labels', async () => {
+    const user = userEvent.setup();
+    render(
+      <BulkSelect
+        canSelectAll
+        pageCount={5}
+        totalCount={10}
+        selectedCount={2}
+        pageSelected={false}
+        pagePartiallySelected={true}
+        onSelect={() => null}
+        selectNoneLabel="Aucune sélection (0)"
+        selectPageLabel={(pageCount) => `Sélectionner la page${pageCount ? ` (${pageCount})` : ''}`}
+        selectAllLabel={(totalCount) => `Tout sélectionner${totalCount ? ` (${totalCount})` : ''}`}
+        selectedLabel={(selectedCount) => `${selectedCount} sélectionné${selectedCount > 1 ? 's' : ''}`}
+      />
+    );
+
+    // Check custom selected label
+    expect(screen.getByText('2 sélectionnés')).toBeInTheDocument();
+
+    // Open the dropdown to check option labels
+    const toggleButton = screen.getByLabelText('Bulk select toggle');
+    await user.click(toggleButton);
+
+    // Check custom dropdown labels
+    expect(screen.getByText('Aucune sélection (0)')).toBeInTheDocument();
+    expect(screen.getByText('Sélectionner la page (5)')).toBeInTheDocument();
+    expect(screen.getByText('Tout sélectionner (10)')).toBeInTheDocument();
+  });
 });
