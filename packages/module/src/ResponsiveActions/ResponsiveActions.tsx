@@ -25,7 +25,8 @@ export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ o
 
   Children.forEach(children, (child, index) => {
     if (isValidElement<ResponsiveActionProps>(child)) {
-      const { isPersistent, isPinned, key = index, children, onClick, ...actionProps } = child.props;
+      const { isPersistent, isPinned, children, onClick, ...actionProps } = child.props;
+      const key = child.key ?? index;
 
       if (isPersistent || isPinned) {
         (isPersistent ? persistentActions : pinnedActions).push(
