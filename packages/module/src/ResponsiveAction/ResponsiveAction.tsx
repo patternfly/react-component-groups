@@ -7,8 +7,6 @@ export interface ResponsiveActionProps extends ButtonProps {
   isPinned?: boolean;
   /** Determines whether the action should always be displayed as pinned */
   isPersistent?: boolean;
-  /** Key for the action */
-  key?: string;
   /** Action label */
   children: React.ReactNode;
 };
