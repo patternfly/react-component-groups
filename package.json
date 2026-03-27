@@ -74,7 +74,7 @@
     "rimraf": "^5.0.10",
     "sass": "^1.97.2",
     "sass-loader": "^16.0.3",
-    "serve": "^14.2.5",
+    "serve": "^14.2.6",
     "start-server-and-test": "^2.0.5",
     "surge": "^0.27.3",
     "swc-loader": "0.2.6",
