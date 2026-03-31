@@ -21,6 +21,16 @@ export interface ShortcutProps {
   drag?: boolean;
   /** Show drag and drop in the shortcut */
   dragAndDrop?: boolean;
+  /** Custom label for the "Hover" mouse action. Defaults to "Hover" */
+  hoverLabel?: string;
+  /** Custom label for the "Click" mouse action. Defaults to "Click" */
+  clickLabel?: string;
+  /** Custom label for the "Right click" mouse action. Defaults to "Right click" */
+  rightClickLabel?: string;
+  /** Custom label for the "Drag" mouse action. Defaults to "Drag" */
+  dragLabel?: string;
+  /** Custom label for the "Drag + Drop" mouse action. Defaults to "Drag + Drop" */
+  dragAndDropLabel?: string;
   /** Shortcut className */
   className?: string;
   /** Custom OUIA ID */
@@ -54,6 +64,11 @@ const Shortcut: FunctionComponent<ShortcutProps> = ({
   drag,
   rightClick,
   dragAndDrop,
+  hoverLabel = 'Hover',
+  clickLabel = 'Click',
+  rightClickLabel = 'Right click',
+  dragLabel = 'Drag',
+  dragAndDropLabel = 'Drag + Drop',
   className,
   ouiaId = 'Shortcut',
   ...props
@@ -62,7 +77,7 @@ const Shortcut: FunctionComponent<ShortcutProps> = ({
   const badges = [
     ...(hover ? [
       <Label variant="outline" key="hover" data-test-id="hover">
-        <MouseIcon /> Hover
+        <MouseIcon />{` ${hoverLabel}`}
       </Label>
     ] : []),
     ...keys.map((key) => {
@@ -75,22 +90,22 @@ const Shortcut: FunctionComponent<ShortcutProps> = ({
       )}),
     ...(click ? [
       <Label variant="outline" key="click" data-test-id="click">
-        <MouseIcon /> Click
+        <MouseIcon />{` ${clickLabel}`}
       </Label>
     ] : []),
     ...(rightClick ? [
       <Label variant="outline" key="right-click" data-test-id="right-click">
-        <MouseIcon /> Right click
+        <MouseIcon />{` ${rightClickLabel}`}
       </Label>
     ] : []),
     ...(drag ? [
       <Label variant="outline" key="drag" data-test-id="drag">
-        <MouseIcon /> Drag
+        <MouseIcon />{` ${dragLabel}`}
       </Label>
     ] : []),
     ...(dragAndDrop ? [
       <Label variant="outline" key="drag-and-drop" data-test-id="drag-and-drop">
-        <MouseIcon /> Drag + Drop
+        <MouseIcon />{` ${dragAndDropLabel}`}
       </Label>
     ] : [])
   ]
