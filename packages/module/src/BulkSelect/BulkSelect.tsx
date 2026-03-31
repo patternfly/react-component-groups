@@ -22,6 +22,10 @@ export const BulkSelectValue = {
 
 export type BulkSelectValue = (typeof BulkSelectValue)[keyof typeof BulkSelectValue];
 
+const defaultSelectPageLabel = (pageCount?: number) => `Select page${pageCount ? ` (${pageCount})` : ''}`;
+const defaultSelectAllLabel = (totalCount?: number) => `Select all${totalCount ? ` (${totalCount})` : ''}`;
+const defaultSelectedLabel = (selectedCount: number) => `${selectedCount} selected`;
+
 /** extends DropdownProps */
 export interface BulkSelectProps extends Omit<DropdownProps, 'toggle' | 'onSelect'> {
   /** BulkSelect className */
@@ -50,6 +54,14 @@ export interface BulkSelectProps extends Omit<DropdownProps, 'toggle' | 'onSelec
   dropdownListProps?: Omit<DropdownListProps, 'children'>;
   /** Additional props for MenuToggleProps */
   menuToggleProps?: Omit<MenuToggleProps, 'children' | 'splitButtonItems' | 'ref' | 'isExpanded' | 'onClick'>;
+  /** Custom label for "Select none" option. Defaults to "Select none (0)" */
+  selectNoneLabel?: string;
+  /** Custom label for "Select page" option. Receives pageCount as parameter. Defaults to "Select page (N)" */
+  selectPageLabel?: (pageCount?: number) => string;
+  /** Custom label for "Select all" option. Receives totalCount as parameter. Defaults to "Select all (N)" */
+  selectAllLabel?: (totalCount?: number) => string;
+  /** Custom label formatter for selected count. Receives selectedCount as parameter. Defaults to "N selected" */
+  selectedLabel?: (selectedCount: number) => string;
 }
 
 export const BulkSelect: FC<BulkSelectProps> = ({
@@ -65,6 +77,10 @@ export const BulkSelect: FC<BulkSelectProps> = ({
   menuToggleCheckboxProps,
   dropdownListProps,
   menuToggleProps,
+  selectNoneLabel = 'Select none (0)',
+  selectPageLabel = defaultSelectPageLabel,
+  selectAllLabel = defaultSelectAllLabel,
+  selectedLabel = defaultSelectedLabel,
   ...props
 }: BulkSelectProps) => {
   const [ isOpen, setOpen ] = useState(false);
@@ -73,22 +89,24 @@ export const BulkSelect: FC<BulkSelectProps> = ({
     () => (
       <>
         <DropdownItem ouiaId={`${ouiaId}-select-none`} value={BulkSelectValue.none} key={BulkSelectValue.none}>
-          Select none (0)
+          {selectNoneLabel}
         </DropdownItem>
         {isDataPaginated && (
           <DropdownItem ouiaId={`${ouiaId}-select-page`} value={BulkSelectValue.page} key={BulkSelectValue.page}>
-            {`Select page${pageCount ? ` (${pageCount})` : ''}`}
+            {selectPageLabel(pageCount)}
           </DropdownItem>
         )}
         {canSelectAll && (
           <DropdownItem ouiaId={`${ouiaId}-select-all`} value={BulkSelectValue.all} key={BulkSelectValue.all}>
-            {`Select all${totalCount ? ` (${totalCount})` : ''}`}
+            {selectAllLabel(totalCount)}
           </DropdownItem>
         )}
       </>
     ),
-    [ isDataPaginated, canSelectAll, ouiaId, pageCount, totalCount ]
+    [ isDataPaginated, canSelectAll, ouiaId, selectNoneLabel, selectPageLabel, selectAllLabel, pageCount, totalCount ]
   );
+
+  const selectedLabelText = selectedLabel(selectedCount);
 
   const allOption = isDataPaginated ? BulkSelectValue.page : BulkSelectValue.all;
   const noneOption = isDataPaginated ? BulkSelectValue.nonePage : BulkSelectValue.none;
@@ -129,7 +147,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
             >
               {selectedCount > 0 ? (
                 <span data-ouia-component-id={`${ouiaId}-text`}>
-                  {`${selectedCount} selected`}
+                  {selectedLabelText}
                 </span>
               ) : null}
             </MenuToggleCheckbox>
