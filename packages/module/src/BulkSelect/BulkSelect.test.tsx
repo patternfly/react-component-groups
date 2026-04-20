@@ -1,19 +1,22 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import BulkSelect from './BulkSelect';
+import BulkSelect, { BulkSelectValue } from './BulkSelect';
 
 describe('BulkSelect component', () => {
   test('should render', () => {
-    expect(render(
-      <BulkSelect
-        canSelectAll
-        pageCount={5}
-        totalCount={10}
-        selectedCount={2}
-        pageSelected={false}
-        pagePartiallySelected={true}
-        onSelect={() => null}
-      />)).toMatchSnapshot();
+    expect(
+      render(
+        <BulkSelect
+          canSelectAll
+          pageCount={5}
+          totalCount={10}
+          selectedCount={2}
+          pageSelected={false}
+          pagePartiallySelected={true}
+          onSelect={() => null}
+        />
+      )
+    ).toMatchSnapshot();
   });
 
   test('should render with dropdownListProps', async () => {
@@ -121,6 +124,7 @@ describe('BulkSelect component', () => {
 
   test('should enable Select none when at least one row is selected', async () => {
     const user = userEvent.setup();
+
     render(
       <BulkSelect
         canSelectAll
@@ -135,5 +139,59 @@ describe('BulkSelect component', () => {
 
     await user.click(screen.getByLabelText('Bulk select toggle'));
     expect(screen.getByRole('menuitem', { name: 'Select none (0)' })).not.toBeDisabled();
+  });
+
+  test('should call onSelect with source "dropdown" when choosing menu items', async () => {
+    const user = userEvent.setup();
+    const onSelect = jest.fn();
+
+    render(
+      <BulkSelect
+        canSelectAll
+        pageCount={5}
+        totalCount={10}
+        selectedCount={1}
+        pageSelected={false}
+        pagePartiallySelected={true}
+        onSelect={onSelect}
+      />
+    );
+
+    const openMenu = async () => {
+      await user.click(screen.getByLabelText('Bulk select toggle'));
+    };
+
+    await openMenu();
+    await user.click(screen.getByRole('menuitem', { name: 'Select none (0)' }));
+    expect(onSelect).toHaveBeenLastCalledWith(BulkSelectValue.none, 'dropdown');
+
+    onSelect.mockClear();
+    await openMenu();
+    await user.click(screen.getByRole('menuitem', { name: 'Select page (5)' }));
+    expect(onSelect).toHaveBeenLastCalledWith(BulkSelectValue.page, 'dropdown');
+
+    onSelect.mockClear();
+    await openMenu();
+    await user.click(screen.getByRole('menuitem', { name: 'Select all (10)' }));
+    expect(onSelect).toHaveBeenLastCalledWith(BulkSelectValue.all, 'dropdown');
+  });
+
+  test('should call onSelect with source "checkbox" when using split checkbox', async () => {
+    const user = userEvent.setup();
+    const onSelect = jest.fn();
+    render(
+      <BulkSelect
+        canSelectAll
+        pageCount={5}
+        totalCount={10}
+        selectedCount={0}
+        pageSelected={false}
+        pagePartiallySelected={false}
+        onSelect={onSelect}
+      />
+    );
+
+    await user.click(screen.getByRole('checkbox', { name: 'Select page' }));
+    expect(onSelect).toHaveBeenCalledWith(BulkSelectValue.page, 'checkbox');
   });
 });
