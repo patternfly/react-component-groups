@@ -100,4 +100,40 @@ describe('BulkSelect component', () => {
     expect(screen.getByText('Sélectionner la page (5)')).toBeInTheDocument();
     expect(screen.getByText('Tout sélectionner (10)')).toBeInTheDocument();
   });
+
+  test('should disable Select none when nothing is selected', async () => {
+    const user = userEvent.setup();
+    render(
+      <BulkSelect
+        canSelectAll
+        pageCount={5}
+        totalCount={10}
+        selectedCount={0}
+        pageSelected={false}
+        pagePartiallySelected={false}
+        onSelect={() => null}
+      />
+    );
+
+    await user.click(screen.getByLabelText('Bulk select toggle'));
+    expect(screen.getByRole('menuitem', { name: 'Select none (0)' })).toBeDisabled();
+  });
+
+  test('should enable Select none when at least one row is selected', async () => {
+    const user = userEvent.setup();
+    render(
+      <BulkSelect
+        canSelectAll
+        pageCount={5}
+        totalCount={10}
+        selectedCount={1}
+        pageSelected={false}
+        pagePartiallySelected={true}
+        onSelect={() => null}
+      />
+    );
+
+    await user.click(screen.getByLabelText('Bulk select toggle'));
+    expect(screen.getByRole('menuitem', { name: 'Select none (0)' })).not.toBeDisabled();
+  });
 });
