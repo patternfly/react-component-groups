@@ -88,7 +88,12 @@ export const BulkSelect: FC<BulkSelectProps> = ({
   const splitButtonDropdownItems = useMemo(
     () => (
       <>
-        <DropdownItem ouiaId={`${ouiaId}-select-none`} value={BulkSelectValue.none} key={BulkSelectValue.none}>
+        <DropdownItem
+          ouiaId={`${ouiaId}-select-none`}
+          value={BulkSelectValue.none}
+          key={BulkSelectValue.none}
+          isDisabled={selectedCount === 0}
+        >
           {selectNoneLabel}
         </DropdownItem>
         {isDataPaginated && (
@@ -103,7 +108,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
         )}
       </>
     ),
-    [ isDataPaginated, canSelectAll, ouiaId, selectNoneLabel, selectPageLabel, selectAllLabel, pageCount, totalCount ]
+    [ isDataPaginated, canSelectAll, ouiaId, selectNoneLabel, selectPageLabel, selectAllLabel, pageCount, totalCount, selectedCount ]
   );
 
   const selectedLabelText = selectedLabel(selectedCount);
