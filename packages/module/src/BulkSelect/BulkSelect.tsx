@@ -128,7 +128,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
       ouiaId={`${ouiaId}-dropdown`}
       onSelect={(_e, value) => {
         setOpen(!isOpen);
-        onSelect?.(value as BulkSelectValue, 'dropdown');
+        onSelect?.(value as BulkSelectValue, BulkSelectSource.dropdown);
       }}
       isOpen={isOpen}
       onOpenChange={(isOpen: boolean) => setOpen(isOpen)}
