@@ -151,7 +151,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
                   ? null
                   : pageSelected || (selectedCount === totalCount && totalCount > 0)
               }
-              onChange={(checked) => onSelect?.(!checked || checked === null ? noneOption : allOption, 'checkbox')}
+              onChange={(checked) => onSelect?.(!checked || checked === null ? noneOption : allOption, BulkSelectSource.checkbox)}
               {...menuToggleCheckboxProps}
             >
               {selectedCount > 0 ? (
