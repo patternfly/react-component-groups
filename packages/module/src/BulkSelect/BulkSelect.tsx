@@ -22,8 +22,10 @@ export const BulkSelectValue = {
 
 export type BulkSelectValue = (typeof BulkSelectValue)[keyof typeof BulkSelectValue];
 
-export type BulkSelectSource = 'dropdown' | 'checkbox';
-
+export const BulkSelectSource = {
+    dropdown: 'dropdown',
+    checkbox: 'checkbox'
+  } as const;
 const defaultSelectPageLabel = (pageCount?: number) => `Select page${pageCount ? ` (${pageCount})` : ''}`;
 const defaultSelectAllLabel = (totalCount?: number) => `Select all${totalCount ? ` (${totalCount})` : ''}`;
 const defaultSelectedLabel = (selectedCount: number) => `${selectedCount} selected`;
