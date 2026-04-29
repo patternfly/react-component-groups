@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import BulkSelect, { BulkSelectValue } from './BulkSelect';
+import BulkSelect, { BulkSelectSource, BulkSelectValue } from './BulkSelect';
 
 describe('BulkSelect component', () => {
   test('should render', () => {
@@ -141,7 +141,7 @@ describe('BulkSelect component', () => {
     expect(screen.getByRole('menuitem', { name: 'Select none (0)' })).not.toBeDisabled();
   });
 
-  test('should call onSelect with source "dropdown" when choosing menu items', async () => {
+  test(`should call onSelect with source ${BulkSelectSource.dropdown} when choosing menu items`, async () => {
     const user = userEvent.setup();
     const onSelect = jest.fn();
 
@@ -163,20 +163,20 @@ describe('BulkSelect component', () => {
 
     await openMenu();
     await user.click(screen.getByRole('menuitem', { name: 'Select none (0)' }));
-    expect(onSelect).toHaveBeenLastCalledWith(BulkSelectValue.none, 'dropdown');
+    expect(onSelect).toHaveBeenLastCalledWith(BulkSelectValue.none, BulkSelectSource.dropdown);
 
     onSelect.mockClear();
     await openMenu();
     await user.click(screen.getByRole('menuitem', { name: 'Select page (5)' }));
-    expect(onSelect).toHaveBeenLastCalledWith(BulkSelectValue.page, 'dropdown');
+    expect(onSelect).toHaveBeenLastCalledWith(BulkSelectValue.page, BulkSelectSource.dropdown);
 
     onSelect.mockClear();
     await openMenu();
     await user.click(screen.getByRole('menuitem', { name: 'Select all (10)' }));
-    expect(onSelect).toHaveBeenLastCalledWith(BulkSelectValue.all, 'dropdown');
+    expect(onSelect).toHaveBeenLastCalledWith(BulkSelectValue.all, BulkSelectSource.dropdown);
   });
 
-  test('should call onSelect with source "checkbox" when using split checkbox', async () => {
+  test(`should call onSelect with source ${BulkSelectSource.checkbox} when using split checkbox`, async () => {
     const user = userEvent.setup();
     const onSelect = jest.fn();
     render(
@@ -192,6 +192,6 @@ describe('BulkSelect component', () => {
     );
 
     await user.click(screen.getByRole('checkbox', { name: 'Select page' }));
-    expect(onSelect).toHaveBeenCalledWith(BulkSelectValue.page, 'checkbox');
+    expect(onSelect).toHaveBeenCalledWith(BulkSelectValue.page, BulkSelectSource.checkbox);
   });
 });
