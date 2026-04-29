@@ -23,9 +23,12 @@ export const BulkSelectValue = {
 export type BulkSelectValue = (typeof BulkSelectValue)[keyof typeof BulkSelectValue];
 
 export const BulkSelectSource = {
-    dropdown: 'dropdown',
-    checkbox: 'checkbox'
-  } as const;
+  dropdown: 'dropdown',
+  checkbox: 'checkbox'
+} as const;
+
+export type BulkSelectSource = (typeof BulkSelectSource)[keyof typeof BulkSelectSource];
+
 const defaultSelectPageLabel = (pageCount?: number) => `Select page${pageCount ? ` (${pageCount})` : ''}`;
 const defaultSelectAllLabel = (totalCount?: number) => `Select all${totalCount ? ` (${totalCount})` : ''}`;
 const defaultSelectedLabel = (selectedCount: number) => `${selectedCount} selected`;
@@ -123,7 +126,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
   const onToggleClick = () => setOpen(!isOpen);
 
   return (
-    (<Dropdown
+    <Dropdown
       shouldFocusToggleOnSelect
       ouiaId={`${ouiaId}-dropdown`}
       onSelect={(_e, value) => {
@@ -167,7 +170,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
       {...props}
     >
       <DropdownList {...dropdownListProps}>{splitButtonDropdownItems}</DropdownList>
-    </Dropdown>)
+    </Dropdown>
   );
 };
 
