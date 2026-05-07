@@ -1,11 +1,6 @@
 import type { FunctionComponent } from 'react';
 import { useState, useEffect } from 'react';
-import {
-  Button,
-  Content,
-  ContentVariants,
-  ButtonVariant,
-} from '@patternfly/react-core';
+import { Button, Content, ContentVariants, ButtonVariant } from '@patternfly/react-core';
 import { ModalProps, Modal, ModalVariant } from '@patternfly/react-core/deprecated';
 import ListManager, { ListManagerItem } from '../ListManager/ListManager';
 
@@ -46,30 +41,32 @@ export interface ColumnManagementModalProps extends Omit<ModalProps, 'ref' | 'ch
   resetToDefaultLabel?: string;
 }
 
-const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
-  { title = 'Manage columns',
-    description = 'Selected categories will be displayed in the table.',
-    isOpen = false,
-    onClose = () => undefined,
-    appliedColumns,
-    applyColumns,
-    ouiaId = 'ColumnManagementModal',
-    enableDragDrop = false,
-    onReset,
-    resetToDefaultLabel = 'Reset to default',
-    ...props }: ColumnManagementModalProps) => {
-
+const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = ({
+  title = 'Manage columns',
+  description = 'Selected categories will be displayed in the table.',
+  isOpen = false,
+  onClose = () => undefined,
+  appliedColumns,
+  applyColumns,
+  ouiaId = 'ColumnManagementModal',
+  enableDragDrop = false,
+  onReset,
+  resetToDefaultLabel = 'Reset to default',
+  ...props
+}: ColumnManagementModalProps) => {
   const [ currentColumns, setCurrentColumns ] = useState(() =>
-    appliedColumns.map(column => ({ ...column, isShown: column.isShown ?? column.isShownByDefault }))
+    appliedColumns.map((column) => ({ ...column, isShown: column.isShown ?? column.isShownByDefault }))
   );
 
   // Sync with appliedColumns when they change
   useEffect(() => {
-    setCurrentColumns(appliedColumns.map(column => ({ ...column, isShown: column.isShown ?? column.isShownByDefault })));
+    setCurrentColumns(
+      appliedColumns.map((column) => ({ ...column, isShown: column.isShown ?? column.isShownByDefault }))
+    );
   }, [ appliedColumns ]);
 
   // Convert ColumnManagementModalColumn to ListManagerItem
-  const listManagerItems: ListManagerItem[] = currentColumns.map(column => ({
+  const listManagerItems: ListManagerItem[] = currentColumns.map((column) => ({
     key: column.key,
     title: column.title,
     isSelected: column.isShown,
@@ -79,16 +76,14 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
 
   const resetToDefault = () => {
     // Reset both visibility and order to match the original appliedColumns
-    setCurrentColumns(appliedColumns.map(column => ({ ...column, isShown: column.isShownByDefault ?? false })));
+    setCurrentColumns(appliedColumns.map((column) => ({ ...column, isShown: column.isShownByDefault ?? false })));
     onReset?.();
   };
 
   const updateColumns = (items: ListManagerItem[]) => {
-    const newColumns = currentColumns.map(column => {
-      const matchingItem = items.find(item => item.key === column.key);
-      return matchingItem
-        ? { ...column, isShown: matchingItem.isSelected ?? column.isShownByDefault }
-        : column;
+    const newColumns = currentColumns.map((column) => {
+      const matchingItem = items.find((item) => item.key === column.key);
+      return matchingItem ? { ...column, isShown: matchingItem.isSelected ?? column.isShownByDefault } : column;
     });
     setCurrentColumns(newColumns);
   };
@@ -103,8 +98,8 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
 
   const handleOrderChange = (items: ListManagerItem[]) => {
     // Update the order of currentColumns based on the new order from ListManager
-    const newColumns = items.map(item => {
-      const originalColumn = currentColumns.find(col => col.key === item.key);
+    const newColumns = items.map((item) => {
+      const originalColumn = currentColumns.find((col) => col.key === item.key);
       if (!originalColumn) {
         throw new Error(`Column with key ${item.key} not found`);
       }
@@ -114,7 +109,7 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
   };
 
   const handleSave = (items: ListManagerItem[]) => {
-    const updatedColumns = items.map(item => ({
+    const updatedColumns = items.map((item) => ({
       key: item.key,
       title: item.title,
       isShown: item.isSelected,
@@ -158,6 +153,6 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
       />
     </Modal>
   );
-}
+};
 
 export default ColumnManagementModal;

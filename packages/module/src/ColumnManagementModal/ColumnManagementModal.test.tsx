@@ -1,9 +1,9 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ColumnManagementModal, { ColumnManagementModalColumn } from './ColumnManagementModal';
 
-const DEFAULT_COLUMNS : ColumnManagementModalColumn[] = [
+const DEFAULT_COLUMNS: ColumnManagementModalColumn[] = [
   {
     title: 'ID',
     key: 'id',
@@ -37,17 +37,20 @@ const setColumns = jest.fn();
 // Simple mock to track when DragDropSort is used
 jest.mock('@patternfly/react-drag-drop', () => ({
   DragDropSort: ({ children }) => <div data-testid="drag-drop-sort">{children}</div>,
-  Droppable: ({ wrapper }) => wrapper,
+  Droppable: ({ wrapper }) => wrapper
 }));
 
-const renderColumnManagementModal = (props = {}) => render(<ColumnManagementModal
-  appliedColumns={DEFAULT_COLUMNS}
-  applyColumns={newColumns => setColumns(newColumns)}
-  isOpen
-  onClose={onClose}
-  data-testid="column-mgmt-modal"
-  {...props}
-/>);
+const renderColumnManagementModal = (props = {}) =>
+  render(
+    <ColumnManagementModal
+      appliedColumns={DEFAULT_COLUMNS}
+      applyColumns={(newColumns) => setColumns(newColumns)}
+      isOpen
+      onClose={onClose}
+      data-testid="column-mgmt-modal"
+      {...props}
+    />
+  );
 
 beforeEach(() => {
   jest.clearAllMocks();
@@ -56,17 +59,21 @@ beforeEach(() => {
 
 const getCheckboxesState = () => {
   // Get only the column checkboxes (exclude the BulkSelect checkbox)
-  const checkboxes = screen.getByTestId('column-mgmt-modal').querySelectorAll('input[type="checkbox"][data-testid^="column-check-"]');
-  return (Array.from(checkboxes) as HTMLInputElement[]).map(c => c.checked);
-}
+  const checkboxes = screen
+    .getByTestId('column-mgmt-modal')
+    .querySelectorAll('input[type="checkbox"][data-testid^="column-check-"]');
+  return (Array.from(checkboxes) as HTMLInputElement[]).map((c) => c.checked);
+};
 
 describe('ColumnManagementModal component', () => {
   it('should have disabled and checked checkboxes for columns that should always be shown', () => {
-    expect(getCheckboxesState()).toEqual(DEFAULT_COLUMNS.map(c => c.isShownByDefault));
+    expect(getCheckboxesState()).toEqual(DEFAULT_COLUMNS.map((c) => c.isShownByDefault));
   });
 
   it('should have checkbox checked if column is shown by default', () => {
-    const idCheckbox = screen.getByTestId('column-mgmt-modal').querySelector('input[type="checkbox"][data-testid="column-check-id"]');
+    const idCheckbox = screen
+      .getByTestId('column-mgmt-modal')
+      .querySelector('input[type="checkbox"][data-testid="column-check-id"]');
 
     expect(idCheckbox).toHaveAttribute('disabled');
     expect(idCheckbox).toHaveAttribute('checked');
@@ -81,18 +88,20 @@ describe('ColumnManagementModal component', () => {
 
     fireEvent.click(screen.getByText('Reset to default'));
 
-    expect(getCheckboxesState()).toEqual(DEFAULT_COLUMNS.map(c => c.isShownByDefault));
+    expect(getCheckboxesState()).toEqual(DEFAULT_COLUMNS.map((c) => c.isShownByDefault));
   });
 
   it('should call onReset callback when reset to default is clicked', () => {
     const onResetMock = jest.fn();
-    render(<ColumnManagementModal
-      appliedColumns={DEFAULT_COLUMNS}
-      applyColumns={setColumns}
-      isOpen
-      onClose={onClose}
-      onReset={onResetMock}
-    />);
+    render(
+      <ColumnManagementModal
+        appliedColumns={DEFAULT_COLUMNS}
+        applyColumns={setColumns}
+        isOpen
+        onClose={onClose}
+        onReset={onResetMock}
+      />
+    );
 
     const resetButtons = screen.getAllByText('Reset to default');
     // Click the last one rendered (the new modal)
@@ -103,13 +112,15 @@ describe('ColumnManagementModal component', () => {
 
   it('should display custom reset button label', () => {
     const customLabel = 'Restaurer par défaut';
-    render(<ColumnManagementModal
-      appliedColumns={DEFAULT_COLUMNS}
-      applyColumns={setColumns}
-      isOpen
-      onClose={onClose}
-      resetToDefaultLabel={customLabel}
-    />);
+    render(
+      <ColumnManagementModal
+        appliedColumns={DEFAULT_COLUMNS}
+        applyColumns={setColumns}
+        isOpen
+        onClose={onClose}
+        resetToDefaultLabel={customLabel}
+      />
+    );
 
     expect(screen.getByText(customLabel)).toBeInTheDocument();
   });
@@ -124,7 +135,7 @@ describe('ColumnManagementModal component', () => {
     const selectAllButton = screen.getByText('Select all (4)');
     await userEvent.click(selectAllButton);
 
-    expect(getCheckboxesState()).toEqual(DEFAULT_COLUMNS.map(_ => true));
+    expect(getCheckboxesState()).toEqual(DEFAULT_COLUMNS.map((_) => true));
   });
 
   it('should change columns on save', () => {
@@ -132,7 +143,7 @@ describe('ColumnManagementModal component', () => {
     fireEvent.click(screen.getByText('Save'));
 
     const expectedColumns = DEFAULT_COLUMNS;
-    const impactColumn = expectedColumns.find(c => c.title === 'Impact');
+    const impactColumn = expectedColumns.find((c) => c.title === 'Impact');
 
     if (impactColumn === undefined) {
       throw new Error('Expected to find "Impact" column in "DEFAULT_COLUMNS"');
@@ -175,16 +186,18 @@ describe('ColumnManagementModal component', () => {
         DEFAULT_COLUMNS[3], // Score (last -> first)
         DEFAULT_COLUMNS[0], // ID
         DEFAULT_COLUMNS[2], // Impact
-        DEFAULT_COLUMNS[1], // Publish date
+        DEFAULT_COLUMNS[1] // Publish date
       ];
 
       const applyColumnsMock = jest.fn();
-      render(<ColumnManagementModal
-        appliedColumns={reorderedColumns}
-        applyColumns={applyColumnsMock}
-        isOpen
-        onClose={onClose}
-      />);
+      render(
+        <ColumnManagementModal
+          appliedColumns={reorderedColumns}
+          applyColumns={applyColumnsMock}
+          isOpen
+          onClose={onClose}
+        />
+      );
 
       // Click reset to default - get all buttons and click the last one
       const resetButtons = screen.getAllByText('Reset to default');
@@ -197,7 +210,7 @@ describe('ColumnManagementModal component', () => {
       // Verify that the saved columns match the original reordered columns order
       // (after reset, it should restore the order from appliedColumns which is reorderedColumns)
       expect(applyColumnsMock).toHaveBeenCalledWith(
-        reorderedColumns.map(col => ({
+        reorderedColumns.map((col) => ({
           ...col,
           isShown: col.isShownByDefault
         }))
