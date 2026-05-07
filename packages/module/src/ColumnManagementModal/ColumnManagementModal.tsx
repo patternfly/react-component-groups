@@ -17,7 +17,8 @@ export interface ColumnManagementModalColumn {
 }
 
 /** extends ModalProps */
-export interface ColumnManagementModalProps<T extends ColumnManagementModalColumn = ColumnManagementModalColumn> extends Omit<ModalProps, 'ref' | 'children'> {
+export interface ColumnManagementModalProps<T extends ColumnManagementModalColumn = ColumnManagementModalColumn>
+  extends Omit<ModalProps, 'ref' | 'children'> {
   /** Flag to show the modal */
   isOpen?: boolean;
   /** Invoked when modal visibility is changed */
@@ -53,7 +54,7 @@ const ColumnManagementModal = <T extends ColumnManagementModalColumn = ColumnMan
   resetToDefaultLabel = 'Reset to default',
   ...props
 }: ColumnManagementModalProps<T>) => {
-  const [ currentColumns, setCurrentColumns ] = useState(() =>
+  const [ currentColumns, setCurrentColumns ] = useState<T[]>(() =>
     appliedColumns.map((column) => ({ ...column, isShown: column.isShown ?? column.isShownByDefault }))
   );
 
@@ -108,13 +109,13 @@ const ColumnManagementModal = <T extends ColumnManagementModalColumn = ColumnMan
   };
 
   const handleSave = (items: ListManagerItem[]) => {
-    const updatedColumns = items.map((item) => ({
-      key: item.key,
-      title: item.title,
-      isShown: item.isSelected,
-      isShownByDefault: item.isShownByDefault,
-      isUntoggleable: item.isUntoggleable
-    }));
+    const updatedColumns = items.map((item) => {
+      const originalColumn = currentColumns.find((col) => col.key === item.key);
+      if (!originalColumn) {
+        throw new Error(`Column with key ${item.key} not found`);
+      }
+      return { ...originalColumn, isShown: item.isSelected };
+    });
     applyColumns(updatedColumns);
     onClose({} as KeyboardEvent);
   };
