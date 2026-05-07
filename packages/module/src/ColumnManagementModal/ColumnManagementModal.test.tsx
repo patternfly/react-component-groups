@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ColumnManagementModal, { ColumnManagementModalColumn } from './ColumnManagementModal';
 
@@ -30,6 +30,15 @@ const DEFAULT_COLUMNS: ColumnManagementModalColumn[] = [
     isShown: false
   }
 ];
+
+interface ExtendedColumn extends ColumnManagementModalColumn {
+  dataKey: string;
+}
+
+const EXTENDED_COLUMNS: ExtendedColumn[] = DEFAULT_COLUMNS.map((col) => ({
+  ...col,
+  dataKey: `row.${col.key}`
+}));
 
 const onClose = jest.fn();
 const setColumns = jest.fn();
@@ -162,6 +171,35 @@ describe('ColumnManagementModal component', () => {
     expect(onClose).toHaveBeenCalled();
     // applyColumns should NOT be called on cancel
     expect(setColumns).not.toHaveBeenCalled();
+  });
+
+  it('should preserve extended column fields when saving', () => {
+    const applyColumnsMock = jest.fn();
+    render(
+      <ColumnManagementModal<ExtendedColumn>
+        appliedColumns={EXTENDED_COLUMNS}
+        applyColumns={applyColumnsMock}
+        isOpen
+        onClose={onClose}
+        data-testid="extended-column-modal"
+      />
+    );
+
+    const modal = screen.getByTestId('extended-column-modal');
+    fireEvent.click(within(modal).getByTestId('column-check-impact'));
+    fireEvent.click(within(modal).getByRole('button', { name: 'Save' }));
+
+    expect(applyColumnsMock).toHaveBeenCalledTimes(1);
+    const saved = applyColumnsMock.mock.calls[0][0] as ExtendedColumn[];
+
+    // Test that we have same number of columns
+    expect(saved).toHaveLength(EXTENDED_COLUMNS.length);
+
+    // Test that extension keys were preserved
+    saved.forEach((col) => {
+      const source = EXTENDED_COLUMNS.find((aec) => aec.key === col.key);
+      expect(source?.dataKey).toBe(col.dataKey);
+    });
   });
 
   describe('enableDragDrop prop', () => {
