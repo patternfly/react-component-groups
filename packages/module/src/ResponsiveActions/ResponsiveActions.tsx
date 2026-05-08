@@ -15,7 +15,6 @@ export interface ResponsiveActionsProps extends Omit<OverflowMenuProps, 'ref' | 
   children: React.ReactNode;
 }
 
-// Inner component that has access to OverflowMenuContext
 const ResponsiveActionsDropdown: FunctionComponent<{
   ouiaId: string;
   dropdownItems: ReactNode[];
@@ -25,20 +24,15 @@ const ResponsiveActionsDropdown: FunctionComponent<{
   const [ isOpen, setIsOpen ] = useState(false);
   const { isBelowBreakpoint } = useContext(OverflowMenuContext);
 
-  // Determine if kebab should be disabled based on breakpoint
   const isKebabDisabled = (() => {
     const allPinnedDisabled = pinnedItemsDisabled.length > 0 && pinnedItemsDisabled.every(disabled => disabled);
     const allRegularDisabled = regularItemsDisabled.length > 0 && regularItemsDisabled.every(disabled => disabled);
 
     if (isBelowBreakpoint) {
-      // Below breakpoint: pinned items are IN the dropdown, so check all dropdown items
-      // Disabled only if both pinned AND regular items exist and are all disabled
       return (pinnedItemsDisabled.length > 0 || regularItemsDisabled.length > 0) &&
              (pinnedItemsDisabled.length === 0 || allPinnedDisabled) &&
              (regularItemsDisabled.length === 0 || allRegularDisabled);
     } else {
-      // Above breakpoint: pinned items are shown as buttons, only check regular items
-      // Disabled only if there are regular items and they're all disabled
       return allRegularDisabled;
     }
   })();
@@ -93,7 +87,6 @@ export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ o
           </OverflowMenuItem>
         );
       } else {
-        // Track if there are any regular (non-persistent, non-pinned) actions
         hasRegularActions = true;
       }
 
@@ -103,7 +96,6 @@ export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ o
             {children}
           </OverflowMenuDropdownItem>
         );
-        // Track disabled state separately for pinned vs regular items
         if (isPinned) {
           pinnedItemsDisabled.push(!!actionProps.isDisabled);
         } else {
