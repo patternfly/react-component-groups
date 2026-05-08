@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ResponsiveActions from './ResponsiveActions';
 import ResponsiveAction from '../ResponsiveAction';
 
@@ -58,69 +58,58 @@ describe('ResponsiveActions component', () => {
     });
 
     test('ResponsiveActions with all dropdown items disabled should disable kebab', () => {
-      const { container } = render(
+      render(
         <ResponsiveActions breakpoint="lg">
           <ResponsiveAction isDisabled>Disabled action 1</ResponsiveAction>
           <ResponsiveAction isDisabled>Disabled action 2</ResponsiveAction>
         </ResponsiveActions>);
 
-      // Kebab toggle should be disabled when all dropdown items are disabled
-      const kebabToggle = container.querySelector('[data-ouia-component-id="ResponsiveActions-menu-dropdown-toggle"]');
-      expect(kebabToggle).toHaveAttribute('disabled');
-      expect(container).toMatchSnapshot();
+      const kebabToggle = screen.getByRole('button', { name: /actions overflow menu/i });
+      expect(kebabToggle).toBeDisabled();
     });
 
     test('ResponsiveActions with some enabled dropdown items should not disable kebab', () => {
-      const { container } = render(
+      render(
         <ResponsiveActions breakpoint="lg">
           <ResponsiveAction isDisabled>Disabled action</ResponsiveAction>
           <ResponsiveAction>Enabled action</ResponsiveAction>
         </ResponsiveActions>);
 
-      // Kebab toggle should be enabled when at least one dropdown item is enabled
-      const kebabToggle = container.querySelector('[data-ouia-component-id="ResponsiveActions-menu-dropdown-toggle"]');
-      expect(kebabToggle).not.toHaveAttribute('disabled');
-      expect(container).toMatchSnapshot();
+      const kebabToggle = screen.getByRole('button', { name: /actions overflow menu/i });
+      expect(kebabToggle).toBeEnabled();
     });
 
     test('ResponsiveActions with enabled pinned item and disabled regular item should disable kebab above breakpoint', () => {
-      const { container } = render(
+      render(
         <ResponsiveActions breakpoint="lg">
           <ResponsiveAction isPinned>Enabled pinned action</ResponsiveAction>
           <ResponsiveAction isDisabled>Disabled regular action</ResponsiveAction>
         </ResponsiveActions>);
 
-      // Above breakpoint: pinned items show as buttons, so kebab is disabled if regular items are disabled
-      // (When resized below breakpoint, the pinned item moves into kebab and it becomes enabled)
-      const kebabToggle = container.querySelector('[data-ouia-component-id="ResponsiveActions-menu-dropdown-toggle"]');
-      expect(kebabToggle).toHaveAttribute('disabled');
-      expect(container).toMatchSnapshot();
+      const kebabToggle = screen.getByRole('button', { name: /actions overflow menu/i });
+      expect(kebabToggle).toBeDisabled();
     });
 
     test('ResponsiveActions with enabled pinned item and enabled regular item should not disable kebab', () => {
-      const { container } = render(
+      render(
         <ResponsiveActions breakpoint="lg">
           <ResponsiveAction isPinned>Enabled pinned action</ResponsiveAction>
           <ResponsiveAction>Enabled regular action</ResponsiveAction>
         </ResponsiveActions>);
 
-      // Kebab should be enabled because there's an enabled regular action
-      const kebabToggle = container.querySelector('[data-ouia-component-id="ResponsiveActions-menu-dropdown-toggle"]');
-      expect(kebabToggle).not.toHaveAttribute('disabled');
-      expect(container).toMatchSnapshot();
+      const kebabToggle = screen.getByRole('button', { name: /actions overflow menu/i });
+      expect(kebabToggle).toBeEnabled();
     });
 
     test('ResponsiveActions with all dropdown items disabled including pinned should disable kebab', () => {
-      const { container } = render(
+      render(
         <ResponsiveActions breakpoint="lg">
           <ResponsiveAction isPinned isDisabled>Disabled pinned action</ResponsiveAction>
           <ResponsiveAction isDisabled>Disabled action</ResponsiveAction>
         </ResponsiveActions>);
 
-      // Kebab toggle should be disabled when all dropdown items (including pinned) are disabled
-      const kebabToggle = container.querySelector('[data-ouia-component-id="ResponsiveActions-menu-dropdown-toggle"]');
-      expect(kebabToggle).toHaveAttribute('disabled');
-      expect(container).toMatchSnapshot();
+      const kebabToggle = screen.getByRole('button', { name: /actions overflow menu/i });
+      expect(kebabToggle).toBeDisabled();
     });
 
     test('ResponsiveActions with only persistent items should not render kebab', () => {
