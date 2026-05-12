@@ -22,6 +22,13 @@ export const BulkSelectValue = {
 
 export type BulkSelectValue = (typeof BulkSelectValue)[keyof typeof BulkSelectValue];
 
+export const BulkSelectSource = {
+  dropdown: 'dropdown',
+  checkbox: 'checkbox'
+} as const;
+
+export type BulkSelectSource = (typeof BulkSelectSource)[keyof typeof BulkSelectSource];
+
 const defaultSelectPageLabel = (pageCount?: number) => `Select page${pageCount ? ` (${pageCount})` : ''}`;
 const defaultSelectAllLabel = (totalCount?: number) => `Select all${totalCount ? ` (${totalCount})` : ''}`;
 const defaultSelectedLabel = (selectedCount: number) => `${selectedCount} selected`;
@@ -45,7 +52,7 @@ export interface BulkSelectProps extends Omit<DropdownProps, 'toggle' | 'onSelec
   /** Indicates if ONLY some current page items are selected */
   pagePartiallySelected?: boolean;
   /** Callback called on item select */
-  onSelect: (value: BulkSelectValue) => void;
+  onSelect: (value: BulkSelectValue, source?: BulkSelectSource) => void;
   /** Custom OUIA ID */
   ouiaId?: string;
   /** Additional props for MenuToggleCheckbox */
@@ -119,12 +126,12 @@ export const BulkSelect: FC<BulkSelectProps> = ({
   const onToggleClick = () => setOpen(!isOpen);
 
   return (
-    (<Dropdown
+    <Dropdown
       shouldFocusToggleOnSelect
       ouiaId={`${ouiaId}-dropdown`}
       onSelect={(_e, value) => {
         setOpen(!isOpen);
-        onSelect?.(value as BulkSelectValue);
+        onSelect?.(value as BulkSelectValue, BulkSelectSource.dropdown);
       }}
       isOpen={isOpen}
       onOpenChange={(isOpen: boolean) => setOpen(isOpen)}
@@ -147,7 +154,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
                   ? null
                   : pageSelected || (selectedCount === totalCount && totalCount > 0)
               }
-              onChange={(checked) => onSelect?.(!checked || checked === null ? noneOption : allOption)}
+              onChange={(checked) => onSelect?.(!checked || checked === null ? noneOption : allOption, BulkSelectSource.checkbox)}
               {...menuToggleCheckboxProps}
             >
               {selectedCount > 0 ? (
@@ -163,7 +170,7 @@ export const BulkSelect: FC<BulkSelectProps> = ({
       {...props}
     >
       <DropdownList {...dropdownListProps}>{splitButtonDropdownItems}</DropdownList>
-    </Dropdown>)
+    </Dropdown>
   );
 };
 
