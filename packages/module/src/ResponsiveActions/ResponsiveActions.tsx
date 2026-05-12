@@ -1,8 +1,9 @@
 import type { ReactNode, FunctionComponent } from 'react';
-import { Children, isValidElement, useState } from 'react';
+import { Children, isValidElement, useState, useContext } from 'react';
 import { Button, Dropdown, DropdownList, MenuToggle, OverflowMenu, OverflowMenuContent, OverflowMenuControl, OverflowMenuDropdownItem, OverflowMenuGroup, OverflowMenuItem, OverflowMenuProps } from '@patternfly/react-core';
 import { EllipsisVIcon } from '@patternfly/react-icons';
 import { ResponsiveActionProps } from '../ResponsiveAction';
+import { OverflowMenuContext } from '@patternfly/react-core/dist/esm/components/OverflowMenu/OverflowMenuContext';
 
 /** extends OverflowMenuProps */
 export interface ResponsiveActionsProps extends Omit<OverflowMenuProps, 'ref' | 'breakpoint'> {
@@ -14,13 +15,62 @@ export interface ResponsiveActionsProps extends Omit<OverflowMenuProps, 'ref' | 
   children: React.ReactNode;
 }
 
-export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ ouiaId = 'ResponsiveActions', breakpoint = 'lg', children, ...props }: ResponsiveActionsProps) => {
+const ResponsiveActionsDropdown: FunctionComponent<{
+  ouiaId: string;
+  dropdownItems: ReactNode[];
+  pinnedItemsDisabled: boolean[];
+  regularItemsDisabled: boolean[];
+}> = ({ ouiaId, dropdownItems, pinnedItemsDisabled, regularItemsDisabled }) => {
   const [ isOpen, setIsOpen ] = useState(false);
+  const { isBelowBreakpoint } = useContext(OverflowMenuContext);
+
+  const isKebabDisabled = (() => {
+    const allPinnedDisabled = pinnedItemsDisabled.length > 0 && pinnedItemsDisabled.every(disabled => disabled);
+    const allRegularDisabled = regularItemsDisabled.length > 0 && regularItemsDisabled.every(disabled => disabled);
+
+    if (isBelowBreakpoint) {
+      return (pinnedItemsDisabled.length > 0 || regularItemsDisabled.length > 0) &&
+             (pinnedItemsDisabled.length === 0 || allPinnedDisabled) &&
+             (regularItemsDisabled.length === 0 || allRegularDisabled);
+    } else {
+      return allRegularDisabled;
+    }
+  })();
+
+  return (
+    <Dropdown
+      ouiaId={`${ouiaId}-menu-dropdown`}
+      onSelect={() => setIsOpen(false)}
+      toggle={(toggleRef) => (
+        <MenuToggle
+          ouiaId={`${ouiaId}-menu-dropdown-toggle`}
+          ref={toggleRef}
+          aria-label="Actions overflow menu"
+          variant="plain"
+          icon={<EllipsisVIcon />}
+          onClick={() => setIsOpen(!isOpen)}
+          isExpanded={isOpen}
+          isDisabled={isKebabDisabled}
+        />
+      )}
+      isOpen={isOpen}
+      onOpenChange={setIsOpen}
+    >
+      <DropdownList data-ouia-component-id={`${ouiaId}-menu-dropdown-list`}>
+        {dropdownItems}
+      </DropdownList>
+    </Dropdown>
+  );
+};
+
+export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ ouiaId = 'ResponsiveActions', breakpoint = 'lg', children, ...props }: ResponsiveActionsProps) => {
 
   // separate persistent, pinned and collapsed actions
   const persistentActions: ReactNode[] = [];
   const pinnedActions: ReactNode[] = [];
   const dropdownItems: ReactNode[] = [];
+  const pinnedItemsDisabled: boolean[] = [];
+  const regularItemsDisabled: boolean[] = [];
   let hasRegularActions = false;
 
   Children.forEach(children, (child, index) => {
@@ -37,7 +87,6 @@ export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ o
           </OverflowMenuItem>
         );
       } else {
-        // Track if there are any regular (non-persistent, non-pinned) actions
         hasRegularActions = true;
       }
 
@@ -47,6 +96,11 @@ export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ o
             {children}
           </OverflowMenuDropdownItem>
         );
+        if (isPinned) {
+          pinnedItemsDisabled.push(!!actionProps.isDisabled);
+        } else {
+          regularItemsDisabled.push(!!actionProps.isDisabled);
+        }
       }
     }
   });
@@ -74,27 +128,12 @@ export const ResponsiveActions: FunctionComponent<ResponsiveActionsProps> = ({ o
       ) : null}
       {dropdownItems.length > 0 && (
         <OverflowMenuControl hasAdditionalOptions={hasRegularActions} data-ouia-component-id={`${ouiaId}-menu-control`}>
-          <Dropdown
-            ouiaId={`${ouiaId}-menu-dropdown`}
-            onSelect={() => setIsOpen(false)}
-            toggle={(toggleRef) => (
-              <MenuToggle
-                ouiaId={`${ouiaId}-menu-dropdown-toggle`}
-                ref={toggleRef}
-                aria-label="Actions overflow menu"
-                variant="plain"
-                icon={<EllipsisVIcon />}
-                onClick={() => setIsOpen(!isOpen)}
-                isExpanded={isOpen}
-              />
-            )}
-            isOpen={isOpen}
-            onOpenChange={setIsOpen}
-          >
-            <DropdownList data-ouia-component-id={`${ouiaId}-menu-dropdown-list`}>
-              {dropdownItems}
-            </DropdownList>
-          </Dropdown>
+          <ResponsiveActionsDropdown
+            ouiaId={ouiaId}
+            dropdownItems={dropdownItems}
+            pinnedItemsDisabled={pinnedItemsDisabled}
+            regularItemsDisabled={regularItemsDisabled}
+          />
         </OverflowMenuControl>
       )}
     </OverflowMenu>
