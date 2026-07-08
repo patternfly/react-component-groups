@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
 });
 
 export interface TearsheetHeaderProps extends ModalHeaderProps {
-  className: string;
+  className?: string;
 }
 
 const TearsheetHeader: FunctionComponent<TearsheetHeaderProps> = ({

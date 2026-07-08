@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
 });
 
 export interface TearsheetBodyProps extends ModalBodyProps {
-  className: string;
+  className?: string;
 }
 
 const TearsheetBody: FunctionComponent<TearsheetBodyProps> = ({ className, ...props }: TearsheetBodyProps) => {

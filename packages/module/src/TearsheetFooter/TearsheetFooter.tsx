@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
 });
 
 export interface TearsheetFooterProps extends ModalFooterProps {
-  className: string;
+  className?: string;
 }
 
 export const TearsheetFooter: FunctionComponent<TearsheetFooterProps> = ({
