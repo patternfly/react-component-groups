@@ -1,7 +1,13 @@
 import { Children, cloneElement, isValidElement, useRef, type FunctionComponent, type ReactElement } from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Tearsheet/tearsheet';
-import { Tearsheet, type TearsheetProps } from '@patternfly/react-core';
+import { createUseStyles } from 'react-jss';
+import Tearsheet, { type TearsheetProps } from '../Tearsheet';
+
+const useStyles = createUseStyles({
+  tearsheetGroup: {
+    caretColor: 'red',
+  },
+});
 
 /** The maximum number of visually distinct stack levels (0, 1, 2). */
 const MAX_VISIBLE_LEVELS = 3;
@@ -23,6 +29,7 @@ const TearsheetGroup: FunctionComponent<TearsheetGroupProps> = ({
   id,
   ...props
 }: TearsheetGroupProps) => {
+  const classes = useStyles();
   // Track each child's last assigned stack level so closing tearsheets keep
   // their position during the modal exit animation instead of snapping to L0.
   const prevLevelsRef = useRef<Map<number, number>>(new Map());
@@ -72,7 +79,7 @@ const TearsheetGroup: FunctionComponent<TearsheetGroupProps> = ({
   });
 
   return (
-    <div id={id} className={css(styles.tearsheetGroup, className)} {...props}>
+    <div id={id} className={css(classes.tearsheetGroup, className)} {...props}>
       {enhancedChildren}
     </div>
   );

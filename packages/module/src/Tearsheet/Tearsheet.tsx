@@ -1,7 +1,59 @@
 import type { ReactNode, HTMLProps, FunctionComponent, MouseEvent } from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Tearsheet/tearsheet';
+import { createUseStyles } from 'react-jss';
 import { Modal, ModalVariant } from '@patternfly/react-core';
+
+const useStyles = createUseStyles({
+  tearsheet: {
+    width: 'calc(100% - 4rem) !important',
+    maxWidth: 'calc(100% - 4rem) !important',
+    height: 'calc(100% - 4rem) !important',
+    maxHeight: 'calc(100% - 4rem) !important',
+    insetBlockStart: '0 !important',
+    top: '2rem !important',
+    '&.pf-v6-c-modal-animated': {
+      '--pf-v6-c-modal-animated--Transition':
+        'width 300ms ease, max-width 300ms ease, height 300ms ease, max-height 300ms ease, top 300ms ease, opacity 240ms cubic-bezier(0.4, 0.14, 1, 1), transform 240ms cubic-bezier(0.4, 0.14, 1, 1), visibility 0ms linear 240ms',
+    },
+    '&.pf-v6-c-modal-animated-open': {
+      '--pf-v6-c-modal-animated--Transition':
+        'width 300ms ease, max-width 300ms ease, height 300ms ease, max-height 300ms ease, top 300ms ease, transform 240ms cubic-bezier(0, 0, 0.2, 1), visibility 0ms linear 0ms',
+    },
+    '&.pf-m-stack-level-1': {
+      width: 'calc(100% - 2rem) !important',
+      maxWidth: 'calc(100% - 2rem) !important',
+      height: 'calc(100% - 6rem) !important',
+      maxHeight: 'calc(100% - 6rem) !important',
+      insetBlockStart: '0 !important',
+      top: '3rem !important',
+    },
+    '&.pf-m-stack-level-2': {
+      width: 'calc(100% - 0rem) !important',
+      maxWidth: 'calc(100% - 0rem) !important',
+      height: 'calc(100% - 8rem) !important',
+      maxHeight: 'calc(100% - 8rem) !important',
+      insetBlockStart: '0 !important',
+      top: '4rem !important',
+    },
+    '&.pf-m-stack-hidden': {
+      width: 'calc(100% - 4rem) !important',
+      maxWidth: 'calc(100% - 4rem) !important',
+      height: 'calc(100% - 4rem) !important',
+      maxHeight: 'calc(100% - 4rem) !important',
+      insetBlockStart: '0 !important',
+      top: '3rem !important',
+      opacity: '0 !important',
+      pointerEvents: 'none !important',
+    },
+  },
+  tearsheetInner: {
+    display: 'flex',
+    flexDirection: 'column',
+    overflow: 'hidden',
+    height: '100%',
+    marginInlineEnd: 0,
+  },
+});
 
 export interface TearsheetProps extends HTMLProps<HTMLDivElement> {
   /** Content rendered inside the tearsheet. Should be TearsheetHeader, TearsheetBody, and/or TearsheetFooter. */
@@ -44,13 +96,14 @@ const Tearsheet: FunctionComponent<TearsheetProps> = ({
   disableFocusTrap,
   ...props
 }: TearsheetProps) => {
+  const classes = useStyles();
   const stackLevel = stackLevelProp ?? 0;
   const stackLevelClassname = stackLevel < 0 ? 'pf-m-stack-hidden' : `pf-m-stack-level-${stackLevel}`;
 
   return (
     <Modal
-      animated
-      className={css(styles.tearsheet, stackLevelClassname)}
+      // animated // Depends on animated modal PR being merged in
+      className={css(classes.tearsheet, stackLevelClassname)}
       isOpen={isOpen}
       variant={ModalVariant.large}
       aria-label={ariaLabel}
@@ -61,7 +114,7 @@ const Tearsheet: FunctionComponent<TearsheetProps> = ({
       appendTo={appendTo}
       disableFocusTrap={disableFocusTrap}
     >
-      <div className={css(styles.tearsheetInner, className)} {...props}>
+      <div className={css(classes.tearsheetInner, className)} {...props}>
         {children}
       </div>
     </Modal>
