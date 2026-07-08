@@ -1,14 +1,14 @@
 const fse = require('fs-extra');
-const { globSync } = require('glob');
 const path = require('path');
 const { default: getDynamicModuleMap } = require('../../scripts/parse-dynamic-modules.mjs');
+const { toPosixPath, posixGlobSync, posixRelative } = require('./utils');
 
-const root = process.cwd();
+const root = toPosixPath(process.cwd());
 
-const sourceFiles = globSync(`${root}/src/*/`)
+const sourceFiles = posixGlobSync(`${root}/src/*/`)
   .map((name) => name.replace(/\/$/, ''));
-  
-const indexTypings = globSync(`${root}/src/index.d.ts`);
+
+const indexTypings = posixGlobSync(`${root}/src/index.d.ts`);
 
 const ENV_AGNOSTIC_ROOT = `${root}/dist/dynamic`
 
@@ -23,9 +23,9 @@ async function copyTypings(files, dest) {
 
 async function createPackage(file) {
   const fileName = file.split('/').pop();
-  const esmSource = globSync(`${root}/dist/esm/${fileName}/**/index.js`)[0];
-  const cjsSource = globSync(`${root}/dist/cjs/${fileName}/**/index.js`)[0];
-  const typingsSource = globSync(`${root}/dist/esm/${fileName}/**/index.d.ts`)[0]
+  const esmSource = posixGlobSync(`${root}/dist/esm/${fileName}/**/index.js`)[0];
+  const cjsSource = posixGlobSync(`${root}/dist/cjs/${fileName}/**/index.js`)[0];
+  const typingsSource = posixGlobSync(`${root}/dist/esm/${fileName}/**/index.d.ts`)[0]
   /**
    * Prevent creating package.json for directories with no JS files (like CSS directories)
    */
@@ -39,14 +39,14 @@ async function createPackage(file) {
   // ensure the directory exists
   fse.ensureDirSync(destDir)
 
-  const esmRelative = path.relative(file, esmSource).replace('/dist', '');
-  const cjsRelative = path.relative(file, cjsSource).replace('/dist', '');
-  const tsRelative = path.relative(file, typingsSource).replace('/dist', '')
+  const esmRelative = posixRelative(file, esmSource).replace('/dist', '');
+  const cjsRelative = posixRelative(file, cjsSource).replace('/dist', '');
+  const tsRelative = posixRelative(file, typingsSource).replace('/dist', '')
   const content = {
     main: cjsRelative,
     module: esmRelative,
   };
-  const typings = globSync(`${root}/src/${fileName}/*.d.ts`);
+  const typings = posixGlobSync(`${root}/src/${fileName}/*.d.ts`);
   const cmds = [];
   content.typings = tsRelative;
   cmds.push(copyTypings(typings, `${root}/dist/${fileName}`));

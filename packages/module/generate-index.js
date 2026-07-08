@@ -1,12 +1,12 @@
 const fse = require('fs-extra');
-const { globSync } = require('glob');
 const path = require('path');
+const { posixGlobSync } = require('./utils');
 
 const root = process.cwd();
 
 const ENV_AGNOSTIC_ROOT = `${root}/src`
 
-const sourceFiles = globSync(path.resolve(__dirname, './src/*/index.ts'))
+const sourceFiles = posixGlobSync(path.resolve(__dirname, './src/*/index.ts'))
 
 async function generateIndex(files) {
   // ensure the dynamic root exists

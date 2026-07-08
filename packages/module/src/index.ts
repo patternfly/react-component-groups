@@ -9,6 +9,21 @@ export * from './UnavailableContent';
 export { default as UnauthorizedAccess } from './UnauthorizedAccess';
 export * from './UnauthorizedAccess';
 
+export { default as TearsheetHeader } from './TearsheetHeader';
+export * from './TearsheetHeader';
+
+export { default as TearsheetGroup } from './TearsheetGroup';
+export * from './TearsheetGroup';
+
+export { default as TearsheetFooter } from './TearsheetFooter';
+export * from './TearsheetFooter';
+
+export { default as TearsheetBody } from './TearsheetBody';
+export * from './TearsheetBody';
+
+export { default as Tearsheet } from './Tearsheet';
+export * from './Tearsheet';
+
 export { default as TagCount } from './TagCount';
 export * from './TagCount';
 
