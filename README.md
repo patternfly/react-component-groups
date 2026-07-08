@@ -29,7 +29,7 @@ Please reference [PatternFly's AI-assisted development guidelines](https://githu
 ### Before adding a new component:
 
 - make sure your use case is new/complex enough to be added to this extension
-- the component should bring a value value above and beyond existing PatternFly components
+- the component should bring a value above and beyond existing PatternFly components
 
 ### To add a new component:
 
