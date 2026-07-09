@@ -10,7 +10,7 @@ id: Tearsheet
 source: react
 # If you use typescript, the name of the interface to display props for
 # These are found through the sourceProps function provided in patternfly-docs.source.js
-propComponents: ['Tearsheet']
+propComponents: ['Tearsheet', 'TearsheetHeader', 'TearsheetBody', 'TearsheetFooter', 'TearsheetGroup']
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/Tearsheet/Tearsheet.md
 ---
 
@@ -22,28 +22,50 @@ import TearsheetHeader from '@patternfly/react-component-groups/dist/dynamic/Tea
 import TearsheetBody from '@patternfly/react-component-groups/dist/dynamic/TearsheetBody';
 import TearsheetFooter from '@patternfly/react-component-groups/dist/dynamic/TearsheetFooter';
 
-Tearsheet is used for ...
+**Tearsheet** are a full-screen extension of the `<Modal>` component allowing more complex experiences to be provided to the user.
+While the biggest Modal size (`ModalVariant.large`) may work for some cases, tearsheets allow near the entire real-estate to be leveraged.
+This component extends the [modal component](/components/modal) allowing any use of its properties to be provided.
 
 ## Examples
 
 ### Basic
 
+Typical tearsheets should make use of the entire area, for this basic case some sample text is rendered. 
+
 ```ts file="./TearsheetBasic.tsx"
 ```
 
+### Tearsheet layouts
+
+Tearsheets should allow various sorts of layouts to be rendered.
+The `<TearsheetBody>` component will handle scrolling for long content.
+
+```ts file="./TearsheetLayouts.tsx"
+```
+
 ### Stacked
+
+One special use case with tearsheets is stacking.
+When a user is using a tearsheet, if another one needs to open it can open one level "on-top" of it in a new stack.
+Tearsheets offer 3 stack levels (0,1,2). 
+A special stack level -1 allows a tearsheet to hide behind others.
 
 ```ts file="./TearsheetStacked.tsx"
 ```
 
 ### Tearsheet group (infinite stacking)
 
-Use a `TearsheetGroup` to manage an unbounded number of stacked tearsheets. Render order determines stacking priority — later children stack in front of earlier ones. Only the top 3 open tearsheets are visible; earlier ones hide behind the stack and reappear as front tearsheets are closed.
+Use a `TearsheetGroup` to manage an unbounded number of stacked tearsheets.
+`children` rendering order determines stacking priority with later children stacking in front of earlier ones.
+Only the top 3 open tearsheets are visible; earlier ones hide behind the stack and reappear as front tearsheets are closed.
 
 ```ts file="./TearsheetGroup.tsx"
 ```
 
-### Tearsheet layouts
+### Tearsheets vs Modals
 
-```ts file="./TearsheetLayouts.tsx"
+To illustrate the difference between a tearsheet and a modal, this example showcases a complex use case with a search bar, side panel, and a number of cards.
+In a modal the content is crammed and is not as usable as if it were on a bigger area like the tearsheet.
+
+```ts file="./TearsheetComparison.tsx"
 ```

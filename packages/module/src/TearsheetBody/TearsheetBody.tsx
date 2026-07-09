@@ -5,7 +5,9 @@ import { ModalBody, type ModalBodyProps } from '@patternfly/react-core';
 
 const useStyles = createUseStyles({
   tearsheetBody: {
-    caretColor: 'red',
+    flex: 1,
+    minHeight: 0,
+    overflow: 'auto',
   },
 });
 

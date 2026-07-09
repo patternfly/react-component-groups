@@ -19,7 +19,7 @@ import TearsheetBody from '@patternfly/react-component-groups/dist/dynamic/Tears
 import TearsheetFooter from '@patternfly/react-component-groups/dist/dynamic/TearsheetFooter';
 import { Flex, FlexItem, Grid, GridItem } from '@patternfly/react-core';
 
-type BodyLayout = 'simple' | 'xl-text' | 'grid' | 'long';
+type BodyLayout = 'long-text' | 'grid' | 'long';
 
 const LOREM =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ' +
@@ -29,12 +29,8 @@ const LOREM =
   'est laborum.';
 
 const bodyLayouts: Record<BodyLayout, { label: string; render: () => React.ReactNode }> = {
-  simple: {
-    label: 'Simple text',
-    render: () => <Content component="p">{LOREM}</Content>
-  },
-  'xl-text': {
-    label: 'XL text',
+  'long-text': {
+    label: 'Long text',
     render: () => (
       <>
         {Array.from({ length: 30 }, (_, i) => (
@@ -49,21 +45,25 @@ const bodyLayouts: Record<BodyLayout, { label: string; render: () => React.React
     label: 'Grid layout',
     render: () => (
       <Grid hasGutter>
-        {[ 'Overview', 'Configuration', 'Resources', 'Networking', 'Storage', 'Monitoring' ].map((title) => (
-          <GridItem span={4} key={title}>
-            <Card isFullHeight>
-              <CardHeader>
-                <CardTitle>{title}</CardTitle>
-              </CardHeader>
-              <CardBody>{LOREM.slice(0, 120)}...</CardBody>
-            </Card>
-          </GridItem>
-        ))}
+        {[ 'Overview', 'Configuration', 'Resources', 'Networking', 'Storage', 'Monitoring' ]
+          .map((title) => new Array(10).fill(title))
+          .flat()
+          .sort(() => Math.random() - 0.5)
+          .map((title) => (
+            <GridItem span={4} key={title}>
+              <Card isFullHeight>
+                <CardHeader>
+                  <CardTitle>{title}</CardTitle>
+                </CardHeader>
+                <CardBody>{LOREM.slice(0, 120)}...</CardBody>
+              </Card>
+            </GridItem>
+          ))}
       </Grid>
     )
   },
   long: {
-    label: 'Long layout',
+    label: 'Flex layout',
     render: () => (
       <Flex direction={{ default: 'column' }} gap={{ default: 'gapLg' }}>
         {[ 'General', 'Details', 'Configuration', 'Permissions', 'Audit log' ].map((section) => (

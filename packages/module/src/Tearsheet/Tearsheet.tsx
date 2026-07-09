@@ -11,6 +11,8 @@ const useStyles = createUseStyles({
     maxHeight: 'calc(100% - 4rem) !important',
     insetBlockStart: '2rem !important',
     // top: '2rem !important',
+    borderBottomLeftRadius: '0',
+    borderBottomRightRadius: '0',
     '&.pf-v6-c-modal-animated': {
       '--pf-v6-c-modal-animated--Transition':
         'width 300ms ease, max-width 300ms ease, height 300ms ease, max-height 300ms ease, top 300ms ease, opacity 240ms cubic-bezier(0.4, 0.14, 1, 1), transform 240ms cubic-bezier(0.4, 0.14, 1, 1), visibility 0ms linear 240ms',
@@ -50,7 +52,8 @@ const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
-    height: '100%',
+    flex: '1 1 auto',
+    minHeight: 0,
     marginInlineEnd: 0,
   },
 });

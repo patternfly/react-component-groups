@@ -5,7 +5,6 @@ import Tearsheet, { type TearsheetProps } from '../Tearsheet';
 
 const useStyles = createUseStyles({
   tearsheetGroup: {
-    caretColor: 'red',
   },
 });
 
