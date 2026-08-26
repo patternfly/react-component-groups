@@ -74,6 +74,14 @@ To simulate this loading process, click the "Reload table" button and wait for t
 
 ```
 
+### Without header
+
+To render a skeleton table without a header (for example, when the real table header is already rendered above the loading state), set the `hasHeader` prop to `false`.
+
+```js file="./SkeletonTableNoHeaderExample.tsx"
+
+```
+
 ### Skeleton table head
 
 You can render only the `<Thead>` part of the skeleton table by using the `<SkeletonTableHead/>`.
