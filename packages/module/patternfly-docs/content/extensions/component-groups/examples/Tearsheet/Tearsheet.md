@@ -38,10 +38,7 @@ The `<TearsheetBody>` component will handle scrolling for long content.
 
 ### Stacked
 
-One special use case with tearsheets is stacking.
-When a user is using a tearsheet, if another one needs to open it can open one level "on-top" of it in a new stack.
-Tearsheets offer 3 stack levels (0,1,2). 
-A special stack level -1 allows a tearsheet to hide behind others.
+Tearsheets support stacking, allowing new sheets to open on top of active ones. They utilize three visible stack levels (0, 1, and 2) and a background level (-1) to hide inactive sheets.
 
 ```ts file="./TearsheetStacked.tsx"
 ```
