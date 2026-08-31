@@ -73,7 +73,7 @@ const TearsheetGroup: FunctionComponent<TearsheetGroupProps> = ({
 
     return cloneElement<TearsheetProps>(child as ReactElement<TearsheetProps>, {
       stackLevel,
-      disableFocusTrap: !isFrontmost
+      modalProps: { disableFocusTrap: !isFrontmost }
     });
   });
 

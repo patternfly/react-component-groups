@@ -1,7 +1,7 @@
 import type { ReactNode, HTMLProps, FunctionComponent, MouseEvent } from 'react';
 import { css } from '@patternfly/react-styles';
 import { createUseStyles } from 'react-jss';
-import { Modal, ModalVariant } from '@patternfly/react-core';
+import { Modal, ModalVariant, type ModalProps } from '@patternfly/react-core';
 
 const useStyles = createUseStyles({
   tearsheet: {
@@ -81,8 +81,8 @@ export interface TearsheetProps extends HTMLProps<HTMLDivElement> {
   'aria-labelledby'?: string;
   /** ID of the element that describes the tearsheet. */
   'aria-describedby'?: string;
-  /** Flag to disable focus trap. */
-  disableFocusTrap?: boolean;
+  /** Additional props spread to the underlying PatternFly Modal. */
+  modalProps?: Omit<ModalProps, 'isOpen' | 'children' | 'ref' | 'className' | 'variant' | 'aria-label' | 'aria-labelledby' | 'aria-describedby' | 'onClose' | 'onEscapePress' | 'appendTo'>;
 }
 
 const Tearsheet: FunctionComponent<TearsheetProps> = ({
@@ -96,7 +96,7 @@ const Tearsheet: FunctionComponent<TearsheetProps> = ({
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
   'aria-describedby': ariaDescribedBy,
-  disableFocusTrap,
+  modalProps,
   ...props
 }: TearsheetProps) => {
   const classes = useStyles();
@@ -115,7 +115,7 @@ const Tearsheet: FunctionComponent<TearsheetProps> = ({
       onClose={onClose}
       onEscapePress={onEscapePress}
       appendTo={appendTo}
-      disableFocusTrap={disableFocusTrap}
+      {...modalProps}
     >
       <div className={css(classes.tearsheetInner, className)} {...props}>
         {children}
