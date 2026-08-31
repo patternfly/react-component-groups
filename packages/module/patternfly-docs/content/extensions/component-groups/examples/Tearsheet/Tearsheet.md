@@ -23,7 +23,7 @@ This component extends the [modal component](/components/modal) allowing any use
 
 ### Basic
 
-Typical tearsheets should make use of the entire area, for this basic case some sample text is rendered. 
+Basic tearsheets should make use of the entire container. For this basic example, heading and body text is rendered with an action list placed within the footer area.
 
 ```ts file="./TearsheetBasic.tsx"
 ```
