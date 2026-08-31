@@ -1,15 +1,8 @@
 ---
-# Sidenav top-level section
-# should be the same for all markdown files
 section: extensions
 subsection: component-groups
-# Sidenav secondary level section
-# should be the same for all markdown files
 id: Tearsheet
-# Tab (react | react-demos | html | html-demos | design-guidelines | accessibility)
 source: react
-# If you use typescript, the name of the interface to display props for
-# These are found through the sourceProps function provided in patternfly-docs.source.js
 propComponents: ['Tearsheet', 'TearsheetHeader', 'TearsheetBody', 'TearsheetFooter', 'TearsheetGroup']
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/Tearsheet/Tearsheet.md
 ---
