@@ -8,7 +8,6 @@ const useStyles = createUseStyles({
   },
 });
 
-/** The maximum number of visually distinct stack levels (0, 1, 2). */
 const MAX_VISIBLE_LEVELS = 3;
 
 export interface TearsheetGroupProps {
