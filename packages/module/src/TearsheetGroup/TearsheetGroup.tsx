@@ -1,4 +1,4 @@
-import { Children, cloneElement, isValidElement, useRef, type FunctionComponent, type ReactElement } from 'react';
+import { Children, cloneElement, isValidElement, useId, useRef, type FunctionComponent, type ReactElement } from 'react';
 import { css } from '@patternfly/react-styles';
 import { createUseStyles } from 'react-jss';
 import Tearsheet, { type TearsheetProps } from '../Tearsheet';
@@ -17,8 +17,8 @@ export interface TearsheetGroupProps {
   children?: React.ReactNode;
   /** Additional classes added to the Tearsheet group. */
   className?: string;
-  /** Unique id for the Tearsheet group. */
-  id: string;
+  /** Unique id for the Tearsheet group. A random id is generated when not provided. */
+  id?: string;
 }
 
 const TearsheetGroup: FunctionComponent<TearsheetGroupProps> = ({
@@ -28,6 +28,8 @@ const TearsheetGroup: FunctionComponent<TearsheetGroupProps> = ({
   ...props
 }: TearsheetGroupProps) => {
   const classes = useStyles();
+  const generatedId = useId();
+  const groupId = id ?? generatedId;
   // Track each child's last assigned stack level so closing tearsheets keep
   // their position during the modal exit animation instead of snapping to L0.
   const prevLevelsRef = useRef<Map<number, number>>(new Map());
@@ -77,7 +79,7 @@ const TearsheetGroup: FunctionComponent<TearsheetGroupProps> = ({
   });
 
   return (
-    <div id={id} className={css(classes.tearsheetGroup, className)} {...props}>
+    <div id={groupId} className={css(classes.tearsheetGroup, className)} {...props}>
       {enhancedChildren}
     </div>
   );
