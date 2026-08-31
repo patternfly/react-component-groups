@@ -143,9 +143,7 @@ const sections = [
 
 const renderBodyContent = (sidebarClassName = '') => (
   <Flex direction={{ default: 'column' }} style={{ height: '100%', overflow: 'hidden' }}>
-    <PageSection hasShadowBottom style={{ flexShrink: 0, zIndex: 1 }}>
-      <SearchInput placeholder="Filter cards..." aria-label="Filter cards" />
-    </PageSection>
+    <SearchInput placeholder="Filter cards..." aria-label="Filter cards" />
     <div style={{ flex: 1, minHeight: 0, display: 'flex' }}>
       <Sidebar hasGutter className={sidebarClassName} style={{ height: '100%' }}>
         <SidebarPanel>
