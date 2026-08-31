@@ -103,7 +103,6 @@ const Tearsheet: FunctionComponent<TearsheetProps> = ({
     <Modal
       className={css(classes.tearsheet, stackLevelClassname)}
       isOpen={isOpen}
-      variant={ModalVariant.large}
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
       aria-describedby={ariaDescribedBy}
