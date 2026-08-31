@@ -38,18 +38,13 @@ The `<TearsheetBody>` component will handle scrolling for long content.
 
 ### Stacked
 
-Tearsheets support stacking, allowing new sheets to open on top of active ones. They utilize three visible stack levels (0, 1, and 2) and a background level (-1) to hide inactive sheets.
+Tearsheets support stacking, allowing new sheets to open on top of active ones.
+They utilize three visible stack levels (0, 1, and 2) and a background level (-1) to hide inactive sheets.
+
+Limit stacked tearsheets to a maximum of three.
+Flows requiring four or more levels should be redesigned using multi-step wizard or dedicates page to prevent loss of user context.
 
 ```ts file="./TearsheetStacked.tsx"
-```
-
-### Tearsheet group (infinite stacking)
-
-Use a `TearsheetGroup` to manage an unbounded number of stacked tearsheets.
-`children` rendering order determines stacking priority with later children stacking in front of earlier ones.
-Only the top 3 open tearsheets are visible; earlier ones hide behind the stack and reappear as front tearsheets are closed.
-
-```ts file="./TearsheetGroup.tsx"
 ```
 
 ### Tearsheets vs Modals
