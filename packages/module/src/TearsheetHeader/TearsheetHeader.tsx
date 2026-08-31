@@ -1,4 +1,4 @@
-import type { FunctionComponent } from 'react';
+import type { FunctionComponent, ReactNode } from 'react';
 import { css } from '@patternfly/react-styles';
 import { createUseStyles } from 'react-jss';
 import { ModalHeader, type ModalHeaderProps } from '@patternfly/react-core';
@@ -10,6 +10,9 @@ const useStyles = createUseStyles({
 });
 
 export interface TearsheetHeaderProps extends ModalHeaderProps {
+  /** Content rendered inside the tearsheet header. */
+  children?: ReactNode;
+  /** Additional classes applied to the tearsheet header. */
   className?: string;
 }
 

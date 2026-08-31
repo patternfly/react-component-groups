@@ -1,4 +1,4 @@
-import type { FunctionComponent } from 'react';
+import type { FunctionComponent, ReactNode } from 'react';
 import { css } from '@patternfly/react-styles';
 import { createUseStyles } from 'react-jss';
 import { ModalFooter, type ModalFooterProps } from '@patternfly/react-core';
@@ -10,6 +10,9 @@ const useStyles = createUseStyles({
 });
 
 export interface TearsheetFooterProps extends ModalFooterProps {
+  /** Content rendered inside the tearsheet footer. */
+  children?: ReactNode;
+  /** Additional classes applied to the tearsheet footer. */
   className?: string;
 }
 
