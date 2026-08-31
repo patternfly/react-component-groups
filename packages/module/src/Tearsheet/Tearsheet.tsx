@@ -105,7 +105,6 @@ const Tearsheet: FunctionComponent<TearsheetProps> = ({
 
   return (
     <Modal
-      // animated // Depends on animated modal PR being merged in
       className={css(classes.tearsheet, stackLevelClassname)}
       isOpen={isOpen}
       variant={ModalVariant.large}
