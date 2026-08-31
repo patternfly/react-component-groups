@@ -1,7 +1,7 @@
 import type { ReactNode, HTMLProps, FunctionComponent, MouseEvent } from 'react';
 import { css } from '@patternfly/react-styles';
 import { createUseStyles } from 'react-jss';
-import { Modal, ModalVariant, type ModalProps } from '@patternfly/react-core';
+import { Modal, type ModalProps } from '@patternfly/react-core';
 
 const useStyles = createUseStyles({
   tearsheet: {
@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
     height: 'calc(100% - 4rem) !important',
     maxHeight: 'calc(100% - 4rem) !important',
     insetBlockStart: 'auto !important',
-    alignSelf: 'end !important'
+    alignSelf: 'end !important',
     borderBottomLeftRadius: '0',
     borderBottomRightRadius: '0',
     '&.pf-v6-c-modal-animated': {
