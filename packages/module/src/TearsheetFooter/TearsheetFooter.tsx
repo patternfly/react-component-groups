@@ -5,7 +5,6 @@ import { ModalFooter, type ModalFooterProps } from '@patternfly/react-core';
 
 const useStyles = createUseStyles({
   tearsheetFooter: {
-    flexShrink: 0,
   },
 });
 
