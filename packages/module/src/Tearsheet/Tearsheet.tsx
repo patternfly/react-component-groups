@@ -75,11 +75,11 @@ export interface TearsheetProps extends HTMLProps<HTMLDivElement> {
   onEscapePress?: (event: KeyboardEvent) => void;
   /** The parent container to append the tearsheet to. Defaults to document.body. */
   appendTo?: HTMLElement | (() => HTMLElement);
-  /** Accessible label for the tearsheet. */
+  /** Accessible name for the tearsheet as a human readable string. */
   'aria-label'?: string;
-  /** ID of the element that labels the tearsheet. */
+  /** Space separated list of ID's of the elements that label the tearsheet. */
   'aria-labelledby'?: string;
-  /** ID of the element that describes the tearsheet. */
+  /** ISpace separated list of ID's of the elements that describe the tearsheet. */
   'aria-describedby'?: string;
   /** Flag to disable focus trap. */
   disableFocusTrap?: boolean;
