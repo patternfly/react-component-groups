@@ -5,7 +5,6 @@ import { ModalHeader, type ModalHeaderProps } from '@patternfly/react-core';
 
 const useStyles = createUseStyles({
   tearsheetHeader: {
-    flexShrink: 0,
   },
 });
 
