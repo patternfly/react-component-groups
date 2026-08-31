@@ -10,7 +10,6 @@ const useStyles = createUseStyles({
     height: 'calc(100% - 4rem) !important',
     maxHeight: 'calc(100% - 4rem) !important',
     insetBlockStart: '2rem !important',
-    // top: '2rem !important',
     borderBottomLeftRadius: '0',
     borderBottomRightRadius: '0',
     '&.pf-v6-c-modal-animated': {
@@ -27,7 +26,6 @@ const useStyles = createUseStyles({
       height: 'calc(100% - 6rem) !important',
       maxHeight: 'calc(100% - 6rem) !important',
       insetBlockStart: '3rem !important',
-      // top: '3rem !important',
     },
     '&.pf-m-stack-level-2': {
       width: 'calc(100% - 0rem) !important',
@@ -35,7 +33,6 @@ const useStyles = createUseStyles({
       height: 'calc(100% - 8rem) !important',
       maxHeight: 'calc(100% - 8rem) !important',
       insetBlockStart: '4rem !important',
-      // top: '4rem !important',
     },
     '&.pf-m-stack-hidden': {
       width: 'calc(100% - 4rem) !important',
@@ -43,7 +40,6 @@ const useStyles = createUseStyles({
       height: 'calc(100% - 4rem) !important',
       maxHeight: 'calc(100% - 4rem) !important',
       insetBlockStart: '3rem !important',
-      // top: '3rem !important',
       opacity: '0 !important',
       pointerEvents: 'none !important',
     },
