@@ -30,7 +30,7 @@ Basic tearsheets should make use of the entire container. For this basic example
 
 ### Tearsheet layouts
 
-Tearsheets should allow various sorts of layouts to be rendered.
+Tearsheets can be customized to render various layout styles. These layout styles include, [full width text](https://www.patternfly.org/foundations-and-styles/utility-classes/alignment), [flex](https://www.patternfly.org/foundations-and-styles/layouts/flex), and [grid](https://www.patternfly.org/foundations-and-styles/layouts/grid).
 The `<TearsheetBody>` component will handle scrolling for long content.
 
 ```ts file="./TearsheetLayouts.tsx"
