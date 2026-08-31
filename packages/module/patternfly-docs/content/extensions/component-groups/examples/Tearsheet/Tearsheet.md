@@ -54,8 +54,8 @@ Only the top 3 open tearsheets are visible; earlier ones hide behind the stack a
 
 ### Tearsheets vs Modals
 
-To illustrate the difference between a tearsheet and a modal, this example showcases a complex use case with a search bar, side panel, and a number of cards.
-In a modal the content is crammed and is not as usable as if it were on a bigger area like the tearsheet.
+Choose a tearsheet over a modal when users need to process detailed and complex workflows.
+This example demonstrates how the expanded surface area of a tearsheet allows users to easily navigate a robust layout without feeling overwhelmed.
 
 ```ts file="./TearsheetComparison.tsx"
 ```
