@@ -9,7 +9,8 @@ const useStyles = createUseStyles({
     maxWidth: 'calc(100% - 4rem) !important',
     height: 'calc(100% - 4rem) !important',
     maxHeight: 'calc(100% - 4rem) !important',
-    insetBlockStart: '2rem !important',
+    insetBlockStart: 'auto !important',
+    alignSelf: 'end !important'
     borderBottomLeftRadius: '0',
     borderBottomRightRadius: '0',
     '&.pf-v6-c-modal-animated': {
