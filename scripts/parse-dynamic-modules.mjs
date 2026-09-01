@@ -76,8 +76,10 @@ const getDynamicModuleMap = (
     return {};
   }
 
+  const normalizedBasePath = basePath.replace(/\\/g, '/');
+
   /** @type {Record<string, string>} */
-  const dynamicModulePathToPkgDir = glob.sync(`${basePath}/dist/dynamic/**/package.json`).reduce((acc, pkgFile) => {
+  const dynamicModulePathToPkgDir = glob.sync(`${normalizedBasePath}/dist/dynamic/**/package.json`).reduce((acc, pkgFile) => {
     const pkg = require(pkgFile);
     const pkgModule = pkg[resolutionField];
 
@@ -86,7 +88,7 @@ const getDynamicModuleMap = (
     }
 
     const pkgResolvedPath = path.resolve(path.dirname(pkgFile), pkgModule);
-    const pkgRelativePath = path.dirname(path.relative(basePath, pkgFile));
+    const pkgRelativePath = path.dirname(path.relative(basePath, pkgFile)).replace(/\\/g, '/');
 
     acc[pkgResolvedPath] = pkgRelativePath;
 

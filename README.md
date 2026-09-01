@@ -29,7 +29,7 @@ Please reference [PatternFly's AI-assisted development guidelines](https://githu
 ### Before adding a new component:
 
 - make sure your use case is new/complex enough to be added to this extension
-- the component should bring a value value above and beyond existing PatternFly components
+- the component should bring a value above and beyond existing PatternFly components
 
 ### To add a new component:
 
@@ -40,7 +40,7 @@ Please reference [PatternFly's AI-assisted development guidelines](https://githu
 
 #### Example component:
 
-```
+``` TSX
 import * as React from 'react';
 import { Content } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
@@ -75,7 +75,7 @@ export default MyComponent;
 
 #### Index file example:
 
-```
+``` TSX
 export { default } from './MyComponent';
 export * from './MyComponent';
 ```
@@ -99,8 +99,7 @@ src
 
 #### Component API definition example:
 
-```
-
+``` TSX
 import { FunctionComponent } from 'react';
 
 // when possible, extend available PatternFly types
@@ -113,7 +112,7 @@ export const MyComponent: FunctionComponent<MyComponentProps> = ({ customLabel, 
 
 #### Markdown file example:
 
-````
+```` MDX
 ---
 section: Component groups
 subsection: My component's category
@@ -135,7 +134,7 @@ MyComponent has been created to demo contributing to this repository.
 
 #### Component usage file example: (`MyComponentExample.tsx`)
 
-```
+``` TSX
 import { FunctionComponent } from 'react';
 
 const MyComponentExample: FunctionComponent = () => (
