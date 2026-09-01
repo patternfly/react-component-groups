@@ -46,8 +46,7 @@ Limit stacked tearsheets to a maximum of 3. Flows requiring 4 or more levels sho
 
 ### Tearsheets vs Modals
 
-Choose a tearsheet over a modal when users need to process detailed and complex workflows.
-This example demonstrates how the expanded surface area of a tearsheet allows users to easily navigate a robust layout without feeling overwhelmed.
+Choose a tearsheet over a modal when users need to process detailed and complex workflows. This example demonstrates how the expanded surface area of a tearsheet allows users to easily navigate a robust layout without feeling overwhelmed.
 
 ```ts file="./TearsheetComparison.tsx"
 ```
