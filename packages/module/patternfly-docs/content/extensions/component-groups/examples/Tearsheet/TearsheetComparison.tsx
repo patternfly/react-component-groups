@@ -24,7 +24,6 @@ import {
   ModalFooter,
   ModalHeader,
   ModalVariant,
-  PageSection,
   SearchInput,
   Sidebar,
   SidebarContent,
