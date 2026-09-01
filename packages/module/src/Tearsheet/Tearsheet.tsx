@@ -76,7 +76,7 @@ export interface TearsheetProps extends HTMLProps<HTMLDivElement> {
   'aria-label'?: string;
   /** Space separated list of ID's of the elements that label the tearsheet. */
   'aria-labelledby'?: string;
-  /** ISpace separated list of ID's of the elements that describe the tearsheet. */
+  /** Space separated list of ID's of the elements that describe the tearsheet. */
   'aria-describedby'?: string;
   /** Additional props spread to the underlying PatternFly Modal. */
   modalProps?: Omit<ModalProps, 'isOpen' | 'children' | 'ref' | 'className' | 'variant' | 'aria-label' | 'aria-labelledby' | 'aria-describedby' | 'onClose' | 'onEscapePress' | 'appendTo'>;
