@@ -1,12 +1,5 @@
 import { Children, cloneElement, isValidElement, useId, useRef, type FunctionComponent, type ReactElement } from 'react';
-import { css } from '@patternfly/react-styles';
-import { createUseStyles } from 'react-jss';
 import Tearsheet, { type TearsheetProps } from '../Tearsheet';
-
-const useStyles = createUseStyles({
-  tearsheetGroup: {
-  },
-});
 
 const MAX_VISIBLE_LEVELS = 3;
 
@@ -27,7 +20,6 @@ const TearsheetGroup: FunctionComponent<TearsheetGroupProps> = ({
   id,
   ...props
 }: TearsheetGroupProps) => {
-  const classes = useStyles();
   const generatedId = useId();
   const groupId = id ?? generatedId;
   // Track each child's last assigned stack level so closing tearsheets keep
@@ -79,7 +71,7 @@ const TearsheetGroup: FunctionComponent<TearsheetGroupProps> = ({
   });
 
   return (
-    <div id={groupId} className={css(classes.tearsheetGroup, className)} {...props}>
+    <div id={groupId} className={className} {...props}>
       {enhancedChildren}
     </div>
   );

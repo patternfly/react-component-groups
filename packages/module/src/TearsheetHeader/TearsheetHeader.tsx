@@ -1,12 +1,5 @@
 import type { FunctionComponent, ReactNode } from 'react';
-import { css } from '@patternfly/react-styles';
-import { createUseStyles } from 'react-jss';
 import { ModalHeader, type ModalHeaderProps } from '@patternfly/react-core';
-
-const useStyles = createUseStyles({
-  tearsheetHeader: {
-  },
-});
 
 export interface TearsheetHeaderProps extends ModalHeaderProps {
   /** Content rendered inside the tearsheet header. */
@@ -18,10 +11,7 @@ export interface TearsheetHeaderProps extends ModalHeaderProps {
 const TearsheetHeader: FunctionComponent<TearsheetHeaderProps> = ({
   className,
   ...props
-}: TearsheetHeaderProps) => {
-  const classes = useStyles();
-  return <ModalHeader className={css(classes.tearsheetHeader, className)} {...props} />;
-};
+}: TearsheetHeaderProps) => <ModalHeader className={className} {...props} />;
 TearsheetHeader.displayName = 'TearsheetHeader';
 
 export default TearsheetHeader;
