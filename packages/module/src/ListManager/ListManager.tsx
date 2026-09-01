@@ -5,6 +5,7 @@ import {
   DataListItem,
   DataListItemRow,
   DataListCheck,
+  DataListControl,
   DataListCell,
   DataListItemCells,
   Button,
@@ -111,27 +112,45 @@ const ListManager: FunctionComponent<ListManagerProps> = (
     onSelectAll?.(newColumns);
   };
 
+  const renderColumnCheck = (column: ListManagerItem & { id: string }, index: number, otherControls = false) => (
+    <DataListCheck
+      data-testid={`column-check-${column.key}`}
+      otherControls={otherControls}
+      isChecked={column.isSelected}
+      onChange={() => handleChange(column.key)}
+      isDisabled={column.isUntoggleable}
+      ouiaId={`${ouiaId}-column-${index}-checkbox`}
+      id={`${ouiaId}-column-${index}-checkbox`}
+      aria-labelledby={`${ouiaId}-column-${index}-label`}
+    />
+  );
+
+  const renderColumnCells = (column: ListManagerItem & { id: string }, index: number) => (
+    <DataListItemCells
+      dataListCells={[
+        <DataListCell key={column.key} data-ouia-component-id={`${ouiaId}-column-${index}-label`}>
+          <label htmlFor={`${ouiaId}-column-${index}-checkbox`}>
+            {column.title}
+          </label>
+        </DataListCell>
+      ]}
+    />
+  );
+
   const renderDataListItem = (column: ListManagerItem & { id: string }, index: number) => (
     <DataListItemRow key={column.key}>
-      <DataListCheck
-        data-testid={`column-check-${column.key}`}
-        isChecked={column.isSelected}
-        onChange={() => handleChange(column.key)}
-        isDisabled={column.isUntoggleable}
-        ouiaId={`${ouiaId}-column-${index}-checkbox`}
-        id={`${ouiaId}-column-${index}-checkbox`}
-        aria-labelledby={`${ouiaId}-column-${index}-label`}
-      />
-      <DataListItemCells
-        dataListCells={[
-          <DataListCell key={column.key} data-ouia-component-id={`${ouiaId}-column-${index}-label`}>
-            <label htmlFor={`${ouiaId}-column-${index}-checkbox`}>
-              {column.title}
-            </label>
-          </DataListCell>
-        ]}
-      />
+      {renderColumnCheck(column, index)}
+      {renderColumnCells(column, index)}
     </DataListItemRow>
+  );
+
+  const renderDraggableDataListItem = (column: ListManagerItem & { id: string }, index: number) => (
+    <>
+      <DataListControl>
+        {renderColumnCheck(column, index, true)}
+      </DataListControl>
+      {renderColumnCells(column, index)}
+    </>
   );
 
   return (
@@ -152,7 +171,7 @@ const ListManager: FunctionComponent<ListManagerProps> = (
       {enableDragDrop ? (
         <DragDropSort
           variant="DataList"
-          items={currentColumns.map((column, index) => ({ id: column.key, content: renderDataListItem(column, index) }))}
+          items={currentColumns.map((column, index) => ({ id: column.key, content: renderDraggableDataListItem(column, index) }))}
           onDrop={onDrag}
           overlayProps={{ isCompact: true }}
         >

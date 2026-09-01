@@ -84,6 +84,19 @@ describe('ListManager', () => {
   });
 
   describe('enableDragDrop prop', () => {
+    it('places checkboxes in DataListControl so they share spacing with the drag handle', () => {
+      render(<ListManager columns={mockColumns} />);
+      const checkbox = screen.getByTestId('column-check-name');
+      expect(checkbox.closest('.pf-v6-c-data-list__item-control')).toBeInTheDocument();
+      expect(checkbox.closest('.pf-v6-c-data-list__item-row')).not.toBeInTheDocument();
+    });
+
+    it('keeps non-draggable rows in DataListItemRow', () => {
+      render(<ListManager columns={mockColumns} enableDragDrop={false} />);
+      const checkbox = screen.getByTestId('column-check-name');
+      expect(checkbox.closest('.pf-v6-c-data-list__item-row')).toBeInTheDocument();
+    });
+
     it('should sync columns when props change', async () => {
       const { rerender } = render(<ListManager columns={mockColumns} enableDragDrop={false} />);
 
