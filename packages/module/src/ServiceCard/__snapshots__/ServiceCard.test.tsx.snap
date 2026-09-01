@@ -31,7 +31,7 @@ exports[`ServiceCard component should render ServiceCard component 1`] = `
               >
                 <div
                   class="pf-v6-c-content"
-                  data-ouia-component-id="OUIA-Generated-Content-1"
+                  data-ouia-component-id="OUIA-Generated-Content-:r2:"
                   data-ouia-component-type="PF6/Content"
                   data-ouia-safe="true"
                   data-pf-content="true"
@@ -87,7 +87,7 @@ exports[`ServiceCard component should render ServiceCard component 1`] = `
             >
               <div
                 class="pf-v6-c-content"
-                data-ouia-component-id="OUIA-Generated-Content-1"
+                data-ouia-component-id="OUIA-Generated-Content-:r2:"
                 data-ouia-component-type="PF6/Content"
                 data-ouia-safe="true"
                 data-pf-content="true"

@@ -7,7 +7,7 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
     <div>
       <table
         class="pf-v6-c-table pf-m-grid-md"
-        data-ouia-component-id="OUIA-Generated-Table-1"
+        data-ouia-component-id="OUIA-Generated-Table-:r0:"
         data-ouia-component-type="PF6/Table"
         data-ouia-safe="true"
         role="grid"
@@ -189,7 +189,7 @@ exports[`SkeletonTableBody component should render correctly 1`] = `
   "container": <div>
     <table
       class="pf-v6-c-table pf-m-grid-md"
-      data-ouia-component-id="OUIA-Generated-Table-1"
+      data-ouia-component-id="OUIA-Generated-Table-:r0:"
       data-ouia-component-type="PF6/Table"
       data-ouia-safe="true"
       role="grid"

@@ -17,7 +17,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
     >
       <div
         class="pf-v6-c-card pf-m-full-height pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Card-2"
+        data-ouia-component-id="OUIA-Generated-Card-:r1:"
         data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
@@ -30,7 +30,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
           >
             <h4
               class="pf-v6-c-content--h4"
-              data-ouia-component-id="OUIA-Generated-Content-1"
+              data-ouia-component-id="OUIA-Generated-Content-:r3:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -44,7 +44,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
         >
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
-            data-ouia-component-id="OUIA-Generated-Content-2"
+            data-ouia-component-id="OUIA-Generated-Content-:r4:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -61,12 +61,24 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
                   fill="currentColor"
                   height="1em"
                   role="img"
-                  viewBox="0 0 512 512"
                   width="1em"
                 >
-                  <path
-                    d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
-                  />
+                  <svg
+                    class="pf-v6-icon-default"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
+                    />
+                  </svg>
+                  <svg
+                    class="pf-v6-icon-rh-ui"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      d="M16 11c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5Zm0 8c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3Zm14.121-.615-3.138-1.817a9.54 9.54 0 0 0-.001-1.136l3.14-1.817a1 1 0 0 0 .47-1.096 14.982 14.982 0 0 0-4.283-7.414 1 1 0 0 0-1.19-.14l-3.134 1.813c-.32-.208-.65-.4-.985-.571V2.58a1 1 0 0 0-.713-.958 15.158 15.158 0 0 0-8.574 0A1 1 0 0 0 11 2.58v3.633c-.338.174-.666.364-.981.568L6.88 4.965a1 1 0 0 0-1.19.14 14.982 14.982 0 0 0-4.284 7.414 1 1 0 0 0 .472 1.096l3.138 1.814a9.54 9.54 0 0 0 .001 1.139l-3.14 1.817a1 1 0 0 0-.47 1.096 14.986 14.986 0 0 0 4.283 7.414.999.999 0 0 0 1.19.14l3.134-1.813c.32.208.649.4.985.571v3.627a1 1 0 0 0 .713.958c1.38.413 2.822.622 4.287.622s2.907-.209 4.287-.622A1 1 0 0 0 21 29.42v-3.634c.338-.173.666-.362.981-.567l3.138 1.816a.998.998 0 0 0 1.19-.14 14.986 14.986 0 0 0 4.284-7.414 1 1 0 0 0-.472-1.096Zm-4.666 6.534-3.014-1.744a.995.995 0 0 0-.577-.132 1.006 1.006 0 0 0-.532.193c-.53.393-1.114.73-1.735 1.004-.363.16-.597.524-.597.92v3.492c-1.95.463-4.05.463-6 0v-3.49a1 1 0 0 0-.6-.916 9.022 9.022 0 0 1-1.737-1.008 1.063 1.063 0 0 0-.316-.156 1.004 1.004 0 0 0-.788.093l-3.014 1.744a12.96 12.96 0 0 1-3.001-5.188l3.01-1.742a1 1 0 0 0 .509-.985C7.025 16.674 7 16.34 7 16s.023-.675.06-1.006a1.01 1.01 0 0 0-.5-.98L3.545 12.27a12.961 12.961 0 0 1 3-5.188L9.56 8.825c.173.1.382.146.586.132.189-.014.37-.081.523-.194a9.095 9.095 0 0 1 1.736-1.004c.363-.16.596-.523.596-.92V3.348c1.95-.46 4.05-.46 6 0v3.49a1 1 0 0 0 .6.917 9.022 9.022 0 0 1 1.737 1.008c.093.068.206.123.316.156.262.078.55.046.788-.093l3.014-1.744a12.962 12.962 0 0 1 3.001 5.188l-3.01 1.742a1 1 0 0 0-.508.985c.037.33.062.664.062 1.004s-.023.675-.06 1.005a1.01 1.01 0 0 0 .5.98l3.016 1.746a12.96 12.96 0 0 1-3 5.188Z"
+                    />
+                  </svg>
                 </svg>
               </span>
             </span>
@@ -74,7 +86,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
           </div>
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm"
-            data-ouia-component-id="OUIA-Generated-Content-3"
+            data-ouia-component-id="OUIA-Generated-Content-:r5:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -94,7 +106,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
-                  data-ouia-component-id="OUIA-Generated-Button-link-1"
+                  data-ouia-component-id="OUIA-Generated-Button-link-:r6:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -113,7 +125,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
-                  data-ouia-component-id="OUIA-Generated-Button-link-2"
+                  data-ouia-component-id="OUIA-Generated-Button-link-:r7:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -132,7 +144,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
-                  data-ouia-component-id="OUIA-Generated-Button-link-3"
+                  data-ouia-component-id="OUIA-Generated-Button-link-:r8:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -155,7 +167,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
     >
       <div
         class="pf-v6-c-card pf-m-full-height pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Card-3"
+        data-ouia-component-id="OUIA-Generated-Card-:r9:"
         data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
@@ -165,7 +177,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
         >
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
-            data-ouia-component-id="OUIA-Generated-Content-4"
+            data-ouia-component-id="OUIA-Generated-Content-:ra:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -182,12 +194,24 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
                   fill="currentColor"
                   height="1em"
                   role="img"
-                  viewBox="0 0 448 512"
                   width="1em"
                 >
-                  <path
-                    d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
-                  />
+                  <svg
+                    class="pf-v6-icon-default"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
+                    />
+                  </svg>
+                  <svg
+                    class="pf-v6-icon-rh-ui"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      d="M24.5 12H23V8c0-3.86-3.14-7-7-7S9 4.14 9 8v4H7.5c-.827 0-1.5.673-1.5 1.5v15c0 .827.673 1.5 1.5 1.5h17c.827 0 1.5-.673 1.5-1.5v-15c0-.827-.673-1.5-1.5-1.5ZM11 8c0-2.757 2.243-5 5-5s5 2.243 5 5v4H11V8Zm13 20H8V14h16v14Zm-6.5-7c0 .52-.265.978-.667 1.247l-.004.003a1.938 1.938 0 0 1-.203.109c-.015.007-.029.017-.044.024l-.013.007c-.039.013-.082.023-.122.035a1.47 1.47 0 0 1-.447.076c-.057 0-.111-.011-.167-.017-.043-.005-.087-.005-.129-.013a1.499 1.499 0 0 1-1.204-1.47c0-.035.008-.07.011-.105.035-.492.302-.917.697-1.164.024-.015.05-.027.075-.041.074-.04.15-.075.231-.103.033-.011.065-.022.098-.031a1.52 1.52 0 0 1 .235-.042c.036-.004.071-.01.107-.011.016 0 .03-.005.046-.005.293 0 .564.087.795.232.011.007.024.011.035.017l.005.004c.388.261.645.699.661 1.198 0 .016.005.032.005.048Z"
+                    />
+                  </svg>
                 </svg>
               </span>
             </span>
@@ -195,7 +219,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
           </div>
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm"
-            data-ouia-component-id="OUIA-Generated-Content-5"
+            data-ouia-component-id="OUIA-Generated-Content-:rb:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -208,14 +232,14 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
         >
           <div
             class="pf-v6-c-content"
-            data-ouia-component-id="OUIA-Generated-Content-6"
+            data-ouia-component-id="OUIA-Generated-Content-:rc:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
           >
             <button
               class="pf-v6-c-button pf-m-link pf-m-inline"
-              data-ouia-component-id="OUIA-Generated-Button-link-4"
+              data-ouia-component-id="OUIA-Generated-Button-link-:rd:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               type="button"
@@ -235,12 +259,24 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
                       fill="currentColor"
                       height="1em"
                       role="img"
-                      viewBox="0 0 448 512"
                       width="1em"
                     >
-                      <path
-                        d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
-                      />
+                      <svg
+                        class="pf-v6-icon-default"
+                        viewBox="0 0 448 512"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                      <svg
+                        class="pf-v6-icon-rh-ui"
+                        viewBox="0 0 32 32"
+                      >
+                        <path
+                          d="M30.354 14.939 19.708 4.293a.999.999 0 1 0-1.414 1.414L27.587 15H2a1 1 0 0 0 0 2h25.586l-9.293 9.293a.999.999 0 1 0 1.414 1.414l10.646-10.646c.283-.283.439-.66.439-1.061s-.156-.777-.439-1.061Z"
+                        />
+                      </svg>
                     </svg>
                   </span>
                 </span>
@@ -261,7 +297,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
     >
       <div
         class="pf-v6-c-card pf-m-full-height pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Card-4"
+        data-ouia-component-id="OUIA-Generated-Card-:re:"
         data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
@@ -274,7 +310,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
           >
             <h4
               class="pf-v6-c-content--h4"
-              data-ouia-component-id="OUIA-Generated-Content-7"
+              data-ouia-component-id="OUIA-Generated-Content-:rg:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -288,7 +324,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
         >
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
-            data-ouia-component-id="OUIA-Generated-Content-8"
+            data-ouia-component-id="OUIA-Generated-Content-:rh:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -305,12 +341,24 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
                   fill="currentColor"
                   height="1em"
                   role="img"
-                  viewBox="0 0 896 1024"
                   width="1em"
                 >
-                  <path
-                    d="M448,0 C465.333333,0 480.333333,6.33333333 493,19 C505.666667,31.6666667 512,46.6666667 512,64 L512,106 L514.23,106.45 C587.89,121.39 648.48,157.24 696,214 C744,271.333333 768,338.666667 768,416 C768,500 780,568.666667 804,622 C818.666667,652.666667 841.333333,684 872,716 C873.773676,718.829136 875.780658,721.505113 878,724 C890,737.333333 896,752.333333 896,769 C896,785.666667 890,800.333333 878,813 C866,825.666667 850.666667,832 832,832 L63.3,832 C44.9533333,831.84 29.8533333,825.506667 18,813 C6,800.333333 0,785.666667 0,769 C0,752.333333 6,737.333333 18,724 L24,716 L25.06,714.9 C55.1933333,683.28 77.5066667,652.313333 92,622 C116,568.666667 128,500 128,416 C128,338.666667 152,271.333333 200,214 C248,156.666667 309.333333,120.666667 384,106 L384,63.31 C384.166667,46.27 390.5,31.5 403,19 C415.666667,6.33333333 430.666667,0 448,0 Z M576,896 L576,897.08 C575.74,932.6 563.073333,962.573333 538,987 C512.666667,1011.66667 482.666667,1024 448,1024 C413.333333,1024 383.333333,1011.66667 358,987 C332.666667,962.333333 320,932 320,896 L576,896 Z"
-                  />
+                  <svg
+                    class="pf-v6-icon-default"
+                    viewBox="0 0 896 1024"
+                  >
+                    <path
+                      d="M448,0 C465.333333,0 480.333333,6.33333333 493,19 C505.666667,31.6666667 512,46.6666667 512,64 L512,106 L514.23,106.45 C587.89,121.39 648.48,157.24 696,214 C744,271.333333 768,338.666667 768,416 C768,500 780,568.666667 804,622 C818.666667,652.666667 841.333333,684 872,716 C873.773676,718.829136 875.780658,721.505113 878,724 C890,737.333333 896,752.333333 896,769 C896,785.666667 890,800.333333 878,813 C866,825.666667 850.666667,832 832,832 L63.3,832 C44.9533333,831.84 29.8533333,825.506667 18,813 C6,800.333333 0,785.666667 0,769 C0,752.333333 6,737.333333 18,724 L24,716 L25.06,714.9 C55.1933333,683.28 77.5066667,652.313333 92,622 C116,568.666667 128,500 128,416 C128,338.666667 152,271.333333 200,214 C248,156.666667 309.333333,120.666667 384,106 L384,63.31 C384.166667,46.27 390.5,31.5 403,19 C415.666667,6.33333333 430.666667,0 448,0 Z M576,896 L576,897.08 C575.74,932.6 563.073333,962.573333 538,987 C512.666667,1011.66667 482.666667,1024 448,1024 C413.333333,1024 383.333333,1011.66667 358,987 C332.666667,962.333333 320,932 320,896 L576,896 Z"
+                    />
+                  </svg>
+                  <svg
+                    class="pf-v6-icon-rh-ui"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      d="M28.75 22v3.5c0 .689-.561 1.25-1.25 1.25h-7.521c.005.084.021.166.021.25 0 2.206-1.794 4-4 4s-4-1.794-4-4c0-.084.016-.166.021-.25H4.5c-.689 0-1.25-.561-1.25-1.25V22a.75.75 0 0 1 .75-.75c1.24 0 2.25-1.009 2.25-2.25v-4c0-4.826 3.528-8.833 8.138-9.605A2.482 2.482 0 0 1 13.5 3.5C13.5 2.122 14.621 1 16 1s2.5 1.122 2.5 2.5c0 .761-.349 1.436-.888 1.895 4.61.772 8.138 4.779 8.138 9.605v4c0 1.241 1.01 2.25 2.25 2.25a.75.75 0 0 1 .75.75Z"
+                    />
+                  </svg>
                 </svg>
               </span>
             </span>
@@ -318,7 +366,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
           </div>
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm"
-            data-ouia-component-id="OUIA-Generated-Content-9"
+            data-ouia-component-id="OUIA-Generated-Content-:ri:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -331,14 +379,14 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
         >
           <div
             class="pf-v6-c-content"
-            data-ouia-component-id="OUIA-Generated-Content-10"
+            data-ouia-component-id="OUIA-Generated-Content-:rj:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
           >
             <button
               class="pf-v6-c-button pf-m-link pf-m-inline"
-              data-ouia-component-id="OUIA-Generated-Button-link-5"
+              data-ouia-component-id="OUIA-Generated-Button-link-:rk:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               type="button"
@@ -358,12 +406,24 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
                       fill="currentColor"
                       height="1em"
                       role="img"
-                      viewBox="0 0 448 512"
                       width="1em"
                     >
-                      <path
-                        d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
-                      />
+                      <svg
+                        class="pf-v6-icon-default"
+                        viewBox="0 0 448 512"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                      <svg
+                        class="pf-v6-icon-rh-ui"
+                        viewBox="0 0 32 32"
+                      >
+                        <path
+                          d="M30.354 14.939 19.708 4.293a.999.999 0 1 0-1.414 1.414L27.587 15H2a1 1 0 0 0 0 2h25.586l-9.293 9.293a.999.999 0 1 0 1.414 1.414l10.646-10.646c.283-.283.439-.66.439-1.061s-.156-.777-.439-1.061Z"
+                        />
+                      </svg>
                     </svg>
                   </span>
                 </span>
@@ -401,7 +461,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
         aria-expanded="false"
         aria-label="Details"
         class="pf-v6-c-button pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Button-plain-2"
+        data-ouia-component-id="OUIA-Generated-Button-plain-:r1e:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
@@ -418,11 +478,11 @@ exports[`MultiContentCard component should render expandable multi-content card 
               fill="currentColor"
               height="1em"
               role="img"
-              viewBox="0 0 256 512"
+              viewBox="0 0 20 20"
               width="1em"
             >
               <path
-                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                d="M18.71 5.29a.996.996 0 0 0-1.41 0l-7.29 7.29-7.3-7.29a.987.987 0 0 0-1.41-.02.987.987 0 0 0-.02 1.41l.02.02 7.65 7.65c.29.29.68.44 1.06.44s.77-.15 1.06-.44l7.65-7.65a.996.996 0 0 0 0-1.41Z"
               />
             </svg>
           </span>
@@ -469,7 +529,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
         aria-expanded="true"
         aria-label="Details"
         class="pf-v6-c-button pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Button-plain-1"
+        data-ouia-component-id="OUIA-Generated-Button-plain-:rn:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
@@ -486,11 +546,11 @@ exports[`MultiContentCard component should render expandable multi-content card 
               fill="currentColor"
               height="1em"
               role="img"
-              viewBox="0 0 256 512"
+              viewBox="0 0 20 20"
               width="1em"
             >
               <path
-                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                d="M18.71 5.29a.996.996 0 0 0-1.41 0l-7.29 7.29-7.3-7.29a.987.987 0 0 0-1.41-.02.987.987 0 0 0-.02 1.41l.02.02 7.65 7.65c.29.29.68.44 1.06.44s.77-.15 1.06-.44l7.65-7.65a.996.996 0 0 0 0-1.41Z"
               />
             </svg>
           </span>
@@ -528,7 +588,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
       >
         <div
           class="pf-v6-c-card pf-m-full-height pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Card-6"
+          data-ouia-component-id="OUIA-Generated-Card-:ro:"
           data-ouia-component-type="PF6/Card"
           data-ouia-safe="true"
           id=""
@@ -541,7 +601,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
             >
               <h4
                 class="pf-v6-c-content--h4"
-                data-ouia-component-id="OUIA-Generated-Content-11"
+                data-ouia-component-id="OUIA-Generated-Content-:rq:"
                 data-ouia-component-type="PF6/Content"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -555,7 +615,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
           >
             <div
               class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
-              data-ouia-component-id="OUIA-Generated-Content-12"
+              data-ouia-component-id="OUIA-Generated-Content-:rr:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -572,12 +632,24 @@ exports[`MultiContentCard component should render expandable multi-content card 
                     fill="currentColor"
                     height="1em"
                     role="img"
-                    viewBox="0 0 512 512"
                     width="1em"
                   >
-                    <path
-                      d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
-                    />
+                    <svg
+                      class="pf-v6-icon-default"
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
+                      />
+                    </svg>
+                    <svg
+                      class="pf-v6-icon-rh-ui"
+                      viewBox="0 0 32 32"
+                    >
+                      <path
+                        d="M16 11c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5Zm0 8c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3Zm14.121-.615-3.138-1.817a9.54 9.54 0 0 0-.001-1.136l3.14-1.817a1 1 0 0 0 .47-1.096 14.982 14.982 0 0 0-4.283-7.414 1 1 0 0 0-1.19-.14l-3.134 1.813c-.32-.208-.65-.4-.985-.571V2.58a1 1 0 0 0-.713-.958 15.158 15.158 0 0 0-8.574 0A1 1 0 0 0 11 2.58v3.633c-.338.174-.666.364-.981.568L6.88 4.965a1 1 0 0 0-1.19.14 14.982 14.982 0 0 0-4.284 7.414 1 1 0 0 0 .472 1.096l3.138 1.814a9.54 9.54 0 0 0 .001 1.139l-3.14 1.817a1 1 0 0 0-.47 1.096 14.986 14.986 0 0 0 4.283 7.414.999.999 0 0 0 1.19.14l3.134-1.813c.32.208.649.4.985.571v3.627a1 1 0 0 0 .713.958c1.38.413 2.822.622 4.287.622s2.907-.209 4.287-.622A1 1 0 0 0 21 29.42v-3.634c.338-.173.666-.362.981-.567l3.138 1.816a.998.998 0 0 0 1.19-.14 14.986 14.986 0 0 0 4.284-7.414 1 1 0 0 0-.472-1.096Zm-4.666 6.534-3.014-1.744a.995.995 0 0 0-.577-.132 1.006 1.006 0 0 0-.532.193c-.53.393-1.114.73-1.735 1.004-.363.16-.597.524-.597.92v3.492c-1.95.463-4.05.463-6 0v-3.49a1 1 0 0 0-.6-.916 9.022 9.022 0 0 1-1.737-1.008 1.063 1.063 0 0 0-.316-.156 1.004 1.004 0 0 0-.788.093l-3.014 1.744a12.96 12.96 0 0 1-3.001-5.188l3.01-1.742a1 1 0 0 0 .509-.985C7.025 16.674 7 16.34 7 16s.023-.675.06-1.006a1.01 1.01 0 0 0-.5-.98L3.545 12.27a12.961 12.961 0 0 1 3-5.188L9.56 8.825c.173.1.382.146.586.132.189-.014.37-.081.523-.194a9.095 9.095 0 0 1 1.736-1.004c.363-.16.596-.523.596-.92V3.348c1.95-.46 4.05-.46 6 0v3.49a1 1 0 0 0 .6.917 9.022 9.022 0 0 1 1.737 1.008c.093.068.206.123.316.156.262.078.55.046.788-.093l3.014-1.744a12.962 12.962 0 0 1 3.001 5.188l-3.01 1.742a1 1 0 0 0-.508.985c.037.33.062.664.062 1.004s-.023.675-.06 1.005a1.01 1.01 0 0 0 .5.98l3.016 1.746a12.96 12.96 0 0 1-3 5.188Z"
+                      />
+                    </svg>
                   </svg>
                 </span>
               </span>
@@ -585,7 +657,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
             </div>
             <div
               class="pf-v6-c-content pf-v6-u-font-size-sm"
-              data-ouia-component-id="OUIA-Generated-Content-13"
+              data-ouia-component-id="OUIA-Generated-Content-:rs:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -605,7 +677,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
                 <span>
                   <button
                     class="pf-v6-c-button pf-m-link pf-m-inline"
-                    data-ouia-component-id="OUIA-Generated-Button-link-6"
+                    data-ouia-component-id="OUIA-Generated-Button-link-:rt:"
                     data-ouia-component-type="PF6/Button"
                     data-ouia-safe="true"
                     type="button"
@@ -624,7 +696,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
                 <span>
                   <button
                     class="pf-v6-c-button pf-m-link pf-m-inline"
-                    data-ouia-component-id="OUIA-Generated-Button-link-7"
+                    data-ouia-component-id="OUIA-Generated-Button-link-:ru:"
                     data-ouia-component-type="PF6/Button"
                     data-ouia-safe="true"
                     type="button"
@@ -643,7 +715,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
                 <span>
                   <button
                     class="pf-v6-c-button pf-m-link pf-m-inline"
-                    data-ouia-component-id="OUIA-Generated-Button-link-8"
+                    data-ouia-component-id="OUIA-Generated-Button-link-:rv:"
                     data-ouia-component-type="PF6/Button"
                     data-ouia-safe="true"
                     type="button"
@@ -666,7 +738,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
       >
         <div
           class="pf-v6-c-card pf-m-full-height pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Card-7"
+          data-ouia-component-id="OUIA-Generated-Card-:r10:"
           data-ouia-component-type="PF6/Card"
           data-ouia-safe="true"
           id=""
@@ -676,7 +748,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
           >
             <div
               class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
-              data-ouia-component-id="OUIA-Generated-Content-14"
+              data-ouia-component-id="OUIA-Generated-Content-:r11:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -693,12 +765,24 @@ exports[`MultiContentCard component should render expandable multi-content card 
                     fill="currentColor"
                     height="1em"
                     role="img"
-                    viewBox="0 0 448 512"
                     width="1em"
                   >
-                    <path
-                      d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
-                    />
+                    <svg
+                      class="pf-v6-icon-default"
+                      viewBox="0 0 448 512"
+                    >
+                      <path
+                        d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
+                      />
+                    </svg>
+                    <svg
+                      class="pf-v6-icon-rh-ui"
+                      viewBox="0 0 32 32"
+                    >
+                      <path
+                        d="M24.5 12H23V8c0-3.86-3.14-7-7-7S9 4.14 9 8v4H7.5c-.827 0-1.5.673-1.5 1.5v15c0 .827.673 1.5 1.5 1.5h17c.827 0 1.5-.673 1.5-1.5v-15c0-.827-.673-1.5-1.5-1.5ZM11 8c0-2.757 2.243-5 5-5s5 2.243 5 5v4H11V8Zm13 20H8V14h16v14Zm-6.5-7c0 .52-.265.978-.667 1.247l-.004.003a1.938 1.938 0 0 1-.203.109c-.015.007-.029.017-.044.024l-.013.007c-.039.013-.082.023-.122.035a1.47 1.47 0 0 1-.447.076c-.057 0-.111-.011-.167-.017-.043-.005-.087-.005-.129-.013a1.499 1.499 0 0 1-1.204-1.47c0-.035.008-.07.011-.105.035-.492.302-.917.697-1.164.024-.015.05-.027.075-.041.074-.04.15-.075.231-.103.033-.011.065-.022.098-.031a1.52 1.52 0 0 1 .235-.042c.036-.004.071-.01.107-.011.016 0 .03-.005.046-.005.293 0 .564.087.795.232.011.007.024.011.035.017l.005.004c.388.261.645.699.661 1.198 0 .016.005.032.005.048Z"
+                      />
+                    </svg>
                   </svg>
                 </span>
               </span>
@@ -706,7 +790,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
             </div>
             <div
               class="pf-v6-c-content pf-v6-u-font-size-sm"
-              data-ouia-component-id="OUIA-Generated-Content-15"
+              data-ouia-component-id="OUIA-Generated-Content-:r12:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -719,14 +803,14 @@ exports[`MultiContentCard component should render expandable multi-content card 
           >
             <div
               class="pf-v6-c-content"
-              data-ouia-component-id="OUIA-Generated-Content-16"
+              data-ouia-component-id="OUIA-Generated-Content-:r13:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               <button
                 class="pf-v6-c-button pf-m-link pf-m-inline"
-                data-ouia-component-id="OUIA-Generated-Button-link-9"
+                data-ouia-component-id="OUIA-Generated-Button-link-:r14:"
                 data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 type="button"
@@ -746,12 +830,24 @@ exports[`MultiContentCard component should render expandable multi-content card 
                         fill="currentColor"
                         height="1em"
                         role="img"
-                        viewBox="0 0 448 512"
                         width="1em"
                       >
-                        <path
-                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
-                        />
+                        <svg
+                          class="pf-v6-icon-default"
+                          viewBox="0 0 448 512"
+                        >
+                          <path
+                            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                          />
+                        </svg>
+                        <svg
+                          class="pf-v6-icon-rh-ui"
+                          viewBox="0 0 32 32"
+                        >
+                          <path
+                            d="M30.354 14.939 19.708 4.293a.999.999 0 1 0-1.414 1.414L27.587 15H2a1 1 0 0 0 0 2h25.586l-9.293 9.293a.999.999 0 1 0 1.414 1.414l10.646-10.646c.283-.283.439-.66.439-1.061s-.156-.777-.439-1.061Z"
+                          />
+                        </svg>
                       </svg>
                     </span>
                   </span>
@@ -772,7 +868,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
       >
         <div
           class="pf-v6-c-card pf-m-full-height pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Card-8"
+          data-ouia-component-id="OUIA-Generated-Card-:r15:"
           data-ouia-component-type="PF6/Card"
           data-ouia-safe="true"
           id=""
@@ -785,7 +881,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
             >
               <h4
                 class="pf-v6-c-content--h4"
-                data-ouia-component-id="OUIA-Generated-Content-17"
+                data-ouia-component-id="OUIA-Generated-Content-:r17:"
                 data-ouia-component-type="PF6/Content"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -799,7 +895,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
           >
             <div
               class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
-              data-ouia-component-id="OUIA-Generated-Content-18"
+              data-ouia-component-id="OUIA-Generated-Content-:r18:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -816,12 +912,24 @@ exports[`MultiContentCard component should render expandable multi-content card 
                     fill="currentColor"
                     height="1em"
                     role="img"
-                    viewBox="0 0 896 1024"
                     width="1em"
                   >
-                    <path
-                      d="M448,0 C465.333333,0 480.333333,6.33333333 493,19 C505.666667,31.6666667 512,46.6666667 512,64 L512,106 L514.23,106.45 C587.89,121.39 648.48,157.24 696,214 C744,271.333333 768,338.666667 768,416 C768,500 780,568.666667 804,622 C818.666667,652.666667 841.333333,684 872,716 C873.773676,718.829136 875.780658,721.505113 878,724 C890,737.333333 896,752.333333 896,769 C896,785.666667 890,800.333333 878,813 C866,825.666667 850.666667,832 832,832 L63.3,832 C44.9533333,831.84 29.8533333,825.506667 18,813 C6,800.333333 0,785.666667 0,769 C0,752.333333 6,737.333333 18,724 L24,716 L25.06,714.9 C55.1933333,683.28 77.5066667,652.313333 92,622 C116,568.666667 128,500 128,416 C128,338.666667 152,271.333333 200,214 C248,156.666667 309.333333,120.666667 384,106 L384,63.31 C384.166667,46.27 390.5,31.5 403,19 C415.666667,6.33333333 430.666667,0 448,0 Z M576,896 L576,897.08 C575.74,932.6 563.073333,962.573333 538,987 C512.666667,1011.66667 482.666667,1024 448,1024 C413.333333,1024 383.333333,1011.66667 358,987 C332.666667,962.333333 320,932 320,896 L576,896 Z"
-                    />
+                    <svg
+                      class="pf-v6-icon-default"
+                      viewBox="0 0 896 1024"
+                    >
+                      <path
+                        d="M448,0 C465.333333,0 480.333333,6.33333333 493,19 C505.666667,31.6666667 512,46.6666667 512,64 L512,106 L514.23,106.45 C587.89,121.39 648.48,157.24 696,214 C744,271.333333 768,338.666667 768,416 C768,500 780,568.666667 804,622 C818.666667,652.666667 841.333333,684 872,716 C873.773676,718.829136 875.780658,721.505113 878,724 C890,737.333333 896,752.333333 896,769 C896,785.666667 890,800.333333 878,813 C866,825.666667 850.666667,832 832,832 L63.3,832 C44.9533333,831.84 29.8533333,825.506667 18,813 C6,800.333333 0,785.666667 0,769 C0,752.333333 6,737.333333 18,724 L24,716 L25.06,714.9 C55.1933333,683.28 77.5066667,652.313333 92,622 C116,568.666667 128,500 128,416 C128,338.666667 152,271.333333 200,214 C248,156.666667 309.333333,120.666667 384,106 L384,63.31 C384.166667,46.27 390.5,31.5 403,19 C415.666667,6.33333333 430.666667,0 448,0 Z M576,896 L576,897.08 C575.74,932.6 563.073333,962.573333 538,987 C512.666667,1011.66667 482.666667,1024 448,1024 C413.333333,1024 383.333333,1011.66667 358,987 C332.666667,962.333333 320,932 320,896 L576,896 Z"
+                      />
+                    </svg>
+                    <svg
+                      class="pf-v6-icon-rh-ui"
+                      viewBox="0 0 32 32"
+                    >
+                      <path
+                        d="M28.75 22v3.5c0 .689-.561 1.25-1.25 1.25h-7.521c.005.084.021.166.021.25 0 2.206-1.794 4-4 4s-4-1.794-4-4c0-.084.016-.166.021-.25H4.5c-.689 0-1.25-.561-1.25-1.25V22a.75.75 0 0 1 .75-.75c1.24 0 2.25-1.009 2.25-2.25v-4c0-4.826 3.528-8.833 8.138-9.605A2.482 2.482 0 0 1 13.5 3.5C13.5 2.122 14.621 1 16 1s2.5 1.122 2.5 2.5c0 .761-.349 1.436-.888 1.895 4.61.772 8.138 4.779 8.138 9.605v4c0 1.241 1.01 2.25 2.25 2.25a.75.75 0 0 1 .75.75Z"
+                      />
+                    </svg>
                   </svg>
                 </span>
               </span>
@@ -829,7 +937,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
             </div>
             <div
               class="pf-v6-c-content pf-v6-u-font-size-sm"
-              data-ouia-component-id="OUIA-Generated-Content-19"
+              data-ouia-component-id="OUIA-Generated-Content-:r19:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -842,14 +950,14 @@ exports[`MultiContentCard component should render expandable multi-content card 
           >
             <div
               class="pf-v6-c-content"
-              data-ouia-component-id="OUIA-Generated-Content-20"
+              data-ouia-component-id="OUIA-Generated-Content-:r1a:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
             >
               <button
                 class="pf-v6-c-button pf-m-link pf-m-inline"
-                data-ouia-component-id="OUIA-Generated-Button-link-10"
+                data-ouia-component-id="OUIA-Generated-Button-link-:r1b:"
                 data-ouia-component-type="PF6/Button"
                 data-ouia-safe="true"
                 type="button"
@@ -869,12 +977,24 @@ exports[`MultiContentCard component should render expandable multi-content card 
                         fill="currentColor"
                         height="1em"
                         role="img"
-                        viewBox="0 0 448 512"
                         width="1em"
                       >
-                        <path
-                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
-                        />
+                        <svg
+                          class="pf-v6-icon-default"
+                          viewBox="0 0 448 512"
+                        >
+                          <path
+                            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                          />
+                        </svg>
+                        <svg
+                          class="pf-v6-icon-rh-ui"
+                          viewBox="0 0 32 32"
+                        >
+                          <path
+                            d="M30.354 14.939 19.708 4.293a.999.999 0 1 0-1.414 1.414L27.587 15H2a1 1 0 0 0 0 2h25.586l-9.293 9.293a.999.999 0 1 0 1.414 1.414l10.646-10.646c.283-.283.439-.66.439-1.061s-.156-.777-.439-1.061Z"
+                          />
+                        </svg>
                       </svg>
                     </span>
                   </span>
@@ -913,7 +1033,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
         aria-expanded="false"
         aria-label="Details"
         class="pf-v6-c-button pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Button-plain-3"
+        data-ouia-component-id="OUIA-Generated-Button-plain-:r1h:"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         type="button"
@@ -930,11 +1050,11 @@ exports[`MultiContentCard component should render expandable multi-content card 
               fill="currentColor"
               height="1em"
               role="img"
-              viewBox="0 0 256 512"
+              viewBox="0 0 20 20"
               width="1em"
             >
               <path
-                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                d="M18.71 5.29a.996.996 0 0 0-1.41 0l-7.29 7.29-7.3-7.29a.987.987 0 0 0-1.41-.02.987.987 0 0 0-.02 1.41l.02.02 7.65 7.65c.29.29.68.44 1.06.44s.77-.15 1.06-.44l7.65-7.65a.996.996 0 0 0 0-1.41Z"
               />
             </svg>
           </span>
@@ -948,7 +1068,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
         aria-expanded="true"
         aria-label="kebab dropdown toggle"
         class="pf-v6-c-menu-toggle pf-m-expanded pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-MenuToggle-plain-1"
+        data-ouia-component-id="OUIA-Generated-MenuToggle-plain-:r1l:"
         data-ouia-component-type="PF6/MenuToggle"
         data-ouia-safe="true"
         type="button"
@@ -962,12 +1082,24 @@ exports[`MultiContentCard component should render expandable multi-content card 
             fill="currentColor"
             height="1em"
             role="img"
-            viewBox="0 0 192 512"
             width="1em"
           >
-            <path
-              d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-            />
+            <svg
+              class="pf-v6-icon-default"
+              viewBox="0 0 192 512"
+            >
+              <path
+                d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+              />
+            </svg>
+            <svg
+              class="pf-v6-icon-rh-ui"
+              viewBox="0 0 32 32"
+            >
+              <path
+                d="M16 9c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4Zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2Zm0 9c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4Zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2Zm0 5c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4Zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2Z"
+              />
+            </svg>
           </svg>
         </span>
       </button>
@@ -1007,7 +1139,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
     >
       <div
         class="pf-v6-c-card pf-m-full-height pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Card-16"
+        data-ouia-component-id="OUIA-Generated-Card-:r2g:"
         data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
@@ -1020,7 +1152,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
           >
             <h4
               class="pf-v6-c-content--h4"
-              data-ouia-component-id="OUIA-Generated-Content-31"
+              data-ouia-component-id="OUIA-Generated-Content-:r2i:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -1034,7 +1166,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
         >
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
-            data-ouia-component-id="OUIA-Generated-Content-32"
+            data-ouia-component-id="OUIA-Generated-Content-:r2j:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -1051,12 +1183,24 @@ exports[`MultiContentCard component should render multi-content card with a sing
                   fill="currentColor"
                   height="1em"
                   role="img"
-                  viewBox="0 0 512 512"
                   width="1em"
                 >
-                  <path
-                    d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
-                  />
+                  <svg
+                    class="pf-v6-icon-default"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
+                    />
+                  </svg>
+                  <svg
+                    class="pf-v6-icon-rh-ui"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      d="M16 11c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5Zm0 8c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3Zm14.121-.615-3.138-1.817a9.54 9.54 0 0 0-.001-1.136l3.14-1.817a1 1 0 0 0 .47-1.096 14.982 14.982 0 0 0-4.283-7.414 1 1 0 0 0-1.19-.14l-3.134 1.813c-.32-.208-.65-.4-.985-.571V2.58a1 1 0 0 0-.713-.958 15.158 15.158 0 0 0-8.574 0A1 1 0 0 0 11 2.58v3.633c-.338.174-.666.364-.981.568L6.88 4.965a1 1 0 0 0-1.19.14 14.982 14.982 0 0 0-4.284 7.414 1 1 0 0 0 .472 1.096l3.138 1.814a9.54 9.54 0 0 0 .001 1.139l-3.14 1.817a1 1 0 0 0-.47 1.096 14.986 14.986 0 0 0 4.283 7.414.999.999 0 0 0 1.19.14l3.134-1.813c.32.208.649.4.985.571v3.627a1 1 0 0 0 .713.958c1.38.413 2.822.622 4.287.622s2.907-.209 4.287-.622A1 1 0 0 0 21 29.42v-3.634c.338-.173.666-.362.981-.567l3.138 1.816a.998.998 0 0 0 1.19-.14 14.986 14.986 0 0 0 4.284-7.414 1 1 0 0 0-.472-1.096Zm-4.666 6.534-3.014-1.744a.995.995 0 0 0-.577-.132 1.006 1.006 0 0 0-.532.193c-.53.393-1.114.73-1.735 1.004-.363.16-.597.524-.597.92v3.492c-1.95.463-4.05.463-6 0v-3.49a1 1 0 0 0-.6-.916 9.022 9.022 0 0 1-1.737-1.008 1.063 1.063 0 0 0-.316-.156 1.004 1.004 0 0 0-.788.093l-3.014 1.744a12.96 12.96 0 0 1-3.001-5.188l3.01-1.742a1 1 0 0 0 .509-.985C7.025 16.674 7 16.34 7 16s.023-.675.06-1.006a1.01 1.01 0 0 0-.5-.98L3.545 12.27a12.961 12.961 0 0 1 3-5.188L9.56 8.825c.173.1.382.146.586.132.189-.014.37-.081.523-.194a9.095 9.095 0 0 1 1.736-1.004c.363-.16.596-.523.596-.92V3.348c1.95-.46 4.05-.46 6 0v3.49a1 1 0 0 0 .6.917 9.022 9.022 0 0 1 1.737 1.008c.093.068.206.123.316.156.262.078.55.046.788-.093l3.014-1.744a12.962 12.962 0 0 1 3.001 5.188l-3.01 1.742a1 1 0 0 0-.508.985c.037.33.062.664.062 1.004s-.023.675-.06 1.005a1.01 1.01 0 0 0 .5.98l3.016 1.746a12.96 12.96 0 0 1-3 5.188Z"
+                    />
+                  </svg>
                 </svg>
               </span>
             </span>
@@ -1064,7 +1208,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
           </div>
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm"
-            data-ouia-component-id="OUIA-Generated-Content-33"
+            data-ouia-component-id="OUIA-Generated-Content-:r2k:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -1084,7 +1228,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
-                  data-ouia-component-id="OUIA-Generated-Button-link-16"
+                  data-ouia-component-id="OUIA-Generated-Button-link-:r2l:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -1103,7 +1247,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
-                  data-ouia-component-id="OUIA-Generated-Button-link-17"
+                  data-ouia-component-id="OUIA-Generated-Button-link-:r2m:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -1122,7 +1266,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
-                  data-ouia-component-id="OUIA-Generated-Button-link-18"
+                  data-ouia-component-id="OUIA-Generated-Button-link-:r2n:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -1145,7 +1289,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
     >
       <div
         class="pf-v6-c-card pf-m-full-height pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Card-17"
+        data-ouia-component-id="OUIA-Generated-Card-:r2o:"
         data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
@@ -1155,7 +1299,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
         >
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
-            data-ouia-component-id="OUIA-Generated-Content-34"
+            data-ouia-component-id="OUIA-Generated-Content-:r2p:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -1172,12 +1316,24 @@ exports[`MultiContentCard component should render multi-content card with a sing
                   fill="currentColor"
                   height="1em"
                   role="img"
-                  viewBox="0 0 448 512"
                   width="1em"
                 >
-                  <path
-                    d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
-                  />
+                  <svg
+                    class="pf-v6-icon-default"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
+                    />
+                  </svg>
+                  <svg
+                    class="pf-v6-icon-rh-ui"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      d="M24.5 12H23V8c0-3.86-3.14-7-7-7S9 4.14 9 8v4H7.5c-.827 0-1.5.673-1.5 1.5v15c0 .827.673 1.5 1.5 1.5h17c.827 0 1.5-.673 1.5-1.5v-15c0-.827-.673-1.5-1.5-1.5ZM11 8c0-2.757 2.243-5 5-5s5 2.243 5 5v4H11V8Zm13 20H8V14h16v14Zm-6.5-7c0 .52-.265.978-.667 1.247l-.004.003a1.938 1.938 0 0 1-.203.109c-.015.007-.029.017-.044.024l-.013.007c-.039.013-.082.023-.122.035a1.47 1.47 0 0 1-.447.076c-.057 0-.111-.011-.167-.017-.043-.005-.087-.005-.129-.013a1.499 1.499 0 0 1-1.204-1.47c0-.035.008-.07.011-.105.035-.492.302-.917.697-1.164.024-.015.05-.027.075-.041.074-.04.15-.075.231-.103.033-.011.065-.022.098-.031a1.52 1.52 0 0 1 .235-.042c.036-.004.071-.01.107-.011.016 0 .03-.005.046-.005.293 0 .564.087.795.232.011.007.024.011.035.017l.005.004c.388.261.645.699.661 1.198 0 .016.005.032.005.048Z"
+                    />
+                  </svg>
                 </svg>
               </span>
             </span>
@@ -1185,7 +1341,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
           </div>
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm"
-            data-ouia-component-id="OUIA-Generated-Content-35"
+            data-ouia-component-id="OUIA-Generated-Content-:r2q:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -1198,14 +1354,14 @@ exports[`MultiContentCard component should render multi-content card with a sing
         >
           <div
             class="pf-v6-c-content"
-            data-ouia-component-id="OUIA-Generated-Content-36"
+            data-ouia-component-id="OUIA-Generated-Content-:r2r:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
           >
             <button
               class="pf-v6-c-button pf-m-link pf-m-inline"
-              data-ouia-component-id="OUIA-Generated-Button-link-19"
+              data-ouia-component-id="OUIA-Generated-Button-link-:r2s:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               type="button"
@@ -1225,12 +1381,24 @@ exports[`MultiContentCard component should render multi-content card with a sing
                       fill="currentColor"
                       height="1em"
                       role="img"
-                      viewBox="0 0 448 512"
                       width="1em"
                     >
-                      <path
-                        d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
-                      />
+                      <svg
+                        class="pf-v6-icon-default"
+                        viewBox="0 0 448 512"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                      <svg
+                        class="pf-v6-icon-rh-ui"
+                        viewBox="0 0 32 32"
+                      >
+                        <path
+                          d="M30.354 14.939 19.708 4.293a.999.999 0 1 0-1.414 1.414L27.587 15H2a1 1 0 0 0 0 2h25.586l-9.293 9.293a.999.999 0 1 0 1.414 1.414l10.646-10.646c.283-.283.439-.66.439-1.061s-.156-.777-.439-1.061Z"
+                        />
+                      </svg>
                     </svg>
                   </span>
                 </span>
@@ -1254,7 +1422,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
     >
       <div
         class="pf-v6-c-card pf-m-full-height pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Card-18"
+        data-ouia-component-id="OUIA-Generated-Card-:r2t:"
         data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
@@ -1267,7 +1435,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
           >
             <h4
               class="pf-v6-c-content--h4"
-              data-ouia-component-id="OUIA-Generated-Content-37"
+              data-ouia-component-id="OUIA-Generated-Content-:r2v:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -1281,7 +1449,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
         >
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
-            data-ouia-component-id="OUIA-Generated-Content-38"
+            data-ouia-component-id="OUIA-Generated-Content-:r30:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -1298,12 +1466,24 @@ exports[`MultiContentCard component should render multi-content card with a sing
                   fill="currentColor"
                   height="1em"
                   role="img"
-                  viewBox="0 0 896 1024"
                   width="1em"
                 >
-                  <path
-                    d="M448,0 C465.333333,0 480.333333,6.33333333 493,19 C505.666667,31.6666667 512,46.6666667 512,64 L512,106 L514.23,106.45 C587.89,121.39 648.48,157.24 696,214 C744,271.333333 768,338.666667 768,416 C768,500 780,568.666667 804,622 C818.666667,652.666667 841.333333,684 872,716 C873.773676,718.829136 875.780658,721.505113 878,724 C890,737.333333 896,752.333333 896,769 C896,785.666667 890,800.333333 878,813 C866,825.666667 850.666667,832 832,832 L63.3,832 C44.9533333,831.84 29.8533333,825.506667 18,813 C6,800.333333 0,785.666667 0,769 C0,752.333333 6,737.333333 18,724 L24,716 L25.06,714.9 C55.1933333,683.28 77.5066667,652.313333 92,622 C116,568.666667 128,500 128,416 C128,338.666667 152,271.333333 200,214 C248,156.666667 309.333333,120.666667 384,106 L384,63.31 C384.166667,46.27 390.5,31.5 403,19 C415.666667,6.33333333 430.666667,0 448,0 Z M576,896 L576,897.08 C575.74,932.6 563.073333,962.573333 538,987 C512.666667,1011.66667 482.666667,1024 448,1024 C413.333333,1024 383.333333,1011.66667 358,987 C332.666667,962.333333 320,932 320,896 L576,896 Z"
-                  />
+                  <svg
+                    class="pf-v6-icon-default"
+                    viewBox="0 0 896 1024"
+                  >
+                    <path
+                      d="M448,0 C465.333333,0 480.333333,6.33333333 493,19 C505.666667,31.6666667 512,46.6666667 512,64 L512,106 L514.23,106.45 C587.89,121.39 648.48,157.24 696,214 C744,271.333333 768,338.666667 768,416 C768,500 780,568.666667 804,622 C818.666667,652.666667 841.333333,684 872,716 C873.773676,718.829136 875.780658,721.505113 878,724 C890,737.333333 896,752.333333 896,769 C896,785.666667 890,800.333333 878,813 C866,825.666667 850.666667,832 832,832 L63.3,832 C44.9533333,831.84 29.8533333,825.506667 18,813 C6,800.333333 0,785.666667 0,769 C0,752.333333 6,737.333333 18,724 L24,716 L25.06,714.9 C55.1933333,683.28 77.5066667,652.313333 92,622 C116,568.666667 128,500 128,416 C128,338.666667 152,271.333333 200,214 C248,156.666667 309.333333,120.666667 384,106 L384,63.31 C384.166667,46.27 390.5,31.5 403,19 C415.666667,6.33333333 430.666667,0 448,0 Z M576,896 L576,897.08 C575.74,932.6 563.073333,962.573333 538,987 C512.666667,1011.66667 482.666667,1024 448,1024 C413.333333,1024 383.333333,1011.66667 358,987 C332.666667,962.333333 320,932 320,896 L576,896 Z"
+                    />
+                  </svg>
+                  <svg
+                    class="pf-v6-icon-rh-ui"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      d="M28.75 22v3.5c0 .689-.561 1.25-1.25 1.25h-7.521c.005.084.021.166.021.25 0 2.206-1.794 4-4 4s-4-1.794-4-4c0-.084.016-.166.021-.25H4.5c-.689 0-1.25-.561-1.25-1.25V22a.75.75 0 0 1 .75-.75c1.24 0 2.25-1.009 2.25-2.25v-4c0-4.826 3.528-8.833 8.138-9.605A2.482 2.482 0 0 1 13.5 3.5C13.5 2.122 14.621 1 16 1s2.5 1.122 2.5 2.5c0 .761-.349 1.436-.888 1.895 4.61.772 8.138 4.779 8.138 9.605v4c0 1.241 1.01 2.25 2.25 2.25a.75.75 0 0 1 .75.75Z"
+                    />
+                  </svg>
                 </svg>
               </span>
             </span>
@@ -1311,7 +1491,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
           </div>
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm"
-            data-ouia-component-id="OUIA-Generated-Content-39"
+            data-ouia-component-id="OUIA-Generated-Content-:r31:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -1324,14 +1504,14 @@ exports[`MultiContentCard component should render multi-content card with a sing
         >
           <div
             class="pf-v6-c-content"
-            data-ouia-component-id="OUIA-Generated-Content-40"
+            data-ouia-component-id="OUIA-Generated-Content-:r32:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
           >
             <button
               class="pf-v6-c-button pf-m-link pf-m-inline"
-              data-ouia-component-id="OUIA-Generated-Button-link-20"
+              data-ouia-component-id="OUIA-Generated-Button-link-:r33:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               type="button"
@@ -1351,12 +1531,24 @@ exports[`MultiContentCard component should render multi-content card with a sing
                       fill="currentColor"
                       height="1em"
                       role="img"
-                      viewBox="0 0 448 512"
                       width="1em"
                     >
-                      <path
-                        d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
-                      />
+                      <svg
+                        class="pf-v6-icon-default"
+                        viewBox="0 0 448 512"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                      <svg
+                        class="pf-v6-icon-rh-ui"
+                        viewBox="0 0 32 32"
+                      >
+                        <path
+                          d="M30.354 14.939 19.708 4.293a.999.999 0 1 0-1.414 1.414L27.587 15H2a1 1 0 0 0 0 2h25.586l-9.293 9.293a.999.999 0 1 0 1.414 1.414l10.646-10.646c.283-.283.439-.66.439-1.061s-.156-.777-.439-1.061Z"
+                        />
+                      </svg>
                     </svg>
                   </span>
                 </span>
@@ -1392,7 +1584,7 @@ exports[`MultiContentCard component should render multi-content card with divide
     >
       <div
         class="pf-v6-c-card pf-m-full-height pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Card-12"
+        data-ouia-component-id="OUIA-Generated-Card-:r1r:"
         data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
@@ -1405,7 +1597,7 @@ exports[`MultiContentCard component should render multi-content card with divide
           >
             <h4
               class="pf-v6-c-content--h4"
-              data-ouia-component-id="OUIA-Generated-Content-21"
+              data-ouia-component-id="OUIA-Generated-Content-:r1t:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -1419,7 +1611,7 @@ exports[`MultiContentCard component should render multi-content card with divide
         >
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
-            data-ouia-component-id="OUIA-Generated-Content-22"
+            data-ouia-component-id="OUIA-Generated-Content-:r1u:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -1436,12 +1628,24 @@ exports[`MultiContentCard component should render multi-content card with divide
                   fill="currentColor"
                   height="1em"
                   role="img"
-                  viewBox="0 0 512 512"
                   width="1em"
                 >
-                  <path
-                    d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
-                  />
+                  <svg
+                    class="pf-v6-icon-default"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
+                    />
+                  </svg>
+                  <svg
+                    class="pf-v6-icon-rh-ui"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      d="M16 11c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5Zm0 8c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3Zm14.121-.615-3.138-1.817a9.54 9.54 0 0 0-.001-1.136l3.14-1.817a1 1 0 0 0 .47-1.096 14.982 14.982 0 0 0-4.283-7.414 1 1 0 0 0-1.19-.14l-3.134 1.813c-.32-.208-.65-.4-.985-.571V2.58a1 1 0 0 0-.713-.958 15.158 15.158 0 0 0-8.574 0A1 1 0 0 0 11 2.58v3.633c-.338.174-.666.364-.981.568L6.88 4.965a1 1 0 0 0-1.19.14 14.982 14.982 0 0 0-4.284 7.414 1 1 0 0 0 .472 1.096l3.138 1.814a9.54 9.54 0 0 0 .001 1.139l-3.14 1.817a1 1 0 0 0-.47 1.096 14.986 14.986 0 0 0 4.283 7.414.999.999 0 0 0 1.19.14l3.134-1.813c.32.208.649.4.985.571v3.627a1 1 0 0 0 .713.958c1.38.413 2.822.622 4.287.622s2.907-.209 4.287-.622A1 1 0 0 0 21 29.42v-3.634c.338-.173.666-.362.981-.567l3.138 1.816a.998.998 0 0 0 1.19-.14 14.986 14.986 0 0 0 4.284-7.414 1 1 0 0 0-.472-1.096Zm-4.666 6.534-3.014-1.744a.995.995 0 0 0-.577-.132 1.006 1.006 0 0 0-.532.193c-.53.393-1.114.73-1.735 1.004-.363.16-.597.524-.597.92v3.492c-1.95.463-4.05.463-6 0v-3.49a1 1 0 0 0-.6-.916 9.022 9.022 0 0 1-1.737-1.008 1.063 1.063 0 0 0-.316-.156 1.004 1.004 0 0 0-.788.093l-3.014 1.744a12.96 12.96 0 0 1-3.001-5.188l3.01-1.742a1 1 0 0 0 .509-.985C7.025 16.674 7 16.34 7 16s.023-.675.06-1.006a1.01 1.01 0 0 0-.5-.98L3.545 12.27a12.961 12.961 0 0 1 3-5.188L9.56 8.825c.173.1.382.146.586.132.189-.014.37-.081.523-.194a9.095 9.095 0 0 1 1.736-1.004c.363-.16.596-.523.596-.92V3.348c1.95-.46 4.05-.46 6 0v3.49a1 1 0 0 0 .6.917 9.022 9.022 0 0 1 1.737 1.008c.093.068.206.123.316.156.262.078.55.046.788-.093l3.014-1.744a12.962 12.962 0 0 1 3.001 5.188l-3.01 1.742a1 1 0 0 0-.508.985c.037.33.062.664.062 1.004s-.023.675-.06 1.005a1.01 1.01 0 0 0 .5.98l3.016 1.746a12.96 12.96 0 0 1-3 5.188Z"
+                    />
+                  </svg>
                 </svg>
               </span>
             </span>
@@ -1449,7 +1653,7 @@ exports[`MultiContentCard component should render multi-content card with divide
           </div>
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm"
-            data-ouia-component-id="OUIA-Generated-Content-23"
+            data-ouia-component-id="OUIA-Generated-Content-:r1v:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -1469,7 +1673,7 @@ exports[`MultiContentCard component should render multi-content card with divide
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
-                  data-ouia-component-id="OUIA-Generated-Button-link-11"
+                  data-ouia-component-id="OUIA-Generated-Button-link-:r20:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -1488,7 +1692,7 @@ exports[`MultiContentCard component should render multi-content card with divide
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
-                  data-ouia-component-id="OUIA-Generated-Button-link-12"
+                  data-ouia-component-id="OUIA-Generated-Button-link-:r21:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -1507,7 +1711,7 @@ exports[`MultiContentCard component should render multi-content card with divide
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
-                  data-ouia-component-id="OUIA-Generated-Button-link-13"
+                  data-ouia-component-id="OUIA-Generated-Button-link-:r22:"
                   data-ouia-component-type="PF6/Button"
                   data-ouia-safe="true"
                   type="button"
@@ -1533,7 +1737,7 @@ exports[`MultiContentCard component should render multi-content card with divide
     >
       <div
         class="pf-v6-c-card pf-m-full-height pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Card-13"
+        data-ouia-component-id="OUIA-Generated-Card-:r23:"
         data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
@@ -1543,7 +1747,7 @@ exports[`MultiContentCard component should render multi-content card with divide
         >
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
-            data-ouia-component-id="OUIA-Generated-Content-24"
+            data-ouia-component-id="OUIA-Generated-Content-:r24:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -1560,12 +1764,24 @@ exports[`MultiContentCard component should render multi-content card with divide
                   fill="currentColor"
                   height="1em"
                   role="img"
-                  viewBox="0 0 448 512"
                   width="1em"
                 >
-                  <path
-                    d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
-                  />
+                  <svg
+                    class="pf-v6-icon-default"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
+                    />
+                  </svg>
+                  <svg
+                    class="pf-v6-icon-rh-ui"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      d="M24.5 12H23V8c0-3.86-3.14-7-7-7S9 4.14 9 8v4H7.5c-.827 0-1.5.673-1.5 1.5v15c0 .827.673 1.5 1.5 1.5h17c.827 0 1.5-.673 1.5-1.5v-15c0-.827-.673-1.5-1.5-1.5ZM11 8c0-2.757 2.243-5 5-5s5 2.243 5 5v4H11V8Zm13 20H8V14h16v14Zm-6.5-7c0 .52-.265.978-.667 1.247l-.004.003a1.938 1.938 0 0 1-.203.109c-.015.007-.029.017-.044.024l-.013.007c-.039.013-.082.023-.122.035a1.47 1.47 0 0 1-.447.076c-.057 0-.111-.011-.167-.017-.043-.005-.087-.005-.129-.013a1.499 1.499 0 0 1-1.204-1.47c0-.035.008-.07.011-.105.035-.492.302-.917.697-1.164.024-.015.05-.027.075-.041.074-.04.15-.075.231-.103.033-.011.065-.022.098-.031a1.52 1.52 0 0 1 .235-.042c.036-.004.071-.01.107-.011.016 0 .03-.005.046-.005.293 0 .564.087.795.232.011.007.024.011.035.017l.005.004c.388.261.645.699.661 1.198 0 .016.005.032.005.048Z"
+                    />
+                  </svg>
                 </svg>
               </span>
             </span>
@@ -1573,7 +1789,7 @@ exports[`MultiContentCard component should render multi-content card with divide
           </div>
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm"
-            data-ouia-component-id="OUIA-Generated-Content-25"
+            data-ouia-component-id="OUIA-Generated-Content-:r25:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -1586,14 +1802,14 @@ exports[`MultiContentCard component should render multi-content card with divide
         >
           <div
             class="pf-v6-c-content"
-            data-ouia-component-id="OUIA-Generated-Content-26"
+            data-ouia-component-id="OUIA-Generated-Content-:r26:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
           >
             <button
               class="pf-v6-c-button pf-m-link pf-m-inline"
-              data-ouia-component-id="OUIA-Generated-Button-link-14"
+              data-ouia-component-id="OUIA-Generated-Button-link-:r27:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               type="button"
@@ -1613,12 +1829,24 @@ exports[`MultiContentCard component should render multi-content card with divide
                       fill="currentColor"
                       height="1em"
                       role="img"
-                      viewBox="0 0 448 512"
                       width="1em"
                     >
-                      <path
-                        d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
-                      />
+                      <svg
+                        class="pf-v6-icon-default"
+                        viewBox="0 0 448 512"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                      <svg
+                        class="pf-v6-icon-rh-ui"
+                        viewBox="0 0 32 32"
+                      >
+                        <path
+                          d="M30.354 14.939 19.708 4.293a.999.999 0 1 0-1.414 1.414L27.587 15H2a1 1 0 0 0 0 2h25.586l-9.293 9.293a.999.999 0 1 0 1.414 1.414l10.646-10.646c.283-.283.439-.66.439-1.061s-.156-.777-.439-1.061Z"
+                        />
+                      </svg>
                     </svg>
                   </span>
                 </span>
@@ -1642,7 +1870,7 @@ exports[`MultiContentCard component should render multi-content card with divide
     >
       <div
         class="pf-v6-c-card pf-m-full-height pf-m-plain"
-        data-ouia-component-id="OUIA-Generated-Card-14"
+        data-ouia-component-id="OUIA-Generated-Card-:r28:"
         data-ouia-component-type="PF6/Card"
         data-ouia-safe="true"
         id=""
@@ -1655,7 +1883,7 @@ exports[`MultiContentCard component should render multi-content card with divide
           >
             <h4
               class="pf-v6-c-content--h4"
-              data-ouia-component-id="OUIA-Generated-Content-27"
+              data-ouia-component-id="OUIA-Generated-Content-:r2a:"
               data-ouia-component-type="PF6/Content"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -1669,7 +1897,7 @@ exports[`MultiContentCard component should render multi-content card with divide
         >
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-font-weight-bold pf-v6-u-mb-sm pf-v6-u-link-color-hover"
-            data-ouia-component-id="OUIA-Generated-Content-28"
+            data-ouia-component-id="OUIA-Generated-Content-:r2b:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -1686,12 +1914,24 @@ exports[`MultiContentCard component should render multi-content card with divide
                   fill="currentColor"
                   height="1em"
                   role="img"
-                  viewBox="0 0 896 1024"
                   width="1em"
                 >
-                  <path
-                    d="M448,0 C465.333333,0 480.333333,6.33333333 493,19 C505.666667,31.6666667 512,46.6666667 512,64 L512,106 L514.23,106.45 C587.89,121.39 648.48,157.24 696,214 C744,271.333333 768,338.666667 768,416 C768,500 780,568.666667 804,622 C818.666667,652.666667 841.333333,684 872,716 C873.773676,718.829136 875.780658,721.505113 878,724 C890,737.333333 896,752.333333 896,769 C896,785.666667 890,800.333333 878,813 C866,825.666667 850.666667,832 832,832 L63.3,832 C44.9533333,831.84 29.8533333,825.506667 18,813 C6,800.333333 0,785.666667 0,769 C0,752.333333 6,737.333333 18,724 L24,716 L25.06,714.9 C55.1933333,683.28 77.5066667,652.313333 92,622 C116,568.666667 128,500 128,416 C128,338.666667 152,271.333333 200,214 C248,156.666667 309.333333,120.666667 384,106 L384,63.31 C384.166667,46.27 390.5,31.5 403,19 C415.666667,6.33333333 430.666667,0 448,0 Z M576,896 L576,897.08 C575.74,932.6 563.073333,962.573333 538,987 C512.666667,1011.66667 482.666667,1024 448,1024 C413.333333,1024 383.333333,1011.66667 358,987 C332.666667,962.333333 320,932 320,896 L576,896 Z"
-                  />
+                  <svg
+                    class="pf-v6-icon-default"
+                    viewBox="0 0 896 1024"
+                  >
+                    <path
+                      d="M448,0 C465.333333,0 480.333333,6.33333333 493,19 C505.666667,31.6666667 512,46.6666667 512,64 L512,106 L514.23,106.45 C587.89,121.39 648.48,157.24 696,214 C744,271.333333 768,338.666667 768,416 C768,500 780,568.666667 804,622 C818.666667,652.666667 841.333333,684 872,716 C873.773676,718.829136 875.780658,721.505113 878,724 C890,737.333333 896,752.333333 896,769 C896,785.666667 890,800.333333 878,813 C866,825.666667 850.666667,832 832,832 L63.3,832 C44.9533333,831.84 29.8533333,825.506667 18,813 C6,800.333333 0,785.666667 0,769 C0,752.333333 6,737.333333 18,724 L24,716 L25.06,714.9 C55.1933333,683.28 77.5066667,652.313333 92,622 C116,568.666667 128,500 128,416 C128,338.666667 152,271.333333 200,214 C248,156.666667 309.333333,120.666667 384,106 L384,63.31 C384.166667,46.27 390.5,31.5 403,19 C415.666667,6.33333333 430.666667,0 448,0 Z M576,896 L576,897.08 C575.74,932.6 563.073333,962.573333 538,987 C512.666667,1011.66667 482.666667,1024 448,1024 C413.333333,1024 383.333333,1011.66667 358,987 C332.666667,962.333333 320,932 320,896 L576,896 Z"
+                    />
+                  </svg>
+                  <svg
+                    class="pf-v6-icon-rh-ui"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      d="M28.75 22v3.5c0 .689-.561 1.25-1.25 1.25h-7.521c.005.084.021.166.021.25 0 2.206-1.794 4-4 4s-4-1.794-4-4c0-.084.016-.166.021-.25H4.5c-.689 0-1.25-.561-1.25-1.25V22a.75.75 0 0 1 .75-.75c1.24 0 2.25-1.009 2.25-2.25v-4c0-4.826 3.528-8.833 8.138-9.605A2.482 2.482 0 0 1 13.5 3.5C13.5 2.122 14.621 1 16 1s2.5 1.122 2.5 2.5c0 .761-.349 1.436-.888 1.895 4.61.772 8.138 4.779 8.138 9.605v4c0 1.241 1.01 2.25 2.25 2.25a.75.75 0 0 1 .75.75Z"
+                    />
+                  </svg>
                 </svg>
               </span>
             </span>
@@ -1699,7 +1939,7 @@ exports[`MultiContentCard component should render multi-content card with divide
           </div>
           <div
             class="pf-v6-c-content pf-v6-u-font-size-sm"
-            data-ouia-component-id="OUIA-Generated-Content-29"
+            data-ouia-component-id="OUIA-Generated-Content-:r2c:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
@@ -1712,14 +1952,14 @@ exports[`MultiContentCard component should render multi-content card with divide
         >
           <div
             class="pf-v6-c-content"
-            data-ouia-component-id="OUIA-Generated-Content-30"
+            data-ouia-component-id="OUIA-Generated-Content-:r2d:"
             data-ouia-component-type="PF6/Content"
             data-ouia-safe="true"
             data-pf-content="true"
           >
             <button
               class="pf-v6-c-button pf-m-link pf-m-inline"
-              data-ouia-component-id="OUIA-Generated-Button-link-15"
+              data-ouia-component-id="OUIA-Generated-Button-link-:r2e:"
               data-ouia-component-type="PF6/Button"
               data-ouia-safe="true"
               type="button"
@@ -1739,12 +1979,24 @@ exports[`MultiContentCard component should render multi-content card with divide
                       fill="currentColor"
                       height="1em"
                       role="img"
-                      viewBox="0 0 448 512"
                       width="1em"
                     >
-                      <path
-                        d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
-                      />
+                      <svg
+                        class="pf-v6-icon-default"
+                        viewBox="0 0 448 512"
+                      >
+                        <path
+                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                        />
+                      </svg>
+                      <svg
+                        class="pf-v6-icon-rh-ui"
+                        viewBox="0 0 32 32"
+                      >
+                        <path
+                          d="M30.354 14.939 19.708 4.293a.999.999 0 1 0-1.414 1.414L27.587 15H2a1 1 0 0 0 0 2h25.586l-9.293 9.293a.999.999 0 1 0 1.414 1.414l10.646-10.646c.283-.283.439-.66.439-1.061s-.156-.777-.439-1.061Z"
+                        />
+                      </svg>
                     </svg>
                   </span>
                 </span>
