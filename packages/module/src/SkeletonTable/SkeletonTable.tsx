@@ -28,6 +28,8 @@ export interface SkeletonTableProps
   columns?: (ReactNode | { cell: ReactNode; props?: ThProps })[];
   /** Number of columns in the table */
   columnsCount?: number;
+  /** Flag indicating if the table header skeleton should be rendered */
+  hasHeader?: boolean;
 }
 
 const SkeletonTable: FunctionComponent<SkeletonTableProps> = ({
@@ -42,6 +44,7 @@ const SkeletonTable: FunctionComponent<SkeletonTableProps> = ({
   columns,
   columnsCount,
   isTreeTable,
+  hasHeader = true,
   ...rest
 }: SkeletonTableProps) => {
   const rowCellsCount = Array.isArray(columns) ? columns.length : columnsCount;
@@ -49,14 +52,16 @@ const SkeletonTable: FunctionComponent<SkeletonTableProps> = ({
   return (
     <Table aria-label="Loading" variant={variant} borders={borders} ouiaId={ouiaId} {...rest}>
       {caption && <Caption>{caption}</Caption>}
-      <SkeletonTableHead
-        ouiaId={ouiaId}
-        isSelectable={isSelectable}
-        isExpandable={isExpandable}
-        columnsCount={columnsCount}
-        columns={columns}
-        isTreeTable={isTreeTable}
-      />
+      {hasHeader && (
+        <SkeletonTableHead
+          ouiaId={ouiaId}
+          isSelectable={isSelectable}
+          isExpandable={isExpandable}
+          columnsCount={columnsCount}
+          columns={columns}
+          isTreeTable={isTreeTable}
+        />
+      )}
       <SkeletonTableBody
         columnsCount={rowCellsCount ?? 0}
         rowsCount={rowsCount}
