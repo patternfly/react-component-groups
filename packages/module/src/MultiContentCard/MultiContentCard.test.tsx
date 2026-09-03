@@ -1,5 +1,5 @@
 import type { Ref } from 'react';
-import { screen, render } from '@testing-library/react';
+import { screen, render, act } from '@testing-library/react';
 import { Button, Card, CardHeader, CardBody, Content, ContentVariants, Icon, List, ListItem, CardFooter, Dropdown, MenuToggle, DropdownList, DropdownItem, MenuToggleElement } from '@patternfly/react-core';
 import { ArrowRightIcon, BellIcon, CogIcon, EllipsisVIcon, LockIcon } from '@patternfly/react-icons';
 import MultiContentCard, { MultiContentCardDividerVariant } from './MultiContentCard';
@@ -124,6 +124,29 @@ describe('MultiContentCard component', () => {
     expect(screen.queryByText('Getting Started')).toBe(null);
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('should call onExpand when expanding the multi-content card', () => {
+    const onExpand = jest.fn();
+
+    render(
+      <MultiContentCard
+        isExpandable
+        defaultExpanded={false}
+        toggleText='Expandable card toggle text'
+        cards={cards}
+        onExpand={onExpand}
+      />
+    );
+    expect(screen.queryByText('Getting Started')).toBe(null);
+
+    act(() => {
+      screen.getByRole('button', { name: 'Details' }).click();
+    });
+
+    expect(onExpand).toHaveBeenCalled();
+
+    expect(screen.getByText('Getting Started')).toBeInTheDocument();
   });
 
   it('should render expandable multi-content card - with actions', () => {
