@@ -40,6 +40,8 @@ export interface MultiContentCardProps extends Omit<CardProps, 'children' | 'tit
   withDividers?: boolean;
   /** Indicates whether the card is expandable */
   isExpandable?: boolean;
+  /** Callback expandable card */
+  onExpand?: () => void;
   /** Indicates whether the card is expanded by default */
   defaultExpanded?: boolean;
   /** Indicates whether the actions toggle is right aligned */
@@ -67,13 +69,15 @@ const MultiContentCard: FunctionComponent<MultiContentCardProps> = ({
   withDividers = false,
   isExpandable = false,
   defaultExpanded = true,
+  onExpand,
   ouiaId = 'MultiContentCard',
   ...props
 }: MultiContentCardProps) => {
   const [ isExpanded, setIsExpanded ] = useState(defaultExpanded);
   const classes = useStyles();
-  const onExpand = () => {
+  const onExpandChange = () => {
     setIsExpanded(!isExpanded);
+    onExpand && onExpand();
   };
   
   const renderCards = (cards: (ReactElement | MutliContentCardProps)[], withDividers?: boolean) =>  (
@@ -105,7 +109,7 @@ const MultiContentCard: FunctionComponent<MultiContentCardProps> = ({
       {isExpandable && (
         <CardHeader
           data-ouia-component-id={`${ouiaId}-header`}
-          onExpand={onExpand}
+          onExpand={onExpandChange}
           isToggleRightAligned={isToggleRightAligned}
           toggleButtonProps={{
             'aria-label': 'Details',
