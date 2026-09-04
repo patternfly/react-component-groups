@@ -1,5 +1,5 @@
 import { Button, ButtonProps } from '@patternfly/react-core';
-import { ExternalLinkAltIcon } from '@patternfly/react-icons';
+import { RhUiExternalLinkIcon } from '@patternfly/react-icons';
 import type { SVGIconProps } from '@patternfly/react-icons/dist/esm/createIcon';
 import { forwardRef, Ref } from 'react';
 
@@ -12,7 +12,7 @@ export interface ExternalLinkButtonProps extends ButtonProps {
 export const ExternalLinkButton = forwardRef(({ iconProps, ...props }: ExternalLinkButtonProps, ref: Ref<HTMLAnchorElement>) => (
   <Button
     component="a"
-    icon={<ExternalLinkAltIcon {...iconProps} />}
+    icon={<RhUiExternalLinkIcon {...iconProps} />}
     iconPosition="right"
     ouiaId="ExternalLinkButton"
     ref={ref}
