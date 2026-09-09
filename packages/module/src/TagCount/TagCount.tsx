@@ -12,7 +12,7 @@ const useStyles = createUseStyles({
   },
 
   tagIcon: (isDisabled: boolean) => ({
-    color: `var(--pf-t--global--icon--color--${isDisabled ? '200' : '100'})`,
+    color: isDisabled ? 'var(--pf-t--global--icon--color--disabled)' : 'var(--pf-v6-c-button__icon--Color)',
   }),
 
   tagText: {
