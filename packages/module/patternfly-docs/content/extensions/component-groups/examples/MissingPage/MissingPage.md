@@ -28,3 +28,11 @@ A basic missing page component informs users that an error has occurred. It also
 ```js file="./MissingPageExample.tsx"
 
 ```
+
+### Custom footer
+
+To override the default homepage link, specify your own footer actions using `customFooter`. This is useful when you need multiple action buttons, such as both "Go to home page" and "Return to previous page".
+
+```js file="./MissingPageFooterExample.tsx"
+
+```
