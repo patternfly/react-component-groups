@@ -280,7 +280,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
   );
 };
 
-export const ProductNudge: FunctionComponent<ProductNudgeProps> = (props) => (
+const ProductNudge: FunctionComponent<ProductNudgeProps> = (props) => (
   <ErrorBoundary silent>
     <ProductNudgeContent {...props} />
   </ErrorBoundary>

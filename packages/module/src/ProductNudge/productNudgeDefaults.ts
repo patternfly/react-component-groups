@@ -37,13 +37,3 @@ export const lightwellDefaultContact: NudgeContact = {
     "Thanks — we've received your request. A representative will reach out shortly.",
 };
 
-/**
- * Default footer content for ProductNudgeContactModal (Red Hat + IBM lockup).
- * Pass as the `footerContent` prop.
- */
-export const LightwellModalFooter = () => (
-  <>
-    <img src={RedHatLogo} alt="Red Hat" style={{ maxHeight: '1.5rem', maxWidth: '5rem' }} />
-    <img src={IBMCloudIcon} alt="IBM" style={{ maxHeight: '1.5rem', maxWidth: '5rem' }} />
-  </>
-);
