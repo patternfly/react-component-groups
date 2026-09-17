@@ -9,3 +9,4 @@ export * from './ProductNudgeField';
 export * from './ProductNudge.types';
 export { interpolateMessageTemplate } from './interpolateMessageTemplate';
 export { useImpressionTracking } from './useImpressionTracking';
+export * from './productNudgeDefaults';

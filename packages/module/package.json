@@ -5,7 +5,8 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
-    "build": "npm run build:index && npm run build:js && npm run build:esm && npm run build:fed:packages",
+    "build": "npm run build:index && npm run build:js && npm run build:esm && npm run build:fed:packages && npm run build:assets",
+    "build:assets": "mkdir -p dist/esm/ProductNudge/assets dist/cjs/ProductNudge/assets && cp src/ProductNudge/assets/* dist/esm/ProductNudge/assets/ && cp src/ProductNudge/assets/* dist/cjs/ProductNudge/assets/",
     "build:watch": "npm run build:js && npm run build:esm -- --watch && npm run build:fed:packages -- --watch",
     "build:esm": "tsc --build --verbose ./tsconfig.json",
     "build:fed:packages": "node generate-fed-package-json.js",
