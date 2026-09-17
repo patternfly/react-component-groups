@@ -38,12 +38,14 @@
     "react-jss": "^10.10.0"
   },
   "peerDependencies": {
+    "@patternfly/react-charts": "^8.0.0",
     "@patternfly/react-drag-drop": "^6.6.2",
     "react": "^17 || ^18 || ^19",
     "react-dom": "^17 || ^18 || ^19"
   },
   "devDependencies": {
     "@patternfly/documentation-framework": "^6.5.16",
+    "@patternfly/react-charts": "^8.2.1",
     "@patternfly/patternfly": "^6.0.0",
     "@patternfly/patternfly-a11y": "^5.1.0",
     "@patternfly/react-code-editor": "^6.6.2",
