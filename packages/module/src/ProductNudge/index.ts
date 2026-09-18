@@ -15,9 +15,5 @@ export * from './ProductNudgeDescriptionItem';
 export { default as ProductNudgeMatchAnalysisModal } from './ProductNudgeMatchAnalysisModal';
 export * from './ProductNudgeMatchAnalysisModal';
 
-export { default as LightwellModalFooter } from './LightwellModalFooter';
-export * from './LightwellModalFooter';
-
 export * from './productNudgeDefaults';
-export { interpolateMessageTemplate } from './interpolateMessageTemplate';
 export { useImpressionTracking } from './useImpressionTracking';

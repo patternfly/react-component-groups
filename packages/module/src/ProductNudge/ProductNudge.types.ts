@@ -58,8 +58,7 @@ export interface NudgeMetric {
   value: string | number;
   /** How to format the value for display */
   format: NudgeMetricFormat;
-  /** Template interpolation key matching {{key}} tokens in NudgeContact.messageTemplate */
-  key?: string;
+
 }
 
 /** Visual weight / layout variant */
