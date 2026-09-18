@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductNudgeContactModal component renders closed (nothing visible) 1`] = `<div />`;
+
+exports[`ProductNudgeContactModal component renders when open 1`] = `
+<div
+  aria-hidden="true"
+/>
+`;
+
+exports[`ProductNudgeContactModal component renders with partnerLogos 1`] = `
+<div
+  aria-hidden="true"
+/>
+`;

@@ -20,6 +20,8 @@ import { createUseStyles } from 'react-jss';
 
 import ErrorBoundary from '../ErrorBoundary';
 import { useImpressionTracking } from './useImpressionTracking';
+import { ProductNudgeField } from './ProductNudgeField';
+import { lightwellBackgroundStyle, lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
 import {
   ProductNudgeProps,
   ProductNudgeProminence,
@@ -49,15 +51,10 @@ const useStyles = createUseStyles({
     height: '1rem',
     width: 'auto',
   },
-  lightModeOnly: {
-    '.pf-v6-theme-dark &': { display: 'none' },
-  },
-  darkModeOnly: {
-    display: 'none',
-    '.pf-v6-theme-dark &': { display: 'block' },
-  },
+  ...nudgeModeStyles,
   heroBg: {
-    '--pf-v6-c-hero--BackgroundColor': '#e5e0df',
+    ...lightwellBackgroundStyle,
+    '--pf-v6-c-hero--BackgroundColor': 'var(--lightwell--background-color)',
     '.pf-v6-theme-dark &': {
       '--pf-v6-c-hero--BackgroundColor': 'var(--pf-t--color--black)',
     },
@@ -76,11 +73,6 @@ const useStyles = createUseStyles({
   },
   metricsRow: {
     alignItems: 'flex-start',
-  },
-  ctaLightwellColor: {
-    '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)',
-    '--pf-v6-c-button--hover--BackgroundColor': 'var(--pf-t--color--red--60)',
-    '--pf-v6-c-button--m-clicked--BackgroundColor': 'var(--pf-t--color--red--60)',
   },
 });
 
@@ -121,8 +113,8 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
   ouiaId = 'ProductNudge',
 }) => {
   const classes = useStyles();
-  const [isDismissed, setIsDismissed] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [ isDismissed, setIsDismissed ] = useState(false);
+  const [ isExpanded, setIsExpanded ] = useState(false);
   const impressionRef = useImpressionTracking(onImpression, isEligible && !isLoading);
 
   if (!isEligible || isDismissed) {
@@ -134,7 +126,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
     onDismiss?.();
   };
 
-  const ctaStyle = ctaColorScheme === 'lightwell' ? { style: { '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)', '--pf-v6-c-button--hover--BackgroundColor': 'var(--pf-t--color--red--60)', '--pf-v6-c-button--m-clicked--BackgroundColor': 'var(--pf-t--color--red--60)' } as React.CSSProperties } : {};
+  const ctaStyle = ctaColorScheme === 'lightwell' ? lightwellCtaStyle : undefined;
 
   const metricsRow = metrics.length > 0 && (
     <Flex
@@ -172,7 +164,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
         variant="primary"
         size={prominence === 'hero' ? 'lg' : undefined}
         ouiaId={`${ouiaId}-cta`}
-        {...ctaStyle}
+        style={ctaStyle}
       >
         {content.cta.label}
       </Button>
@@ -184,7 +176,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
         isLoading={isLoading}
         isDisabled={isLoading}
         ouiaId={`${ouiaId}-cta`}
-        {...ctaStyle}
+        style={ctaStyle}
       >
         {content.cta.label}
       </Button>
@@ -366,6 +358,28 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
         >
           {content.body}
         </Alert>
+      </div>
+    );
+  }
+
+  if (prominence === 'field') {
+    const fieldValue = metrics[0]
+      ? String(formatMetricValue(metrics[0].value, metrics[0].format))
+      : undefined;
+    return (
+      <div ref={impressionRef} data-ouia-component-id={ouiaId}>
+        <ProductNudgeField
+          isEligible={isEligible}
+          titleText={content.headline}
+          bodyText={content.body}
+          ctaText={content.cta.label}
+          ctaUrl={content.cta.href}
+          logo={content.assets?.logo}
+          logoDark={content.assets?.logoDark}
+          value={fieldValue}
+          ouiaId={`${ouiaId}-field`}
+          className={className}
+        />
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ProductNudgeContactModal from './ProductNudgeContactModal';
 import { NudgeContact } from './ProductNudge.types';
 
@@ -20,6 +20,7 @@ describe('ProductNudgeContactModal component', () => {
         onSubmit={jest.fn().mockResolvedValue(undefined)}
       />,
     );
+    expect(screen.getByRole('dialog', { name: 'Get in touch' })).toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });
 

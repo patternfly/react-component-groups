@@ -8,8 +8,6 @@ import {
   Button,
   Content,
   Popover,
-  Stack,
-  StackItem,
   Title,
 } from '@patternfly/react-core';
 import {
@@ -31,6 +29,7 @@ import LightwellLogoDark from './assets/lightwell-logo-dark.svg';
 import RedHatIBMLockup from './assets/RedHatIBMLockup.svg';
 import RedHatIBMLockupDark from './assets/RedHatIBMLockupDark.svg';
 import { ProductNudgeMatchAnalysisModalProps } from './ProductNudge.types';
+import { lightwellBackgroundStyle, lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
 
 const useStyles = createUseStyles({
   modal: {
@@ -40,7 +39,8 @@ const useStyles = createUseStyles({
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
     // Background color matches Hero light mode
-    backgroundColor: '#e5e0df',
+    ...lightwellBackgroundStyle,
+    backgroundColor: 'var(--lightwell--background-color)',
     '.pf-v6-theme-dark &': {
       '--pf-v6-c-about-modal-box--BackgroundImage': `url(${LightwellBgDark})`,
       backgroundColor: 'var(--pf-t--color--black)',
@@ -112,7 +112,8 @@ const useStyles = createUseStyles({
   legendList: {
     listStyle: 'none',
     padding: 0,
-    margin: '12px 0 0', // align with chart top padding
+    marginBlockStart: 'var(--pf-t--global--spacer--sm)',
+    marginBlockEnd: 0,
     display: 'flex',
     flexDirection: 'column',
     gap: 'var(--pf-t--global--spacer--sm)',
@@ -136,69 +137,61 @@ const useStyles = createUseStyles({
     gap: 'var(--pf-t--global--spacer--md)',
     paddingBlockStart: 'var(--pf-t--global--spacer--md)',
   },
-  downloadBtn: {
-    '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)',
-    '--pf-v6-c-button--hover--BackgroundColor': 'var(--pf-t--color--red--60)',
-    '--pf-v6-c-button--m-clicked--BackgroundColor': 'var(--pf-t--color--red--60)',
-  },
   partnerLockup: {
     maxHeight: '1.5rem',
     width: 'auto',
   },
-  lightModeOnly: {
-    '.pf-v6-theme-dark &': { display: 'none' },
-  },
-  darkModeOnly: {
-    display: 'none',
-    '.pf-v6-theme-dark &': { display: 'block' },
-  },
+  ...nudgeModeStyles,
 });
 
-// Sample data — placeholder until real props are wired
-const MATCH_DATA = {
+const DEFAULT_MATCH_DATA = {
   exact: 118,
   partial: 195,
   noMatch: 534,
 };
 
-const ECOSYSTEM_DATA = [
+const DEFAULT_ECOSYSTEM_DATA = [
   { name: 'Java', exact: 70, partial: 120, noMatch: 180 },
   { name: 'Python', exact: 50, partial: 80, noMatch: 170 },
 ];
 
-// "No match" uses a fixed light gray so it remains visible on both light and dark backgrounds
+// Lightwell's chart palette is intentionally separate from PatternFly's palette;
+// custom properties allow consumers to theme it without changing the defaults.
 const CHART_COLORS = [
-  '#f56e6e',
-  '#f8ae54',
-  '#f2f2f2',
+  'var(--lightwell-chart-color-exact, #f56e6e)',
+  'var(--lightwell-chart-color-partial, #f8ae54)',
+  'var(--lightwell-chart-color-no-match, #f2f2f2)',
 ];
 
-const MATCH_ITEMS = [
-  {
-    label: 'exact matches',
-    value: MATCH_DATA.exact,
-    helpText: 'Packages with a direct version-matched equivalent in the Lightwell catalog.',
-  },
-  {
-    label: 'partial matches',
-    value: MATCH_DATA.partial,
-    helpText: 'Packages with a near-match or alternative available in the Lightwell catalog.',
-  },
-  {
-    label: 'no match',
-    value: MATCH_DATA.noMatch,
-    helpText: 'Packages with no equivalent found in the Lightwell catalog.',
-  },
-];
-
-const LEGEND_ITEMS = ['Exact match', 'Partial match', 'No match'];
+const LEGEND_ITEMS = [ 'Exact match', 'Partial match', 'No match' ];
 
 export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatchAnalysisModalProps> = ({
   isOpen,
   onClose,
+  matchData = DEFAULT_MATCH_DATA,
+  ecosystemData = DEFAULT_ECOSYSTEM_DATA,
 }) => {
   const classes = useStyles();
-  const totalMatches = MATCH_DATA.exact + MATCH_DATA.partial;
+  const totalPackages = matchData.exact + matchData.partial + matchData.noMatch;
+  const totalMatches = matchData.exact + matchData.partial;
+  const matchPercentage = totalPackages ? Math.round((totalMatches / totalPackages) * 100) : 0;
+  const matchItems = [
+    {
+      label: 'exact matches',
+      value: matchData.exact,
+      helpText: 'Packages with a direct version-matched equivalent in the Lightwell catalog.',
+    },
+    {
+      label: 'partial matches',
+      value: matchData.partial,
+      helpText: 'Packages with a near-match or alternative available in the Lightwell catalog.',
+    },
+    {
+      label: 'no match',
+      value: matchData.noMatch,
+      helpText: 'Packages with no equivalent found in the Lightwell catalog.',
+    },
+  ];
 
   return (
     <AboutModal
@@ -212,14 +205,14 @@ export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatch
       <div className={classes.body}>
         <Title headingLevel="h3" size="lg">Match analysis</Title>
         <Content component="p">
-          <strong>37%</strong> of packages match the Lightwell Network catalog.
+          <strong>{matchPercentage}%</strong> of packages match the Lightwell Network catalog.
         </Content>
 
         <div className={classes.donutRow}>
           <ChartDonut
             ariaTitle="Package match breakdown"
-            ariaDesc={`${MATCH_DATA.exact} exact, ${MATCH_DATA.partial} partial, and ${MATCH_DATA.noMatch} no match packages`}
-            data={MATCH_ITEMS.map(({ label, value }) => ({ x: label, y: value }))}
+            ariaDesc={`${matchData.exact} exact, ${matchData.partial} partial, and ${matchData.noMatch} no match packages`}
+            data={matchItems.map(({ label, value }) => ({ x: label, y: value }))}
             labels={({ datum }) => `${datum.x}: ${datum.y}`}
             labelComponent={<ChartTooltip />}
             title={`${totalMatches}`}
@@ -234,7 +227,7 @@ export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatch
             padAngle={1}
           />
           <div className={classes.breakdownStack}>
-            {MATCH_ITEMS.map(({ label, value, helpText }) => (
+            {matchItems.map(({ label, value, helpText }) => (
               <div key={label} className={classes.breakdownItem}>
                 <strong>{value}</strong>
                 {label}
@@ -260,37 +253,37 @@ export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatch
 
         <div className={classes.ecosystemRow}>
           <div style={{ width: 210, flexShrink: 0 }}>
-          <Chart
-            ariaTitle="By ecosystem match breakdown"
-            ariaDesc="Packages by ecosystem and match type"
-            domain={{ y: [0, 200] }}
-            height={158}
-            width={210}
-            padding={{ bottom: 45, left: 56, right: 10, top: 12 }}
-          >
-            <ChartAxis dependentAxis tickValues={[50, 100, 150, 200]} />
-            <ChartAxis />
-            <ChartGroup offset={16}>
-              <ChartBar
-                data={ECOSYSTEM_DATA.map(({ name, exact }) => ({ x: name, y: exact, label: `${name} exact: ${exact}` }))}
-                labels={({ datum }) => datum.label}
-                labelComponent={<ChartTooltip />}
-                style={{ data: { fill: CHART_COLORS[0], width: 10 } }}
-              />
-              <ChartBar
-                data={ECOSYSTEM_DATA.map(({ name, partial }) => ({ x: name, y: partial, label: `${name} partial: ${partial}` }))}
-                labels={({ datum }) => datum.label}
-                labelComponent={<ChartTooltip />}
-                style={{ data: { fill: CHART_COLORS[1], width: 10 } }}
-              />
-              <ChartBar
-                data={ECOSYSTEM_DATA.map(({ name, noMatch }) => ({ x: name, y: noMatch, label: `${name} no match: ${noMatch}` }))}
-                labels={({ datum }) => datum.label}
-                labelComponent={<ChartTooltip />}
-                style={{ data: { fill: CHART_COLORS[2], width: 10 } }}
-              />
-            </ChartGroup>
-          </Chart>
+            <Chart
+              ariaTitle="By ecosystem match breakdown"
+              ariaDesc="Packages by ecosystem and match type"
+              domain={{ y: [ 0, Math.max(200, ...ecosystemData.flatMap(({ exact, partial, noMatch }) => [ exact, partial, noMatch ])) ] }}
+              height={158}
+              width={210}
+              padding={{ bottom: 45, left: 56, right: 10, top: 12 }}
+            >
+              <ChartAxis dependentAxis tickValues={[ 50, 100, 150, 200 ]} />
+              <ChartAxis />
+              <ChartGroup offset={16}>
+                <ChartBar
+                  data={ecosystemData.map(({ name, exact }) => ({ x: name, y: exact, label: `${name} exact: ${exact}` }))}
+                  labels={({ datum }) => datum.label}
+                  labelComponent={<ChartTooltip />}
+                  style={{ data: { fill: CHART_COLORS[0], width: 10 } }}
+                />
+                <ChartBar
+                  data={ecosystemData.map(({ name, partial }) => ({ x: name, y: partial, label: `${name} partial: ${partial}` }))}
+                  labels={({ datum }) => datum.label}
+                  labelComponent={<ChartTooltip />}
+                  style={{ data: { fill: CHART_COLORS[1], width: 10 } }}
+                />
+                <ChartBar
+                  data={ecosystemData.map(({ name, noMatch }) => ({ x: name, y: noMatch, label: `${name} no match: ${noMatch}` }))}
+                  labels={({ datum }) => datum.label}
+                  labelComponent={<ChartTooltip />}
+                  style={{ data: { fill: CHART_COLORS[2], width: 10 } }}
+                />
+              </ChartGroup>
+            </Chart>
           </div>
           <ul aria-label="Match types" className={classes.legendList}>
             {LEGEND_ITEMS.map((label, index) => (
@@ -313,12 +306,7 @@ export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatch
                 <Button
                   variant="primary"
                   size="lg"
-                  className={classes.downloadBtn}
-                  style={{
-                    '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)',
-                    '--pf-v6-c-button--hover--BackgroundColor': 'var(--pf-t--color--red--60)',
-                    '--pf-v6-c-button--m-clicked--BackgroundColor': 'var(--pf-t--color--red--60)',
-                  } as React.CSSProperties}
+                  style={lightwellCtaStyle}
                 >
                   Download report
                 </Button>

@@ -17,6 +17,7 @@ import {
 } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
 import { ContactFormValues, ProductNudgeContactModalProps } from './ProductNudge.types';
+import { lightwellBackgroundStyle, nudgeModeStyles } from './nudgeStyles';
 
 type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -24,7 +25,8 @@ const isValidEmail = (value: string) => /\S+@\S+\.\S+/.test(value);
 
 const useStyles = createUseStyles({
   modalBg: {
-    backgroundColor: '#e5e0df',
+    ...lightwellBackgroundStyle,
+    backgroundColor: 'var(--lightwell--background-color)',
     backgroundImage: 'var(--lightwell-contact-bg)',
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
@@ -61,13 +63,7 @@ const useStyles = createUseStyles({
   footer: {
     marginBlockStart: 'auto',
   },
-  lightModeOnly: {
-    '.pf-v6-theme-dark &': { display: 'none' },
-  },
-  darkModeOnly: {
-    display: 'none',
-    '.pf-v6-theme-dark &': { display: 'block' },
-  },
+  ...nudgeModeStyles,
 });
 
 /**
@@ -93,12 +89,12 @@ export const ProductNudgeContactModal: FunctionComponent<ProductNudgeContactModa
   className,
 }) => {
   const classes = useStyles();
-  const [name, setName] = useState(prefillName);
-  const [email, setEmail] = useState(prefillEmail);
-  const [phone, setPhone] = useState('');
-  const [submitState, setSubmitState] = useState<SubmitState>('idle');
-  const [touchedName, setTouchedName] = useState(false);
-  const [touchedEmail, setTouchedEmail] = useState(false);
+  const [ name, setName ] = useState(prefillName);
+  const [ email, setEmail ] = useState(prefillEmail);
+  const [ phone, setPhone ] = useState('');
+  const [ submitState, setSubmitState ] = useState<SubmitState>('idle');
+  const [ touchedName, setTouchedName ] = useState(false);
+  const [ touchedEmail, setTouchedEmail ] = useState(false);
 
   const nameIsValid = !touchedName || !isNameRequired || name.length > 0;
   const emailIsValid = !touchedEmail || !isEmailRequired || isValidEmail(email);
@@ -146,6 +142,7 @@ export const ProductNudgeContactModal: FunctionComponent<ProductNudgeContactModa
           isInline
           isPlain
           title={content.successMessage}
+          aria-label={`${content.title} success message`}
           data-testid="contact-modal-success"
         />
       );
@@ -160,6 +157,7 @@ export const ProductNudgeContactModal: FunctionComponent<ProductNudgeContactModa
               variant="danger"
               isInline
               title="We couldn't send your request"
+              aria-label="Error message"
               data-testid="contact-modal-error"
             >
               Try again, or contact your account team directly.
@@ -227,7 +225,7 @@ export const ProductNudgeContactModal: FunctionComponent<ProductNudgeContactModa
       isOpen={isOpen}
       onClose={handleClose}
       variant={ModalVariant.large}
-      aria-labelledby="product-nudge-contact-modal-title"
+      aria-label={content.title}
       className={`${classes.modalBg}${className ? ` ${className}` : ''}`}
       style={{
         '--lightwell-contact-bg': backgroundImage ? `url(${backgroundImage})` : 'none',

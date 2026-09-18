@@ -62,7 +62,7 @@ export interface NudgeMetric {
 }
 
 /** Visual weight / layout variant */
-export type ProductNudgeProminence = 'hero' | 'alert';
+export type ProductNudgeProminence = 'hero' | 'alert' | 'field';
 
 /** Interaction pattern */
 export type ProductNudgeBehavior = 'persistent' | 'dismissible' | 'collapsible';
@@ -109,6 +109,16 @@ export interface ProductNudgeContactModalProps {
   isPhoneRequired?: boolean;
   /** Additional CSS class */
   className?: string;
+}
+
+export interface ProductNudgeMatchData {
+  exact: number;
+  partial: number;
+  noMatch: number;
+}
+
+export interface ProductNudgeEcosystemData extends ProductNudgeMatchData {
+  name: string;
 }
 
 export interface ProductNudgeProps {
@@ -191,4 +201,8 @@ export interface ProductNudgeMatchAnalysisModalProps {
   isOpen: boolean;
   /** Callback to close the modal */
   onClose: () => void;
+  /** Summary counts shown in the match breakdown chart */
+  matchData?: ProductNudgeMatchData;
+  /** Per-ecosystem counts shown in the ecosystem chart */
+  ecosystemData?: ProductNudgeEcosystemData[];
 }

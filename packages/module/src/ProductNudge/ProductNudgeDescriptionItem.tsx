@@ -13,24 +13,19 @@ import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external
 import { createUseStyles } from 'react-jss';
 
 import { ProductNudgeDescriptionItemProps } from './ProductNudge.types';
+import { nudgeModeStyles } from './nudgeStyles';
 
 const useStyles = createUseStyles({
   logo: {
     display: 'block',
     width: '6rem',
-    marginInlineStart: '-10px',
-    marginBlockStart: '-6px',
+    marginInlineStart: 'calc(-1 * var(--pf-t--global--spacer--sm))',
+    marginBlockStart: 'calc(-1 * var(--pf-t--global--spacer--xs))',
   },
   term: {
     alignSelf: 'start',
   },
-  lightModeOnly: {
-    '.pf-v6-theme-dark &': { display: 'none' },
-  },
-  darkModeOnly: {
-    display: 'none',
-    '.pf-v6-theme-dark &': { display: 'block' },
-  },
+  ...nudgeModeStyles,
 });
 
 /**

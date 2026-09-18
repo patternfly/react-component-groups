@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ProductNudge from './ProductNudge';
 import { NudgeContent } from './ProductNudge.types';
 
@@ -29,6 +29,14 @@ describe('ProductNudge component', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('applies the Lightwell CTA color inline', () => {
+    render(<ProductNudge prominence="hero" content={content} isEligible onAction={jest.fn()} />);
+
+    expect(screen.getByRole('button', { name: 'Get in touch' })).toHaveStyle({
+      '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)',
+    });
+  });
+
   it('renders alert prominence with link CTA', () => {
     const { container } = render(
       <ProductNudge prominence="alert" content={linkContent} isEligible onAction={jest.fn()} />,
@@ -55,7 +63,7 @@ describe('ProductNudge component', () => {
       <ProductNudge
         prominence="hero"
         content={content}
-        metrics={[{ label: 'packages', value: 42, format: 'count' }]}
+        metrics={[ { label: 'packages', value: 42, format: 'count' } ]}
         isEligible
         onAction={jest.fn()}
       />,

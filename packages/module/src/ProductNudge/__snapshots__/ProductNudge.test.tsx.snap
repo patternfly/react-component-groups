@@ -1,0 +1,419 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductNudge component renders alert prominence dismissible 1`] = `
+<div>
+  <div
+    data-ouia-component-id="ProductNudge"
+  >
+    <div
+      class="pf-v6-c-alert pf-m-inline pf-m-info"
+      data-ouia-component-id="ProductNudge-alert"
+      data-ouia-component-type="PF6/Alert"
+      data-ouia-safe="true"
+    >
+      <div
+        class="pf-v6-c-alert__icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v6-svg"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          viewBox="0 0 32 32"
+          width="1em"
+        >
+          <path
+            d="M16 1C7.729 1 1 7.729 1 16s6.729 15 15 15 15-6.729 15-15S24.271 1 16 1Zm1.5 22a1.5 1.5 0 1 1-3 0v-5.157l-.188.04a1.5 1.5 0 0 1-.625-2.934l1.956-.416c.112-.024.223-.032.333-.03l.024-.002a1.5 1.5 0 0 1 1.5 1.5v7Zm-.08-12.58c-.38.37-.89.58-1.42.58a1.998 1.998 0 0 1-1.851-2.76c.051-.13.11-.24.19-.35.07-.11.15-.21.25-.3.74-.75 2.08-.75 2.83 0 .09.09.17.19.24.3.08.11.14.22.189.35.05.12.09.24.11.37.03.13.04.26.04.39 0 .53-.21 1.04-.58 1.42Z"
+          />
+        </svg>
+      </div>
+      <h4
+        class="pf-v6-c-alert__title"
+      >
+        <span
+          class="pf-v6-screen-reader"
+        >
+          Info alert:
+        </span>
+        Test headline
+      </h4>
+      <div
+        class="pf-v6-c-alert__action"
+      >
+        <button
+          aria-label="Close Info alert: alert: Test headline"
+          class="pf-v6-c-button pf-m-plain"
+          data-ouia-component-id="ProductNudge-dismiss"
+          data-ouia-component-type="PF6/Button"
+          data-ouia-safe="true"
+          title="Test headline"
+          type="button"
+        >
+          <span
+            class="pf-v6-c-button__icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="pf-v6-svg"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              viewBox="0 0 20 20"
+              width="1em"
+            >
+              <path
+                d="M17.8 16.2 11.59 10l6.21-6.21c.42-.46.39-1.17-.07-1.59-.43-.4-1.09-.4-1.52 0l-6.2 6.2-6.22-6.19c-.44-.44-1.15-.44-1.59 0-.44.44-.44 1.15 0 1.59l6.2 6.21-6.2 6.2c-.42.46-.39 1.17.07 1.59.43.4 1.09.4 1.52 0L10 11.59l6.2 6.2c.44.44 1.15.44 1.59 0 .44-.45.44-1.16 0-1.6Z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        class="pf-v6-c-alert__description"
+      >
+        Test body copy.
+      </div>
+      <div
+        class="pf-v6-c-alert__action-group"
+      >
+        <button
+          class="pf-v6-c-button pf-m-link pf-m-inline"
+          data-ouia-component-id="ProductNudge-cta"
+          data-ouia-component-type="PF6/Button"
+          data-ouia-safe="true"
+          type="button"
+        >
+          <span
+            class="pf-v6-c-button__text"
+          >
+            Get in touch
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ProductNudge component renders alert prominence with link CTA 1`] = `
+<div>
+  <div
+    data-ouia-component-id="ProductNudge"
+  >
+    <div
+      class="pf-v6-c-alert pf-m-inline pf-m-info"
+      data-ouia-component-id="ProductNudge-alert"
+      data-ouia-component-type="PF6/Alert"
+      data-ouia-safe="true"
+    >
+      <div
+        class="pf-v6-c-alert__icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="pf-v6-svg"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          viewBox="0 0 32 32"
+          width="1em"
+        >
+          <path
+            d="M16 1C7.729 1 1 7.729 1 16s6.729 15 15 15 15-6.729 15-15S24.271 1 16 1Zm1.5 22a1.5 1.5 0 1 1-3 0v-5.157l-.188.04a1.5 1.5 0 0 1-.625-2.934l1.956-.416c.112-.024.223-.032.333-.03l.024-.002a1.5 1.5 0 0 1 1.5 1.5v7Zm-.08-12.58c-.38.37-.89.58-1.42.58a1.998 1.998 0 0 1-1.851-2.76c.051-.13.11-.24.19-.35.07-.11.15-.21.25-.3.74-.75 2.08-.75 2.83 0 .09.09.17.19.24.3.08.11.14.22.189.35.05.12.09.24.11.37.03.13.04.26.04.39 0 .53-.21 1.04-.58 1.42Z"
+          />
+        </svg>
+      </div>
+      <h4
+        class="pf-v6-c-alert__title"
+      >
+        <span
+          class="pf-v6-screen-reader"
+        >
+          Info alert:
+        </span>
+        Test headline
+      </h4>
+      <div
+        class="pf-v6-c-alert__description"
+      >
+        Test body copy.
+      </div>
+      <div
+        class="pf-v6-c-alert__action-group"
+      >
+        <a
+          class="pf-v6-c-button pf-m-link pf-m-inline"
+          data-ouia-component-id="ProductNudge-cta"
+          data-ouia-component-type="PF6/Button"
+          data-ouia-safe="true"
+          href="https://example.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            class="pf-v6-c-button__text"
+          >
+            Learn more
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ProductNudge component renders hero prominence 1`] = `
+<div>
+  <div>
+    <div
+      class="pf-v6-c-hero pf-v6-product-nudge pf-v6-product-nudge--hero heroBg-0-2-8"
+      data-ouia-component-id="ProductNudge"
+      style="position: relative; --pf-v6-c-hero--BorderBlockStartWidth: 0; --pf-v6-c-hero--BorderBlockEndWidth: 0; --pf-v6-c-hero--BorderInlineStartWidth: 0; --pf-v6-c-hero--BorderInlineEndWidth: 0; --pf-v6-c-hero--PaddingBlockStart: calc(2 * var(--pf-t--global--spacer--lg)); --pf-v6-c-hero--PaddingBlockEnd: calc(2 * var(--pf-t--global--spacer--lg)); --pf-v6-c-hero--PaddingInlineStart: calc(2 * var(--pf-t--global--spacer--lg));"
+    >
+      <div
+        class="pf-v6-c-hero__body"
+      >
+        <div
+          class="heroContent-0-2-9"
+        >
+          <div
+            class="pf-v6-l-stack pf-m-gutter"
+          >
+            <div
+              class="pf-v6-l-stack__item"
+            >
+              <h1
+                class="pf-v6-c-title pf-m-2xl"
+                data-ouia-component-id="ProductNudge-title"
+                data-ouia-component-type="PF6/Title"
+                data-ouia-safe="true"
+              >
+                Test headline
+              </h1>
+            </div>
+            <div
+              class="pf-v6-l-stack__item"
+            >
+              <p
+                class="pf-v6-c-content--p"
+                data-ouia-component-id="ProductNudge-body"
+                data-ouia-component-type="PF6/Content"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Test body copy.
+              </p>
+            </div>
+            <div
+              class="pf-v6-l-stack__item"
+            >
+              <div
+                class="pf-v6-l-flex pf-m-space-items-md pf-m-align-items-center"
+              >
+                <div
+                  class=""
+                >
+                  <button
+                    class="pf-v6-c-button pf-m-primary pf-m-progress pf-m-display-lg"
+                    data-ouia-component-id="ProductNudge-cta"
+                    data-ouia-component-type="PF6/Button"
+                    data-ouia-safe="true"
+                    style="--pf-v6-c-button--BackgroundColor: var(--pf-t--color--red--50); --pf-v6-c-button--hover--BackgroundColor: var(--pf-t--color--red--60); --pf-v6-c-button--m-clicked--BackgroundColor: var(--pf-t--color--red--60);"
+                    type="button"
+                  >
+                    <span
+                      class="pf-v6-c-button__text"
+                    >
+                      Get in touch
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ProductNudge component renders nothing when not eligible 1`] = `<div />`;
+
+exports[`ProductNudge component renders with default CTA color scheme 1`] = `
+<div>
+  <div>
+    <div
+      class="pf-v6-c-hero pf-v6-product-nudge pf-v6-product-nudge--hero heroBg-0-2-8"
+      data-ouia-component-id="ProductNudge"
+      style="position: relative; --pf-v6-c-hero--BorderBlockStartWidth: 0; --pf-v6-c-hero--BorderBlockEndWidth: 0; --pf-v6-c-hero--BorderInlineStartWidth: 0; --pf-v6-c-hero--BorderInlineEndWidth: 0; --pf-v6-c-hero--PaddingBlockStart: calc(2 * var(--pf-t--global--spacer--lg)); --pf-v6-c-hero--PaddingBlockEnd: calc(2 * var(--pf-t--global--spacer--lg)); --pf-v6-c-hero--PaddingInlineStart: calc(2 * var(--pf-t--global--spacer--lg));"
+    >
+      <div
+        class="pf-v6-c-hero__body"
+      >
+        <div
+          class="heroContent-0-2-9"
+        >
+          <div
+            class="pf-v6-l-stack pf-m-gutter"
+          >
+            <div
+              class="pf-v6-l-stack__item"
+            >
+              <h1
+                class="pf-v6-c-title pf-m-2xl"
+                data-ouia-component-id="ProductNudge-title"
+                data-ouia-component-type="PF6/Title"
+                data-ouia-safe="true"
+              >
+                Test headline
+              </h1>
+            </div>
+            <div
+              class="pf-v6-l-stack__item"
+            >
+              <p
+                class="pf-v6-c-content--p"
+                data-ouia-component-id="ProductNudge-body"
+                data-ouia-component-type="PF6/Content"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Test body copy.
+              </p>
+            </div>
+            <div
+              class="pf-v6-l-stack__item"
+            >
+              <div
+                class="pf-v6-l-flex pf-m-space-items-md pf-m-align-items-center"
+              >
+                <div
+                  class=""
+                >
+                  <button
+                    class="pf-v6-c-button pf-m-primary pf-m-progress pf-m-display-lg"
+                    data-ouia-component-id="ProductNudge-cta"
+                    data-ouia-component-type="PF6/Button"
+                    data-ouia-safe="true"
+                    type="button"
+                  >
+                    <span
+                      class="pf-v6-c-button__text"
+                    >
+                      Get in touch
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ProductNudge component renders with metrics 1`] = `
+<div>
+  <div>
+    <div
+      class="pf-v6-c-hero pf-v6-product-nudge pf-v6-product-nudge--hero heroBg-0-2-8"
+      data-ouia-component-id="ProductNudge"
+      style="position: relative; --pf-v6-c-hero--BorderBlockStartWidth: 0; --pf-v6-c-hero--BorderBlockEndWidth: 0; --pf-v6-c-hero--BorderInlineStartWidth: 0; --pf-v6-c-hero--BorderInlineEndWidth: 0; --pf-v6-c-hero--PaddingBlockStart: calc(2 * var(--pf-t--global--spacer--lg)); --pf-v6-c-hero--PaddingBlockEnd: calc(2 * var(--pf-t--global--spacer--lg)); --pf-v6-c-hero--PaddingInlineStart: calc(2 * var(--pf-t--global--spacer--lg));"
+    >
+      <div
+        class="pf-v6-c-hero__body"
+      >
+        <div
+          class="heroContent-0-2-9"
+        >
+          <div
+            class="pf-v6-l-stack pf-m-gutter"
+          >
+            <div
+              class="pf-v6-l-stack__item"
+            >
+              <h1
+                class="pf-v6-c-title pf-m-2xl"
+                data-ouia-component-id="ProductNudge-title"
+                data-ouia-component-type="PF6/Title"
+                data-ouia-safe="true"
+              >
+                Test headline
+              </h1>
+            </div>
+            <div
+              class="pf-v6-l-stack__item"
+            >
+              <p
+                class="pf-v6-c-content--p"
+                data-ouia-component-id="ProductNudge-body"
+                data-ouia-component-type="PF6/Content"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Test body copy.
+              </p>
+            </div>
+            <div
+              class="pf-v6-l-stack__item"
+            >
+              <div
+                class="pf-v6-l-flex pf-m-space-items-lg metricsRow-0-2-12"
+                data-ouia-component-id="ProductNudge-metrics"
+              >
+                <div
+                  class=""
+                >
+                  <p
+                    class="pf-v6-c-content--p"
+                    data-ouia-component-id="OUIA-Generated-Content-:rd:"
+                    data-ouia-component-type="PF6/Content"
+                    data-ouia-safe="true"
+                    data-pf-content="true"
+                  >
+                    <strong>
+                      42
+                    </strong>
+                     
+                    packages
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="pf-v6-l-stack__item"
+            >
+              <div
+                class="pf-v6-l-flex pf-m-space-items-md pf-m-align-items-center"
+              >
+                <div
+                  class=""
+                >
+                  <button
+                    class="pf-v6-c-button pf-m-primary pf-m-progress pf-m-display-lg"
+                    data-ouia-component-id="ProductNudge-cta"
+                    data-ouia-component-type="PF6/Button"
+                    data-ouia-safe="true"
+                    style="--pf-v6-c-button--BackgroundColor: var(--pf-t--color--red--50); --pf-v6-c-button--hover--BackgroundColor: var(--pf-t--color--red--60); --pf-v6-c-button--m-clicked--BackgroundColor: var(--pf-t--color--red--60);"
+                    type="button"
+                  >
+                    <span
+                      class="pf-v6-c-button__text"
+                    >
+                      Get in touch
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

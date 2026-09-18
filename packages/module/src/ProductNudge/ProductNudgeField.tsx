@@ -12,6 +12,7 @@ import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external
 import { createUseStyles } from 'react-jss';
 
 import { ProductNudgeFieldProps } from './ProductNudge.types';
+import { nudgeModeStyles } from './nudgeStyles';
 
 const useStyles = createUseStyles({
   logomark: {
@@ -19,13 +20,10 @@ const useStyles = createUseStyles({
     width: '1.25rem',
     height: 'auto',
   },
-  lightModeOnly: {
-    '.pf-v6-theme-dark &': { display: 'none' },
-  },
-  darkModeOnly: {
-    display: 'none',
-    '.pf-v6-theme-dark &': { display: 'block' },
-  },
+  ...nudgeModeStyles,
+  valueText: {
+    fontSize: 'var(--pf-t--global--font--size--lg)',
+  }
 });
 
 /**
@@ -77,7 +75,7 @@ export const ProductNudgeField: FunctionComponent<ProductNudgeFieldProps> = ({
           <FlexItem><strong>{titleText}</strong></FlexItem>
         </Flex>
       </StackItem>
-      {value && <StackItem className="pf-v6-u-font-size-lg"><strong>{value}</strong></StackItem>}
+      {value && <StackItem className={css(classes.valueText)}><strong>{value}</strong></StackItem>}
       {bodyText && <StackItem>{bodyText}</StackItem>}
       {ctaUrl && (
         <StackItem>
