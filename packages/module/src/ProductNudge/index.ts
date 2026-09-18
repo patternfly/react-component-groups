@@ -15,5 +15,4 @@ export * from './ProductNudgeDescriptionItem';
 export { default as ProductNudgeMatchAnalysisModal } from './ProductNudgeMatchAnalysisModal';
 export * from './ProductNudgeMatchAnalysisModal';
 
-export * from './productNudgeDefaults';
 export { useImpressionTracking } from './useImpressionTracking';

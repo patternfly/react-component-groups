@@ -5,7 +5,7 @@ import LightwellBgDark from '@patternfly/react-component-groups/dist/dynamic/Pro
 import LightwellLogo from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-logo.svg';
 import LightwellLogoDark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-logo-dark.svg';
 import RedHatIBMLockup from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/RedHatIBMLockup.svg';
-import RedHatIBMLockupDark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/RedHatIBMLockup-dark.svg';
+import RedHatIBMLockupDark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/RedHatIBMLockupDark.svg';
 
 export const ProductNudgeHeroExample: React.FunctionComponent = () => (
   <ProductNudge

@@ -6,7 +6,7 @@ import LightwellLogoDark from '@patternfly/react-component-groups/dist/dynamic/P
 import LightwellBgLight from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-bg-light.png';
 import LightwellBgDark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-bg-dark.png';
 import RedHatIBMLockup from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/RedHatIBMLockup.svg';
-import RedHatIBMLockupDark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/RedHatIBMLockup-dark.svg';
+import RedHatIBMLockupDark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/RedHatIBMLockupDark.svg';
 
 export const ProductNudgeContactModalExample: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +22,7 @@ export const ProductNudgeContactModalExample: React.FunctionComponent = () => {
         content={{
           title: 'Get in touch',
           intro: 'A Red Hat representative will get in touch about how Lightwell can help your environment.',
-          successMessage: 'Thanks! We\'ll be in touch shortly.',
+          successMessage: "Thanks — we've received your request. A representative will reach out shortly.",
         }}
         headerLogo={{ src: LightwellLogo, alt: 'Lightwell', name: 'Lightwell' }}
         headerLogoDark={{ src: LightwellLogoDark, alt: 'Lightwell' }}
