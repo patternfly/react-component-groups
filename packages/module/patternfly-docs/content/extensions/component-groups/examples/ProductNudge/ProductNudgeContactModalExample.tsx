@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Button } from '@patternfly/react-core';
-import ProductNudgeContactModal from '@patternfly/react-component-groups/dist/dynamic/ProductNudgeContactModal';
-import RedHatLogo from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/RedHatLogo.svg';
-import IBMLogo from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/ibm_cloud-icon.svg';
+import { ProductNudgeContactModal } from '@patternfly/react-component-groups/dist/dynamic/ProductNudge';
+import LightwellLogo from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-logo.svg';
+import LightwellLogoDark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-logo-dark.svg';
+import LightwellBgLight from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-bg-light.png';
+import LightwellBgDark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-bg-dark.png';
+import RedHatIBMLockup from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/RedHatIBMLockup.svg';
+import RedHatIBMLockupDark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/RedHatIBMLockup-dark.svg';
 
 export const ProductNudgeContactModalExample: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,24 +21,23 @@ export const ProductNudgeContactModalExample: React.FunctionComponent = () => {
         onClose={() => setIsOpen(false)}
         content={{
           title: 'Get in touch',
-          intro: 'Tell us about your environment and we\'ll connect you with the right team.',
-          messageTemplate: 'I have {{total}} open-source packages I\'d like to migrate.',
-          consent: 'By submitting this form, you agree to be contacted by Red Hat or IBM about Lightwell.',
+          intro: 'A Red Hat representative will get in touch about how Lightwell can help your environment.',
           successMessage: 'Thanks! We\'ll be in touch shortly.',
         }}
-        metrics={[{ label: 'packages', value: 847, format: 'count', key: 'total' }]}
-        prefillName="Your Name"
-        prefillEmail="your@email.com"
+        headerLogo={{ src: LightwellLogo, alt: 'Lightwell', name: 'Lightwell' }}
+        headerLogoDark={{ src: LightwellLogoDark, alt: 'Lightwell' }}
+        backgroundImage={LightwellBgLight}
+        backgroundImageDark={LightwellBgDark}
+        partnerLogos={
+          <img src={RedHatIBMLockup} alt="Red Hat and IBM" style={{ height: '1.25rem', width: 'auto' }} />
+        }
+        partnerLogosDark={
+          <img src={RedHatIBMLockupDark} alt="Red Hat and IBM" style={{ height: '1.25rem', width: 'auto' }} />
+        }
         onSubmit={async (values) => {
           // eslint-disable-next-line no-console
           console.log('Contact form submitted:', values);
         }}
-        footerContent={
-          <>
-            <img src={RedHatLogo} alt="Red Hat" style={{ maxHeight: '1.5rem', maxWidth: '5rem' }} />
-            <img src={IBMLogo} alt="IBM" style={{ maxHeight: '1.5rem', maxWidth: '5rem', marginLeft: '0.5rem' }} />
-          </>
-        }
       />
     </>
   );

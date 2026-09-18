@@ -1,19 +1,19 @@
 import React from 'react';
-import { DescriptionList } from '@patternfly/react-core';
-import ProductNudgeField from '@patternfly/react-component-groups/dist/dynamic/ProductNudgeField';
-import LightwellLogo from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-logo.png';
+import { ProductNudgeField } from '@patternfly/react-component-groups/dist/dynamic/ProductNudge';
+import LightwellLogomark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-logomark-light.svg';
+import LightwellLogomarkDark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-logomark-dark.svg';
 
 export const ProductNudgeFieldExample: React.FunctionComponent = () => (
-  <DescriptionList>
-    <ProductNudgeField
-      isEligible
-      titleText="Modernize with Lightwell"
-      bodyText="Get enterprise-supported alternatives for your open-source packages."
-      ctaText="Learn more about Lightwell"
-      ctaUrl="https://www.redhat.com/en/lightwell"
-      logo={{ src: LightwellLogo, alt: 'Lightwell' }}
-    />
-  </DescriptionList>
+  <ProductNudgeField
+    isEligible
+    titleText="Lightwell remediation"
+    value="6 clusters threatened"
+    bodyText="When a vulnerability requires upgrading a third-party dependency your environment already relies on, Lightwell may provide a backported security fix for the existing version instead."
+    ctaText="Learn more about Lightwell"
+    ctaUrl="https://www.redhat.com/en/lightwell"
+    logo={{ src: LightwellLogomark, alt: 'Lightwell' }}
+    logoDark={{ src: LightwellLogomarkDark, alt: 'Lightwell' }}
+  />
 );
 
 export default ProductNudgeFieldExample;

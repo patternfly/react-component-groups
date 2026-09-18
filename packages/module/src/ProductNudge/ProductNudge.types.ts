@@ -1,14 +1,10 @@
 import React from 'react';
 
 export interface NudgeContact {
-  /** Modal title text */
+  /** Modal title text (used for aria-label) */
   title: string;
   /** Introductory paragraph shown above the form */
   intro: string;
-  /** Message pre-fill template; supports {{key}} tokens resolved from NudgeMetric.key */
-  messageTemplate: string;
-  /** Consent / data-use disclosure text rendered below the form */
-  consent: string;
   /** Message shown in place of the form after a successful submit */
   successMessage: string;
 }
@@ -37,12 +33,18 @@ export interface NudgeContent {
   contact?: NudgeContact;
   /** Optional brand imagery */
   assets?: {
-    /** Logo rendered above the headline */
+    /** Logo rendered above the headline (light mode) */
     logo?: { src: string; alt: string };
-    /** CSS url() value for the hero background */
-    backgroundImage?: string;
-    /** Rendered beside the CTA button */
+    /** Logo rendered above the headline in dark mode */
+    logoDark?: { src: string; alt: string };
+    /** CSS url() value for the hero background (light mode) */
+    backgroundImageLight?: string;
+    /** CSS url() value for the hero background (dark mode) */
+    backgroundImageDark?: string;
+    /** Rendered beside the CTA button (light mode) */
     partnerLockup?: { src: string; alt: string };
+    /** Rendered beside the CTA button in dark mode */
+    partnerLockupDark?: { src: string; alt: string };
   };
 }
 
@@ -61,7 +63,7 @@ export interface NudgeMetric {
 }
 
 /** Visual weight / layout variant */
-export type ProductNudgeProminence = 'hero' | 'banner' | 'inline' | 'compact';
+export type ProductNudgeProminence = 'hero' | 'alert';
 
 /** Interaction pattern */
 export type ProductNudgeBehavior = 'persistent' | 'dismissible' | 'collapsible';
@@ -72,8 +74,7 @@ export type ProductNudgeCtaColorScheme = 'lightwell' | 'default';
 export interface ContactFormValues {
   name: string;
   email: string;
-  contactPerson: string;
-  message: string;
+  phone?: string;
 }
 
 export interface ProductNudgeContactModalProps {
@@ -81,18 +82,32 @@ export interface ProductNudgeContactModalProps {
   isOpen: boolean;
   /** Callback to close the modal */
   onClose: () => void;
-  /** Contact modal content (titles, intro, template, consent) */
+  /** Contact modal content (title, intro, successMessage) */
   content: NudgeContact;
-  /** Metrics used to interpolate the message template */
-  metrics?: NudgeMetric[];
   /** Pre-filled name value */
   prefillName?: string;
   /** Pre-filled email value */
   prefillEmail?: string;
   /** Transport handler; resolves on success, rejects on failure */
   onSubmit: (values: ContactFormValues) => Promise<void>;
-  /** Optional content rendered in the modal footer (e.g. partner logo lockup) */
-  footerContent?: React.ReactNode;
+  /** Logo + wordmark shown at the top-left of the modal (light mode) */
+  headerLogo?: { src: string; alt: string; name?: string };
+  /** Logo shown in dark mode (wordmark text unchanged) */
+  headerLogoDark?: { src: string; alt: string };
+  /** Background image URL for the right decorative panel (light mode) */
+  backgroundImage?: string;
+  /** Background image URL used when .pf-v6-theme-dark is on the root element */
+  backgroundImageDark?: string;
+  /** Inline logo lockup rendered beside the submit button (light mode) */
+  partnerLogos?: React.ReactNode;
+  /** Inline logo lockup rendered in dark mode */
+  partnerLogosDark?: React.ReactNode;
+  /** Mark the name field as required; defaults to true */
+  isNameRequired?: boolean;
+  /** Mark the email field as required; defaults to true */
+  isEmailRequired?: boolean;
+  /** Mark the phone field as required; defaults to false */
+  isPhoneRequired?: boolean;
   /** Additional CSS class */
   className?: string;
 }
@@ -127,21 +142,48 @@ export interface ProductNudgeProps {
 export interface ProductNudgeFieldProps {
   /** false renders null */
   isEligible: boolean;
-  /** Headline / term text */
+  /** Heading label rendered beside the logo */
   titleText: string;
-  /** Body description text */
+  /** Primary value or metric rendered below the heading */
+  value?: string;
+  /** Body / note text */
   bodyText: string;
   /** CTA link label */
   ctaText?: string;
   /** CTA link href */
   ctaUrl?: string;
-  /** Logo rendered as the description list term */
+  /** Logomark shown in the heading row (light mode) */
   logo?: { src: string; alt: string };
+  /** Logomark shown in dark mode */
+  logoDark?: { src: string; alt: string };
   /** OUIA component ID */
   ouiaId?: string;
   /** Additional CSS class */
   className?: string;
   /** data-testid forwarded to the root element */
+  'data-testid'?: string;
+}
+
+export interface ProductNudgeDescriptionItemProps {
+  /** false renders null */
+  isEligible: boolean;
+  /** Bold headline in the description */
+  headline: string;
+  /** Body paragraph in the description */
+  bodyText: string;
+  /** CTA link label */
+  ctaText?: string;
+  /** CTA link href */
+  ctaUrl?: string;
+  /** Full Lightwell logo for the DL term (light mode) */
+  logo?: { src: string; alt: string };
+  /** Full Lightwell logo for the DL term (dark mode) */
+  logoDark?: { src: string; alt: string };
+  /** OUIA component ID */
+  ouiaId?: string;
+  /** Additional CSS class on the DescriptionListGroup */
+  className?: string;
+  /** data-testid forwarded to root */
   'data-testid'?: string;
 }
 

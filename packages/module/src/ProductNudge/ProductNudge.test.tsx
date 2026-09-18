@@ -17,7 +17,7 @@ const linkContent: NudgeContent = {
 describe('ProductNudge component', () => {
   it('renders nothing when not eligible', () => {
     const { container } = render(
-      <ProductNudge prominence="inline" content={content} isEligible={false} onAction={jest.fn()} />,
+      <ProductNudge prominence="hero" content={content} isEligible={false} onAction={jest.fn()} />,
     );
     expect(container).toMatchSnapshot();
   });
@@ -29,37 +29,17 @@ describe('ProductNudge component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders banner prominence', () => {
+  it('renders alert prominence with link CTA', () => {
     const { container } = render(
-      <ProductNudge prominence="banner" content={content} isEligible onAction={jest.fn()} />,
+      <ProductNudge prominence="alert" content={linkContent} isEligible onAction={jest.fn()} />,
     );
     expect(container).toMatchSnapshot();
   });
 
-  it('renders compact prominence with link CTA', () => {
-    const { container } = render(
-      <ProductNudge prominence="compact" content={linkContent} isEligible onAction={jest.fn()} />,
-    );
-    expect(container).toMatchSnapshot();
-  });
-
-  it('renders with metrics', () => {
+  it('renders alert prominence dismissible', () => {
     const { container } = render(
       <ProductNudge
-        prominence="banner"
-        content={content}
-        metrics={[{ label: 'packages', value: 42, format: 'count' }]}
-        isEligible
-        onAction={jest.fn()}
-      />,
-    );
-    expect(container).toMatchSnapshot();
-  });
-
-  it('renders dismissible behavior', () => {
-    const { container } = render(
-      <ProductNudge
-        prominence="inline"
+        prominence="alert"
         behavior="dismissible"
         content={content}
         isEligible
@@ -70,10 +50,23 @@ describe('ProductNudge component', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('renders with metrics', () => {
+    const { container } = render(
+      <ProductNudge
+        prominence="hero"
+        content={content}
+        metrics={[{ label: 'packages', value: 42, format: 'count' }]}
+        isEligible
+        onAction={jest.fn()}
+      />,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
   it('renders with default CTA color scheme', () => {
     const { container } = render(
       <ProductNudge
-        prominence="banner"
+        prominence="hero"
         content={content}
         isEligible
         onAction={jest.fn()}

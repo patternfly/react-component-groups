@@ -6,7 +6,7 @@
   "module": "dist/esm/index.js",
   "scripts": {
     "build": "npm run build:index && npm run build:js && npm run build:esm && npm run build:fed:packages && npm run build:assets",
-    "build:assets": "mkdir -p dist/esm/ProductNudge/assets dist/cjs/ProductNudge/assets && cp src/ProductNudge/assets/* dist/esm/ProductNudge/assets/ && cp src/ProductNudge/assets/* dist/cjs/ProductNudge/assets/",
+    "build:assets": "mkdir -p dist/esm/ProductNudge/assets dist/cjs/ProductNudge/assets dist/dynamic/ProductNudge/assets && cp src/ProductNudge/assets/* dist/esm/ProductNudge/assets/ && cp src/ProductNudge/assets/* dist/cjs/ProductNudge/assets/ && cp src/ProductNudge/assets/* dist/dynamic/ProductNudge/assets/",
     "build:watch": "npm run build:js && npm run build:esm -- --watch && npm run build:fed:packages -- --watch",
     "build:esm": "tsc --build --verbose ./tsconfig.json",
     "build:fed:packages": "node generate-fed-package-json.js",
@@ -47,7 +47,7 @@
   "devDependencies": {
     "@patternfly/documentation-framework": "^6.5.16",
     "@patternfly/react-charts": "^8.2.1",
-    "@patternfly/patternfly": "^6.0.0",
+    "@patternfly/patternfly": "^6.6.1",
     "@patternfly/patternfly-a11y": "^5.1.0",
     "@patternfly/react-code-editor": "^6.6.2",
     "@types/react": "^18.2.33",

@@ -1,24 +1,33 @@
-import LightwellHeroImage from './assets/lightwell-hero.png';
-import LightwellLogo from './assets/lightwell-logo.png';
+import LightwellLogo from './assets/lightwell-logo.svg';
+import LightwellLogoDark from './assets/lightwell-logo-dark.svg';
+import LightwellLogomark from './assets/lightwell-logomark-light.svg';
+import LightwellLogomarkDark from './assets/lightwell-logomark-dark.svg';
+import LightwellBgLight from './assets/lightwell-bg-light.png';
+import LightwellBgDark from './assets/lightwell-bg-dark.png';
 import RedHatIBMLockup from './assets/RedHatIBMLockup.svg';
+import RedHatIBMLockupDark from './assets/RedHatIBMLockup-dark.svg';
 import RedHatLogo from './assets/RedHatLogo.svg';
 import IBMCloudIcon from './assets/ibm_cloud-icon.svg';
 
 import { NudgeContact, NudgeContent } from './ProductNudge.types';
 
 /** Individual asset exports for consumers that need direct access. */
-export { LightwellLogo, LightwellHeroImage, RedHatIBMLockup, RedHatLogo, IBMCloudIcon };
+export { LightwellLogo, LightwellLogoDark, LightwellLogomark, LightwellLogomarkDark, LightwellBgLight, LightwellBgDark, RedHatIBMLockup, RedHatIBMLockupDark, RedHatLogo, IBMCloudIcon };
 
 /** Assembled assets for a full hero nudge (logo + background image + partner lockup). */
 export const lightwellHeroAssets: NudgeContent['assets'] = {
   logo: { src: LightwellLogo, alt: 'Lightwell' },
-  backgroundImage: LightwellHeroImage,
+  logoDark: { src: LightwellLogoDark, alt: 'Lightwell' },
+  backgroundImageLight: LightwellBgLight,
+  backgroundImageDark: LightwellBgDark,
   partnerLockup: { src: RedHatIBMLockup, alt: 'Red Hat and IBM' },
+  partnerLockupDark: { src: RedHatIBMLockupDark, alt: 'Red Hat and IBM' },
 };
 
-/** Assembled assets for a compact nudge (logo only). */
-export const lightwellCompactAssets: NudgeContent['assets'] = {
-  logo: { src: LightwellLogo, alt: 'Lightwell' },
+/** Assembled assets for an alert nudge (logomark icon). */
+export const lightwellAlertAssets: NudgeContent['assets'] = {
+  logo: { src: LightwellLogomark, alt: 'Lightwell' },
+  logoDark: { src: LightwellLogomarkDark, alt: 'Lightwell' },
 };
 
 /**
@@ -28,11 +37,7 @@ export const lightwellCompactAssets: NudgeContent['assets'] = {
 export const lightwellDefaultContact: NudgeContact = {
   title: 'Get in touch',
   intro:
-    'Tell us about your environment and a Red Hat representative will follow up with next steps.',
-  messageTemplate:
-    "I'd like to learn more about Lightwell coverage for my organization's {{total}} vulnerable packages ({{coveragePercentage}}% may have supported alternatives).",
-  consent:
-    'By submitting, you agree that Red Hat and IBM may use this information to contact you about Lightwell.',
+    'A Red Hat representative will get in touch about how Lightwell can help your environment.',
   successMessage:
     "Thanks — we've received your request. A representative will reach out shortly.",
 };

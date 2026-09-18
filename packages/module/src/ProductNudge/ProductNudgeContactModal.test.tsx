@@ -5,8 +5,6 @@ import { NudgeContact } from './ProductNudge.types';
 const contactContent: NudgeContact = {
   title: 'Get in touch',
   intro: 'Tell us about your environment.',
-  messageTemplate: 'I have {{total}} vulnerable packages.',
-  consent: 'By submitting, you agree to be contacted.',
   successMessage: "Thanks — we've received your request.",
 };
 
@@ -37,14 +35,14 @@ describe('ProductNudgeContactModal component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders with footerContent', () => {
+  it('renders with partnerLogos', () => {
     const { container } = render(
       <ProductNudgeContactModal
         isOpen
         onClose={jest.fn()}
         content={contactContent}
         onSubmit={jest.fn().mockResolvedValue(undefined)}
-        footerContent={<img src="logo.svg" alt="Partner" style={{ maxHeight: '1.5rem' }} />}
+        partnerLogos={<img src="logo.svg" alt="Partner" style={{ height: '1.25rem' }} />}
       />,
     );
     expect(container).toMatchSnapshot();

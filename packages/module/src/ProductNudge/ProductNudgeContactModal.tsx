@@ -1,7 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-
 import {
-  ActionGroup,
   Alert,
   Button,
   Content,
@@ -14,54 +12,103 @@ import {
   HelperTextItem,
   Modal,
   ModalBody,
-  ModalFooter,
-  ModalHeader,
   ModalVariant,
-  TextArea,
   TextInput,
 } from '@patternfly/react-core';
-
-import { interpolateMessageTemplate } from './interpolateMessageTemplate';
+import { createUseStyles } from 'react-jss';
 import { ContactFormValues, ProductNudgeContactModalProps } from './ProductNudge.types';
 
 type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
 
 const isValidEmail = (value: string) => /\S+@\S+\.\S+/.test(value);
 
+const useStyles = createUseStyles({
+  modalBg: {
+    backgroundColor: '#e5e0df',
+    backgroundImage: 'var(--lightwell-contact-bg)',
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'right center',
+    '.pf-v6-theme-dark &': {
+      backgroundColor: 'var(--pf-t--color--black)',
+      backgroundImage: 'var(--lightwell-contact-bg-dark)',
+    },
+  },
+  modalContainer: {
+    display: 'flex',
+  },
+  leftPanel: {
+    flex: '0 0 45%',
+    padding: 'calc(2 * var(--pf-t--global--spacer--lg))',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 'var(--pf-t--global--spacer--lg)',
+    position: 'relative',
+  },
+  closeButton: {
+    position: 'absolute',
+    insetBlockStart: 'var(--pf-t--global--spacer--md)',
+    insetInlineEnd: 'var(--pf-t--global--spacer--md)',
+  },
+  headerLogoImg: {
+    width: '10rem',
+    marginInlineStart: '-1rem',
+  },
+  logoWordmark: {
+    fontWeight: 'bold',
+    fontSize: 'var(--pf-t--global--font--size--lg)',
+  },
+  footer: {
+    marginBlockStart: 'auto',
+  },
+  lightModeOnly: {
+    '.pf-v6-theme-dark &': { display: 'none' },
+  },
+  darkModeOnly: {
+    display: 'none',
+    '.pf-v6-theme-dark &': { display: 'block' },
+  },
+});
+
 /**
- * A contact form modal for product nudge CTAs. Handles idle/submitting/success/error
- * states. Transport is injected via `onSubmit` — the modal is transport-agnostic.
- * Pass `footerContent` to render partner logos or other branding in the footer;
- * images in footerContent should use `style={{ maxHeight: '1.5rem', maxWidth: '5rem' }}`.
+ * A branded contact form modal for product nudge CTAs. Two-column layout with
+ * a decorative image panel on the right. Transport is injected via `onSubmit`.
  */
 export const ProductNudgeContactModal: FunctionComponent<ProductNudgeContactModalProps> = ({
   isOpen,
   onClose,
   content,
-  metrics = [],
   prefillName = '',
   prefillEmail = '',
   onSubmit,
-  footerContent,
+  headerLogo,
+  headerLogoDark,
+  backgroundImage,
+  backgroundImageDark,
+  partnerLogos,
+  partnerLogosDark,
+  isNameRequired = true,
+  isEmailRequired = true,
+  isPhoneRequired = false,
   className,
 }) => {
+  const classes = useStyles();
   const [name, setName] = useState(prefillName);
   const [email, setEmail] = useState(prefillEmail);
-  const [contactPerson, setContactPerson] = useState('');
-  const [message, setMessage] = useState(() =>
-    interpolateMessageTemplate(content.messageTemplate, metrics),
-  );
+  const [phone, setPhone] = useState('');
   const [submitState, setSubmitState] = useState<SubmitState>('idle');
+  const [touchedName, setTouchedName] = useState(false);
   const [touchedEmail, setTouchedEmail] = useState(false);
 
-  const emailIsValid = !touchedEmail || isValidEmail(email);
+  const nameIsValid = !touchedName || !isNameRequired || name.length > 0;
+  const emailIsValid = !touchedEmail || !isEmailRequired || isValidEmail(email);
 
   const resetForm = () => {
     setName(prefillName);
     setEmail(prefillEmail);
-    setContactPerson('');
-    setMessage(interpolateMessageTemplate(content.messageTemplate, metrics));
+    setPhone('');
     setSubmitState('idle');
+    setTouchedName(false);
     setTouchedEmail(false);
   };
 
@@ -72,12 +119,16 @@ export const ProductNudgeContactModal: FunctionComponent<ProductNudgeContactModa
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    if (!name || !isValidEmail(email) || !message) {
+    const nameInvalid = isNameRequired && !name;
+    const emailInvalid = isEmailRequired && !isValidEmail(email);
+    const phoneInvalid = isPhoneRequired && !phone;
+    if (nameInvalid || emailInvalid || phoneInvalid) {
+      setTouchedName(true);
       setTouchedEmail(true);
       return;
     }
 
-    const values: ContactFormValues = { name, email, contactPerson, message };
+    const values: ContactFormValues = { name, email, ...(phone && { phone }) };
     setSubmitState('submitting');
     try {
       await onSubmit(values);
@@ -115,78 +166,129 @@ export const ProductNudgeContactModal: FunctionComponent<ProductNudgeContactModa
             </Alert>
           </FormAlert>
         )}
-        <FormGroup label="Name" isRequired fieldId="product-nudge-contact-name">
+        <FormGroup label="Name" isRequired={isNameRequired} fieldId="product-nudge-contact-name">
           <TextInput
-            isRequired
+            isRequired={isNameRequired}
             id="product-nudge-contact-name"
             value={name}
+            placeholder="Enter your name"
+            validated={nameIsValid ? 'default' : 'error'}
+            onBlur={() => setTouchedName(true)}
             onChange={(_event, value) => setName(value)}
           />
+          {!nameIsValid && (
+            <HelperText>
+              <HelperTextItem variant="error">Enter your name.</HelperTextItem>
+            </HelperText>
+          )}
         </FormGroup>
-        <FormGroup label="Work email" isRequired fieldId="product-nudge-contact-email">
+        <FormGroup label="Email" isRequired={isEmailRequired} fieldId="product-nudge-contact-email">
           <TextInput
-            isRequired
+            isRequired={isEmailRequired}
             type="email"
             id="product-nudge-contact-email"
             value={email}
+            placeholder="Enter your email address"
             validated={emailIsValid ? 'default' : 'error'}
             onBlur={() => setTouchedEmail(true)}
             onChange={(_event, value) => setEmail(value)}
           />
           {!emailIsValid && (
             <HelperText>
-              <HelperTextItem variant="error">Enter a valid work email address.</HelperTextItem>
+              <HelperTextItem variant="error">Enter a valid email address.</HelperTextItem>
             </HelperText>
           )}
         </FormGroup>
-        <FormGroup label="TAM or sales representative" fieldId="product-nudge-contact-person">
+        <FormGroup
+          label="Phone number"
+          isRequired={isPhoneRequired}
+          fieldId="product-nudge-contact-phone"
+        >
           <TextInput
-            id="product-nudge-contact-person"
-            value={contactPerson}
-            onChange={(_event, value) => setContactPerson(value)}
+            isRequired={isPhoneRequired}
+            type="tel"
+            id="product-nudge-contact-phone"
+            value={phone}
+            onChange={(_event, value) => setPhone(value)}
           />
         </FormGroup>
-        <FormGroup label="Message" isRequired fieldId="product-nudge-contact-message">
-          <TextArea
-            isRequired
-            id="product-nudge-contact-message"
-            value={message}
-            onChange={(_event, value) => setMessage(value)}
-            rows={5}
-          />
-        </FormGroup>
-        <Content component="small">{content.consent}</Content>
-        <ActionGroup>
-          <Button
-            variant="primary"
-            type="submit"
-            isLoading={submitState === 'submitting'}
-            isDisabled={submitState === 'submitting'}
-          >
-            Submit
-          </Button>
-        </ActionGroup>
       </Form>
     );
   };
+
+  const submitStyle = {
+    '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)',
+    '--pf-v6-c-button--hover--BackgroundColor': 'var(--pf-t--color--red--60)',
+    '--pf-v6-c-button--m-clicked--BackgroundColor': 'var(--pf-t--color--red--60)',
+  } as React.CSSProperties;
 
   return (
     <Modal
       isOpen={isOpen}
       onClose={handleClose}
-      variant={ModalVariant.small}
+      variant={ModalVariant.large}
       aria-labelledby="product-nudge-contact-modal-title"
-      className={className}
+      className={`${classes.modalBg}${className ? ` ${className}` : ''}`}
+      style={{
+        '--lightwell-contact-bg': backgroundImage ? `url(${backgroundImage})` : 'none',
+        '--lightwell-contact-bg-dark': backgroundImageDark ? `url(${backgroundImageDark})` : 'none',
+      } as React.CSSProperties}
     >
-      <ModalHeader title={content.title} labelId="product-nudge-contact-modal-title" />
-      <ModalBody>{renderBody()}</ModalBody>
-      {footerContent && (
-        <ModalFooter>
-          <Flex alignItems={{ default: 'alignItemsCenter' }} spaceItems={{ default: 'spaceItemsSm' }}>
-            <FlexItem>{footerContent}</FlexItem>
-          </Flex>
-        </ModalFooter>
-      )}
+      <ModalBody style={{
+        '--pf-v6-c-modal-box__body--PaddingBlockStart': '0',
+        '--pf-v6-c-modal-box__body--PaddingInlineStart': '0',
+        '--pf-v6-c-modal-box__body--PaddingInlineEnd': '0',
+        '--pf-v6-c-modal-box__body--last-child--PaddingBlockEnd': '0',
+      } as React.CSSProperties}>
+        <div className={classes.modalContainer}>
+          <div className={classes.leftPanel}>
+            {headerLogo && (
+              <>
+                <img
+                  src={headerLogo.src}
+                  alt={headerLogo.alt}
+                  className={`${classes.headerLogoImg}${headerLogoDark ? ` ${classes.lightModeOnly}` : ''}`}
+                />
+                {headerLogoDark && (
+                  <img
+                    src={headerLogoDark.src}
+                    alt={headerLogoDark.alt}
+                    className={`${classes.headerLogoImg} ${classes.darkModeOnly}`}
+                  />
+                )}
+              </>
+            )}
+
+            {renderBody()}
+
+            <Flex
+              alignItems={{ default: 'alignItemsCenter' }}
+              spaceItems={{ default: 'spaceItemsMd' }}
+              className={classes.footer}
+            >
+              <FlexItem>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  type="submit"
+                  isLoading={submitState === 'submitting'}
+                  isDisabled={submitState === 'submitting' || submitState === 'success'}
+                  onClick={handleSubmit}
+                  style={submitStyle}
+                >
+                  Submit
+                </Button>
+              </FlexItem>
+              {partnerLogos && (
+                <FlexItem>
+                  <span className={partnerLogosDark ? classes.lightModeOnly : undefined}>{partnerLogos}</span>
+                  {partnerLogosDark && <span className={classes.darkModeOnly}>{partnerLogosDark}</span>}
+                </FlexItem>
+              )}
+            </Flex>
+          </div>
+        </div>
+      </ModalBody>
     </Modal>
   );
 };

@@ -1,6 +1,9 @@
 import { FunctionComponent, useState } from 'react';
 
 import {
+  Alert,
+  AlertActionCloseButton,
+  AlertActionLink,
   Button,
   Content,
   ExpandableSection,
@@ -30,24 +33,42 @@ const useStyles = createUseStyles({
   nudge: {
     padding: 'var(--pf-t--global--spacer--lg)',
   },
-  nudgeBannerInline: {
-    padding: 'var(--pf-t--global--spacer--md)',
-  },
-  nudgeCompact: {
-    padding: 'var(--pf-t--global--spacer--sm)',
+  alertIcon: {
+    display: 'block',
+    width: '1.5rem',
+    height: 'auto',
+    marginInlineStart: '-3px',
   },
   logo: {
     display: 'block',
-    maxWidth: '10rem',
-    width: '100%',
+    width: '6rem',
+    marginInlineStart: '-10px',
   },
   partnerLockup: {
     display: 'block',
     height: '1rem',
     width: 'auto',
   },
+  lightModeOnly: {
+    '.pf-v6-theme-dark &': { display: 'none' },
+  },
+  darkModeOnly: {
+    display: 'none',
+    '.pf-v6-theme-dark &': { display: 'block' },
+  },
+  heroBg: {
+    '--pf-v6-c-hero--BackgroundColor': '#e5e0df',
+    '.pf-v6-theme-dark &': {
+      '--pf-v6-c-hero--BackgroundColor': 'var(--pf-t--color--black)',
+    },
+  },
   heroContent: {
     maxWidth: '50%',
+  },
+  heroDismiss: {
+    position: 'absolute',
+    insetBlockStart: 'var(--pf-t--global--spacer--md)',
+    insetInlineEnd: 'var(--pf-t--global--spacer--md)',
   },
   disclosure: {
     display: 'block',
@@ -57,9 +78,9 @@ const useStyles = createUseStyles({
     alignItems: 'flex-start',
   },
   ctaLightwellColor: {
-    '--pf-t--global--color--brand--accent--default': 'var(--pf-t--color--red--50)',
-    '--pf-t--global--color--brand--accent--hover': 'var(--pf-t--color--red--60)',
-    '--pf-t--global--color--brand--accent--clicked': 'var(--pf-t--color--red--60)',
+    '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)',
+    '--pf-v6-c-button--hover--BackgroundColor': 'var(--pf-t--color--red--60)',
+    '--pf-v6-c-button--m-clicked--BackgroundColor': 'var(--pf-t--color--red--60)',
   },
 });
 
@@ -113,7 +134,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
     onDismiss?.();
   };
 
-  const ctaStyle = ctaColorScheme === 'lightwell' ? { style: { '--pf-t--global--color--brand--accent--default': 'var(--pf-t--color--red--50)', '--pf-t--global--color--brand--accent--hover': 'var(--pf-t--color--red--60)', '--pf-t--global--color--brand--accent--clicked': 'var(--pf-t--color--red--60)' } as React.CSSProperties } : {};
+  const ctaStyle = ctaColorScheme === 'lightwell' ? { style: { '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)', '--pf-v6-c-button--hover--BackgroundColor': 'var(--pf-t--color--red--60)', '--pf-v6-c-button--m-clicked--BackgroundColor': 'var(--pf-t--color--red--60)' } as React.CSSProperties } : {};
 
   const metricsRow = metrics.length > 0 && (
     <Flex
@@ -175,10 +196,17 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
       {content.assets?.partnerLockup && (
         <FlexItem>
           <img
-            className={classes.partnerLockup}
+            className={css(classes.partnerLockup, content.assets.partnerLockupDark ? classes.lightModeOnly : undefined)}
             src={content.assets.partnerLockup.src}
             alt={content.assets.partnerLockup.alt}
           />
+          {content.assets.partnerLockupDark && (
+            <img
+              className={css(classes.partnerLockup, classes.darkModeOnly)}
+              src={content.assets.partnerLockupDark.src}
+              alt={content.assets.partnerLockupDark.alt}
+            />
+          )}
         </FlexItem>
       )}
     </Flex>
@@ -189,10 +217,17 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
       {content.assets?.logo && (
         <StackItem>
           <img
-            className={classes.logo}
+            className={css(classes.logo, content.assets.logoDark ? classes.lightModeOnly : undefined)}
             src={content.assets.logo.src}
             alt={content.assets.logo.alt}
           />
+          {content.assets.logoDark && (
+            <img
+              className={css(classes.logo, classes.darkModeOnly)}
+              src={content.assets.logoDark.src}
+              alt={content.assets.logoDark.alt}
+            />
+          )}
         </StackItem>
       )}
       <StackItem>
@@ -220,12 +255,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
     </Stack>
   );
 
-  const nudgePaddingClass =
-    prominence === 'banner' || prominence === 'inline'
-      ? classes.nudgeBannerInline
-      : prominence === 'compact'
-        ? classes.nudgeCompact
-        : classes.nudge;
+  const nudgePaddingClass = prominence === 'hero' || prominence === 'alert' ? undefined : classes.nudge;
 
   const rootClassName = css(
     'pf-v6-product-nudge',
@@ -252,20 +282,90 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
     return (
       <div ref={impressionRef}>
         <Hero
-          className={rootClassName}
+          className={css(rootClassName, classes.heroBg)}
           data-ouia-component-id={ouiaId}
           style={{
-            border: 'none',
-            ...(content.assets?.backgroundImage && {
-              backgroundImage: `url(${content.assets.backgroundImage})`,
+            position: 'relative',
+            '--pf-v6-c-hero--BorderBlockStartWidth': '0',
+            '--pf-v6-c-hero--BorderBlockEndWidth': '0',
+            '--pf-v6-c-hero--BorderInlineStartWidth': '0',
+            '--pf-v6-c-hero--BorderInlineEndWidth': '0',
+            '--pf-v6-c-hero--PaddingBlockStart': 'calc(2 * var(--pf-t--global--spacer--lg))',
+            '--pf-v6-c-hero--PaddingBlockEnd': 'calc(2 * var(--pf-t--global--spacer--lg))',
+            '--pf-v6-c-hero--PaddingInlineStart': 'calc(2 * var(--pf-t--global--spacer--lg))',
+            ...(content.assets?.backgroundImageLight && {
+              '--pf-v6-c-hero--BackgroundImage--light': `url(${content.assets.backgroundImageLight})`,
             }),
-          }}
+            ...(content.assets?.backgroundImageDark && {
+              '--pf-v6-c-hero--BackgroundImage--dark': `url(${content.assets.backgroundImageDark})`,
+            }),
+          } as React.CSSProperties}
         >
-          <Flex justifyContent={{ default: 'justifyContentSpaceBetween' }}>
-            <FlexItem className={classes.heroContent}>{body}</FlexItem>
-            <FlexItem>{dismissControl}</FlexItem>
-          </Flex>
+          <FlexItem className={classes.heroContent}>{body}</FlexItem>
+          {dismissControl && (
+            <div className={classes.heroDismiss}>{dismissControl}</div>
+          )}
         </Hero>
+      </div>
+    );
+  }
+
+  if (prominence === 'alert') {
+    const alertIcon = content.assets?.logo ? (
+      <>
+        <img
+          className={css(classes.alertIcon, content.assets.logoDark ? classes.lightModeOnly : undefined)}
+          src={content.assets.logo.src}
+          alt=""
+          aria-hidden
+        />
+        {content.assets.logoDark && (
+          <img
+            className={css(classes.alertIcon, classes.darkModeOnly)}
+            src={content.assets.logoDark.src}
+            alt=""
+            aria-hidden
+          />
+        )}
+      </>
+    ) : undefined;
+
+    const alertCta =
+      content.cta.action === 'link' && content.cta.href ? (
+        <AlertActionLink
+          component="a"
+          href={content.cta.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          ouiaId={`${ouiaId}-cta`}
+        >
+          {content.cta.label}
+        </AlertActionLink>
+      ) : (
+        <AlertActionLink onClick={onAction} ouiaId={`${ouiaId}-cta`}>
+          {content.cta.label}
+        </AlertActionLink>
+      );
+
+    return (
+      <div ref={impressionRef} className={className} data-ouia-component-id={ouiaId}>
+        <Alert
+          variant="info"
+          isInline
+          title={content.headline}
+          customIcon={alertIcon}
+          actionClose={behavior === 'dismissible' ? (
+            <AlertActionCloseButton
+              title={content.headline}
+              onClose={handleDismiss}
+              ouiaId={`${ouiaId}-dismiss`}
+            />
+          ) : undefined}
+          actionLinks={alertCta}
+          ouiaId={`${ouiaId}-alert`}
+        >
+          {content.body}
+        </Alert>
       </div>
     );
   }

@@ -1,0 +1,35 @@
+<svg version="1.1" id="svg6" sodipodi:docname="lightwell-light.svg" inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="71.55 71.55 108.02 108.05">
+  <sodipodi:namedview id="namedview6" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:zoom="1.4142136" inkscape:cx="26.870058" inkscape:cy="76.367532" inkscape:window-width="3840" inkscape:window-height="2123" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="1" inkscape:current-layer="svg6"/>
+  <defs id="defs4">
+    <inkscape:path-effect effect="powerclip" message="" id="path-effect11" is_visible="true" lpeversion="1" inverse="true" flatten="false" hide_clip="false"/>
+    <linearGradient id="lightwell-logomark-light-grad-1" x1="4772.45954" y1="-6295.98291" x2="4718.44617" y2="-6349.96954" gradientTransform="translate(4913.07821 -6182.72164) rotate(-179.98581)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fccb8f" id="stop1"/>
+      <stop offset="1" stop-color="#e00" id="stop2"/>
+    </linearGradient>
+    <linearGradient id="lightwell-logomark-light-grad-2" x1="85.02334" y1="139.18698" x2="139.0252" y2="85.15837" gradientTransform="translate(.05683 -.11206) rotate(.01419)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8d8d8d" id="stop3"/>
+      <stop offset="1" stop-color="#c6c6c6" id="stop4"/>
+    </linearGradient>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath10">
+      <rect style="fill:none" id="rect11" width="108.00443" height="107.95338" x="71.554962" y="71.621025" display="block"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath12">
+      <rect style="fill:none" id="rect13" width="144.42656" height="121.44559" x="43.487068" y="57.982758"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath13">
+      <rect style="fill:none" id="rect14" width="144.42656" height="121.44559" x="43.487068" y="57.982758"/>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath14">
+      <rect style="fill:none" id="rect15" width="144.42656" height="121.44559" x="43.487068" y="57.982758"/>
+    </clipPath>
+  </defs>
+  <g id="g8">
+    <g id="g7">
+      <polygon points="179.55994 179.57973 179.55994 125.57973 125.55994 125.57973 179.55994 179.57973" fill="url(#lightwell-logomark-light-grad-1)" id="polygon4" clip-path="url(#clipPath14)"/>
+      <polygon points="71.55994 71.61423 71.55994 125.59698 125.52948 179.57973 125.55994 71.57973 71.55994 71.61423" fill="url(#lightwell-logomark-light-grad-2)" id="polygon5" clip-path="url(#clipPath13)"/>
+    </g>
+    <polygon points="125.55994 125.57973 125.55994 179.57973 179.55994 179.57973 125.55994 125.57973" fill="#161616" id="polygon6" clip-path="url(#clipPath12)"/>
+  </g>
+  <rect style="fill:none" id="rect8" width="107.23856" height="108.02708" x="71.952347" y="71.755211"/>
+  <rect style="fill:none" id="rect9" width="0.48787114" height="0.069695875" x="71.298882" y="72.204926"/>
+</svg>

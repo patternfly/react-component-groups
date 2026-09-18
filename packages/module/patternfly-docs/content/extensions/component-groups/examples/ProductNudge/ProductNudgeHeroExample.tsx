@@ -1,8 +1,11 @@
 import React from 'react';
 import ProductNudge from '@patternfly/react-component-groups/dist/dynamic/ProductNudge';
-import LightwellHeroImage from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-hero.png';
-import LightwellLogo from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-logo.png';
+import LightwellBgLight from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-bg-light.png';
+import LightwellBgDark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-bg-dark.png';
+import LightwellLogo from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-logo.svg';
+import LightwellLogoDark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/lightwell-logo-dark.svg';
 import RedHatIBMLockup from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/RedHatIBMLockup.svg';
+import RedHatIBMLockupDark from '@patternfly/react-component-groups/dist/dynamic/ProductNudge/assets/RedHatIBMLockup-dark.svg';
 
 export const ProductNudgeHeroExample: React.FunctionComponent = () => (
   <ProductNudge
@@ -17,14 +20,13 @@ export const ProductNudgeHeroExample: React.FunctionComponent = () => (
       cta: { label: 'Get in touch', action: 'contact' },
       assets: {
         logo: { src: LightwellLogo, alt: 'Lightwell' },
-        backgroundImage: LightwellHeroImage,
+        logoDark: { src: LightwellLogoDark, alt: 'Lightwell' },
+        backgroundImageLight: LightwellBgLight,
+        backgroundImageDark: LightwellBgDark,
         partnerLockup: { src: RedHatIBMLockup, alt: 'Red Hat and IBM' },
+        partnerLockupDark: { src: RedHatIBMLockupDark, alt: 'Red Hat and IBM' },
       },
     }}
-    metrics={[
-      { label: 'packages analyzed', value: 847, format: 'count' },
-      { label: 'match rate', value: 37, format: 'percentage' },
-    ]}
   />
 );
 

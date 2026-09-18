@@ -9,6 +9,12 @@ export * from './ProductNudgeContactModal';
 export { default as ProductNudgeField } from './ProductNudgeField';
 export * from './ProductNudgeField';
 
+export { default as ProductNudgeDescriptionItem } from './ProductNudgeDescriptionItem';
+export * from './ProductNudgeDescriptionItem';
+
+export { default as ProductNudgeMatchAnalysisModal } from './ProductNudgeMatchAnalysisModal';
+export * from './ProductNudgeMatchAnalysisModal';
+
 export { default as LightwellModalFooter } from './LightwellModalFooter';
 export * from './LightwellModalFooter';
 
