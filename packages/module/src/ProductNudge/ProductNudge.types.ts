@@ -15,11 +15,11 @@ export interface NudgeContent {
   /** Primary heading text */
   headline: string;
   /** Primary body paragraph */
-  body: string;
+  body: string | React.ReactNode;
   /** Optional secondary body paragraph */
-  secondaryBody?: string;
+  secondaryBody?: string | React.ReactNode;
   /** Optional hedged legal/disclaimer text rendered in a small element */
-  disclosure?: string;
+  disclosure?: string | React.ReactNode;
   /** Call-to-action configuration */
   cta: {
     /** Button label */

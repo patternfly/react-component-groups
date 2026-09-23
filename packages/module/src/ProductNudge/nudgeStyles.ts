@@ -18,4 +18,5 @@ export const lightwellCtaStyle = {
   '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)',
   '--pf-v6-c-button--hover--BackgroundColor': 'var(--pf-t--color--red--60)',
   '--pf-v6-c-button--m-clicked--BackgroundColor': 'var(--pf-t--color--red--60)',
+  '--pf-v6-c-button--Color': 'var(--pf-t--color--white)'
 } as CSSProperties;

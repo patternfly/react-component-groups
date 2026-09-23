@@ -19,5 +19,3 @@ export const ProductNudgeDescriptionItemExample: React.FunctionComponent = () =>
     />
   </DescriptionList>
 );
-
-export default ProductNudgeDescriptionItemExample;

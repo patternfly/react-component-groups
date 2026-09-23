@@ -15,5 +15,3 @@ export const ProductNudgeFieldExample: React.FunctionComponent = () => (
     logoDark={{ src: LightwellLogomarkDark, alt: 'Lightwell' }}
   />
 );
-
-export default ProductNudgeFieldExample;

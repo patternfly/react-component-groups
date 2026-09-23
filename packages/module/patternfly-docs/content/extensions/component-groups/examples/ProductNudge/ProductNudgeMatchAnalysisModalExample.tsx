@@ -14,5 +14,3 @@ export const ProductNudgeMatchAnalysisModalExample: React.FunctionComponent = ()
     </>
   );
 };
-
-export default ProductNudgeMatchAnalysisModalExample;

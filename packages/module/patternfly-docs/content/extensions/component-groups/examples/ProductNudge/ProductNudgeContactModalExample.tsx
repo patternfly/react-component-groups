@@ -42,5 +42,3 @@ export const ProductNudgeContactModalExample: React.FunctionComponent = () => {
     </>
   );
 };
-
-export default ProductNudgeContactModalExample;

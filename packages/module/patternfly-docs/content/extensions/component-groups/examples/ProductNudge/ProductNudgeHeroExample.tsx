@@ -29,5 +29,3 @@ export const ProductNudgeHeroExample: React.FunctionComponent = () => (
     }}
   />
 );
-
-export default ProductNudgeHeroExample;

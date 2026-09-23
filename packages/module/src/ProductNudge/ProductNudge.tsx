@@ -60,7 +60,7 @@ const useStyles = createUseStyles({
     },
   },
   heroContent: {
-    maxWidth: '50%',
+    maxWidth: '75%',
   },
   heroDismiss: {
     position: 'absolute',
