@@ -6,6 +6,7 @@ import {
   ActionListItem,
   Button,
   Content,
+  ContentVariants,
   Flex,
   FlexItem,
   getResizeObserver,
@@ -39,6 +40,16 @@ import { lightwellCtaStyle, nudgeModeStyles, partnerLockupStyles } from './nudge
 
 const useStyles = createUseStyles({
   modal: {
+    '--pf-v6-c-modal-box__header--PaddingBlockStart': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__header--PaddingBlockEnd': 'var(--pf-t--global--spacer--md)',
+    '--pf-v6-c-modal-box__header--PaddingInlineStart': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__header--PaddingInlineEnd': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__body--PaddingInlineStart': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__body--PaddingInlineEnd': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__footer--PaddingBlockEnd': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__footer--PaddingInlineStart': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__footer--PaddingInlineEnd': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-content--small--MarginBlockEnd': 0,
     '.pf-v6-theme-dark &': {
       // Keep chart labels legible against PatternFly's dark modal background.
       '--pf-v6-chart-donut--label--title--Fill': 'var(--pf-t--global--text--color--regular)',
@@ -54,6 +65,10 @@ const useStyles = createUseStyles({
     width: '100%',
     minWidth: 0,
     height: '158px',
+  },
+  modalTitleIcon: {
+    width: '1.5rem',
+    height: '1.5rem',
   },
   ...nudgeModeStyles,
 });
@@ -79,6 +94,17 @@ const CHART_COLORS = [
   'var(--lightwell-chart-color-partial, #f8ae54)',
   'var(--lightwell-chart-color-no-match, #f2f2f2)',
 ];
+
+const LightwellTitleIcon: FunctionComponent = () => {
+  const classes = useStyles();
+
+  return (
+    <div className={`${classes.modalTitleIcon}`}>
+      <img src={LightwellLogomark} alt="" className={classes.lightModeOnly} />
+      <img src={LightwellLogomarkDark} alt="" className={classes.darkModeOnly} />
+    </div>
+  );
+};
 
 export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatchAnalysisModalProps> = ({
   isOpen,
@@ -137,141 +163,130 @@ export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatch
       aria-labelledby="product-nudge-match-analysis-title"
       className={classes.modal}
     >
-      <ModalHeader labelId="product-nudge-match-analysis-title">
-        <Flex alignItems={{ default: 'alignItemsCenter' }} gap={{ default: 'gapMd' }}>
-          <FlexItem>
-            <img src={LightwellLogomark} alt="" width={40} height={40} className={classes.lightModeOnly} />
-            <img src={LightwellLogomarkDark} alt="" width={40} height={40} className={classes.darkModeOnly} />
-          </FlexItem>
-          <Title headingLevel="h1" size="xl" id="product-nudge-match-analysis-title">
-            Lightwell Lens
-          </Title>
-        </Flex>
-      </ModalHeader>
+      <ModalHeader 
+        labelId="product-nudge-match-analysis-title"
+        title="Lightwell Lens"
+        titleIconVariant={LightwellTitleIcon}
+        description="Lightwell is a joint effort between Red Hat and IBM that helps you secure open source dependencies at scale. When a vulnerability would otherwise require a disruptive third-party upgrade, Lightwell Network can provide a validated, backported security fix for the version you already run—so you can remediate without breaking production."
+      />
 
       <ModalBody tabIndex={0}>
-        <Stack hasGutter>
-          <Content component="p">
-            Lightwell is a joint effort between Red Hat and IBM that helps you secure open source dependencies at scale. When a vulnerability would otherwise require a disruptive third-party upgrade, Lightwell Network can provide a validated, backported security fix for the version you already run—so you can remediate without breaking production.
-          </Content>
+        <Flex direction={{ default: 'column', md: 'row' }} gap={{ default: 'gap2xl' }}>
+          <FlexItem flex={{ default: 'flex_1' }}>
+            <Stack hasGutter>
+              <div className="">
+                <Stack hasGutter>
+                  <Title headingLevel="h2" size="md">Match analysis</Title>
+                  <Content component="p">
+                    <strong>{matchPercentage}%</strong> of packages match the Lightwell Network catalog.
+                  </Content>
 
-          <Flex direction={{ default: 'column', md: 'row' }} gap={{ default: 'gap2xl' }}>
-            <FlexItem flex={{ default: 'flex_1' }}>
-              <Stack hasGutter>
-                <div className="">
-                  <Stack hasGutter>
-                    <Title headingLevel="h2" size="xl">Match analysis</Title>
-                    <Content component="p">
-                      <strong>{matchPercentage}%</strong> of packages match the Lightwell Network catalog.
-                    </Content>
-
-                    <Flex alignItems={{ default: 'alignItemsCenter' }} gap={{ default: 'gapLg' }}>
-                      <FlexItem flex={{ default: 'flexNone' }}>
-                        <ChartDonut
-                          ariaTitle="Package match breakdown"
-                          ariaDesc={`${matchData.exact} exact, ${matchData.partial} partial, and ${matchData.noMatch} no match packages`}
-                          data={matchItems.map(({ label, value }) => ({ x: label, y: value }))}
-                          labels={({ datum }) => `${datum.x}: ${datum.y}`}
-                          labelComponent={<ChartTooltip />}
-                          title={`${totalMatches}`}
-                          subTitle="matches"
-                          colorScale={CHART_COLORS}
-                          constrainToVisibleArea
-                          height={160}
-                          width={160}
-                          padding={{ bottom: 0, left: 0, right: 0, top: 0 }}
-                          radius={70}
-                          innerRadius={52}
-                          padAngle={1}
-                        />
-                      </FlexItem>
-                      <FlexItem>
-                        <Stack>
-                          {matchItems.map(({ label, value, helpText }) => (
-                            <Flex key={label} alignItems={{ default: 'alignItemsCenter' }} gap={{ default: 'gapXs' }}>
-                              <strong>{value}</strong>
-                              <Popover
-                                headerContent={label}
-                                bodyContent={helpText}
-                                position="top"
-                              >
-                                <Button
-                                  variant="plain"
-                                  aria-label={`About ${label}`}
-                                  icon={<RhUiQuestionMarkCircleIcon />}
-                                  iconPosition="end"
-                                >
-                                  {label}
-                                </Button>
-                              </Popover>
-                            </Flex>
-                          ))}
-                        </Stack>
-                      </FlexItem>
-                    </Flex>
-                  </Stack>
-                </div>
-              </Stack>
-            </FlexItem>
-
-            <FlexItem flex={{ default: 'flex_1' }}>
-              <Stack hasGutter>
-                <div className="">
-                  <Stack hasGutter>
-                    <Title headingLevel="h2" size="xl">By ecosystem</Title>
-                    <Content component="p">See how packages map to supported ecosystems.</Content>
-
-                    <div
-                      role="region"
-                      aria-label="By ecosystem chart"
-                      tabIndex={0}
-                      className={classes.ecosystemChartViewport}
-                      ref={ecosystemChartViewportRef}
-                    >
-                      <Chart
-                        ariaTitle="By ecosystem match breakdown"
-                        ariaDesc="Packages by ecosystem and match type"
+                  <Flex alignItems={{ default: 'alignItemsCenter' }} gap={{ default: 'gapLg' }}>
+                    <FlexItem flex={{ default: 'flexNone' }}>
+                      <ChartDonut
+                        ariaTitle="Package match breakdown"
+                        ariaDesc={`${matchData.exact} exact, ${matchData.partial} partial, and ${matchData.noMatch} no match packages`}
+                        data={matchItems.map(({ label, value }) => ({ x: label, y: value }))}
+                        labels={({ datum }) => `${datum.x}: ${datum.y}`}
+                        labelComponent={<ChartTooltip />}
+                        title={`${totalMatches}`}
+                        subTitle="matches"
                         colorScale={CHART_COLORS}
-                        domain={{ y: [ 0, Math.max(200, ...ecosystemData.flatMap(({ exact, partial, noMatch }) => [ exact, partial, noMatch ])) ] }}
-                        height={ECOSYSTEM_CHART_HEIGHT}
-                        legendData={[ { name: 'Exact match' }, { name: 'Partial match' }, { name: 'No match' } ]}
-                        legendOrientation="vertical"
-                        legendPosition="right"
-                        padding={{ bottom: 45, left: 58, right: 150, top: 12 }}
-                        width={ecosystemChartWidth}
-                        containerComponent={<ChartContainer style={{ height: '100%', width: '100%' }} />}
-                      >
-                        <ChartAxis dependentAxis showGrid tickValues={[ 50, 100, 150, 200 ]} />
-                        <ChartAxis tickValues={ecosystemData.map(({ name }) => name)} />
-                        <ChartGroup offset={24}>
-                          <ChartBar
-                            data={ecosystemData.map(({ name, exact }) => ({ x: name, y: exact, label: `Exact match: ${exact}` }))}
-                            labels={({ datum }) => datum.label}
-                            labelComponent={<ChartTooltip />}
-                          />
-                          <ChartBar
-                            data={ecosystemData.map(({ name, partial }) => ({ x: name, y: partial, label: `Partial match: ${partial}` }))}
-                            labels={({ datum }) => datum.label}
-                            labelComponent={<ChartTooltip />}
-                          />
-                          <ChartBar
-                            data={ecosystemData.map(({ name, noMatch }) => ({ x: name, y: noMatch, label: `No match: ${noMatch}` }))}
-                            labels={({ datum }) => datum.label}
-                            labelComponent={<ChartTooltip />}
-                          />
-                        </ChartGroup>
-                      </Chart>
-                    </div>
-                  </Stack>
-                </div>
-              </Stack>
-            </FlexItem>
-          </Flex>
-        </Stack>
+                        constrainToVisibleArea
+                        height={160}
+                        width={160}
+                        padding={{ bottom: 0, left: 0, right: 0, top: 0 }}
+                        radius={70}
+                        innerRadius={52}
+                        padAngle={1}
+                      />
+                    </FlexItem>
+                    <FlexItem>
+                      <Stack>
+                        {matchItems.map(({ label, value, helpText }) => (
+                          <Flex key={label} alignItems={{ default: 'alignItemsCenter' }} gap={{ default: 'gapXs' }}>
+                            <strong>{value}</strong>
+                            <Popover
+                              headerContent={label}
+                              bodyContent={helpText}
+                              position="top"
+                            >
+                              <Button
+                                variant="plain"
+                                aria-label={`About ${label}`}
+                                icon={<RhUiQuestionMarkCircleIcon />}
+                                iconPosition="end"
+                              >
+                                {label}
+                              </Button>
+                            </Popover>
+                          </Flex>
+                        ))}
+                      </Stack>
+                    </FlexItem>
+                  </Flex>
+                </Stack>
+              </div>
+            </Stack>
+          </FlexItem>
+
+          <FlexItem flex={{ default: 'flex_1' }}>
+            <Stack hasGutter>
+              <div className="">
+                <Stack hasGutter>
+                  <Title headingLevel="h2" size="md">By ecosystem</Title>
+                  <Content component="p">See how packages map to supported ecosystems.</Content>
+
+                  <div
+                    role="region"
+                    aria-label="By ecosystem chart"
+                    tabIndex={0}
+                    className={classes.ecosystemChartViewport}
+                    ref={ecosystemChartViewportRef}
+                  >
+                    <Chart
+                      ariaTitle="By ecosystem match breakdown"
+                      ariaDesc="Packages by ecosystem and match type"
+                      colorScale={CHART_COLORS}
+                      domain={{ y: [ 0, Math.max(200, ...ecosystemData.flatMap(({ exact, partial, noMatch }) => [ exact, partial, noMatch ])) ] }}
+                      height={ECOSYSTEM_CHART_HEIGHT}
+                      legendData={[ { name: 'Exact match' }, { name: 'Partial match' }, { name: 'No match' } ]}
+                      legendOrientation="vertical"
+                      legendPosition="right"
+                      padding={{ bottom: 45, left: 58, right: 150, top: 12 }}
+                      width={DEFAULT_ECOSYSTEM_DATA.length * 75 + 250}
+                      containerComponent={<ChartContainer style={{ height: '100%', width: '100%' }} />}
+                    >
+                      <ChartAxis dependentAxis showGrid tickValues={[ 50, 100, 150, 200 ]} />
+                      <ChartAxis tickValues={ecosystemData.map(({ name }) => name)} />
+                      <ChartGroup offset={24}>
+                        <ChartBar
+                          data={ecosystemData.map(({ name, exact }) => ({ x: name, y: exact, label: `Exact match: ${exact}` }))}
+                          labels={({ datum }) => datum.label}
+                          labelComponent={<ChartTooltip />}
+                        />
+                        <ChartBar
+                          data={ecosystemData.map(({ name, partial }) => ({ x: name, y: partial, label: `Partial match: ${partial}` }))}
+                          labels={({ datum }) => datum.label}
+                          labelComponent={<ChartTooltip />}
+                        />
+                        <ChartBar
+                          data={ecosystemData.map(({ name, noMatch }) => ({ x: name, y: noMatch, label: `No match: ${noMatch}` }))}
+                          labels={({ datum }) => datum.label}
+                          labelComponent={<ChartTooltip />}
+                        />
+                      </ChartGroup>
+                    </Chart>
+                  </div>
+                </Stack>
+              </div>
+            </Stack>
+          </FlexItem>
+        </Flex>
       </ModalBody>
       <ModalFooter>
         <Stack hasGutter style={{ minWidth: 0, width: '100%' }}>
-          <Content component="p">
+          <Content component={ContentVariants.small}>
             Download a full, shareable report with detailed match results and remediation guidance.
           </Content>
           <ActionList>
