@@ -44,7 +44,7 @@ A low-profile inline nudge using a PF6 Alert, suitable for sidebars or below pag
 
 ### Contact modal
 
-Use `ProductNudgeContactModal` for CTAs that open a contact/lead-capture form. Inject transport via `onSubmit`. Pass `footerContent` to render partner logos.
+Use `ProductNudgeContactModal` for CTAs that open a contact/lead-capture form. Set `titleText`, `descriptionText`, and `submitText` for the modal content. The `onSubmit` callback receives the entered name, email, and optional phone number as `ContactFormValues`.
 
 ```js file="./ProductNudgeContactModalExample.tsx"
 

@@ -81,34 +81,22 @@ export interface ProductNudgeContactModalProps {
   isOpen: boolean;
   /** Callback to close the modal */
   onClose: () => void;
-  /** Contact modal content (title, intro, successMessage) */
-  content: NudgeContact;
-  /** Pre-filled name value */
-  prefillName?: string;
-  /** Pre-filled email value */
-  prefillEmail?: string;
-  /** Transport handler; resolves on success, rejects on failure */
+  /** Modal title */
+  titleText: React.ReactNode;
+  /** Optional icon or component shown beside the modal title */
+  titleIcon?: React.ComponentType;
+  /** Optional description shown below the modal title */
+  descriptionText?: React.ReactNode;
+  /** Submit button label */
+  submitText: React.ReactNode;
+  /** Placeholder for the name field */
+  namePlaceholder?: string;
+  /** Placeholder for the email field */
+  emailPlaceholder?: string;
+  /** Placeholder for the phone field */
+  phonePlaceholder?: string;
+  /** Receives the entered contact details when the form is submitted */
   onSubmit: (values: ContactFormValues) => Promise<void>;
-  /** Logo + wordmark shown at the top-left of the modal (light mode) */
-  headerLogo?: { src: string; alt: string; name?: string };
-  /** Logo shown in dark mode (wordmark text unchanged) */
-  headerLogoDark?: { src: string; alt: string };
-  /** Background image URL for the right decorative panel (light mode) */
-  backgroundImage?: string;
-  /** Background image URL used when .pf-v6-theme-dark is on the root element */
-  backgroundImageDark?: string;
-  /** Inline logo lockup rendered beside the submit button (light mode) */
-  partnerLogos?: React.ReactNode;
-  /** Inline logo lockup rendered in dark mode */
-  partnerLogosDark?: React.ReactNode;
-  /** Mark the name field as required; defaults to true */
-  isNameRequired?: boolean;
-  /** Mark the email field as required; defaults to true */
-  isEmailRequired?: boolean;
-  /** Mark the phone field as required; defaults to false */
-  isPhoneRequired?: boolean;
-  /** Additional CSS class */
-  className?: string;
 }
 
 export interface ProductNudgeMatchData {
