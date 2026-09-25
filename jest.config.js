@@ -33,6 +33,7 @@ module.exports = {
   ],
   moduleNameMapper: {
     '\\.(css|scss)$': 'identity-obj-proxy',
+    '\\.(svg|png)$': '<rootDir>/config/fileMock.js',
     '^lodash-es$': 'lodash',
     customReact: 'react',
     reactRedux: 'react-redux',

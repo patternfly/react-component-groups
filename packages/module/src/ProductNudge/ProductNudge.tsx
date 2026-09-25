@@ -21,7 +21,7 @@ import { createUseStyles } from 'react-jss';
 import ErrorBoundary from '../ErrorBoundary';
 import { useImpressionTracking } from './useImpressionTracking';
 import { ProductNudgeField } from './ProductNudgeField';
-import { lightwellBackgroundStyle, lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
+import { lightwellBackgroundStyle, lightwellCtaStyle, nudgeModeStyles, partnerLockupStyles } from './nudgeStyles';
 import {
   ProductNudgeProps,
   ProductNudgeProminence,
@@ -46,11 +46,7 @@ const useStyles = createUseStyles({
     width: '6rem',
     marginInlineStart: '-10px',
   },
-  partnerLockup: {
-    display: 'block',
-    height: '1rem',
-    width: 'auto',
-  },
+  partnerLockup: partnerLockupStyles,
   ...nudgeModeStyles,
   heroBg: {
     ...lightwellBackgroundStyle,

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductNudgeMatchAnalysisModal component renders closed 1`] = `<div />`;
+
+exports[`ProductNudgeMatchAnalysisModal component renders when open 1`] = `
+<div
+  aria-hidden="true"
+/>
+`;

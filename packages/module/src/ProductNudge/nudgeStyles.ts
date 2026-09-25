@@ -10,6 +10,12 @@ export const nudgeModeStyles = {
   },
 };
 
+export const partnerLockupStyles = {
+  display: 'block',
+  height: '1.5rem',
+  width: 'auto',
+};
+
 export const lightwellBackgroundStyle = {
   '--lightwell--background-color': '#e5e0df',
 };

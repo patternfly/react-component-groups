@@ -4,9 +4,9 @@ export interface NudgeContact {
   /** Modal title text (used for aria-label) */
   title: string;
   /** Introductory paragraph shown above the form */
-  intro: string;
+  intro: string | React.ReactNode;
   /** Message shown in place of the form after a successful submit */
-  successMessage: string;
+  successMessage: string | React.ReactNode;
 }
 
 export interface NudgeContent {
@@ -118,7 +118,7 @@ export interface ProductNudgeMatchData {
 }
 
 export interface ProductNudgeEcosystemData extends ProductNudgeMatchData {
-  name: string;
+  name: string | React.ReactNode;
 }
 
 export interface ProductNudgeProps {
@@ -152,11 +152,11 @@ export interface ProductNudgeFieldProps {
   /** false renders null */
   isEligible: boolean;
   /** Heading label rendered beside the logo */
-  titleText: string;
+  titleText: string | React.ReactNode;
   /** Primary value or metric rendered below the heading */
-  value?: string;
+  value?: string | React.ReactNode;
   /** Body / note text */
-  bodyText: string;
+  bodyText: string | React.ReactNode;
   /** CTA link label */
   ctaText?: string;
   /** CTA link href */
@@ -177,9 +177,9 @@ export interface ProductNudgeDescriptionItemProps {
   /** false renders null */
   isEligible: boolean;
   /** Bold headline in the description */
-  headline: string;
+  headline: string | React.ReactNode;
   /** Body paragraph in the description */
-  bodyText: string;
+  bodyText: string | React.ReactNode;
   /** CTA link label */
   ctaText?: string;
   /** CTA link href */
