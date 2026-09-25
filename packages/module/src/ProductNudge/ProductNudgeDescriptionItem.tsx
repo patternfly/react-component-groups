@@ -57,23 +57,16 @@ export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescript
       data-ouia-component-id={ouiaId}
       data-testid={dataTestId}
     >
-      <DescriptionListTerm className={classes.term}>
-        {logo && (
+      <DescriptionListTerm 
+        className={classes.term}
+        icon={(
           <>
-            <img
-              className={css(classes.logo, logoDark ? classes.lightModeOnly : undefined)}
-              src={logo.src}
-              alt={logo.alt}
-            />
-            {logoDark && (
-              <img
-                className={css(classes.logo, classes.darkModeOnly)}
-                src={logoDark.src}
-                alt={logoDark.alt}
-              />
-            )}
+            {logo && <img src={logo.src} alt={logo.alt} className={classes.lightModeOnly} />}
+            {logoDark && <img src={logoDark.src} alt={logoDark.alt} className={classes.darkModeOnly} />}
           </>
         )}
+      >
+        Lightwell
       </DescriptionListTerm>
       <DescriptionListDescription>
         <Stack hasGutter>
