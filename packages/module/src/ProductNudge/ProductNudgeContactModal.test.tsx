@@ -20,6 +20,13 @@ describe('ProductNudgeContactModal component', () => {
     expect(logomarkImages).toHaveLength(2);
     expect(logomarkImages[0].className).toContain('lightModeOnly');
     expect(logomarkImages[1].className).toContain('darkModeOnly');
+    const partnerLockupImages = dialog.querySelectorAll<HTMLImageElement>('img[alt="Red Hat and IBM"]');
+    expect(partnerLockupImages).toHaveLength(2);
+    expect(partnerLockupImages[0].className).toContain('lightModeOnly');
+    expect(partnerLockupImages[1].className).toContain('darkModeOnly');
+    const footer = dialog.querySelector('.pf-v6-c-modal-box__footer');
+    expect(footer).toContainElement(screen.getByRole('button', { name: 'Send request' }));
+    expect(footer).toContainElement(partnerLockupImages[0]);
     expect(screen.getByRole('button', { name: 'Send request' })).toHaveStyle({
       '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)'
     });
