@@ -55,10 +55,10 @@ export interface ProductNudgeContactModalProps {
   onSubmit: (values: ContactFormValues) => Promise<void>;
   /** Applies a named brand preset; copy remains entirely caller-supplied. */
   brand?: ProductNudgeBrand;
-  /** Footer partner lockup override. */
-  partnerLockup?: ProductNudgeImage;
-  /** Dark-mode footer partner lockup override. */
-  partnerLockupDark?: ProductNudgeImage;
+  /** Footer partner logo override. */
+  partnerLogo?: ProductNudgeImage;
+  /** Dark-mode footer partner logo override. */
+  partnerLogoDark?: ProductNudgeImage;
   /** Override the primary CTA visual scheme. */
   ctaColorScheme?: ProductNudgeCtaColorScheme;
   /** Prefix for generated form and accessibility IDs. */
@@ -121,8 +121,8 @@ export const ProductNudgeContactModal = ({
   fields,
   successMessage,
   brand,
-  partnerLockup,
-  partnerLockupDark,
+  partnerLogo,
+  partnerLogoDark,
   ctaColorScheme,
   id,
 }: ProductNudgeContactModalProps) => {
@@ -139,8 +139,8 @@ export const ProductNudgeContactModal = ({
   ];
   const [ values, setValues ] = useState<ContactFormValues>({});
   const [ isSubmitted, setIsSubmitted ] = useState(false);
-  const resolvedLockup = partnerLockup ?? (brand === 'lightwell' ? lightwellBrandAssets.partnerLockup : undefined);
-  const resolvedLockupDark = partnerLockupDark ?? (brand === 'lightwell' && !partnerLockup ? lightwellBrandAssets.partnerLockupDark : undefined);
+  const resolvedLogo = partnerLogo ?? (brand === 'lightwell' ? lightwellBrandAssets.partnerLogo : undefined);
+  const resolvedLogoDark = partnerLogoDark ?? (brand === 'lightwell' && !partnerLogo ? lightwellBrandAssets.partnerLogoDark : undefined);
   const ctaStyle = (ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default')) === 'lightwell'
     ? lightwellCtaStyle
     : undefined;
@@ -217,8 +217,8 @@ export const ProductNudgeContactModal = ({
       </ModalBody>
       <ProductNudgeModalFooter
         className={classes.modalFooter}
-        partnerLockup={resolvedLockup}
-        partnerLockupDark={resolvedLockupDark}
+        partnerLogo={resolvedLogo}
+        partnerLogoDark={resolvedLogoDark}
         actions={!isSubmitted && (
           <FlexItem>
             <Button

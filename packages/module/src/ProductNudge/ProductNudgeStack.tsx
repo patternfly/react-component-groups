@@ -15,7 +15,7 @@ import { ProductNudgeBrand } from './ProductNudge.types';
 import { nudgeModeStyles } from './nudgeStyles';
 import { lightwellBrandAssets } from './productNudgeDefaults';
 
-export interface ProductNudgeFieldProps {
+export interface ProductNudgeStackProps {
   /** false renders null */
   isEligible: boolean;
   /** Applies a named brand preset; copy remains entirely caller-supplied. */
@@ -61,7 +61,7 @@ const useStyles = createUseStyles({
  * with logomark, heading label, optional value, body note, and an inline link CTA.
  * Drop it anywhere — no DescriptionList wrapper required.
  */
-export const ProductNudgeField: FunctionComponent<ProductNudgeFieldProps> = ({
+export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
   isEligible,
   brand,
   titleIcon,
@@ -72,10 +72,10 @@ export const ProductNudgeField: FunctionComponent<ProductNudgeFieldProps> = ({
   ctaUrl,
   logo,
   logoDark,
-  ouiaId = 'ProductNudgeField',
+  ouiaId = 'ProductNudgeStack',
   className,
   'data-testid': dataTestId,
-}: ProductNudgeFieldProps) => {
+}: ProductNudgeStackProps) => {
   const classes = useStyles();
   const resolvedLogo = logo ?? (brand === 'lightwell' ? lightwellBrandAssets.logomark : undefined);
   const resolvedLogoDark = logoDark ?? (brand === 'lightwell' && !logo ? lightwellBrandAssets.logomarkDark : undefined);
@@ -134,4 +134,4 @@ export const ProductNudgeField: FunctionComponent<ProductNudgeFieldProps> = ({
   );
 };
 
-export default ProductNudgeField;
+export default ProductNudgeStack;

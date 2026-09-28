@@ -10,7 +10,7 @@ export const nudgeModeStyles = {
   },
 };
 
-export const partnerLockupStyles = {
+export const partnerLogoStyles = {
   display: 'block',
   width: 'min(120px, 30vw)',
 };

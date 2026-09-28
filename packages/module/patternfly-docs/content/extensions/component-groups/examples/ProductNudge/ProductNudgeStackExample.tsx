@@ -1,8 +1,8 @@
 import React from 'react';
-import { ProductNudgeField } from '@patternfly/react-component-groups/dist/dynamic/ProductNudge';
+import { ProductNudgeStack } from '@patternfly/react-component-groups/dist/dynamic/ProductNudge';
 
-export const ProductNudgeFieldExample: React.FunctionComponent = () => (
-  <ProductNudgeField
+export const ProductNudgeStackExample: React.FunctionComponent = () => (
+  <ProductNudgeStack
     isEligible
     brand="lightwell"
     titleText="Lightwell remediation"

@@ -4,13 +4,13 @@ import LightwellLogomark from './assets/lightwell-logomark-light.svg';
 import LightwellLogomarkDark from './assets/lightwell-logomark-dark.svg';
 import LightwellBgLight from './assets/lightwell-bg-light.png';
 import LightwellBgDark from './assets/lightwell-bg-dark.png';
-import RedHatIBMLockup from './assets/RedHatIBMLockup.svg';
-import RedHatIBMLockupDark from './assets/RedHatIBMLockupDark.svg';
+import RedHatIBMLogo from './assets/RedHatIBMLogo.svg';
+import RedHatIBMLogoDark from './assets/RedHatIBMLogoDark.svg';
 
 import { NudgeContact, NudgeContent, ProductNudgeBrandAssets } from './ProductNudge.types';
 
 /** Individual asset exports for consumers that need direct access. */
-export { LightwellLogo, LightwellLogoDark, LightwellLogomark, LightwellLogomarkDark, LightwellBgLight, LightwellBgDark, RedHatIBMLockup, RedHatIBMLockupDark };
+export { LightwellLogo, LightwellLogoDark, LightwellLogomark, LightwellLogomarkDark, LightwellBgLight, LightwellBgDark, RedHatIBMLogo, RedHatIBMLogoDark };
 
 /** Visual defaults for `brand="lightwell"`. Product copy is intentionally not included. */
 export const lightwellBrandAssets: ProductNudgeBrandAssets = {
@@ -20,11 +20,11 @@ export const lightwellBrandAssets: ProductNudgeBrandAssets = {
   logomarkDark: { src: LightwellLogomarkDark, alt: 'Lightwell' },
   backgroundImageLight: LightwellBgLight,
   backgroundImageDark: LightwellBgDark,
-  partnerLockup: { src: RedHatIBMLockup, alt: 'Red Hat and IBM' },
-  partnerLockupDark: { src: RedHatIBMLockupDark, alt: 'Red Hat and IBM' },
+  partnerLogo: { src: RedHatIBMLogo, alt: 'Red Hat and IBM' },
+  partnerLogoDark: { src: RedHatIBMLogoDark, alt: 'Red Hat and IBM' },
 };
 
-/** Assembled assets for a full hero nudge (logo + background image + partner lockup). */
+/** Assembled assets for a full hero nudge (logo + background image + partner logo). */
 export const lightwellHeroAssets: NudgeContent['assets'] = {
   ...lightwellBrandAssets,
 };

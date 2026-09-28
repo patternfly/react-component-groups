@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProductNudgeField component renders nothing when not eligible 1`] = `<div />`;
+exports[`ProductNudgeStack component renders nothing when not eligible 1`] = `<div />`;
 
-exports[`ProductNudgeField component renders when eligible 1`] = `
+exports[`ProductNudgeStack component renders when eligible 1`] = `
 <div>
   <div
     class="pf-v6-l-stack pf-m-gutter"
-    data-ouia-component-id="ProductNudgeField"
+    data-ouia-component-id="ProductNudgeStack"
   >
     <div
       class="pf-v6-l-stack__item"
@@ -43,7 +43,7 @@ exports[`ProductNudgeField component renders when eligible 1`] = `
     >
       <a
         class="pf-v6-c-button pf-m-link pf-m-inline"
-        data-ouia-component-id="ProductNudgeField-cta"
+        data-ouia-component-id="ProductNudgeStack-cta"
         data-ouia-component-type="PF6/Button"
         data-ouia-safe="true"
         href="https://example.com"
@@ -90,11 +90,11 @@ exports[`ProductNudgeField component renders when eligible 1`] = `
 </div>
 `;
 
-exports[`ProductNudgeField component renders without logo or CTA link 1`] = `
+exports[`ProductNudgeStack component renders without logo or CTA link 1`] = `
 <div>
   <div
     class="pf-v6-l-stack pf-m-gutter"
-    data-ouia-component-id="ProductNudgeField"
+    data-ouia-component-id="ProductNudgeStack"
   >
     <div
       class="pf-v6-l-stack__item"

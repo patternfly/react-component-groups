@@ -15,8 +15,8 @@ export interface ProductNudgeBrandAssets {
   logomarkDark?: ProductNudgeImage;
   backgroundImageLight?: string;
   backgroundImageDark?: string;
-  partnerLockup?: ProductNudgeImage;
-  partnerLockupDark?: ProductNudgeImage;
+  partnerLogo?: ProductNudgeImage;
+  partnerLogoDark?: ProductNudgeImage;
 }
 
 export interface NudgeContact {
@@ -109,4 +109,10 @@ export interface ProductNudgeMatchData {
 
 export interface ProductNudgeEcosystemData extends ProductNudgeMatchData {
   name: string | React.ReactNode;
+  /** Number of exact matches in this ecosystem. */
+  exact: number;
+  /** Number of partial matches in this ecosystem. */
+  partial: number;
+  /** Number of packages without a match in this ecosystem. */
+  noMatch: number;
 }
