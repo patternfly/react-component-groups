@@ -1,24 +1,24 @@
-import { useState, type FormEvent, type FunctionComponent } from 'react';
+import { useEffect, useRef, useState, type FormEvent, type FunctionComponent } from 'react';
 import {
   Button,
-  Flex,
   FlexItem,
   Form,
   FormGroup,
+  HelperText,
+  HelperTextItem,
   Modal,
   ModalBody,
-  ModalFooter,
   ModalHeader,
   ModalVariant,
   TextInput
 } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
-import { type ContactFormValues, type ProductNudgeContactModalProps } from './ProductNudge.types';
+import { type ContactFormValues, type ProductNudgeContactFormField, type ProductNudgeContactModalProps } from './ProductNudge.types';
 import LightwellLogomark from './assets/lightwell-logomark-light.svg';
 import LightwellLogomarkDark from './assets/lightwell-logomark-dark.svg';
-import RedHatIBMLockup from './assets/RedHatIBMLockup.svg';
-import RedHatIBMLockupDark from './assets/RedHatIBMLockupDark.svg';
-import { lightwellCtaStyle, nudgeModeStyles, partnerLockupStyles } from './nudgeStyles';
+import { lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
+import { lightwellBrandAssets } from './productNudgeDefaults';
+import { ProductNudgeModalFooter } from './ProductNudgeModalFooter';
 
 const useStyles = createUseStyles({
   modal: {
@@ -37,7 +37,6 @@ const useStyles = createUseStyles({
   modalFooter: {
     marginInlineEnd: 'var(--pf-v6-c-modal-box__close--sibling--MarginInlineEnd)'
   },
-  partnerLockup: partnerLockupStyles,
   titleIcon: {
     width: '1.5rem',
     height: '1.5rem',
@@ -48,6 +47,8 @@ const useStyles = createUseStyles({
   },
   ...nudgeModeStyles
 });
+
+let contactModalInstance = 0;
 
 const LightwellContactTitleIcon: FunctionComponent = () => {
   const classes = useStyles();
@@ -68,36 +69,55 @@ export const ProductNudgeContactModal = ({
   onClose,
   onSubmit,
   titleText,
-  titleIcon = LightwellContactTitleIcon,
+  titleIcon,
+  headerIcon,
   descriptionText,
-  submitText
+  submitText,
+  fields,
+  successMessage,
+  brand,
+  partnerLockup,
+  partnerLockupDark,
+  ctaColorScheme,
+  id,
 }: ProductNudgeContactModalProps) => {
   const classes = useStyles();
-  const [ nameValue, setNameValue ] = useState('');
-  const [ emailValue, setEmailValue ] = useState('');
-  const [ phoneValue, setPhoneValue ] = useState('');
+  const idRef = useRef<string | undefined>(undefined);
+  if (!idRef.current) {
+    idRef.current = id ?? `product-nudge-contact-${++contactModalInstance}`;
+  }
+  const idPrefix = id ?? idRef.current;
+  const resolvedFields: ProductNudgeContactFormField[] = fields ?? [
+    { name: 'name', label: 'Name', type: 'text', placeholder: namePlaceholder, isRequired: true, autoComplete: 'name' },
+    { name: 'email', label: 'E-mail', type: 'email', placeholder: emailPlaceholder, isRequired: true, autoComplete: 'email' },
+    { name: 'phone', label: 'Phone', type: 'tel', placeholder: phonePlaceholder, autoComplete: 'tel' },
+  ];
+  const [ values, setValues ] = useState<ContactFormValues>({});
+  const [ isSubmitted, setIsSubmitted ] = useState(false);
+  const resolvedLockup = partnerLockup ?? (brand === 'lightwell' ? lightwellBrandAssets.partnerLockup : undefined);
+  const resolvedLockupDark = partnerLockupDark ?? (brand === 'lightwell' && !partnerLockup ? lightwellBrandAssets.partnerLockupDark : undefined);
+  const ctaStyle = (ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default')) === 'lightwell'
+    ? lightwellCtaStyle
+    : undefined;
 
-  const handleNameInputChange = (_event, value: string) => {
-    setNameValue(value);
-  };
+  const titleIconComponent = headerIcon
+    ? () => <>{headerIcon}</>
+    : titleIcon ?? (brand === 'lightwell' ? LightwellContactTitleIcon : undefined);
 
-  const handleEmailInputChange = (_event, value: string) => {
-    setEmailValue(value);
-  };
-  const handlePhoneInputChange = (_event, value: string) => {
-    setPhoneValue(value);
-  };
+  useEffect(() => {
+    if (isOpen) {
+      setValues({});
+      setIsSubmitted(false);
+    }
+  }, [ isOpen ]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const values: ContactFormValues = {
-      name: nameValue,
-      email: emailValue,
-      ...(phoneValue ? { phone: phoneValue } : {})
-    };
-
     await onSubmit(values);
+    if (successMessage) {
+      setIsSubmitted(true);
+    }
   };
 
   return (
@@ -105,93 +125,70 @@ export const ProductNudgeContactModal = ({
       variant={ModalVariant.small}
       isOpen={isOpen}
       onClose={onClose}
-      aria-labelledby="form-modal-title"
-      aria-describedby="modal-box-description-form"
+      aria-labelledby={`${idPrefix}-title`}
+      aria-describedby={descriptionText ? `${idPrefix}-description` : undefined}
       className={classes.modal}
     >
       <ModalHeader
         title={titleText}
         description={descriptionText}
-        descriptorId="modal-box-description-form"
-        labelId="form-modal-title"
-        titleIconVariant={titleIcon}
+        labelId={`${idPrefix}-title`}
+        descriptorId={`${idPrefix}-description`}
+        titleIconVariant={titleIconComponent}
       />
       <ModalBody className={classes.modalBody}>
-        <Form id="modal-with-form-form" onSubmit={handleSubmit}>
-          <FormGroup
-            label="Name"
-            isRequired
-            fieldId="modal-with-form-form-name"
-          >
-            <TextInput
-              isRequired
-              type="text"
-              id="modal-with-form-form-name"
-              name="modal-with-form-form-name"
-              value={nameValue}
-              onChange={handleNameInputChange}
-              placeholder={namePlaceholder}
-            />
-          </FormGroup>
-          <FormGroup
-            label="E-mail"
-            isRequired
-            fieldId="modal-with-form-form-email"
-          >
-            <TextInput
-              isRequired
-              type="email"
-              id="modal-with-form-form-email"
-              name="modal-with-form-form-email"
-              value={emailValue}
-              onChange={handleEmailInputChange}
-              placeholder={emailPlaceholder}
-            />
-          </FormGroup>
-          <FormGroup
-            label="Phone"
-            isRequired
-            fieldId="modal-with-form-form-phone"
-          >
-            <TextInput
-              type="tel"
-              id="modal-with-form-form-phone"
-              name="modal-with-form-form-phone"
-              value={phoneValue}
-              onChange={handlePhoneInputChange}
-              placeholder={phonePlaceholder}
-            />
-          </FormGroup>
-        </Form>
+        {isSubmitted ? successMessage : (
+          <Form id={`${idPrefix}-form`} onSubmit={handleSubmit}>
+            {resolvedFields.map((field) => {
+              const fieldId = `${idPrefix}-${field.name.replace(/[^a-zA-Z0-9_-]/g, '-')}`;
+              return (
+                <FormGroup
+                  key={field.name}
+                  label={field.label}
+                  isRequired={field.isRequired}
+                  fieldId={fieldId}
+                >
+                  <TextInput
+                    isRequired={field.isRequired}
+                    type={field.type ?? 'text'}
+                    id={fieldId}
+                    name={field.name}
+                    value={values[field.name] ?? ''}
+                    onChange={(_event, value) => setValues((current) => ({ ...current, [field.name]: value }))}
+                    placeholder={field.placeholder}
+                    autoComplete={field.autoComplete}
+                    aria-describedby={field.helpText ? `${fieldId}-help` : undefined}
+                  />
+                  {field.helpText && (
+                    <HelperText>
+                      <HelperTextItem id={`${fieldId}-help`}>{field.helpText}</HelperTextItem>
+                    </HelperText>
+                  )}
+                </FormGroup>
+              );
+            })}
+          </Form>
+        )}
       </ModalBody>
-      <ModalFooter className={classes.modalFooter}>
-        <Flex alignItems={{ default: 'alignItemsCenter' }} spaceItems={{ default: 'spaceItemsMd' }}>
+      <ProductNudgeModalFooter
+        className={classes.modalFooter}
+        partnerLockup={resolvedLockup}
+        partnerLockupDark={resolvedLockupDark}
+        actions={!isSubmitted && (
           <FlexItem>
             <Button
               key="create"
               variant="primary"
               size="lg"
               type="submit"
-              form="modal-with-form-form"
-              style={lightwellCtaStyle}
+              form={`${idPrefix}-form`}
+              style={ctaStyle}
             >
               {submitText}
             </Button>
           </FlexItem>
-          <FlexItem>
-            <img
-              src={RedHatIBMLockup}
-              alt="Red Hat and IBM"
-              className={`${classes.partnerLockup} ${classes.lightModeOnly}`}
-            />
-            <img
-              src={RedHatIBMLockupDark}
-              alt="Red Hat and IBM"
-              className={`${classes.partnerLockup} ${classes.darkModeOnly}`}
-            />
-          </FlexItem>
-        </Flex>
-      </ModalFooter>
+        )}
+      />
     </Modal>
   );
 };

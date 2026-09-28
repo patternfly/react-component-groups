@@ -12,6 +12,7 @@ export const ProductNudgeContactModalExample: React.FunctionComponent = () => {
       <ProductNudgeContactModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        brand="lightwell"
         titleText="Contact us"
         descriptionText="Leave your details and a Red Hat representative will get in touch about how Lightwell can help secure open source dependencies in your environment."
         onSubmit={async (values) => {
@@ -25,6 +26,7 @@ export const ProductNudgeContactModalExample: React.FunctionComponent = () => {
           `);
         }}
         submitText="Submit"
+        successMessage="Thanks — a Red Hat representative will be in touch."
       />
     </>
   );

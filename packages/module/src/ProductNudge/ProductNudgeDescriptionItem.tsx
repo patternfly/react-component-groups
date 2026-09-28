@@ -8,22 +8,21 @@ import {
   Stack,
   StackItem,
 } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon.js';
 import { createUseStyles } from 'react-jss';
 
 import { ProductNudgeDescriptionItemProps } from './ProductNudge.types';
 import { nudgeModeStyles } from './nudgeStyles';
+import { lightwellBrandAssets } from './productNudgeDefaults';
 
 const useStyles = createUseStyles({
-  logo: {
-    display: 'block',
-    width: '6rem',
-    marginInlineStart: 'calc(-1 * var(--pf-t--global--spacer--sm))',
-    marginBlockStart: 'calc(-1 * var(--pf-t--global--spacer--xs))',
-  },
   term: {
     alignSelf: 'start',
+  },
+  termIcon: {
+    display: 'block',
+    width: '1.5rem',
+    height: 'auto',
   },
   ...nudgeModeStyles,
 });
@@ -31,10 +30,13 @@ const useStyles = createUseStyles({
 /**
  * A DescriptionList item variant of ProductNudge. Renders as a DescriptionListGroup
  * so it can be dropped directly inside an existing DescriptionList alongside other items.
- * Term = full Lightwell logo; Description = headline + body + link.
+ * Term content and icon are caller supplied; the description renders headline, body, and link content.
  */
 export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescriptionItemProps> = ({
   isEligible,
+  brand,
+  termText,
+  termIcon,
   headline,
   bodyText,
   ctaText,
@@ -46,6 +48,23 @@ export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescript
   'data-testid': dataTestId,
 }) => {
   const classes = useStyles();
+  const lightTermLogo = logo ?? (brand === 'lightwell' ? lightwellBrandAssets.logomark : undefined);
+  const darkTermLogo = logoDark ?? (brand === 'lightwell' && !logo ? lightwellBrandAssets.logomarkDark : undefined);
+  const resolvedTermIcon = termIcon ?? ((lightTermLogo || darkTermLogo) ? (
+    <>
+      {lightTermLogo && (
+        <img
+          src={lightTermLogo.src}
+          alt=""
+          aria-hidden
+          className={`${classes.termIcon} ${darkTermLogo ? classes.lightModeOnly : ''}`}
+        />
+      )}
+      {darkTermLogo && (
+        <img src={darkTermLogo.src} alt="" aria-hidden className={`${classes.termIcon} ${classes.darkModeOnly}`} />
+      )}
+    </>
+  ) : undefined);
 
   if (!isEligible) {
     return null;
@@ -59,14 +78,9 @@ export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescript
     >
       <DescriptionListTerm 
         className={classes.term}
-        icon={(
-          <>
-            {logo && <img src={logo.src} alt={logo.alt} className={classes.lightModeOnly} />}
-            {logoDark && <img src={logoDark.src} alt={logoDark.alt} className={classes.darkModeOnly} />}
-          </>
-        )}
+        icon={resolvedTermIcon}
       >
-        Lightwell
+        {termText}
       </DescriptionListTerm>
       <DescriptionListDescription>
         <Stack hasGutter>

@@ -167,15 +167,15 @@ exports[`ProductNudge component renders hero prominence 1`] = `
 <div>
   <div>
     <div
-      class="pf-v6-c-hero pf-v6-product-nudge pf-v6-product-nudge--hero heroBg-0-2-8"
+      class="pf-v6-c-hero pf-v6-product-nudge pf-v6-product-nudge--hero"
       data-ouia-component-id="ProductNudge"
-      style="position: relative; --pf-v6-c-hero--BorderBlockStartWidth: 0; --pf-v6-c-hero--BorderBlockEndWidth: 0; --pf-v6-c-hero--BorderInlineStartWidth: 0; --pf-v6-c-hero--BorderInlineEndWidth: 0; --pf-v6-c-hero--PaddingBlockStart: var(--pf-t--global--spacer--xl); --pf-v6-c-hero--PaddingBlockEnd: var(--pf-t--global--spacer--xl); --pf-v6-c-hero--PaddingInlineStart: var(--pf-t--global--spacer--xl);"
+      style="position: relative; --pf-v6-c-hero--BorderBlockStartWidth: 0; --pf-v6-c-hero--BorderBlockEndWidth: 0; --pf-v6-c-hero--BorderInlineStartWidth: 0; --pf-v6-c-hero--BorderInlineEndWidth: 0; --pf-v6-c-hero--PaddingBlockStart: calc(2 * var(--pf-t--global--spacer--xl)); --pf-v6-c-hero--PaddingBlockEnd: calc(2 * var(--pf-t--global--spacer--xl)); --pf-v6-c-hero--PaddingInlineStart: calc(2 * var(--pf-t--global--spacer--xl));"
     >
       <div
         class="pf-v6-c-hero__body"
       >
         <div
-          class="heroContent-0-2-9"
+          class="heroContent-0-2-8"
         >
           <div
             class="pf-v6-l-stack pf-m-gutter"
@@ -219,7 +219,6 @@ exports[`ProductNudge component renders hero prominence 1`] = `
                     data-ouia-component-id="ProductNudge-cta"
                     data-ouia-component-type="PF6/Button"
                     data-ouia-safe="true"
-                    style="--pf-v6-c-button--BackgroundColor: var(--pf-t--color--red--50); --pf-v6-c-button--hover--BackgroundColor: var(--pf-t--color--red--60); --pf-v6-c-button--m-clicked--BackgroundColor: var(--pf-t--color--red--60); --pf-v6-c-button--Color: var(--pf-t--color--white);"
                     type="button"
                   >
                     <span
@@ -245,15 +244,15 @@ exports[`ProductNudge component renders with default CTA color scheme 1`] = `
 <div>
   <div>
     <div
-      class="pf-v6-c-hero pf-v6-product-nudge pf-v6-product-nudge--hero heroBg-0-2-8"
+      class="pf-v6-c-hero pf-v6-product-nudge pf-v6-product-nudge--hero"
       data-ouia-component-id="ProductNudge"
-      style="position: relative; --pf-v6-c-hero--BorderBlockStartWidth: 0; --pf-v6-c-hero--BorderBlockEndWidth: 0; --pf-v6-c-hero--BorderInlineStartWidth: 0; --pf-v6-c-hero--BorderInlineEndWidth: 0; --pf-v6-c-hero--PaddingBlockStart: var(--pf-t--global--spacer--xl); --pf-v6-c-hero--PaddingBlockEnd: var(--pf-t--global--spacer--xl); --pf-v6-c-hero--PaddingInlineStart: var(--pf-t--global--spacer--xl);"
+      style="position: relative; --pf-v6-c-hero--BorderBlockStartWidth: 0; --pf-v6-c-hero--BorderBlockEndWidth: 0; --pf-v6-c-hero--BorderInlineStartWidth: 0; --pf-v6-c-hero--BorderInlineEndWidth: 0; --pf-v6-c-hero--PaddingBlockStart: calc(2 * var(--pf-t--global--spacer--xl)); --pf-v6-c-hero--PaddingBlockEnd: calc(2 * var(--pf-t--global--spacer--xl)); --pf-v6-c-hero--PaddingInlineStart: calc(2 * var(--pf-t--global--spacer--xl));"
     >
       <div
         class="pf-v6-c-hero__body"
       >
         <div
-          class="heroContent-0-2-9"
+          class="heroContent-0-2-8"
         >
           <div
             class="pf-v6-l-stack pf-m-gutter"
@@ -320,15 +319,15 @@ exports[`ProductNudge component renders with metrics 1`] = `
 <div>
   <div>
     <div
-      class="pf-v6-c-hero pf-v6-product-nudge pf-v6-product-nudge--hero heroBg-0-2-8"
+      class="pf-v6-c-hero pf-v6-product-nudge pf-v6-product-nudge--hero"
       data-ouia-component-id="ProductNudge"
-      style="position: relative; --pf-v6-c-hero--BorderBlockStartWidth: 0; --pf-v6-c-hero--BorderBlockEndWidth: 0; --pf-v6-c-hero--BorderInlineStartWidth: 0; --pf-v6-c-hero--BorderInlineEndWidth: 0; --pf-v6-c-hero--PaddingBlockStart: var(--pf-t--global--spacer--xl); --pf-v6-c-hero--PaddingBlockEnd: var(--pf-t--global--spacer--xl); --pf-v6-c-hero--PaddingInlineStart: var(--pf-t--global--spacer--xl);"
+      style="position: relative; --pf-v6-c-hero--BorderBlockStartWidth: 0; --pf-v6-c-hero--BorderBlockEndWidth: 0; --pf-v6-c-hero--BorderInlineStartWidth: 0; --pf-v6-c-hero--BorderInlineEndWidth: 0; --pf-v6-c-hero--PaddingBlockStart: calc(2 * var(--pf-t--global--spacer--xl)); --pf-v6-c-hero--PaddingBlockEnd: calc(2 * var(--pf-t--global--spacer--xl)); --pf-v6-c-hero--PaddingInlineStart: calc(2 * var(--pf-t--global--spacer--xl));"
     >
       <div
         class="pf-v6-c-hero__body"
       >
         <div
-          class="heroContent-0-2-9"
+          class="heroContent-0-2-8"
         >
           <div
             class="pf-v6-l-stack pf-m-gutter"
@@ -362,7 +361,7 @@ exports[`ProductNudge component renders with metrics 1`] = `
               class="pf-v6-l-stack__item"
             >
               <div
-                class="pf-v6-l-flex pf-m-space-items-lg metricsRow-0-2-12"
+                class="pf-v6-l-flex pf-m-space-items-lg metricsRow-0-2-11"
                 data-ouia-component-id="ProductNudge-metrics"
               >
                 <div
@@ -370,7 +369,7 @@ exports[`ProductNudge component renders with metrics 1`] = `
                 >
                   <p
                     class="pf-v6-c-content--p"
-                    data-ouia-component-id="OUIA-Generated-Content-:rd:"
+                    data-ouia-component-id="OUIA-Generated-Content-:ri:"
                     data-ouia-component-type="PF6/Content"
                     data-ouia-safe="true"
                     data-pf-content="true"
@@ -398,7 +397,6 @@ exports[`ProductNudge component renders with metrics 1`] = `
                     data-ouia-component-id="ProductNudge-cta"
                     data-ouia-component-type="PF6/Button"
                     data-ouia-safe="true"
-                    style="--pf-v6-c-button--BackgroundColor: var(--pf-t--color--red--50); --pf-v6-c-button--hover--BackgroundColor: var(--pf-t--color--red--60); --pf-v6-c-button--m-clicked--BackgroundColor: var(--pf-t--color--red--60); --pf-v6-c-button--Color: var(--pf-t--color--white);"
                     type="button"
                   >
                     <span
