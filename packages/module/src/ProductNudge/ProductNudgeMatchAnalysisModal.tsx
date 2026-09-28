@@ -1,4 +1,5 @@
-import { FunctionComponent, useEffect, useRef, useState } from 'react';
+import type { FunctionComponent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import {
   Button,
@@ -28,10 +29,54 @@ import { createUseStyles } from 'react-jss';
 
 import LightwellLogomark from './assets/lightwell-logomark-light.svg';
 import LightwellLogomarkDark from './assets/lightwell-logomark-dark.svg';
-import { ProductNudgeAction, ProductNudgeMatchAnalysisModalProps } from './ProductNudge.types';
+import {
+  ProductNudgeAction,
+  ProductNudgeBrand,
+  ProductNudgeCtaColorScheme,
+  ProductNudgeEcosystemData,
+  ProductNudgeImage,
+  ProductNudgeMatchData,
+} from './ProductNudge.types';
 import { lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
 import { lightwellBrandAssets } from './productNudgeDefaults';
 import { ProductNudgeModalFooter } from './ProductNudgeModalFooter';
+
+export interface ProductNudgeMatchAnalysisModalProps {
+  /** Whether the modal is open */
+  isOpen: boolean;
+  /** Callback to close the modal */
+  onClose: () => void;
+  /** Summary counts for the built-in match charts; omitted when using custom analysis content. */
+  matchData?: ProductNudgeMatchData;
+  /** Per-ecosystem counts for the built-in charts; omitted when using custom analysis content. */
+  ecosystemData?: ProductNudgeEcosystemData[];
+  /** Applies a named brand preset; all copy remains caller-supplied. */
+  brand?: ProductNudgeBrand;
+  /** Modal title. */
+  titleText: React.ReactNode;
+  /** Optional icon displayed beside the modal title. */
+  titleIcon?: React.ReactNode;
+  /** Optional description displayed below the modal title. */
+  descriptionText?: React.ReactNode;
+  /** Replaces the default chart analysis region with caller-provided content. */
+  analysisContent?: React.ReactNode;
+  /** Optional text displayed in the modal footer. */
+  footerText?: React.ReactNode;
+  /** Optional primary action displayed in the modal footer. */
+  primaryAction?: ProductNudgeAction;
+  /** Optional secondary action displayed in the modal footer. */
+  secondaryAction?: ProductNudgeAction;
+  /** Footer partner lockup override. */
+  partnerLockup?: ProductNudgeImage;
+  /** Dark-mode footer partner lockup override. */
+  partnerLockupDark?: ProductNudgeImage;
+  /** Override the primary CTA visual scheme. */
+  ctaColorScheme?: ProductNudgeCtaColorScheme;
+  /** Optional palette for the built-in charts. */
+  chartColors?: string[];
+  /** Prefix for generated modal and accessibility IDs. */
+  id?: string;
+}
 
 const useStyles = createUseStyles({
   modal: {
@@ -136,7 +181,7 @@ export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatch
   ctaColorScheme,
   chartColors: providedChartColors,
   id,
-}) => {
+}: ProductNudgeMatchAnalysisModalProps) => {
   const classes = useStyles();
   const ecosystemChartViewportRef = useRef<HTMLDivElement>(null);
   const [ ecosystemChartWidth, setEcosystemChartWidth ] = useState(DEFAULT_ECOSYSTEM_CHART_WIDTH);
@@ -331,7 +376,6 @@ export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatch
         footerText={footerText}
         partnerLockup={resolvedLockup}
         partnerLockupDark={resolvedLockupDark}
-        isCentered
         actions={(
           <>
             {primaryAction && <FlexItem>{renderFooterAction(primaryAction, 'primary', ctaStyle)}</FlexItem>}

@@ -11,6 +11,9 @@ module.exports = (sourceMD, sourceProps) => {
   const contentBase = path.join(__dirname, './content');
   sourceMD(toPosixPath(path.join(contentBase, 'extensions/**/*.md')), 'extensions');
 
+  // Parse types files
+  sourceProps(toPosixPath(path.join(extensionPath, '/**/*.types.ts')), propsIgnore);
+
   /**
     If you want to parse content from node_modules instead of providing a relative/absolute path, 
     you can do something similar to this:
