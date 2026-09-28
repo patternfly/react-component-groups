@@ -2,27 +2,27 @@ import { FunctionComponent, ReactNode } from 'react';
 import { Content, ContentVariants, Flex, FlexItem, ModalFooter, Stack } from '@patternfly/react-core';
 
 import { ProductNudgeImage } from './ProductNudge.types';
-import { ProductNudgeBrandLockup } from './ProductNudgeBrandLockup';
+import { ProductNudgeBrandLogo } from './ProductNudgeBrandLogo';
 
 interface ProductNudgeModalFooterProps {
   actions?: ReactNode;
   footerText?: ReactNode;
-  partnerLockup?: ProductNudgeImage;
-  partnerLockupDark?: ProductNudgeImage;
+  partnerLogo?: ProductNudgeImage;
+  partnerLogoDark?: ProductNudgeImage;
   className?: string;
   isCentered?: boolean;
 }
 
-/** Shared modal footer for actions, optional supporting copy, and brand lockup. */
+/** Shared modal footer for actions, optional supporting copy, and brand logo. */
 export const ProductNudgeModalFooter: FunctionComponent<ProductNudgeModalFooterProps> = ({
   actions,
   footerText,
-  partnerLockup,
-  partnerLockupDark,
+  partnerLogo,
+  partnerLogoDark,
   className,
   isCentered = false,
 }) => {
-  if (!actions && !footerText && !partnerLockup && !partnerLockupDark) {
+  if (!actions && !footerText && !partnerLogo && !partnerLogoDark) {
     return null;
   }
 
@@ -36,9 +36,9 @@ export const ProductNudgeModalFooter: FunctionComponent<ProductNudgeModalFooterP
           spaceItems={{ default: 'spaceItemsMd' }}
         >
           {actions}
-          {(partnerLockup || partnerLockupDark) && (
+          {(partnerLogo || partnerLogoDark) && (
             <FlexItem>
-              <ProductNudgeBrandLockup light={partnerLockup} dark={partnerLockupDark} />
+              <ProductNudgeBrandLogo light={partnerLogo} dark={partnerLogoDark} />
             </FlexItem>
           )}
         </Flex>

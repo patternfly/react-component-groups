@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Button } from '@patternfly/react-core';
-import { ProductNudgeMatchAnalysisModal } from '@patternfly/react-component-groups/dist/dynamic/ProductNudge';
+import { ProductNudgeDataModal } from '@patternfly/react-component-groups/dist/dynamic/ProductNudge';
 
-export const ProductNudgeMatchAnalysisModalExample: React.FunctionComponent = () => {
+export const ProductNudgeDataModalExample: React.FunctionComponent = () => {
   const [ isOpen, setIsOpen ] = useState(false);
 
   return (
@@ -10,7 +10,7 @@ export const ProductNudgeMatchAnalysisModalExample: React.FunctionComponent = ()
       <Button variant="primary" onClick={() => setIsOpen(true)}>
         Open match analysis modal
       </Button>
-      <ProductNudgeMatchAnalysisModal
+      <ProductNudgeDataModal
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         brand="lightwell"

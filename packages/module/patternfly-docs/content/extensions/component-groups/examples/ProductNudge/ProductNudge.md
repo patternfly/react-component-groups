@@ -6,9 +6,9 @@ source: react
 propComponents: [
   'ProductNudge',
   'ProductNudgeContactModal',
-  'ProductNudgeField',
+  'ProductNudgeStack',
   'ProductNudgeDescriptionItem',
-  'ProductNudgeMatchAnalysisModal',
+  'ProductNudgeDataModal',
   'NudgeContent',
   'NudgeContact',
   'NudgeMetric',
@@ -23,7 +23,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 ---
 
 import ProductNudge from '@patternfly/react-component-groups/dist/dynamic/ProductNudge';
-import { ProductNudgeContactModal, ProductNudgeField, ProductNudgeDescriptionItem, ProductNudgeMatchAnalysisModal } from '@patternfly/react-component-groups/dist/dynamic/ProductNudge';
+import { ProductNudgeContactModal, ProductNudgeStack, ProductNudgeDescriptionItem, ProductNudgeDataModal } from '@patternfly/react-component-groups/dist/dynamic/ProductNudge';
 import { useState } from 'react';
 import { DescriptionList } from '@patternfly/react-core';
 
@@ -57,11 +57,11 @@ Use `ProductNudgeContactModal` for CTAs that open a contact/lead-capture form. S
 
 ```
 
-### Match analysis modal
+### Match analysis data modal
 
-`ProductNudgeMatchAnalysisModal` can render the built-in match charts or caller-provided `analysisContent`. Pass both `matchData` and `ecosystemData` to use the built-in charts. Supply its title and any desired description/footer copy and actions explicitly. The chart data, colors, brand, icon, and partner lockup can also be customized.
+`ProductNudgeDataModal` can render the built-in match charts or caller-provided `analysisContent`. Pass both `matchData` and `ecosystemData` to use the built-in charts. Supply its title and any desired description/footer copy and actions explicitly. The chart data, colors, brand, icon, and partner logo can also be customized.
 
-```js file="./ProductNudgeMatchAnalysisModalExample.tsx"
+```js file="./ProductNudgeDataModalExample.tsx"
 
 ```
 
@@ -73,10 +73,10 @@ Use `ProductNudgeContactModal` for CTAs that open a contact/lead-capture form. S
 
 ```
 
-### In-context field (stack)
+### In-context stack
 
-`ProductNudgeField` renders a self-contained stack block — optional title icon, heading label, optional value/headline, body note, and an inline link CTA.
+`ProductNudgeStack` renders a self-contained stack block — optional title icon, heading label, optional value/headline, body note, and an inline link CTA.
 
-```js file="./ProductNudgeFieldExample.tsx"
+```js file="./ProductNudgeStackExample.tsx"
 
 ```

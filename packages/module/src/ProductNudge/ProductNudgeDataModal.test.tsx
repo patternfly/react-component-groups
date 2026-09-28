@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import ProductNudgeMatchAnalysisModal from './ProductNudgeMatchAnalysisModal';
+import ProductNudgeDataModal from './ProductNudgeDataModal';
 
 const lightwellProps = {
   brand: 'lightwell' as const,
@@ -15,24 +15,24 @@ const lightwellProps = {
   secondaryAction: { label: 'Learn more about Lightwell', href: 'https://www.redhat.com/en/lightwell' },
 };
 
-describe('ProductNudgeMatchAnalysisModal component', () => {
+describe('ProductNudgeDataModal component', () => {
   it('renders when open', () => {
     const { container } = render(
-      <ProductNudgeMatchAnalysisModal {...lightwellProps} isOpen onClose={jest.fn()} />,
+      <ProductNudgeDataModal {...lightwellProps} isOpen onClose={jest.fn()} />,
     );
     expect(container).toMatchSnapshot();
   });
 
   it('renders closed', () => {
     const { container } = render(
-      <ProductNudgeMatchAnalysisModal {...lightwellProps} isOpen={false} onClose={jest.fn()} />,
+      <ProductNudgeDataModal {...lightwellProps} isOpen={false} onClose={jest.fn()} />,
     );
     expect(container).toMatchSnapshot();
   });
 
   it('renders supplied match analysis data', () => {
     render(
-      <ProductNudgeMatchAnalysisModal
+      <ProductNudgeDataModal
         {...lightwellProps}
         isOpen
         onClose={jest.fn()}
@@ -46,7 +46,7 @@ describe('ProductNudgeMatchAnalysisModal component', () => {
   });
 
   it('renders the redesigned two-section analysis content', () => {
-    render(<ProductNudgeMatchAnalysisModal {...lightwellProps} isOpen onClose={jest.fn()} />);
+    render(<ProductNudgeDataModal {...lightwellProps} isOpen onClose={jest.fn()} />);
 
     const dialog = screen.getByRole('dialog', { name: 'Lightwell Lens' });
     const productTitle = screen.getByRole('heading', { name: 'Lightwell Lens' });
@@ -70,7 +70,7 @@ describe('ProductNudgeMatchAnalysisModal component', () => {
 
   it('renders responsive chart dimensions, series legend, and ecosystem labels', () => {
     render(
-      <ProductNudgeMatchAnalysisModal
+      <ProductNudgeDataModal
         {...lightwellProps}
         isOpen
         onClose={jest.fn()}
@@ -96,7 +96,7 @@ describe('ProductNudgeMatchAnalysisModal component', () => {
   });
 
   it('shows match type and value in ecosystem bar tooltips', async () => {
-    render(<ProductNudgeMatchAnalysisModal {...lightwellProps} isOpen onClose={jest.fn()} />);
+    render(<ProductNudgeDataModal {...lightwellProps} isOpen onClose={jest.fn()} />);
 
     const chart = screen.getByRole('region', { name: 'By ecosystem chart' }).querySelector('svg');
     const exactBar = chart?.querySelector('path[style*="lightwell-chart-color-exact"]');
@@ -110,7 +110,7 @@ describe('ProductNudgeMatchAnalysisModal component', () => {
   });
 
   it('applies the Lightwell CTA color inline', () => {
-    render(<ProductNudgeMatchAnalysisModal {...lightwellProps} isOpen onClose={jest.fn()} />);
+    render(<ProductNudgeDataModal {...lightwellProps} isOpen onClose={jest.fn()} />);
 
     expect(screen.getByRole('button', { name: 'Download report' })).toHaveStyle({
       '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)',
@@ -120,7 +120,7 @@ describe('ProductNudgeMatchAnalysisModal component', () => {
   it('supports caller content and actions without adding Lightwell copy', () => {
     const onClick = jest.fn();
     render(
-      <ProductNudgeMatchAnalysisModal
+      <ProductNudgeDataModal
         isOpen
         onClose={jest.fn()}
         titleText="Coverage overview"
@@ -139,7 +139,7 @@ describe('ProductNudgeMatchAnalysisModal component', () => {
   });
 
   it('does not supply product-specific chart data implicitly', () => {
-    render(<ProductNudgeMatchAnalysisModal isOpen onClose={jest.fn()} titleText="Analysis" />);
+    render(<ProductNudgeDataModal isOpen onClose={jest.fn()} titleText="Analysis" />);
 
     expect(screen.queryByRole('region', { name: 'By ecosystem chart' })).not.toBeInTheDocument();
     expect(screen.queryByText('Java')).not.toBeInTheDocument();

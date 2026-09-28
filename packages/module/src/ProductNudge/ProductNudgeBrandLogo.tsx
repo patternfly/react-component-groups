@@ -3,21 +3,21 @@ import { css } from '@patternfly/react-styles';
 import { createUseStyles } from 'react-jss';
 
 import { ProductNudgeImage } from './ProductNudge.types';
-import { nudgeModeStyles, partnerLockupStyles } from './nudgeStyles';
+import { nudgeModeStyles, partnerLogoStyles } from './nudgeStyles';
 
 const useStyles = createUseStyles({
-  partnerLockup: partnerLockupStyles,
+  partnerLogo: partnerLogoStyles,
   ...nudgeModeStyles,
 });
 
-interface ProductNudgeBrandLockupProps {
+interface ProductNudgeBrandLogoProps {
   light?: ProductNudgeImage;
   dark?: ProductNudgeImage;
   className?: string;
 }
 
-/** Shared light/dark-mode rendering for an optional partner lockup. */
-export const ProductNudgeBrandLockup: FunctionComponent<ProductNudgeBrandLockupProps> = ({
+/** Shared light/dark-mode rendering for an optional partner logo. */
+export const ProductNudgeBrandLogo: FunctionComponent<ProductNudgeBrandLogoProps> = ({
   light,
   dark,
   className,
@@ -34,18 +34,18 @@ export const ProductNudgeBrandLockup: FunctionComponent<ProductNudgeBrandLockupP
         <img
           src={light.src}
           alt={light.alt}
-          className={css(classes.partnerLockup, dark ? classes.lightModeOnly : undefined, className)}
+          className={css(classes.partnerLogo, dark ? classes.lightModeOnly : undefined, className)}
         />
       )}
       {dark && (
         <img
           src={dark.src}
           alt={dark.alt}
-          className={css(classes.partnerLockup, classes.darkModeOnly, className)}
+          className={css(classes.partnerLogo, classes.darkModeOnly, className)}
         />
       )}
     </>
   );
 };
 
-export default ProductNudgeBrandLockup;
+export default ProductNudgeBrandLogo;

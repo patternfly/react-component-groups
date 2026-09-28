@@ -41,7 +41,7 @@ import { lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
 import { lightwellBrandAssets } from './productNudgeDefaults';
 import { ProductNudgeModalFooter } from './ProductNudgeModalFooter';
 
-export interface ProductNudgeMatchAnalysisModalProps {
+export interface ProductNudgeDataModalProps {
   /** Whether the modal is open */
   isOpen: boolean;
   /** Callback to close the modal */
@@ -66,10 +66,10 @@ export interface ProductNudgeMatchAnalysisModalProps {
   primaryAction?: ProductNudgeAction;
   /** Optional secondary action displayed in the modal footer. */
   secondaryAction?: ProductNudgeAction;
-  /** Footer partner lockup override. */
-  partnerLockup?: ProductNudgeImage;
-  /** Dark-mode footer partner lockup override. */
-  partnerLockupDark?: ProductNudgeImage;
+  /** Footer partner logo override. */
+  partnerLogo?: ProductNudgeImage;
+  /** Dark-mode footer partner logo override. */
+  partnerLogoDark?: ProductNudgeImage;
   /** Override the primary CTA visual scheme. */
   ctaColorScheme?: ProductNudgeCtaColorScheme;
   /** Optional palette for the built-in charts. */
@@ -163,7 +163,7 @@ const renderFooterAction = (
   );
 };
 
-export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatchAnalysisModalProps> = ({
+export const ProductNudgeDataModal: FunctionComponent<ProductNudgeDataModalProps> = ({
   isOpen,
   onClose,
   matchData,
@@ -176,12 +176,12 @@ export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatch
   footerText,
   primaryAction,
   secondaryAction,
-  partnerLockup,
-  partnerLockupDark,
+  partnerLogo,
+  partnerLogoDark,
   ctaColorScheme,
   chartColors: providedChartColors,
   id,
-}: ProductNudgeMatchAnalysisModalProps) => {
+}: ProductNudgeDataModalProps) => {
   const classes = useStyles();
   const ecosystemChartViewportRef = useRef<HTMLDivElement>(null);
   const [ ecosystemChartWidth, setEcosystemChartWidth ] = useState(DEFAULT_ECOSYSTEM_CHART_WIDTH);
@@ -191,8 +191,8 @@ export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatch
   }
   const idPrefix = id ?? idRef.current;
   const resolvedTitleIcon = titleIcon ?? (brand === 'lightwell' ? <LightwellTitleIcon /> : undefined);
-  const resolvedLockup = partnerLockup ?? (brand === 'lightwell' ? lightwellBrandAssets.partnerLockup : undefined);
-  const resolvedLockupDark = partnerLockupDark ?? (brand === 'lightwell' && !partnerLockup ? lightwellBrandAssets.partnerLockupDark : undefined);
+  const resolvedLogo = partnerLogo ?? (brand === 'lightwell' ? lightwellBrandAssets.partnerLogo : undefined);
+  const resolvedLogoDark = partnerLogoDark ?? (brand === 'lightwell' && !partnerLogo ? lightwellBrandAssets.partnerLogoDark : undefined);
   const ctaStyle = (ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default')) === 'lightwell'
     ? lightwellCtaStyle
     : undefined;
@@ -374,8 +374,8 @@ export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatch
       </ModalBody>
       <ProductNudgeModalFooter
         footerText={footerText}
-        partnerLockup={resolvedLockup}
-        partnerLockupDark={resolvedLockupDark}
+        partnerLogo={resolvedLogo}
+        partnerLogoDark={resolvedLogoDark}
         actions={(
           <>
             {primaryAction && <FlexItem>{renderFooterAction(primaryAction, 'primary', ctaStyle)}</FlexItem>}
@@ -387,4 +387,4 @@ export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatch
   );
 };
 
-export default ProductNudgeMatchAnalysisModal;
+export default ProductNudgeDataModal;

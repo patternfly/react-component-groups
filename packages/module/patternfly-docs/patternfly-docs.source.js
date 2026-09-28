@@ -7,12 +7,13 @@ module.exports = (sourceMD, sourceProps) => {
   const extensionPath = path.join(__dirname, '../src');
   sourceProps(toPosixPath(path.join(extensionPath, '/**/*.tsx')), propsIgnore);
 
+  // Parse types before markdown pages so their propComponents entries can resolve.
+  sourceProps(toPosixPath(path.join(extensionPath, '/**/*.types.ts')), propsIgnore);
+
   // Parse md files
   const contentBase = path.join(__dirname, './content');
   sourceMD(toPosixPath(path.join(contentBase, 'extensions/**/*.md')), 'extensions');
 
-  // Parse types files
-  sourceProps(toPosixPath(path.join(extensionPath, '/**/*.types.ts')), propsIgnore);
 
   /**
     If you want to parse content from node_modules instead of providing a relative/absolute path, 

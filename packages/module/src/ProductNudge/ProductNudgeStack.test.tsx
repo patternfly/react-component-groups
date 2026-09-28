@@ -1,17 +1,17 @@
 import { render, screen } from '@testing-library/react';
-import ProductNudgeField from './ProductNudgeField';
+import ProductNudgeStack from './ProductNudgeStack';
 
-describe('ProductNudgeField component', () => {
+describe('ProductNudgeStack component', () => {
   it('renders nothing when not eligible', () => {
     const { container } = render(
-      <ProductNudgeField isEligible={false} titleText="Headline" bodyText="Body text." />,
+      <ProductNudgeStack isEligible={false} titleText="Headline" bodyText="Body text." />,
     );
     expect(container).toMatchSnapshot();
   });
 
   it('renders when eligible', () => {
     const { container } = render(
-      <ProductNudgeField
+      <ProductNudgeStack
         isEligible
         titleText="Headline"
         bodyText="Body text."
@@ -25,14 +25,14 @@ describe('ProductNudgeField component', () => {
 
   it('renders without logo or CTA link', () => {
     const { container } = render(
-      <ProductNudgeField isEligible titleText="Headline" bodyText="Body text." />,
+      <ProductNudgeStack isEligible titleText="Headline" bodyText="Body text." />,
     );
     expect(container).toMatchSnapshot();
   });
 
   it('uses the Lightwell mark only when the brand is selected and allows an icon override', () => {
     render(
-      <ProductNudgeField
+      <ProductNudgeStack
         isEligible
         brand="lightwell"
         titleText="Security summary"

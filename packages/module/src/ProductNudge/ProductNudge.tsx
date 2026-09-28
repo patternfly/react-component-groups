@@ -21,9 +21,9 @@ import { createUseStyles } from 'react-jss';
 
 import ErrorBoundary from '../ErrorBoundary';
 import { useImpressionTracking } from './useImpressionTracking';
-import { ProductNudgeField } from './ProductNudgeField';
+import { ProductNudgeStack } from './ProductNudgeStack';
 import { lightwellBackgroundStyle, lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
-import { ProductNudgeBrandLockup } from './ProductNudgeBrandLockup';
+import { ProductNudgeBrandLogo } from './ProductNudgeBrandLogo';
 import { lightwellBrandAssets } from './productNudgeDefaults';
 import {
   ProductNudgeBrand,
@@ -204,9 +204,9 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
   const cta = (
     <Flex alignItems={{ default: 'alignItemsCenter' }} spaceItems={{ default: 'spaceItemsMd' }}>
       <FlexItem>{ctaButton}</FlexItem>
-      {(assets.partnerLockup || assets.partnerLockupDark) && (
+      {(assets.partnerLogo || assets.partnerLogoDark) && (
         <FlexItem>
-          <ProductNudgeBrandLockup light={assets.partnerLockup} dark={assets.partnerLockupDark} />
+          <ProductNudgeBrandLogo light={assets.partnerLogo} dark={assets.partnerLogoDark} />
         </FlexItem>
       )}
     </Flex>
@@ -378,7 +378,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
       : undefined;
     return (
       <div ref={impressionRef} data-ouia-component-id={ouiaId}>
-        <ProductNudgeField
+        <ProductNudgeStack
           isEligible={isEligible}
           brand={brand}
           titleText={content.headline}
