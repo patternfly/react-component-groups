@@ -1,17 +1,31 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import ProductNudgeMatchAnalysisModal from './ProductNudgeMatchAnalysisModal';
 
+const lightwellProps = {
+  brand: 'lightwell' as const,
+  matchData: { exact: 118, partial: 195, noMatch: 534 },
+  ecosystemData: [
+    { name: 'Java', exact: 70, partial: 120, noMatch: 180 },
+    { name: 'Python', exact: 50, partial: 80, noMatch: 170 },
+  ],
+  titleText: 'Lightwell Lens',
+  descriptionText: 'Lightwell match analysis.',
+  footerText: 'Download a full, shareable report with detailed match results and remediation guidance.',
+  primaryAction: { label: 'Download report', onClick: jest.fn() },
+  secondaryAction: { label: 'Learn more about Lightwell', href: 'https://www.redhat.com/en/lightwell' },
+};
+
 describe('ProductNudgeMatchAnalysisModal component', () => {
   it('renders when open', () => {
     const { container } = render(
-      <ProductNudgeMatchAnalysisModal isOpen onClose={jest.fn()} />,
+      <ProductNudgeMatchAnalysisModal {...lightwellProps} isOpen onClose={jest.fn()} />,
     );
     expect(container).toMatchSnapshot();
   });
 
   it('renders closed', () => {
     const { container } = render(
-      <ProductNudgeMatchAnalysisModal isOpen={false} onClose={jest.fn()} />,
+      <ProductNudgeMatchAnalysisModal {...lightwellProps} isOpen={false} onClose={jest.fn()} />,
     );
     expect(container).toMatchSnapshot();
   });
@@ -19,6 +33,7 @@ describe('ProductNudgeMatchAnalysisModal component', () => {
   it('renders supplied match analysis data', () => {
     render(
       <ProductNudgeMatchAnalysisModal
+        {...lightwellProps}
         isOpen
         onClose={jest.fn()}
         matchData={{ exact: 10, partial: 20, noMatch: 30 }}
@@ -31,7 +46,7 @@ describe('ProductNudgeMatchAnalysisModal component', () => {
   });
 
   it('renders the redesigned two-section analysis content', () => {
-    render(<ProductNudgeMatchAnalysisModal isOpen onClose={jest.fn()} />);
+    render(<ProductNudgeMatchAnalysisModal {...lightwellProps} isOpen onClose={jest.fn()} />);
 
     const dialog = screen.getByRole('dialog', { name: 'Lightwell Lens' });
     const productTitle = screen.getByRole('heading', { name: 'Lightwell Lens' });
@@ -56,6 +71,7 @@ describe('ProductNudgeMatchAnalysisModal component', () => {
   it('renders responsive chart dimensions, series legend, and ecosystem labels', () => {
     render(
       <ProductNudgeMatchAnalysisModal
+        {...lightwellProps}
         isOpen
         onClose={jest.fn()}
         ecosystemData={[
@@ -80,7 +96,7 @@ describe('ProductNudgeMatchAnalysisModal component', () => {
   });
 
   it('shows match type and value in ecosystem bar tooltips', async () => {
-    render(<ProductNudgeMatchAnalysisModal isOpen onClose={jest.fn()} />);
+    render(<ProductNudgeMatchAnalysisModal {...lightwellProps} isOpen onClose={jest.fn()} />);
 
     const chart = screen.getByRole('region', { name: 'By ecosystem chart' }).querySelector('svg');
     const exactBar = chart?.querySelector('path[style*="lightwell-chart-color-exact"]');
@@ -94,10 +110,38 @@ describe('ProductNudgeMatchAnalysisModal component', () => {
   });
 
   it('applies the Lightwell CTA color inline', () => {
-    render(<ProductNudgeMatchAnalysisModal isOpen onClose={jest.fn()} />);
+    render(<ProductNudgeMatchAnalysisModal {...lightwellProps} isOpen onClose={jest.fn()} />);
 
     expect(screen.getByRole('button', { name: 'Download report' })).toHaveStyle({
       '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)',
     });
+  });
+
+  it('supports caller content and actions without adding Lightwell copy', () => {
+    const onClick = jest.fn();
+    render(
+      <ProductNudgeMatchAnalysisModal
+        isOpen
+        onClose={jest.fn()}
+        titleText="Coverage overview"
+        analysisContent={<div>Custom analysis placement</div>}
+        footerText="Your custom report is ready."
+        primaryAction={{ label: 'Open report', onClick }}
+      />,
+    );
+
+    expect(screen.getByRole('dialog', { name: 'Coverage overview' })).toBeInTheDocument();
+    expect(screen.getByText('Custom analysis placement')).toBeInTheDocument();
+    expect(screen.queryByRole('region', { name: 'By ecosystem chart' })).not.toBeInTheDocument();
+    expect(screen.queryByText('Learn more about Lightwell')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Open report' }));
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not supply product-specific chart data implicitly', () => {
+    render(<ProductNudgeMatchAnalysisModal isOpen onClose={jest.fn()} titleText="Analysis" />);
+
+    expect(screen.queryByRole('region', { name: 'By ecosystem chart' })).not.toBeInTheDocument();
+    expect(screen.queryByText('Java')).not.toBeInTheDocument();
   });
 });

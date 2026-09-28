@@ -21,7 +21,9 @@ import { createUseStyles } from 'react-jss';
 import ErrorBoundary from '../ErrorBoundary';
 import { useImpressionTracking } from './useImpressionTracking';
 import { ProductNudgeField } from './ProductNudgeField';
-import { lightwellBackgroundStyle, lightwellCtaStyle, nudgeModeStyles, partnerLockupStyles } from './nudgeStyles';
+import { lightwellBackgroundStyle, lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
+import { ProductNudgeBrandLockup } from './ProductNudgeBrandLockup';
+import { lightwellBrandAssets } from './productNudgeDefaults';
 import {
   ProductNudgeProps,
   ProductNudgeProminence,
@@ -46,7 +48,6 @@ const useStyles = createUseStyles({
     width: '6rem',
     marginInlineStart: '-10px',
   },
-  partnerLockup: partnerLockupStyles,
   ...nudgeModeStyles,
   heroBg: {
     ...lightwellBackgroundStyle,
@@ -89,6 +90,7 @@ interface ProductNudgeContentProps {
   onAction: () => void;
   onDismiss?: () => void;
   onImpression?: () => void;
+  brand?: 'lightwell';
   ctaColorScheme?: ProductNudgeCtaColorScheme;
   className?: string;
   ouiaId?: string;
@@ -104,7 +106,8 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
   onAction,
   onDismiss,
   onImpression,
-  ctaColorScheme = 'lightwell',
+  ctaColorScheme,
+  brand,
   className,
   ouiaId = 'ProductNudge',
 }) => {
@@ -122,7 +125,13 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
     onDismiss?.();
   };
 
-  const ctaStyle = ctaColorScheme === 'lightwell' ? lightwellCtaStyle : undefined;
+  const assets = {
+    ...(brand === 'lightwell' ? lightwellBrandAssets : {}),
+    ...content.assets,
+  };
+  const ctaStyle = (ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default')) === 'lightwell'
+    ? lightwellCtaStyle
+    : undefined;
 
   const metricsRow = metrics.length > 0 && (
     <Flex
@@ -181,20 +190,9 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
   const cta = (
     <Flex alignItems={{ default: 'alignItemsCenter' }} spaceItems={{ default: 'spaceItemsMd' }}>
       <FlexItem>{ctaButton}</FlexItem>
-      {content.assets?.partnerLockup && (
+      {(assets.partnerLockup || assets.partnerLockupDark) && (
         <FlexItem>
-          <img
-            className={css(classes.partnerLockup, content.assets.partnerLockupDark ? classes.lightModeOnly : undefined)}
-            src={content.assets.partnerLockup.src}
-            alt={content.assets.partnerLockup.alt}
-          />
-          {content.assets.partnerLockupDark && (
-            <img
-              className={css(classes.partnerLockup, classes.darkModeOnly)}
-              src={content.assets.partnerLockupDark.src}
-              alt={content.assets.partnerLockupDark.alt}
-            />
-          )}
+          <ProductNudgeBrandLockup light={assets.partnerLockup} dark={assets.partnerLockupDark} />
         </FlexItem>
       )}
     </Flex>
@@ -202,18 +200,18 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
 
   const body = (
     <Stack hasGutter>
-      {content.assets?.logo && (
+      {assets.logo && (
         <StackItem>
           <img
-            className={css(classes.logo, content.assets.logoDark ? classes.lightModeOnly : undefined)}
-            src={content.assets.logo.src}
-            alt={content.assets.logo.alt}
+            className={css(classes.logo, assets.logoDark ? classes.lightModeOnly : undefined)}
+            src={assets.logo.src}
+            alt={assets.logo.alt}
           />
-          {content.assets.logoDark && (
+          {assets.logoDark && (
             <img
               className={css(classes.logo, classes.darkModeOnly)}
-              src={content.assets.logoDark.src}
-              alt={content.assets.logoDark.alt}
+              src={assets.logoDark.src}
+              alt={assets.logoDark.alt}
             />
           )}
         </StackItem>
@@ -270,7 +268,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
     return (
       <div ref={impressionRef}>
         <Hero
-          className={css(rootClassName, classes.heroBg)}
+          className={css(rootClassName, brand === 'lightwell' ? classes.heroBg : undefined)}
           data-ouia-component-id={ouiaId}
           style={{
             position: 'relative',
@@ -281,11 +279,11 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
             '--pf-v6-c-hero--PaddingBlockStart': 'calc(2 * var(--pf-t--global--spacer--xl))',
             '--pf-v6-c-hero--PaddingBlockEnd': 'calc(2 * var(--pf-t--global--spacer--xl))',
             '--pf-v6-c-hero--PaddingInlineStart': 'calc(2 * var(--pf-t--global--spacer--xl))',
-            ...(content.assets?.backgroundImageLight && {
-              '--pf-v6-c-hero--BackgroundImage--light': `url(${content.assets.backgroundImageLight})`,
+            ...(assets.backgroundImageLight && {
+              '--pf-v6-c-hero--BackgroundImage--light': `url(${assets.backgroundImageLight})`,
             }),
-            ...(content.assets?.backgroundImageDark && {
-              '--pf-v6-c-hero--BackgroundImage--dark': `url(${content.assets.backgroundImageDark})`,
+            ...(assets.backgroundImageDark && {
+              '--pf-v6-c-hero--BackgroundImage--dark': `url(${assets.backgroundImageDark})`,
             }),
           } as React.CSSProperties}
         >
@@ -299,24 +297,26 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
   }
 
   if (prominence === 'alert') {
-    const alertIcon = content.assets?.logo ? (
+    const alertIconImage = content.assets?.logo ?? assets.logomark ?? assets.logo;
+    const alertIconDark = content.assets?.logoDark ?? assets.logomarkDark ?? assets.logoDark;
+    const alertIcon = content.icon ?? (alertIconImage ? (
       <>
         <img
-          className={css(classes.alertIcon, content.assets.logoDark ? classes.lightModeOnly : undefined)}
-          src={content.assets.logo.src}
+          className={css(classes.alertIcon, alertIconDark ? classes.lightModeOnly : undefined)}
+          src={alertIconImage.src}
           alt=""
           aria-hidden
         />
-        {content.assets.logoDark && (
+        {alertIconDark && (
           <img
             className={css(classes.alertIcon, classes.darkModeOnly)}
-            src={content.assets.logoDark.src}
+            src={alertIconDark.src}
             alt=""
             aria-hidden
           />
         )}
       </>
-    ) : undefined;
+    ) : undefined);
 
     const alertCta =
       content.cta.action === 'link' && content.cta.href ? (
@@ -338,7 +338,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
     return (
       <div ref={impressionRef} className={className} data-ouia-component-id={ouiaId}>
         <Alert
-          variant="info"
+          variant={content.alertVariant ?? 'info'}
           isInline
           title={content.headline}
           customIcon={alertIcon}
@@ -366,12 +366,14 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
       <div ref={impressionRef} data-ouia-component-id={ouiaId}>
         <ProductNudgeField
           isEligible={isEligible}
+          brand={brand}
           titleText={content.headline}
+          titleIcon={content.icon}
           bodyText={content.body}
           ctaText={content.cta.label}
           ctaUrl={content.cta.href}
-          logo={content.assets?.logo}
-          logoDark={content.assets?.logoDark}
+          logo={content.assets?.logomark ?? content.assets?.logo ?? assets.logomark ?? assets.logo}
+          logoDark={content.assets?.logomarkDark ?? content.assets?.logoDark ?? assets.logomarkDark ?? assets.logoDark}
           value={fieldValue}
           ouiaId={`${ouiaId}-field`}
           className={className}

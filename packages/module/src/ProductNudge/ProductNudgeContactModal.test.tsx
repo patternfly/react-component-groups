@@ -7,6 +7,7 @@ describe('ProductNudgeContactModal component', () => {
       <ProductNudgeContactModal
         isOpen
         onClose={jest.fn()}
+        brand="lightwell"
         titleText="Get in touch"
         descriptionText="Tell us about your environment."
         submitText="Send request"
@@ -69,5 +70,28 @@ describe('ProductNudgeContactModal component', () => {
 
     expect(onSubmit).toHaveBeenCalledWith({ name: 'Jane Doe', email: 'jane@example.com', phone: '555-0100' });
     expect(container).toMatchSnapshot();
+  });
+
+  it('renders configured fields and submits values using their names', () => {
+    const onSubmit = jest.fn().mockResolvedValue(undefined);
+    render(
+      <ProductNudgeContactModal
+        isOpen
+        onClose={jest.fn()}
+        titleText="Request access"
+        submitText="Send"
+        fields={[
+          { name: 'workEmail', label: 'Work email', type: 'email', placeholder: 'name@example.com', isRequired: true },
+          { name: 'teamSize', label: 'Team size', type: 'number', placeholder: '10+' },
+        ]}
+        onSubmit={onSubmit}
+      />,
+    );
+
+    fireEvent.change(screen.getByPlaceholderText('name@example.com'), { target: { value: 'jane@example.com' } });
+    fireEvent.change(screen.getByPlaceholderText('10+'), { target: { value: '12' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Send' }));
+
+    expect(onSubmit).toHaveBeenCalledWith({ workEmail: 'jane@example.com', teamSize: '12' });
   });
 });

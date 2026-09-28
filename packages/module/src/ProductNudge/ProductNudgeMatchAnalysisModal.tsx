@@ -1,18 +1,13 @@
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
 
 import {
-  ActionList,
-  ActionListGroup,
-  ActionListItem,
   Button,
   Content,
-  ContentVariants,
   Flex,
   FlexItem,
   getResizeObserver,
   Modal,
   ModalBody,
-  ModalFooter,
   ModalHeader,
   Popover,
   Stack,
@@ -33,10 +28,10 @@ import { createUseStyles } from 'react-jss';
 
 import LightwellLogomark from './assets/lightwell-logomark-light.svg';
 import LightwellLogomarkDark from './assets/lightwell-logomark-dark.svg';
-import RedHatIBMLockup from './assets/RedHatIBMLockup.svg';
-import RedHatIBMLockupDark from './assets/RedHatIBMLockupDark.svg';
-import { ProductNudgeMatchAnalysisModalProps } from './ProductNudge.types';
-import { lightwellCtaStyle, nudgeModeStyles, partnerLockupStyles } from './nudgeStyles';
+import { ProductNudgeAction, ProductNudgeMatchAnalysisModalProps } from './ProductNudge.types';
+import { lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
+import { lightwellBrandAssets } from './productNudgeDefaults';
+import { ProductNudgeModalFooter } from './ProductNudgeModalFooter';
 
 const useStyles = createUseStyles({
   modal: {
@@ -57,14 +52,11 @@ const useStyles = createUseStyles({
       '--pf-v6-chart-axis--tick-label--Fill': 'var(--pf-t--global--text--color--regular)',
     },
   },
-  partnerLockup: partnerLockupStyles,
-  centeredActionListGroup: {
-    alignItems: 'center',
-  },
   ecosystemChartViewport: {
     width: '100%',
     minWidth: 0,
     height: '158px',
+    overflowX: 'auto',
   },
   modalTitleIcon: {
     width: '1.5rem',
@@ -73,23 +65,12 @@ const useStyles = createUseStyles({
   ...nudgeModeStyles,
 });
 
-const DEFAULT_MATCH_DATA = {
-  exact: 118,
-  partial: 195,
-  noMatch: 534,
-};
-
-const DEFAULT_ECOSYSTEM_DATA = [
-  { name: 'Java', exact: 70, partial: 120, noMatch: 180 },
-  { name: 'Python', exact: 50, partial: 80, noMatch: 170 },
-];
-
 const DEFAULT_ECOSYSTEM_CHART_WIDTH = 600;
 const ECOSYSTEM_CHART_HEIGHT = 158;
 
 // Lightwell's chart palette is intentionally separate from PatternFly's palette;
 // custom properties allow consumers to theme it without changing the defaults.
-const CHART_COLORS = [
+const LIGHTWELL_CHART_COLORS = [
   'var(--lightwell-chart-color-exact, #f56e6e)',
   'var(--lightwell-chart-color-partial, #f8ae54)',
   'var(--lightwell-chart-color-no-match, #f2f2f2)',
@@ -106,33 +87,92 @@ const LightwellTitleIcon: FunctionComponent = () => {
   );
 };
 
+let analysisModalInstance = 0;
+
+const renderFooterAction = (
+  action: ProductNudgeAction | undefined,
+  variant: 'primary' | 'link',
+  style?: React.CSSProperties,
+) => {
+  if (!action) {
+    return null;
+  }
+
+  return action.href ? (
+    <Button
+      component="a"
+      href={action.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      variant={variant}
+      size="lg"
+      style={style}
+    >
+      {action.label}
+      {variant === 'link' && <ArrowRightIcon aria-hidden />}
+    </Button>
+  ) : (
+    <Button variant={variant} size="lg" onClick={action.onClick} style={style} isDisabled={!action.onClick}>
+      {action.label}
+    </Button>
+  );
+};
+
 export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatchAnalysisModalProps> = ({
   isOpen,
   onClose,
-  matchData = DEFAULT_MATCH_DATA,
-  ecosystemData = DEFAULT_ECOSYSTEM_DATA,
+  matchData,
+  ecosystemData,
+  brand,
+  titleText,
+  titleIcon,
+  descriptionText,
+  analysisContent,
+  footerText,
+  primaryAction,
+  secondaryAction,
+  partnerLockup,
+  partnerLockupDark,
+  ctaColorScheme,
+  chartColors: providedChartColors,
+  id,
 }) => {
   const classes = useStyles();
   const ecosystemChartViewportRef = useRef<HTMLDivElement>(null);
   const [ ecosystemChartWidth, setEcosystemChartWidth ] = useState(DEFAULT_ECOSYSTEM_CHART_WIDTH);
-  const totalPackages = matchData.exact + matchData.partial + matchData.noMatch;
-  const totalMatches = matchData.exact + matchData.partial;
+  const idRef = useRef<string | undefined>(undefined);
+  if (!idRef.current) {
+    idRef.current = id ?? `product-nudge-analysis-${++analysisModalInstance}`;
+  }
+  const idPrefix = id ?? idRef.current;
+  const resolvedTitleIcon = titleIcon ?? (brand === 'lightwell' ? <LightwellTitleIcon /> : undefined);
+  const resolvedLockup = partnerLockup ?? (brand === 'lightwell' ? lightwellBrandAssets.partnerLockup : undefined);
+  const resolvedLockupDark = partnerLockupDark ?? (brand === 'lightwell' && !partnerLockup ? lightwellBrandAssets.partnerLockupDark : undefined);
+  const ctaStyle = (ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default')) === 'lightwell'
+    ? lightwellCtaStyle
+    : undefined;
+  const chartColors = providedChartColors ?? (brand === 'lightwell' ? LIGHTWELL_CHART_COLORS : undefined);
+  const titleIconVariant = resolvedTitleIcon ? () => <>{resolvedTitleIcon}</> : undefined;
+  const chartMatchData = matchData ?? { exact: 0, partial: 0, noMatch: 0 };
+  const chartEcosystemData = ecosystemData ?? [];
+  const totalPackages = chartMatchData.exact + chartMatchData.partial + chartMatchData.noMatch;
+  const totalMatches = chartMatchData.exact + chartMatchData.partial;
   const matchPercentage = totalPackages ? Math.round((totalMatches / totalPackages) * 100) : 0;
   const matchItems = [
     {
       label: 'exact matches',
-      value: matchData.exact,
-      helpText: 'Packages with a direct version-matched equivalent in the Lightwell catalog.',
+      value: chartMatchData.exact,
+      helpText: 'Packages with a direct version-matched equivalent in the catalog.',
     },
     {
       label: 'partial matches',
-      value: matchData.partial,
-      helpText: 'Packages with a near-match or alternative available in the Lightwell catalog.',
+      value: chartMatchData.partial,
+      helpText: 'Packages with a near-match or alternative available in the catalog.',
     },
     {
       label: 'no match',
-      value: matchData.noMatch,
-      helpText: 'Packages with no equivalent found in the Lightwell catalog.',
+      value: chartMatchData.noMatch,
+      helpText: 'Packages with no equivalent found in the catalog.',
     },
   ];
 
@@ -160,174 +200,145 @@ export const ProductNudgeMatchAnalysisModal: FunctionComponent<ProductNudgeMatch
       isOpen={isOpen}
       onClose={onClose}
       variant="large"
-      aria-labelledby="product-nudge-match-analysis-title"
+      aria-labelledby={`${idPrefix}-title`}
       className={classes.modal}
     >
-      <ModalHeader 
-        labelId="product-nudge-match-analysis-title"
-        title="Lightwell Lens"
-        titleIconVariant={LightwellTitleIcon}
-        description="Lightwell is a joint effort between Red Hat and IBM that helps you secure open source dependencies at scale. When a vulnerability would otherwise require a disruptive third-party upgrade, Lightwell Network can provide a validated, backported security fix for the version you already run—so you can remediate without breaking production."
+      <ModalHeader
+        labelId={`${idPrefix}-title`}
+        descriptorId={descriptionText ? `${idPrefix}-description` : undefined}
+        title={titleText}
+        titleIconVariant={titleIconVariant}
+        description={descriptionText}
       />
 
       <ModalBody tabIndex={0}>
-        <Flex direction={{ default: 'column', md: 'row' }} gap={{ default: 'gap2xl' }}>
-          <FlexItem flex={{ default: 'flex_1' }}>
-            <Stack hasGutter>
-              <div className="">
-                <Stack hasGutter>
-                  <Title headingLevel="h2" size="md">Match analysis</Title>
-                  <Content component="p">
-                    <strong>{matchPercentage}%</strong> of packages match the Lightwell Network catalog.
-                  </Content>
+        {analysisContent ?? (matchData && ecosystemData && (
+          <Flex direction={{ default: 'column', md: 'row' }} gap={{ default: 'gap2xl' }}>
+            <FlexItem flex={{ default: 'flex_1' }}>
+              <Stack hasGutter>
+                <div className="">
+                  <Stack hasGutter>
+                    <Title headingLevel="h2" size="md">Match analysis</Title>
+                    <Content component="p">
+                      <strong>{matchPercentage}%</strong> of packages match the catalog.
+                    </Content>
 
-                  <Flex alignItems={{ default: 'alignItemsCenter' }} gap={{ default: 'gapLg' }}>
-                    <FlexItem flex={{ default: 'flexNone' }}>
-                      <ChartDonut
-                        ariaTitle="Package match breakdown"
-                        ariaDesc={`${matchData.exact} exact, ${matchData.partial} partial, and ${matchData.noMatch} no match packages`}
-                        data={matchItems.map(({ label, value }) => ({ x: label, y: value }))}
-                        labels={({ datum }) => `${datum.x}: ${datum.y}`}
-                        labelComponent={<ChartTooltip />}
-                        title={`${totalMatches}`}
-                        subTitle="matches"
-                        colorScale={CHART_COLORS}
-                        constrainToVisibleArea
-                        height={160}
-                        width={160}
-                        padding={{ bottom: 0, left: 0, right: 0, top: 0 }}
-                        radius={70}
-                        innerRadius={52}
-                        padAngle={1}
-                      />
-                    </FlexItem>
-                    <FlexItem>
-                      <Stack>
-                        {matchItems.map(({ label, value, helpText }) => (
-                          <Flex key={label} alignItems={{ default: 'alignItemsCenter' }} gap={{ default: 'gapXs' }}>
-                            <strong>{value}</strong>
-                            <Popover
-                              headerContent={label}
-                              bodyContent={helpText}
-                              position="top"
-                            >
-                              <Button
-                                variant="plain"
-                                aria-label={`About ${label}`}
-                                icon={<RhUiQuestionMarkCircleIcon />}
-                                iconPosition="end"
+                    <Flex alignItems={{ default: 'alignItemsCenter' }} gap={{ default: 'gapLg' }}>
+                      <FlexItem flex={{ default: 'flexNone' }}>
+                        <ChartDonut
+                          ariaTitle="Package match breakdown"
+                          ariaDesc={`${chartMatchData.exact} exact, ${chartMatchData.partial} partial, and ${chartMatchData.noMatch} no match packages`}
+                          data={matchItems.map(({ label, value }) => ({ x: label, y: value }))}
+                          labels={({ datum }) => `${datum.x}: ${datum.y}`}
+                          labelComponent={<ChartTooltip />}
+                          title={`${totalMatches}`}
+                          subTitle="matches"
+                          colorScale={chartColors}
+                          constrainToVisibleArea
+                          height={160}
+                          width={160}
+                          padding={{ bottom: 0, left: 0, right: 0, top: 0 }}
+                          radius={70}
+                          innerRadius={52}
+                          padAngle={1}
+                        />
+                      </FlexItem>
+                      <FlexItem>
+                        <Stack>
+                          {matchItems.map(({ label, value, helpText }) => (
+                            <Flex key={label} alignItems={{ default: 'alignItemsCenter' }} gap={{ default: 'gapXs' }}>
+                              <strong>{value}</strong>
+                              <Popover
+                                headerContent={label}
+                                bodyContent={helpText}
+                                position="top"
                               >
-                                {label}
-                              </Button>
-                            </Popover>
-                          </Flex>
-                        ))}
-                      </Stack>
-                    </FlexItem>
-                  </Flex>
-                </Stack>
-              </div>
-            </Stack>
-          </FlexItem>
+                                <Button
+                                  variant="plain"
+                                  aria-label={`About ${label}`}
+                                  icon={<RhUiQuestionMarkCircleIcon />}
+                                  iconPosition="end"
+                                >
+                                  {label}
+                                </Button>
+                              </Popover>
+                            </Flex>
+                          ))}
+                        </Stack>
+                      </FlexItem>
+                    </Flex>
+                  </Stack>
+                </div>
+              </Stack>
+            </FlexItem>
 
-          <FlexItem flex={{ default: 'flex_1' }}>
-            <Stack hasGutter>
-              <div className="">
-                <Stack hasGutter>
-                  <Title headingLevel="h2" size="md">By ecosystem</Title>
-                  <Content component="p">See how packages map to supported ecosystems.</Content>
+            <FlexItem flex={{ default: 'flex_1' }}>
+              <Stack hasGutter>
+                <div className="">
+                  <Stack hasGutter>
+                    <Title headingLevel="h2" size="md">By ecosystem</Title>
+                    <Content component="p">See how packages map to supported ecosystems.</Content>
 
-                  <div
-                    role="region"
-                    aria-label="By ecosystem chart"
-                    tabIndex={0}
-                    className={classes.ecosystemChartViewport}
-                    ref={ecosystemChartViewportRef}
-                  >
-                    <Chart
-                      ariaTitle="By ecosystem match breakdown"
-                      ariaDesc="Packages by ecosystem and match type"
-                      colorScale={CHART_COLORS}
-                      domain={{ y: [ 0, Math.max(200, ...ecosystemData.flatMap(({ exact, partial, noMatch }) => [ exact, partial, noMatch ])) ] }}
-                      height={ECOSYSTEM_CHART_HEIGHT}
-                      legendData={[ { name: 'Exact match' }, { name: 'Partial match' }, { name: 'No match' } ]}
-                      legendOrientation="vertical"
-                      legendPosition="right"
-                      padding={{ bottom: 45, left: 58, right: 150, top: 12 }}
-                      width={DEFAULT_ECOSYSTEM_DATA.length * 75 + 250}
-                      containerComponent={<ChartContainer style={{ height: '100%', width: '100%' }} />}
+                    <div
+                      role="region"
+                      aria-label="By ecosystem chart"
+                      tabIndex={0}
+                      className={classes.ecosystemChartViewport}
+                      ref={ecosystemChartViewportRef}
                     >
-                      <ChartAxis dependentAxis showGrid tickValues={[ 50, 100, 150, 200 ]} />
-                      <ChartAxis tickValues={ecosystemData.map(({ name }) => name)} />
-                      <ChartGroup offset={24}>
-                        <ChartBar
-                          data={ecosystemData.map(({ name, exact }) => ({ x: name, y: exact, label: `Exact match: ${exact}` }))}
-                          labels={({ datum }) => datum.label}
-                          labelComponent={<ChartTooltip />}
-                        />
-                        <ChartBar
-                          data={ecosystemData.map(({ name, partial }) => ({ x: name, y: partial, label: `Partial match: ${partial}` }))}
-                          labels={({ datum }) => datum.label}
-                          labelComponent={<ChartTooltip />}
-                        />
-                        <ChartBar
-                          data={ecosystemData.map(({ name, noMatch }) => ({ x: name, y: noMatch, label: `No match: ${noMatch}` }))}
-                          labels={({ datum }) => datum.label}
-                          labelComponent={<ChartTooltip />}
-                        />
-                      </ChartGroup>
-                    </Chart>
-                  </div>
-                </Stack>
-              </div>
-            </Stack>
-          </FlexItem>
-        </Flex>
+                      <Chart
+                        ariaTitle="By ecosystem match breakdown"
+                        ariaDesc="Packages by ecosystem and match type"
+                        colorScale={chartColors}
+                        domain={{ y: [ 0, Math.max(200, ...chartEcosystemData.flatMap(({ exact, partial, noMatch }) => [ exact, partial, noMatch ])) ] }}
+                        height={ECOSYSTEM_CHART_HEIGHT}
+                        legendData={[ { name: 'Exact match' }, { name: 'Partial match' }, { name: 'No match' } ]}
+                        legendOrientation="vertical"
+                        legendPosition="right"
+                        padding={{ bottom: 45, left: 58, right: 150, top: 12 }}
+                        width={Math.max(chartEcosystemData.length * 75 + 250, ecosystemChartWidth)}
+                        containerComponent={<ChartContainer style={{ height: '100%', width: '100%' }} />}
+                      >
+                        <ChartAxis dependentAxis showGrid tickValues={[ 50, 100, 150, 200 ]} />
+                        <ChartAxis tickValues={chartEcosystemData.map(({ name }) => name)} />
+                        <ChartGroup offset={24}>
+                          <ChartBar
+                            data={chartEcosystemData.map(({ name, exact }) => ({ x: name, y: exact, label: `Exact match: ${exact}` }))}
+                            labels={({ datum }) => datum.label}
+                            labelComponent={<ChartTooltip />}
+                          />
+                          <ChartBar
+                            data={chartEcosystemData.map(({ name, partial }) => ({ x: name, y: partial, label: `Partial match: ${partial}` }))}
+                            labels={({ datum }) => datum.label}
+                            labelComponent={<ChartTooltip />}
+                          />
+                          <ChartBar
+                            data={chartEcosystemData.map(({ name, noMatch }) => ({ x: name, y: noMatch, label: `No match: ${noMatch}` }))}
+                            labels={({ datum }) => datum.label}
+                            labelComponent={<ChartTooltip />}
+                          />
+                        </ChartGroup>
+                      </Chart>
+                    </div>
+                  </Stack>
+                </div>
+              </Stack>
+            </FlexItem>
+          </Flex>
+        ))}
       </ModalBody>
-      <ModalFooter>
-        <Stack hasGutter style={{ minWidth: 0, width: '100%' }}>
-          <Content component={ContentVariants.small}>
-            Download a full, shareable report with detailed match results and remediation guidance.
-          </Content>
-          <ActionList>
-            <ActionListGroup className={classes.centeredActionListGroup}>
-              <ActionListItem>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  style={lightwellCtaStyle}
-                >
-                  Download report
-                </Button>
-              </ActionListItem>
-              <ActionListItem>
-                <Button
-                  variant="link"
-                  size="lg"
-                  component="a"
-                  href="https://www.redhat.com/en/lightwell"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Learn more about Lightwell <ArrowRightIcon aria-hidden />
-                </Button>
-              </ActionListItem>
-              <ActionListItem>
-                <img
-                  src={RedHatIBMLockup}
-                  alt="Red Hat and IBM"
-                  className={`${classes.partnerLockup} ${classes.lightModeOnly}`}
-                />
-                <img
-                  src={RedHatIBMLockupDark}
-                  alt="Red Hat and IBM"
-                  className={`${classes.partnerLockup} ${classes.darkModeOnly}`}
-                />
-              </ActionListItem>
-            </ActionListGroup>
-          </ActionList>
-        </Stack>
-      </ModalFooter>
+      <ProductNudgeModalFooter
+        footerText={footerText}
+        partnerLockup={resolvedLockup}
+        partnerLockupDark={resolvedLockupDark}
+        isCentered
+        actions={(
+          <>
+            {primaryAction && <FlexItem>{renderFooterAction(primaryAction, 'primary', ctaStyle)}</FlexItem>}
+            {secondaryAction && <FlexItem>{renderFooterAction(secondaryAction, 'link')}</FlexItem>}
+          </>
+        )}
+      />
     </Modal>
   );
 };

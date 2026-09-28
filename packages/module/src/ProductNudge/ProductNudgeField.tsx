@@ -13,6 +13,7 @@ import { createUseStyles } from 'react-jss';
 
 import { ProductNudgeFieldProps } from './ProductNudge.types';
 import { nudgeModeStyles } from './nudgeStyles';
+import { lightwellBrandAssets } from './productNudgeDefaults';
 
 const useStyles = createUseStyles({
   logomark: {
@@ -33,6 +34,8 @@ const useStyles = createUseStyles({
  */
 export const ProductNudgeField: FunctionComponent<ProductNudgeFieldProps> = ({
   isEligible,
+  brand,
+  titleIcon,
   titleText,
   value,
   bodyText,
@@ -45,6 +48,8 @@ export const ProductNudgeField: FunctionComponent<ProductNudgeFieldProps> = ({
   'data-testid': dataTestId,
 }) => {
   const classes = useStyles();
+  const resolvedLogo = logo ?? (brand === 'lightwell' ? lightwellBrandAssets.logomark : undefined);
+  const resolvedLogoDark = logoDark ?? (brand === 'lightwell' && !logo ? lightwellBrandAssets.logomarkDark : undefined);
 
   if (!isEligible) {
     return null;
@@ -54,18 +59,20 @@ export const ProductNudgeField: FunctionComponent<ProductNudgeFieldProps> = ({
     <Stack hasGutter className={className} data-ouia-component-id={ouiaId} data-testid={dataTestId}>
       <StackItem>
         <Flex alignItems={{ default: 'alignItemsCenter' }} spaceItems={{ default: 'spaceItemsSm' }}>
-          {logo && (
+          {titleIcon ? (
+            <FlexItem>{titleIcon}</FlexItem>
+          ) : resolvedLogo && (
             <FlexItem>
               <img
-                className={css(classes.logomark, logoDark ? classes.lightModeOnly : undefined)}
-                src={logo.src}
+                className={css(classes.logomark, resolvedLogoDark ? classes.lightModeOnly : undefined)}
+                src={resolvedLogo.src}
                 alt=""
                 aria-hidden
               />
-              {logoDark && (
+              {resolvedLogoDark && (
                 <img
                   className={css(classes.logomark, classes.darkModeOnly)}
-                  src={logoDark.src}
+                  src={resolvedLogoDark.src}
                   alt=""
                   aria-hidden
                 />

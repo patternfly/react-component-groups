@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ProductNudgeField from './ProductNudgeField';
 
 describe('ProductNudgeField component', () => {
@@ -28,5 +28,20 @@ describe('ProductNudgeField component', () => {
       <ProductNudgeField isEligible titleText="Headline" bodyText="Body text." />,
     );
     expect(container).toMatchSnapshot();
+  });
+
+  it('uses the Lightwell mark only when the brand is selected and allows an icon override', () => {
+    render(
+      <ProductNudgeField
+        isEligible
+        brand="lightwell"
+        titleText="Security summary"
+        titleIcon={<span data-testid="field-icon">Custom icon</span>}
+        bodyText="Custom body"
+      />,
+    );
+
+    expect(screen.getByTestId('field-icon')).toBeInTheDocument();
+    expect(screen.queryByRole('img')).not.toBeInTheDocument();
   });
 });
