@@ -36,7 +36,7 @@ export const useImpressionTracking = (
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, [isEligible, onImpression]);
+  }, [ isEligible, onImpression ]);
 
   return ref;
 };
