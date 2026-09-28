@@ -334,7 +334,6 @@ export const ProductNudgeDataModal: FunctionComponent<ProductNudgeDataModalProps
                       <Chart
                         ariaTitle="By ecosystem match breakdown"
                         ariaDesc="Packages by ecosystem and match type"
-                        colorScale={chartColors}
                         domain={{ y: [ 0, Math.max(200, ...chartEcosystemData.flatMap(({ exact, partial, noMatch }) => [ exact, partial, noMatch ])) ] }}
                         height={ECOSYSTEM_CHART_HEIGHT}
                         legendData={[ { name: 'Exact match' }, { name: 'Partial match' }, { name: 'No match' } ]}
@@ -346,7 +345,7 @@ export const ProductNudgeDataModal: FunctionComponent<ProductNudgeDataModalProps
                       >
                         <ChartAxis dependentAxis showGrid tickValues={[ 50, 100, 150, 200 ]} />
                         <ChartAxis tickValues={chartEcosystemData.map(({ name }) => name)} />
-                        <ChartGroup offset={24}>
+                        <ChartGroup offset={24} colorScale={chartColors}>
                           <ChartBar
                             data={chartEcosystemData.map(({ name, exact }) => ({ x: name, y: exact, label: `Exact match: ${exact}` }))}
                             labels={({ datum }) => datum.label}
