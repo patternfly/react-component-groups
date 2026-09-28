@@ -1,4 +1,5 @@
-import { FunctionComponent, useState } from 'react';
+import type { FunctionComponent } from 'react';
+import { useState } from 'react';
 
 import {
   Alert,
@@ -25,13 +26,42 @@ import { lightwellBackgroundStyle, lightwellCtaStyle, nudgeModeStyles } from './
 import { ProductNudgeBrandLockup } from './ProductNudgeBrandLockup';
 import { lightwellBrandAssets } from './productNudgeDefaults';
 import {
-  ProductNudgeProps,
+  ProductNudgeBrand,
   ProductNudgeProminence,
   ProductNudgeBehavior,
   NudgeContent,
   NudgeMetric,
   ProductNudgeCtaColorScheme,
 } from './ProductNudge.types';
+
+export interface ProductNudgeProps {
+  /** Visual layout variant */
+  prominence: ProductNudgeProminence;
+  /** Interaction behavior; defaults to 'persistent' */
+  behavior?: ProductNudgeBehavior;
+  /** All displayable content */
+  content: NudgeContent;
+  /** Metrics displayed in a row below the body text */
+  metrics?: NudgeMetric[];
+  /** false renders null and suppresses impression tracking */
+  isEligible: boolean;
+  /** Shows a loading spinner on the CTA and disables it */
+  isLoading?: boolean;
+  /** Called when a non-link CTA is clicked */
+  onAction: () => void;
+  /** Called when the user dismisses (behavior='dismissible') */
+  onDismiss?: () => void;
+  /** Called once when the component is 50% visible in the viewport */
+  onImpression?: () => void;
+  /** Applies a named brand preset; copy remains entirely caller-supplied. */
+  brand?: ProductNudgeBrand;
+  /** CTA color scheme; defaults to the selected brand or PatternFly styling. */
+  ctaColorScheme?: ProductNudgeCtaColorScheme;
+  /** Additional CSS class forwarded to the root element */
+  className?: string;
+  /** OUIA component ID */
+  ouiaId?: string;
+}
 
 const useStyles = createUseStyles({
   nudge: {
@@ -80,23 +110,7 @@ const formatMetricValue = (value: string | number, format: 'percentage' | 'count
   return value;
 };
 
-interface ProductNudgeContentProps {
-  prominence: ProductNudgeProminence;
-  behavior?: ProductNudgeBehavior;
-  content: NudgeContent;
-  metrics?: NudgeMetric[];
-  isEligible: boolean;
-  isLoading?: boolean;
-  onAction: () => void;
-  onDismiss?: () => void;
-  onImpression?: () => void;
-  brand?: 'lightwell';
-  ctaColorScheme?: ProductNudgeCtaColorScheme;
-  className?: string;
-  ouiaId?: string;
-}
-
-const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
+const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
   prominence,
   behavior = 'persistent',
   content,
@@ -110,7 +124,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
   brand,
   className,
   ouiaId = 'ProductNudge',
-}) => {
+}: ProductNudgeProps) => {
   const classes = useStyles();
   const [ isDismissed, setIsDismissed ] = useState(false);
   const [ isExpanded, setIsExpanded ] = useState(false);
@@ -392,7 +406,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
   );
 };
 
-const ProductNudge: FunctionComponent<ProductNudgeProps> = (props) => (
+const ProductNudge: FunctionComponent<ProductNudgeProps> = (props: ProductNudgeProps) => (
   <ErrorBoundary silent>
     <ProductNudgeContent {...props} />
   </ErrorBoundary>

@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import type { FunctionComponent, ReactNode } from 'react';
 
 import {
   Button,
@@ -11,9 +11,38 @@ import {
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon.js';
 import { createUseStyles } from 'react-jss';
 
-import { ProductNudgeDescriptionItemProps } from './ProductNudge.types';
+import { ProductNudgeBrand } from './ProductNudge.types';
 import { nudgeModeStyles } from './nudgeStyles';
 import { lightwellBrandAssets } from './productNudgeDefaults';
+
+export interface ProductNudgeDescriptionItemProps {
+  /** false renders null */
+  isEligible: boolean;
+  /** Applies a named brand preset; copy remains entirely caller-supplied. */
+  brand?: ProductNudgeBrand;
+  /** Visible text/content rendered in the description-list term. */
+  termText?: string | ReactNode;
+  /** Icon displayed in the description-list term. */
+  termIcon?: ReactNode;
+  /** Bold headline in the description */
+  headline: string | ReactNode;
+  /** Body paragraph in the description */
+  bodyText: string | ReactNode;
+  /** CTA link label */
+  ctaText?: string;
+  /** CTA link href */
+  ctaUrl?: string;
+  /** Custom term logo/icon image for light mode. */
+  logo?: { src: string; alt: string };
+  /** Custom term logo/icon image for dark mode. */
+  logoDark?: { src: string; alt: string };
+  /** OUIA component ID */
+  ouiaId?: string;
+  /** Additional CSS class on the DescriptionListGroup */
+  className?: string;
+  /** data-testid forwarded to root */
+  'data-testid'?: string;
+}
 
 const useStyles = createUseStyles({
   term: {
@@ -46,7 +75,7 @@ export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescript
   ouiaId = 'ProductNudgeDescriptionItem',
   className,
   'data-testid': dataTestId,
-}) => {
+}: ProductNudgeDescriptionItemProps) => {
   const classes = useStyles();
   const lightTermLogo = logo ?? (brand === 'lightwell' ? lightwellBrandAssets.logomark : undefined);
   const darkTermLogo = logoDark ?? (brand === 'lightwell' && !logo ? lightwellBrandAssets.logomarkDark : undefined);

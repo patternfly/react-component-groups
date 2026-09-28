@@ -3,7 +3,22 @@ section: extensions
 subsection: component-groups
 id: Product nudge
 source: react
-propComponents: ['ProductNudge', 'ProductNudgeContactModal', 'ProductNudgeField', 'ProductNudgeDescriptionItem', 'ProductNudgeMatchAnalysisModal']
+propComponents: [
+  'ProductNudge',
+  'ProductNudgeContactModal',
+  'ProductNudgeField',
+  'ProductNudgeDescriptionItem',
+  'ProductNudgeMatchAnalysisModal',
+  'NudgeContent',
+  'NudgeContact',
+  'NudgeMetric',
+  'ProductNudgeImage',
+  'ProductNudgeBrandAssets',
+  'ProductNudgeContactFormField',
+  'ProductNudgeAction',
+  'ProductNudgeMatchData',
+  'ProductNudgeEcosystemData'
+]
 sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packages/module/patternfly-docs/content/extensions/component-groups/examples/ProductNudge/ProductNudge.md
 ---
 

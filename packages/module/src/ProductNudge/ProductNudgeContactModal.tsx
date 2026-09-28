@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent, type FunctionComponent } from 'react';
+import { useEffect, useRef, useState, type ComponentType, type FormEvent, type FunctionComponent, type ReactNode } from 'react';
 import {
   Button,
   FlexItem,
@@ -13,12 +13,57 @@ import {
   TextInput
 } from '@patternfly/react-core';
 import { createUseStyles } from 'react-jss';
-import { type ContactFormValues, type ProductNudgeContactFormField, type ProductNudgeContactModalProps } from './ProductNudge.types';
+import {
+  type ContactFormValues,
+  type ProductNudgeBrand,
+  type ProductNudgeContactFormField,
+  type ProductNudgeCtaColorScheme,
+  type ProductNudgeImage,
+} from './ProductNudge.types';
 import LightwellLogomark from './assets/lightwell-logomark-light.svg';
 import LightwellLogomarkDark from './assets/lightwell-logomark-dark.svg';
 import { lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
 import { lightwellBrandAssets } from './productNudgeDefaults';
 import { ProductNudgeModalFooter } from './ProductNudgeModalFooter';
+
+export interface ProductNudgeContactModalProps {
+  /** Whether the modal is open */
+  isOpen: boolean;
+  /** Callback to close the modal */
+  onClose: () => void;
+  /** Modal title */
+  titleText: ReactNode;
+  /** Optional icon or component shown beside the modal title */
+  titleIcon?: ComponentType;
+  /** Optional icon node shown beside the modal title; takes precedence over titleIcon. */
+  headerIcon?: ReactNode;
+  /** Optional description shown below the modal title */
+  descriptionText?: ReactNode;
+  /** Submit button label */
+  submitText: ReactNode;
+  /** Placeholder for the name field */
+  namePlaceholder?: string;
+  /** Placeholder for the email field */
+  emailPlaceholder?: string;
+  /** Placeholder for the phone field */
+  phonePlaceholder?: string;
+  /** Configurable fields. Defaults to the legacy name, email, and phone fields. */
+  fields?: ProductNudgeContactFormField[];
+  /** Optional message displayed after a successful submission. */
+  successMessage?: ReactNode;
+  /** Receives values keyed by each configured field's name. */
+  onSubmit: (values: ContactFormValues) => Promise<void>;
+  /** Applies a named brand preset; copy remains entirely caller-supplied. */
+  brand?: ProductNudgeBrand;
+  /** Footer partner lockup override. */
+  partnerLockup?: ProductNudgeImage;
+  /** Dark-mode footer partner lockup override. */
+  partnerLockupDark?: ProductNudgeImage;
+  /** Override the primary CTA visual scheme. */
+  ctaColorScheme?: ProductNudgeCtaColorScheme;
+  /** Prefix for generated form and accessibility IDs. */
+  id?: string;
+}
 
 const useStyles = createUseStyles({
   modal: {
