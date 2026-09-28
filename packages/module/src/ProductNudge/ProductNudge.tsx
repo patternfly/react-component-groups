@@ -278,9 +278,9 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeContentProps> = ({
             '--pf-v6-c-hero--BorderBlockEndWidth': '0',
             '--pf-v6-c-hero--BorderInlineStartWidth': '0',
             '--pf-v6-c-hero--BorderInlineEndWidth': '0',
-            '--pf-v6-c-hero--PaddingBlockStart': 'calc(2 * var(--pf-t--global--spacer--lg))',
-            '--pf-v6-c-hero--PaddingBlockEnd': 'calc(2 * var(--pf-t--global--spacer--lg))',
-            '--pf-v6-c-hero--PaddingInlineStart': 'calc(2 * var(--pf-t--global--spacer--lg))',
+            '--pf-v6-c-hero--PaddingBlockStart': 'calc(2 * var(--pf-t--global--spacer--xl))',
+            '--pf-v6-c-hero--PaddingBlockEnd': 'calc(2 * var(--pf-t--global--spacer--xl))',
+            '--pf-v6-c-hero--PaddingInlineStart': 'calc(2 * var(--pf-t--global--spacer--xl))',
             ...(content.assets?.backgroundImageLight && {
               '--pf-v6-c-hero--BackgroundImage--light': `url(${content.assets.backgroundImageLight})`,
             }),

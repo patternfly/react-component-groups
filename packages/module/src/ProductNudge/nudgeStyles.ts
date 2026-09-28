@@ -12,8 +12,7 @@ export const nudgeModeStyles = {
 
 export const partnerLockupStyles = {
   display: 'block',
-  height: '1.5rem',
-  width: 'auto',
+  width: 'min(120px, 30vw)',
 };
 
 export const lightwellBackgroundStyle = {

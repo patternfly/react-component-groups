@@ -1,6 +1,8 @@
 import { useState, type FormEvent, type FunctionComponent } from 'react';
 import {
   Button,
+  Flex,
+  FlexItem,
   Form,
   FormGroup,
   Modal,
@@ -14,9 +16,28 @@ import { createUseStyles } from 'react-jss';
 import { type ContactFormValues, type ProductNudgeContactModalProps } from './ProductNudge.types';
 import LightwellLogomark from './assets/lightwell-logomark-light.svg';
 import LightwellLogomarkDark from './assets/lightwell-logomark-dark.svg';
-import { lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
+import RedHatIBMLockup from './assets/RedHatIBMLockup.svg';
+import RedHatIBMLockupDark from './assets/RedHatIBMLockupDark.svg';
+import { lightwellCtaStyle, nudgeModeStyles, partnerLockupStyles } from './nudgeStyles';
 
 const useStyles = createUseStyles({
+  modal: {
+    '--pf-v6-c-modal-box__header--PaddingBlockStart': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__header--PaddingInlineStart': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__header--PaddingInlineEnd': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__body--PaddingInlineStart': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__body--PaddingInlineEnd': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__footer--PaddingBlockEnd': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__footer--PaddingInlineStart': 'var(--pf-t--global--spacer--xl)',
+    '--pf-v6-c-modal-box__footer--PaddingInlineEnd': 'var(--pf-t--global--spacer--xl)'
+  },
+  modalBody: {
+    marginInlineEnd: 'var(--pf-v6-c-modal-box__close--sibling--MarginInlineEnd)'
+  },
+  modalFooter: {
+    marginInlineEnd: 'var(--pf-v6-c-modal-box__close--sibling--MarginInlineEnd)'
+  },
+  partnerLockup: partnerLockupStyles,
   titleIcon: {
     width: '1.5rem',
     height: '1.5rem',
@@ -51,6 +72,7 @@ export const ProductNudgeContactModal = ({
   descriptionText,
   submitText
 }: ProductNudgeContactModalProps) => {
+  const classes = useStyles();
   const [ nameValue, setNameValue ] = useState('');
   const [ emailValue, setEmailValue ] = useState('');
   const [ phoneValue, setPhoneValue ] = useState('');
@@ -85,6 +107,7 @@ export const ProductNudgeContactModal = ({
       onClose={onClose}
       aria-labelledby="form-modal-title"
       aria-describedby="modal-box-description-form"
+      className={classes.modal}
     >
       <ModalHeader
         title={titleText}
@@ -93,7 +116,7 @@ export const ProductNudgeContactModal = ({
         labelId="form-modal-title"
         titleIconVariant={titleIcon}
       />
-      <ModalBody>
+      <ModalBody className={classes.modalBody}>
         <Form id="modal-with-form-form" onSubmit={handleSubmit}>
           <FormGroup
             label="Name"
@@ -141,17 +164,33 @@ export const ProductNudgeContactModal = ({
           </FormGroup>
         </Form>
       </ModalBody>
-      <ModalFooter>
-        <Button
-          key="create"
-          variant="primary"
-          size="lg"
-          type="submit"
-          form="modal-with-form-form"
-          style={lightwellCtaStyle}
-        >
-          {submitText}
-        </Button>
+      <ModalFooter className={classes.modalFooter}>
+        <Flex alignItems={{ default: 'alignItemsCenter' }} spaceItems={{ default: 'spaceItemsMd' }}>
+          <FlexItem>
+            <Button
+              key="create"
+              variant="primary"
+              size="lg"
+              type="submit"
+              form="modal-with-form-form"
+              style={lightwellCtaStyle}
+            >
+              {submitText}
+            </Button>
+          </FlexItem>
+          <FlexItem>
+            <img
+              src={RedHatIBMLockup}
+              alt="Red Hat and IBM"
+              className={`${classes.partnerLockup} ${classes.lightModeOnly}`}
+            />
+            <img
+              src={RedHatIBMLockupDark}
+              alt="Red Hat and IBM"
+              className={`${classes.partnerLockup} ${classes.darkModeOnly}`}
+            />
+          </FlexItem>
+        </Flex>
       </ModalFooter>
     </Modal>
   );

@@ -17,6 +17,12 @@ export const ProductNudgeContactModalExample: React.FunctionComponent = () => {
         onSubmit={async (values) => {
           // eslint-disable-next-line no-console
           console.log('Contact form submitted:', values);
+          setIsModalOpen(false);
+          alert(`Contact form submitted:
+            name: ${values.name}
+            email: ${values.email}
+            phone: ${values.phone}
+          `);
         }}
         submitText="Submit"
       />
