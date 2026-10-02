@@ -4,20 +4,23 @@ import {
   Button,
   Flex,
   FlexItem,
-  Stack,
   StackItem,
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
+import stackStyles from '@patternfly/react-styles/css/layouts/Stack/stack';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon.js';
 import { createUseStyles } from 'react-jss';
 
 import { ProductNudgeBrand } from './ProductNudge.types';
 import { createImageSizeStyle, nudgeModeStyles } from './nudgeStyles';
 import { lightwellBrandAssets } from './productNudgeDefaults';
+import { useImpressionTracking } from './useImpressionTracking';
 
 export interface ProductNudgeStackProps {
   /** false renders null */
   isEligible: boolean;
+  /** Called once when the component is at least 50% visible. */
+  onImpression?: () => void;
   /** Applies a named brand preset; copy remains entirely caller-supplied. */
   brand?: ProductNudgeBrand;
   /** Icon shown beside the title. */
@@ -70,6 +73,7 @@ const useStyles = createUseStyles({
  */
 export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
   isEligible,
+  onImpression,
   brand,
   titleIcon,
   titleText,
@@ -88,6 +92,7 @@ export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
   'data-testid': dataTestId,
 }: ProductNudgeStackProps) => {
   const classes = useStyles();
+  const impressionRef = useImpressionTracking(onImpression, isEligible);
   const resolvedLogo = logo ?? (brand === 'lightwell' ? lightwellBrandAssets.logomark : undefined);
   const resolvedLogoDark = logoDark ?? (brand === 'lightwell' && !logo ? lightwellBrandAssets.logomarkDark : undefined);
   const resolvedLogoMarkStyle = createImageSizeStyle(logoMarkSize, logoMarkOffset);
@@ -97,7 +102,12 @@ export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
   }
 
   return (
-    <Stack hasGutter className={className} data-ouia-component-id={ouiaId} data-testid={dataTestId}>
+    <div
+      ref={impressionRef}
+      className={css(stackStyles.stack, stackStyles.modifiers.gutter, className)}
+      data-ouia-component-id={ouiaId}
+      data-testid={dataTestId}
+    >
       <StackItem>
         <Flex alignItems={{ default: 'alignItemsCenter' }} spaceItems={{ default: 'spaceItemsSm' }}>
           {titleIcon ? (
@@ -157,7 +167,7 @@ export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
           )}
         </StackItem>
       )}
-    </Stack>
+    </div>
   );
 };
 

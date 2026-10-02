@@ -30,43 +30,47 @@ import { lightwellBackgroundAssets } from '@patternfly/react-component-groups/di
 import { useState } from 'react';
 import { DescriptionList } from '@patternfly/react-core';
 
-A **product nudge** surfaces a product offer or upsell in context. It adapts to several layout modes via the `prominence` prop and handles impression tracking, dismissal, and contact CTAs out of the box.
+A **product nudge** surfaces a product offer or upsell in context. The `ProductNudge` component supports three layouts through `prominence`: `hero` for a prominent full-width placement, `alert` for an inline message, and `field` for a compact, in-context placement.
 
-All product copy is supplied by the caller. Each component accepts a `brand="lightwell"` option to apply the included Lightwell visual assets and CTA styling; omit it for neutral PatternFly styling, or pass image props to supply custom branding. Explicit image props take precedence over the Lightwell assets, and the brand option never supplies product copy. See the [Custom brand](#custom-brand) example for a nudge built without the Lightwell preset.
+To render a nudge, provide its `prominence`, an `isEligible` value, and `content` with a unique `id`, headline, body, and CTA. Set `isEligible` to `false` to render nothing. A link CTA uses an `href`; a contact CTA calls your `onAction` callback. The `behavior` prop controls whether the nudge is persistent (the default), dismissible, or collapsible. Optional callbacks let your application respond to impressions, dismissals, and CTA actions: `onImpression` fires once when at least half of the nudge is visible, while `onDismiss` and `onAction` run for their corresponding user actions. These callbacks do not persist dismissal state or implement a contact workflow; your application owns that behavior.
 
-Sizing for brand imagery (`logoSize`/`logoOffset`, `logoMarkSize`/`logoMarkOffset`, `titleIconSize`) and the hero background color (`backgroundColor`) are also caller-overridable; their defaults match the current Lightwell assets, so Lightwell usage is unaffected unless you pass an override. `ctaColorScheme="custom"` paired with a `ctaStyle` prop lets you apply an entirely custom CTA color scheme instead of the built-in Lightwell/default options.
-
-**Bundle size:** the Lightwell brand preset's small SVG logo/logomark/partner-logo assets ship with the package by default. Its hero background images (~2MB combined) are intentionally **not** included in the default import — they're published as a separate module so consumers who don't use the Lightwell hero background never pay for those bytes. A Lightwell hero that wants the background opts in with one extra import — `import { lightwellBackgroundAssets } from '@patternfly/react-component-groups/dist/esm/ProductNudge/productNudgeLightwellBackgrounds'` — and spreads it into `content.assets` alongside `lightwellBrandAssets` (see the Hero example below).
+Product copy is always supplied by the caller. Components that support `brand="lightwell"` use the included Lightwell visual assets and CTA styling; omit the prop for neutral PatternFly styling, or provide image props for custom branding. Explicit image props take precedence over Lightwell assets, and the brand option never supplies product copy. See [Custom brand](#custom-brand) for a nudge without the Lightwell preset.
 
 ## Examples
 
 ### Hero
 
-The hero prominence spans the full available width with a background image and a large CTA.
+The `hero` prominence spans the available width and uses a large CTA. This example opts into the Lightwell background image; the extra import is optional.
 
 ```js file="./ProductNudgeHeroExample.tsx"
 
 ```
 
-### Custom brand
-
-Omit `brand` and supply your own text, image, color, and sizing props to build a nudge with no Lightwell dependency at all.
-
-```js file="./ProductNudgeCustomBrandExample.tsx"
-
-```
+The Lightwell preset's small SVG logo, logomark, and partner-logo assets ship with the package by default. Its hero background images (~2 MB combined) are published separately and are not included in the default import. To use the Lightwell hero background, import `lightwellBackgroundAssets` from `@patternfly/react-component-groups/dist/esm/ProductNudge/productNudgeLightwellBackgrounds` and spread it into `content.assets`, as shown above.
 
 ### Alert
 
-A low-profile inline nudge using a PF6 Alert, suitable for sidebars or below page headings.
+The `alert` prominence uses an inline PatternFly Alert, making it suitable for a sidebar or below a page heading.
 
 ```js file="./ProductNudgeAlertExample.tsx"
 
 ```
 
+### Field prominence
+
+Use `prominence="field"` for a compact nudge near related content or data. It renders the same compact treatment as `ProductNudgeStack`; see [In-context stack](#in-context-stack) for the standalone component and its props.
+
+### Custom brand
+
+This example uses the Hero layout without the Lightwell preset. Supply your own copy and image, and optionally override the background, image sizing, and CTA styling. Brand image sizing (`logoSize`/`logoOffset` and `logoMarkSize`/`logoMarkOffset`) and the hero background color (`backgroundColor`) can also be overridden when using a preset. To define a custom CTA color scheme, set `ctaColorScheme="custom"` and provide `ctaStyle`.
+
+```js file="./ProductNudgeCustomBrandExample.tsx"
+
+```
+
 ### Contact modal
 
-Use `ProductNudgeContactModal` for CTAs that open a contact/lead-capture form. Set `titleText`, `descriptionText`, and `submitText` for the modal content. Configure `fields` to provide field names, labels, input types, placeholders, required state, autocomplete, and help text. The `onSubmit` callback receives values keyed by each field's `name`; the default fields remain name, email, and phone.
+Use `ProductNudgeContactModal` to provide a contact or lead-capture form. Your application controls when the modal opens and what happens after submission. Set `titleText`, `descriptionText`, and `submitText` for the modal content. By default, the form has name, email, and phone fields; pass `fields` to configure the fields, including their names, labels, input types, placeholders, required state, autocomplete, and help text. The `onSubmit` callback receives an object keyed by each field's `name`.
 
 ```js file="./ProductNudgeContactModalExample.tsx"
 
@@ -74,9 +78,9 @@ Use `ProductNudgeContactModal` for CTAs that open a contact/lead-capture form. S
 
 ### Data modal
 
-`ProductNudgeDataModal` can render the built-in match charts or caller-provided `customContent` — `customContent` accepts any content, not only a replacement chart. Pass both `matchData` and `ecosystemData` to use the built-in charts. Supply its title and any desired description/footer copy and actions explicitly. The chart data, colors, brand, icon, and partner logo can also be customized. Use `contentAriaLabel` to relabel the scrollable content region (it wraps both the built-in chart and `customContent`), and `titleIconSize` to resize the title icon.
+`ProductNudgeDataModal` can show built-in match charts or caller-provided `customContent`. To show the built-in charts, pass both `matchData` and `ecosystemData`. Otherwise, pass `customContent` to replace the chart region with any content—not only another chart. Supply the title and any desired description, footer copy, and actions. Chart data, colors, brand, icon, and partner logo are customizable. Use `contentAriaLabel` to label the scrollable content region, which wraps either the charts or `customContent`; use `titleIconSize` to resize the title icon.
 
-Applications that render the built-in charts must load `@patternfly/patternfly/patternfly-charts.css` alongside the standard PatternFly styles. This provides chart design tokens, including theme-aware colors for dark mode.
+When using the built-in charts, load `@patternfly/patternfly/patternfly-charts.css` alongside the standard PatternFly styles. It provides chart design tokens, including theme-aware colors for dark mode.
 
 ```js file="./ProductNudgeDataModalExample.tsx"
 
@@ -84,7 +88,7 @@ Applications that render the built-in charts must load `@patternfly/patternfly/p
 
 ### Custom modal options
 
-Customize the built-in chart palette, supply a title icon and partner logo, and define contact-form fields for the values your application needs. The contact modal submits an object keyed by each field's `name`.
+This example opens two separate modals: a data modal with a custom chart palette, title icon, and partner logo, and a contact modal with custom fields. The contact modal submits an object keyed by each field's `name`.
 
 ```js file="./ProductNudgeCustomOptionsExample.tsx"
 
@@ -98,18 +102,18 @@ Customize the built-in chart palette, supply a title icon and partner logo, and 
 
 ```
 
-### Description list item
+### In-context stack
 
-`ProductNudgeDescriptionItem` renders as a `DescriptionListGroup` — drop it directly inside an existing `DescriptionList` alongside other items. Set `termText` and optionally `termIcon`; the description consists of a headline/value, body, and optional link.
+`ProductNudgeStack` renders a compact, self-contained block with an optional title icon, heading, value or headline, body note, and inline CTA. Use it on its own or use `ProductNudge` with `prominence="field"` for the equivalent placement within the main component.
 
-```js file="./ProductNudgeDescriptionItemExample.tsx"
+```js file="./ProductNudgeStackExample.tsx"
 
 ```
 
-### In-context stack
+### Description list item
 
-`ProductNudgeStack` renders a self-contained stack block — optional title icon, heading label, optional value/headline, body note, and an inline link CTA.
+`ProductNudgeDescriptionItem` renders a `DescriptionListGroup`. Place it inside an existing `DescriptionList` alongside other items. Set `termText` and optionally `termIcon`; the description can include a headline/value, body, and optional link.
 
-```js file="./ProductNudgeStackExample.tsx"
+```js file="./ProductNudgeDescriptionItemExample.tsx"
 
 ```

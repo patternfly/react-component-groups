@@ -24,7 +24,7 @@ export const useImpressionTracking = (
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasFiredRef.current) {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5 && !hasFiredRef.current) {
             hasFiredRef.current = true;
             onImpression();
             observer.disconnect();

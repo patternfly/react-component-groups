@@ -3,21 +3,25 @@ import type { FunctionComponent, ReactNode } from 'react';
 import {
   Button,
   DescriptionListDescription,
-  DescriptionListGroup,
   DescriptionListTerm,
   Stack,
   StackItem,
 } from '@patternfly/react-core';
+import { css } from '@patternfly/react-styles';
+import descriptionListStyles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon.js';
 import { createUseStyles } from 'react-jss';
 
 import { ProductNudgeBrand } from './ProductNudge.types';
 import { createImageSizeStyle, nudgeModeStyles } from './nudgeStyles';
 import { lightwellBrandAssets } from './productNudgeDefaults';
+import { useImpressionTracking } from './useImpressionTracking';
 
 export interface ProductNudgeDescriptionItemProps {
   /** false renders null */
   isEligible: boolean;
+  /** Called once when the component is at least 50% visible. */
+  onImpression?: () => void;
   /** Applies a named brand preset; copy remains entirely caller-supplied. */
   brand?: ProductNudgeBrand;
   /** Visible text/content rendered in the description-list term. */
@@ -66,6 +70,7 @@ const useStyles = createUseStyles({
  */
 export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescriptionItemProps> = ({
   isEligible,
+  onImpression,
   brand,
   termText,
   termIcon,
@@ -82,6 +87,7 @@ export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescript
   'data-testid': dataTestId,
 }: ProductNudgeDescriptionItemProps) => {
   const classes = useStyles();
+  const impressionRef = useImpressionTracking(onImpression, isEligible);
   const lightTermLogo = logo ?? (brand === 'lightwell' ? lightwellBrandAssets.logomark : undefined);
   const darkTermLogo = logoDark ?? (brand === 'lightwell' && !logo ? lightwellBrandAssets.logomarkDark : undefined);
   const resolvedTermIconStyle = createImageSizeStyle(logoMarkSize, logoMarkOffset);
@@ -113,8 +119,9 @@ export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescript
   }
 
   return (
-    <DescriptionListGroup
-      className={className}
+    <div
+      ref={impressionRef}
+      className={css(descriptionListStyles.descriptionListGroup, className)}
       data-ouia-component-id={ouiaId}
       data-testid={dataTestId}
     >
@@ -147,7 +154,7 @@ export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescript
           )}
         </Stack>
       </DescriptionListDescription>
-    </DescriptionListGroup>
+    </div>
   );
 };
 
