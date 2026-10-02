@@ -15,5 +15,11 @@ export * from './ProductNudgeDescriptionItem';
 export { default as ProductNudgeDataModal } from './ProductNudgeDataModal';
 export * from './ProductNudgeDataModal';
 
+export { default as ProductNudgeModalFooter } from './ProductNudgeModalFooter';
+export * from './ProductNudgeModalFooter';
+
+export { default as ProductNudgeBrandLogo } from './ProductNudgeBrandLogo';
+export * from './ProductNudgeBrandLogo';
+
 export * from './productNudgeDefaults';
 export { useImpressionTracking } from './useImpressionTracking';

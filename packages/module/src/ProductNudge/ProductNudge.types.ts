@@ -85,8 +85,11 @@ export type ProductNudgeProminence = 'hero' | 'alert' | 'field';
 /** Interaction pattern */
 export type ProductNudgeBehavior = 'persistent' | 'dismissible' | 'collapsible';
 
-/** CTA color scheme; 'lightwell' applies the Lightwell red accent, 'default' uses PatternFly styling. */
-export type ProductNudgeCtaColorScheme = 'lightwell' | 'default';
+/**
+ * CTA color scheme; 'lightwell' applies the Lightwell red accent, 'default' uses PatternFly
+ * styling, 'custom' applies the caller-supplied `ctaStyle` prop.
+ */
+export type ProductNudgeCtaColorScheme = 'lightwell' | 'default' | 'custom';
 
 /** Heading element used for the nudge headline. */
 export type ProductNudgeHeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
@@ -120,10 +123,4 @@ export interface ProductNudgeMatchData {
 
 export interface ProductNudgeEcosystemData extends ProductNudgeMatchData {
   name: string | React.ReactNode;
-  /** Number of exact matches in this ecosystem. */
-  exact: number;
-  /** Number of partial matches in this ecosystem. */
-  partial: number;
-  /** Number of packages without a match in this ecosystem. */
-  noMatch: number;
 }

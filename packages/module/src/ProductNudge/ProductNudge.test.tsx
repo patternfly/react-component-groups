@@ -184,4 +184,89 @@ describe('ProductNudge component', () => {
 
     expect(container.querySelector('.pf-v6-c-alert__icon img')).toHaveStyle({ width: '1.75rem', height: '1.75rem' });
   });
+
+  it('allows overriding the alert mark size and offset', () => {
+    const { container } = render(
+      <ProductNudge
+        prominence="alert"
+        brand="lightwell"
+        logoMarkSize="2rem"
+        logoMarkOffset="0"
+        content={linkContent}
+        isEligible
+        onAction={jest.fn()}
+      />,
+    );
+
+    expect(container.querySelector('.pf-v6-c-alert__icon img')).toHaveStyle({
+      width: '2rem',
+      height: '2rem',
+      marginInlineStart: '0',
+    });
+  });
+
+  it('allows overriding the hero logo size and offset', () => {
+    render(
+      <ProductNudge
+        prominence="hero"
+        brand="lightwell"
+        logoSize="4rem"
+        logoOffset="0"
+        content={content}
+        isEligible
+        onAction={jest.fn()}
+      />,
+    );
+
+    expect(screen.getByRole('img', { name: 'Lightwell' })).toHaveStyle({
+      width: '4rem',
+      marginInlineStart: '0',
+    });
+  });
+
+  it('allows overriding the hero background color', () => {
+    const { container } = render(
+      <ProductNudge
+        prominence="hero"
+        backgroundColor="#123456"
+        content={content}
+        isEligible
+        onAction={jest.fn()}
+      />,
+    );
+
+    expect(container.querySelector('.pf-v6-c-hero')).toHaveStyle({ '--pn-nudge-background-color': '#123456' });
+  });
+
+  it('allows overriding chrome copy for dismiss, show-less, and show-details labels', () => {
+    render(
+      <ProductNudge
+        prominence="hero"
+        behavior="dismissible"
+        dismissAriaLabelPrefix="Close "
+        content={content}
+        isEligible
+        onAction={jest.fn()}
+      />,
+    );
+
+    expect(screen.getByRole('button', { name: 'Close Test headline' })).toBeInTheDocument();
+  });
+
+  it('applies ctaColorScheme="custom" using the caller-supplied ctaStyle', () => {
+    render(
+      <ProductNudge
+        prominence="hero"
+        ctaColorScheme="custom"
+        ctaStyle={{ '--pf-v6-c-button--BackgroundColor': '#00ff00' } as React.CSSProperties}
+        content={content}
+        isEligible
+        onAction={jest.fn()}
+      />,
+    );
+
+    expect(screen.getByRole('button', { name: 'Get in touch' })).toHaveStyle({
+      '--pf-v6-c-button--BackgroundColor': '#00ff00',
+    });
+  });
 });

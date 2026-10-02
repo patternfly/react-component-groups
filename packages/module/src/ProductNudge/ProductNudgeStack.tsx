@@ -12,7 +12,7 @@ import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external
 import { createUseStyles } from 'react-jss';
 
 import { ProductNudgeBrand } from './ProductNudge.types';
-import { nudgeModeStyles } from './nudgeStyles';
+import { createImageSizeStyle, nudgeModeStyles } from './nudgeStyles';
 import { lightwellBrandAssets } from './productNudgeDefaults';
 
 export interface ProductNudgeStackProps {
@@ -40,6 +40,10 @@ export interface ProductNudgeStackProps {
   logo?: { src: string; alt: string };
   /** Logomark shown in dark mode */
   logoDark?: { src: string; alt: string };
+  /** Width of the logomark; defaults to '1rem'. */
+  logoMarkSize?: string;
+  /** Inline-start margin of the logomark; defaults to unset. */
+  logoMarkOffset?: string;
   /** OUIA component ID */
   ouiaId?: string;
   /** Additional CSS class */
@@ -51,7 +55,6 @@ export interface ProductNudgeStackProps {
 const useStyles = createUseStyles({
   logomark: {
     display: 'block',
-    width: '1rem',
     height: 'auto',
   },
   ...nudgeModeStyles,
@@ -78,6 +81,8 @@ export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
   isLoading = false,
   logo,
   logoDark,
+  logoMarkSize = '1rem',
+  logoMarkOffset,
   ouiaId = 'ProductNudgeStack',
   className,
   'data-testid': dataTestId,
@@ -85,6 +90,7 @@ export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
   const classes = useStyles();
   const resolvedLogo = logo ?? (brand === 'lightwell' ? lightwellBrandAssets.logomark : undefined);
   const resolvedLogoDark = logoDark ?? (brand === 'lightwell' && !logo ? lightwellBrandAssets.logomarkDark : undefined);
+  const resolvedLogoMarkStyle = createImageSizeStyle(logoMarkSize, logoMarkOffset);
 
   if (!isEligible) {
     return null;
@@ -100,6 +106,7 @@ export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
             <FlexItem>
               <img
                 className={css(classes.logomark, resolvedLogoDark ? classes.lightModeOnly : undefined)}
+                style={resolvedLogoMarkStyle}
                 src={resolvedLogo.src}
                 alt=""
                 aria-hidden
@@ -107,6 +114,7 @@ export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
               {resolvedLogoDark && (
                 <img
                   className={css(classes.logomark, classes.darkModeOnly)}
+                  style={resolvedLogoMarkStyle}
                   src={resolvedLogoDark.src}
                   alt=""
                   aria-hidden

@@ -43,6 +43,20 @@ describe('ProductNudgeStack component', () => {
     expect(container.querySelector('img')).toHaveStyle({ width: '1rem' });
   });
 
+  it('allows overriding the logomark size', () => {
+    const { container } = render(
+      <ProductNudgeStack
+        isEligible
+        brand="lightwell"
+        logoMarkSize="2rem"
+        titleText="Security summary"
+        bodyText="Custom body"
+      />,
+    );
+
+    expect(container.querySelector('img')).toHaveStyle({ width: '2rem' });
+  });
+
   it('uses the Lightwell mark only when the brand is selected and allows an icon override', () => {
     render(
       <ProductNudgeStack

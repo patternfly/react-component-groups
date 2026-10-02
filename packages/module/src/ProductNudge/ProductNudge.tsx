@@ -22,7 +22,13 @@ import { createUseStyles } from 'react-jss';
 import ErrorBoundary from '../ErrorBoundary';
 import { useImpressionTracking } from './useImpressionTracking';
 import { ProductNudgeStack } from './ProductNudgeStack';
-import { lightwellBackgroundStyle, lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
+import {
+  createImageSizeStyle,
+  createSquareImageSizeStyle,
+  LIGHTWELL_BACKGROUND_COLOR,
+  lightwellCtaStyle,
+  nudgeModeStyles,
+} from './nudgeStyles';
 import { ProductNudgeBrandLogo } from './ProductNudgeBrandLogo';
 import { lightwellBrandAssets } from './productNudgeDefaults';
 import {
@@ -58,12 +64,30 @@ export interface ProductNudgeProps {
   brand?: ProductNudgeBrand;
   /** CTA color scheme; defaults to the selected brand or PatternFly styling. */
   ctaColorScheme?: ProductNudgeCtaColorScheme;
+  /** CTA inline style applied when `ctaColorScheme="custom"`. */
+  ctaStyle?: React.CSSProperties;
   /** Heading level for the headline; defaults to the existing level for the selected prominence. */
   headingLevel?: ProductNudgeHeadingLevel;
+  /** Width of the full logo (hero/alert); defaults to '6rem'. */
+  logoSize?: string;
+  /** Inline-start margin of the full logo, used to compensate for an asset's internal padding; defaults to '-10px' for the Lightwell logo, '0' for a caller-supplied logo. */
+  logoOffset?: string;
+  /** Width/height of the small logo mark (alert icon); defaults to '1.75rem'. */
+  logoMarkSize?: string;
+  /** Inline-start margin of the small logo mark; defaults to '-3px' for the Lightwell mark, '0' for a caller-supplied mark. */
+  logoMarkOffset?: string;
+  /** Hero background color; defaults to the Lightwell tint when `brand="lightwell"`, otherwise unset. */
+  backgroundColor?: string;
   /** Additional CSS class forwarded to the root element */
   className?: string;
   /** OUIA component ID */
   ouiaId?: string;
+  /** Prefix used in the dismiss button's aria-label, followed by the headline. */
+  dismissAriaLabelPrefix?: string;
+  /** Text for the "show less" toggle when `behavior="collapsible"`. */
+  showLessText?: string;
+  /** Prefix used in the alert's expand/collapse toggle aria-label, followed by the headline. */
+  showDetailsAriaLabelPrefix?: string;
 }
 
 const useStyles = createUseStyles({
@@ -72,19 +96,13 @@ const useStyles = createUseStyles({
   },
   alertIcon: {
     display: 'block',
-    width: '1.75rem',
-    height: '1.75rem',
-    marginInlineStart: '-3px',
   },
   logo: {
     display: 'block',
-    width: '6rem',
-    marginInlineStart: '-10px',
   },
   ...nudgeModeStyles,
   heroBg: {
-    ...lightwellBackgroundStyle,
-    '--pf-v6-c-hero--BackgroundColor': 'var(--lightwell--background-color)',
+    '--pf-v6-c-hero--BackgroundColor': 'var(--pn-nudge-background-color)',
     '.pf-v6-theme-dark &': {
       '--pf-v6-c-hero--BackgroundColor': 'var(--pf-t--color--black)',
     },
@@ -124,10 +142,19 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
   onDismiss,
   onImpression,
   ctaColorScheme,
+  ctaStyle: customCtaStyle,
   headingLevel,
+  logoSize,
+  logoOffset,
+  logoMarkSize,
+  logoMarkOffset,
+  backgroundColor,
   brand,
   className,
   ouiaId = 'ProductNudge',
+  dismissAriaLabelPrefix = 'Dismiss ',
+  showLessText = 'Show less',
+  showDetailsAriaLabelPrefix = 'Show details for ',
 }: ProductNudgeProps) => {
   const classes = useStyles();
   const [ isDismissed, setIsDismissed ] = useState(false);
@@ -147,10 +174,25 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
     ...(brand === 'lightwell' ? lightwellBrandAssets : {}),
     ...content.assets,
   };
+  const hasCustomLogo = Boolean(content.assets?.logo);
+  const resolvedLogoStyle = createImageSizeStyle(
+    logoSize ?? '6rem',
+    logoOffset ?? (hasCustomLogo ? '0' : '-10px'),
+  );
+  const hasCustomLogoMark = Boolean(content.assets?.logo || content.assets?.logomark);
+  const resolvedLogoMarkStyle = createSquareImageSizeStyle(
+    logoMarkSize ?? '1.75rem',
+    logoMarkOffset ?? (hasCustomLogoMark ? '0' : '-3px'),
+  );
+  const resolvedBackgroundColor = backgroundColor ?? (brand === 'lightwell' ? LIGHTWELL_BACKGROUND_COLOR : undefined);
   const ctaHref = content.cta.action === 'link' ? content.cta.href : undefined;
-  const ctaStyle = (ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default')) === 'lightwell'
-    ? lightwellCtaStyle
-    : undefined;
+  const resolvedCtaColorScheme = ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default');
+  const ctaStyleByScheme: Record<ProductNudgeCtaColorScheme, React.CSSProperties | undefined> = {
+    lightwell: lightwellCtaStyle,
+    custom: customCtaStyle,
+    default: undefined,
+  };
+  const ctaStyle = ctaStyleByScheme[resolvedCtaColorScheme];
 
   const metricsRow = metrics.length > 0 && (
     <Flex
@@ -171,7 +213,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
   const dismissControl = behavior === 'dismissible' && (
     <Button
       variant="plain"
-      aria-label={`Dismiss ${content.headline}`}
+      aria-label={`${dismissAriaLabelPrefix}${content.headline}`}
       onClick={handleDismiss}
       icon={<TimesIcon />}
       ouiaId={`${ouiaId}-dismiss`}
@@ -223,12 +265,14 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
         <StackItem>
           <img
             className={css(classes.logo, assets.logoDark ? classes.lightModeOnly : undefined)}
+            style={resolvedLogoStyle}
             src={assets.logo.src}
             alt={assets.logo.alt}
           />
           {assets.logoDark && (
             <img
               className={css(classes.logo, classes.darkModeOnly)}
+              style={resolvedLogoStyle}
               src={assets.logoDark.src}
               alt={assets.logoDark.alt}
             />
@@ -271,7 +315,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
 
   const withExpandableContent = (children: React.ReactNode) => behavior === 'collapsible' ? (
     <ExpandableSection
-      toggleText={isExpanded ? 'Show less' : content.headline}
+      toggleText={isExpanded ? showLessText : content.headline}
       onToggle={(_event, expanded) => setIsExpanded(expanded)}
       isExpanded={isExpanded}
     >
@@ -283,7 +327,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
     return (
       <div ref={impressionRef}>
         <Hero
-          className={css(rootClassName, brand === 'lightwell' ? classes.heroBg : undefined)}
+          className={css(rootClassName, resolvedBackgroundColor ? classes.heroBg : undefined)}
           data-ouia-component-id={ouiaId}
           style={{
             position: 'relative',
@@ -294,6 +338,9 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
             '--pf-v6-c-hero--PaddingBlockStart': 'calc(2 * var(--pf-t--global--spacer--xl))',
             '--pf-v6-c-hero--PaddingBlockEnd': 'calc(2 * var(--pf-t--global--spacer--xl))',
             '--pf-v6-c-hero--PaddingInlineStart': 'calc(2 * var(--pf-t--global--spacer--xl))',
+            ...(resolvedBackgroundColor && {
+              '--pn-nudge-background-color': resolvedBackgroundColor,
+            }),
             ...(assets.backgroundImageLight && {
               '--pf-v6-c-hero--BackgroundImage--light': `url(${assets.backgroundImageLight})`,
             }),
@@ -318,6 +365,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
       <>
         <img
           className={css(classes.alertIcon, alertIconDark ? classes.lightModeOnly : undefined)}
+          style={resolvedLogoMarkStyle}
           src={alertIconImage.src}
           alt=""
           aria-hidden
@@ -325,6 +373,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
         {alertIconDark && (
           <img
             className={css(classes.alertIcon, classes.darkModeOnly)}
+            style={resolvedLogoMarkStyle}
             src={alertIconDark.src}
             alt=""
             aria-hidden
@@ -357,7 +406,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
           isInline
           component={headingLevel ?? 'h4'}
           isExpandable={behavior === 'collapsible'}
-          toggleAriaLabel={`Show details for ${content.headline}`}
+          toggleAriaLabel={`${showDetailsAriaLabelPrefix}${content.headline}`}
           title={content.headline}
           customIcon={alertIcon}
           actionClose={behavior === 'dismissible' ? (
@@ -395,6 +444,8 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
         isLoading={isLoading}
         logo={content.assets?.logomark ?? content.assets?.logo ?? assets.logomark ?? assets.logo}
         logoDark={content.assets?.logomarkDark ?? content.assets?.logoDark ?? assets.logomarkDark ?? assets.logoDark}
+        logoMarkSize={logoMarkSize}
+        logoMarkOffset={logoMarkOffset}
         value={fieldValue}
         ouiaId={`${ouiaId}-field`}
       />
