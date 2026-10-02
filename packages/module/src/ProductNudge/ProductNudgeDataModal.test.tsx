@@ -31,7 +31,7 @@ describe('ProductNudgeDataModal component', () => {
 
     expect(descriptionId).toBeTruthy();
     expect(document.getElementById(descriptionId ?? '')).toHaveTextContent('Lightwell match analysis.');
-    expect(dialog.querySelector('[aria-label="Analysis details"]')).toBeInTheDocument();
+    expect(dialog.querySelector('[aria-label="Additional details"]')).toBeInTheDocument();
   });
 
   it('renders closed', () => {
@@ -170,7 +170,7 @@ describe('ProductNudgeDataModal component', () => {
         isOpen
         onClose={jest.fn()}
         titleText="Coverage overview"
-        analysisContent={<div>Custom analysis placement</div>}
+        customContent={<div>Custom analysis placement</div>}
         footerText="Your custom report is ready."
         primaryAction={{ label: 'Open report', onClick }}
       />,
@@ -189,5 +189,22 @@ describe('ProductNudgeDataModal component', () => {
 
     expect(screen.queryByRole('region', { name: 'By ecosystem chart' })).not.toBeInTheDocument();
     expect(screen.queryByText('Java')).not.toBeInTheDocument();
+  });
+
+  it('allows overriding the title icon size and content aria-label', () => {
+    render(
+      <ProductNudgeDataModal
+        {...lightwellProps}
+        isOpen
+        onClose={jest.fn()}
+        titleIconSize="2rem"
+        contentAriaLabel="Custom region label"
+      />,
+    );
+
+    const productTitle = screen.getByRole('heading', { name: 'Lightwell Lens' });
+    const titleLogo = productTitle.parentElement?.querySelector('img');
+    expect(titleLogo?.parentElement).toHaveStyle({ width: '2rem', height: '2rem' });
+    expect(screen.getByRole('region', { name: 'Custom region label' })).toBeInTheDocument();
   });
 });

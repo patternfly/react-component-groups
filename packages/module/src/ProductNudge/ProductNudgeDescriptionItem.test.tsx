@@ -49,4 +49,21 @@ describe('ProductNudgeDescriptionItem component', () => {
 
     expect(container.querySelector('img')).toHaveStyle({ width: '1rem' });
   });
+
+  it('allows overriding the term logo size', () => {
+    const { container } = render(
+      <dl>
+        <ProductNudgeDescriptionItem
+          isEligible
+          brand="lightwell"
+          logoMarkSize="2rem"
+          termText="Lightwell"
+          headline="Summary"
+          bodyText="Details"
+        />
+      </dl>,
+    );
+
+    expect(container.querySelector('img')).toHaveStyle({ width: '2rem' });
+  });
 });

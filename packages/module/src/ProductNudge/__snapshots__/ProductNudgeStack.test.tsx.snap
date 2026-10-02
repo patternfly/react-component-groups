@@ -22,6 +22,7 @@ exports[`ProductNudgeStack component renders when eligible 1`] = `
             aria-hidden="true"
             class="logomark-0-2-1"
             src="logo.png"
+            style="width: 1rem;"
           />
         </div>
         <div

@@ -131,4 +131,39 @@ describe('ProductNudgeContactModal component', () => {
     expect(await screen.findByText('Please try again. If the problem continues, contact support.')).toBeInTheDocument();
     expect(submitButton).toBeEnabled();
   });
+
+  it('allows overriding the title icon size, error copy, and content aria-label', async () => {
+    let rejectSubmission: (error: Error) => void = () => undefined;
+    const onSubmit = jest.fn(() => new Promise<void>((_resolve, reject) => {
+      rejectSubmission = reject;
+    }));
+
+    render(
+      <ProductNudgeContactModal
+        isOpen
+        onClose={jest.fn()}
+        brand="lightwell"
+        titleText="Get in touch"
+        submitText="Send request"
+        titleIconSize="2rem"
+        errorTitle="Custom error title"
+        errorMessage="Custom error message"
+        contentAriaLabel="Custom region label"
+        onSubmit={onSubmit}
+      />,
+    );
+
+    const dialog = screen.getByRole('dialog', { name: 'Get in touch' });
+    const logomarkImages = dialog.querySelectorAll('img[alt=""]');
+    expect(logomarkImages[0].parentElement).toHaveStyle({ width: '2rem', height: '2rem' });
+    expect(screen.getByRole('region', { name: 'Custom region label' })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Send request' }));
+    await act(async () => {
+      rejectSubmission(new Error('Request failed'));
+    });
+
+    expect(await screen.findByText('Custom error message')).toBeInTheDocument();
+    expect(screen.getByText('Custom error title')).toBeInTheDocument();
+  });
 });

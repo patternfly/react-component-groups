@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ComponentType, type FormEvent, type FunctionComponent, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ComponentType, type CSSProperties, type FormEvent, type FunctionComponent, type ReactNode } from 'react';
 import {
   Button,
   Alert,
@@ -21,10 +21,8 @@ import {
   type ProductNudgeCtaColorScheme,
   type ProductNudgeImage,
 } from './ProductNudge.types';
-import LightwellLogomark from './assets/lightwell-logomark-light.svg';
-import LightwellLogomarkDark from './assets/lightwell-logomark-dark.svg';
-import { lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
-import { lightwellBrandAssets } from './productNudgeDefaults';
+import { createSquareImageSizeStyle, lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
+import { lightwellBrandAssets, LightwellLogomark, LightwellLogomarkDark } from './productNudgeDefaults';
 import { ProductNudgeModalFooter } from './ProductNudgeModalFooter';
 
 export interface ProductNudgeContactModalProps {
@@ -62,6 +60,16 @@ export interface ProductNudgeContactModalProps {
   partnerLogoDark?: ProductNudgeImage;
   /** Override the primary CTA visual scheme. */
   ctaColorScheme?: ProductNudgeCtaColorScheme;
+  /** CTA inline style applied when `ctaColorScheme="custom"`. */
+  ctaStyle?: CSSProperties;
+  /** Width/height of the title icon container; defaults to '1.5rem'. */
+  titleIconSize?: string;
+  /** Error alert title shown after a failed submission. */
+  errorTitle?: ReactNode;
+  /** Error alert message shown after a failed submission. */
+  errorMessage?: ReactNode;
+  /** aria-label applied to the scrollable modal body region. */
+  contentAriaLabel?: string;
   /** Prefix for generated form and accessibility IDs. */
   id?: string;
 }
@@ -84,8 +92,6 @@ const useStyles = createUseStyles({
     marginInlineEnd: 'var(--pf-v6-c-modal-box__close--sibling--MarginInlineEnd)'
   },
   titleIcon: {
-    width: '1.5rem',
-    height: '1.5rem',
     '& img': {
       width: '100%',
       height: '100%'
@@ -96,11 +102,11 @@ const useStyles = createUseStyles({
 
 let contactModalInstance = 0;
 
-const LightwellContactTitleIcon: FunctionComponent = () => {
+const createLightwellContactTitleIcon = (titleIconSize: string): FunctionComponent => () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.titleIcon}>
+    <div className={classes.titleIcon} style={createSquareImageSizeStyle(titleIconSize)}>
       <img src={LightwellLogomark} alt="" className={classes.lightModeOnly} />
       <img src={LightwellLogomarkDark} alt="" className={classes.darkModeOnly} />
     </div>
@@ -125,6 +131,11 @@ export const ProductNudgeContactModal = ({
   partnerLogo,
   partnerLogoDark,
   ctaColorScheme,
+  ctaStyle: customCtaStyle,
+  titleIconSize = '1.5rem',
+  errorTitle = 'Unable to submit request',
+  errorMessage = 'Please try again. If the problem continues, contact support.',
+  contentAriaLabel = 'Contact request details',
   id,
 }: ProductNudgeContactModalProps) => {
   const classes = useStyles();
@@ -144,13 +155,17 @@ export const ProductNudgeContactModal = ({
   const [ hasSubmitError, setHasSubmitError ] = useState(false);
   const resolvedLogo = partnerLogo ?? (brand === 'lightwell' ? lightwellBrandAssets.partnerLogo : undefined);
   const resolvedLogoDark = partnerLogoDark ?? (brand === 'lightwell' && !partnerLogo ? lightwellBrandAssets.partnerLogoDark : undefined);
-  const ctaStyle = (ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default')) === 'lightwell'
-    ? lightwellCtaStyle
-    : undefined;
+  const resolvedCtaColorScheme = ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default');
+  const ctaStyleByScheme: Record<ProductNudgeCtaColorScheme, CSSProperties | undefined> = {
+    lightwell: lightwellCtaStyle,
+    custom: customCtaStyle,
+    default: undefined,
+  };
+  const ctaStyle = ctaStyleByScheme[resolvedCtaColorScheme];
 
   const titleIconComponent = headerIcon
     ? () => <>{headerIcon}</>
-    : titleIcon ?? (brand === 'lightwell' ? LightwellContactTitleIcon : undefined);
+    : titleIcon ?? (brand === 'lightwell' ? createLightwellContactTitleIcon(titleIconSize) : undefined);
 
   useEffect(() => {
     if (isOpen) {
@@ -196,12 +211,12 @@ export const ProductNudgeContactModal = ({
         descriptorId={`${idPrefix}-description`}
         titleIconVariant={titleIconComponent}
       />
-      <ModalBody className={classes.modalBody} aria-label="Contact request details" role="region" tabIndex={0}>
+      <ModalBody className={classes.modalBody} aria-label={contentAriaLabel} role="region" tabIndex={0}>
         {isSubmitted ? successMessage : (
           <Form id={`${idPrefix}-form`} onSubmit={handleSubmit}>
             {hasSubmitError && (
-              <Alert variant="danger" title="Unable to submit request" isInline>
-                Please try again. If the problem continues, contact support.
+              <Alert variant="danger" title={errorTitle} isInline>
+                {errorMessage}
               </Alert>
             )}
             {resolvedFields.map((field) => {

@@ -4,7 +4,7 @@ import { Content, ContentVariants, Flex, FlexItem, ModalFooter, Stack } from '@p
 import { ProductNudgeImage } from './ProductNudge.types';
 import { ProductNudgeBrandLogo } from './ProductNudgeBrandLogo';
 
-interface ProductNudgeModalFooterProps {
+export interface ProductNudgeModalFooterProps {
   actions?: ReactNode;
   footerText?: ReactNode;
   partnerLogo?: ProductNudgeImage;

@@ -12,7 +12,7 @@ import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external
 import { createUseStyles } from 'react-jss';
 
 import { ProductNudgeBrand } from './ProductNudge.types';
-import { nudgeModeStyles } from './nudgeStyles';
+import { createImageSizeStyle, nudgeModeStyles } from './nudgeStyles';
 import { lightwellBrandAssets } from './productNudgeDefaults';
 
 export interface ProductNudgeDescriptionItemProps {
@@ -36,6 +36,10 @@ export interface ProductNudgeDescriptionItemProps {
   logo?: { src: string; alt: string };
   /** Custom term logo/icon image for dark mode. */
   logoDark?: { src: string; alt: string };
+  /** Width of the term logo/icon; defaults to '1rem'. */
+  logoMarkSize?: string;
+  /** Inline-start margin of the term logo/icon; defaults to unset. */
+  logoMarkOffset?: string;
   /** OUIA component ID */
   ouiaId?: string;
   /** Additional CSS class on the DescriptionListGroup */
@@ -50,7 +54,6 @@ const useStyles = createUseStyles({
   },
   termIcon: {
     display: 'block',
-    width: '1rem',
     height: 'auto',
   },
   ...nudgeModeStyles,
@@ -72,6 +75,8 @@ export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescript
   ctaUrl,
   logo,
   logoDark,
+  logoMarkSize = '1rem',
+  logoMarkOffset,
   ouiaId = 'ProductNudgeDescriptionItem',
   className,
   'data-testid': dataTestId,
@@ -79,6 +84,7 @@ export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescript
   const classes = useStyles();
   const lightTermLogo = logo ?? (brand === 'lightwell' ? lightwellBrandAssets.logomark : undefined);
   const darkTermLogo = logoDark ?? (brand === 'lightwell' && !logo ? lightwellBrandAssets.logomarkDark : undefined);
+  const resolvedTermIconStyle = createImageSizeStyle(logoMarkSize, logoMarkOffset);
   const resolvedTermIcon = termIcon ?? ((lightTermLogo || darkTermLogo) ? (
     <>
       {lightTermLogo && (
@@ -86,11 +92,18 @@ export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescript
           src={lightTermLogo.src}
           alt=""
           aria-hidden
+          style={resolvedTermIconStyle}
           className={`${classes.termIcon} ${darkTermLogo ? classes.lightModeOnly : ''}`}
         />
       )}
       {darkTermLogo && (
-        <img src={darkTermLogo.src} alt="" aria-hidden className={`${classes.termIcon} ${classes.darkModeOnly}`} />
+        <img
+          src={darkTermLogo.src}
+          alt=""
+          aria-hidden
+          style={resolvedTermIconStyle}
+          className={`${classes.termIcon} ${classes.darkModeOnly}`}
+        />
       )}
     </>
   ) : undefined);

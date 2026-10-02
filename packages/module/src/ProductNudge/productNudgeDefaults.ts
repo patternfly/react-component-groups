@@ -2,29 +2,34 @@ import LightwellLogo from './assets/lightwell-logo.svg';
 import LightwellLogoDark from './assets/lightwell-logo-dark.svg';
 import LightwellLogomark from './assets/lightwell-logomark-light.svg';
 import LightwellLogomarkDark from './assets/lightwell-logomark-dark.svg';
-import LightwellBgLight from './assets/lightwell-bg-light.png';
-import LightwellBgDark from './assets/lightwell-bg-dark.png';
 import RedHatIBMLogo from './assets/RedHatIBMLogo.svg';
 import RedHatIBMLogoDark from './assets/RedHatIBMLogoDark.svg';
 
-import { NudgeContact, NudgeContent, ProductNudgeBrandAssets } from './ProductNudge.types';
+import { NudgeContent, ProductNudgeBrandAssets } from './ProductNudge.types';
 
 /** Individual asset exports for consumers that need direct access. */
-export { LightwellLogo, LightwellLogoDark, LightwellLogomark, LightwellLogomarkDark, LightwellBgLight, LightwellBgDark, RedHatIBMLogo, RedHatIBMLogoDark };
+export { LightwellLogo, LightwellLogoDark, LightwellLogomark, LightwellLogomarkDark, RedHatIBMLogo, RedHatIBMLogoDark };
 
-/** Visual defaults for `brand="lightwell"`. Product copy is intentionally not included. */
+/**
+ * Visual defaults for `brand="lightwell"`. Product copy is intentionally not included.
+ * Alt text below ("Lightwell", "Red Hat and IBM") is part of the Lightwell preset itself,
+ * not generic component chrome — it travels with its asset, so a consumer overriding any
+ * of these images (via `content.assets` or a component's `logo`/`logoDark`/`partnerLogo`
+ * props) supplies their own matching alt text in the same call.
+ *
+ * Background images are intentionally NOT included here — see `productNudgeLightwellBackgrounds.ts`.
+ */
 export const lightwellBrandAssets: ProductNudgeBrandAssets = {
   logo: { src: LightwellLogo, alt: 'Lightwell' },
   logoDark: { src: LightwellLogoDark, alt: 'Lightwell' },
   logomark: { src: LightwellLogomark, alt: 'Lightwell' },
   logomarkDark: { src: LightwellLogomarkDark, alt: 'Lightwell' },
-  backgroundImageLight: LightwellBgLight,
-  backgroundImageDark: LightwellBgDark,
   partnerLogo: { src: RedHatIBMLogo, alt: 'Red Hat and IBM' },
   partnerLogoDark: { src: RedHatIBMLogoDark, alt: 'Red Hat and IBM' },
 };
 
-/** Assembled assets for a full hero nudge (logo + background image + partner logo). */
+/** Assembled assets for a full hero nudge (logo + partner logo). Add the Lightwell background
+ * images from `productNudgeLightwellBackgrounds.ts` for a hero nudge that needs one. */
 export const lightwellHeroAssets: NudgeContent['assets'] = {
   ...lightwellBrandAssets,
 };
@@ -33,16 +38,4 @@ export const lightwellHeroAssets: NudgeContent['assets'] = {
 export const lightwellAlertAssets: NudgeContent['assets'] = {
   logo: lightwellBrandAssets.logomark,
   logoDark: lightwellBrandAssets.logomarkDark,
-};
-
-/**
- * Default contact form content for a Lightwell get-in-touch modal.
- * Override individual fields as needed for your placement's copy.
- */
-export const lightwellDefaultContact: NudgeContact = {
-  title: 'Get in touch',
-  intro:
-    'A Red Hat representative will get in touch about how Lightwell can help your environment.',
-  successMessage:
-    "Thanks — we've received your request. A representative will reach out shortly.",
 };

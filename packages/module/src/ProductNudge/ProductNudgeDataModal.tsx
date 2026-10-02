@@ -27,8 +27,6 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-i
 import RhUiQuestionMarkCircleIcon from '@patternfly/react-icons/dist/esm/icons/rh-ui-question-mark-circle-icon.js';
 import { createUseStyles } from 'react-jss';
 
-import LightwellLogomark from './assets/lightwell-logomark-light.svg';
-import LightwellLogomarkDark from './assets/lightwell-logomark-dark.svg';
 import {
   ProductNudgeAction,
   ProductNudgeBrand,
@@ -37,8 +35,8 @@ import {
   ProductNudgeImage,
   ProductNudgeMatchData,
 } from './ProductNudge.types';
-import { lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
-import { lightwellBrandAssets } from './productNudgeDefaults';
+import { createSquareImageSizeStyle, lightwellCtaStyle, nudgeModeStyles } from './nudgeStyles';
+import { lightwellBrandAssets, LightwellLogomark, LightwellLogomarkDark } from './productNudgeDefaults';
 import { ProductNudgeModalFooter } from './ProductNudgeModalFooter';
 
 export interface ProductNudgeDataModalProps {
@@ -58,8 +56,8 @@ export interface ProductNudgeDataModalProps {
   titleIcon?: React.ReactNode;
   /** Optional description displayed below the modal title. */
   descriptionText?: React.ReactNode;
-  /** Replaces the default chart analysis region with caller-provided content. */
-  analysisContent?: React.ReactNode;
+  /** Replaces the default chart region with caller-provided content of any kind (not limited to analysis/charts). */
+  customContent?: React.ReactNode;
   /** Optional text displayed in the modal footer. */
   footerText?: React.ReactNode;
   /** Optional primary action displayed in the modal footer. */
@@ -72,6 +70,12 @@ export interface ProductNudgeDataModalProps {
   partnerLogoDark?: ProductNudgeImage;
   /** Override the primary CTA visual scheme. */
   ctaColorScheme?: ProductNudgeCtaColorScheme;
+  /** CTA inline style applied when `ctaColorScheme="custom"`. */
+  ctaStyle?: React.CSSProperties;
+  /** Width/height of the title icon container; defaults to '1.5rem'. */
+  titleIconSize?: string;
+  /** aria-label applied to the scrollable modal body region (wraps both the built-in chart and `customContent`). */
+  contentAriaLabel?: string;
   /** Optional palette for the built-in charts. */
   chartColors?: string[];
   /** Prefix for generated modal and accessibility IDs. */
@@ -98,8 +102,6 @@ const useStyles = createUseStyles({
     overflowX: 'auto',
   },
   modalTitleIcon: {
-    width: '1.5rem',
-    height: '1.5rem',
     '& img': {
       width: '100%',
       height: '100%',
@@ -126,11 +128,11 @@ const describeEcosystemData = (data: ProductNudgeEcosystemData[]) => data.map(({
   return `${ecosystemName}: ${exact} exact matches, ${partial} partial matches, ${noMatch} with no match`;
 }).join('. ');
 
-const LightwellTitleIcon: FunctionComponent = () => {
+const createLightwellTitleIcon = (titleIconSize: string): FunctionComponent => () => {
   const classes = useStyles();
 
   return (
-    <div className={`${classes.modalTitleIcon}`}>
+    <div className={classes.modalTitleIcon} style={createSquareImageSizeStyle(titleIconSize)}>
       <img src={LightwellLogomark} alt="" className={classes.lightModeOnly} />
       <img src={LightwellLogomarkDark} alt="" className={classes.darkModeOnly} />
     </div>
@@ -177,13 +179,16 @@ export const ProductNudgeDataModal: FunctionComponent<ProductNudgeDataModalProps
   titleText,
   titleIcon,
   descriptionText,
-  analysisContent,
+  customContent,
   footerText,
   primaryAction,
   secondaryAction,
   partnerLogo,
   partnerLogoDark,
   ctaColorScheme,
+  ctaStyle: customCtaStyle,
+  titleIconSize = '1.5rem',
+  contentAriaLabel = 'Additional details',
   chartColors: providedChartColors,
   id,
 }: ProductNudgeDataModalProps) => {
@@ -195,12 +200,17 @@ export const ProductNudgeDataModal: FunctionComponent<ProductNudgeDataModalProps
     idRef.current = id ?? `product-nudge-analysis-${++analysisModalInstance}`;
   }
   const idPrefix = id ?? idRef.current;
-  const resolvedTitleIcon = titleIcon ?? (brand === 'lightwell' ? <LightwellTitleIcon /> : undefined);
+  const LightwellTitleIcon = brand === 'lightwell' ? createLightwellTitleIcon(titleIconSize) : undefined;
+  const resolvedTitleIcon = titleIcon ?? (LightwellTitleIcon ? <LightwellTitleIcon /> : undefined);
   const resolvedLogo = partnerLogo ?? (brand === 'lightwell' ? lightwellBrandAssets.partnerLogo : undefined);
   const resolvedLogoDark = partnerLogoDark ?? (brand === 'lightwell' && !partnerLogo ? lightwellBrandAssets.partnerLogoDark : undefined);
-  const ctaStyle = (ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default')) === 'lightwell'
-    ? lightwellCtaStyle
-    : undefined;
+  const resolvedCtaColorScheme = ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default');
+  const ctaStyleByScheme: Record<ProductNudgeCtaColorScheme, React.CSSProperties | undefined> = {
+    lightwell: lightwellCtaStyle,
+    custom: customCtaStyle,
+    default: undefined,
+  };
+  const ctaStyle = ctaStyleByScheme[resolvedCtaColorScheme];
   const chartColors = providedChartColors ?? (brand === 'lightwell' ? LIGHTWELL_CHART_COLORS : undefined);
   const legendData = ECOSYSTEM_LEGEND_LABELS.map((name, index) => ({
     name,
@@ -268,8 +278,8 @@ export const ProductNudgeDataModal: FunctionComponent<ProductNudgeDataModalProps
         description={descriptionText}
       />
 
-      <ModalBody aria-label="Analysis details" role="region" tabIndex={0}>
-        {analysisContent ?? (matchData && ecosystemData && (
+      <ModalBody aria-label={contentAriaLabel} role="region" tabIndex={0}>
+        {customContent ?? (matchData && ecosystemData && (
           <Flex direction={{ default: 'column', md: 'row' }} gap={{ default: 'gap2xl' }}>
             <FlexItem flex={{ default: 'flex_1' }}>
               <Stack hasGutter>

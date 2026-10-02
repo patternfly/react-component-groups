@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
   ...nudgeModeStyles,
 });
 
-interface ProductNudgeBrandLogoProps {
+export interface ProductNudgeBrandLogoProps {
   light?: ProductNudgeImage;
   dark?: ProductNudgeImage;
   className?: string;
