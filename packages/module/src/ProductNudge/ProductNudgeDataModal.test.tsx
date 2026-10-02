@@ -23,6 +23,17 @@ describe('ProductNudgeDataModal component', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('associates the dialog description and labels its scrollable body', () => {
+    render(<ProductNudgeDataModal {...lightwellProps} isOpen onClose={jest.fn()} />);
+
+    const dialog = screen.getByRole('dialog', { name: 'Lightwell Lens' });
+    const descriptionId = dialog.getAttribute('aria-describedby');
+
+    expect(descriptionId).toBeTruthy();
+    expect(document.getElementById(descriptionId ?? '')).toHaveTextContent('Lightwell match analysis.');
+    expect(dialog.querySelector('[aria-label="Analysis details"]')).toBeInTheDocument();
+  });
+
   it('renders closed', () => {
     const { container } = render(
       <ProductNudgeDataModal {...lightwellProps} isOpen={false} onClose={jest.fn()} />,
@@ -96,6 +107,10 @@ describe('ProductNudgeDataModal component', () => {
     expect(screen.getByText('No match')).toBeInTheDocument();
     expect(screen.getByText('Java')).toBeInTheDocument();
     expect(screen.getByText('Python')).toBeInTheDocument();
+
+    expect(chart?.querySelector('desc')).toHaveTextContent(
+      'Java: 5 exact matches, 10 partial matches, 15 with no match',
+    );
 
     expect(chart?.querySelector('path[style*="lightwell-chart-color-exact"]')).toBeInTheDocument();
     expect(chart?.querySelector('path[style*="lightwell-chart-color-partial"]')).toBeInTheDocument();

@@ -32,6 +32,7 @@ import {
   NudgeContent,
   NudgeMetric,
   ProductNudgeCtaColorScheme,
+  ProductNudgeHeadingLevel,
 } from './ProductNudge.types';
 
 export interface ProductNudgeProps {
@@ -45,7 +46,7 @@ export interface ProductNudgeProps {
   metrics?: NudgeMetric[];
   /** false renders null and suppresses impression tracking */
   isEligible: boolean;
-  /** Shows a loading spinner on the CTA and disables it */
+  /** Shows a loading spinner and disables a non-link CTA while its action is in progress. */
   isLoading?: boolean;
   /** Called when a non-link CTA is clicked */
   onAction: () => void;
@@ -57,6 +58,8 @@ export interface ProductNudgeProps {
   brand?: ProductNudgeBrand;
   /** CTA color scheme; defaults to the selected brand or PatternFly styling. */
   ctaColorScheme?: ProductNudgeCtaColorScheme;
+  /** Heading level for the headline; defaults to the existing level for the selected prominence. */
+  headingLevel?: ProductNudgeHeadingLevel;
   /** Additional CSS class forwarded to the root element */
   className?: string;
   /** OUIA component ID */
@@ -121,6 +124,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
   onDismiss,
   onImpression,
   ctaColorScheme,
+  headingLevel,
   brand,
   className,
   ouiaId = 'ProductNudge',
@@ -143,6 +147,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
     ...(brand === 'lightwell' ? lightwellBrandAssets : {}),
     ...content.assets,
   };
+  const ctaHref = content.cta.action === 'link' ? content.cta.href : undefined;
   const ctaStyle = (ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default')) === 'lightwell'
     ? lightwellCtaStyle
     : undefined;
@@ -174,10 +179,10 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
   );
 
   const ctaButton =
-    content.cta.action === 'link' && content.cta.href ? (
+    content.cta.action === 'link' ? (
       <Button
         component="a"
-        href={content.cta.href}
+        href={ctaHref}
         target="_blank"
         rel="noopener noreferrer"
         variant="primary"
@@ -232,7 +237,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
       )}
       <StackItem>
         <Title
-          headingLevel={prominence === 'hero' ? 'h1' : 'h2'}
+          headingLevel={headingLevel ?? (prominence === 'hero' ? 'h1' : 'h2')}
           size={prominence === 'hero' ? '2xl' : 'lg'}
           data-ouia-component-id={`${ouiaId}-title`}
         >
@@ -264,19 +269,15 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
     className,
   );
 
-  if (behavior === 'collapsible') {
-    return (
-      <div ref={impressionRef} className={rootClassName} data-ouia-component-id={ouiaId}>
-        <ExpandableSection
-          toggleText={isExpanded ? 'Show less' : content.headline}
-          onToggle={(_event, expanded) => setIsExpanded(expanded)}
-          isExpanded={isExpanded}
-        >
-          {body}
-        </ExpandableSection>
-      </div>
-    );
-  }
+  const withExpandableContent = (children: React.ReactNode) => behavior === 'collapsible' ? (
+    <ExpandableSection
+      toggleText={isExpanded ? 'Show less' : content.headline}
+      onToggle={(_event, expanded) => setIsExpanded(expanded)}
+      isExpanded={isExpanded}
+    >
+      {children}
+    </ExpandableSection>
+  ) : children;
 
   if (prominence === 'hero') {
     return (
@@ -301,7 +302,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
             }),
           } as React.CSSProperties}
         >
-          <FlexItem className={classes.heroContent}>{body}</FlexItem>
+          <div className={classes.heroContent}>{withExpandableContent(body)}</div>
           {dismissControl && (
             <div className={classes.heroDismiss}>{dismissControl}</div>
           )}
@@ -333,10 +334,10 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
     ) : undefined);
 
     const alertCta =
-      content.cta.action === 'link' && content.cta.href ? (
+      content.cta.action === 'link' ? (
         <AlertActionLink
           component="a"
-          href={content.cta.href}
+          href={ctaHref}
           target="_blank"
           rel="noopener noreferrer"
           ouiaId={`${ouiaId}-cta`}
@@ -350,10 +351,13 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
       );
 
     return (
-      <div ref={impressionRef} className={className} data-ouia-component-id={ouiaId}>
+      <div ref={impressionRef} className={rootClassName} data-ouia-component-id={ouiaId}>
         <Alert
           variant={content.alertVariant ?? 'info'}
           isInline
+          component={headingLevel ?? 'h4'}
+          isExpandable={behavior === 'collapsible'}
+          toggleAriaLabel={`Show details for ${content.headline}`}
           title={content.headline}
           customIcon={alertIcon}
           actionClose={behavior === 'dismissible' ? (
@@ -367,6 +371,8 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
           ouiaId={`${ouiaId}-alert`}
         >
           {content.body}
+          {content.secondaryBody && <Content component="p">{content.secondaryBody}</Content>}
+          {content.disclosure && <Content component="small">{content.disclosure}</Content>}
         </Alert>
       </div>
     );
@@ -376,34 +382,35 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
     const fieldValue = metrics[0]
       ? String(formatMetricValue(metrics[0].value, metrics[0].format))
       : undefined;
+    const fieldContent = (
+      <ProductNudgeStack
+        isEligible={isEligible}
+        brand={brand}
+        titleText={content.headline}
+        titleIcon={content.icon}
+        bodyText={content.body}
+        ctaText={content.cta.label}
+        ctaUrl={ctaHref}
+        onAction={content.cta.action === 'contact' ? onAction : undefined}
+        isLoading={isLoading}
+        logo={content.assets?.logomark ?? content.assets?.logo ?? assets.logomark ?? assets.logo}
+        logoDark={content.assets?.logomarkDark ?? content.assets?.logoDark ?? assets.logomarkDark ?? assets.logoDark}
+        value={fieldValue}
+        ouiaId={`${ouiaId}-field`}
+      />
+    );
+
     return (
-      <div ref={impressionRef} data-ouia-component-id={ouiaId}>
-        <ProductNudgeStack
-          isEligible={isEligible}
-          brand={brand}
-          titleText={content.headline}
-          titleIcon={content.icon}
-          bodyText={content.body}
-          ctaText={content.cta.label}
-          ctaUrl={content.cta.href}
-          logo={content.assets?.logomark ?? content.assets?.logo ?? assets.logomark ?? assets.logo}
-          logoDark={content.assets?.logomarkDark ?? content.assets?.logoDark ?? assets.logomarkDark ?? assets.logoDark}
-          value={fieldValue}
-          ouiaId={`${ouiaId}-field`}
-          className={className}
-        />
+      <div ref={impressionRef} className={rootClassName} data-ouia-component-id={ouiaId}>
+        <Flex justifyContent={{ default: 'justifyContentSpaceBetween' }}>
+          <FlexItem flex={{ default: 'flex_1' }}>{withExpandableContent(fieldContent)}</FlexItem>
+          {dismissControl && <FlexItem>{dismissControl}</FlexItem>}
+        </Flex>
       </div>
     );
   }
 
-  return (
-    <div ref={impressionRef} className={rootClassName} data-ouia-component-id={ouiaId}>
-      <Flex justifyContent={{ default: 'justifyContentSpaceBetween' }}>
-        <FlexItem>{body}</FlexItem>
-        <FlexItem>{dismissControl}</FlexItem>
-      </Flex>
-    </div>
-  );
+  return null;
 };
 
 const ProductNudge: FunctionComponent<ProductNudgeProps> = (props: ProductNudgeProps) => (

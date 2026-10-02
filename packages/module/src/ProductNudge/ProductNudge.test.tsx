@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import ProductNudge from './ProductNudge';
 import { NudgeContent } from './ProductNudge.types';
 
@@ -111,6 +111,70 @@ describe('ProductNudge component', () => {
       />,
     );
     expect(container).toMatchSnapshot();
+  });
+
+  it('keeps dismissible field nudges dismissible', () => {
+    const onDismiss = jest.fn();
+    render(
+      <ProductNudge
+        prominence="field"
+        behavior="dismissible"
+        content={content}
+        isEligible
+        onAction={jest.fn()}
+        onDismiss={onDismiss}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Dismiss Test headline' }));
+
+    expect(onDismiss).toHaveBeenCalledTimes(1);
+    expect(screen.queryByText('Test headline')).not.toBeInTheDocument();
+  });
+
+  it('routes contact CTAs in field prominence to the action callback', () => {
+    const onAction = jest.fn();
+    render(
+      <ProductNudge
+        prominence="field"
+        content={content}
+        isEligible
+        onAction={onAction}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Get in touch' }));
+
+    expect(onAction).toHaveBeenCalledTimes(1);
+  });
+
+  it('preserves prominence styling when content is collapsible', () => {
+    const { container } = render(
+      <ProductNudge
+        prominence="hero"
+        behavior="collapsible"
+        content={content}
+        isEligible
+        onAction={jest.fn()}
+      />,
+    );
+
+    expect(container.querySelector('.pf-v6-c-hero')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Test headline' })).toBeInTheDocument();
+  });
+
+  it('lets consumers choose a heading level for the page context', () => {
+    render(
+      <ProductNudge
+        prominence="hero"
+        headingLevel="h2"
+        content={content}
+        isEligible
+        onAction={jest.fn()}
+      />,
+    );
+
+    expect(screen.getByRole('heading', { level: 2, name: 'Test headline' })).toBeInTheDocument();
   });
 
   it('renders the Lightwell alert mark at 28px', () => {

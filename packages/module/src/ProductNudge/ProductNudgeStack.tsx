@@ -30,8 +30,12 @@ export interface ProductNudgeStackProps {
   bodyText: string | ReactNode;
   /** CTA link label */
   ctaText?: string;
-  /** CTA link href */
+  /** CTA link href; when omitted, onAction renders a button CTA instead. */
   ctaUrl?: string;
+  /** Action callback used instead of a link CTA. */
+  onAction?: () => void;
+  /** Loading state for an action CTA. */
+  isLoading?: boolean;
   /** Logomark shown in the heading row (light mode) */
   logo?: { src: string; alt: string };
   /** Logomark shown in dark mode */
@@ -58,7 +62,7 @@ const useStyles = createUseStyles({
 
 /**
  * An in-context detail variant of ProductNudge. Renders a branded stack block
- * with logomark, heading label, optional value, body note, and an inline link CTA.
+ * with logomark, heading label, optional value, body note, and an inline CTA.
  * Drop it anywhere — no DescriptionList wrapper required.
  */
 export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
@@ -70,6 +74,8 @@ export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
   bodyText,
   ctaText,
   ctaUrl,
+  onAction,
+  isLoading = false,
   logo,
   logoDark,
   ouiaId = 'ProductNudgeStack',
@@ -113,21 +119,34 @@ export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
       </StackItem>
       {value && <StackItem className={css(classes.valueText)}><strong>{value}</strong></StackItem>}
       {bodyText && <StackItem>{bodyText}</StackItem>}
-      {ctaUrl && (
+      {(ctaUrl || onAction) && (
         <StackItem>
-          <Button
-            component="a"
-            href={ctaUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="link"
-            isInline
-            icon={<ExternalLinkAltIcon />}
-            iconPosition="end"
-            ouiaId={`${ouiaId}-cta`}
-          >
-            {ctaText ?? 'Learn more'}
-          </Button>
+          {ctaUrl ? (
+            <Button
+              component="a"
+              href={ctaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="link"
+              isInline
+              icon={<ExternalLinkAltIcon />}
+              iconPosition="end"
+              ouiaId={`${ouiaId}-cta`}
+            >
+              {ctaText ?? 'Learn more'}
+            </Button>
+          ) : (
+            <Button
+              variant="link"
+              isInline
+              onClick={onAction}
+              isLoading={isLoading}
+              isDisabled={isLoading}
+              ouiaId={`${ouiaId}-cta`}
+            >
+              {ctaText ?? 'Learn more'}
+            </Button>
+          )}
         </StackItem>
       )}
     </Stack>
