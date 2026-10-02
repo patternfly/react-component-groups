@@ -51,7 +51,10 @@ describe('ProductNudgeDataModal component', () => {
     const dialog = screen.getByRole('dialog', { name: 'Lightwell Lens' });
     const productTitle = screen.getByRole('heading', { name: 'Lightwell Lens' });
     expect(dialog).toContainElement(productTitle);
-    expect(productTitle.parentElement?.querySelector('img')).toBeInTheDocument();
+    const titleLogo = productTitle.parentElement?.querySelector('img');
+    expect(titleLogo).toBeInTheDocument();
+    expect(titleLogo?.parentElement).toHaveStyle({ width: '1.5rem', height: '1.5rem' });
+    expect(titleLogo).toHaveStyle({ width: '100%', height: '100%' });
 
     const sectionsFlex = dialog.querySelector('.pf-v6-l-flex.pf-m-column.pf-m-row-on-md.pf-m-gap-2xl');
     expect(sectionsFlex?.children).toHaveLength(2);
@@ -93,6 +96,34 @@ describe('ProductNudgeDataModal component', () => {
     expect(screen.getByText('No match')).toBeInTheDocument();
     expect(screen.getByText('Java')).toBeInTheDocument();
     expect(screen.getByText('Python')).toBeInTheDocument();
+
+    expect(chart?.querySelector('path[style*="lightwell-chart-color-exact"]')).toBeInTheDocument();
+    expect(chart?.querySelector('path[style*="lightwell-chart-color-partial"]')).toBeInTheDocument();
+    const legendSwatches = Array.from(chart?.querySelectorAll('path') ?? []).slice(-3);
+    expect(legendSwatches[0]).toHaveAttribute('style', expect.stringContaining('lightwell-chart-color-exact'));
+    expect(legendSwatches[1]).toHaveAttribute('style', expect.stringContaining('lightwell-chart-color-partial'));
+    expect(legendSwatches[2]).toHaveAttribute(
+      'style',
+      expect.stringContaining(
+        'lightwell-chart-color-no-match, var(--pf-t--chart--global--fill--color--200, #e0e0e0)',
+      ),
+    );
+  });
+
+  it('uses the caller-provided chart palette for ecosystem legend swatches', () => {
+    const chartColors = [ '#123456', '#234567', '#345678' ];
+    render(
+      <ProductNudgeDataModal
+        {...lightwellProps}
+        isOpen
+        onClose={jest.fn()}
+        chartColors={chartColors}
+      />,
+    );
+
+    const chart = screen.getByRole('region', { name: 'By ecosystem chart' }).querySelector('svg');
+    const legendSwatches = Array.from(chart?.querySelectorAll('path') ?? []).slice(-3);
+    expect(legendSwatches.map((swatch) => swatch.style.fill)).toEqual(chartColors);
   });
 
   it('shows match type and value in ecosystem bar tooltips', async () => {

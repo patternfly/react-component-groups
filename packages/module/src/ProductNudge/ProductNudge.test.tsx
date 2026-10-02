@@ -112,4 +112,12 @@ describe('ProductNudge component', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
+  it('renders the Lightwell alert mark at 28px', () => {
+    const { container } = render(
+      <ProductNudge prominence="alert" brand="lightwell" content={linkContent} isEligible onAction={jest.fn()} />,
+    );
+
+    expect(container.querySelector('.pf-v6-c-alert__icon img')).toHaveStyle({ width: '1.75rem', height: '1.75rem' });
+  });
 });

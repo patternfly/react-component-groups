@@ -35,7 +35,7 @@ All product copy is supplied by the caller. Each component accepts a `brand="lig
 
 ### Hero
 
-The hero prominence spans the full page width with a background image and a large CTA.
+The hero prominence spans the full available width with a background image and a large CTA.
 
 ```js file="./ProductNudgeHeroExample.tsx"
 
@@ -57,9 +57,11 @@ Use `ProductNudgeContactModal` for CTAs that open a contact/lead-capture form. S
 
 ```
 
-### Match analysis data modal
+### Data modal
 
 `ProductNudgeDataModal` can render the built-in match charts or caller-provided `analysisContent`. Pass both `matchData` and `ecosystemData` to use the built-in charts. Supply its title and any desired description/footer copy and actions explicitly. The chart data, colors, brand, icon, and partner logo can also be customized.
+
+Applications that render the built-in charts must load `@patternfly/patternfly/patternfly-charts.css` alongside the standard PatternFly styles. This provides chart design tokens, including theme-aware colors for dark mode.
 
 ```js file="./ProductNudgeDataModalExample.tsx"
 

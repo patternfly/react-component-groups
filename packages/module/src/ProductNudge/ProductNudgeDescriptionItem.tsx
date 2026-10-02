@@ -50,7 +50,7 @@ const useStyles = createUseStyles({
   },
   termIcon: {
     display: 'block',
-    width: '1.5rem',
+    width: '1rem',
     height: 'auto',
   },
   ...nudgeModeStyles,

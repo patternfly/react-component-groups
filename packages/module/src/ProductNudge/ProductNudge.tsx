@@ -69,8 +69,8 @@ const useStyles = createUseStyles({
   },
   alertIcon: {
     display: 'block',
-    width: '1.5rem',
-    height: 'auto',
+    width: '1.75rem',
+    height: '1.75rem',
     marginInlineStart: '-3px',
   },
   logo: {

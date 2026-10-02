@@ -33,4 +33,20 @@ describe('ProductNudgeDescriptionItem component', () => {
 
     expect(screen.queryByText('Lightwell')).not.toBeInTheDocument();
   });
+
+  it('renders the Lightwell inline mark at 16px', () => {
+    const { container } = render(
+      <dl>
+        <ProductNudgeDescriptionItem
+          isEligible
+          brand="lightwell"
+          termText="Lightwell"
+          headline="Summary"
+          bodyText="Details"
+        />
+      </dl>,
+    );
+
+    expect(container.querySelector('img')).toHaveStyle({ width: '1rem' });
+  });
 });

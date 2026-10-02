@@ -47,7 +47,7 @@ export interface ProductNudgeStackProps {
 const useStyles = createUseStyles({
   logomark: {
     display: 'block',
-    width: '1.25rem',
+    width: '1rem',
     height: 'auto',
   },
   ...nudgeModeStyles,

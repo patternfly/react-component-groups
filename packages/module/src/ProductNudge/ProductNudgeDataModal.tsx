@@ -90,12 +90,6 @@ const useStyles = createUseStyles({
     '--pf-v6-c-modal-box__footer--PaddingInlineStart': 'var(--pf-t--global--spacer--xl)',
     '--pf-v6-c-modal-box__footer--PaddingInlineEnd': 'var(--pf-t--global--spacer--xl)',
     '--pf-v6-c-content--small--MarginBlockEnd': 0,
-    '.pf-v6-theme-dark &': {
-      // Keep chart labels legible against PatternFly's dark modal background.
-      '--pf-v6-chart-donut--label--title--Fill': 'var(--pf-t--global--text--color--regular)',
-      '--pf-v6-chart-donut--label--subtitle--Fill': 'var(--pf-t--global--text--color--subtle)',
-      '--pf-v6-chart-axis--tick-label--Fill': 'var(--pf-t--global--text--color--regular)',
-    },
   },
   ecosystemChartViewport: {
     width: '100%',
@@ -106,6 +100,10 @@ const useStyles = createUseStyles({
   modalTitleIcon: {
     width: '1.5rem',
     height: '1.5rem',
+    '& img': {
+      width: '100%',
+      height: '100%',
+    },
   },
   ...nudgeModeStyles,
 });
@@ -118,8 +116,10 @@ const ECOSYSTEM_CHART_HEIGHT = 158;
 const LIGHTWELL_CHART_COLORS = [
   'var(--lightwell-chart-color-exact, #f56e6e)',
   'var(--lightwell-chart-color-partial, #f8ae54)',
-  'var(--lightwell-chart-color-no-match, #f2f2f2)',
+  'var(--lightwell-chart-color-no-match, var(--pf-t--chart--global--fill--color--200, #e0e0e0))',
 ];
+
+const ECOSYSTEM_LEGEND_LABELS = [ 'Exact match', 'Partial match', 'No match' ];
 
 const LightwellTitleIcon: FunctionComponent = () => {
   const classes = useStyles();
@@ -197,6 +197,12 @@ export const ProductNudgeDataModal: FunctionComponent<ProductNudgeDataModalProps
     ? lightwellCtaStyle
     : undefined;
   const chartColors = providedChartColors ?? (brand === 'lightwell' ? LIGHTWELL_CHART_COLORS : undefined);
+  const legendData = ECOSYSTEM_LEGEND_LABELS.map((name, index) => ({
+    name,
+    ...(chartColors?.length && {
+      symbol: { fill: chartColors[index % chartColors.length] },
+    }),
+  }));
   const titleIconVariant = resolvedTitleIcon ? () => <>{resolvedTitleIcon}</> : undefined;
   const chartMatchData = matchData ?? { exact: 0, partial: 0, noMatch: 0 };
   const chartEcosystemData = ecosystemData ?? [];
@@ -275,7 +281,7 @@ export const ProductNudgeDataModal: FunctionComponent<ProductNudgeDataModalProps
                           ariaDesc={`${chartMatchData.exact} exact, ${chartMatchData.partial} partial, and ${chartMatchData.noMatch} no match packages`}
                           data={matchItems.map(({ label, value }) => ({ x: label, y: value }))}
                           labels={({ datum }) => `${datum.x}: ${datum.y}`}
-                          labelComponent={<ChartTooltip />}
+                          labelComponent={<ChartTooltip constrainToVisibleArea />}
                           title={`${totalMatches}`}
                           subTitle="matches"
                           colorScale={chartColors}
@@ -336,7 +342,7 @@ export const ProductNudgeDataModal: FunctionComponent<ProductNudgeDataModalProps
                         ariaDesc="Packages by ecosystem and match type"
                         domain={{ y: [ 0, Math.max(200, ...chartEcosystemData.flatMap(({ exact, partial, noMatch }) => [ exact, partial, noMatch ])) ] }}
                         height={ECOSYSTEM_CHART_HEIGHT}
-                        legendData={[ { name: 'Exact match' }, { name: 'Partial match' }, { name: 'No match' } ]}
+                        legendData={legendData}
                         legendOrientation="vertical"
                         legendPosition="right"
                         padding={{ bottom: 45, left: 58, right: 150, top: 12 }}
@@ -349,17 +355,17 @@ export const ProductNudgeDataModal: FunctionComponent<ProductNudgeDataModalProps
                           <ChartBar
                             data={chartEcosystemData.map(({ name, exact }) => ({ x: name, y: exact, label: `Exact match: ${exact}` }))}
                             labels={({ datum }) => datum.label}
-                            labelComponent={<ChartTooltip />}
+                            labelComponent={<ChartTooltip constrainToVisibleArea />}
                           />
                           <ChartBar
                             data={chartEcosystemData.map(({ name, partial }) => ({ x: name, y: partial, label: `Partial match: ${partial}` }))}
                             labels={({ datum }) => datum.label}
-                            labelComponent={<ChartTooltip />}
+                            labelComponent={<ChartTooltip constrainToVisibleArea />}
                           />
                           <ChartBar
                             data={chartEcosystemData.map(({ name, noMatch }) => ({ x: name, y: noMatch, label: `No match: ${noMatch}` }))}
                             labels={({ datum }) => datum.label}
-                            labelComponent={<ChartTooltip />}
+                            labelComponent={<ChartTooltip constrainToVisibleArea />}
                           />
                         </ChartGroup>
                       </Chart>
