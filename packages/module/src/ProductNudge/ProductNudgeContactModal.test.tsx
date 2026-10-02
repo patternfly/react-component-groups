@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import ProductNudgeContactModal from './ProductNudgeContactModal';
 
 describe('ProductNudgeContactModal component', () => {
@@ -50,7 +50,7 @@ describe('ProductNudgeContactModal component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders supplied field placeholders and submits ContactFormValues', () => {
+  it('renders supplied field placeholders and submits ContactFormValues', async () => {
     const onSubmit = jest.fn().mockResolvedValue(undefined);
     const { container } = render(
       <ProductNudgeContactModal
@@ -68,13 +68,15 @@ describe('ProductNudgeContactModal component', () => {
     fireEvent.change(screen.getByPlaceholderText('Enter your name'), { target: { value: 'Jane Doe' } });
     fireEvent.change(screen.getByPlaceholderText('Enter your email'), { target: { value: 'jane@example.com' } });
     fireEvent.change(screen.getByPlaceholderText('Enter your phone'), { target: { value: '555-0100' } });
-    fireEvent.click(screen.getByRole('button', { name: 'Send request' }));
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Send request' }));
+    });
 
     expect(onSubmit).toHaveBeenCalledWith({ name: 'Jane Doe', email: 'jane@example.com', phone: '555-0100' });
     expect(container).toMatchSnapshot();
   });
 
-  it('renders configured fields and submits values using their names', () => {
+  it('renders configured fields and submits values using their names', async () => {
     const onSubmit = jest.fn().mockResolvedValue(undefined);
     render(
       <ProductNudgeContactModal
@@ -92,8 +94,41 @@ describe('ProductNudgeContactModal component', () => {
 
     fireEvent.change(screen.getByPlaceholderText('name@example.com'), { target: { value: 'jane@example.com' } });
     fireEvent.change(screen.getByPlaceholderText('10+'), { target: { value: '12' } });
-    fireEvent.click(screen.getByRole('button', { name: 'Send' }));
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Send' }));
+    });
 
     expect(onSubmit).toHaveBeenCalledWith({ workEmail: 'jane@example.com', teamSize: '12' });
+  });
+
+  it('disables repeat submission and reports a failed submission', async () => {
+    let rejectSubmission: (error: Error) => void = () => undefined;
+    const onSubmit = jest.fn(() => new Promise<void>((_resolve, reject) => {
+      rejectSubmission = reject;
+    }));
+
+    render(
+      <ProductNudgeContactModal
+        isOpen
+        onClose={jest.fn()}
+        titleText="Get in touch"
+        submitText="Send request"
+        fields={[ { name: 'email', label: 'Email', type: 'email' } ]}
+        onSubmit={onSubmit}
+      />,
+    );
+
+    const submitButton = screen.getByRole('button', { name: 'Send request' });
+    fireEvent.click(submitButton);
+    expect(submitButton).toBeDisabled();
+
+    fireEvent.click(submitButton);
+    expect(onSubmit).toHaveBeenCalledTimes(1);
+
+    await act(async () => {
+      rejectSubmission(new Error('Request failed'));
+    });
+    expect(await screen.findByText('Please try again. If the problem continues, contact support.')).toBeInTheDocument();
+    expect(submitButton).toBeEnabled();
   });
 });

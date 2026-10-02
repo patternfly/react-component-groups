@@ -121,6 +121,11 @@ const LIGHTWELL_CHART_COLORS = [
 
 const ECOSYSTEM_LEGEND_LABELS = [ 'Exact match', 'Partial match', 'No match' ];
 
+const describeEcosystemData = (data: ProductNudgeEcosystemData[]) => data.map(({ name, exact, partial, noMatch }) => {
+  const ecosystemName = typeof name === 'string' || typeof name === 'number' ? String(name) : 'Ecosystem';
+  return `${ecosystemName}: ${exact} exact matches, ${partial} partial matches, ${noMatch} with no match`;
+}).join('. ');
+
 const LightwellTitleIcon: FunctionComponent = () => {
   const classes = useStyles();
 
@@ -252,6 +257,7 @@ export const ProductNudgeDataModal: FunctionComponent<ProductNudgeDataModalProps
       onClose={onClose}
       variant="large"
       aria-labelledby={`${idPrefix}-title`}
+      aria-describedby={descriptionText ? `${idPrefix}-description` : undefined}
       className={classes.modal}
     >
       <ModalHeader
@@ -262,7 +268,7 @@ export const ProductNudgeDataModal: FunctionComponent<ProductNudgeDataModalProps
         description={descriptionText}
       />
 
-      <ModalBody tabIndex={0}>
+      <ModalBody aria-label="Analysis details" role="region" tabIndex={0}>
         {analysisContent ?? (matchData && ecosystemData && (
           <Flex direction={{ default: 'column', md: 'row' }} gap={{ default: 'gap2xl' }}>
             <FlexItem flex={{ default: 'flex_1' }}>
@@ -339,7 +345,7 @@ export const ProductNudgeDataModal: FunctionComponent<ProductNudgeDataModalProps
                     >
                       <Chart
                         ariaTitle="By ecosystem match breakdown"
-                        ariaDesc="Packages by ecosystem and match type"
+                        ariaDesc={describeEcosystemData(chartEcosystemData) || 'Packages by ecosystem and match type'}
                         domain={{ y: [ 0, Math.max(200, ...chartEcosystemData.flatMap(({ exact, partial, noMatch }) => [ exact, partial, noMatch ])) ] }}
                         height={ECOSYSTEM_CHART_HEIGHT}
                         legendData={legendData}

@@ -3,6 +3,7 @@
 exports[`ProductNudge component renders alert prominence dismissible 1`] = `
 <div>
   <div
+    class="pf-v6-product-nudge pf-v6-product-nudge--alert"
     data-ouia-component-id="ProductNudge"
   >
     <div
@@ -99,6 +100,7 @@ exports[`ProductNudge component renders alert prominence dismissible 1`] = `
 exports[`ProductNudge component renders alert prominence with link CTA 1`] = `
 <div>
   <div
+    class="pf-v6-product-nudge pf-v6-product-nudge--alert"
     data-ouia-component-id="ProductNudge"
   >
     <div

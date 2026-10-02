@@ -40,14 +40,22 @@ export interface NudgeContent {
   /** Optional hedged legal/disclaimer text rendered in a small element */
   disclosure?: string | React.ReactNode;
   /** Call-to-action configuration */
-  cta: {
-    /** Button label */
-    label: string;
-    /** 'link' renders an anchor to href; 'contact' fires onAction */
-    action: 'contact' | 'link';
-    /** Required when action is 'link' */
-    href?: string;
-  };
+  cta:
+    | {
+        /** Button label */
+        label: string;
+        /** 'contact' fires onAction */
+        action: 'contact';
+        href?: never;
+      }
+    | {
+        /** Link label */
+        label: string;
+        /** 'link' renders an anchor to href */
+        action: 'link';
+        /** Required when action is 'link' */
+        href: string;
+      };
   /** Contact modal content; required when cta.action is 'contact' */
   contact?: NudgeContact;
   /** Optional React icon rendered for icon-bearing prominence modes. */
@@ -79,6 +87,9 @@ export type ProductNudgeBehavior = 'persistent' | 'dismissible' | 'collapsible';
 
 /** CTA color scheme; 'lightwell' applies the Lightwell red accent, 'default' uses PatternFly styling. */
 export type ProductNudgeCtaColorScheme = 'lightwell' | 'default';
+
+/** Heading element used for the nudge headline. */
+export type ProductNudgeHeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export interface ProductNudgeAction {
   label: React.ReactNode;

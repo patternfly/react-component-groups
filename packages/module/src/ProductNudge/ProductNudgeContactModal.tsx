@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ComponentType, type FormEvent, type FunctionComponent, type ReactNode } from 'react';
 import {
   Button,
+  Alert,
   FlexItem,
   Form,
   FormGroup,
@@ -139,6 +140,8 @@ export const ProductNudgeContactModal = ({
   ];
   const [ values, setValues ] = useState<ContactFormValues>({});
   const [ isSubmitted, setIsSubmitted ] = useState(false);
+  const [ isSubmitting, setIsSubmitting ] = useState(false);
+  const [ hasSubmitError, setHasSubmitError ] = useState(false);
   const resolvedLogo = partnerLogo ?? (brand === 'lightwell' ? lightwellBrandAssets.partnerLogo : undefined);
   const resolvedLogoDark = partnerLogoDark ?? (brand === 'lightwell' && !partnerLogo ? lightwellBrandAssets.partnerLogoDark : undefined);
   const ctaStyle = (ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default')) === 'lightwell'
@@ -153,15 +156,27 @@ export const ProductNudgeContactModal = ({
     if (isOpen) {
       setValues({});
       setIsSubmitted(false);
+      setHasSubmitError(false);
     }
   }, [ isOpen ]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (isSubmitting) {
+      return;
+    }
 
-    await onSubmit(values);
-    if (successMessage) {
-      setIsSubmitted(true);
+    setIsSubmitting(true);
+    setHasSubmitError(false);
+    try {
+      await onSubmit(values);
+      if (successMessage) {
+        setIsSubmitted(true);
+      }
+    } catch {
+      setHasSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -181,9 +196,14 @@ export const ProductNudgeContactModal = ({
         descriptorId={`${idPrefix}-description`}
         titleIconVariant={titleIconComponent}
       />
-      <ModalBody className={classes.modalBody}>
+      <ModalBody className={classes.modalBody} aria-label="Contact request details" role="region" tabIndex={0}>
         {isSubmitted ? successMessage : (
           <Form id={`${idPrefix}-form`} onSubmit={handleSubmit}>
+            {hasSubmitError && (
+              <Alert variant="danger" title="Unable to submit request" isInline>
+                Please try again. If the problem continues, contact support.
+              </Alert>
+            )}
             {resolvedFields.map((field) => {
               const fieldId = `${idPrefix}-${field.name.replace(/[^a-zA-Z0-9_-]/g, '-')}`;
               return (
@@ -199,7 +219,10 @@ export const ProductNudgeContactModal = ({
                     id={fieldId}
                     name={field.name}
                     value={values[field.name] ?? ''}
-                    onChange={(_event, value) => setValues((current) => ({ ...current, [field.name]: value }))}
+                    onChange={(_event, value) => {
+                      setHasSubmitError(false);
+                      setValues((current) => ({ ...current, [field.name]: value }));
+                    }}
                     placeholder={field.placeholder}
                     autoComplete={field.autoComplete}
                     aria-describedby={field.helpText ? `${fieldId}-help` : undefined}
@@ -227,6 +250,8 @@ export const ProductNudgeContactModal = ({
               size="lg"
               type="submit"
               form={`${idPrefix}-form`}
+              isLoading={isSubmitting}
+              isDisabled={isSubmitting}
               style={ctaStyle}
             >
               {submitText}
