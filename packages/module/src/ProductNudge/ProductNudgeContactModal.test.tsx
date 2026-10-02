@@ -21,6 +21,8 @@ describe('ProductNudgeContactModal component', () => {
     expect(logomarkImages).toHaveLength(2);
     expect(logomarkImages[0].className).toContain('lightModeOnly');
     expect(logomarkImages[1].className).toContain('darkModeOnly');
+    expect(logomarkImages[0].parentElement).toHaveStyle({ width: '1.5rem', height: '1.5rem' });
+    expect(logomarkImages[0]).toHaveStyle({ width: '100%', height: '100%' });
     const partnerLogoImages = dialog.querySelectorAll<HTMLImageElement>('img[alt="Red Hat and IBM"]');
     expect(partnerLogoImages).toHaveLength(2);
     expect(partnerLogoImages[0].className).toContain('lightModeOnly');

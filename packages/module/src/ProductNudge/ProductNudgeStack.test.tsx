@@ -30,6 +30,19 @@ describe('ProductNudgeStack component', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('renders the Lightwell inline mark at 16px', () => {
+    const { container } = render(
+      <ProductNudgeStack
+        isEligible
+        brand="lightwell"
+        titleText="Security summary"
+        bodyText="Custom body"
+      />,
+    );
+
+    expect(container.querySelector('img')).toHaveStyle({ width: '1rem' });
+  });
+
   it('uses the Lightwell mark only when the brand is selected and allows an icon override', () => {
     render(
       <ProductNudgeStack
