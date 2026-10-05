@@ -15,12 +15,12 @@ export const ProductNudgeCustomContentExample: React.FunctionComponent = () => {
       <ProductNudgeDataModal
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-        titleText="What's included with Acme Pro"
+        titleText="Title text"
         descriptionText="This modal renders whatever content you pass in — no built-in chart required."
-        contentAriaLabel="Acme Pro feature list"
+        contentAriaLabel="Feature list"
         customContent={(
           <Content>
-            <p>Acme Pro includes:</p>
+            <p>This plan includes:</p>
             <List>
               <ListItem>Unlimited dashboards</ListItem>
               <ListItem>Priority support</ListItem>
@@ -28,7 +28,7 @@ export const ProductNudgeCustomContentExample: React.FunctionComponent = () => {
             </List>
           </Content>
         )}
-        primaryAction={{ label: 'Upgrade now', onClick: () => alert('Upgraded!') }}
+        primaryAction={{ label: 'CTA text', onClick: () => alert('Upgraded!') }}
       />
     </>
   );
