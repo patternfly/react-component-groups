@@ -20,6 +20,8 @@ export interface ColumnManagementModalColumn {
   isShownByDefault: boolean;
   /** The checkbox will be disabled, this is applicable to columns which should not be toggleable by user */
   isUntoggleable?: boolean;
+  /** Keep this column at its current position when columns are reordered */
+  isSticky?: boolean;
 }
 
 /** extends ModalProps */
@@ -74,7 +76,8 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
     title: column.title,
     isSelected: column.isShown,
     isShownByDefault: column.isShownByDefault,
-    isUntoggleable: column.isUntoggleable
+    isUntoggleable: column.isUntoggleable,
+    isSticky: column.isSticky
   }));
 
   const resetToDefault = () => {
@@ -87,13 +90,21 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
     const newColumns = currentColumns.map(column => {
       const matchingItem = items.find(item => item.key === column.key);
       return matchingItem
-        ? { ...column, isShown: matchingItem.isSelected ?? column.isShownByDefault }
+        ? {
+          ...column,
+          isShown: matchingItem.isSelected ?? column.isShownByDefault,
+          isSticky: matchingItem.isSticky ?? column.isSticky
+        }
         : column;
     });
     setCurrentColumns(newColumns);
   };
 
   const handleSelect = (item: ListManagerItem) => {
+    updateColumns([ item ]);
+  };
+
+  const handleStickyChange = (item: ListManagerItem) => {
     updateColumns([ item ]);
   };
 
@@ -108,7 +119,11 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
       if (!originalColumn) {
         throw new Error(`Column with key ${item.key} not found`);
       }
-      return { ...originalColumn, isShown: item.isSelected ?? originalColumn.isShownByDefault };
+      return {
+        ...originalColumn,
+        isShown: item.isSelected ?? originalColumn.isShownByDefault,
+        isSticky: item.isSticky ?? originalColumn.isSticky
+      };
     });
     setCurrentColumns(newColumns);
   };
@@ -119,7 +134,8 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
       title: item.title,
       isShown: item.isSelected,
       isShownByDefault: item.isShownByDefault,
-      isUntoggleable: item.isUntoggleable
+      isUntoggleable: item.isUntoggleable,
+      isSticky: item.isSticky
     }));
     applyColumns(updatedColumns);
     onClose({} as KeyboardEvent);
@@ -150,6 +166,7 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
         columns={listManagerItems}
         ouiaId={ouiaId}
         onSelect={handleSelect}
+        onStickyChange={handleStickyChange}
         onSelectAll={handleSelectAll}
         onOrderChange={handleOrderChange}
         onSave={handleSave}
