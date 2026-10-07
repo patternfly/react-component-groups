@@ -48,6 +48,12 @@ export interface ListManagerProps {
   enableDragDrop?: boolean;
   /** Custom aria-label for the DataList */
   dataListAriaLabel?: string;
+  /** Custom label for the save button */
+  saveLabel?: string;
+  /** Custom label for the cancel button */
+  cancelLabel?: string;
+  /** Additional props for BulkSelect */
+  bulkSelectProps?: Partial<Omit<React.ComponentProps<typeof BulkSelect>, 'selectedCount' | 'totalCount' | 'onSelect' | 'pageSelected' | 'pagePartiallySelected'>>;
 }
 
 const ListManager: FunctionComponent<ListManagerProps> = (
@@ -58,6 +64,9 @@ const ListManager: FunctionComponent<ListManagerProps> = (
     onOrderChange,
     onSave,
     onCancel,
+    saveLabel = 'Save',
+    cancelLabel = 'Cancel',
+    bulkSelectProps,
     enableDragDrop = true,
     dataListAriaLabel = 'Selected columns' }: ListManagerProps) => {
 
@@ -75,7 +84,7 @@ const ListManager: FunctionComponent<ListManagerProps> = (
     const newColumns = [ ...currentColumns ];
     const index = newColumns.findIndex(col => col.key === columnKey);
     if (index === -1) {return;}
-    
+
     const changedColumn = { ...newColumns[index] };
     changedColumn.isSelected = !changedColumn.isSelected;
     newColumns[index] = changedColumn;
@@ -138,6 +147,7 @@ const ListManager: FunctionComponent<ListManagerProps> = (
     <>
       <div style={{ paddingBlockEnd: 'var(--pf-t--global--spacer--md)' }}>
         <BulkSelect
+          {...bulkSelectProps}
           canSelectAll
           isDataPaginated={false}
           selectedCount={currentColumns.filter(({ isSelected }) => isSelected).length}
@@ -177,12 +187,12 @@ const ListManager: FunctionComponent<ListManagerProps> = (
         <ActionListGroup>
           <ActionListItem>
             <Button key="save" variant={ButtonVariant.primary} onClick={handleSave} ouiaId={`${ouiaId}-save-button`}>
-              Save
+              {saveLabel}
             </Button>
           </ActionListItem>
           <ActionListItem>
             <Button key="cancel" variant={ButtonVariant.link} onClick={onCancel} ouiaId={`${ouiaId}-cancel-button`}>
-              Cancel
+              {cancelLabel}
             </Button>
           </ActionListItem>
         </ActionListGroup>
