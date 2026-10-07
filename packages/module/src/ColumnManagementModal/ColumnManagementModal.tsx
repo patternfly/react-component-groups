@@ -44,6 +44,8 @@ export interface ColumnManagementModalProps extends Omit<ModalProps, 'ref' | 'ch
   onReset?: () => void;
   /** Custom label for reset to default button */
   resetToDefaultLabel?: string;
+  /** Additional props for ListManager */
+  listManagerProps?: Partial<Omit<React.ComponentProps<typeof ListManager>, 'columns' | 'onSelect' | 'onSelectAll' | 'onOrderChange' | 'onSave' | 'onCancel'>>;
 }
 
 const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
@@ -57,6 +59,7 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
     enableDragDrop = false,
     onReset,
     resetToDefaultLabel = 'Reset to default',
+    listManagerProps,
     ...props }: ColumnManagementModalProps) => {
 
   const [ currentColumns, setCurrentColumns ] = useState(() =>
@@ -147,6 +150,7 @@ const ColumnManagementModal: FunctionComponent<ColumnManagementModalProps> = (
       {...props}
     >
       <ListManager
+        {...listManagerProps}
         columns={listManagerItems}
         ouiaId={ouiaId}
         onSelect={handleSelect}
