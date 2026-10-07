@@ -85,8 +85,15 @@
     "whatwg-fetch": "^3.6.20"
   },
   "dependencies": {
+    "@patternfly/patternfly": "^6.6.1",
     "@patternfly/react-drag-drop": "^6.6.2",
     "@patternfly/react-tokens": "^6.0.0",
     "sharp": "^0.34.0"
+  },
+  "peerDependencies": {
+    "victory-area": "^37.3.6",
+    "victory-axis": "^37.3.6",
+    "victory-box-plot": "^37.3.6",
+    "victory-chart": "^37.3.6"
   }
 }

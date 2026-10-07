@@ -240,5 +240,3 @@ export const FieldBuilderSelectExample: React.FunctionComponent = () => {
     </Form>
   );
 };
-
-export default FieldBuilderSelectExample;

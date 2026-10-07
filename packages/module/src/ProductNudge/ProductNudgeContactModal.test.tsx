@@ -1,0 +1,169 @@
+import { act, fireEvent, render, screen } from '@testing-library/react';
+import ProductNudgeContactModal from './ProductNudgeContactModal';
+
+describe('ProductNudgeContactModal component', () => {
+  it('renders when open', () => {
+    const { container } = render(
+      <ProductNudgeContactModal
+        isOpen
+        onClose={jest.fn()}
+        brand="lightwell"
+        titleText="Get in touch"
+        descriptionText="Tell us about your environment."
+        submitText="Send request"
+        onSubmit={jest.fn().mockResolvedValue(undefined)}
+      />,
+    );
+    const dialog = screen.getByRole('dialog', { name: 'Get in touch' });
+    expect(dialog).toBeInTheDocument();
+
+    const logomarkImages = dialog.querySelectorAll('img[alt=""]');
+    expect(logomarkImages).toHaveLength(2);
+    expect(logomarkImages[0].className).toContain('lightModeOnly');
+    expect(logomarkImages[1].className).toContain('darkModeOnly');
+    expect(logomarkImages[0].parentElement).toHaveStyle({ width: '1.5rem', height: '1.5rem' });
+    expect(logomarkImages[0]).toHaveStyle({ width: '100%', height: '100%' });
+    const partnerLogoImages = dialog.querySelectorAll<HTMLImageElement>('img[alt="Red Hat and IBM"]');
+    expect(partnerLogoImages).toHaveLength(2);
+    expect(partnerLogoImages[0].className).toContain('lightModeOnly');
+    expect(partnerLogoImages[1].className).toContain('darkModeOnly');
+    const footer = dialog.querySelector('.pf-v6-c-modal-box__footer');
+    expect(footer).toContainElement(screen.getByRole('button', { name: 'Send request' }));
+    expect(footer).toContainElement(partnerLogoImages[0]);
+    expect(screen.getByRole('button', { name: 'Send request' })).toHaveStyle({
+      '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)'
+    });
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders closed (nothing visible)', () => {
+    const { container } = render(
+      <ProductNudgeContactModal
+        isOpen={false}
+        onClose={jest.fn()}
+        titleText="Get in touch"
+        submitText="Send request"
+        onSubmit={jest.fn().mockResolvedValue(undefined)}
+      />,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders supplied field placeholders and submits ContactFormValues', async () => {
+    const onSubmit = jest.fn().mockResolvedValue(undefined);
+    const { container } = render(
+      <ProductNudgeContactModal
+        isOpen
+        onClose={jest.fn()}
+        titleText="Get in touch"
+        submitText="Send request"
+        namePlaceholder="Enter your name"
+        emailPlaceholder="Enter your email"
+        phonePlaceholder="Enter your phone"
+        onSubmit={onSubmit}
+      />,
+    );
+
+    fireEvent.change(screen.getByPlaceholderText('Enter your name'), { target: { value: 'Jane Doe' } });
+    fireEvent.change(screen.getByPlaceholderText('Enter your email'), { target: { value: 'jane@example.com' } });
+    fireEvent.change(screen.getByPlaceholderText('Enter your phone'), { target: { value: '555-0100' } });
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Send request' }));
+    });
+
+    expect(onSubmit).toHaveBeenCalledWith({ name: 'Jane Doe', email: 'jane@example.com', phone: '555-0100' });
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders configured fields and submits values using their names', async () => {
+    const onSubmit = jest.fn().mockResolvedValue(undefined);
+    render(
+      <ProductNudgeContactModal
+        isOpen
+        onClose={jest.fn()}
+        titleText="Request access"
+        submitText="Send"
+        fields={[
+          { name: 'workEmail', label: 'Work email', type: 'email', placeholder: 'name@example.com', isRequired: true },
+          { name: 'teamSize', label: 'Team size', type: 'number', placeholder: '10+' },
+        ]}
+        onSubmit={onSubmit}
+      />,
+    );
+
+    fireEvent.change(screen.getByPlaceholderText('name@example.com'), { target: { value: 'jane@example.com' } });
+    fireEvent.change(screen.getByPlaceholderText('10+'), { target: { value: '12' } });
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Send' }));
+    });
+
+    expect(onSubmit).toHaveBeenCalledWith({ workEmail: 'jane@example.com', teamSize: '12' });
+  });
+
+  it('disables repeat submission and reports a failed submission', async () => {
+    let rejectSubmission: (error: Error) => void = () => undefined;
+    const onSubmit = jest.fn(() => new Promise<void>((_resolve, reject) => {
+      rejectSubmission = reject;
+    }));
+
+    render(
+      <ProductNudgeContactModal
+        isOpen
+        onClose={jest.fn()}
+        titleText="Get in touch"
+        submitText="Send request"
+        fields={[ { name: 'email', label: 'Email', type: 'email' } ]}
+        onSubmit={onSubmit}
+      />,
+    );
+
+    const submitButton = screen.getByRole('button', { name: 'Send request' });
+    fireEvent.click(submitButton);
+    expect(submitButton).toBeDisabled();
+
+    fireEvent.click(submitButton);
+    expect(onSubmit).toHaveBeenCalledTimes(1);
+
+    await act(async () => {
+      rejectSubmission(new Error('Request failed'));
+    });
+    expect(await screen.findByText('Please try again. If the problem continues, contact support.')).toBeInTheDocument();
+    expect(submitButton).toBeEnabled();
+  });
+
+  it('allows overriding the title icon size, error copy, and content aria-label', async () => {
+    let rejectSubmission: (error: Error) => void = () => undefined;
+    const onSubmit = jest.fn(() => new Promise<void>((_resolve, reject) => {
+      rejectSubmission = reject;
+    }));
+
+    render(
+      <ProductNudgeContactModal
+        isOpen
+        onClose={jest.fn()}
+        brand="lightwell"
+        titleText="Get in touch"
+        submitText="Send request"
+        titleIconSize="2rem"
+        errorTitle="Custom error title"
+        errorMessage="Custom error message"
+        contentAriaLabel="Custom region label"
+        onSubmit={onSubmit}
+      />,
+    );
+
+    const dialog = screen.getByRole('dialog', { name: 'Get in touch' });
+    const logomarkImages = dialog.querySelectorAll('img[alt=""]');
+    expect(logomarkImages[0].parentElement).toHaveStyle({ width: '2rem', height: '2rem' });
+    expect(screen.getByRole('region', { name: 'Custom region label' })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Send request' }));
+    await act(async () => {
+      rejectSubmission(new Error('Request failed'));
+    });
+
+    expect(await screen.findByText('Custom error message')).toBeInTheDocument();
+    expect(screen.getByText('Custom error title')).toBeInTheDocument();
+  });
+});

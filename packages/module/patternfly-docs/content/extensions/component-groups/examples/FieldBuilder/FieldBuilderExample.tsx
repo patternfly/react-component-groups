@@ -100,5 +100,3 @@ export const FieldBuilderExample: React.FunctionComponent = () => {
     </Form>
   );
 };
-
-export default FieldBuilderExample;
