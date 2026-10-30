@@ -27,6 +27,8 @@ export interface ListManagerItem {
   isShownByDefault: boolean;
   /** The checkbox will be disabled, this is applicable to columns which should not be toggleable by user */
   isUntoggleable?: boolean;
+  /** Keep this column at its current position when columns are reordered */
+  isSticky?: boolean;
 }
 
 export interface ListManagerProps {
@@ -36,6 +38,8 @@ export interface ListManagerProps {
   ouiaId?: string | number;
   /** Callback when a column is selected or deselected */
   onSelect?: (column: ListManagerItem) => void;
+  /** Callback when a column's sticky state changes */
+  onStickyChange?: (column: ListManagerItem) => void;
   /** Callback when all columns are selected or deselected */
   onSelectAll?: (columns: ListManagerItem[]) => void;
   /** Callback when the column order changes */
@@ -94,13 +98,20 @@ const ListManager: FunctionComponent<ListManagerProps> = (
   };
 
   const onDrag = (_event: unknown, newOrder: DraggableObject[]) => {
-    const newColumns = newOrder.map((item: DraggableObject) => {
+    const reorderedColumns = newOrder.map((item: DraggableObject) => {
       const found = currentColumns.find(c => c.key === String(item.id));
       if (!found) {
         throw new Error(`Column with key ${item.id} not found`);
       }
       return found;
     });
+
+    // Sticky columns reserve their current positions. Reorder only the remaining columns.
+    const reorderedNonStickyColumns = reorderedColumns.filter(column => !column.isSticky);
+    let nonStickyIndex = 0;
+    const newColumns = currentColumns.map(column => (
+      column.isSticky ? column : reorderedNonStickyColumns[nonStickyIndex++]
+    ));
     setCurrentColumns(newColumns);
     onOrderChange?.(newColumns);
   };
