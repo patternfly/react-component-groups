@@ -100,9 +100,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
           <ul
             class="pf-v6-c-list pf-v6-u-font-size-sm pf-v6-u-link-color pf-v6-u-ml-0"
           >
-            <li
-              class=""
-            >
+            <li>
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
@@ -119,9 +117,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
                 </button>
               </span>
             </li>
-            <li
-              class=""
-            >
+            <li>
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
@@ -138,9 +134,7 @@ exports[`MultiContentCard component should render basic multi-content card 1`] =
                 </button>
               </span>
             </li>
-            <li
-              class=""
-            >
+            <li>
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
@@ -671,9 +665,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
             <ul
               class="pf-v6-c-list pf-v6-u-font-size-sm pf-v6-u-link-color pf-v6-u-ml-0"
             >
-              <li
-                class=""
-              >
+              <li>
                 <span>
                   <button
                     class="pf-v6-c-button pf-m-link pf-m-inline"
@@ -690,9 +682,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
                   </button>
                 </span>
               </li>
-              <li
-                class=""
-              >
+              <li>
                 <span>
                   <button
                     class="pf-v6-c-button pf-m-link pf-m-inline"
@@ -709,9 +699,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
                   </button>
                 </span>
               </li>
-              <li
-                class=""
-              >
+              <li>
                 <span>
                   <button
                     class="pf-v6-c-button pf-m-link pf-m-inline"
@@ -1066,6 +1054,7 @@ exports[`MultiContentCard component should render expandable multi-content card 
     >
       <button
         aria-expanded="true"
+        aria-haspopup="menu"
         aria-label="kebab dropdown toggle"
         class="pf-v6-c-menu-toggle pf-m-expanded pf-m-plain"
         data-ouia-component-id="OUIA-Generated-MenuToggle-plain-:r2c:"
@@ -1222,9 +1211,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
           <ul
             class="pf-v6-c-list pf-v6-u-font-size-sm pf-v6-u-link-color pf-v6-u-ml-0"
           >
-            <li
-              class=""
-            >
+            <li>
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
@@ -1241,9 +1228,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
                 </button>
               </span>
             </li>
-            <li
-              class=""
-            >
+            <li>
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
@@ -1260,9 +1245,7 @@ exports[`MultiContentCard component should render multi-content card with a sing
                 </button>
               </span>
             </li>
-            <li
-              class=""
-            >
+            <li>
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
@@ -1667,9 +1650,7 @@ exports[`MultiContentCard component should render multi-content card with divide
           <ul
             class="pf-v6-c-list pf-v6-u-font-size-sm pf-v6-u-link-color pf-v6-u-ml-0"
           >
-            <li
-              class=""
-            >
+            <li>
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
@@ -1686,9 +1667,7 @@ exports[`MultiContentCard component should render multi-content card with divide
                 </button>
               </span>
             </li>
-            <li
-              class=""
-            >
+            <li>
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
@@ -1705,9 +1684,7 @@ exports[`MultiContentCard component should render multi-content card with divide
                 </button>
               </span>
             </li>
-            <li
-              class=""
-            >
+            <li>
               <span>
                 <button
                   class="pf-v6-c-button pf-m-link pf-m-inline"
