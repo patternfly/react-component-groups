@@ -5,9 +5,7 @@ exports[`Severity component API should hide label 1`] = `
   <div
     class="pf-v6-l-flex pf-m-space-items-sm"
   >
-    <div
-      class=""
-    >
+    <div>
       <span
         data-ouia-component-id="Severity-icon"
         title="important important"
@@ -42,9 +40,7 @@ exports[`Severity component API should hide label 1`] = `
         </svg>
       </span>
     </div>
-    <div
-      class=""
-    />
+    <div />
   </div>
 </div>
 `;
@@ -54,9 +50,7 @@ exports[`Severity component should render correctly CriticalSeverity 1`] = `
   <div
     class="pf-v6-l-flex pf-m-space-items-sm"
   >
-    <div
-      class=""
-    >
+    <div>
       <span
         data-ouia-component-id="Severity-icon"
         title="critical Critical"
@@ -91,9 +85,7 @@ exports[`Severity component should render correctly CriticalSeverity 1`] = `
         </svg>
       </span>
     </div>
-    <div
-      class=""
-    >
+    <div>
       Critical
     </div>
   </div>
@@ -105,9 +97,7 @@ exports[`Severity component should render correctly HighSeverity 1`] = `
   <div
     class="pf-v6-l-flex pf-m-space-items-sm"
   >
-    <div
-      class=""
-    >
+    <div>
       <span
         data-ouia-component-id="Severity-icon"
         title="important Important"
@@ -142,9 +132,7 @@ exports[`Severity component should render correctly HighSeverity 1`] = `
         </svg>
       </span>
     </div>
-    <div
-      class=""
-    >
+    <div>
       Important
     </div>
   </div>
@@ -156,9 +144,7 @@ exports[`Severity component should render correctly LowSeverity 1`] = `
   <div
     class="pf-v6-l-flex pf-m-space-items-sm"
   >
-    <div
-      class=""
-    >
+    <div>
       <span
         data-ouia-component-id="Severity-icon"
         title="minor Minor"
@@ -193,9 +179,7 @@ exports[`Severity component should render correctly LowSeverity 1`] = `
         </svg>
       </span>
     </div>
-    <div
-      class=""
-    >
+    <div>
       Minor
     </div>
   </div>
@@ -207,9 +191,7 @@ exports[`Severity component should render correctly LowSeverity 2`] = `
   <div
     class="pf-v6-l-flex pf-m-space-items-sm"
   >
-    <div
-      class=""
-    >
+    <div>
       <span
         data-ouia-component-id="Severity-icon"
         title="none None"
@@ -244,9 +226,7 @@ exports[`Severity component should render correctly LowSeverity 2`] = `
         </svg>
       </span>
     </div>
-    <div
-      class=""
-    >
+    <div>
       None
     </div>
   </div>
@@ -258,9 +238,7 @@ exports[`Severity component should render correctly MediumSeverity 1`] = `
   <div
     class="pf-v6-l-flex pf-m-space-items-sm"
   >
-    <div
-      class=""
-    >
+    <div>
       <span
         data-ouia-component-id="Severity-icon"
         title="moderate Moderate"
@@ -295,9 +273,7 @@ exports[`Severity component should render correctly MediumSeverity 1`] = `
         </svg>
       </span>
     </div>
-    <div
-      class=""
-    >
+    <div>
       Moderate
     </div>
   </div>
@@ -309,9 +285,7 @@ exports[`Severity component should render correctly UndefinedSeverity, default 1
   <div
     class="pf-v6-l-flex pf-m-space-items-sm"
   >
-    <div
-      class=""
-    >
+    <div>
       <span
         data-ouia-component-id="Severity-icon"
         title=" "
@@ -346,9 +320,7 @@ exports[`Severity component should render correctly UndefinedSeverity, default 1
         </svg>
       </span>
     </div>
-    <div
-      class=""
-    />
+    <div />
   </div>
 </div>
 `;

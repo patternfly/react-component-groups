@@ -10,7 +10,7 @@ exports[`WarningModal component should render 1`] = `
       aria-hidden="true"
     />
     <div
-      class="pf-v6-c-backdrop"
+      class="pf-v6-c-backdrop pf-m-animate pf-m-show"
       id="pf-modal-part-3"
     >
       <div

@@ -48,9 +48,7 @@ exports[`Status component should render correctly 1`] = `
             </span>
           </span>
         </div>
-        <div
-          class=""
-        >
+        <div>
           <div
             class="pf-v6-c-content statusLabel-0-2-2"
             data-ouia-component-id="Status-label"
@@ -109,9 +107,7 @@ exports[`Status component should render correctly 1`] = `
           </span>
         </span>
       </div>
-      <div
-        class=""
-      >
+      <div>
         <div
           class="pf-v6-c-content statusLabel-0-2-2"
           data-ouia-component-id="Status-label"
@@ -238,9 +234,7 @@ exports[`Status component should render correctly link 1`] = `
                 </span>
               </span>
             </div>
-            <div
-              class=""
-            >
+            <div>
               <div
                 class="pf-v6-c-content statusLabel-0-2-2"
                 data-ouia-component-id="Status-label"
@@ -312,9 +306,7 @@ exports[`Status component should render correctly link 1`] = `
               </span>
             </span>
           </div>
-          <div
-            class=""
-          >
+          <div>
             <div
               class="pf-v6-c-content statusLabel-0-2-2"
               data-ouia-component-id="Status-label"
@@ -446,9 +438,7 @@ exports[`Status component should render correctly popover 1`] = `
                   </span>
                 </span>
               </div>
-              <div
-                class=""
-              >
+              <div>
                 <div
                   class="pf-v6-c-content statusLabel-0-2-2"
                   data-ouia-component-id="Status-label"
@@ -524,9 +514,7 @@ exports[`Status component should render correctly popover 1`] = `
                 </span>
               </span>
             </div>
-            <div
-              class=""
-            >
+            <div>
               <div
                 class="pf-v6-c-content statusLabel-0-2-2"
                 data-ouia-component-id="Status-label"
@@ -645,9 +633,7 @@ exports[`Status component should render correctly with description 1`] = `
             </span>
           </span>
         </div>
-        <div
-          class=""
-        >
+        <div>
           <div
             class="pf-v6-c-content statusLabel-0-2-2"
             data-ouia-component-id="Status-label"
@@ -715,9 +701,7 @@ exports[`Status component should render correctly with description 1`] = `
           </span>
         </span>
       </div>
-      <div
-        class=""
-      >
+      <div>
         <div
           class="pf-v6-c-content statusLabel-0-2-2"
           data-ouia-component-id="Status-label"
