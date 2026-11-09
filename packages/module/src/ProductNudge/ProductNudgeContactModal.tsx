@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ComponentType, type CSSProperties, type FormEvent, type FunctionComponent, type ReactNode } from 'react';
+import { useEffect, useId, useMemo, useRef, useState, type ComponentType, type CSSProperties, type FormEvent, type FunctionComponent, type ReactNode } from 'react';
 import {
   Button,
   Alert,
@@ -66,7 +66,12 @@ export interface ProductNudgeContactModalProps {
   titleIconSize?: string;
   /** Error alert title shown after a failed submission. */
   errorTitle?: ReactNode;
-  /** Error alert message shown after a failed submission. */
+  /**
+   * Error alert message shown after a failed submission. Supply context-specific copy that
+   * names the problem and, where possible, how to resolve it (e.g. "Email format is invalid.
+   * Please ensure your email follows a similar format as john@mail.com."). Focus moves to the
+   * error alert after a failed submit so that assistive technology announces the error.
+   */
   errorMessage?: ReactNode;
   /** aria-label applied to the scrollable modal body region. */
   contentAriaLabel?: string;
@@ -100,13 +105,16 @@ const useStyles = createUseStyles({
   ...nudgeModeStyles
 });
 
-let contactModalInstance = 0;
+interface LightwellContactTitleIconProps {
+  /** Width/height of the icon container. */
+  size: string;
+}
 
-const createLightwellContactTitleIcon = (titleIconSize: string): FunctionComponent => () => {
+const LightwellContactTitleIcon: FunctionComponent<LightwellContactTitleIconProps> = ({ size }) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.titleIcon} style={createSquareImageSizeStyle(titleIconSize)}>
+    <div className={classes.titleIcon} style={createSquareImageSizeStyle(size)}>
       <img src={LightwellLogomark} alt="" className={classes.lightModeOnly} />
       <img src={LightwellLogomarkDark} alt="" className={classes.darkModeOnly} />
     </div>
@@ -134,16 +142,14 @@ export const ProductNudgeContactModal = ({
   ctaStyle: customCtaStyle,
   titleIconSize = '1.5rem',
   errorTitle = 'Unable to submit request',
-  errorMessage = 'Please try again. If the problem continues, contact support.',
+  errorMessage,
   contentAriaLabel = 'Contact request details',
   id,
 }: ProductNudgeContactModalProps) => {
   const classes = useStyles();
-  const idRef = useRef<string | undefined>(undefined);
-  if (!idRef.current) {
-    idRef.current = id ?? `product-nudge-contact-${++contactModalInstance}`;
-  }
-  const idPrefix = id ?? idRef.current;
+  const generatedId = useId();
+  const idPrefix = id ?? `product-nudge-contact-${generatedId.replace(/:/g, '')}`;
+  const errorRef = useRef<HTMLDivElement>(null);
   const resolvedFields: ProductNudgeContactFormField[] = fields ?? [
     { name: 'name', label: 'Name', type: 'text', placeholder: namePlaceholder, isRequired: true, autoComplete: 'name' },
     { name: 'email', label: 'E-mail', type: 'email', placeholder: emailPlaceholder, isRequired: true, autoComplete: 'email' },
@@ -163,9 +169,23 @@ export const ProductNudgeContactModal = ({
   };
   const ctaStyle = ctaStyleByScheme[resolvedCtaColorScheme];
 
-  const titleIconComponent = headerIcon
-    ? () => <>{headerIcon}</>
-    : titleIcon ?? (brand === 'lightwell' ? createLightwellContactTitleIcon(titleIconSize) : undefined);
+  // ModalHeader renders titleIconVariant as a component type. Keep that type stable and read the
+  // latest `headerIcon` node from a ref, so an inline element doesn't remount on every render.
+  const headerIconNodeRef = useRef<ReactNode>(headerIcon);
+  headerIconNodeRef.current = headerIcon;
+  const hasHeaderIcon = Boolean(headerIcon);
+  const titleIconComponent = useMemo<ComponentType | undefined>(() => {
+    if (hasHeaderIcon) {
+      return () => <>{headerIconNodeRef.current}</>;
+    }
+    if (titleIcon) {
+      return titleIcon;
+    }
+    if (brand === 'lightwell') {
+      return () => <LightwellContactTitleIcon size={titleIconSize} />;
+    }
+    return undefined;
+  }, [ hasHeaderIcon, titleIcon, brand, titleIconSize ]);
 
   useEffect(() => {
     if (isOpen) {
@@ -174,6 +194,12 @@ export const ProductNudgeContactModal = ({
       setHasSubmitError(false);
     }
   }, [ isOpen ]);
+
+  useEffect(() => {
+    if (hasSubmitError) {
+      errorRef.current?.focus();
+    }
+  }, [ hasSubmitError ]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -215,9 +241,11 @@ export const ProductNudgeContactModal = ({
         {isSubmitted ? successMessage : (
           <Form id={`${idPrefix}-form`} onSubmit={handleSubmit}>
             {hasSubmitError && (
-              <Alert variant="danger" title={errorTitle} isInline>
-                {errorMessage}
-              </Alert>
+              <div ref={errorRef} tabIndex={-1}>
+                <Alert variant="danger" title={errorTitle} isInline>
+                  {errorMessage}
+                </Alert>
+              </div>
             )}
             {resolvedFields.map((field) => {
               const fieldId = `${idPrefix}-${field.name.replace(/[^a-zA-Z0-9_-]/g, '-')}`;

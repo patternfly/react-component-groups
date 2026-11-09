@@ -36,8 +36,7 @@
     "@patternfly/react-icons": "^6.0.0",
     "@patternfly/react-styles": "^6.0.0",
     "@patternfly/react-table": "^6.6.2",
-    "react-jss": "^10.10.0",
-    "victory": "^37.3.6"
+    "react-jss": "^10.10.0"
   },
   "peerDependencies": {
     "@patternfly/react-charts": "^8.0.0",
@@ -55,6 +54,7 @@
     "@types/react-dom": "^18.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "victory": "^37.3.6"
   }
 }

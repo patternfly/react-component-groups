@@ -5,11 +5,17 @@ import { ProductNudgeImage } from './ProductNudge.types';
 import { ProductNudgeBrandLogo } from './ProductNudgeBrandLogo';
 
 export interface ProductNudgeModalFooterProps {
+  /** Action buttons/links rendered alongside the partner logo. */
   actions?: ReactNode;
+  /** Supporting copy rendered above the actions row. */
   footerText?: ReactNode;
+  /** Partner logo shown in light mode (and in dark mode when `partnerLogoDark` is not provided). */
   partnerLogo?: ProductNudgeImage;
+  /** Partner logo shown in dark mode; falls back to `partnerLogo` when not provided. */
   partnerLogoDark?: ProductNudgeImage;
+  /** Additional CSS class forwarded to the footer. */
   className?: string;
+  /** Centers the actions/logo row instead of the default space-between layout. */
   isCentered?: boolean;
 }
 

@@ -3,7 +3,7 @@ import ProductNudgeContactModal from './ProductNudgeContactModal';
 
 describe('ProductNudgeContactModal component', () => {
   it('renders when open', () => {
-    const { container } = render(
+    render(
       <ProductNudgeContactModal
         isOpen
         onClose={jest.fn()}
@@ -33,12 +33,10 @@ describe('ProductNudgeContactModal component', () => {
     expect(screen.getByRole('button', { name: 'Send request' })).toHaveStyle({
       '--pf-v6-c-button--BackgroundColor': 'var(--pf-t--color--red--50)'
     });
-
-    expect(container).toMatchSnapshot();
   });
 
   it('renders closed (nothing visible)', () => {
-    const { container } = render(
+    render(
       <ProductNudgeContactModal
         isOpen={false}
         onClose={jest.fn()}
@@ -47,12 +45,12 @@ describe('ProductNudgeContactModal component', () => {
         onSubmit={jest.fn().mockResolvedValue(undefined)}
       />,
     );
-    expect(container).toMatchSnapshot();
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
   it('renders supplied field placeholders and submits ContactFormValues', async () => {
     const onSubmit = jest.fn().mockResolvedValue(undefined);
-    const { container } = render(
+    render(
       <ProductNudgeContactModal
         isOpen
         onClose={jest.fn()}
@@ -73,7 +71,6 @@ describe('ProductNudgeContactModal component', () => {
     });
 
     expect(onSubmit).toHaveBeenCalledWith({ name: 'Jane Doe', email: 'jane@example.com', phone: '555-0100' });
-    expect(container).toMatchSnapshot();
   });
 
   it('renders configured fields and submits values using their names', async () => {
@@ -114,6 +111,7 @@ describe('ProductNudgeContactModal component', () => {
         titleText="Get in touch"
         submitText="Send request"
         fields={[ { name: 'email', label: 'Email', type: 'email' } ]}
+        errorMessage="Please try again. If the problem continues, contact support."
         onSubmit={onSubmit}
       />,
     );
@@ -165,5 +163,74 @@ describe('ProductNudgeContactModal component', () => {
 
     expect(await screen.findByText('Custom error message')).toBeInTheDocument();
     expect(screen.getByText('Custom error title')).toBeInTheDocument();
+  });
+
+  it('moves focus to the error alert after a failed submission', async () => {
+    const onSubmit = jest.fn().mockRejectedValue(new Error('Request failed'));
+    render(
+      <ProductNudgeContactModal
+        isOpen
+        onClose={jest.fn()}
+        titleText="Get in touch"
+        submitText="Send request"
+        fields={[ { name: 'email', label: 'Email', type: 'email' } ]}
+        errorTitle="Unable to submit"
+        errorMessage="Email format is invalid. Please ensure your email follows a format similar to john@mail.com."
+        onSubmit={onSubmit}
+      />,
+    );
+
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Send request' }));
+    });
+
+    const message = await screen.findByText(/Email format is invalid/);
+    expect(message.closest('[tabindex="-1"]')).toHaveFocus();
+  });
+
+  it('does not render a default error message', async () => {
+    const onSubmit = jest.fn().mockRejectedValue(new Error('Request failed'));
+    render(
+      <ProductNudgeContactModal
+        isOpen
+        onClose={jest.fn()}
+        titleText="Get in touch"
+        submitText="Send request"
+        fields={[ { name: 'email', label: 'Email', type: 'email' } ]}
+        onSubmit={onSubmit}
+      />,
+    );
+
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Send request' }));
+    });
+
+    expect(await screen.findByText('Unable to submit request')).toBeInTheDocument();
+    expect(screen.queryByText(/contact support/)).not.toBeInTheDocument();
+  });
+
+  it('keeps unique, stable ids across multiple modals', () => {
+    render(
+      <>
+        <ProductNudgeContactModal isOpen onClose={jest.fn()} titleText="First" submitText="Send" onSubmit={jest.fn()} />
+        <ProductNudgeContactModal isOpen onClose={jest.fn()} titleText="Second" submitText="Send" onSubmit={jest.fn()} />
+      </>,
+    );
+
+    const [ first, second ] = screen.getAllByRole('dialog', { hidden: true });
+    expect(first.getAttribute('aria-labelledby')).not.toEqual(second.getAttribute('aria-labelledby'));
+  });
+
+  it('keeps a consumer header icon mounted and up to date across rerenders', () => {
+    const props = { isOpen: true, onClose: jest.fn(), titleText: 'Get in touch', submitText: 'Send', onSubmit: jest.fn() };
+    const { rerender } = render(
+      <ProductNudgeContactModal {...props} headerIcon={<span data-testid="header-icon">First</span>} />,
+    );
+    const icon = screen.getByTestId('header-icon');
+
+    rerender(<ProductNudgeContactModal {...props} headerIcon={<span data-testid="header-icon">Second</span>} />);
+
+    expect(screen.getByTestId('header-icon')).toBe(icon);
+    expect(icon).toHaveTextContent('Second');
   });
 });

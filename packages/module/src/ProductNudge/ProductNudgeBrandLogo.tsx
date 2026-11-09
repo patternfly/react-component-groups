@@ -11,8 +11,11 @@ const useStyles = createUseStyles({
 });
 
 export interface ProductNudgeBrandLogoProps {
+  /** Logo shown in light mode (and in dark mode when `dark` is not provided). */
   light?: ProductNudgeImage;
+  /** Logo shown in dark mode; falls back to `light` when not provided. */
   dark?: ProductNudgeImage;
+  /** Additional CSS class applied to each rendered image. */
   className?: string;
 }
 

@@ -1,9 +1,9 @@
-import type { FunctionComponent } from 'react';
+import type { FunctionComponent, ReactNode } from 'react';
 import { useState } from 'react';
+import type { TitleProps } from '@patternfly/react-core';
 
 import {
   Alert,
-  AlertActionCloseButton,
   AlertActionLink,
   Button,
   Content,
@@ -14,6 +14,7 @@ import {
   Stack,
   StackItem,
   Title,
+  Tooltip,
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon.js';
@@ -33,7 +34,7 @@ import { ProductNudgeBrandLogo } from './ProductNudgeBrandLogo';
 import { lightwellBrandAssets } from './productNudgeDefaults';
 import {
   ProductNudgeBrand,
-  ProductNudgeProminence,
+  ProductNudgeVariant,
   ProductNudgeBehavior,
   NudgeContent,
   NudgeMetric,
@@ -43,7 +44,7 @@ import {
 
 export interface ProductNudgeProps {
   /** Visual layout variant */
-  prominence: ProductNudgeProminence;
+  variant: ProductNudgeVariant;
   /** Interaction behavior; defaults to 'persistent' */
   behavior?: ProductNudgeBehavior;
   /** All displayable content */
@@ -54,8 +55,8 @@ export interface ProductNudgeProps {
   isEligible: boolean;
   /** Shows a loading spinner and disables a non-link CTA while its action is in progress. */
   isLoading?: boolean;
-  /** Called when a non-link CTA is clicked */
-  onAction: () => void;
+  /** Called when a non-link (contact) CTA is clicked. Not needed when `content.cta.action` is `'link'`. A contact CTA is not rendered without it. */
+  onAction?: () => void;
   /** Called when the user dismisses (behavior='dismissible') */
   onDismiss?: () => void;
   /** Called once when the component is 50% visible in the viewport */
@@ -66,8 +67,10 @@ export interface ProductNudgeProps {
   ctaColorScheme?: ProductNudgeCtaColorScheme;
   /** CTA inline style applied when `ctaColorScheme="custom"`. */
   ctaStyle?: React.CSSProperties;
-  /** Heading level for the headline; defaults to the existing level for the selected prominence. */
+  /** Heading level for the headline; defaults to the existing level for the selected variant. */
   headingLevel?: ProductNudgeHeadingLevel;
+  /** Size of the headline; defaults to '2xl' for `full-width`, 'lg' otherwise. Set this to keep the headline visually consistent with a non-default `headingLevel`. */
+  headingSize?: TitleProps['size'];
   /** Width of the full logo (hero/alert); defaults to '6rem'. */
   logoSize?: string;
   /** Inline-start margin of the full logo, used to compensate for an asset's internal padding; defaults to '-10px' for the Lightwell logo, '0' for a caller-supplied logo. */
@@ -84,6 +87,8 @@ export interface ProductNudgeProps {
   ouiaId?: string;
   /** Prefix used in the dismiss button's aria-label, followed by the headline. */
   dismissAriaLabelPrefix?: string;
+  /** Tooltip content shown on the dismiss button; defaults to the same text as the dismiss aria-label. */
+  dismissTooltipContent?: ReactNode;
   /** Text for the "show less" toggle when `behavior="collapsible"`. */
   showLessText?: string;
   /** Prefix used in the alert's expand/collapse toggle aria-label, followed by the headline. */
@@ -132,7 +137,7 @@ const formatMetricValue = (value: string | number, format: 'percentage' | 'count
 };
 
 const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
-  prominence,
+  variant,
   behavior = 'persistent',
   content,
   metrics = [],
@@ -144,6 +149,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
   ctaColorScheme,
   ctaStyle: customCtaStyle,
   headingLevel,
+  headingSize,
   logoSize,
   logoOffset,
   logoMarkSize,
@@ -153,6 +159,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
   className,
   ouiaId = 'ProductNudge',
   dismissAriaLabelPrefix = 'Dismiss ',
+  dismissTooltipContent,
   showLessText = 'Show less',
   showDetailsAriaLabelPrefix = 'Show details for ',
 }: ProductNudgeProps) => {
@@ -211,47 +218,66 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
   );
 
   const dismissControl = behavior === 'dismissible' && (
-    <Button
-      variant="plain"
-      aria-label={`${dismissAriaLabelPrefix}${content.headline}`}
-      onClick={handleDismiss}
-      icon={<TimesIcon />}
-      ouiaId={`${ouiaId}-dismiss`}
-    />
+    <Tooltip
+      content={dismissTooltipContent ?? `${dismissAriaLabelPrefix}${content.headline}`}
+      // The default tooltip repeats the button's aria-label, so don't announce it twice.
+      aria={dismissTooltipContent ? 'describedby' : 'none'}
+    >
+      <Button
+        variant="plain"
+        aria-label={`${dismissAriaLabelPrefix}${content.headline}`}
+        onClick={handleDismiss}
+        icon={<TimesIcon />}
+        ouiaId={`${ouiaId}-dismiss`}
+      />
+    </Tooltip>
   );
 
-  const ctaButton =
-    content.cta.action === 'link' ? (
+  const sharedCtaProps = {
+    variant: 'primary' as const,
+    size: variant === 'full-width' ? ('lg' as const) : undefined,
+    ouiaId: `${ouiaId}-cta`,
+    style: ctaStyle,
+  };
+
+  // A contact CTA needs an `onAction` handler; without one there is nothing for the button to do.
+  const showCta = content.cta.action === 'link' || Boolean(onAction);
+
+  const renderCtaButton = () => {
+    if (!showCta) {
+      return null;
+    }
+    if (content.cta.action === 'link') {
+      return (
+        <Button
+          {...sharedCtaProps}
+          component="a"
+          href={ctaHref}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {content.cta.label}
+        </Button>
+      );
+    }
+    return (
       <Button
-        component="a"
-        href={ctaHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        variant="primary"
-        size={prominence === 'hero' ? 'lg' : undefined}
-        ouiaId={`${ouiaId}-cta`}
-        style={ctaStyle}
-      >
-        {content.cta.label}
-      </Button>
-    ) : (
-      <Button
-        variant="primary"
-        size={prominence === 'hero' ? 'lg' : undefined}
+        {...sharedCtaProps}
         onClick={onAction}
         isLoading={isLoading}
         isDisabled={isLoading}
-        ouiaId={`${ouiaId}-cta`}
-        style={ctaStyle}
       >
         {content.cta.label}
       </Button>
     );
+  };
+  const ctaButton = renderCtaButton();
 
+  const hasPartnerLogo = Boolean(assets.partnerLogo || assets.partnerLogoDark);
   const cta = (
     <Flex alignItems={{ default: 'alignItemsCenter' }} spaceItems={{ default: 'spaceItemsMd' }}>
-      <FlexItem>{ctaButton}</FlexItem>
-      {(assets.partnerLogo || assets.partnerLogoDark) && (
+      {ctaButton && <FlexItem>{ctaButton}</FlexItem>}
+      {hasPartnerLogo && (
         <FlexItem>
           <ProductNudgeBrandLogo light={assets.partnerLogo} dark={assets.partnerLogoDark} />
         </FlexItem>
@@ -281,8 +307,8 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
       )}
       <StackItem>
         <Title
-          headingLevel={headingLevel ?? (prominence === 'hero' ? 'h1' : 'h2')}
-          size={prominence === 'hero' ? '2xl' : 'lg'}
+          headingLevel={headingLevel ?? (variant === 'full-width' ? 'h1' : 'h2')}
+          size={headingSize ?? (variant === 'full-width' ? '2xl' : 'lg')}
           data-ouia-component-id={`${ouiaId}-title`}
         >
           {content.headline}
@@ -300,15 +326,15 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
         )}
       </StackItem>
       {metricsRow && <StackItem>{metricsRow}</StackItem>}
-      <StackItem>{cta}</StackItem>
+      {(showCta || hasPartnerLogo) && <StackItem>{cta}</StackItem>}
     </Stack>
   );
 
-  const nudgePaddingClass = prominence === 'hero' || prominence === 'alert' ? undefined : classes.nudge;
+  const nudgePaddingClass = variant === 'full-width' || variant === 'inline' ? undefined : classes.nudge;
 
   const rootClassName = css(
     'pf-v6-product-nudge',
-    `pf-v6-product-nudge--${prominence}`,
+    `pf-v6-product-nudge--${variant}`,
     nudgePaddingClass,
     className,
   );
@@ -323,7 +349,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
     </ExpandableSection>
   ) : children;
 
-  if (prominence === 'hero') {
+  if (variant === 'full-width') {
     return (
       <div ref={impressionRef}>
         <Hero
@@ -349,16 +375,16 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
             }),
           } as React.CSSProperties}
         >
-          <div className={classes.heroContent}>{withExpandableContent(body)}</div>
           {dismissControl && (
             <div className={classes.heroDismiss}>{dismissControl}</div>
           )}
+          <div className={classes.heroContent}>{withExpandableContent(body)}</div>
         </Hero>
       </div>
     );
   }
 
-  if (prominence === 'alert') {
+  if (variant === 'inline') {
     const alertIconImage = content.assets?.logo ?? assets.logomark ?? assets.logo;
     const alertIconDark = content.assets?.logoDark ?? assets.logomarkDark ?? assets.logoDark;
     const alertIcon = content.icon ?? (alertIconImage ? (
@@ -368,7 +394,6 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
           style={resolvedLogoMarkStyle}
           src={alertIconImage.src}
           alt=""
-          aria-hidden
         />
         {alertIconDark && (
           <img
@@ -376,28 +401,35 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
             style={resolvedLogoMarkStyle}
             src={alertIconDark.src}
             alt=""
-            aria-hidden
           />
         )}
       </>
     ) : undefined);
 
-    const alertCta =
-      content.cta.action === 'link' ? (
-        <AlertActionLink
-          component="a"
-          href={ctaHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          ouiaId={`${ouiaId}-cta`}
-        >
-          {content.cta.label}
-        </AlertActionLink>
-      ) : (
+    const renderAlertCta = () => {
+      if (!showCta) {
+        return undefined;
+      }
+      if (content.cta.action === 'link') {
+        return (
+          <AlertActionLink
+            component="a"
+            href={ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            ouiaId={`${ouiaId}-cta`}
+          >
+            {content.cta.label}
+          </AlertActionLink>
+        );
+      }
+      return (
         <AlertActionLink onClick={onAction} ouiaId={`${ouiaId}-cta`}>
           {content.cta.label}
         </AlertActionLink>
       );
+    };
+    const alertCta = renderAlertCta();
 
     return (
       <div ref={impressionRef} className={rootClassName} data-ouia-component-id={ouiaId}>
@@ -409,13 +441,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
           toggleAriaLabel={`${showDetailsAriaLabelPrefix}${content.headline}`}
           title={content.headline}
           customIcon={alertIcon}
-          actionClose={behavior === 'dismissible' ? (
-            <AlertActionCloseButton
-              title={content.headline}
-              onClose={handleDismiss}
-              ouiaId={`${ouiaId}-dismiss`}
-            />
-          ) : undefined}
+          actionClose={dismissControl || undefined}
           actionLinks={alertCta}
           ouiaId={`${ouiaId}-alert`}
         >
@@ -427,9 +453,9 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
     );
   }
 
-  if (prominence === 'field') {
+  if (variant === 'compact') {
     const fieldValue = metrics[0]
-      ? String(formatMetricValue(metrics[0].value, metrics[0].format))
+      ? `${formatMetricValue(metrics[0].value, metrics[0].format)} ${metrics[0].label}`
       : undefined;
     const fieldContent = (
       <ProductNudgeStack

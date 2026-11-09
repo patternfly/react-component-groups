@@ -1,5 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { getResizeObserver } from '@patternfly/react-core';
 import ProductNudgeDataModal from './ProductNudgeDataModal';
+
+jest.mock('@patternfly/react-core', () => {
+  const actual = jest.requireActual('@patternfly/react-core');
+  return { ...actual, getResizeObserver: jest.fn(actual.getResizeObserver) };
+});
 
 const lightwellProps = {
   brand: 'lightwell' as const,
@@ -17,10 +23,15 @@ const lightwellProps = {
 
 describe('ProductNudgeDataModal component', () => {
   it('renders when open', () => {
-    const { container } = render(
-      <ProductNudgeDataModal {...lightwellProps} isOpen onClose={jest.fn()} />,
+    render(<ProductNudgeDataModal {...lightwellProps} isOpen onClose={jest.fn()} />);
+
+    expect(screen.getByRole('dialog', { name: 'Lightwell Lens' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Match analysis' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'By ecosystem' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Learn more about Lightwell' })).toHaveAttribute(
+      'href',
+      'https://www.redhat.com/en/lightwell',
     );
-    expect(container).toMatchSnapshot();
   });
 
   it('associates the dialog description and labels its scrollable body', () => {
@@ -35,10 +46,9 @@ describe('ProductNudgeDataModal component', () => {
   });
 
   it('renders closed', () => {
-    const { container } = render(
-      <ProductNudgeDataModal {...lightwellProps} isOpen={false} onClose={jest.fn()} />,
-    );
-    expect(container).toMatchSnapshot();
+    render(<ProductNudgeDataModal {...lightwellProps} isOpen={false} onClose={jest.fn()} />);
+
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
   it('renders supplied match analysis data', () => {
@@ -206,5 +216,122 @@ describe('ProductNudgeDataModal component', () => {
     const titleLogo = productTitle.parentElement?.querySelector('img');
     expect(titleLogo?.parentElement).toHaveStyle({ width: '2rem', height: '2rem' });
     expect(screen.getByRole('region', { name: 'Custom region label' })).toBeInTheDocument();
+  });
+
+  it('renders only the match analysis when ecosystemData is omitted', () => {
+    render(<ProductNudgeDataModal {...lightwellProps} ecosystemData={undefined} isOpen onClose={jest.fn()} />);
+
+    expect(screen.getByRole('heading', { name: 'Match analysis' })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'By ecosystem' })).not.toBeInTheDocument();
+  });
+
+  it('renders only the ecosystem chart when matchData is omitted', () => {
+    render(<ProductNudgeDataModal {...lightwellProps} matchData={undefined} isOpen onClose={jest.fn()} />);
+
+    expect(screen.getByRole('heading', { name: 'By ecosystem' })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Match analysis' })).not.toBeInTheDocument();
+  });
+
+  it('renders no charts when neither matchData nor ecosystemData is provided', () => {
+    render(<ProductNudgeDataModal titleText="Empty" isOpen onClose={jest.fn()} />);
+
+    expect(screen.queryByRole('heading', { name: 'Match analysis' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'By ecosystem' })).not.toBeInTheDocument();
+  });
+
+  it('prefers customContent over both built-in charts', () => {
+    render(<ProductNudgeDataModal {...lightwellProps} customContent={<p>Custom body</p>} isOpen onClose={jest.fn()} />);
+
+    expect(screen.getByText('Custom body')).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Match analysis' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'By ecosystem' })).not.toBeInTheDocument();
+  });
+
+  it('scales the ecosystem chart axis to data larger than 200', () => {
+    render(
+      <ProductNudgeDataModal
+        {...lightwellProps}
+        ecosystemData={[ { name: 'Java', exact: 350, partial: 20, noMatch: 10 } ]}
+        isOpen
+        onClose={jest.fn()}
+      />,
+    );
+
+    const chart = screen.getByRole('region', { name: 'By ecosystem chart' }).querySelector('svg');
+    expect(chart?.textContent).toContain('400');
+  });
+
+  it('keeps the default axis ticks for small ecosystem data', () => {
+    render(<ProductNudgeDataModal {...lightwellProps} isOpen onClose={jest.fn()} />);
+
+    const chart = screen.getByRole('region', { name: 'By ecosystem chart' }).querySelector('svg');
+    expect(chart?.textContent).toContain('200');
+    expect(chart?.textContent).not.toContain('400');
+  });
+
+  it('observes the ecosystem chart when the modal starts closed and is opened later', () => {
+    const resizeObserverMock = getResizeObserver as jest.Mock;
+    resizeObserverMock.mockClear();
+    const { rerender } = render(<ProductNudgeDataModal {...lightwellProps} isOpen={false} onClose={jest.fn()} />);
+    expect(resizeObserverMock).not.toHaveBeenCalled();
+
+    rerender(<ProductNudgeDataModal {...lightwellProps} isOpen onClose={jest.fn()} />);
+
+    expect(resizeObserverMock).toHaveBeenCalledWith(
+      screen.getByRole('region', { name: 'By ecosystem chart' }),
+      expect.any(Function),
+    );
+  });
+
+  it('renders the secondary link action with a trailing icon in the button icon slot', () => {
+    render(<ProductNudgeDataModal {...lightwellProps} isOpen onClose={jest.fn()} />);
+
+    const link = screen.getByRole('link', { name: 'Learn more about Lightwell' });
+    expect(link.querySelector('.pf-v6-c-button__icon.pf-m-end svg')).toBeInTheDocument();
+  });
+
+  it('does not remount the title icon when the modal rerenders with the same props', () => {
+    const { rerender } = render(<ProductNudgeDataModal {...lightwellProps} isOpen onClose={jest.fn()} />);
+    const icon = screen.getByRole('dialog').querySelector('.pf-v6-c-modal-box__title-icon img');
+
+    rerender(<ProductNudgeDataModal {...lightwellProps} isOpen onClose={jest.fn()} />);
+
+    expect(screen.getByRole('dialog').querySelector('.pf-v6-c-modal-box__title-icon img')).toBe(icon);
+  });
+
+  it('keeps the ecosystem axis close to the data instead of overshooting', () => {
+    render(
+      <ProductNudgeDataModal
+        {...lightwellProps}
+        ecosystemData={[ { name: 'Java', exact: 70, partial: 120, noMatch: 804 } ]}
+        isOpen
+        onClose={jest.fn()}
+      />,
+    );
+
+    const chart = screen.getByRole('region', { name: 'By ecosystem chart' }).querySelector('svg');
+    expect(chart?.textContent).toContain('1K');
+    expect(chart?.textContent).not.toContain('2K');
+  });
+
+  it('does not render the ecosystem section for an empty ecosystemData array', () => {
+    render(<ProductNudgeDataModal {...lightwellProps} ecosystemData={[]} isOpen onClose={jest.fn()} />);
+
+    expect(screen.queryByRole('heading', { name: 'By ecosystem' })).not.toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Match analysis' })).toBeInTheDocument();
+  });
+
+  it('keeps a consumer title icon mounted and up to date across rerenders', () => {
+    const { rerender } = render(
+      <ProductNudgeDataModal {...lightwellProps} titleIcon={<span data-testid="title-icon">First</span>} isOpen onClose={jest.fn()} />,
+    );
+    const icon = screen.getByTestId('title-icon');
+
+    rerender(
+      <ProductNudgeDataModal {...lightwellProps} titleIcon={<span data-testid="title-icon">Second</span>} isOpen onClose={jest.fn()} />,
+    );
+
+    expect(screen.getByTestId('title-icon')).toBe(icon);
+    expect(icon).toHaveTextContent('Second');
   });
 });

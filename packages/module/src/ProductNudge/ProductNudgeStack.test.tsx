@@ -45,7 +45,7 @@ describe('ProductNudgeStack component', () => {
     const { container } = render(
       <ProductNudgeStack isEligible={false} titleText="Headline" bodyText="Body text." />,
     );
-    expect(container).toMatchSnapshot();
+    expect(container).toBeEmptyDOMElement();
   });
 
   it('renders when eligible', () => {
@@ -59,14 +59,19 @@ describe('ProductNudgeStack component', () => {
         logo={{ src: 'logo.png', alt: 'Logo' }}
       />,
     );
-    expect(container).toMatchSnapshot();
+
+    expect(screen.getByText('Headline')).toBeInTheDocument();
+    expect(screen.getByText('Body text.')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Learn more' })).toHaveAttribute('href', 'https://example.com');
+    expect(container.querySelector('img')).toHaveAttribute('src', 'logo.png');
   });
 
   it('renders without logo or CTA link', () => {
-    const { container } = render(
-      <ProductNudgeStack isEligible titleText="Headline" bodyText="Body text." />,
-    );
-    expect(container).toMatchSnapshot();
+    const { container } = render(<ProductNudgeStack isEligible titleText="Headline" bodyText="Body text." />);
+
+    expect(screen.getByText('Headline')).toBeInTheDocument();
+    expect(screen.queryByRole('link')).not.toBeInTheDocument();
+    expect(container.querySelector('img')).not.toBeInTheDocument();
   });
 
   it('calls onImpression once when at least half visible', () => {

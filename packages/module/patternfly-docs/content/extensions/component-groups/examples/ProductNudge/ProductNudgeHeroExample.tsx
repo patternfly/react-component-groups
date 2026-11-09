@@ -25,7 +25,7 @@ export const ProductNudgeHeroExample: React.FunctionComponent = () => {
         onChange={(_event, checked) => setUseLightwell(checked)}
       />
       <ProductNudge
-        prominence="hero"
+        variant="full-width"
         brand={useLightwell ? 'lightwell' : undefined}
         behavior="dismissible"
         isEligible

@@ -3,7 +3,7 @@ import ProductNudge from '@patternfly/react-component-groups/dist/dynamic/Produc
 
 export const ProductNudgeAlertExample: React.FunctionComponent = () => (
   <ProductNudge
-    prominence="alert"
+    variant="inline"
     brand="lightwell"
     behavior="dismissible"
     isEligible

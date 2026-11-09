@@ -10,7 +10,7 @@ export const ProductNudgeContactModalExample: React.FunctionComponent = () => {
     <>
       <Checkbox
         id="contact-modal-use-lightwell"
-        label="Use Lightwell branding"
+        label="Use Lightwell branding and default fields"
         isChecked={useLightwell}
         onChange={(_event, checked) => setUseLightwell(checked)}
       />
