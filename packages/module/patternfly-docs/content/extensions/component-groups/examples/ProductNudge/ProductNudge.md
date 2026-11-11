@@ -50,8 +50,6 @@ Product copy is always supplied by the caller. Components that support `brand="l
 
 The `full-width` variant spans the available width and uses a large CTA.
 
-<div className="pf-v6-u-mb-md" />
-
 The Lightwell preset's small SVG logo, logomark, and partner-logo assets ship with the package by default. Its hero background images (~2 MB combined) are published separately and are not included in the default import. To use the Lightwell hero background, import `lightwellBackgroundAssets` from `@patternfly/react-component-groups/dist/esm/ProductNudge/productNudgeLightwellBackgrounds` and spread it into `content.assets`, as shown below. Brand image sizing (`logoSize`/`logoOffset` and `logoMarkSize`/`logoMarkOffset`) and the hero background color (`backgroundColor`) can be overridden regardless of brand. To define a custom CTA color scheme, set `ctaColorScheme="custom"` and provide `ctaStyle`.
 
 ```js file="./ProductNudgeHeroExample.tsx"
@@ -70,11 +68,7 @@ The `inline` variant uses an inline PatternFly [alert](/components/Alert), makin
 
 Use `ProductNudgeContactModal` to provide a contact or lead-capture form. Your application controls when the modal opens and what happens after submission.
 
-<div className="pf-v6-u-mb-md" />
-
 Set `titleText`, `descriptionText`, and `submitText` for the modal content. By default, the form has name, email, and phone fields. You can pass the `fields` property to configure custom fields, including their names, labels, input types, placeholders, required state, autocomplete, and help text. The `onSubmit` callback receives an object keyed by each field's `name`.
-
-<div className="pf-v6-u-mb-md" />
 
 Uncheck "Use Lightwell branding and default fields" to see a custom field configuration with generic placeholder copy instead of the Lightwell preset.
 
@@ -86,8 +80,6 @@ Uncheck "Use Lightwell branding and default fields" to see a custom field config
 
 When `onSubmit` rejects, the modal shows an inline danger alert at the top of the form and moves focus to it. Provide a specific `errorMessage` that lists each field with an error, states the issue, and, where possible, how to resolve it. For example: "Work email format is invalid. Please ensure your email follows a format similar to `john@mail.com`." The `errorTitle` can stay more generic.
 
-<div className="pf-v6-u-mb-md" />
-
 In this example, `onSubmit` validates the values, stores one message per invalid field in state, and then throws. Submit with empty or invalid values to see the alert. The work email field uses `type: 'text'` so the browser's built-in validation doesn't intercept the submission.
 
 ```js file="./ProductNudgeContactModalErrorExample.tsx"
@@ -97,8 +89,6 @@ In this example, `onSubmit` validates the values, stores one message per invalid
 ### Data modal
 
 `ProductNudgeDataModal` shows built-in match charts. Pass `matchData` to show the match analysis chart, `ecosystemData` to show the by-ecosystem chart, or both to show both charts. The ecosystem chart's axis scales to fit your data. The chart data, colors, brand, icon, and partner logo are customizable.
-
-<div className="pf-v6-u-mb-md" />
 
 When using the built-in charts, load `@patternfly/patternfly/patternfly-charts.css` alongside the standard PatternFly styles. It provides chart design tokens, including theme-aware colors for dark mode.
 
