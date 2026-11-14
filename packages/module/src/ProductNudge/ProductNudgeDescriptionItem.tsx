@@ -97,7 +97,6 @@ export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescript
         <img
           src={lightTermLogo.src}
           alt=""
-          aria-hidden
           style={resolvedTermIconStyle}
           className={`${classes.termIcon} ${darkTermLogo ? classes.lightModeOnly : ''}`}
         />
@@ -106,7 +105,6 @@ export const ProductNudgeDescriptionItem: FunctionComponent<ProductNudgeDescript
         <img
           src={darkTermLogo.src}
           alt=""
-          aria-hidden
           style={resolvedTermIconStyle}
           className={`${classes.termIcon} ${classes.darkModeOnly}`}
         />

@@ -119,7 +119,6 @@ export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
                 style={resolvedLogoMarkStyle}
                 src={resolvedLogo.src}
                 alt=""
-                aria-hidden
               />
               {resolvedLogoDark && (
                 <img
@@ -127,7 +126,6 @@ export const ProductNudgeStack: FunctionComponent<ProductNudgeStackProps> = ({
                   style={resolvedLogoMarkStyle}
                   src={resolvedLogoDark.src}
                   alt=""
-                  aria-hidden
                 />
               )}
             </FlexItem>
