@@ -12,6 +12,8 @@ export interface MissingPageProps extends Omit<EmptyStateProps, 'children' | 'ti
   titleText?: React.ReactNode;
   /** The body text for the invalid object message */
   bodyText?: React.ReactNode;
+  /** Custom footer content. Replaces the default home page link when specified. */
+  customFooter?: React.ReactNode;
   /** Custom OUIA ID */
   ouiaId?: string | number;
 }
@@ -21,6 +23,7 @@ export const MissingPage: FunctionComponent<MissingPageProps> = ({
   toHomePageText = 'Return to homepage',
   titleText = 'We lost that page',
   bodyText = "Let's find you a new one. Try a new search or return home.",
+  customFooter,
   ouiaId = "MissingPage",
   headingLevel = 'h1',
   ...props
@@ -28,9 +31,11 @@ export const MissingPage: FunctionComponent<MissingPageProps> = ({
   <EmptyState headingLevel={headingLevel} icon={NotFoundIcon} variant={EmptyStateVariant.full} data-ouia-component-id={ouiaId} {...props} titleText={titleText}>
     <EmptyStateBody data-ouia-component-id={`${ouiaId}-body`}>{bodyText}</EmptyStateBody>
     <EmptyStateFooter data-ouia-component-id={`${ouiaId}-footer`}>
-      <Button variant="link" component="a" href={toHomePageUrl} ouiaId={`${ouiaId}-home-button`}>
-        {toHomePageText}
-      </Button>
+      {customFooter || (
+        <Button variant="link" component="a" href={toHomePageUrl} ouiaId={`${ouiaId}-home-button`}>
+          {toHomePageText}
+        </Button>
+      )}
     </EmptyStateFooter>
   </EmptyState>
 );
