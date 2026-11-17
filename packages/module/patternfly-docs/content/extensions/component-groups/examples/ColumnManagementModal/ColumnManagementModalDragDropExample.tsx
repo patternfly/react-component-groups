@@ -12,7 +12,8 @@ const DEFAULT_COLUMNS: ColumnManagementModalColumn[] = [
     key: 'id',
     isShownByDefault: true,
     isShown: true,
-    isUntoggleable: true
+    isUntoggleable: true,
+    isSticky: true
   },
   {
     title: 'Publish date',

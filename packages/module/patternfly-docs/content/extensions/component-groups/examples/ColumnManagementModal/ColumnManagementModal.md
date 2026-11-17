@@ -32,7 +32,7 @@ Clicking the "Manage columns" button will open the column management modal. The 
 
 ### With drag and drop reordering
 
-When `enableDragDrop` is set to `true`, users can drag and drop columns to reorder them. The order changes are reflected both in the modal and in the table when applied. This is useful when column order matters for the user experience.
+When `enableDragDrop` is set to `true`, users can drag and drop columns to reorder them. The order changes are reflected both in the modal and in the table when applied. Select a column's **Sticky** checkbox to keep it at its current position; other columns cannot be moved into that position. The `isSticky` column property reflects this selection. In this example, the first `ID` column is sticky.
 
 ```js file="./ColumnManagementModalDragDropExample.tsx"
 
