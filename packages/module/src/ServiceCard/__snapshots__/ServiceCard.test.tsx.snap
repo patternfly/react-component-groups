@@ -26,9 +26,7 @@ exports[`ServiceCard component should render ServiceCard component 1`] = `
               >
                 /
               </div>
-              <div
-                class=""
-              >
+              <div>
                 <div
                   class="pf-v6-c-content"
                   data-ouia-component-id="OUIA-Generated-Content-:r2:"
@@ -82,9 +80,7 @@ exports[`ServiceCard component should render ServiceCard component 1`] = `
             >
               /
             </div>
-            <div
-              class=""
-            >
+            <div>
               <div
                 class="pf-v6-c-content"
                 data-ouia-component-id="OUIA-Generated-Content-:r2:"

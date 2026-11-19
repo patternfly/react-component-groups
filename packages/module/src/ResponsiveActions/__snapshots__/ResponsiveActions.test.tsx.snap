@@ -69,6 +69,7 @@ exports[`ResponsiveActions component should render correctly ResponsiveActions 1
        
       <button
         aria-expanded="false"
+        aria-haspopup="menu"
         aria-label="Actions overflow menu"
         class="pf-v6-c-menu-toggle pf-m-plain"
         data-ouia-component-id="ResponsiveActions-menu-dropdown-toggle"

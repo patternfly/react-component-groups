@@ -9,9 +9,7 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
         class="pf-v6-l-flex pf-m-column"
         data-ouia-component-id="LogSnippet"
       >
-        <div
-          class=""
-        >
+        <div>
           <div
             class="pf-v6-c-alert pf-m-inline pf-m-plain pf-m-danger"
             data-ouia-component-id="LogSnippet-message"
@@ -47,9 +45,7 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
             </h4>
           </div>
         </div>
-        <div
-          class=""
-        >
+        <div>
           <div
             class="pf-v6-c-code-block"
             data-ouia-component-id="LogSnippet-code-block"
@@ -78,9 +74,7 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
       class="pf-v6-l-flex pf-m-column"
       data-ouia-component-id="LogSnippet"
     >
-      <div
-        class=""
-      >
+      <div>
         <div
           class="pf-v6-c-alert pf-m-inline pf-m-plain pf-m-danger"
           data-ouia-component-id="LogSnippet-message"
@@ -116,9 +110,7 @@ exports[`LogSnippet component should render LogSnippet component 1`] = `
           </h4>
         </div>
       </div>
-      <div
-        class=""
-      >
+      <div>
         <div
           class="pf-v6-c-code-block"
           data-ouia-component-id="LogSnippet-code-block"

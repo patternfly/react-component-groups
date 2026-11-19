@@ -14,7 +14,6 @@ exports[`ShortcutGrid component should render correctly 1`] = `
           data-ouia-component-id="ShortcutGrid-item-0"
         >
           <span
-            class=""
             data-ouia-component-id="Shortcut"
           >
             <span>
@@ -80,7 +79,6 @@ exports[`ShortcutGrid component should render correctly 1`] = `
           data-ouia-component-id="ShortcutGrid-item-1"
         >
           <span
-            class=""
             data-ouia-component-id="Shortcut"
           >
             <span>
@@ -128,7 +126,6 @@ exports[`ShortcutGrid component should render correctly 1`] = `
           data-ouia-component-id="ShortcutGrid-item-2"
         >
           <span
-            class=""
             data-ouia-component-id="Shortcut"
           >
             <span>
@@ -197,7 +194,6 @@ exports[`ShortcutGrid component should render correctly 1`] = `
         data-ouia-component-id="ShortcutGrid-item-0"
       >
         <span
-          class=""
           data-ouia-component-id="Shortcut"
         >
           <span>
@@ -263,7 +259,6 @@ exports[`ShortcutGrid component should render correctly 1`] = `
         data-ouia-component-id="ShortcutGrid-item-1"
       >
         <span
-          class=""
           data-ouia-component-id="Shortcut"
         >
           <span>
@@ -311,7 +306,6 @@ exports[`ShortcutGrid component should render correctly 1`] = `
         data-ouia-component-id="ShortcutGrid-item-2"
       >
         <span
-          class=""
           data-ouia-component-id="Shortcut"
         >
           <span>
