@@ -3,6 +3,34 @@ import { css } from '@patternfly/react-styles';
 import { createUseStyles } from 'react-jss';
 import { Modal, type ModalProps } from '@patternfly/react-core';
 
+export interface StackEscapeEntry {
+  /** Whether this overlay currently participates in the stack. */
+  isOpen: boolean;
+  /** Handles Escape when this entry is the topmost open overlay. */
+  onEscapePress: (event: KeyboardEvent) => void;
+}
+
+/**
+ * Creates a shared Escape handler for Modals and Tearsheets ordered from back to front.
+ * Create the handler during render with current open states and callbacks, and pass it
+ * to every participating overlay's onEscapePress prop. Only the last open entry handles
+ * Escape, even if its callback does not dismiss the overlay.
+ */
+export function createStackEscapeHandler(entries: readonly StackEscapeEntry[]): (event: KeyboardEvent) => void {
+  return (event) => {
+    for (let index = entries.length - 1; index >= 0; index--) {
+      const entry = entries[index];
+
+      if (entry.isOpen) {
+        // Each Modal registers a native listener; handle this event only once.
+        event.stopImmediatePropagation();
+        entry.onEscapePress(event);
+        return;
+      }
+    }
+  };
+}
+
 const useStyles = createUseStyles({
   tearsheet: {
     width: 'calc(100% - 4rem) !important',

@@ -10,7 +10,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 import { Fragment, useState } from 'react';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import TearsheetGroup from '@patternfly/react-component-groups/dist/dynamic/TearsheetGroup';
-import Tearsheet from '@patternfly/react-component-groups/dist/dynamic/Tearsheet';
+import Tearsheet, { createStackEscapeHandler } from '@patternfly/react-component-groups/dist/dynamic/Tearsheet';
 import TearsheetHeader from '@patternfly/react-component-groups/dist/dynamic/TearsheetHeader';
 import TearsheetBody from '@patternfly/react-component-groups/dist/dynamic/TearsheetBody';
 import TearsheetFooter from '@patternfly/react-component-groups/dist/dynamic/TearsheetFooter';
