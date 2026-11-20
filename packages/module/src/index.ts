@@ -57,6 +57,9 @@ export * from './ResponsiveActions';
 export { default as ResponsiveAction } from './ResponsiveAction';
 export * from './ResponsiveAction';
 
+export { default as ProductNudge } from './ProductNudge';
+export * from './ProductNudge';
+
 export { default as PageHeader } from './PageHeader';
 export * from './PageHeader';
 

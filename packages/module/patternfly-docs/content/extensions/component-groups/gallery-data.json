@@ -41,6 +41,9 @@
   "page-header": {
     "summary": "A page header with a title, subtitle and other optional content."
   },
+  "product-nudge": {
+    "summary": "A promotional nudge component for surfacing product offers in context."
+  },
   "responsive-actions": {
     "summary": "Displays actions in a responsive layout."
   },
