@@ -81,6 +81,8 @@ export interface ProductNudgeProps {
   logoMarkOffset?: string;
   /** Hero background color; defaults to the Lightwell tint when `brand="lightwell"`, otherwise unset. */
   backgroundColor?: string;
+  /** Scale (greater than 0, up to 1) applied to the full-width variant's background image, anchored to the inline-end edge; defaults to 0.8 for `brand="lightwell"`, 1 otherwise. Lower values keep text clear of the artwork. */
+  backgroundImageScale?: number;
   /** Additional CSS class forwarded to the root element */
   className?: string;
   /** OUIA component ID */
@@ -112,7 +114,28 @@ const useStyles = createUseStyles({
       '--pf-v6-c-hero--BackgroundColor': 'var(--pf-t--color--black)',
     },
   },
+  // The artwork lives on a pseudo-element, not the hero's own background, so it can be scaled
+  // (transforms don't apply to backgrounds) while keeping `contain` sizing at any hero height.
+  heroArt: {
+    overflow: 'hidden',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      inset: 0,
+      pointerEvents: 'none',
+      backgroundImage: 'var(--pn-nudge-bg-light)',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'right center',
+      backgroundSize: 'contain',
+      transform: 'scale(var(--pn-nudge-bg-scale, 1))',
+      transformOrigin: 'right center',
+    },
+    '.pf-v6-theme-dark &::before': {
+      backgroundImage: 'var(--pn-nudge-bg-dark)',
+    },
+  },
   heroContent: {
+    position: 'relative',
     maxWidth: '75%',
   },
   heroDismiss: {
@@ -155,6 +178,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
   logoMarkSize,
   logoMarkOffset,
   backgroundColor,
+  backgroundImageScale,
   brand,
   className,
   ouiaId = 'ProductNudge',
@@ -192,6 +216,13 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
     logoMarkOffset ?? (hasCustomLogoMark ? '0' : '-3px'),
   );
   const resolvedBackgroundColor = backgroundColor ?? (brand === 'lightwell' ? LIGHTWELL_BACKGROUND_COLOR : undefined);
+  const defaultBackgroundImageScale = brand === 'lightwell' ? 0.8 : 1;
+  // Ignore non-positive or non-finite values, and never enlarge the image past its `contain` fit.
+  const resolvedBackgroundImageScale =
+    backgroundImageScale !== undefined && Number.isFinite(backgroundImageScale) && backgroundImageScale > 0
+      ? Math.min(backgroundImageScale, 1)
+      : defaultBackgroundImageScale;
+  const hasBackgroundImage = Boolean(assets.backgroundImageLight || assets.backgroundImageDark);
   const ctaHref = content.cta.action === 'link' ? content.cta.href : undefined;
   const resolvedCtaColorScheme = ctaColorScheme ?? (brand === 'lightwell' ? 'lightwell' : 'default');
   const ctaStyleByScheme: Record<ProductNudgeCtaColorScheme, React.CSSProperties | undefined> = {
@@ -353,7 +384,11 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
     return (
       <div ref={impressionRef}>
         <Hero
-          className={css(rootClassName, resolvedBackgroundColor ? classes.heroBg : undefined)}
+          className={css(
+            rootClassName,
+            resolvedBackgroundColor ? classes.heroBg : undefined,
+            hasBackgroundImage ? classes.heroArt : undefined,
+          )}
           data-ouia-component-id={ouiaId}
           style={{
             position: 'relative',
@@ -368,10 +403,13 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
               '--pn-nudge-background-color': resolvedBackgroundColor,
             }),
             ...(assets.backgroundImageLight && {
-              '--pf-v6-c-hero--BackgroundImage--light': `url(${assets.backgroundImageLight})`,
+              '--pn-nudge-bg-light': `url(${assets.backgroundImageLight})`,
             }),
             ...(assets.backgroundImageDark && {
-              '--pf-v6-c-hero--BackgroundImage--dark': `url(${assets.backgroundImageDark})`,
+              '--pn-nudge-bg-dark': `url(${assets.backgroundImageDark})`,
+            }),
+            ...(hasBackgroundImage && {
+              '--pn-nudge-bg-scale': resolvedBackgroundImageScale,
             }),
           } as React.CSSProperties}
         >

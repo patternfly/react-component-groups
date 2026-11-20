@@ -41,6 +41,60 @@ describe('ProductNudge component', () => {
     });
   });
 
+  describe('full-width background image scale', () => {
+    const backgroundAssets = { backgroundImageLight: 'bg-light.png', backgroundImageDark: 'bg-dark.png' };
+    const renderHero = (props: Partial<React.ComponentProps<typeof ProductNudge>> = {}) => {
+      const { container } = render(
+        <ProductNudge
+          variant="full-width"
+          content={{ ...content, assets: backgroundAssets }}
+          isEligible
+          onAction={jest.fn()}
+          {...props}
+        />,
+      );
+      return container.querySelector('.pf-v6-product-nudge--full-width') as HTMLElement;
+    };
+
+    it('shrinks the Lightwell artwork by default', () => {
+      expect(renderHero({ brand: 'lightwell' })).toHaveStyle({ '--pn-nudge-bg-scale': '0.8' });
+    });
+
+    it('leaves a non-Lightwell background image at full size by default', () => {
+      expect(renderHero()).toHaveStyle({ '--pn-nudge-bg-scale': '1' });
+    });
+
+    it('applies a custom scale and passes the image through as CSS variables', () => {
+      const hero = renderHero({ brand: 'lightwell', backgroundImageScale: 0.6 });
+
+      expect(hero).toHaveStyle({
+        '--pn-nudge-bg-scale': '0.6',
+        '--pn-nudge-bg-light': 'url(bg-light.png)',
+        '--pn-nudge-bg-dark': 'url(bg-dark.png)',
+      });
+    });
+
+    it.each([ 0, -1, NaN, Infinity ])('falls back to the default for an invalid scale of %s', (scale) => {
+      expect(renderHero({ brand: 'lightwell', backgroundImageScale: scale })).toHaveStyle({
+        '--pn-nudge-bg-scale': '0.8',
+      });
+    });
+
+    it('never enlarges the image beyond its contained size', () => {
+      expect(renderHero({ backgroundImageScale: 2 })).toHaveStyle({ '--pn-nudge-bg-scale': '1' });
+    });
+
+    it('does not set up the artwork layer when there is no background image', () => {
+      const { container } = render(
+        <ProductNudge variant="full-width" brand="lightwell" content={content} isEligible onAction={jest.fn()} />,
+      );
+      const hero = container.querySelector('.pf-v6-product-nudge--full-width') as HTMLElement;
+
+      expect(hero.style.getPropertyValue('--pn-nudge-bg-scale')).toBe('');
+      expect(hero.style.getPropertyValue('--pn-nudge-bg-light')).toBe('');
+    });
+  });
+
   it('uses neutral CTA styling and consumer assets without a brand preset', () => {
     render(
       <ProductNudge
