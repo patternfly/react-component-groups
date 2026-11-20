@@ -44,6 +44,18 @@ Limit stacked tearsheets to a maximum of 3. Flows requiring 4 or more levels sho
 ```ts file="./TearsheetStacked.tsx"
 ```
 
+### Covering the masthead
+
+By default, tearsheets reserve a `4rem` gap above the base sheet for the masthead. Set `coverMasthead` to extend the base
+tearsheet over the masthead while keeping a top gap equal to its left and right gaps. These insets follow the PatternFly
+page-chrome spacing token.
+
+This example uses the same three layers as the stacked example above, with `coverMasthead` enabled on each sheet.
+The vertical offsets between sheets are preserved so you can compare the additional vertical space at each level.
+
+```ts file="./TearsheetCoverMasthead.tsx"
+```
+
 ### Tearsheets vs Modals
 
 Choose a tearsheet over a modal when users need to process detailed and complex workflows. This example demonstrates how the expanded surface area of a tearsheet allows users to easily navigate a robust layout without feeling overwhelmed.

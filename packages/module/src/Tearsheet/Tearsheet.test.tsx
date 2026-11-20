@@ -1,5 +1,6 @@
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import { Modal } from '@patternfly/react-core';
+import pageChromeInset from '@patternfly/react-tokens/dist/esm/t_global_spacer_inset_page_chrome';
 import Tearsheet, { createStackEscapeHandler, type StackEscapeEntry } from './index';
 import TearsheetHeader from '../TearsheetHeader';
 import TearsheetBody from '../TearsheetBody';
@@ -33,6 +34,35 @@ describe('Tearsheet component', () => {
 
     expect(screen.getByRole('dialog')).toHaveClass('pf-m-stack-level-0');
   });
+
+  it.each([ [ -1, '0px' ], [ 0, '0px' ], [ 1, '2rem' ], [ 2, '4rem' ] ])(
+    'should toggle masthead coverage at stack level %i while preserving its stack offset',
+    (stackLevel, expectedOffset) => {
+      const renderSheet = (coverMasthead?: boolean) => (
+        <Tearsheet isOpen aria-label="Settings" stackLevel={stackLevel} coverMasthead={coverMasthead}>
+          <TearsheetBody>Settings content</TearsheetBody>
+        </Tearsheet>
+      );
+      const { rerender } = render(renderSheet());
+      const dialog = screen.getByRole('dialog');
+
+      expect(dialog).not.toHaveClass('pf-m-cover-masthead');
+      expect(getComputedStyle(dialog).getPropertyValue('--pf-v6-c-tearsheet--InsetBlockStart')).toBe('4rem');
+
+      rerender(renderSheet(true));
+
+      expect(dialog).toHaveClass('pf-m-cover-masthead');
+      expect(getComputedStyle(dialog).getPropertyValue('--pf-v6-c-tearsheet--InsetBlockStart')).toBe(pageChromeInset.var);
+      expect(getComputedStyle(dialog).getPropertyValue('--pf-v6-c-tearsheet--StackOffset')).toBe(expectedOffset);
+      expect(screen.getByText('Settings content').parentElement).not.toHaveAttribute('coverMasthead');
+
+      rerender(renderSheet(false));
+
+      expect(dialog).not.toHaveClass('pf-m-cover-masthead');
+      expect(getComputedStyle(dialog).getPropertyValue('--pf-v6-c-tearsheet--InsetBlockStart')).toBe('4rem');
+      expect(getComputedStyle(dialog).getPropertyValue('--pf-v6-c-tearsheet--StackOffset')).toBe(expectedOffset);
+    }
+  );
 
   it.each([ 1, 2 ])('should apply the visual class for stack level %i', (stackLevel) => {
     render(
