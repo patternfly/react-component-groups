@@ -65,6 +65,9 @@
   "tag-count": {
     "summary": "A tag icon with a number that represents a count value."
   },
+  "tearsheet": {
+    "summary": "A large modal that provides more space for complex workflows."
+  },
   "unauthorized-access": {
     "summary": "An error screen with a no access permissions message."
   },

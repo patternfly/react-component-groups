@@ -10,7 +10,7 @@ sourceLink: https://github.com/patternfly/react-component-groups/blob/main/packa
 import { Fragment, useState } from 'react';
 import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import TearsheetGroup from '@patternfly/react-component-groups/dist/dynamic/TearsheetGroup';
-import Tearsheet from '@patternfly/react-component-groups/dist/dynamic/Tearsheet';
+import Tearsheet, { createStackEscapeHandler } from '@patternfly/react-component-groups/dist/dynamic/Tearsheet';
 import TearsheetHeader from '@patternfly/react-component-groups/dist/dynamic/TearsheetHeader';
 import TearsheetBody from '@patternfly/react-component-groups/dist/dynamic/TearsheetBody';
 import TearsheetFooter from '@patternfly/react-component-groups/dist/dynamic/TearsheetFooter';
@@ -41,7 +41,21 @@ Tearsheets support stacking, allowing new sheets to open on top of active ones. 
 
 Limit stacked tearsheets to a maximum of 3. Flows requiring 4 or more levels should be redesigned using multi-step wizard or dedicates page to prevent loss of user context.
 
+Use `createStackEscapeHandler` to coordinate Escape handling across stacked tearsheets and modals. During render, provide entries containing each overlay's current `isOpen` state and `onEscapePress` callback, ordered from back to front. Pass the returned handler to every participating overlay's `onEscapePress` prop. Only the last open entry handles Escape, even when its callback keeps the overlay open.
+
 ```ts file="./TearsheetStacked.tsx"
+```
+
+### Covering the masthead
+
+By default, tearsheets reserve a `4rem` gap above the base sheet for the masthead. Set `coverMasthead` to extend the base
+tearsheet over the masthead while keeping a top gap equal to its left and right gaps. These insets follow the PatternFly
+page-chrome spacing token.
+
+This example uses the same three layers as the stacked example above, with `coverMasthead` enabled on each sheet.
+The vertical offsets between sheets are preserved so you can compare the additional vertical space at each level.
+
+```ts file="./TearsheetCoverMasthead.tsx"
 ```
 
 ### Tearsheets vs Modals

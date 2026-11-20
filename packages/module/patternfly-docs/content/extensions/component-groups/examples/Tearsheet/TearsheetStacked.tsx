@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import { Button } from '@patternfly/react-core';
-import Tearsheet from '@patternfly/react-component-groups/dist/dynamic/Tearsheet';
+import Tearsheet, { createStackEscapeHandler } from '@patternfly/react-component-groups/dist/dynamic/Tearsheet';
 import TearsheetHeader from '@patternfly/react-component-groups/dist/dynamic/TearsheetHeader';
 import TearsheetBody from '@patternfly/react-component-groups/dist/dynamic/TearsheetBody';
 import TearsheetFooter from '@patternfly/react-component-groups/dist/dynamic/TearsheetFooter';
@@ -20,12 +20,20 @@ export const TearsheetStacked: React.FunctionComponent = () => {
     setIsStack2TearsheetOpen(!isStack2TearsheetOpen);
   };
 
+  // Declare overlays from back to front and share the handler with each one.
+  const onEscapePress = createStackEscapeHandler([
+    { isOpen: isTearsheetOpen, onEscapePress: toggleTearsheet },
+    { isOpen: isStack1TearsheetOpen, onEscapePress: toggleStack1Tearsheet },
+    { isOpen: isStack2TearsheetOpen, onEscapePress: toggleStack2Tearsheet }
+  ]);
+
   return (
     <Fragment>
       <Button variant="primary" onClick={toggleTearsheet}>
         Show Tearsheet
       </Button>
       <Tearsheet
+        onEscapePress={onEscapePress}
         isOpen={isTearsheetOpen}
         onClose={(e: React.MouseEvent<Element, MouseEvent> | KeyboardEvent | MouseEvent) => toggleTearsheet(e)}
       >
@@ -50,6 +58,7 @@ export const TearsheetStacked: React.FunctionComponent = () => {
         </TearsheetFooter>
       </Tearsheet>
       <Tearsheet
+        onEscapePress={onEscapePress}
         isOpen={isStack1TearsheetOpen}
         stackLevel={1}
         onClose={(e: React.MouseEvent<Element, MouseEvent> | KeyboardEvent | MouseEvent) => toggleStack1Tearsheet(e)}
@@ -75,6 +84,7 @@ export const TearsheetStacked: React.FunctionComponent = () => {
         </TearsheetFooter>
       </Tearsheet>
       <Tearsheet
+        onEscapePress={onEscapePress}
         isOpen={isStack2TearsheetOpen}
         stackLevel={2}
         onClose={(e: React.MouseEvent<Element, MouseEvent> | KeyboardEvent | MouseEvent) => toggleStack2Tearsheet(e)}
