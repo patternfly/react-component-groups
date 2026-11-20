@@ -17,7 +17,7 @@ import {
   Tooltip,
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon.js';
+import RhMicronsCloseIcon from '@patternfly/react-icons/dist/esm/icons/rh-microns-close-icon.js';
 import { createUseStyles } from 'react-jss';
 
 import ErrorBoundary from '../ErrorBoundary';
@@ -227,7 +227,7 @@ const ProductNudgeContent: FunctionComponent<ProductNudgeProps> = ({
         variant="plain"
         aria-label={`${dismissAriaLabelPrefix}${content.headline}`}
         onClick={handleDismiss}
-        icon={<TimesIcon />}
+        icon={<RhMicronsCloseIcon />}
         ouiaId={`${ouiaId}-dismiss`}
       />
     </Tooltip>

@@ -305,6 +305,16 @@ describe('ProductNudge component', () => {
     expect(dismiss.compareDocumentPosition(link)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
   });
 
+  it.each([ 'full-width', 'inline', 'compact' ] as const)(
+    'renders the Red Hat micron close icon in the %s dismiss button',
+    (variant) => {
+      render(<ProductNudge variant={variant} behavior="dismissible" content={content} isEligible onDismiss={jest.fn()} />);
+
+      const path = screen.getByRole('button', { name: 'Dismiss Test headline' }).querySelector('svg path');
+      expect(path).toHaveAttribute('d', expect.stringMatching(/^M17\.8 16\.2/));
+    },
+  );
+
   it('shows a dismiss tooltip that defaults to the aria-label text and can be customized', async () => {
     const { rerender } = render(
       <ProductNudge variant="full-width" behavior="dismissible" content={content} isEligible onDismiss={jest.fn()} />,
