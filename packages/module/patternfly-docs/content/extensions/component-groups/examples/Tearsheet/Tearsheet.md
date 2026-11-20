@@ -41,6 +41,8 @@ Tearsheets support stacking, allowing new sheets to open on top of active ones. 
 
 Limit stacked tearsheets to a maximum of 3. Flows requiring 4 or more levels should be redesigned using multi-step wizard or dedicates page to prevent loss of user context.
 
+Use `createStackEscapeHandler` to coordinate Escape handling across stacked tearsheets and modals. During render, provide entries containing each overlay's current `isOpen` state and `onEscapePress` callback, ordered from back to front. Pass the returned handler to every participating overlay's `onEscapePress` prop. Only the last open entry handles Escape, even when its callback keeps the overlay open.
+
 ```ts file="./TearsheetStacked.tsx"
 ```
 
